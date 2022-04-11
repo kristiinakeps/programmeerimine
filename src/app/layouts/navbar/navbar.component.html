@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-left">
+    <a class="navbar-brand p-3 mt-2" [routerLink]="'.'">
+      <img src="../../../assets/svg/logo.svg" alt="Programmeerimine Pohikoolis" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+      &#9776;
+    </button>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse my-3">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'sissejuhatus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sissejuhatus</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Programm ja algoritm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Muutujad ja avaldised</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Tingimuslaused</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Korduslaused</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Funktsioonid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Andmestruktuurid</a>
+        </li>
+      </ul>
+    </div>
+</nav>

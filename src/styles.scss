@@ -1,1 +1,193 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+$navbar-sidebar-width: 20rem;
+$navbar-sidebar-breakpoint: 'md';
+
+$color-pink: #de2899;
+$color-dark: #000000;
+$color-purple: #5a4d94;
+$color-purple-dark: #40366e;
+$color-green: #83d143;
+$color-green-light: #d2ffad;
+$color-blue: #68b8f2;
+$color-blue-light: #cce9ff;
+$color-blue-dark: #1077c2;
+$color-red: #ff5975;
+$color-red-light: #ffbac6;
+$color-background: #f7f7f7;
+$color-white: #ffffff;
+$color-grey: #dcdce0;
+$color-grey-light: #f2f2f7;
+
+@font-face {
+  font-family: Nunito;
+  src: url('/assets/font/Nunito-VariableFont_wght.ttf') format("truetype-variations");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url('/assets/font/Nunito-Italic-VariableFont_wght.ttf') format("truetype-variations");
+  font-style: italic;
+}
+
+body {
+  padding-top: 90px;
+  background-color: $color-background;
+  color: $color-dark;
+  font-family: Nunito, sans-serif;
+
+  @include media-breakpoint-up($navbar-sidebar-breakpoint) {
+    margin-left: $navbar-sidebar-width;
+    padding-top: 0;
+  }
+}
+
+h1 {
+  font-weight: bold;
+  color: $color-purple-dark;
+}
+
+h4 {
+  font-weight: bold;
+  color: $color-purple-dark;
+}
+
+a {
+  color: $color-pink;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-pink;
+  text-decoration: underline;
+}
+
+@mixin navbar-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-fixed;
+
+  @include media-breakpoint-up($navbar-sidebar-breakpoint) {
+    bottom: 0;
+    width: $navbar-sidebar-width;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+
+    .navbar-collapse {
+      flex-grow: 0;
+      flex-direction: column;
+      width: 100%;
+
+      .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+
+        .nav-item {
+          width: 100%;
+
+          .dropdown-menu {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  background-color: $color-purple !important;
+
+  &.fixed-left {
+    @include navbar-sidebar;
+    @include media-breakpoint-up($navbar-sidebar-breakpoint) {
+      right: auto;
+
+      .navbar-nav {
+        .nav-item {
+          .dropdown-toggle {
+            &:after {
+              border-top: $caret-width solid transparent;
+              border-left: $caret-width solid;
+              border-bottom: $caret-width solid transparent;
+              border-right: none;
+              vertical-align: baseline;
+            }
+          }
+
+          .dropdown-menu {
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-toggler {
+  margin-right: 1rem;
+}
+
+.nav-item {
+  padding: 0.5rem;
+  font-size: 20px;
+}
+
+.nav-link {
+  color: $color-grey !important;
+}
+
+.nav-link:hover{
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: $color-white !important;
+}
+
+.nav-item:hover {
+  background-color: $color-purple-dark;
+}
+
+.box-container {
+  background-color: $color-white;
+  border: solid 2px $color-grey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.logo {
+  width: $navbar-sidebar-width - 3rem;
+}
+
+.active {
+  color: $color-pink !important;
+}
+
+.intro-container {
+  background-color: $color-blue-light;
+  border: solid 2px $color-blue;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.intro-container h5 {
+  color: $color-blue-dark;
+  font-weight: bold;
+}
+
+.strong {
+  color: $color-purple-dark
+}
+
+.code-block {
+  background-color: $color-grey-light;
+  border: solid 2px $color-grey;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
