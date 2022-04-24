@@ -10,13 +10,16 @@ $color-pink: #de2899;
 $color-dark: #000000;
 $color-purple: #5a4d94;
 $color-purple-dark: #40366e;
+$color-purple-light: #6858ad;
 $color-green: #83d143;
-$color-green-light: #d2ffad;
+$color-green-light: #e0ffc7;
+$color-green-dark: #386315;
 $color-blue: #68b8f2;
 $color-blue-light: #cce9ff;
 $color-blue-dark: #1077c2;
 $color-red: #ff5975;
-$color-red-light: #ffbac6;
+$color-red-light: #ffd1d9;
+$color-red-dark: #660e1d;
 $color-background: #f7f7f7;
 $color-white: #ffffff;
 $color-grey: #dcdce0;
@@ -150,6 +153,15 @@ a:hover {
   color: $color-white !important;
 }
 
+.navbar-brand:focus, .nav-link:focus {
+  outline: 0;
+}
+
+.nav-link a:focus, .nav-link a:active, .nav-item a:focus, .nav-item a:active {
+  border: none;
+  box-shadow: none;
+}
+
 .nav-item:hover {
   background-color: $color-purple-dark;
 }
@@ -163,6 +175,10 @@ a:hover {
 
 .logo {
   width: $navbar-sidebar-width - 3rem;
+}
+
+.navbar-illustration {
+  width: $navbar-sidebar-width;
 }
 
 .active {
@@ -190,4 +206,67 @@ a:hover {
   border: solid 2px $color-grey;
   border-radius: 0.5rem;
   padding: 1rem;
+  white-space: pre-wrap;
+}
+
+.self-test {
+  color: $color-blue-dark;
+  font-weight: bold;
+}
+
+.blue-link, blue-link:hover {
+  color: $color-blue-dark !important;
+}
+
+.feedback-correct {
+  background-color: $color-green-light;
+  border: solid 2px $color-green;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: $color-green-dark;
+}
+
+.feedback-incorrect {
+  background-color: $color-red-light;
+  border: solid 2px $color-red;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: $color-red-dark;
+}
+
+.btn-self-test {
+  background-color: $color-blue;
+  color: $color-white;
+}
+
+.btn-self-test:hover {
+  background-color: $color-blue-dark;
+  color: $color-white;
+}
+
+.btn-primary {
+  background-color: $color-purple;
+  border-color: $color-purple;
+  color: $color-white;
+}
+
+.btn-primary:hover {
+  background-color: $color-purple-dark;
+  border-color: $color-purple-dark;
+  color: $color-white;
+}
+
+.btn-primary:focus {
+  background-color: $color-purple;
+  border-color: $color-purple;
+  color: $color-white;
+  box-shadow: 0 0 0 .2rem rgba(52, 44, 97, 0.35)
+}
+
+.height-15rem {
+  height: 15rem;
+}
+
+.height-10rem {
+  height: 10rem;
 }

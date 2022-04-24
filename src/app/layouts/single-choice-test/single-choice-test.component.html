@@ -1,0 +1,14 @@
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll. {{ question.question }}</h5>
+  <div class="code-block mt-4">
+    <div class="mt-2">
+      <span>{{ question.text }}</span>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button *ngFor="let answer of question.answers" class="btn btn-self-test m-2" (click)="changeAnswer(answer)">{{ answer.answer }}</button>
+  </div>
+  <div *ngIf="lastGuess" class="mt-2" [ngClass]="{'feedback-correct': lastGuess.correct, 'feedback-incorrect': !lastGuess.correct}">
+    {{ lastGuess.explanation }}
+  </div>
+</div>
