@@ -1,0 +1,16 @@
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll. {{ question.text }}</h5>
+  <div class="mt-3"><span>Järjestamiseks haara hiirega kastidest ning lohista need uude kohta.</span></div>
+  <div cdkDropList class="drag-and-drop-list mt-4" (cdkDropListDropped)="drop($event)">
+    <div class="drag-and-drop-box" *ngFor="let item of shuffledItems" cdkDrag>
+      <div class="drag-and-drop-placeholder" *cdkDragPlaceholder></div>
+      {{ item.text }}
+    </div>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-self-test m-2" (click)="submitAnwser()">Kontrolli</button>
+  </div>
+  <div *ngIf="showFeedback" class="mt-2" [ngClass]="{'feedback-correct': isCorrect, 'feedback-incorrect': !isCorrect}">
+    {{ feedbackText }}
+  </div>
+</div>

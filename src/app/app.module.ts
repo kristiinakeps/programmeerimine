@@ -9,7 +9,11 @@ import {HomeComponent} from './layouts/home/home.component';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {SingleChoiceTestComponent} from './layouts/single-choice-test/single-choice-test.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {faArrowRight, faArrowRotateRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowDown, faArrowRight, faArrowRotateRight, faArrowUp} from '@fortawesome/free-solid-svg-icons';
+import {AlgorithmComponent} from './algorithm/algorithm.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import {ReorderTestComponent} from './layouts/reorder-test/reorder-test.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -17,13 +21,17 @@ import {faArrowRight, faArrowRotateRight} from '@fortawesome/free-solid-svg-icon
     NavbarComponent,
     HomeComponent,
     IntroductionComponent,
-    SingleChoiceTestComponent
+    SingleChoiceTestComponent,
+    AlgorithmComponent,
+    ReorderTestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    DragDropModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [MainComponent]
@@ -32,5 +40,7 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(faArrowRotateRight)
     library.addIcons(faArrowRight)
+    library.addIcons(faArrowDown)
+    library.addIcons(faArrowUp)
   }
 }

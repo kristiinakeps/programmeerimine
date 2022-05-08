@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-left">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-left">
     <a class="navbar-brand p-3 mt-2" [routerLink]="'.'">
       <img src="../../../assets/images/logo.png" alt="Programmeerimine Pohikoolis" class="logo">
     </a>
@@ -10,8 +10,26 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'sissejuhatus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sissejuhatus</a>
         </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'arvuti'" (click)="collapseNavbar()">Arvuti</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'programmeerimiskeeled'" (click)="collapseNavbar()">Programmeerimiskeeled</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'programmeerimisega-alustamine'" (click)="collapseNavbar()">Programmeerimisega alustamine</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Programm ja algoritm</a>
+          <a class="nav-link" [routerLink]="'algoritm'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Algoritm</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'plokkskeem'" (click)="collapseNavbar()">Plokkskeem</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'tingimused'" (click)="collapseNavbar()">Tingimused</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'kordused'" (click)="collapseNavbar()">Kordused</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Muutujad ja avaldised</a>
@@ -28,9 +46,21 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Andmestruktuurid</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Klassid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Mängu loomine</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Veebilehe loomine</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Lisa</a>
+        </li>
       </ul>
     </div>
-  <div class="d-none d-md-block mt-5">
+  <div class="d-none d-md-block mt-2">
     <img src="../../../assets/images/navbar_illustration.png" alt="" class="navbar-illustration">
   </div>
 </nav>

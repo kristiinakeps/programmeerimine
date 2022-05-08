@@ -6,7 +6,7 @@
   <div><span>3. Mis on programmeerimiskeeled?</span></div>
   <div><span>4. Mida programmeerimiseks vaja läheb?</span></div>
 </div>
-<h4 class="mt-5">Mis imeloom on arvuti?</h4>
+<h4 class="mt-5" [attr.id]="'arvuti'">Mis imeloom on arvuti?</h4>
 <div class="mt-4 box-container">
   <div><span>Sa oled kindlasti arvutit näinud ja kasutanud. Ilmselt kasutad arvutit ka praegu selle õpiku lugemiseks.
   Aga kas sa tead, mis see arvuti täpsemalt on?</span></div>
@@ -29,7 +29,7 @@
   Inimese mõistes oleks see nagu peastarvutamisel vahetulemuste meeles pidamine enne kui lõpliku vastuseni jõuame või raamatut lugedes sõnade meeles pidamine,
   kuni need moodustavad lause ja saame lause mõttest aru.</span>
   <div class="mt-4">
-      <img src="../../../assets/images/calculating.png" alt="arvutamine" class="height-15rem">
+      <img src="../../../assets/images/introduction/calculating.png" alt="arvutamine" class="height-15rem">
   </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
   <div class="mt-2"><span>Arvuti mälust ja andmekandjast võib mõelda ka kui töölauast ja raamaturiiulist. Kui teeme tööd või loeme mõnda raamatut, siis hoiame neid asju
   laual (ehk arvuti mõttes mälus). Kõik teised raamatud ja asjad, mida me hetkel ei kasuta, on pandud ära riiulisse (ehk andmekandjale).</span></div>
   <div class="mt-4">
-    <img src="../../../assets/images/desk.png" alt="arvutamine" class="height-10rem">
+    <img src="../../../assets/images/introduction/desk.png" alt="arvutamine" class="height-10rem">
   </div>
 </div>
 <div class="mt-2 box-container">
@@ -72,7 +72,7 @@
     keeled, mida kutsutakse <strong class="strong">programmeerimiskeelteks</strong> ja mida on nii inimestel lihtne kirjutada kui ka arvutil enda jaoks arusaadavaks
     kahendkoodiks teisendada.</span></div>
 </div>
-<h4 class="mt-5">Milliseid programmeerimiskeeli on olemas?</h4>
+<h4 class="mt-5" [attr.id]="'programmeerimiskeeled'">Milliseid programmeerimiskeeli on olemas?</h4>
 <div class="mt-4 box-container">
   <div><span>Esimeste arvutitega tekkisid esimesed programmeerimiskeeled ning alguses kirjutati programme konkreetsetele arvutitele neile arusaadavas kahendkoodis.
     Ajaga on aga programmeerimiskeeled edasi arenenud ning muutunud järjest üldisemaks ja rohkem inimkeelte sarnaseks. Võib-olla ühel päeval suudab arvuti ka
@@ -151,7 +151,7 @@
 </div>
 <app-single-choice-test [question]="programmingLanguagesTest"></app-single-choice-test>
 <button (click)="selectProgrammingLanguagesTest()" class="btn btn-primary mt-3"><fa-icon [icon]="'arrow-rotate-right'"></fa-icon><span class="ps-2">Tahan uut enesekontrolli küsimust</span></button>
-<h4 class="mt-5">Mida on vaja, et programmeerimisega alustada?</h4>
+<h4 class="mt-5" [attr.id]="'programmeerimisega-alustamine'">Mida on vaja, et programmeerimisega alustada?</h4>
 <div class="mt-4 box-container">
   <div><span>Programmeerimisega alustamiseks on vaja kahte komponenti. Esiteks on meil vaja tekstiredaktorit, milles koodi kirjutada (selleks sobiks ka tavaline Notepadi rakendus,
     mis paljudes Windows operatsioonisüsteemiga arvutites juba olemas on). Teiseks on meil vaja kuidagi teisendada meie kirjutatud kood masinkoodiks ning selleks on
@@ -189,5 +189,5 @@
     <a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank">https://www.jetbrains.com/pycharm/download/#section=windows</a>.</span>
   </div>
 </div>
-<button class="btn btn-primary my-5 float-end"><fa-icon [icon]="'arrow-right'"></fa-icon><span class="ps-2">Järgmine peatükk</span></button>
+<button [routerLink]="'/algoritm'" class="btn btn-primary my-5 float-end"><fa-icon [icon]="'arrow-right'"></fa-icon><span class="ps-2">Järgmine peatükk</span></button>
 

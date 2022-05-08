@@ -1,0 +1,170 @@
+<h1>ALGORITM</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on algoritm?</span></div>
+  <div><span>2. Kuidas algoritme kirja panna?</span></div>
+  <div><span>3. Kuidas kujutada tingimusi ja kordusi?</span></div>
+</div>
+<h4 class="mt-5">Mis on algoritm?</h4>
+<div class="mt-4 box-container">
+  <div><span><strong class="strong">Algoritm</strong> on mõiste, mida kuuleb tihti programmeerimisest rääkides. Iseenesest ei ole
+  algoritm midagi müstilisemat või keerulisemat kui lihtsalt järjestatud tegevused või juhised millegi tegemiseks. Võid näiteks mõelda tagasi oma
+  senise päeva peale. Mida tegid hommikul esimese asjana pärast ärkamist? Ilmselt panid riidesse, pesid hambad või sõid hommikust. Mida tegid järgmiseks? Niimoodi edasi mõeldes saame päeva veetmise algoritmi.</span>
+  </div>
+  <div class="mt-2"><span>Järgmiseks kirjeldab üks poiss Mark oma päeva, proovi kas suudad tema kirjelduse põhjal algoritmi sammud õigesse
+  järjekorda panna.</span></div>
+</div>
+<div class="mt-4 box-container">
+  <div class="row mx-0">
+    <div class="col-md-12 col-lg-9 mx-0"><span class="fst-italic">Tere! Minu nimi on Mark ja ma käin 7. klassis. Järgnevalt kirjeldan sulle oma tänast päeva. Kuna oli koolipäev, siis mu ema äratas mu kell 7.
+    Pärast ärkamist ma käisin pesus, panin riidesse ja siis sõin hommikust.
+    Kell 8.00 hakkasid mul tunnid. Ma hakkasin kell 7.45 kodust kõndima, et õigeks ajaks kooli jõuda.
+    Pärast kooli, kell 15.00, oli mul täna korvpallitrenn, mis kestis poolteist tundi. Trenni ma läksin ise jala,
+    aga pärast trenni tuli mu isa mulle autoga järele. Kell 18 oli meil perega ühine õhtusöök, pärast mida ma tegin ära koolis antud kodused
+    ülesanded ning siis vaatasin natuke telekat ja mängisin arvutis. Kell 10 õhtul läksin ma magama. Vot selline oligi minu päev!</span>
+    </div>
+    <div class="col-md-12 col-lg-2 mx-2 mt-2">
+      <img src="../../../assets/images/algorithm/mark.png" alt="mark" class="height-15rem">
+    </div>
+  </div>
+</div>
+<app-reorder-test [question]="markTestQuestion"></app-reorder-test>
+<h4 class="mt-5" [attr.id]="'plokkskeem'">Plokkskeem</h4>
+<div class="mt-4 box-container">
+  <div class="row mx-0">
+    <div class="col-md-12 col-lg-10">
+      <div><span>Üleval on algoritmi sammud lihtsalt üksteise järele nimekirja pandud. Tegelikult üks veel parem viis algoritme kujutada on
+      <strong class="strong">plokkskeemi</strong> abil. Plokkskeemis on algoritmil kindel algus ja lõpp. Neid tähistatakse tüüpiliselt ovaalidega.
+      Tavalised tegevused pannakse ristkülikutesse ning lisatakse ka nooled, mis näitavad kuidas tegevuste vahel liikumine käib.</span>
+      </div>
+      <div class="mt-2">
+        <span>Näiteks järgmised viis lihtsat sammu tee tegemiseks saaks plokkskeemiga kirja panna nii:</span></div>
+      <div class="mt-2"><span>1. Vala keev vesi tassi</span></div>
+      <div class="mt-2"><span>2. Lisa teepuru teesõela või -kotikesega</span></div>
+      <div class="mt-2"><span>3. Oota 5 minutit</span></div>
+      <div class="mt-2"><span>4. Eemalda teepuru</span></div>
+      <div class="mt-2"><span>5. Lase natuke jahtuda</span></div>
+      <div class="mt-4">
+        <img src="../../../assets/images/algorithm/teacup.png" alt="teacup" class="height-10rem">
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-2">
+      <img src="../../../assets/images/algorithm/tea_algorithm.png" alt="tea algorithm" style="height: 30rem" class="m-3">
+    </div>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'tingimused'">Tingimused</h4>
+<div class="mt-4 box-container">
+  <div><span>Mõtle nüüd uuesti oma päeva peale. Ilmselt ei näe su päev alati ühesugune välja. Mõni päev võib sul peale kooli olla trenn, mõni päev aga hoopis
+    muusikakool või mõni muu huviring. Nädalavahetustel ei pea üldse kooli minema. Kui tahaksime nüüd näiteks üldise koolipäeva algoritmi kirja panna,
+    siis ei piisa meil enam tavalistest tegevusplokkidest. Meil läheb vaja lisaks ka <strong class="strong">kontrollplokke</strong>. Kontrollplokid tähistavad
+    mingit tingimust ja kontrollplokist väljub alati kaks noolt: üks nool viib tegevuseni, mida tehakse siis, kui tingimus on tõene, teine nool viib tegevuseni,
+    mida tehakse siis, kui tingimus on väär. Näiteks meil võib olla tingimus: kui hommikul vihma sajab, siis
+    võtan kooli minnes vihmavarju kaasa. Või kui on reede, siis lähen trenni, teistel päevadel ei lähe. Plokkskeemil kirjutatakse kontrollplokkidesse kas-küsimused ning neist
+  väljub üks "Jah" nool ja teine "Ei" nool.</span></div>
+  <div class="mt-2"><span>Järgmiseks on Mark kirja pannud oma üldise koolipäeva. Vaatame kuidas seda plokkskeemiga kujutada.</span>
+  </div>
+</div>
+<div class="mt-4 box-container">
+  <div><span class="fst-italic">Mõned tegevused on mul igapäev samasugused. Kuna kool algab alati kell 8, siis esimese asjana igal hommikul äratab mu ema mind kell 7.
+  Seejärel käin pesus ja panen riidesse. Siis jalutan kooli ja olen seal kuni tunnid läbi saavad. Esmaspäeval ja kolmapäeval on mul kell 15 korvpalli trenn.
+  Nendel päevadel jalutan pärast kooli trenni. Teistel päevadel lähen kohe peale kooli koju. Õhtul kell 18 sööme perega õhtust ning siis teen koolitööd. Kui on reede,
+  siis ma ei viitsi õhtul koolitööd teha. Magama lähen kell 10, aga enne seda veel vaatan telekat või mängin arvutis.</span>
+  </div>
+  <div class="row mx-0 my-4">
+    <div class="col-md-12 col-lg-3">
+      <img src="../../../assets/images/algorithm/mark_waking.png" alt="mark waking" class="height-15rem">
+    </div>
+    <div class="col-md-12 col-lg-3">
+      <img src="../../../assets/images/algorithm/mark_walking.png" alt="mark walking" class="height-15rem">
+    </div>
+    <div class="col-md-12 col-lg-3">
+      <img src="../../../assets/images/algorithm/mark_basketball.png" alt="mark basketball" class="height-15rem">
+    </div>
+    <div class="col-md-12 col-lg-3">
+      <img src="../../../assets/images/algorithm/mark_playing.png" alt="mark playing" class="height-10rem mt-5">
+    </div>
+  </div>
+  <div><span class="mt-2">Igaüks võib plokkskeeme tehes ise otsustada kui detailseks tahab minna. Mõned järjestikused tegevused võib ka ühte plokki kokku kirjutada
+  ning näidata ära vaid olulisemad kohad (näiteks kontrollplokid).</span></div>
+  <div class="text-center">
+    <img src="../../../assets/images/algorithm/mark_algorithm.png" alt="mark algorithm" style="height: 60rem" class="my-3">
+  </div>
+</div>
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll. Proovi koostada Mari kirjelduse põhjal tee tegemise plokkskeem</h5>
+  <div class="mt-3 box-container">
+    <div class="row mx-0">
+      <div class="col-md-12 col-lg-9"><span class="fst-italic">Kõigepealt tuleb vesi keeta. Siis valida välja tee ning lisada teepuru kuuma vette. Kui tegemist on
+      pärnaõieteega, siis ma lisan ühe teelusika mett ka, teiste teede puhul ma lisan hoopis suhkrut. Siis ma ootan viis minutit, et tee tõmbaks,
+      eemaldan teepuru ning lasen teel veel 15 minutit jahtuda, enne kui seda jooma hakkan.</span></div>
+      <div class="col-md-12 col-lg-2 m-3">
+        <img src="../../../assets/images/algorithm/mari.png" alt="mari" class="height-10rem">
+      </div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button *ngIf="!teaAnswerIsShown" class="btn btn-self-test m-2" (click)="teaAnswerIsShown = !teaAnswerIsShown">
+      <fa-icon [icon]="'arrow-down'"></fa-icon>
+      <span class="ps-2">Vaata lahendust</span></button>
+    <button *ngIf="teaAnswerIsShown" class="btn btn-self-test m-2" (click)="teaAnswerIsShown = !teaAnswerIsShown">
+      <fa-icon [icon]="'arrow-up'"></fa-icon>
+      <span class="ps-2">Peida lahendus</span></button>
+  </div>
+  <div *ngIf="teaAnswerIsShown" class="text-center">
+    <img src="../../../assets/images/algorithm/mari_tea_algorithm.png" alt="mari tea algorithm" style="height: 50rem" class="my-3">
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'kordused'">Kordused</h4>
+<div class="mt-4 box-container">
+  <div class="row mx-0">
+    <div class="col-md-12 col-lg-9">
+      <div><span>Vahepeal on meil vaja mõnda tegevust mitu korda teha ning me ei pruugi korduste arvu täpselt ette teada. Näiteks kui teeme süüa ja peame
+      toitu soolaga maitsestama, siis lisame toidule natuke soola, segame ja maitseme. Kui toit on veel mage, siis lisame uuesti soola, segame ja maitseme. Nii seni
+      kuni toit on parajalt soolane. Aga me ei pruugi ette teada, kas peame maitsestamist tegema üks, kaks, kolm või isegi rohkem kordi.</span>
+      </div>
+      <div><span class="mt-2">Plokkskeemiga on sellist kordust üsna lihtne kujutada. Saame lisada kontrollploki tingimusega "Kas toit on piisavalt soolane?" ning sellele
+      kaks haru, kui on piisavalt soolane, siis lähme edasi järgmise algoritmi sammu juurde, kui ei ole, siis lisame soola ja segame. Siis saame lisada noole tagasi
+      kontrollplokini ja kontrollida uuesti, kas toit on piisavalt soolane.</span></div>
+      <div>
+        <img src="../../../assets/images/algorithm/seasoning.png" alt="seasoning" class="height-10rem mt-4">
+      </div>
+    </div>
+    <div class="col-lg-3 my-3">
+      <img src="../../../assets/images/algorithm/seasoning_algorithm.png" alt="seasoning algorithm" style="height: 25rem">
+    </div>
+  </div>
+</div>
+<div class="mt-4 box-container">
+  <div><span>Järgnevalt on kirja pandud pannkookide valmistamise retsept. Proovi kas suudad selle põhjal plokkskeemi teha! Siin on plokkskeemi koostamiseks
+  mitmeid variante, kui jääd hätta, võid vaadata ühte meie lahendustest.</span></div>
+</div>
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll. Proovi koostada Mari kirjelduse põhjal pannkookide küpsetamise plokkskeem</h5>
+  <div class="mt-3 box-container">
+    <div class="row mx-0">
+      <div class="col-md-12 col-lg-9"><span class="fst-italic">Valmista munadest, suhkrust, jahust, soolast, piimast ja võist tainas. Kuumuta pann. Lisa paras kogus tainast pannile ning
+      küpseta kuni pannkook on alt kuldne. Siis pööra kook ringi ja küpseta ka teiselt poolt, kuni kook on mõlemalt poolt kuldne. Tõsta valmis kook pannilt taldrikule. Jätka
+      niimoodi kookide küpsetamist kuni kogu tainas on otsas.</span></div>
+      <div class="col-md-12 col-lg-2 mx-3">
+        <img src="../../../assets/images/algorithm/pancakes.png" alt="pancakes" class="height-10rem">
+      </div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button *ngIf="!pancakeAnswerIsShown" class="btn btn-self-test m-2"
+            (click)="pancakeAnswerIsShown = !pancakeAnswerIsShown">
+      <fa-icon [icon]="'arrow-down'"></fa-icon>
+      <span class="ps-2">Vaata lahendust</span></button>
+    <button *ngIf="pancakeAnswerIsShown" class="btn btn-self-test m-2"
+            (click)="pancakeAnswerIsShown = !pancakeAnswerIsShown">
+      <fa-icon [icon]="'arrow-up'"></fa-icon>
+      <span class="ps-2">Peida lahendus</span></button>
+  </div>
+  <div *ngIf="pancakeAnswerIsShown" class="text-center">
+    <img src="../../../assets/images/algorithm/pancake_algorithm.png" alt="pancake algorithm" style="height: 60rem" class="my-3">
+  </div>
+</div>
+<button [routerLink]="'/algoritm'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>
