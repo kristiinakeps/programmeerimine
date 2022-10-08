@@ -32,7 +32,19 @@
           <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'kordused'" (click)="collapseNavbar()">Kordused</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Muutujad ja avaldised</a>
+          <a class="nav-link" [routerLink]="'muutujad'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Muutujad ja avaldised</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'andmed'" (click)="collapseNavbar()">Andmetüübid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'muutujad'" (click)="collapseNavbar()">Muutujad</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'tehted'" (click)="collapseNavbar()">Tegevused andmetüüpidega</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Tingimuslaused</a>

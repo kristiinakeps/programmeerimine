@@ -7,10 +7,15 @@ $navbar-sidebar-width: 20rem;
 $navbar-sidebar-breakpoint: 'md';
 
 $color-pink: #de2899;
+$color-pink-dark: #9e20d4;
 $color-dark: #000000;
 $color-purple: #5a4d94;
 $color-purple-dark: #40366e;
 $color-purple-light: #6858ad;
+$color-lavender-extra-light: #efe6ff;
+$color-lavender-light: #d9c1f1;
+$color-lavender: #886ba8;
+$color-lavender-dark: #614681;
 $color-green: #83d143;
 $color-green-light: #e0ffc7;
 $color-green-dark: #386315;
@@ -24,6 +29,8 @@ $color-background: #f7f7f7;
 $color-white: #ffffff;
 $color-grey: #dcdce0;
 $color-grey-light: #f2f2f7;
+$color-grey-dark: #6f6f72;
+$color-orange: #fa6a26;
 
 @font-face {
   font-family: Nunito;
@@ -271,12 +278,47 @@ a:hover {
   box-shadow: 0 0 0 .2rem rgba(52, 44, 97, 0.35)
 }
 
+.btn-hint {
+  background-color: $color-lavender;
+  border-color: $color-lavender;
+  color: $color-white;
+}
+
+.btn-hint:hover {
+  background-color: $color-lavender-dark;
+  border-color: $color-lavender-dark;
+  color: $color-white;
+}
+
+.btn-hint:focus {
+  background-color: $color-lavender;
+  border-color: $color-lavender;
+  color: $color-white;
+  box-shadow: 0 0 0 .2rem rgba(77, 69, 100, 0.35)
+}
+
+.form-check-input:checked {
+  background-color: $color-blue-dark;
+}
+
+.form-check .form-check-input:focus  {
+  box-shadow:  0 0 0 .2rem rgba(65, 139, 246, 0.35)
+}
+
+.height-20rem {
+  height: 20rem;
+}
+
 .height-15rem {
   height: 15rem;
 }
 
 .height-10rem {
   height: 10rem;
+}
+
+.height-5rem {
+  height: 5rem;
 }
 
 .drag-and-drop-list {
@@ -327,4 +369,60 @@ a:hover {
   border: dotted 3px $color-grey;
   min-height: 60px;
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.drag-and-drop-container {
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.table-custom tbody {
+  border-color: inherit !important;
+}
+
+.btn-outlined-none {
+  background-color: $color-white;
+  border-color: $color-blue-dark;
+  color: $color-blue-dark;
+}
+
+.btn-outlined-correct {
+  background-color: $color-green-light;
+  border-color: $color-green-dark;
+  color: $color-green-dark;
+}
+
+.btn-outlined-incorrect {
+  background-color: $color-red-light;
+  border-color: $color-red-dark;
+  color: $color-red-dark;
+}
+
+.code-string {
+  color: $color-green-dark;
+}
+
+.code-function {
+  color: $color-pink-dark;
+}
+
+.code-comment {
+  color: $color-grey-dark;
+}
+
+.code-number {
+  color: $color-orange;
+}
+
+.code-input {
+  color: $color-blue-dark;
+}
+
+.hint-container {
+  background-color: $color-lavender-extra-light;
+  border: solid 2px $color-lavender-light;
+  border-radius: 0.5rem;
+  padding: 1rem;
 }

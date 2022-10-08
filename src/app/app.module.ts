@@ -9,11 +9,17 @@ import {HomeComponent} from './layouts/home/home.component';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {SingleChoiceTestComponent} from './layouts/single-choice-test/single-choice-test.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {faArrowDown, faArrowRight, faArrowRotateRight, faArrowUp} from '@fortawesome/free-solid-svg-icons';
+import {faArrowDown, faArrowLeft, faArrowRight, faArrowRotateRight, faArrowUp} from '@fortawesome/free-solid-svg-icons';
 import {AlgorithmComponent} from './algorithm/algorithm.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {ReorderTestComponent} from './layouts/reorder-test/reorder-test.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { VariablesComponent } from './variables/variables.component';
+import { CategorizeTestComponent } from './layouts/categorize-test/categorize-test.component';
+import { FillBlankDropdownTestComponent } from './layouts/fill-blank-dropdown-test/fill-blank-dropdown-test.component';
+import { ExerciseHintsComponent } from './layouts/exercise-hints/exercise-hints.component';
+import { MultichoiceTestComponent } from './layouts/multichoice-test/multichoice-test.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,12 +29,19 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     IntroductionComponent,
     SingleChoiceTestComponent,
     AlgorithmComponent,
-    ReorderTestComponent
+    ReorderTestComponent,
+    VariablesComponent,
+    CategorizeTestComponent,
+    FillBlankDropdownTestComponent,
+    ExerciseHintsComponent,
+    MultichoiceTestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
     DragDropModule,
     BrowserAnimationsModule
@@ -42,5 +55,6 @@ export class AppModule {
     library.addIcons(faArrowRight)
     library.addIcons(faArrowDown)
     library.addIcons(faArrowUp)
+    library.addIcons(faArrowLeft)
   }
 }

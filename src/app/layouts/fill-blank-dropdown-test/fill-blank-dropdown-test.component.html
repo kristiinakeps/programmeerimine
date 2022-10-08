@@ -1,0 +1,20 @@
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll.</h5>
+  <div class="my-3"><span>{{ title }}</span></div>
+  <div *ngFor="let item of items" class="mt-2">
+    <div class="d-inline-block"><span>{{ item.textBeforeBlank }}</span></div>
+    <div ngbDropdown class="d-inline-block mx-2">
+      <button type="button" class="btn btn-outlined-{{ item.color }}" id="dropdown" ngbDropdownToggle>{{ item.selectedOption }}</button>
+      <div ngbDropdownMenu aria-labelledby="dropdown">
+        <button *ngFor="let option of item.options" (click)="changeSelectedOption(item, option)" ngbDropdownItem>{{ option }}</button>
+      </div>
+    </div>
+    <div class="d-inline-block"><span>{{ item.textAfterBlank }}</span></div>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-self-test m-2" (click)="check()">Kontrolli</button>
+  </div>
+  <div *ngIf="showFeedback" class="mt-2" [ngClass]="{'feedback-correct': isCorrect, 'feedback-incorrect': !isCorrect}">
+    {{ isCorrect ? correct : incorrect }}
+  </div>
+</div>

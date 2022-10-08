@@ -1,0 +1,25 @@
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll.</h5>
+  <div class="my-3"><span>Lohista kõik väärtused õigete andmetüüpide alla.</span></div>
+  <div cdkDropListGroup>
+    <div *ngFor="let category of categories" class="drag-and-drop-container">
+      <h5 class="self-test">{{ category.text }}</h5>
+      <div
+        cdkDropList
+        [cdkDropListData]="category.items"
+        class="drag-and-drop-list drag-and-drop-list-categorize"
+        (cdkDropListDropped)="drop($event)">
+        <div class="drag-and-drop-box" *ngFor="let item of category.items" cdkDrag>
+          <div class="drag-and-drop-placeholder" *cdkDragPlaceholder></div>
+          {{ item.text }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-self-test m-2" (click)="check()">Kontrolli</button>
+  </div>
+  <div *ngIf="showFeedback" class="mt-2" [ngClass]="{'feedback-correct': isCorrect, 'feedback-incorrect': !isCorrect}">
+    {{ feedbackText }}
+  </div>
+</div>
+
