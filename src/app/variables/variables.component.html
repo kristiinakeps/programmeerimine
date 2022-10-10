@@ -4,7 +4,8 @@
   <div><span>1. Mis on andmetüübid?</span></div>
   <div><span>2. Milliseid andmetüüpe on olemas?</span></div>
   <div><span>3. Mis on muutujad?</span></div>
-  <div><span>4. Kuidas kirjutada lihtsaid avaldisi?</span></div>
+  <div><span>4. Mis tehteid saab erinevate andmetüüpitega teha?</span></div>
+  <div><span>5. Kuidas kirjutada lihtsaid avaldisi ja programme?</span></div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Selles peatükis alustame ka programmeerimisega, seega sul võiks olla arvutisse paigaldatud arenduskeskkond (näiteks Thonny).</span>
@@ -38,8 +39,9 @@
     kasutatakse tüübinimena jällegi lühendatud varianti <span class="fst-italic"><strong
       class="strong">str</strong></span>.</span>
   </div>
-  <div class="mt-2"><span><strong class="strong">Tõeväärtusel</strong> on ainult kaks võimalikku väärtust: tõene või väär. Nii inglise keeles kui ka Pythonis
-    nimetatakse seda tüüpi <span class="fst-italic"><strong class="strong">boolean</strong></span>. Tõene on inglise keeles
+  <div class="mt-2"><span><strong class="strong">Tõeväärtusel</strong> on ainult kaks võimalikku väärtust: tõene või väär. Inglise keeles
+    nimetatakse seda tüüpi <span class="fst-italic">boolean</span> ning Pythonis kasutatakse tüübinimena lühendatud varianti
+    <span class="fst-italic"><strong class="strong">bool</strong></span>. Tõene on inglise keeles
   <span class="fst-italic">true</span> ja Pythonis kirjutatakse see veel ka suure tähega  <span
       class="fst-italic">True</span>. Väär on
     inglise keeles <span class="fst-italic">false</span> ning Pythonis <span class="fst-italic">False</span>.</span>
@@ -207,54 +209,46 @@
     <table class="table table-bordered table-custom" aria-describedby="tehted">
       <thead>
       <tr>
-        <th>Tehe</th>
-        <th>Tehtemärk programmeerides</th>
         <th>Avaldis</th>
         <th>Väärtus</th>
+        <th>Selgitus</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td>Liitmine</td>
-        <td>+</td>
         <td>2 + 5</td>
         <td>7</td>
+        <td>Liitmine</td>
       </tr>
       <tr>
-        <td>Lahutamine</td>
-        <td>-</td>
         <td>5 - 2</td>
         <td>3</td>
+        <td>Lahutamine</td>
       </tr>
       <tr>
-        <td>Korrutamine</td>
-        <td>*</td>
         <td>2 * 5</td>
         <td>10</td>
+        <td>Korrutamine</td>
       </tr>
       <tr>
-        <td>Jagamine</td>
-        <td>/</td>
         <td>5 / 2</td>
         <td>2.5</td>
+        <td>Jagamine (tulemuseks alati ujukomaarv)</td>
       </tr>
       <tr>
-        <td>Täisosa leidmine</td>
-        <td>//</td>
         <td>5 // 2</td>
         <td>2</td>
+        <td>Täisosa leidmine (sarnane jagamisele, aga tulemuseks on alati täisav)</td>
       </tr>
       <tr>
-        <td>Astendamine</td>
-        <td>**</td>
         <td>5 ** 2</td>
         <td>25</td>
+        <td>Astendamine</td>
       </tr>
       <tr>
-        <td>Jäägi leidmine</td>
-        <td>%</td>
         <td>5 % 2</td>
         <td>1</td>
+        <td>Jäägi leidmine</td>
       </tr>
       </tbody>
     </table>
@@ -271,89 +265,60 @@
   ujukomaarv. Seega on 21 / 3 tulemus 7.0, mitte 7.</span></div>
 </div>
 <div class="mt-3 box-container">
-  <div><strong>Tehted sõnedega</strong></div>
+  <div><strong class="strong">Tehted sõnedega</strong></div>
   <div class="mt-2"><span>Sõnedega on samuti võimalik erinevaid tehteid teha. Näiteks saame sõnesid omavahel liita ja sõnet korrutada mingi arvuga.
   Siin aga pole tulemused võib-olla nii iseenesest mõistetavad kui arvudega toimetades. Sõnesid liites saame tulemuseks uue sõne, mis on kokku pandud liidetavatest.
     Sõnet arvuga korrutades liidetakse sõnet iseendaga see arv kordi. Lisaks on sõnedel terve hulk erinevaid meetodeid, mis näiteks muudavad kõik
-  sõnes olevad tähed trükitähtedeks või hoopis muudavad iga sõna esimese tähe suureks. Samuti on selliseid meetodeid, mis ei muuda sõnet, vaid kontrollivad, kas
-    see algab näiteks mingite kindlate tähtedega või vaatavad kas sõne sisaldab ainult numbreid. Sellised meetodid annavad tulemuseks hoopis tõeväärtuse.
-    Meetodid lisatakse sõnede külge punktiga ja meetodi lõpus on sulud. </span></div>
+  sõnes olevad tähed trükitähtedeks või hoopis muudavad iga sõna esimese tähe suureks. Meetodid lisatakse sõnede külge punktiga ja meetodi lõpus on sulud. </span></div>
   <div class="mt-3">
     <table class="table table-bordered table-custom" aria-describedby="tehted">
       <thead>
       <tr>
-        <th>Tehe</th>
-        <th>Tehtemärk/meetod programmeerides</th>
         <th>Avaldis</th>
         <th>Väärtus</th>
+        <th>Selgitus</th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td>Liitmine (sõnede vahel)</td>
-        <td>+</td>
         <td>"Tere" + " päevast!"</td>
         <td>"Tere päevast!"</td>
+        <td>Sõnede liitmine</td>
       </tr>
       <tr>
-        <td>Korrutamine (sõne ja arvu vahel)</td>
-        <td>*</td>
         <td>"Tere" * 3</td>
         <td>"TereTereTere"</td>
+        <td>Korrutamine sõne ja arvu vahel</td>
       </tr>
       <tr>
-        <td>Suurtähtedeks muutmine</td>
-        <td>upper()</td>
         <td>"Tere".upper()</td>
         <td>"TERE"</td>
+        <td>Muudab sõnes kõik tähed suureks</td>
       </tr>
       <tr>
-        <td>Väiketähtedeks muutmine</td>
-        <td>lower()</td>
         <td>"Tere".lower()</td>
         <td>"tere"</td>
+        <td>Muudab sõnes kõik tähed väikseks</td>
       </tr>
       <tr>
-        <td>Iga sõna algustäht suureks</td>
-        <td>capitalize()</td>
-        <td>"Tere päevast! täna on ilus ilm.".capitalize()</td>
-        <td>"Tere Päevast! Täna On Ilus Ilm"</td>
-      </tr>
-      <tr>
-        <td>Iga lause algustäht suureks</td>
-        <td>title()</td>
         <td>"Tere päevast! täna on ilus ilm.".title()</td>
+        <td>"Tere Päevast! Täna On Ilus Ilm"</td>
+        <td>Muudab iga sõna algustähe suureks</td>
+      </tr>
+      <tr>
+        <td>"Tere päevast! täna on ilus ilm.".capitalize()</td>
         <td>"Tere päevast! Täna on ilus ilm."</td>
+        <td>Muudab iga lause algustäht suureks</td>
       </tr>
       <tr>
-        <td>Kas sõne algab etteantud sõnega</td>
-        <td>startswith()</td>
-        <td>"Tere päevast!".startswith("Te")</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>Kas sõne lõppeb etteantud sõnega</td>
-        <td>endswith()</td>
-        <td>"Tere päevast!".endswith("Te")</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>Kas sõne sisaldab ainult numbreid</td>
-        <td>isdigit()</td>
-        <td>"123".isdigit()</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>Sümboli asendamine teisega</td>
-        <td>replace()</td>
         <td>"Tere päevast!".replace("e", "ö")</td>
         <td>"Törö päövast!"</td>
+        <td>Asendab sõnes etteantud sõned teise etteantud sõnega</td>
       </tr>
       <tr>
-        <td>Ühe sõne esinemiste arv teises sõnes</td>
-        <td>count()</td>
         <td>"Aias sadas saia".count("as")</td>
         <td>2</td>
+        <td>Loendab etteantud sõne esinemiste arvu sõnes</td>
       </tr>
       </tbody>
     </table>
@@ -404,11 +369,40 @@
     <img src="../../../assets/images/variables/name_kpt.png" alt="name_kpt" class="height-5rem">
   </div>
 </div>
-<app-fil-blank-dropdown-test [title]="'Vali iga avaldise jaoks rippmenüüst sobiv tehtemärk.'"
-                             [items]="operatorsTest"></app-fil-blank-dropdown-test>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Andmetüüpide teisendamine</strong></div>
+  <div class="mt-2"><span>Vahepeal on meil vaja andmeid teisendada ühest tüübist teise. <span class="fst-italic">Input</span>-käsk annab meile
+  tulemuse alati sõnena, isegi kui kasutaja sisestab mingi arvu. Kui aga tahame kasutaja sisendit arvuna kasutada ja sellega näiteks arvutusi teha,
+    siis peame sisendi ise käsitsi <span class="fst-italic">int</span>- või <span class="fst-italic">float</span>-tüübiks teisendama. Tüübiteisendusteks
+  kasutatavad käsud on täpselt samade nimedega nagu tüübid ise: <span class="fst-italic">int(), float(), str(), bool()</span>. Järgnevalt on mõned näited
+  tüübiteisendustest:</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-function">str</span>(<span class="code-number">12</span>) <span class="code-comment">#"12"</span><br></span>
+    <span><span class="code-function">str</span>(<span class="code-number">13.5</span>) <span class="code-comment">#"13.5"</span><br></span>
+    <span><span class="code-function">str</span>(<span class="code-bold">True</span>) <span class="code-comment">#"True"</span><br><br></span>
+    <span><span class="code-function">int</span>(<span class="code-string">"12"</span>) <span class="code-comment">#12</span><br></span>
+    <span><span class="code-function">int</span>(<span class="code-number">12.5</span>) <span class="code-comment">#12</span><br></span>
+    <span><span class="code-function">int</span>(<span class="code-bold">True</span>) <span class="code-comment">#1</span><br><br></span>
+    <span><span class="code-function">float</span>(<span class="code-number">5</span>) <span class="code-comment">#5.0</span><br></span>
+    <span><span class="code-function">float</span>(<span class="code-string">"13.7"</span>) <span class="code-comment">#13.7</span><br></span>
+    <span><span class="code-function">float</span>(<span class="code-bold">True</span>) <span class="code-comment">#1.0</span><br><br></span>
+    <span><span class="code-function">bool</span>(<span class="code-string">""</span>) <span class="code-comment">#False</span><br></span>
+    <span><span class="code-function">bool</span>(<span class="code-string">"Tere"</span>) <span class="code-comment">#True</span><br></span>
+    <span><span class="code-function">bool</span>(<span class="code-number">0</span>) <span class="code-comment">#False</span><br></span>
+    <span><span class="code-function">bool</span>(<span class="code-number">6</span>) <span class="code-comment">#True</span><br></span>
+    <span><span class="code-function">bool</span>(<span class="code-number">13.7</span>) <span class="code-comment">#True</span><br><br></span>
+    <span><span class="code-function">int</span>(<span class="code-string">"Tere"</span>) <span class="code-comment">#ValueError: invalid literal for int() with base 10: 'Tere'</span><br></span>
+  </div>
+  <div class="mt-2"><span>Sõnede teisendamisel täisarvudeks ja ujukomaarvudeks on oluline, et sõne sisu oleks arv. Kui proovime näiteks sõnet "Tere"
+  teisendada <span class="fst-italic">int</span>-tüübiks, saame hoopis veateate. Tõeväärtuste teisendamine on ka huvitav. Kui teisendada sõne teõväärtuseks, siis
+  on tulemus <span class="fst-italic">False</span> juhul kui sõne on tühi ja <span class="fst-italic">True</span> kui seal on vähemalt üks täht, number või sümbol. Arvude
+  teisendamisel tõeväärtuseks on tulemus <span class="fst-italic">False</span> juhul kui arv on 0 ning kõikide teiste arvude puhul on tulemus <span class="fst-italic">True</span>.</span></div>
+</div>
+<app-fill-blank-dropdown-test [title]="'Vali iga avaldise jaoks rippmenüüst sobiv tehtemärk.'"
+                             [items]="operatorsTest"></app-fill-blank-dropdown-test>
 <h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
-  <div><strong>Tervitus</strong></div>
+  <div><strong class="strong">Tervitus</strong></div>
   <div class="mt-2"><span>Proovi kirjutada programm, mis küsiks kasutajalt tema nime (ees- ja perekonnanimi) ning tervitaks teda nimeliselt.
   Programm peaks kuvama nii ees- kui perekonnanime algustähe suurelt ja ülejäänud tähed väikselt (sidekriipsuga nimedega ei pea
   programm õigesti töötama). Mõned näited programmitööst:</span></div>
@@ -429,7 +423,7 @@
 <div class="mt-3 box-container">
   <div class="row mx-0">
     <div class="col-md-12 col-lg-8">
-      <div><strong>Võileivatort</strong></div>
+      <div><strong class="strong">Võileivatort</strong></div>
       <div class="mt-2"><span>Mari tahab oma sünnipäeval külalistele võileivatorti pakkuda ja tal on juba tordi tegemiseks röstsaiapakid
   ostetud. Ta teab ka mitu külalist ta sünnipäevale tuleb. Kirjuta programm, mis aitaks Maril arvutada, mitme kihiga tordi ta teha saab
     (eeldusel, et igaüks saab ühe tüki).
@@ -459,7 +453,9 @@
   </div>
   <app-exercise-hints [hints]="sandwichCakeExerciseHints"></app-exercise-hints>
 </div>
-<button [routerLink]="" class="btn btn-primary my-5 float-end">
+<button [routerLink]="'/tingimuslaused'" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>
   <span class="ps-2">Järgmine peatükk</span></button>
 <!--todo:sõnede kohta veel -> erisümbolid, jutumärgid ja ülakomad, escape'imine-->
+<!--todo:Thonny kasutamine, kuidas luua uut programmi faili, käivitada-->
+<!--todo: tääkida ka arvutamisel tehete järjekorrast?-->

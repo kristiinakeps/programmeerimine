@@ -20,6 +20,7 @@ import { FillBlankDropdownTestComponent } from './layouts/fill-blank-dropdown-te
 import { ExerciseHintsComponent } from './layouts/exercise-hints/exercise-hints.component';
 import { MultichoiceTestComponent } from './layouts/multichoice-test/multichoice-test.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ConditionsComponent } from './conditions/conditions.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     CategorizeTestComponent,
     FillBlankDropdownTestComponent,
     ExerciseHintsComponent,
-    MultichoiceTestComponent
+    MultichoiceTestComponent,
+    ConditionsComponent
   ],
   imports: [
     BrowserModule,

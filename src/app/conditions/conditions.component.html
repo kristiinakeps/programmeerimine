@@ -1,0 +1,482 @@
+<h1>TINGIMUSLAUSED</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on tingimuslaused?</span></div>
+  <div><span>2. Kuidas tingimuslauseid kirjutada?</span></div>
+  <div><span>4. Millised on tõeväärtustehted?</span></div>
+  <div><span>5. Kuidas tõeväärtusi kombineerida?</span></div>
+  <div><span>3. Kuidas koostada mitmeharulist tingimuslauset?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kas mäletad kuidas algoritmide peatükis joonistasime plokkskeeme, mis teatud tingimustel hargnesid? Selles peatükis
+    õpime neid tingimusi ka programmis kirja panema.
+  </span>
+  </div>
+</div>
+<h4 class="mt-5">Mis on tingimuslaused?</h4>
+<div class="mt-3 box-container">
+  <div><span>Vahepeal on meil vaja teatud tingimustel teha mõnda tegevust. Näiteks kui õues on külm, paned õue minnes jope selga. Või kui on koolipäev,
+  siis lähed kooli. Programmeerides kasutatakse selliste olukordade kirjeldamiseks <strong class="strong">tingimuslauseid</strong>. Juba algoritmide
+  peatükis vaatasime, kuidas neid plokkskeemil kujutada. Näiteks järgmine plokkskeem annab soovitusi ühele külmavaresele riietumise osas:</span>
+  </div>
+  <div class="mt-3"><span>Kuidas aga sama asja koodis kirja panna?</span></div>
+  <div class="mt-3"><span>Pythonis kasutatakse tingimuslause alustamiseks võtmesõna <strong
+    class="fst-italic strong">if</strong>,
+    mis tähenab inglise keeles "kui". Võtmesõnale <span class="fst-italic">if</span> järgneb tingimus. Tingimuse lõpus peab olema koolon. Kõik read, mida tahame täita, kui tingimus on tõene, peavad olema taandega. Igal
+  tingimuslausel peab olema vähemalt üks taandega rida, mida täidetakse, kui tingimus on tõene. Selleks, et minna edasi selle programmi osaga, mis
+  ei sõltu tingimusest, vähendame taanet.</span></div>
+  <div class="code-block mt-2">
+    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
+      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
+    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane jope selga!"</span>)</span>
+  </div>
+  <div class="mt-3"><span>See programm väljastab "Pane jope selga!" kui sisestatud temperatuur on väiksem kui 15. Kui see tingimus ei ole täidetud ehk
+  temperatuur on 15 või kõrgem, siis ei väljasta programm midagi. Nüüd proovime aga kasutajale veel "Ilusat päeva!" soovida, olenemata sellest, mis temperatuur
+  õues on:</span></div>
+  <div class="code-block mt-2">
+    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
+      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
+    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane jope selga!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+  </div>
+  <div class="mt-3"><span>Selles näites kasutasime tingimuse koostamiseks "väiksem kui" märki. Kuid mida saab veel tingimuste koostamiseks kasutada?</span>
+  </div>
+</div>
+<h4 class="mt-5">Tõeväärtustehted</h4>
+<div class="mt-3 box-container">
+  <div><span>Vaatame nüüd tüüpilisemaid tõeväärtustehteid ehk tehteid, mille tulemuseks on tõeväärtus <span
+    class="fst-italic">True</span> või
+  <span class="fst-italic">False</span>. Neid kõiki saab tingimustes kasutada.</span>
+  </div>
+  <div class="mt-3">
+    <table class="table table-bordered table-custom" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 25%">Avaldis</th>
+        <th>Väärtus</th>
+        <th>Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>3 == 3.0</td>
+        <td>True</td>
+        <td rowspan="3">Kuna üks võrdusmärk tähendab Pythonis omistamist, kasutatakse kahe väärtuse võrdsuse
+          kontrollimiseks kahte võrdusmärki.
+          Nii saab kontrollida võrdsust nii arvude kui sõnede vahel.
+        </td>
+      </tr>
+      <tr>
+        <td>"Tere" == "Tere"</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>3 == 5</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>"Tere" == "tere"</td>
+        <td>False</td>
+        <td>Sõnede võrlemisel tehakse suurtel ja väikestel tähtedel vahet.</td>
+      </tr>
+      <tr>
+        <td>"4.0" == 4.0</td>
+        <td>False</td>
+        <td>Sõne pole kunagi arvuga võrdne.</td>
+      </tr>
+      <tr>
+        <td>3 != 2</td>
+        <td>True</td>
+        <td rowspan="2">Hüüumärk ja võrdusmärk kontrollib mittevõrdumist. Seda saab samuti kasutada nii arvude kui
+          sõnedega.
+        </td>
+      </tr>
+      <tr>
+        <td>"Tere" != "tere"</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>3 > 2</td>
+        <td>True</td>
+        <td rowspan="4">Arvude puhul saame kasutada ka "suurem kui", "väiksem kui", "suurem võrdne kui" ja "väiksem
+          võrdne kui" võrdlusi.
+        </td>
+      </tr>
+      <tr>
+        <td>3 >= 2</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>3 < 2</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>3 =< 3</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>"abc" < "def"</td>
+        <td>True</td>
+        <td>Sõnede puhul saame kasutada samu võrdlusi, kuid võrdlemine käib tähestiku järgi.</td>
+      </tr>
+      <tr>
+        <td>"Tere" > "tere"</td>
+        <td>False</td>
+        <td>Kusjuures suured tähed on siin eespool väikestest tähtedest ja seega "T" saab väiksema väärtuse kui "t".
+        </td>
+      </tr>
+      <tr>
+        <td>"re" in "Tere"</td>
+        <td>True</td>
+        <td rowspan="2"><span class="fst-italic">in</span> kontrollib tähe või alamsõne leidumist sõnes</td>
+      </tr>
+      <tr>
+        <td>"o" in "Tere"</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>"Tere päevast!".startswith("Te")</td>
+        <td>True</td>
+        <td rowspan="2">Kontrollib, kas sõne algab etteantud sõnega</td>
+      </tr>
+      <tr>
+        <td>"Tere päevast!".startswith("!")</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>"Tere päevast!".endswith("!")</td>
+        <td>True</td>
+        <td rowspan="2">Kontrollib, kas sõne lõppeb etteantud sõnega</td>
+      </tr>
+      <tr>
+        <td>"Tere päevast!".endswith("Te")</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>"123".isdigit()</td>
+        <td>True</td>
+        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult numbreid</td>
+      </tr>
+      <tr>
+        <td>"12a".isdigit()</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>"abc".isalpha()</td>
+        <td>True</td>
+        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult tähti</td>
+      </tr>
+      <tr>
+        <td>"12a".isalpha()</td>
+        <td>False</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Tõeväärtuste kombineerimine</strong></div>
+  <div class="mt-3"><span>Nägime just milliseid tehteid on võimalik kasutada tõeväärtuste saamiseks. Kuid kas tõeväärtuste endiga saame ka mingeid tehteid teha?
+  Saame küll. Me saame tõeväärtusi omavahel kombineerida <strong class="strong">loogiliste tehete</strong> abil. Neid loogilisi tehteid on kolm:
+  <strong class=" fst-italic strong">and</strong>, <strong class=" fst-italic strong">or</strong> ja <strong
+      class=" fst-italic strong">not</strong>.
+  Eesti keeles tähendaksid need <span class="fst-italic">ja</span>, <span class="fst-italic">või</span> ning <span
+      class="fst-italic">ei</span>.
+  Tulemuseks annavad need samuti tõeväärtuse.</span>
+  </div>
+  <div class="mt-3">
+    <table class="table table-bordered table-custom" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th>Loogiline tehe</th>
+        <th>Avaldis</th>
+        <th>Väärtus</th>
+        <th>Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td rowspan="4">and</td>
+        <td>True and True</td>
+        <td>True</td>
+        <td rowspan="4">Tulemus on tõene ainult siis kui kõik tehte <span class="fst-italic">and</span> abil seotud
+          tõeväärtused on tõesed.
+        </td>
+      </tr>
+      <tr>
+        <td>True and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>False and True</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>False and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td rowspan="4">or</td>
+        <td>True and True</td>
+        <td>True</td>
+        <td rowspan="4">Tulemus on tõene siis, kui vähemalt üks <span class="fst-italic">or</span> abil seotud
+          tõeväärtustest on tõene.
+        </td>
+      </tr>
+      <tr>
+        <td>True and False</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>False and True</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>False and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td rowspan="2">not</td>
+        <td>not True</td>
+        <td>False</td>
+        <td rowspan="2">Tehe <span class="fst-italic">not</span> pöörab tõeväärtuse ümber.</td>
+      </tr>
+      <tr>
+        <td>not False</td>
+        <td>True</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-3"><span>Võime neid tehteid kasutades erinevaid tõeväärtustehteid omavahel kombineerida, kuid tähtis on ka
+  nende tehete prioriteet. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
+  rakendub <span class="fst-italic">and</span> ning viimasena <span class="fst-italic">or</span>.</span>
+  </div>
+  <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame mis järjekorras siis tehteid tehakse.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span class="code-number">5</span> &lt; <span class="code-number">4 </span><span class="code-bold">and </span> <span
+    class="code-number">3</span> &gt;
+    <span class="code-number">2 </span><span class="code-bold">or not </span><span class="code-number">2</span> &gt;
+    <span class="code-number">4 </span><span class="code-bold">and </span>
+    <span class="code-number">5</span> &gt; <span class="code-number">4</span>
+  </div>
+  <div class="mt-3"><span>Esimese asjana võime kõik tõeväärtustehted asendada nende tõeväärtustega.</span></div>
+  <div class="code-block mt-2">
+    <span class="code-bold">False and True or not False and True</span>
+  </div>
+  <div class="mt-3"><span>Nüüd võime rakendada <span class="fst-italic">not</span> loogilist tehet ja saame tulemuseks:</span>
+  </div>
+  <div class="code-block mt-2">
+    <span class="code-bold">False and True or True and True</span>
+  </div>
+  <div class="mt-3"><span>Seejärel võtame ette <span class="fst-italic">and</span> tehted.</span></div>
+  <div class="code-block mt-2">
+    <span class="code-bold">False or True</span>
+  </div>
+  <div class="mt-3"><span>Ja viimaseks jääb <span
+    class="fst-italic">or</span>, mis annab kogu avaldise tulemuseks:</span></div>
+  <div class="code-block mt-2">
+    <span class="code-bold">True</span>
+  </div>
+  <div class="mt-3"><span>Soovi korral saame sulgudega ise prioriteete ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
+  tehakse esimesena.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span class="code-number">5</span> &lt; <span class="code-number">4 </span><span class="code-bold">and </span>
+    (<span class="code-number">3</span> &gt;
+    <span class="code-number">2 </span><span class="code-bold">or not </span><span class="code-number">2</span> &gt;
+    <span class="code-number">4 </span><span class="code-bold">and </span>
+    <span class="code-number">5</span> &gt; <span class="code-number">4</span>)
+  </div>
+  <div class="mt-3"><span>Asendame tõeväärtustehted tõeväärtustega:</span></div>
+  <div class="code-block mt-2">
+    <span class="code-bold">False and </span>(<span class="code-bold">True or not False and True</span>)
+  </div>
+  <div class="mt-3"><span>Siinkohal tegelikult juba näeme, et ükskõik mis väärtuse saab sulgudes olev avaldis, kogu avaldise väärtus on
+  ikka <span class="fst-italic">False</span>, sest <span class="fst-italic">and</span> tehte esimene pool on juba <span
+      class="fst-italic">False</span>.
+  Ka Python on tegelikult piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
+  </div>
+</div>
+<app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest" [showArrow]="true"></app-fill-blank-dropdown-test>
+<h4 class="mt-5">Kuidas kirjutada rohkem kui ühe haruga tingimuslauseid?</h4>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Kaheharuline tingimuslause</strong></div>
+  <div class="mt-3"><span>Eelmises tingimuslause näites väljastasime "Pane jope selga!" kui temperatuur oli alla 15 kraadi. Kuid nüüd tahaksime väljastada ka "Jopet pole vaja!"
+  kui see tingimus ei olnud tõene. Selleks saame lisada tingimuslausele teise haru, mida täidetakse juhul, kui algne tingimus ei olnud tõene. Selle haru
+  loomiseks kasutatakse <strong class="fst-italic strong">else</strong> võtmesõna, millele järgneb koolon. <span
+      class="fst-italic">Else</span> tähendabki
+  inglise keeles "vastasel juhul". <span class="fst-italic">Else</span> peaks olema sama taandega nagu oli <span
+      class="fst-italic">if</span>
+  võtmeõnaga tingimuslause. Käsud, mida täidetakse <span class="fst-italic">else</span>-harus tuleb kirjutada jälle taandega.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
+      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
+    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane jope selga!"</span>)<br></span>
+    <span><span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Jopet pole vaja!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Tingimuslaused üksteise sees</strong></div>
+  <div class="mt-3"><span>Oletame nüüd, et tahaksime lisaks veel kontrollida, et äkki on
+  temperatuur lausa alla 0 kraadi ja sellisel juhul väljastada "Pane kasukas selga!". Üks variant selleks on lisada esimese <span
+      class="fst-italic">if</span>-lause
+  alla veel teinegi, mis siis kontrolliks, kas temperatuur on alla 0 kraadi. Selleks, et Pythoni interpretaator saaks aru, mis käsud kuhu alla lähevad
+  kasutame taandeid. Sisemise tingimuslause alla kuuluvad käsud peavad olema nüüd lausa kahe taandega.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
+      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
+    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> temperatuur &lt; <span class="code-number">0</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane kasukas selga!"</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane jope selga!"</span>)<br></span>
+    <span><span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Jopet pole vaja!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Mitmeharuline tingimuslause</strong></div>
+  <div class="mt-3"><span>Ilmselt märkad, et kui tahaksime nüüd veel tingimusi lisada, siis peaksime üksteise sisse päris palju
+  tingimuslauseid lisama ning kood võib minna natuke raskesti loetavaks. Õnneks on olemas ka lihtsustatud viis mitme haruga tingimuslausete
+  kirja panemiseks. Selleks kasutatakse seekord võtmesõna <strong class="fst-italic strong">elif</strong>. See on kokku pandud sõnadest
+  <span class="fst-italic">else</span> ja <span class="fst-italic">if</span> ning sellele võtmesõnale järgneb samuti tingimus ja koolon. Selliselt
+  võime <span class="fst-italic">elif</span>-tingimusi lisada nii palju kui tahame. Programm hakkab järjest neid tingimusi läbi käima kuni leiab mõne, mille
+  tingimus on tõene. Kui tõene tingimus on leitud, siis sellele järgnevaid <span class="fst-italic">elif</span> ja <span
+      class="fst-italic">else</span>
+  osasid üldse ei vaadatagi. Kui aga ei <span class="fst-italic">if</span> ega ükski <span
+      class="fst-italic">elif</span> tingimustest pole tõene, siis
+  täidetakse <span class="fst-italic">else</span> haru. Muidugi vaid juhul kui see on olemas, kui seda ei ole, siis minnakse lihsalt programmi täitmisega edasi.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
+      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
+    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">0</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Pane kasukas selga!"</span>)<br></span>
+    <span><span class="code-bold">elif</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Pane jope selga!"</span>)<br></span>
+    <span><span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Jopet pole vaja!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+  </div>
+  <div class="mt-3"><span>Pane tähele, et siin muutsime tingimuste järjekorda. Kõigepealt kontrollime, kas temperatuur on väiksem kui 0 ning alles siis,
+  kui see on väär, kontrollime, kas temperatuur on väiksem kui 15. Kas taipad miks me nii teeme? Mis juhtuks kui kontrolliksime kõigepealt kas
+  temperatuur on väiksem kui 15?</span>
+    <div class="mt-3"><span>Oletame, et meil on temperatuur -2 ning alustame sellest, et kontrollime, kas temperatuur on väiksem kui 15. See tingimus oleks
+  tõene, sest -2 on väiksem kui 15. Pärast esimese tõese tingimuse leidmist, programm enam teisi samas komplektis olevaid tingimusi edasi ei vaata. Seega -2 kraadi
+    korral prindiks meie programm välja "Pane jope selga!".</span>
+    </div>
+  </div>
+</div>
+<app-fill-blank-dropdown-test [title]="'Vali iga rea jaoks, kas seal ees peab olema taane või mitte.'" [items]="conditionsIndentationTest"></app-fill-blank-dropdown-test>
+<div class="mt-3 box-container">
+  <div><span>Tingimuslause võib koosneda ainult <span class="fst-italic">if</span>-lausest,
+  <span class="fst-italic">if</span>- ja <span class="fst-italic">else</span>-lausetest, <span
+      class="fst-italic">if</span>-
+  ja <span class="fst-italic">elif</span>-lausetest või kõigist kolmest. <span class="fst-italic">If</span>-lauseid võime oma
+  koodi ka üksteise järele kirjutada. Vaatame nüüd järgmist kahte koodijuppi. Pealtnäha tunduvad nad üsna sarnased, kuid käituvad
+  erinevalt.</span>
+  </div>
+  <div class="row mx-0 mt-2">
+    <div class="col-md-6 ">
+      <div class="code-block me-1">
+        <span>arv = <span class="code-number">4</span><br></span>
+        <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
+        <span><span class="code-bold">if</span> arv != <span class="code-number">5</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv ei ole 5."</span>)<br></span>
+        <span><span class="code-bold">if</span> arv == <span class="code-number">4</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv on 4."</span>)<br></span>
+        <span><span class="code-bold">if</span> arv % <span class="code-number">2</span> != <span class="code-number">0</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
+        <span><span class="code-bold">else</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paarisarvuga."</span>)</span>
+      </div>
+    </div>
+    <div class="col-md-6 ">
+      <div class="code-block ms-1">
+        <span>arv = <span class="code-number">4</span><br></span>
+        <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
+        <span><span class="code-bold">elif</span> arv != <span class="code-number">5</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv ei ole 5."</span>)<br></span>
+        <span><span class="code-bold">elif</span> arv == <span class="code-number">4</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv on 4."</span>)<br></span>
+        <span><span class="code-bold">elif</span> arv % <span class="code-number">2</span> != <span class="code-number">0</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
+        <span><span class="code-bold">else</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paarisarvuga."</span>)</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3"><span>Esimeses koodijupis on neli eraldiseisvat tingimuslauste konstruktsiooni ja viimasel neist on ka <span class="fst-italic">else</span>-haru.
+  Teises koodijupis on ainult üks tingimuslause konstruktsioon. Koodijuppide väljastused on järgmised:</span>
+  </div>
+  <div class="row mx-0 mt-2">
+    <div class="col-md-6">
+      <div class="code-block me-1">
+        <span class="fst-italic">Tegemist on positiivse arvuga.<br></span>
+        <span class="fst-italic">Arv ei ole 5.<br></span>
+        <span class="fst-italic">Arv on 4.<br></span>
+        <span class="fst-italic">Tegemist on paarisarvuga.<br></span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="code-block ms-1">
+        <span class="fst-italic">Tegemist on positiivse arvuga.<br><br><br><br></span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3"><span>Kuna esimesel juhul on iga tingimuslause eraldiseisev, siis minnakse igat tingimust kontrollima ja tõese tingimuse korral täidetakse
+  vastava haru sisu. Teisel juhul on aga üks tingimuslausete konstruktsioon ja seal lõpetatakse <span class="fst-italic">elif</span>-tingimuste
+  läbivaatus kohe kui leitakse esimene tõene tingimus.</span>
+  </div>
+</div>
+<app-multichoice-test [title]="'Vali kõik read, mis väljastatakse ekraanile.'" [code]="conditionsOutputLinesCode"
+                      [items]="condtionsOutputLinesTest" [formControlNameBase]="'conditionsOutput'"></app-multichoice-test>
+<h4 class="mt-5">Harjutused</h4>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Kontrolltööde hindamine</strong></div>
+  <div class="mt-2"><span>Õpetaja Maria hindab oma õpilaste matemaatika kontrolltöid. Tööst oli võimalik saada kokku 30 punkti.
+    Ta plaanis panna õpilastele hinded järgmise skeemi abil:</span></div>
+  <div class="mt-2"><span>Hinne 5: 26-30 punkti</span></div>
+  <div><span>Hinne 4: 20-25 punkti</span></div>
+  <div><span>Hinne 3: 10-19 punkti</span></div>
+  <div><span>Hinne 2: 0-9 punkti</span></div>
+  <div class="mt-2"><span>Kirjut programm, mis küsib kontrolltöös saadud punktide summat ning väljastab vastava hinde. Kui punkte on rohkem kui 30
+  või vähem kui 0, peaks programm kasutajale ütlema, et selline punktide arv pole võimalik. Mõned näited programmi tööst:</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta saadud punktide arv: <span class="code-input">27</span><br></span>
+    <span>Saadud hinne on 5.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta saadud punktide arv: <span class="code-input">25</span><br></span>
+    <span>Saadud hinne on 4.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta saadud punktide arv: <span class="code-input">34</span><br></span>
+    <span>Selline punktide arv pole võimalik.</span>
+  </div>
+  <app-exercise-hints [hints]="gradingExerciseHints"></app-exercise-hints>
+</div>
+<button [routerLink]="" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>

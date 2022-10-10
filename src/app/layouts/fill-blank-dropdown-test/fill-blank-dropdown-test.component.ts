@@ -3,7 +3,7 @@ import {FillBlankDropdownItem} from "../../models/fill-blank-dropdown-item.model
 import {CORRECT, INCORRECT, NONE} from "../../constants";
 
 @Component({
-  selector: 'app-fil-blank-dropdown-test',
+  selector: 'app-fill-blank-dropdown-test',
   templateUrl: './fill-blank-dropdown-test.component.html',
   styleUrls: ['./fill-blank-dropdown-test.component.scss']
 })
@@ -14,6 +14,8 @@ export class FillBlankDropdownTestComponent {
   items!: FillBlankDropdownItem[];
   @Input()
   title!: string;
+  @Input()
+  showArrow = false;
   correct = 'Tubli! Kõik lüngad on õigesti täidetud.'
   incorrect = 'Mõnes lüngas pole veel päris õige vastus. Proovi uuesti!'
   isCorrect = false;

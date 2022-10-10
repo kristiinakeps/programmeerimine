@@ -5,8 +5,9 @@ import {HOME_ROUTE} from "./layouts/home/home.route";
 import {INTRODUCTION_ROUTE} from "./introduction/introduction.route";
 import {ALGORITHM_ROUTE} from "./algorithm/algorithm.route";
 import {VARIABLES_ROUTE} from "./variables/variables.route";
+import {CONDITIONS_ROUTE} from "./conditions/conditions.route";
 
-const routes: Routes = [NAVBAR_ROUTE, HOME_ROUTE, INTRODUCTION_ROUTE, ALGORITHM_ROUTE, VARIABLES_ROUTE];
+const routes: Routes = [NAVBAR_ROUTE, HOME_ROUTE, INTRODUCTION_ROUTE, ALGORITHM_ROUTE, VARIABLES_ROUTE, CONDITIONS_ROUTE];
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',

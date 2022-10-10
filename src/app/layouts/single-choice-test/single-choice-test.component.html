@@ -2,7 +2,7 @@
   <h5 class="self-test">Enesekontroll. {{ question.question }}</h5>
   <div class="code-block mt-4">
     <div class="mt-2">
-      <span>{{ question.text }}</span>
+      <span [innerHTML]="question.text"></span>
     </div>
   </div>
   <div class="mt-2">

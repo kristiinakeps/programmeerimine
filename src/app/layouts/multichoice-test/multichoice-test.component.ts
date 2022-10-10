@@ -10,6 +10,7 @@ import {FormBuilder, FormControl} from "@angular/forms";
 export class MultichoiceTestComponent implements OnInit {
 
   @Input() title!: string;
+  @Input() code: string | null = null;
   @Input() items!: TestAnswer[];
   @Input() formControlNameBase!: string;
 

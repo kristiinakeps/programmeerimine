@@ -420,6 +420,11 @@ a:hover {
   color: $color-blue-dark;
 }
 
+.code-bold {
+  color: $color-pink-dark;
+  font-weight: bold;
+}
+
 .hint-container {
   background-color: $color-lavender-extra-light;
   border: solid 2px $color-lavender-light;

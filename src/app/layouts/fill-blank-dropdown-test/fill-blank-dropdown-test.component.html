@@ -3,6 +3,7 @@
   <div class="my-3"><span>{{ title }}</span></div>
   <div *ngFor="let item of items" class="mt-2">
     <div class="d-inline-block"><span>{{ item.textBeforeBlank }}</span></div>
+    <fa-icon *ngIf="showArrow" class="code-input mx-3" [icon]="'arrow-right'"></fa-icon>
     <div ngbDropdown class="d-inline-block mx-2">
       <button type="button" class="btn btn-outlined-{{ item.color }}" id="dropdown" ngbDropdownToggle>{{ item.selectedOption }}</button>
       <div ngbDropdownMenu aria-labelledby="dropdown">
