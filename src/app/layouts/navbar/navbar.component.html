@@ -49,6 +49,15 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'tingimuslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Tingimuslaused</a>
         </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'toevaartustehted'" (click)="collapseNavbar()">Tõeväärtustehted</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'mitmeharulised'" (click)="collapseNavbar()">Mitmeharulised tingimuslaused</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Korduslaused</a>
         </li>

@@ -19,6 +19,10 @@
   siis lähed kooli. Programmeerides kasutatakse selliste olukordade kirjeldamiseks <strong class="strong">tingimuslauseid</strong>. Juba algoritmide
   peatükis vaatasime, kuidas neid plokkskeemil kujutada. Näiteks järgmine plokkskeem annab soovitusi ühele külmavaresele riietumise osas:</span>
   </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/conditions/temperature_algorithm.png" alt="temperature_algorithm"
+         style="height: 30rem">
+  </div>
   <div class="mt-3"><span>Kuidas aga sama asja koodis kirja panna?</span></div>
   <div class="mt-3"><span>Pythonis kasutatakse tingimuslause alustamiseks võtmesõna <strong
     class="fst-italic strong">if</strong>,
@@ -35,18 +39,25 @@
   <div class="mt-3"><span>See programm väljastab "Pane jope selga!" kui sisestatud temperatuur on väiksem kui 15. Kui see tingimus ei ole täidetud ehk
   temperatuur on 15 või kõrgem, siis ei väljasta programm midagi. Nüüd proovime aga kasutajale veel "Ilusat päeva!" soovida, olenemata sellest, mis temperatuur
   õues on:</span></div>
-  <div class="code-block mt-2">
+  <div class="row mx-0">
+    <div class="col-lg-8 ps-0">
+      <div class="code-block mt-2">
     <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
       class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane jope selga!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
-  </div>
-  <div class="mt-3"><span>Selles näites kasutasime tingimuse koostamiseks "väiksem kui" märki. Kuid mida saab veel tingimuste koostamiseks kasutada?</span>
+        <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+          class="code-string">"Pane jope selga!"</span>)<br></span>
+        <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+      </div>
+      <div class="mt-3"><span>Selles näites kasutasime tingimuse koostamiseks "väiksem kui" märki. Kuid mida saab veel tingimuste koostamiseks kasutada?</span>
+      </div>
+    </div>
+    <div class="col-lg-3 m-3">
+      <img src="../../../assets/images/conditions/crow.png" alt="crow" class="height-15rem">
+    </div>
   </div>
 </div>
-<h4 class="mt-5">Tõeväärtustehted</h4>
+<h4 class="mt-5" [attr.id]="'toevaartustehted'">Tõeväärtustehted</h4>
 <div class="mt-3 box-container">
   <div><span>Vaatame nüüd tüüpilisemaid tõeväärtustehteid ehk tehteid, mille tulemuseks on tõeväärtus <span
     class="fst-italic">True</span> või
@@ -303,8 +314,9 @@
   Ka Python on tegelikult piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
   </div>
 </div>
-<app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest" [showArrow]="true"></app-fill-blank-dropdown-test>
-<h4 class="mt-5">Kuidas kirjutada rohkem kui ühe haruga tingimuslauseid?</h4>
+<app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest"
+                              [showArrow]="true"></app-fill-blank-dropdown-test>
+<h4 class="mt-5" [attr.id]="'mitmeharulised'">Kuidas kirjutada rohkem kui ühe haruga tingimuslauseid?</h4>
 <div class="mt-3 box-container">
   <div><strong class="strong">Kaheharuline tingimuslause</strong></div>
   <div class="mt-3"><span>Eelmises tingimuslause näites väljastasime "Pane jope selga!" kui temperatuur oli alla 15 kraadi. Kuid nüüd tahaksime väljastada ka "Jopet pole vaja!"
@@ -335,20 +347,26 @@
   alla veel teinegi, mis siis kontrolliks, kas temperatuur on alla 0 kraadi. Selleks, et Pythoni interpretaator saaks aru, mis käsud kuhu alla lähevad
   kasutame taandeid. Sisemise tingimuslause alla kuuluvad käsud peavad olema nüüd lausa kahe taandega.</span>
   </div>
-  <div class="code-block mt-2">
+  <div class="row mx-0">
+    <div class="code-block mt-2 col-lg-9">
     <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
       class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> temperatuur &lt; <span class="code-number">0</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane kasukas selga!"</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane jope selga!"</span>)<br></span>
-    <span><span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Jopet pole vaja!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+      <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> temperatuur &lt; <span
+        class="code-number">0</span>:<br></span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+        class="code-string">"Pane kasukas selga!"</span>)<br></span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+        class="code-string">"Pane jope selga!"</span>)<br></span>
+      <span><span class="code-bold">else</span>:<br></span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+        class="code-string">"Jopet pole vaja!"</span>)<br></span>
+      <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+    </div>
+    <div class="col-lg-2 m-3">
+      <img src="../../../assets/images/conditions/crow_coat.png" alt="crow" class="height-15rem">
+    </div>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -386,7 +404,8 @@
     </div>
   </div>
 </div>
-<app-fill-blank-dropdown-test [title]="'Vali iga rea jaoks, kas seal ees peab olema taane või mitte.'" [items]="conditionsIndentationTest"></app-fill-blank-dropdown-test>
+<app-fill-blank-dropdown-test [title]="'Vali iga rea jaoks, kas seal ees peab olema taane või mitte.'"
+                              [items]="conditionsIndentationTest"></app-fill-blank-dropdown-test>
 <div class="mt-3 box-container">
   <div><span>Tingimuslause võib koosneda ainult <span class="fst-italic">if</span>-lausest,
   <span class="fst-italic">if</span>- ja <span class="fst-italic">else</span>-lausetest, <span
@@ -402,10 +421,13 @@
         <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
         <span><span class="code-bold">if</span> arv != <span class="code-number">5</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv ei ole 5."</span>)<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+          class="code-string">"Arv ei ole 5."</span>)<br></span>
         <span><span class="code-bold">if</span> arv == <span class="code-number">4</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv on 4."</span>)<br></span>
-        <span><span class="code-bold">if</span> arv % <span class="code-number">2</span> != <span class="code-number">0</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+          class="code-string">"Arv on 4."</span>)<br></span>
+        <span><span class="code-bold">if</span> arv % <span class="code-number">2</span> != <span
+          class="code-number">0</span>:<br></span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
         <span><span class="code-bold">else</span>:<br></span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paarisarvuga."</span>)</span>
@@ -417,9 +439,11 @@
         <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
         <span><span class="code-bold">elif</span> arv != <span class="code-number">5</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv ei ole 5."</span>)<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+          class="code-string">"Arv ei ole 5."</span>)<br></span>
         <span><span class="code-bold">elif</span> arv == <span class="code-number">4</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Arv on 4."</span>)<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+          class="code-string">"Arv on 4."</span>)<br></span>
         <span><span class="code-bold">elif</span> arv % <span class="code-number">2</span> != <span class="code-number">0</span>:<br></span>
         <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
         <span><span class="code-bold">else</span>:<br></span>
@@ -427,7 +451,8 @@
       </div>
     </div>
   </div>
-  <div class="mt-3"><span>Esimeses koodijupis on neli eraldiseisvat tingimuslauste konstruktsiooni ja viimasel neist on ka <span class="fst-italic">else</span>-haru.
+  <div class="mt-3"><span>Esimeses koodijupis on neli eraldiseisvat tingimuslauste konstruktsiooni ja viimasel neist on ka <span
+    class="fst-italic">else</span>-haru.
   Teises koodijupis on ainult üks tingimuslause konstruktsioon. Koodijuppide väljastused on järgmised:</span>
   </div>
   <div class="row mx-0 mt-2">
@@ -446,23 +471,33 @@
     </div>
   </div>
   <div class="mt-3"><span>Kuna esimesel juhul on iga tingimuslause eraldiseisev, siis minnakse igat tingimust kontrollima ja tõese tingimuse korral täidetakse
-  vastava haru sisu. Teisel juhul on aga üks tingimuslausete konstruktsioon ja seal lõpetatakse <span class="fst-italic">elif</span>-tingimuste
+  vastava haru sisu. Teisel juhul on aga üks tingimuslausete konstruktsioon ja seal lõpetatakse <span
+      class="fst-italic">elif</span>-tingimuste
   läbivaatus kohe kui leitakse esimene tõene tingimus.</span>
   </div>
 </div>
 <app-multichoice-test [title]="'Vali kõik read, mis väljastatakse ekraanile.'" [code]="conditionsOutputLinesCode"
-                      [items]="condtionsOutputLinesTest" [formControlNameBase]="'conditionsOutput'"></app-multichoice-test>
-<h4 class="mt-5">Harjutused</h4>
+                      [items]="condtionsOutputLinesTest"
+                      [formControlNameBase]="'conditionsOutput'"></app-multichoice-test>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
   <div><strong class="strong">Kontrolltööde hindamine</strong></div>
-  <div class="mt-2"><span>Õpetaja Maria hindab oma õpilaste matemaatika kontrolltöid. Tööst oli võimalik saada kokku 30 punkti.
+  <div class="row mx-0">
+    <div class="col-lg-9 ps-0">
+      <div class="mt-2"><span>Õpetaja Maria hindab oma õpilaste matemaatika kontrolltöid. Tööst oli võimalik saada kokku 30 punkti.
     Ta plaanis panna õpilastele hinded järgmise skeemi abil:</span></div>
-  <div class="mt-2"><span>Hinne 5: 26-30 punkti</span></div>
-  <div><span>Hinne 4: 20-25 punkti</span></div>
-  <div><span>Hinne 3: 10-19 punkti</span></div>
-  <div><span>Hinne 2: 0-9 punkti</span></div>
-  <div class="mt-2"><span>Kirjut programm, mis küsib kontrolltöös saadud punktide summat ning väljastab vastava hinde. Kui punkte on rohkem kui 30
-  või vähem kui 0, peaks programm kasutajale ütlema, et selline punktide arv pole võimalik. Mõned näited programmi tööst:</span></div>
+      <div class="mt-2"><span>Hinne 5: 26-30 punkti</span></div>
+      <div><span>Hinne 4: 20-25 punkti</span></div>
+      <div><span>Hinne 3: 10-19 punkti</span></div>
+      <div><span>Hinne 2: 0-9 punkti</span></div>
+      <div class="mt-2"><span>Kirjut programm, mis küsib kontrolltöös saadud punktide summat ning väljastab vastava hinde. Kui punkte on rohkem kui 30
+  või vähem kui 0, peaks programm kasutajale ütlema, et selline punktide arv pole võimalik. Mõned näited programmi tööst:</span>
+      </div>
+    </div>
+    <div class="col-lg-2 m-3">
+      <img src="../../../assets/images/conditions/grading.png" alt="crow" class="height-10rem">
+    </div>
+  </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta saadud punktide arv: <span class="code-input">27</span><br></span>
     <span>Saadud hinne on 5.</span>
@@ -476,6 +511,42 @@
     <span>Selline punktide arv pole võimalik.</span>
   </div>
   <app-exercise-hints [hints]="gradingExerciseHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Klassiekskursioon</strong></div>
+  <div class="mt-2"><span>Õpetaja Maria korraldab õpilastele ekskursiooni Rakvere linnusesse. Tal on olemas nimekiri õpilastest, kes
+  soovivad ekskursioonile tulla, ja nüüd on tal vaja transpordiks bussid tellida. Kirjut programm, mis küsib ekskursioonile minejate arvu,
+    bussi istekohtade arvu ning arvutab, mitu sellist bussi on vaja tellida. Näited programmi tööst:</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta õpilaste arv: <span class="code-input">30</span><br></span>
+    <span>Sisesta bussi istekohtade arv: <span class="code-input">30</span><br></span>
+    <span>Vaja läheb 1 bussi.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta õpilaste arv: <span class="code-input">40</span><br></span>
+    <span>Sisesta bussi istekohtade arv: <span class="code-input">30</span><br></span>
+    <span>Vaja läheb 2 bussi.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta õpilaste arv: <span class="code-input">15</span><br></span>
+    <span>Sisesta bussi istekohtade arv: <span class="code-input">30</span><br></span>
+    <span>Vaja läheb 1 bussi.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta õpilaste arv: <span class="code-input">60</span><br></span>
+    <span>Sisesta bussi istekohtade arv: <span class="code-input">30</span><br></span>
+    <span>Vaja läheb 2 bussi.</span>
+  </div>
+  <div class="mt-2"><span>Abiks võivad olla tehted // ja %. Tuleta meelde, mis need tegid.</span></div>
+  <div class="mt-3">
+    <img src="../../../assets/images/conditions/bus.png" alt="crow" class="height-15rem">
+  </div>
+  <app-exercise-hints [hints]="busExerciseHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Proovi ka ise mõelda välja mõni programm, mis kasutaks tingimuslauset. Näiteks võid kasutajalt küsida kellaaega ja
+  and soovitusi, mida sellisel ajal teha võiks. Näiteks kell 7 võiks ärgata või hambaid pesta ja kell 18 õhtust süüa.</span>
+  </div>
 </div>
 <button [routerLink]="" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>

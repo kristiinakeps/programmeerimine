@@ -71,6 +71,31 @@ export class ConditionsComponent{
     "&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-function'>print</span>(<span class='code-string'>\"Saadud hinne on 3.\"</span>)<br>" +
     "<span class='code-bold'>else</span>:<br>" +
     "&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-function'>print</span>(<span class='code-string'>\"Saadud hinne on 2.\"</span>)<br>")];
+
+  busExerciseHints = [new ExerciseHint('Esimese asjana tuleks kasutajalt küsida õpilaste ja bussi istekohtade arv. Vajadusel tuleb need ka teisendada sobivaks tüübiks.', null),
+  new ExerciseHint('Nii õpilaste arv kui bussi istekohtade arv peaksid olema täisarvud.', 'õpilasi = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta õpilaste arv: "</span>))<br>' +
+    'istekohti = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta bussi istekohtade arv: "</span>))'),
+  new ExerciseHint('Nüüd on vaja välja arvutada, mitu bussi tellida. Selleks on meil vaja teada, kas õpilased mahuvad bussidesse täpselt või jääb mõni buss poolikult täidetuks.', null),
+  new ExerciseHint('Kuidas leida kas õpilased mahuvad bussidesse täpselt? Selleks saame kasutada jääki. Kui meil on 25 õpilast ja 20 istekohta bussis, siis ' +
+    'õpilaste arvu jagamisel istekohtade arvuga tekib meil jääk 5, sest 5 õpilast jääb üle. Kui jääk on 0, siis järelikult kedagi üle ei jäänud ja õpilased mahtusid täpselt bussidesse ära. Jäägi leidmiseks saab Pythonis kasutada tehet %. Kuidas see tingimus kirja panna?', null),
+  new ExerciseHint('Leiame jäägi õpilaste arvu jagamisel istekohtade arvuga ja kontrollime kas see on 0.', '<span class="code-bold">if</span> õpilasi % istekohti == <span class="code-number">0</span>:'),
+  new ExerciseHint('Nüüd järgmiseks peame mõtlema, kuidas siis sellisel juhul busside arvu leida. Siin sobib hästi lihtsalt täisarvuline jagamine.', null ),
+  new ExerciseHint('Busside arvu leidmine, kui õpilased mahuvad bussidesse täpselt ära:', 'busside_arv = õpilasi // istekohti'),
+  new ExerciseHint('Kui õpilased ei mahtunud bussi täpselt ära, siis järelikult peame tellima ühe lisabussi. Siin meil pole vaja uut tingimust kirjutada, saame kasutada lihtsalt ' +
+    '<span class="fst-italic">else</span>-haru. Busside arvu saame leida sarnaselt eelmisele olukorrale, aga nüüd liidame ise veel ühe bussi juurde.', null),
+  new ExerciseHint('Busside arvu leidmine <span class="fst-italic">else</span>-harus, kui õpilasi jäi üle:', '<span class="code-bold">else</span>:<br>' +
+    '&nbsp;&nbsp;&nbsp;&nbsp;busside_arv = õpilasi // istekohti + 1'),
+  new ExerciseHint('Kõige lõpuks jääb tulemuse väljastamine. Väljastuse tahame teha olenemata sellest, mis harus busside arv välja arvutati, ' +
+    'seega selle võime lisada pärast tingimuslause konstruktsiooni:', '<span class="code-function">print</span>(<span class="code-string">"Vaja läheb "</span> + ' +
+    '<span class="code-function">str</span>(busside_arv) + <span class="code-string">" bussi."</span>)'),
+  new ExerciseHint('Lõpptulemus võiks välja näha näiteks selline:', 'õpilasi = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta õpilaste arv: "</span>))<br>' +
+    'istekohti = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta bussi istekohtade arv: "</span>))<br>' +
+    '<span class="code-bold">if</span> õpilasi % istekohti == <span class="code-number">0</span>:<br>' +
+    '&nbsp;&nbsp;&nbsp;&nbsp;busside_arv = õpilasi // istekohti<br>' +
+    '<span class="code-bold">else</span>:<br>' +
+    '&nbsp;&nbsp;&nbsp;&nbsp;busside_arv = õpilasi // istekohti + 1<br>' +
+    '<span class="code-function">print</span>(<span class="code-string">"Vaja läheb "</span> + ' +
+    '<span class="code-function">str</span>(busside_arv) + <span class="code-string">" bussi."</span>)')];
 }
 
 //tsüklite teema jaoks harjutuse idee: mäng, mis küsib järjest sõnu ja iga sõna peab algama selle tähega, millega eelmine lõppes.
