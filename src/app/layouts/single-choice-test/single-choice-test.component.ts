@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {TestQuestion} from "../../models/test-question.model";
 import {TestAnswer} from "../../models/test-answer.model";
 
@@ -7,15 +7,10 @@ import {TestAnswer} from "../../models/test-answer.model";
   templateUrl: './single-choice-test.component.html',
   styleUrls: ['./single-choice-test.component.scss']
 })
-export class SingleChoiceTestComponent implements OnInit, OnChanges {
+export class SingleChoiceTestComponent implements OnChanges {
 
   @Input() question!: TestQuestion;
   lastGuess: TestAnswer | null = null;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   ngOnChanges(changes: SimpleChanges) {
     this.lastGuess = null;

@@ -97,6 +97,3 @@ export class ConditionsComponent{
     '<span class="code-function">print</span>(<span class="code-string">"Vaja läheb "</span> + ' +
     '<span class="code-function">str</span>(busside_arv) + <span class="code-string">" bussi."</span>)')];
 }
-
-//tsüklite teema jaoks harjutuse idee: mäng, mis küsib järjest sõnu ja iga sõna peab algama selle tähega, millega eelmine lõppes.
-//mäng lõppeb kui kasutaja sisestab ebasobiva sõna. Võiks ka kokku lugeda, mitu punkti kasutaja teenis.

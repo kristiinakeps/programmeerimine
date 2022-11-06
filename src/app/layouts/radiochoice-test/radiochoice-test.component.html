@@ -1,0 +1,20 @@
+<div class="intro-container mt-4">
+  <h5 class="self-test">Enesekontroll.</h5>
+  <div class="my-3"><span>{{ title }}</span></div>
+  <div *ngIf="code" class="code-block my-2">
+    <span [innerHTML]="code"></span>
+  </div>
+  <div *ngFor="let item of items; let i = index" class="mt-2">
+    <div class="form-group form-check">
+      <input type="radio" [(ngModel)]="selection" name="{{ formControlNameBase }}" class="form-check-input"
+             id="{{ formControlNameBase }}{{ i }}" [value]="item">
+      <label class="form-check-label" for="{{ formControlNameBase }}{{ i }}">{{ item.answer }}</label>
+    </div>
+  </div>
+  <div class="mt-2">
+    <button class="btn btn-self-test m-2" (click)="check()">Kontrolli</button>
+  </div>
+  <div *ngIf="showFeedback" class="mt-2"
+       [ngClass]="{'feedback-correct': isCorrect, 'feedback-incorrect': !isCorrect}" [innerHTML]="isCorrect ? correctText : incorrectText">
+  </div>
+</div>

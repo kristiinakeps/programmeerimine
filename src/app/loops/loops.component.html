@@ -1,0 +1,428 @@
+<h1>KORDUSLAUSED EHK TSÜKLID</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on korduslaused ja milleks neid kasutatakse?</span></div>
+  <div><span>2. Milliseid korduslauseid on olemas?</span></div>
+  <div><span>3. Kuidas kirjutada <span class="fst-italic">while</span>-tsüklit?</span></div>
+  <div><span>4. Kuidas kasutada <span class="fst-italic">break</span>-käsku tsükli peatamiseks?</span></div>
+</div>
+<h4 class="mt-5">Mis on korduslaused ja milleks neid kasutatakse?</h4>
+<div class="mt-3 box-container">
+  <div><span>Juba algoritmide peatükis märkasime, et vahepeal võib meil vaja minna korduseid. Näiteks söögi maitsestamisel
+    tahame lisada maitseaineid ja siis toitu maitsta. Kui toit on veel mage, siis lisame veel maitseaineid ja maitseme uuesti.
+    Niimoodi teeme kuni oleme toidu maitsega rahul. Või näiteks trenni tehes on meil tihtipeale teada, mitu korda harjutust vaja teha on. Näiteks
+    teeme 20 kätekõverdust ja 40 kükki. Selles peatükis õpime, kuidas korduseid koodis kirja panna.
+  </span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Oletame, et tahame kirjutada programmi, mis väljastaks kasutajale 20 korda "Tee üks kätekõverdus!". Kuidas seda kirja paneksime?
+    Üks variant on muidugi lihtsalt 20 <span class="fst-italic">print</span>-käsku kirjutada.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span>...</span>
+  </div>
+  <div class="mt-3"><span>Ilmselt taipad, et niimoodi korduseid kirja panna on väga tülikas. Ja pealegi, mis saaks siis, kui tahaksime kasutajalt küsida, mitu
+    kätekõverdust ta teha tahab? Siis me ei saa ju ette teada, mitu <span class="fst-italic">print</span>-käsku koodi kirjutada? Siin tulevadki appi korduslaused.
+    <strong class="strong">Korduslause</strong> või teisisõnu <strong class="strong">tsükkel</strong> on konstruktsioon, mida
+    programmeerimises kasutatakse korduste kirjutamiseks.
+  </span></div>
+  <div class="my-3">
+    <img src="../../../assets/images/loops/push_up.png" alt="push_up"
+         style="height: 10rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Milliseid korduslauseid on olemas?</strong></div>
+  <div class="mt-3"><span>Kaks põhilist korduslause tüüpi on <strong class="fst-italic strong">while</strong> ja <strong
+    class="fst-italic strong">for</strong>.
+    Selles peatükis keskendume <span class="fst-italic">while</span>-tsüklile, mis on oma olemuselt sarnane tingimuslausetele.
+    <span class="fst-italic">For</span>-tsükkel on kasulik failide ja andmestruktuuride läbimiseks ja just failide teemas tutvumegi sellega põhjalikumalt.
+  </span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'while'">Kuidas kirjutada <span class="fst-italic">while</span>-tsüklit?</h4>
+<div class="mt-3 box-container">
+  <div><span><span class="fst-italic">While</span>-tsüklis on kõigepealt võtmesõna
+    <strong class="fst-italic">while</strong>, millele järgneb tingimus ja siis koolon. Tingimuste koostamist õppisime juba eelmises peatükis.
+    Tsükli sisu ehk kõik need käsud, mida tahame täita kuni tingimus on tõene, kirjutatakse järgmiselt realt taandega. Seega näeb see konstruktsioon välja
+    väga sarnane tingimuslausele, ainult võtmesõna <span class="fst-italic">if</span> on asendunud võtmesõnaga <span
+      class="fst-italic">while</span>.
+    Aga oluline erinevus on see, et kui tingimuslausel täideti tingimuslause sisu ainult üks kord, siis tsükkli puhul täidetakse seda nii kaua kuni tingimus on tõene.
+    Pärast igat tsükli sisu täitmist ehk <strong class="strong">iteratsiooni</strong> minnakse uuesti tingimust kontrollima ja kui see on ikka veel tõene, siis
+    täidetakse tsükli sisu uuesti. Tsükli puhul on oluline, et mingil hetkel jõuaks kätte olukord, kus tsükli tingimus enam pole tõene ja saame tsüklist väljuda, muidu
+    programm jääbki lõpmatusse tsüklisse. Seega tuleks tsükli tingimuses olevaid muutujaid tsükli sees muuta.
+  </span>
+  </div>
+  <div class="mt-2"><span>Proovime nüüd kirja panna kätekõverduste koodi nii, et tsüklis väljastataks 20 korda "Tee üks kätekõverdus!". Selleks loome kõigepealt
+    <strong class="strong">tsüklimuutuja </strong> <span class="fst-italic">tehtud_kätekõverdusi</span>, mis hoiab endas juba tehtud kätekõverduste arvu.
+    Tsükli tingimuseks saame siis panna, et täidame tsüklit seni, kuni tehtud kätekõverduste arv on väiksem kui 20, ja tsükli sees pärast iga iteratsiooni suurendame
+    seda arvu ühe võrra.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>tehtud_kätekõverdusi = <span class="code-number">0</span><br><br></span>
+    <span><span class="code-bold">while</span> tehtud_kätekõverdusi &lt; <span class="code-number">20</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;tehtud_kätekõverdusi = tehtud_kätekõverdusi + <span
+      class="code-number">1</span></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Kuidas muutuja väärtust suurendada või vähendada?</strong></div>
+  <div class="mt-3"><span>
+    Eelmises koodijupid kasutasime muutuja <span>tehtud_kätekõverdusi</span> väärtuse muutmiseks järgmist koodijuppi:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>tehtud_kätekõverdusi = tehtud_kätekõverdusi + <span class="code-number">1</span></span>
+  </div>
+  <div class="mt-3"><span>
+    Siin teeb Python kõigepealt ära tehte <span class="fst-italic">tehtud_kätekõverdusi + 1</span> ning seejärel omistab saadud
+    väärtuse muutujasse <span class="fst-italic">tehtud_kätekõverdusi</span>. Niimoodi saame hõlpsalt muutuja väärtust suurendada mingi arvu võrra.
+    Sarnaselt saame ka teha kõiki teisi tehteid. Näiteks lahutada muutujast mõne arvu või korrutada muutujat mingi arvuga ning siis omistada saadud
+    tulemus tagasi muutujasse. Sellist muutuja väärtuse muutmist kasutatakse üsna palju ning nendest tehetest on välja mõeldud ka lühemad variandid.
+    Eelmise koodijupiga täpselt sama asja teeb ka järgmine lühendatud variant:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>tehtud_kätekõverdusi += <span class="code-number">1</span></span>
+  </div>
+  <div class="mt-3"><span>
+    Lühendatud variandis pannakse kokku tehtemärk ja omistamise märk ning neile järgneb konstant või muutuja, millega tehet sooritatakse. Allolevas
+    tabelis on toodud tüüpilisemate tehete nii pikad kui lühendatud variandid.
+  </span>
+  </div>
+  <div class="mt-3">
+    <table class="table table-bordered table-custom" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th>Muutuja väärtuse suurendamine/vähendamine</th>
+        <th>Lühendatud variant</th>
+        <th>i väärtus enne</th>
+        <th>i väärtus pärast</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>i = i + 1</td>
+        <td>i += 1</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>i = i - 1</td>
+        <td>i -= 1</td>
+        <td>3</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>i = i * 2</td>
+        <td>i *= 2</td>
+        <td>4</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>i = i / 2</td>
+        <td>i /= 2</td>
+        <td>5</td>
+        <td>2.5</td>
+      </tr>
+      <tr>
+        <td>i = i % 2</td>
+        <td>i %= 2</td>
+        <td>5</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>i = i ** 2</td>
+        <td>i **= 2</td>
+        <td>4</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>i = i // 2</td>
+        <td>i //= 2</td>
+        <td>5</td>
+        <td>2</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mitu rida väljastab järgmine koodijupp?'" [code]="loopOutputLinesTestCode"
+                      [items]="loopOutputLinesTestAnswers" [formControlNameBase]="'loopOutputLines'"></app-radiochoice-test>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Trenn</strong></div>
+  <div class="row mx-0">
+    <div class="col-lg-8 px-0">
+      <div class="mt-2"><span>Proovi kätekõverduste programm niimoodi ümber teha, et kätekõverduste arv küsitaks hoopis kasutajalt. Programm võiks töötada nii:</span>
+      </div>
+      <div class="code-block mt-2 fst-italic">
+        <span>Sisesta kätekõverduste arv: <span class="code-input">4</span><br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!</span>
+      </div>
+      <div class="code-block mt-2 fst-italic">
+        <span>Sisesta kätekõverduste arv: <span class="code-input">6</span><br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!</span>
+      </div>
+      <div class="mt-2"><span>Soovi korral võid programmi veel mõne harjutuse lisada. Näiteks küsida lisaks kätekõverduste arvule ka kükkide arvu.</span>
+      </div>
+      <div class="code-block mt-2 fst-italic">
+        <span>Sisesta kätekõverduste arv: <span class="code-input">2</span><br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Tee üks kätekõverdus!<br></span>
+        <span>Sisesta kükkide arv: <span class="code-input">5</span><br></span>
+        <span>Tee üks kükk!<br></span>
+        <span>Tee üks kükk!<br></span>
+        <span>Tee üks kükk!<br></span>
+        <span>Tee üks kükk!<br></span>
+        <span>Tee üks kükk!</span>
+      </div>
+    </div>
+    <div class="col-lg-3 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/loops/squat.png" alt="squat"
+           style="height: 25rem">
+    </div>
+  </div>
+  <app-exercise-hints [hints]="workoutExerciseHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <div class="row mx-0">
+    <div class="col-lg-9 px-0"><span>
+    Tsükli tingimuses võib kasutada igasuguseid tõeväärtustehteid. Järgmiseks vaatame ühte näidet, kus kasutajal palutakse salajane sõna ära
+    arvata. Siin on tsükli jätkamise tingimuseks see, et kasutaja pakutud sõna ei ole võrne meie salajase sõnaga. Kui kasutaja pakub õige sõna, siis
+    tsükli tingimus muutub vääraks ja tsükli täitmine lõpetatakse. Tsükli sees peame küsima kasutajalt uut pakkumist.
+  </span>
+    </div>
+    <div class="col-lg-2 mx-3 mb-3 text-end">
+      <img src="../../../assets/images/loops/plum.png" alt="plum"
+           style="height: 8rem">
+    </div>
+  </div>
+  <div class="code-block mt-2">
+    <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
+    <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
+    <span><span class="code-bold">while</span> pakkumine != salajane_sõna:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Tubli! Arvasid õigesti!"</span>)</span>
+  </div>
+  <div class="mt-2"><span>
+    Üks näide selle koodi võimalikust väljundist:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Mis on sügisel valmiv lilla puuvili? <span class="code-input">õun</span><br></span>
+    <span>See ei ole õige. Paku uuesti: <span class="code-input">pirn</span><br></span>
+    <span>See ei ole õige. Paku uuesti: <span class="code-input">kirss</span><br></span>
+    <span>See ei ole õige. Paku uuesti: <span class="code-input">ploom</span><br></span>
+    <span>Tubli! Arvasid õigesti!</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Lõpmatud tsüklid</strong></div>
+  <div class="mt-3"><span>
+    Mis saaks, kui jätaksime tsükli sisus tsüklimuutuja väärtuse muutmata? Näiteks kui kätekõverduste programmis jätaksime tehtud kätekõverduste
+    arvu suurendamata või sõna arvamise mängus kasutajalt uue pakkumise küsimata?
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>tehtud_kätekõverdusi = <span class="code-number">0</span><br><br></span>
+    <span><span class="code-bold">while</span> tehtud_kätekõverdusi &lt; <span class="code-number">20</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Tee üks kätekõverdus!"</span>)</span>
+  </div>
+  <div class="mt-3"><span>
+    Võid proovida seda koodijuppi Thonnys käivitada ja ilmselt näed, et programm jääbki aina väljastama "Tee üks kätekõverdus!". Sellist
+    tsüklit nimetatakse lõpmatuks, sest tsükli tingimus on alati tõene. Tsüklimuutujale <span class="fst-italic">tehtud_kätekõverdusi</span> antakse
+    enne tsüklit väärtus 0 ning seda väärtust ei muudeta. Seega esimesel iteratsioonil on tingimus 0 &lt; 20 tõene. Väljastatakse "Tee üks kätekõverdus!"
+    ja siis minnakse uuesti tsüklitingimust kontrollima. Kuna me ei muutnud <span class="fst-italic">tehtud_kätekõverdusi</span> väärtust, siis on tingimus
+    ikka 0 &lt; 20 ja see on ikka tõene.
+    Thonnys saad siiki programmi peatada punasest stop-nupust.
+    Peatamise käsk on leitav ka <span class="fst-italic">Run</span> menüüst <span class="fst-italic">Stop/Restart backend</span>.
+  </span>
+  </div>
+  <div class="mt-2"><span>
+    Kõige lihtsam viis lõpmatut tsüklit moodustada on kasutada tõeväärtustehte asemel tingimuses otse tõeväärtust True. Kuid kas sellist tsüklit
+    on üldse mõtet kirjutada? Tegelikult on Pythonis olemas ka käsk, millega saab tsüklit lõpetada. Seega on meil võimalik ka alati tõese
+    jätkamistingimusega tsükkel peatada.
+  </span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'break'">Lisavõimalus tsükli peatamiseks: käsk <span class="fst-italic">break</span></h4>
+<div class="mt-3 box-container">
+  <div class="row mx-0">
+    <div class="col-lg-8 px-0">
+      <div><span>
+    Üks kasulik lisakäsk, mida tsüklitega saab kasutada, on <strong class="strong fst-italic">break</strong>. See tähendab inglise keeles
+    <span class="fst-italic">murra</span> ja just seda see käsk teeb &ndash; murrab tsükli. Seda käsku võib kasutada tsükli sisus ja selle täitmisel peatatakse tsükkli töö ja minnakse
+    edasi ülejäänud programmiga. Tavaliselt kasutatakse seda mõnes tingimuslauses tsükli sees.
+  </span>
+      </div>
+      <div class="mt-2"><span>
+    Proovime näiteks sõna arvamise mängu kirjutada ümber kasutades lõpmatut tsüklit ja <span
+        class="fst-italic">break</span>-käsku.
+  </span>
+      </div>
+    </div>
+    <div class="col-lg-3 mx-3 mb-3 text-end">
+      <img src="../../../assets/images/loops/plum_branch.png" alt="plum branch"
+           style="height: 10rem">
+    </div>
+  </div>
+  <div class="row mx-0 mt-2">
+    <div class="col-md-6 ">
+      <div class="code-block me-1">
+        <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
+        <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
+        <span><span class="code-bold">while</span> pakkumine != salajane_sõna:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
+        <span><span class="code-function">print</span>(<span
+          class="code-string">"Tubli! Arvasid õigesti!"</span>)<br><br><br></span>
+      </div>
+    </div>
+    <div class="col-md-6 ">
+      <div class="code-block ms-1">
+        <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
+        <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
+        <span><span class="code-bold">while True</span>:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> pakkumine == salajane_sõna:<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
+        <span><span class="code-function">print</span>(<span
+          class="code-string">"Tubli! Arvasid õigesti!"</span>)</span>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2"><span>
+    Mõlemad koodijupid töötavad ühtemoodi ja nende käivitamisel on tulemus sama, kuid esimeses näites lõpetatakse tsükkel kui tsüklitingimus on väär ja
+    teises näiteks siis kui tsükli sisus tingimuslause on tõene ning jõuame <span class="fst-italic">break</span>-käsuni.
+  </span>
+  </div>
+</div>
+<app-multichoice-test [title]="'Millised järgmistest muudatustest muudaksid koodi väljundit?'" [code]="loopOutputChangeTestCode"
+                      [items]="loopOutputChangeTestAnswers" [formControlNameBase]="'loopOutputChange'"></app-multichoice-test>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [formControlNameBase]="'loopOutput'"
+                      [code]="loopOutputTestCode" [items]="loopOutputTestAnswers"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Arvu arvamine</strong></div>
+  <div class="mt-3"><span>
+    Kirjuta programm, mis laseks kasutajal arvata salajast arvu vahemikus 1-100. Selle salajase arvu võid ise valida. Iga kasutaja pakkumise
+    peale peaks programm ütlema, kas salajane arv on pakutud arvust suurem või väiksem. Kui kasutaja pakutud arv on võrdne salajase arvuga,
+    siis programm ütleb kasutajale, et ta leidis õige arvu, ja lõpetab oma töö.
+  </span>
+  </div>
+  <div class="mt-2"><span>
+    Mõni näide programmi tööst, kui salajane arv on 17:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">7</span><br></span>
+    <span>Salajane arv on suurem<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">54</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">20</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">17</span><br></span>
+    <span>Leidsid õige arvu!</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">20</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">17</span><br></span>
+    <span>Leidsid õige arvu!</span>
+  </div>
+  <app-exercise-hints [hints]="guessNumberExerciseHints"></app-exercise-hints>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/loops/number_guessing.png" alt="number guessing"
+         style="height: 20rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Edasiarendus: piiratud arv katseid</strong></div>
+  <div class="mt-3"><span>
+    Täienda nüüd eelmist programmi nii, et kasutajal on maksimaalselt ainult 5 katset. Programm lõpetab oma töö,
+    kui kasutaja leiab õige arvu või katsete arv saab täis. Programm võiks ka kasutajale väljastada, mitu katset tal jäänud on.
+    Mõned näited programmi tööst:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">50</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Jäänud katseid: 4<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">25</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Jäänud katseid: 3<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">12</span><br></span>
+    <span>Salajane arv on suurem<br></span>
+    <span>Jäänud katseid: 2<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">15</span><br></span>
+    <span>Salajane arv on suurem<br></span>
+    <span>Jäänud katseid: 1<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">18</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Jäänud katseid: 0<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">50</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Jäänud katseid: 4<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">25</span><br></span>
+    <span>Salajane arv on väiksem<br></span>
+    <span>Jäänud katseid: 3<br></span>
+    <span>Paku arvu vahemikus 1-100: <span class="code-input">17</span><br></span>
+    <span>Leidsid õige arvu!</span>
+  </div>
+  <app-exercise-hints [hints]="guessNumberLimitedTriesExerciseHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Edasiarendus: juhuslikult valitud salajane arv</strong></div>
+  <div class="mt-3"><span>
+    Proovime nüüd veel täiendada oma programmi nii, et salajane arv valitakse juhuslikult. Juhusliku arvu valimiseks sobib
+    hästi käsk <span class="fst-italic">randint</span>, mis asub Pythoni moodulis <span class="fst-italic">random</span>.
+    Me ei hakka praegu süvenema moodulitesse, võtame lihtsalt teadmiseks, et moodulites asuvate käskude kasutamiseks tuleb moodul
+    programmi alguses importida. Mooduli importimiseks lisame programmi algusesse järgmise käsu:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">from</span> random <span class="code-bold">import</span> *</span>
+  </div>
+  <div class="mt-2"><span>
+    Juhusliku arvu genereerimiseks kasutame käsku <span class="fst-italic">randint</span>. Sellele käsule saame anda ette ka
+    vahemiku, millest oma juhuslikku arvu soovime. Meie puhul on vahemikuks 0-100. Juhusliku arvu genereerimine ja muutujasse salvestamine
+    käib nii:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    salajane_arv = randint(<span class="code-number">0</span>, <span class="code-number">100</span>)
+  </div>
+  <div class="mt-2"><span>
+    Proovi see muudatus ka oma koodi sisse viia ja siis saad juba päriselt arvutiga arvamismängu mängida.
+  </span>
+  </div>
+  <app-exercise-hints [hints]="guessNumberRandomExerciseHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/korduslaused'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>

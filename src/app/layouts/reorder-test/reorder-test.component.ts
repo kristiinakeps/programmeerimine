@@ -17,8 +17,6 @@ export class ReorderTestComponent implements OnInit {
   isCorrect = false;
   feedbackText = '';
 
-  constructor() { }
-
   ngOnInit(): void {
     this.shuffledItems = shuffle([...this.question.items]);
   }

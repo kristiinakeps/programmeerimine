@@ -67,3 +67,7 @@ export class VariablesComponent {
   new TestAnswer("_nimi", true, "Muutuja nimi tohib alata alakriipsuga")]
 
 }
+
+// todo:sõnede kohta veel -> erisümbolid, jutumärgid ja ülakomad, escape'imine
+// todo:Thonny kasutamine, kuidas luua uut programmi faili, käivitada
+// todo: tääkida ka arvutamisel tehete järjekorrast?

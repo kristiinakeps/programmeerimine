@@ -21,6 +21,8 @@ import { ExerciseHintsComponent } from './layouts/exercise-hints/exercise-hints.
 import { MultichoiceTestComponent } from './layouts/multichoice-test/multichoice-test.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ConditionsComponent } from './conditions/conditions.component';
+import { LoopsComponent } from './loops/loops.component';
+import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice-test.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ConditionsComponent } from './conditions/conditions.component';
     FillBlankDropdownTestComponent,
     ExerciseHintsComponent,
     MultichoiceTestComponent,
-    ConditionsComponent
+    ConditionsComponent,
+    LoopsComponent,
+    RadiochoiceTestComponent
   ],
   imports: [
     BrowserModule,

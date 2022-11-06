@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ReorderTestQuestion} from "../models/reorder-test-question.model";
 import {ReorderTestItem} from "../models/reorder-test-item.model";
 
@@ -7,14 +7,10 @@ import {ReorderTestItem} from "../models/reorder-test-item.model";
   templateUrl: './algorithm.component.html',
   styleUrls: ['./algorithm.component.scss']
 })
-export class AlgorithmComponent implements OnInit {
+export class AlgorithmComponent {
 
   teaAnswerIsShown = false;
   pancakeAnswerIsShown = false;
-
-  constructor() { }
-
-  ngOnInit() {}
 
   markTestQuestion = new ReorderTestQuestion('Proovi järjestada Marki päevased tegevused.',
     [new ReorderTestItem('Ärkab üles', 'Kas ärkamine ei peaks olema tegevustest esimene?'),

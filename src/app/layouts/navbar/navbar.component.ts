@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {inOutAnimation} from "../../animations";
 
@@ -8,14 +8,11 @@ import {inOutAnimation} from "../../animations";
   styleUrls: ['./navbar.component.scss'],
   animations: [inOutAnimation]
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
 
   isMenuCollapsed = true;
 
   constructor(public router: Router) { }
-
-  ngOnInit(): void {
-  }
 
   collapseNavbar(): void {
     this.isMenuCollapsed = true;

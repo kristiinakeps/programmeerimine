@@ -59,10 +59,25 @@
           <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Korduslaused</a>
+          <a class="nav-link" [routerLink]="'korduslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Korduslaused</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'while'" (click)="collapseNavbar()"><span class="fst-italic">While</span>-tsükkel</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'break'" (click)="collapseNavbar()">Käsk <span class="fst-italic">break</span></a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Funktsioonid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Failid</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Veahaldus</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Andmestruktuurid</a>
