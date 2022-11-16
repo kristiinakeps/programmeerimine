@@ -17,6 +17,8 @@ export class CategorizeTestComponent implements OnInit {
   items!: CategorizeTestItem[];
   @Input()
   correctAnwser: string = 'Tubli! Kõik väärtused on õigetes tulpades!';
+  @Input()
+  exerciseTitle!: string;
 
   showFeedback = false;
   isCorrect = false;

@@ -16,17 +16,17 @@ export class VariablesComponent {
   readonly TYPE_FLOAT = 'float';
   readonly TYPE_BOOLEAN = 'boolean';
 
-  testInt = new CategorizeTestCategory('Täisarv (int)', this.TYPE_INT, []);
-  testFloat = new CategorizeTestCategory('Ujukomaarv (float)', this.TYPE_FLOAT, []);
-  testStr = new CategorizeTestCategory("Sõne (str)", this.TYPE_STR, []);
-  testBoolean = new CategorizeTestCategory('Tõeväärtus (boolean)', this.TYPE_BOOLEAN, []);
+  testInt = new CategorizeTestCategory('Täisarv (int)', null, this.TYPE_INT, []);
+  testFloat = new CategorizeTestCategory('Ujukomaarv (float)', null, this.TYPE_FLOAT, []);
+  testStr = new CategorizeTestCategory("Sõne (str)", null, this.TYPE_STR, []);
+  testBoolean = new CategorizeTestCategory('Tõeväärtus (boolean)', null, this.TYPE_BOOLEAN, []);
   testCategories = [this.testInt, this.testFloat, this.testStr, this.testBoolean];
   testItems = [new CategorizeTestItem('"Täna on ilus ilm"', this.TYPE_STR), new CategorizeTestItem('5', this.TYPE_INT),
   new CategorizeTestItem('4.3', this.TYPE_FLOAT), new CategorizeTestItem('True', this.TYPE_BOOLEAN), new CategorizeTestItem('False', this.TYPE_BOOLEAN),
   new CategorizeTestItem('23', this.TYPE_INT), new CategorizeTestItem('"45.2"', this.TYPE_STR), new CategorizeTestItem('"Arbuus"', this.TYPE_STR),
   new CategorizeTestItem('1.67', this.TYPE_FLOAT), new CategorizeTestItem('7', this.TYPE_INT), new CategorizeTestItem('5.0', this.TYPE_FLOAT),
   new CategorizeTestItem('12.99', this.TYPE_FLOAT), new CategorizeTestItem('100', this.TYPE_INT), new CategorizeTestItem('"a"', this.TYPE_STR)];
-  testCorrectAnwser = 'Tubli! Kõik väärtused on õigete andmetüüpide tulpades!';
+  testCorrectAnswer = 'Tubli! Kõik väärtused on õigete andmetüüpide tulpades!';
 
   operatorsNumbers = ['+', '-', '*', '/', '//'];
   operatorsStrings = ['+', '*', '.upper()', '.capitalize()']

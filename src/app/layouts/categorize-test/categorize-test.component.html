@@ -1,9 +1,12 @@
 <div class="intro-container mt-4">
   <h5 class="self-test">Enesekontroll.</h5>
-  <div class="my-3"><span>Lohista kõik väärtused õigete andmetüüpide alla.</span></div>
+  <div class="my-3"><span>{{ exerciseTitle }}.</span></div>
   <div cdkDropListGroup>
     <div *ngFor="let category of categories" class="drag-and-drop-container">
-      <h5 class="self-test">{{ category.text }}</h5>
+      <h5 *ngIf="category.text" class="self-test">{{ category.text }}</h5>
+      <div *ngIf="category.code" class="code-block mb-2">
+        <span [innerHTML]="category.code"></span>
+      </div>
       <div
         cdkDropList
         [cdkDropListData]="category.items"

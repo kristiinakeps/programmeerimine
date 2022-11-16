@@ -1,0 +1,376 @@
+<h1>FUNKTSIOONID</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on funktsioonid ja milleks neid kasutada?</span></div>
+  <div><span>2. Kuidas funktsioone kirjutada ja kasutada?</span></div>
+  <div><span>3. Kuidas funktsioonist väärtust tagastada?</span></div>
+</div>
+<h4 class="mt-5">Mis on funktsioonid ja milleks neid kasutatakse?</h4>
+<div class="mt-3 box-container">
+  <div><span>Kui meil on vaja sooritada mõni suurem ülesanne, siis on lihtsam see jagada alamülesanneteks. Esiteks on meil nii
+    parem ülevaade kõigest, mida on vaja teha ülesande sooritamiseks. Teiseks saame võib-olla mõne alamülesande kellelegi teisele teha anda.
+    Koolis on tihti vaja teha erinevaid rühmatöid. Näiteks kui neljases grupis on vaja teha esitlus põdra kohta, siis esimene õpilane võiks
+    otsida infot põdra elukohtade kohta, teine välimuse, kolmas toitumise ja neljas eluviisi kohta. Nii saavad kõik töötada oma alamülesannete
+    kallal ja lõpuks saame kokku tervikliku pildi põdrast.
+  </span>
+  </div>
+  <div class="row mx-0 mt-2">
+    <div class="px-0 col col-lg-9"><span>Ka programme kirjutades on hea jagada suur programm väikesteks alamprogrammideks. Esiteks saab siis alamprogrammide
+    kirjutamise jagada erinevate inimeste vahel, aga teine eelis on see, et saame olemasolevad väikseid alamprogramme korduvalt mitmes kohas kasutada.
+    Oletame näiteks, et tahame kirjutada programmi pitsarestoranile. Pitsarestoran valmistab ette uut menüüd ja nad hakkavad pakkuma pitsasid kolmes suuruses:
+    20 cm, 28 cm ja 38 cm läbimõõduga. Nad teavad, et ühe ruutsentimeetri pitsa jaoks on neil vaja 2,3 grammi tainast ning nüüd tahavad nad iga pitsasuuruse
+    jaoks vajamineva taigna koguse arvutada. Väga mugav oleks, kui saaks vajamineva taigna koguse arvutamise valemi panna kirja ühes kohas ning siis
+    iga kord, kui on vaja seda valemit kasutada, viidata sellele koodijupile. Just siin tulevad appi <strong
+        class="strong">funktsioonid</strong>, mille
+    abil saame alamprogrammi kirjutada ühes kohas, anda sellele nime ja seda hiljem mujal koodis kasutada.
+  </span>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/functions/pizza_dough.png" alt="pizza dough"
+           style="height: 10rem">
+    </div>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><strong class="strong">Sisseehitatud funktsioonid</strong></div>
+  <div class="mt-3"><span>Tegelikult oleme me funktsioone juba kasutanud, seni oleme neid aga nimetanud lihtsalt käskudeks. Näiteks <span
+    class="fst-italic">print()</span>,
+    <span class="fst-italic">input()</span>, <span class="fst-italic">type()</span>, <span
+      class="fst-italic">int()</span>, <span class="fst-italic">str()</span>,
+    <span class="fst-italic">float()</span>, <span class="fst-italic">bool()</span> on kõik funktsioonid. Need on mõned Pythoni sisseehitatud funktsioonidest.
+    Me ei tea täpselt, milline on see kood, mille abil funktsioon <span class="fst-italic">print()</span> etteantud väärtuse ekraanile väljastab, aga meil ei
+    olegi vaja teada. Meile piisab teadmisest, et selline funktsioon on olemas ja saame seda kasutada.
+  </span>
+  </div>
+  <div class="mt-2"><span>Funktsioonidele saab sulgudes ette anda <strong class="strong">argumente</strong>
+    ehk teisisõnu <strong
+      class="strong">parameetreid</strong>, mida funktsioonid oma töös kasutada saavad. Näiteks <span
+      class="fst-italic">print()</span> funktsioonile
+    võime anda argumendiks mingi sõne, arvu või tõeväärtuse, mis siis ekraanile väljastatakse. Funktsioonile <span
+      class="fst-italic">int()</span> anname argumendiks
+    näiteks sõne või ujukomaarvu, mille tahame täisarvuks teisendada.
+    Järgmiseks vaatame juba, kuidas ise funktsioone kirja panna.</span></div>
+</div>
+<h4 class="mt-5">Kuidas funktsiooni kirjutada?</h4>
+<div class="mt-3 box-container">
+  <div><span>Funktsiooni kirjutamine algab võtmesõnast <strong class="fst-italic bold">def</strong>. Sellele järgneb funktsiooni nimi. Funktsioonide
+    nimetamisele kehtivad samad reeglid nagu muutujatele. Üldiselt on hea tava panna funktsioonile mingi tähendusrikas nimi, mis annaks teada, mida see funktsioon teeb.
+    Funktsiooni nime lõpus peavad alati olema sulud ja kõige lõpus koolon. Järgmistele ridadele kirjutatakse taandega kõik käsud, mida funktsioonis tehakse. Näiteks kirjutame
+    funktsiooni nimega <span class="fst-italic">tervita</span>, mis tervitab kasutajat ja küsib, kuidas tal läheb.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> tervita</span>():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tere-tere vanakere!"</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Kuidas läheb?"</span>)<br></span>
+  </div>
+  <div class="mt-2"><span>Võid proovida seda koodijuppi käivitada, aga ilmselt märkad, et midagi ekraanile ei ilmu. Nimelt lihtsalt funktsiooni kirja panemisest
+    ehk kirjeldamisest ei piisa, seda funktsiooni tuleb kuskil koodis ka kasutada ehk funktsiooni tuleb <strong
+      class="strong">välja kutsuda</strong>. Selleks tuleb kirjutada
+    programmi funktsiooni nimi koos sulgudega.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> tervita</span>():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tere-tere vanakere!"</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
+      class="code-string">"Kuidas läheb?"</span>)<br><br></span>
+    <span>tervita()</span>
+  </div>
+  <div class="mt-2"><span>Nüüd ilmub tervitus ka ekraanile. Programme kirjutades on tavaks panna kõik funktsioonide kirjeldused programmi algusesse, olenemata sellest, kus
+    neid hiljem kasutatakse. Funktsioonidele järgnevat osa nimetatakse <strong class="strong">põhiprogrammiks</strong> ja just seda hakatakse täitma
+    programmi käivitamisel. Seni olemegi ainult põhiprogrammist koosnevat koodi kirjutanud. Programmi aluses olevad funktsioonide kirjeldused õpetavad Pythonile, kuidas
+    ta peab käituma, kui põhiprogrammis mõnda nendest funktsioonidest kasutatakse.
+  </span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="printAdditionNoArgumentsTestCode"
+                      [items]="printAdditionNoArgumentsTestAnswers"
+                      [formControlNameBase]="'printAdditionNoArguments'"></app-radiochoice-test>
+<h4 [attr.id]="'argumendid'" class="mt-5">Kuidas funktsioonile argumente anda?</h4>
+<div class="mt-3 box-container">
+  <div class="row mx-0">
+    <div class="px-0 col col-lg-10"><span>Proovime nüüd kirjutada funktsiooni, mis arvutaks pitsataigna koguse pitsa läbimõõdu põhjal. Alustame olukorrast, kus pitsa
+    diameeter on 20 cm ja ühe ruutsentimeetri pitsa jaoks on vaja 2,3 grammi tainast. Selleks peame kõigepealt arvutama pitsa pindala. Pitsa on
+    ringi kujuline, seega saame kasutada ringi pindala valemit: &pi;r&#178; (pi korda raadius ruudus) ja siis korrutada pindala 2,3-ga. Raadiuse saamiseks
+    jagame diameetri kahega. Pi asemel kasutame siin lihtsuse mõttes arvu 3,14.
+  </span>
+    </div>
+    <div class="col-lg-1 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/functions/circle_area.png" alt="circle area"
+           style="height: 7rem">
+    </div>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (<span class="code-number">20</span> / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"20 cm läbimõõduga pitsa jaoks kulub "</span> +
+      <span class="code-function">str</span>(taigna_kogus) + <span
+        class="code-string">" g tainast."</span>)<br><br></span>
+    <span>pitsatainas()</span>
+  </div>
+  <div class="mt-2"><span>See koodijupp väljastab meile:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>20 cm läbimõõduga pitsa jaoks kulub 722.1999999999999 g tainast.</span>
+  </div>
+  <div class="mt-2"><span>Nüüd tahaksime taignakoguse arvutada ka 28 ja 38 cm läbimõõduga pitsade jaoks. Kuid kuidas seda teha? Tahaksime muuta
+    oma funktsiooni pitsa läbimõõdust sõltuvaks. Siin tulevadki appi funktsiooni argumendid. Funktsioonile argumendi andmiseks tuleb funktsiooni kirjelduses
+    funktsiooni nime järel sulgudesse anda argumendi nimi. Kui tahame anda mitu argumenti, siis lisame need komadega eraldatud sulgudesse. Argumendi nimetamisel on samad reeglid nagu muutujate ja funktsioonide nimetamisel. Igal pool funktsioonis,
+    kus tahame argumenti kasutada, paneme konkreetse väärtuse asemel kirja argumendi nime. Täpselt nii nagu kasutaks muutujat. Järgmises koodijupis anname
+    funktsioonile ühe argumendi nimega <span class="fst-italic">läbimõõt</span>. Funktsiooni sisus asendame arvu 20 nüüd argumendiga.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
+      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
+      <span class="code-function">str</span>(taigna_kogus) + <span
+        class="code-string">" g tainast."</span>)</span>
+  </div>
+  <div class="mt-2"><span>Põhiprogrammis, kus funktsiooni välja kutsume, peame nüüd andma funktsioonile argumendiks konkreetse väärtuse. Täpselt nii, nagu
+    oleme seni andnud argumente sisseehitatud funktsioonidele nagu <span class="fst-italic">print</span> ja <span
+      class="fst-italic">input</span>.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>pitsatainas(<span class="code-number">20</span>)</span>
+  </div>
+  <div class="mt-2"><span>Pealtnäha väljastab programm sama asja, mis enne, kuid nüüd saame soovi korral funktsiooni välja kutsuda ka teistsuguste
+    argumentidega:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
+      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
+      <span class="code-function">str</span>(taigna_kogus) + <span
+        class="code-string">" g tainast."</span>)<br><br></span>
+    <span>pitsatainas(<span class="code-number">20</span>)<br></span>
+    <span>pitsatainas(<span class="code-number">28</span>)<br></span>
+    <span>pitsatainas(<span class="code-number">38</span>)<br></span>
+  </div>
+  <div class="mt-2"><span>See koodijupp väljastab meile nüüd kõigi kolme läbimõõduga pitsa jaoks vajalikud taignakogused:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>20 cm läbimõõduga pitsa jaoks kulub 722.1999999999999 g tainast.<br></span>
+    <span>28 cm läbimõõduga pitsa jaoks kulub 1415.512 g tainast.<br></span>
+    <span>38 cm läbimõõduga pitsa jaoks kulub 2607.142 g tainast.<br></span>
+  </div>
+  <div class="mt-2"><span>Nüüd võiks teha veel ühe viimase väikse täienduse meie koodi. Kindlasti märkasid, et 20 cm läbimõõduga pitsa
+    puhul väljastatakse meile hirmus palju komakohti. Tegelikult meil ju nii täpset vastust vaja ei lähe, piisaks ka ühest või kahest komakohast.
+    Selleks, et vastus ümardada soovitud komakohtadeni, õpime ära uue sisseehitatud funktsiooni nimega <span
+      class="fst-italic">round</span>. Sellele
+    funktsioonile saab anda kaks argumenti. Esimene argument on see arv, mida tahama ümardada, ja teine argument on soovitud komakohtade arv. Kui tahaksime
+    arvu 722.1999999999999 ümardada ühe komakohani, siis saaksime seda teha nii:
+  </span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-function">round</span>(<span class="code-number">722.1999999999999</span>, <span
+      class="code-number">1</span>)</span>
+  </div>
+  <div class="mt-2"><span>See annaks meile tulemuseks <span class="fst-italic">722.2</span>. Proovime nüüd ka oma funktsiooni täiendada, et see ümardaks
+      tulemuse ühe komakohani:
+  </span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
+      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
+      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
+      <span class="code-function">str</span>(taigna_kogus) + <span
+        class="code-string">" g tainast."</span>)<br></span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="printSubtractionArgumentsTestCode"
+                      [items]="printSubtractionArgumentsTestAnswers"
+                      [formControlNameBase]="'printSubtractionArguments'"></app-radiochoice-test>
+<h4 [attr.id]="'tagastamine'" class="mt-5">Kuidas funktsioonist väärtust tagastada?</h4>
+<div class="mt-3 box-container">
+  <div><span>Mis saaks aga siis kui tahaksime nüüd taignakogused kokku liita, et leida palju tainast peab kokku tegema? Esimene mõte võib olla, et
+    äkki saame kasutada funktsiooni seest muutujat <span class="fst-italic">taigna_kogus</span>? Võime seda kohe proovida:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
+      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
+      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
+      <span class="code-function">str</span>(taigna_kogus) + <span
+        class="code-string">" g tainast."</span>)<br><br></span>
+    <span>pitsatainas(<span class="code-number">20</span>)<br></span>
+    <span><span class="code-function">print</span>(taigna_kogus)</span>
+  </div>
+  <div class="mt-2"><span>Kui seda koodi käivitada, siis näeme, et saame hoopis veateate:</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span class="code-error">NameError: name 'taigna_kogus' is not defined</span>
+  </div>
+  <div class="mt-2"><span>See veateade ütleb meile, et muutujat nimega <span class="fst-italic">taigna_kogus</span> ei ole olemas. Aga ometi me
+  ju näeme, et funktsiooni sees on selline muutuja? Tegelikult tulebki välja, et kõik funktsiooni sees loodud muutujad ongi kättesaadavad ainult selle
+  sama funktsiooni seest. Väljastpoolt me nendele ligi ei pääse. Seega ei saa me otse funktsiooni seest mingit muutujat kasutada. Kuidas siis aga
+  taigna koguse arvutamise tulemus kätte saada?</span></div>
+  <div class="mt-2"><span>Selleks, et funktsioonist mingi väärtus kätte saada, tuleb see funktsioonis <strong
+    class="strong">tagastada</strong>.
+  Kui funktsioonist väärtus tagastatakse, siis see funktsioon omandab selle väärtuse oma töö lõpus ja saame seda väärtust oma koodis kasutada. Näiteks
+  <span class="fst-italic">input</span>-funktsioon tagastab selle sõne, mis kasutaja sisestas. Funktsioon <span
+      class="fst-italic">int</span>() tagastab
+  teisenduse tulemusel saadud täisarvu. Kui ise funktsioone kirjeldame, siis peame funktsioonis ära märkima selle väärtuse, mida funktsioon peab tagastama.
+  Selleks kirjutame vastava väärtuse ette võtmesõna <strong class="strong">return</strong>. Kohe kui funktsioonis jõutakse <span
+      class="fst-italic">return</span>
+  võtmesõnani, siis tagastatakse väärtus ja funktsioon lõpetab oma töö.</span></div>
+  <div class="mt-2"><span>Proovime nüüd funktsioonis taigna koguse väljastamise asemel selle hoopis tagastada:</span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
+      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br><br></span>
+    <span>pitsatainas(<span class="code-number">20</span>)</span>
+  </div>
+  <div class="mt-2"><span>Nüüd küll pitsataigna kogus tagastatakse, aga hetkel ei näe me veel midagi programmi väljundis, sest meie koodis pole ühtegi
+  <span class="fst-italic">print</span>-funktsiooni</span>. Võime näiteks väljastada funktsiooni väljakutse tulemuse,
+    siis näeme, kas funktsioon
+    tagastas ilusti õige arvu:
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-function">print</span>(pitsatainas(<span class="code-number">20</span>))</span>
+  </div>
+  <div class="mt-2"><span>Nüüd ilmub meil ekraanile arv <span class="fst-italic">722.2</span>, mis on õige tulemus. Nagu näeme, saame funktsiooni
+  tagastatud väärtust oma koodis edasi kasutada, võime selle näiteks välja printida, salvestada mõnda muutujasse või teha sellega muid vajalikke tehteid.</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div class="row mx-0">
+    <div class="px-0 col col-lg-8">
+      <div><span>Täiendame oma programmi nüüd nii, et laseme funktsioonil arvutada kõigi kolme pitsasuuruse jaoks vajalikud taignakogused, salvestame funktsiooni
+  tagastatud väärtused muutujatesse ning hiljem liidame need kokku, et anda kasutajale teada, palju tal kolme eri suuruses pitsa jaoks tainast kokku läheb.</span>
+      </div>
+      <div class="code-block mt-2">
+        <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+          class="code-number">2</span> * 3.14<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
+          class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br><br></span>
+        <span>kogus_20 = pitsatainas(<span class="code-number">20</span>)<br></span>
+        <span>kogus_28 = pitsatainas(<span class="code-number">28</span>)<br></span>
+        <span>kogus_38 = pitsatainas(<span class="code-number">38</span>)<br></span>
+        <span>kokku = kogus_20 + kogus_28 + kogus_38<br></span>
+        <span><span class="code-function">print</span>(<span class="code-string">"Kokku kulub 20 cm, 28 cm ja 38 cm pitsa peale "</span> +
+      <span class="code-function">str</span>(kokku) + <span class="code-string">" g tainast."</span>)</span>
+      </div>
+    </div>
+    <div class="col-lg-3 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/functions/pizzas.png" alt="pizzas"
+           style="height: 20rem">
+    </div>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Tagastusväärtus <span class="fst-italic">None</span></strong>
+  <div class="mt-2"><span>Kõik funktsioonid tagastavad midagi, isegi kui me ei määra <span
+    class="fst-italic">return</span> võtmesõnaga
+  tagastatavat väärtust. Nendel funktsioonidel, millel pole tagastatavat väärtust määratud, on vaikimisi tagastatavaks väärtuseks
+    <span class="fst-italic">None</span>. See on täiesti omaette andmetüüp ja see tähistab puuduvat väärtust. Võid katsetada järgmise funktsiooniga:</span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def</span> <span class="code-def"> liida</span>(a, b):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(a + b)<br><br></span>
+    <span><span class="code-function">print</span>(liida(<span class="code-number">4</span>, <span
+      class="code-number">3</span>))</span>
+  </div>
+  <div class="mt-2"><span>See funktsioon väljastab kõigepealt numbri 7, sest funktsiooni sees prinditakse liitmistehte tulemus. Seejärel, kui funktsioon lõpetab,
+  siis väljastatakse ka funktsiooni enda väärtus, mis antud juhul on <span class="fst-italic">None</span>.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>7<br></span>
+    <span>None</span>
+  </div>
+  <div class="mt-2"><span><span class="fst-italic">None</span> tagastustüübiga me tegelikult väga palju mõistliku teha ei saa. Sellel puuduvad igasugused
+  operatsioonid teiste andmetüüpidega ja kui prooviksime sellele näiteks mõnda arvu või sõnet liita, saaksime veateate.</span>
+  </div>
+</div>
+<app-categorize-test [categories]="testCategories" [items]="testItems"
+                     [exerciseTitle]="'Lohista kõik väited õige funktsiooni alla'"
+                     [correctAnwser]="testCorrectAnswer"></app-categorize-test>
+<h4 [attr.id]="'harjutused'" class="mt-5">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Pitsarestoran</strong>
+  <div class="row mx-0">
+    <div class="px-0 col col-lg-9">
+      <div class="mt-2"><span>Ühes eelnevas näites arvutasime kokku pitsataignakoguse ühe 20 cm, ühe 28 cm ja ühe 38 cm läbimõõduga pitsa jaoks. Nüüd tee oma programm
+    pitsarestoranile veelgi kasulikumaks ja küsi hoopis kasutajalt, mitu igas suuruses pitsat ta plaanib täna teha. Siis saad kokku arvutada, palju tainast peaks
+    pitsarestoran hommikul valmistama, et nad saaks terve päeva sellest pitsasid teha. Täienda funktsiooni nii, et see võtaks ka teise argumendi - pitsade koguse.
+    Lisaks võiks teisendada lõpliku koguse grammidest kilogrammidesse, sest nii on see kogus paremini loetav. Tulemus võiks ka olla ümardatud ühe komakohani.
+    Väljund võiks olla näiteks selline:</span>
+      </div>
+      <div class="code-block mt-2 fst-italic">
+        <span>Mitu 20 cm läbimõõduga pitsat plaanid teha? <span class="code-input">23</span><br></span>
+        <span>Mitu 28 cm läbimõõduga pitsat plaanid teha? <span class="code-input">45</span><br></span>
+        <span>Mitu 38 cm läbimõõduga pitsat plaanid teha? <span class="code-input">31</span><br></span>
+        <span>Kokku kulub täna pitsadele 161.1 kg tainast.</span>
+      </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/functions/pizzaoven.png" alt="pizzaoven"
+           style="height: 20rem">
+    </div>
+  </div>
+  <app-exercise-hints [hints]="pizzaHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Edasiarendus: rohkem funktsioone</strong>
+  <div class="mt-2"><span>Võib-olla märkasid eelmise ülesande lõpus, et sinna jäi ikka omajagu korduvat sarnast koodi sisse. Näiteks kuidas kasutajalt küsiti
+  iga pitsasuuruse jaoks mitu sellist ta plaanib teha? Nüüd proovi luua paar uut funktsiooni, mis vähendaksid põhiprogrammis tehtava töö hulka. </span>
+  </div>
+  <div class="mt-2"><span>Esimene lisatav
+  funktsioon võiks võtta argumendiks pitsa läbimõõdu, küsida kasutajalt mitu sellise läbimõõduga pitsat ta soovib teha, ja tagastada taignakoguse. Arvutamise töö
+  peaks ikka jääma meie algsele funktsioonile <span class="fst-italic">pitsatainas()</span>.</span></div>
+  <div class="mt-2"><span>Teiseks võiks eraldi funktsiooni tõsta koguse teisendamise grammidest kilogrammidesse koos ümardamisega. Selleks võiks luua
+    funktsiooni, mis võtab argumendiks koguse grammides ja tagastab selle koguse kilogrammides, ümardatult ühe komakohani.</span>
+  </div>
+  <app-exercise-hints [hints]="pizzaMoreFunctionsHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Kinokülastuse eelarve</strong>
+  <div class="mt-2 row mx-0">
+  <div class="px-0 col-lg-9"><span>Meelil on sünnipäev tulemas ja ta tahab selle puhul kutsuda mõned sõbrad endaga kinno. Kinopilet õpilasele maksab
+  5,8 eurot. Kui aga tulemas on vähemalt 10 inimest, saavad nad grupisoodustust ja siis on iga pilet 4 eurot. Lisaks plaanib Meeli igale sõbrale 6 euro
+  eest popkorni ja juua osta. Kirjuta funktsioon <span class="fst-italic">kinokülastuse_maksumus</span>, mis võtab argumendiks kinokülastajate arvu ja tagastab
+  kui palju läheb kinokülastus maksma. Põhiprogrammis küsi kasutajalt kinokülastajate arvu ja väljasta kinokülastuse maksumus. Mõned näited programmi väljundist:</span>
+  </div>
+  <div class="col-lg-2 mt-auto mx-3 mb-3">
+    <img src="../../../assets/images/functions/cinema.png" alt="cinema"
+         style="height: 10rem">
+  </div>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Mitu külastajat on kinno tulemas? <span class="code-input">8</span><br></span>
+    <span>Kinokülastus läheb maksma 94.4 eurot.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Mitu külastajat on kinno tulemas? <span class="code-input">14</span><br></span>
+    <span>Kinokülastus läheb maksma 140 eurot.</span>
+  </div>
+  <app-exercise-hints [hints]="cinemaHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/funktsioonid'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>

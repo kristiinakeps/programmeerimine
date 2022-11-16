@@ -71,7 +71,16 @@
           <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Funktsioonid</a>
+          <a class="nav-link" [routerLink]="'funktsioonid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Funktsioonid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'argumendid'" (click)="collapseNavbar()">Argumendid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'tagastamine'" (click)="collapseNavbar()">Tagastamine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Failid</a>

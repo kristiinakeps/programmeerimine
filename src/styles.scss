@@ -22,9 +22,11 @@ $color-green-dark: #386315;
 $color-blue: #68b8f2;
 $color-blue-light: #cce9ff;
 $color-blue-dark: #1077c2;
+$color-navy: #09154d;
 $color-red: #ff5975;
 $color-red-light: #ffd1d9;
 $color-red-dark: #660e1d;
+$color-red-error: #c00c2a;
 $color-background: #f7f7f7;
 $color-white: #ffffff;
 $color-grey: #dcdce0;
@@ -423,6 +425,15 @@ a:hover {
 .code-bold {
   color: $color-pink-dark;
   font-weight: bold;
+}
+
+.code-def {
+  color: $color-navy;
+  font-weight: bold;
+}
+
+.code-error {
+  color: $color-red-error;
 }
 
 .hint-container {

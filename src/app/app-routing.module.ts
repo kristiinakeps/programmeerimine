@@ -7,9 +7,10 @@ import {ALGORITHM_ROUTE} from "./algorithm/algorithm.route";
 import {VARIABLES_ROUTE} from "./variables/variables.route";
 import {CONDITIONS_ROUTE} from "./conditions/conditions.route";
 import {LOOPS_ROUTE} from "./loops/loops.route";
+import {FUNCTIONS_ROUTE} from "./functions/functions.route";
 
 const routes: Routes = [NAVBAR_ROUTE, HOME_ROUTE, INTRODUCTION_ROUTE, ALGORITHM_ROUTE, VARIABLES_ROUTE, CONDITIONS_ROUTE,
-                        LOOPS_ROUTE];
+                        LOOPS_ROUTE, FUNCTIONS_ROUTE];
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',

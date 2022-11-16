@@ -23,6 +23,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ConditionsComponent } from './conditions/conditions.component';
 import { LoopsComponent } from './loops/loops.component';
 import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice-test.component';
+import { FunctionsComponent } from './functions/functions.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice
     MultichoiceTestComponent,
     ConditionsComponent,
     LoopsComponent,
-    RadiochoiceTestComponent
+    RadiochoiceTestComponent,
+    FunctionsComponent
   ],
   imports: [
     BrowserModule,
