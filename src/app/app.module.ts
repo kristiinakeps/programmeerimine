@@ -24,6 +24,7 @@ import { ConditionsComponent } from './conditions/conditions.component';
 import { LoopsComponent } from './loops/loops.component';
 import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice-test.component';
 import { FunctionsComponent } from './functions/functions.component';
+import { FilesComponent } from './files/files.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FunctionsComponent } from './functions/functions.component';
     ConditionsComponent,
     LoopsComponent,
     RadiochoiceTestComponent,
-    FunctionsComponent
+    FunctionsComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,

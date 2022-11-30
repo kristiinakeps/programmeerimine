@@ -154,3 +154,4 @@ export class FunctionsComponent {
     '<span class="code-function">str</span>(kinokülastuse_maksumus(külastajaid)) + <span class="code-string">" eurot."</span>)')]
 }
 
+//todo: vaikeparameetrid, parameetri nime järgi funktsiooni väljakutses argumendi andmine

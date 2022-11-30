@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TestAnswer} from "../../models/test-answer.model";
 import {FormBuilder, FormControl} from "@angular/forms";
+import {shuffle} from "../../utils";
 
 @Component({
   selector: 'app-multichoice-test',
@@ -13,6 +14,8 @@ export class MultichoiceTestComponent implements OnInit {
   @Input() code: string | null = null;
   @Input() items!: TestAnswer[];
   @Input() formControlNameBase!: string;
+  @Input() fileName: string | null = null;
+  @Input() fileContents: string | null = null;
 
   correct = 'Tubli! Kõik on õigesti valitud!'
   incorrect = 'Esineb veel mõni viga. Proovi uuesti!'
@@ -23,6 +26,7 @@ export class MultichoiceTestComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.items = shuffle([...this.items]);
     for (let i = 0; i < this.items.length; i++) {
       this.form.addControl(this.formControlNameBase + i, new FormControl(false));
     }
