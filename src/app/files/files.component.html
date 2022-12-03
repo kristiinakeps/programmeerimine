@@ -33,7 +33,8 @@
   </div>
   <div class="mt-2"><span>Faili avamiseks on Pythonis funktsioon nimega <span class="fst-italic">open()</span>. Argumendiks võtab see funktsioon
     ei midagi muud kui faili nime, mida soovime avada. See faili nimi tuleb anda sõnena. Meie puhul oleks see siis
-    <span class="fst-italic">"nimekiri.txt"</span>. Kui faili ei leita, siis lõpetab programm oma töö veaga. Funktsioon <span class="fst-italic">open()</span>
+    <span class="fst-italic">"nimekiri.txt"</span>. Kui faili ei leita, siis lõpetab programm oma töö veaga. Funktsioon <span
+      class="fst-italic">open()</span>
     tagastab meile n-ö avatud faili, mida saame edaspidi kasutada. See tagastatud väärtus tuleks kuhugi muutujasse salvestada. Faili sulgemiseks on avatud
     failidel meetod nimega <span class="fst-italic">close()</span>. Faili avamine ja koheselt sulgemine võiks programmis välja näha nii:
   </span>
@@ -55,16 +56,24 @@
 </div>
 <h4 [attr.id]="'lugemine'" class="mt-5">Kuidas failist andmeid lugeda?</h4>
 <div class="mt-3 box-container">
-  <div><span>Me juba oskame faili avada ja seda hiljem ka sulgeda. Nüüd vaatame, kuidas sealt info kätte saada. Failidel on mitmeid meetode, me juba
+  <div class="row mx-0">
+    <div class="col-lg-10 ps-0">
+      <div><span>Me juba oskame faili avada ja seda hiljem ka sulgeda. Nüüd vaatame, kuidas sealt info kätte saada. Failidel on mitmeid meetode, me juba
     kasutasime <span class="fst-italic">close</span>-meetodit, et fail sulgeda. Nüüd vaatame kahte meetodit, millega saab failist sisu lugeda. Esimene neist
     on meetod <span class="fst-italic">read()</span>, mis loeb failist kogu sisu ühe sõnena, ja me saame seda siis väljastada või edasi kasutada, kuidas tahame.
   </span>
-  </div>
-  <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-    <span>sisu = fail.read()<br></span>
-    <span><span class="code-function">print</span>(sisu)<br></span>
-    <span>fail.close()</span>
+      </div>
+      <div class="code-block mt-2">
+        <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
+        <span>sisu = fail.read()<br></span>
+        <span><span class="code-function">print</span>(sisu)<br></span>
+        <span>fail.close()</span>
+      </div>
+    </div>
+    <div class="col-lg-1 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/files/file.png" alt="file"
+           style="height: 10rem">
+    </div>
   </div>
   <div class="mt-2"><span>Selle koodijupi käivitamisel peaks nüüd kõik faili kirjutatud nimed ekraanile ilmuma, täpselt samal kujul nagu failis:
   </span>
@@ -95,13 +104,16 @@
 </div>
 <div class="box-container mt-3">
   <div class="mt-2"><span>Kindlasti märkad, et nüüd on mingil põhjusel tekkinud väljundisse ridade vahele tühjad read. Kuid kust ja miks need tekivad?
-  Nimelt on tekstifailides iga rea lõpus peidetud uue rea sümbol. Seda tähistatakse nii: <span class="fst-italic">\n</span>. Kui kuskil sõnes esineb selline
+  Nimelt on tekstifailides iga rea lõpus peidetud uue rea sümbol. Seda tähistatakse nii: <span
+      class="fst-italic">\n</span>. Kui kuskil sõnes esineb selline
     sümbol, siis see asendatakse reavahetusega. Proovi näiteks väljastada järgmine sõne:
-    <span class="fst-italic">"Tere tere!\nKuidas sul läheb?"</span>. Nagu näed, siis kirjutasime selle ühe sõnena, kus keskel on sümbol <span class="fst-italic">/n</span>,
+    <span class="fst-italic">"Tere tere!\nKuidas sul läheb?"</span>. Nagu näed, siis kirjutasime selle ühe sõnena, kus keskel on sümbol <span
+      class="fst-italic">/n</span>,
     aga kui selline sõne väljastada, siis <span class="fst-italic">/n</span> kaob ja selle kohale tekitatakse reavahetus:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span class="code-string">"Tere tere!\nKuidas sul läheb?"</span>)</span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Tere tere!\nKuidas sul läheb?"</span>)</span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Tere tere!<br>Kuidas sul läheb?</span>
@@ -136,11 +148,13 @@
     <span>fail.close()</span>
   </div>
   <div class="mt-2"><span>Siin panime tsüklimuutujale nimeks <span class="fst-italic">rida</span> ja seda muutujat saame tsükli sees kasutada.
-  Kasutame ka jälle <span class="fst-italic">strip</span>-meetodit, et rea lõpust reavahetuse sümbol eemaldada.</span></div>
+  Kasutame ka jälle <span class="fst-italic">strip</span>-meetodit, et rea lõpust reavahetuse sümbol eemaldada.</span>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Järgmises näites on Madis pannud faili <span class="fst-italic">kulutused.txt</span> kirja kõik oma ühe kuu jooksul tehtud kulutused ja ka teenitud taskuraha.
-    Ta tahaks nüüd teada, palju ta kuu jooksul teeninud ja kulutanud on. Failis tähistavad kõik positiivsed arvud juurde teenitud raha ja negatiivsed arvud kulutusi.</span></div>
+    Ta tahaks nüüd teada, palju ta kuu jooksul teeninud ja kulutanud on. Failis tähistavad kõik positiivsed arvud juurde teenitud raha ja negatiivsed arvud kulutusi.</span>
+  </div>
   <div class="code-block mt-2 fst-italic">
     <span>10.0<br></span>
     <span>-5.6<br></span>
@@ -151,38 +165,58 @@
     <span>2.0<br></span>
     <span>-1.7</span>
   </div>
+
   <div class="code-block mt-2">
     <span>fail = <span class="code-function">open</span>(<span class="code-string">"kulutused.txt"</span>)<br></span>
     <span>kulutused = <span class="code-number">0</span><br></span>
     <span>teenitud = <span class="code-number">0</span><br></span>
     <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">float</span>(rida)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &gt; <span
+      class="code-number">0</span>:<br></span>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teenitud += arv<br></span>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kulutused += arv<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Kuu jooksul teenitud raha: "</span> + <span class="code-function">str</span>(teenitud))<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Kuu jooksul tehtud kulutused: "</span> + <span class="code-function">str</span>(-kulutused))<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Kuu jooksul teenitud raha: "</span> + <span
+      class="code-function">str</span>(teenitud))<br></span>
+    <span><span class="code-function">print</span>(<span
+      class="code-string">"Kuu jooksul tehtud kulutused: "</span> + <span
+      class="code-function">str</span>(-kulutused))<br></span>
     <span>fail.close()</span>
   </div>
-  <div class="mt-2"><span>Igal real on failis kirjas üks ujukomaarv, aga nagu ka kasutajalt sisendit küsides, saame failist ridu lugedes need kätte sõnedena. Seega jääb meie
+  <div class="row mx-0 mt-3">
+    <div class="col-lg-8 ps-0"><span>Igal real on failis kirjas üks ujukomaarv, aga nagu ka kasutajalt sisendit küsides, saame failist ridu lugedes need kätte sõnedena. Seega jääb meie
   ülesandes read sobivaks andmetüübiks teisendada. Kui soovime kogu rea teisendada näiteks täis- või ujukomaarvuks, siis ei pea me enne eraldi reavahetuse sümbolit eemaldama.
     Tüübiteisendusfunktsioonid oskavad teisenduse ka reavahetussümboliga õigesti teha. Kui oleme teisenduse ära teinud, siis saame tingimuslausega kontrollida,
-    kas real olev arv on positiivne või negatiivne, ja selle järgi saame suurendada kas kulutuste või teenitud raha hulka.</span></div>
+    kas real olev arv on positiivne või negatiivne, ja selle järgi saame suurendada kas kulutuste või teenitud raha hulka.</span>
+    </div>
+    <div class="col-lg-3 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/files/piggy_bank.png" alt="piggy bank"
+           style="height: 10rem">
+    </div>
+  </div>
 </div>
-<app-radiochoice-test [items]="fileReadTest" [formControlNameBase]="'fileRead'" [title]="'Mida teeb järgmine koodijupp?'"
-[code]="fileReadTestCode" [fileContents]="fileReadTestFile" [fileName]="'tulemused.txt'"></app-radiochoice-test>
+<app-radiochoice-test [items]="fileReadTest" [formControlNameBase]="'fileRead'"
+                      [title]="'Mida teeb järgmine koodijupp?'"
+                      [code]="fileReadTestCode" [fileContents]="fileReadTestFile"
+                      [fileName]="'tulemused.txt'"></app-radiochoice-test>
 <h4 [attr.id]="'kirjutamine'" class="mt-5">Kuidas andmeid faili kirjutada?</h4>
 <div class="mt-3 box-container">
-  <div><span>Andmete faili kirjutamiseks on esimene samm jälle fail avada. Nüüd aga peame faili avamisel andma <span class="fst-italic">open</span>-funktsioonile
+  <div><span>Andmete faili kirjutamiseks on esimene samm jälle fail avada. Nüüd aga peame faili avamisel andma <span
+    class="fst-italic">open</span>-funktsioonile
   ühe lisaargumendi, mis annab teada, mille jaoks me tahame faili avada. Kõige tavalisemad variandid on lugemine, kirjutamine ja lisamine. Lugemine on ka vaikimisi
-  määratud faili avamise viis, seepärast ei pidanud me eelmistes näidetes seda eraldi <span class="fst-italic">open</span>-funktsioonile ütlema. Lugemise
-  tähis on <span class="fst-italic">"r"</span>, kirjutamise jaoks <span class="fst-italic">"w"</span> ja faili lisamise jaoks <span class="fst-italic">"a"</span>. Need
-  tähised tulevad vastavalt ingliskeelsetest sõnadest <span class="fst-italic">read</span>, <span class="fst-italic">write</span> ja <span class="fst-italic">append</span>.
+  määratud faili avamise viis, seepärast ei pidanud me eelmistes näidetes seda eraldi <span
+      class="fst-italic">open</span>-funktsioonile ütlema. Lugemise
+  tähis on <span class="fst-italic">"r"</span>, kirjutamise jaoks <span class="fst-italic">"w"</span> ja faili lisamise jaoks <span
+      class="fst-italic">"a"</span>. Need
+  tähised tulevad vastavalt ingliskeelsetest sõnadest <span class="fst-italic">read</span>, <span class="fst-italic">write</span> ja <span
+      class="fst-italic">append</span>.
     Faili avamine kirjutamiseks:
   </span></div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span class="code-string">"w"</span>)</span>
+    <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
+      class="code-string">"w"</span>)</span>
   </div>
   <div class="mt-2"><span>Kirjutamise ja lisamise ehk <span class="fst-italic">"w"</span> ja <span class="fst-italic">"a"</span> vahe on see, et kui avame faili kirjutamiseks,
     siis kirjutatakse failis olnud info üle ehk vanad andmed failist kustutatakse. Lisamise puhul aga lisatakse uued andmed lihtsalt faili lõppu juurde ja ka vanad andmed jäävad alles.
@@ -194,7 +228,8 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span class="code-string">"w"</span>)<br></span>
+        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
+          class="code-string">"w"</span>)<br></span>
         <span>fail.write(<span class="code-string">"Faili"</span>)<br></span>
         <span>fail.write(<span class="code-string">"kirjutamine"</span>)<br></span>
         <span>fail.write(<span class="code-string">"reavahetustega"</span>)<br></span>
@@ -203,7 +238,8 @@
     </div>
     <div class="col-md-6 ">
       <div class="code-block ms-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span class="code-string">"w"</span>)<br></span>
+        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
+          class="code-string">"w"</span>)<br></span>
         <span>fail.write(<span class="code-string">"Faili\n"</span>)<br></span>
         <span>fail.write(<span class="code-string">"kirjutamine\n"</span>)<br></span>
         <span>fail.write(<span class="code-string">"reavahetustega\n"</span>)<br></span>
@@ -227,18 +263,22 @@
     </div>
   </div>
 </div>
-<app-multichoice-test [items]="fileOpenReadTest" [formControlNameBase]="'fileOpenRead'" [title]="fileOpenReadTestTitle"></app-multichoice-test>
+<app-multichoice-test [items]="fileOpenReadTest" [formControlNameBase]="'fileOpenRead'"
+                      [title]="fileOpenReadTestTitle"></app-multichoice-test>
 <h4 [attr.id]="'kodeering'" class="mt-5">Kuidas määrata faili kodeeringut?</h4>
 <div class="mt-3 box-container">
   <div><span>Võib-olla oled märganud, et vahepeal võivad failides ja tekstides mõned tähed kummalised olla. Tüüpiliselt just täpitähed
   ä, ö, ü, õ ning ka š ja ž. Need on meie keelele omased tähed ja paljudes teistes keeltes neid ei leidu. Sissejuhatusest ilmselt mäletad, et arvuti kõhus hoitakse kõiki
   andmeid kahendarvudena ehk ühtede ja nullide jadadena. Nende ühtede ja nullide seostamiseks mingi konkreetse tähega on vaja süsteemi või standardit, mis ütleks millisele koodile vastab
   milline täht. Selliseid standardeid on loodud mitmeid ja vahepeal võib juhtuda, et faili kirjutamiseks kasutati ühte standardit, aga hiljem üritatakse faili lugeda teise
-  standardi järgi. Siis võibki juhtuda, et mõnda koodi tõlgendatakse valesti ja näiteks <span class="fst-italic">õ</span>-tähest saab hoopis <span class="fst-italic">Ãµ</span>.
+  standardi järgi. Siis võibki juhtuda, et mõnda koodi tõlgendatakse valesti ja näiteks <span
+      class="fst-italic">õ</span>-tähest saab hoopis <span class="fst-italic">Ãµ</span>.
   </span></div>
-  <div class="mt-2">Neid standardeid nimetetakse teisisõnu <strong class="strong">kodeeringuteks</strong> ja faili avades, saame Pythonis <span class="fst-italic">open</span>-meetodile
+  <div class="mt-2">Neid standardeid nimetetakse teisisõnu <strong class="strong">kodeeringuteks</strong> ja faili
+    avades, saame Pythonis <span class="fst-italic">open</span>-meetodile
     ette anda, millises kodeeringus faili avada soovime. Tänapäeval üks populaarsemaid kodeeringuid on UTF-8<span>. Selleks, et avada faili UTF-8 kodeeringus, tuleb
-      anda ette kodeeringu parameeter <span class="fst-italic">encoding="utf-8"</span>. Proovi luua järgmise sisuga fail <span class="fst-italic">nimekiri.txt</span> ja salvestada see UTF-8 kodeeringus (näiteks Notepadi
+      anda ette kodeeringu parameeter <span class="fst-italic">encoding="utf-8"</span>. Proovi luua järgmise sisuga fail <span
+        class="fst-italic">nimekiri.txt</span> ja salvestada see UTF-8 kodeeringus (näiteks Notepadi
       kasutamisel on see juba vaikimisi määratud):
   </span></div>
   <div class="code-block ms-1 fst-italic">
@@ -246,7 +286,8 @@
     <span>Jüri Tamm<br></span>
     <span>Kätlin Köök</span>
   </div>
-  <div class="mt-2"><span>Seejärel proovi seda lugeda kõigepealt ilma kodeeringut määramata ja teiseks koos UTF-8 kodeeringuga:</span></div>
+  <div class="mt-2"><span>Seejärel proovi seda lugeda kõigepealt ilma kodeeringut määramata ja teiseks koos UTF-8 kodeeringuga:</span>
+  </div>
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
@@ -257,7 +298,8 @@
     </div>
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>, encoding=<span class="code-string">"utf-8"</span>)<br></span>
+        <span>fail = <span class="code-function">open</span>(<span
+          class="code-string">"nimekiri.txt"</span>, encoding=<span class="code-string">"utf-8"</span>)<br></span>
         <span><span class="code-function">print</span>(fail.read())<br></span>
         <span>fail.close()</span>
       </div>
@@ -284,14 +326,20 @@
   <div class="mt-2"><span>Faili on kirjutatud novembrikuu temperatuurid, iga päeva keskmine temperatuur täisarvuna eraldi real.
   Kirjuta programm, mis kuvaks need temperatuurid tulpdiagrammina. Väljundis peaks olema igal real sama palju tärne nagu temperatuur sel päeva.
     Faili nime võiks küsida kasutajalt. Näide failist ja vastavast programmi väljundist:</span></div>
-  <div class="code-block mt-2 fst-italic">
-    <span>10<br></span>
-    <span>9<br></span>
-    <span>12<br></span>
-    <span>8<br></span>
-    <span>7<br></span>
-    <span>5<br></span>
-    <span>3</span>
+  <div class="row mx-0">
+    <div class="code-block mt-2 fst-italic col-lg-8">
+      <span>10<br></span>
+      <span>9<br></span>
+      <span>12<br></span>
+      <span>8<br></span>
+      <span>7<br></span>
+      <span>5<br></span>
+      <span>3</span>
+    </div>
+    <div class="col-lg-3 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/files/barchart.png" alt="barchart"
+           style="height: 10rem">
+    </div>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta faili nimi: <span class="code-input">temperatuurid.txt</span><br></span>
@@ -307,10 +355,17 @@
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Pitsatellimused</strong>
-  <div class="mt-2"><span>Meile juba tuttav pitsarestoran pakub 20, 28 ja 38 cm läbimõõduga pitsasid. Mõned kliendid tellivad pitsad juba
+  <div class="row mx-0">
+    <div class="mt-2 col-lg-7"><span>Meile juba tuttav pitsarestoran pakub 20, 28 ja 38 cm läbimõõduga pitsasid. Mõned kliendid tellivad pitsad juba
   ette ära ja pitsarestoran paneb tellitud pitsade suurused faili kirja. Igal real täisarvuna tellitud pitsa suurus (20, 28 või 38). Kirjuta
   programm, mis loendaks kokku, mitu igas suuruses pitsat neilt tellitud on. Edasiarendusena võid ka kasutada eelmises peatükis koostatud funktsiooni
-  nende pitsade taignakoguste arvutamiseks. Näide pitsatellimuste failist <span class="fst-italic">tellimused.txt</span>:</span></div>
+  nende pitsade taignakoguste arvutamiseks. Näide pitsatellimuste failist <span class="fst-italic">tellimused.txt</span>:</span>
+    </div>
+    <div class="col-lg-4 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/files/pizza_shovel.png" alt="pizza shovel"
+           style="height: 7rem">
+    </div>
+  </div>
   <div class="code-block mt-2 fst-italic">
     <span>20<br></span>
     <span>20<br></span>
@@ -326,33 +381,43 @@
     <span>38 cm läbimõõduga pitsasid on vaja teha 2<br></span>
   </div>
   <app-exercise-hints [hints]="ordersExerciseHints"></app-exercise-hints>
+
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Ostunimekiri</strong>
   <div class="mt-2"><span>Helen on toidupoodi minemas ja koostab ostunimekirja. Koosta programm, mis lihtsustaks ostunimekirja loomise
   tööd. Helen ostab alati piima, mune ja leiba. Need kolm asja tuleks automaatselt nimekirja lisada ja seejärel peaks programm laskma kasutajal
-    uusi tooteid lisada. Kui kasutaja sisestab tühja sõne (ehk vajutab klaviatuuril <span class="fst-italic">enter</span>-klahvi ilma
+    uusi tooteid lisada. Kui kasutaja sisestab tühja sõne (ehk vajutab klaviatuuril <span
+      class="fst-italic">enter</span>-klahvi ilma
   midagi sisestama), siis lõpetab programm töö. Programm peaks kirjutama ostunimekira faili <span class="fst-italic">ostunimekiri.txt</span>,
   kus iga toode on eraldi real. Fail peaks olema UTF-8 kodeeringus. Kui selline fail oli juba olemas, siis kirjutatakse faili sisu üle.
     Näide programmi tööst ja kirjutatud failist:</span></div>
-  <div class="code-block mt-2 fst-italic">
-    <span>Ostunimekirja on lisatud piim, munad ja leib.<br></span>
-    <span>Lisa uus toode: <span class="code-input">õunad</span><br></span>
-    <span>Lisa uus toode: <span class="code-input">või</span><br></span>
-    <span>Lisa uus toode: <span class="code-input">jahu</span><br></span>
-    <span>Lisa uus toode: <span class="code-input">piparmünditee</span><br></span>
-    <span>Lisa uus toode: <br></span>
-    <span>Ostunimekiri loodud!</span>
-  </div>
-  <div class="mt-2"><span>Faili <span class="fst-italic">ostunimekiri.txt</span> sisu:</span></div>
-  <div class="code-block mt-2 fst-italic">
-    <span>piim<br></span>
-    <span>munad<br></span>
-    <span>leib<br></span>
-    <span>õunad<br></span>
-    <span>või<br></span>
-    <span>jahu<br></span>
-    <span>piparmünditee<br></span>
+  <div class="row mx-0">
+    <div class="col-lg-9 ps-0">
+      <div class="code-block mt-2 fst-italic">
+        <span>Ostunimekirja on lisatud piim, munad ja leib.<br></span>
+        <span>Lisa uus toode: <span class="code-input">õunad</span><br></span>
+        <span>Lisa uus toode: <span class="code-input">või</span><br></span>
+        <span>Lisa uus toode: <span class="code-input">jahu</span><br></span>
+        <span>Lisa uus toode: <span class="code-input">piparmünditee</span><br></span>
+        <span>Lisa uus toode: <br></span>
+        <span>Ostunimekiri loodud!</span>
+      </div>
+      <div class="mt-2"><span>Faili <span class="fst-italic">ostunimekiri.txt</span> sisu:</span></div>
+      <div class="code-block mt-2 fst-italic">
+        <span>piim<br></span>
+        <span>munad<br></span>
+        <span>leib<br></span>
+        <span>õunad<br></span>
+        <span>või<br></span>
+        <span>jahu<br></span>
+        <span>piparmünditee<br></span>
+      </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/files/shopping_list.png" alt="shopping list"
+           style="height: 25rem">
+    </div>
   </div>
   <app-exercise-hints [hints]="shoppingListExerciseHints"></app-exercise-hints>
 </div>
