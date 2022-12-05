@@ -101,7 +101,19 @@
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Veahaldus</a>
+          <a class="nav-link" [routerLink]="'veahaldus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veahaldus</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'puudmine'" (click)="collapseNavbar()">Erindite püüdmine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'praktika'" (click)="collapseNavbar()">Hea praktika</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'tostatamine'" (click)="collapseNavbar()">Erindite tõstatamine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Andmestruktuurid</a>

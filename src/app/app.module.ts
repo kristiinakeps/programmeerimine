@@ -25,6 +25,7 @@ import { LoopsComponent } from './loops/loops.component';
 import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice-test.component';
 import { FunctionsComponent } from './functions/functions.component';
 import { FilesComponent } from './files/files.component';
+import { ErrorHandlingComponent } from './error-handling/error-handling.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { FilesComponent } from './files/files.component';
     LoopsComponent,
     RadiochoiceTestComponent,
     FunctionsComponent,
-    FilesComponent
+    FilesComponent,
+    ErrorHandlingComponent
   ],
   imports: [
     BrowserModule,

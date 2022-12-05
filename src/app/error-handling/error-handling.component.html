@@ -1,0 +1,479 @@
+<h1>VEAHALDUS</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis sorti vigu on olemas?</span></div>
+  <div><span>2. Mis on erind?</span></div>
+  <div><span>3. Kuidas erindeid kinnni püüda?</span></div>
+  <div><span>4. Kuidas erindeid tõstatada?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kindlasti oled märganud, et kui teed mõne trükivea koodi kirjutades või üritad avada faili, mida pole olemas, siis
+    lõpetab programm oma töö veateatega. Selles peatükis uurime täpsemalt, milliseid vigu on olemas ja kuidas tagada, et programm
+    töötaks ka olukordades, kus võib mõni viga tekkida.
+  </span>
+  </div>
+</div>
+<h4 class="mt-5">Milliseid vigu on olemas?</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Süntaksivead</strong>
+  <div class="mt-2"><span>Programmeerimisega alustades on kõige tüüpilisemad <strong class="strong">süntaksivead</strong>. Süntaksivea puhul ei suuda arvuti kirjutatud
+    koodist aru saada. Tüüpiliselt on siis mõni taane või koolon on puudu, mõni võtmesõna valesti kirjutatud, sõne ümbert on unustatud jutumärgid jne.
+  </span>
+  </div>
+  <div class="mt-2"><span>Allolevas näites oleme unustanud tingimuslause sisu taandega kirjutada.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Positiivne arv"</span>)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\AppData\Local\Programs\Thonny\lib\ast.py", line 35, in parse<br>
+      return compile(source, filename, mode, PyCF_ONLY_AST)<br>
+      File "C:\Users\test.py", line 3<br>
+      print("Positiivne arv")<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
+      IndentationError: expected an indented block</span>
+  </div>
+  <div class="mt-2"><span>Võtmesõnale <span class="fst-italic">if</span> (ning ka paljudele teistele, näiteks tsüklites) peab alati järgnema vähemalt üks taandega rida.
+    Kui sellist rida pole, siis on tegemist <span class="fst-italic">IndentationErrori</span> ehk taandeveaga. Veateade ütleb meile, millisel real viga on (<span class="fst-italic">line 3</span>) ja kuvab meile ka selle rea
+    (<span class="fst-italic">print("Positiivne arv")</span>). See teeb meie jaoks nende vigade leidmise ja parandamise kõvasti lihtsamaks.
+  </span>
+  </div>
+  <div class="row mx-0">
+    <div class="col-lg-8 ps-0">
+  <div class="code-block mt-2">
+    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Positiivne arv"</span>)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 2<br>
+      if arv > 0<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
+      SyntaxError: invalid syntax</span>
+  </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/error-handling/syntax_error.png" alt="syntax error"
+           style="height: 17rem">
+    </div>
+  </div>
+  <div class="mt-2"><span>Kui aga unustame näiteks kooloni või kirjutaksime <span class="fst-italic">if</span> asemel hoopis <span class="fst-italic">iff</span>,
+    siis saame üldise nimega süntaksivea <span class="fst-italic">SyntaxError</span>, mis ütleb meile lihtsalt, et süntaksiga on probleem. Väikse noolekesega näidatakse ka
+    real ära, kus täpselt viga tekkis. Antud juhul tekkis viga rea lõpus, seal, kus peaks olema koolon.
+  </span>
+  </div>
+</div>
+<div class="box-container mt-3">
+  <strong class="strong">Erindid</strong>
+  <div class="mt-2"><span>Programmi töö käigus võib ette tulla ka igasuguseid muid vigu. Näiteks kui proovida teisendada sõnet, mis sisaldab tähti, täisarvuks. Või kui
+    avada faili, mida ei ole olemas, või ka näiteks jagada mingit arvu nulliga (see pole matemaatikas võimalik). Samuti kui mõnes muutuja või funktsiooni nimes oleme
+    programmi kirjutades vea teinud ja selle tulemusena üritame kasutada muutujat või funktsiooni, mida pole olemas. Selliste vigade puhul programm küll käivitub, kuid kui
+    kui töö käigus tekib viga, siis lõpetab oma töö veateatega. Neid programmi töö käigus tekkivaid vigasid nimetatakse <strong class="strong">erinditeks</strong>.
+  </span>
+  </div>
+  <div class="mt-2"><span>Järgmises näites on ununenud v-täht muutuja <span class="fst-italic">arv</span> lõpust.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-function">print</span>(ar)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">7</span><br></span>
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 2, in &lt;module&gt;<br>
+      print(ar)<br>
+      NameError: name 'ar' is not defined</span>
+  </div>
+  <div class="mt-2"><span>Veateade ütleb meile, et tegemist on <span class="fst-italic">NameErroriga</span>. Täpsemalt, et sellist nime pole programmis defineeritud.
+    Kui proovime teisendada sõnet, mis ei koosne numbritest, täisarvuks, siis saame järgmise vea:
+  </span>
+  </div>
+  <div class="row mx-0">
+    <div class="col-lg-8 ps-0">
+  <div class="code-block mt-2">
+    <span>arv = <span class="code-function">int</span>(<span class="code-string">"Tere!"</span>)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 1, in &lt;module&gt;<br>
+      arv = int("Tere!")<br>
+      ValueError: invalid literal for int() with base 10: 'Tere!'</span>
+  </div>
+  <div class="mt-2"><span>Veateade näitab, et tegemist on <span class="fst-italic">NameErroriga</span>. Täpsemalt, et sellist nime pole programmis defineeritud.
+    Kui proovime teisendada sõnet, mis ei koosne numbritest, täisarvuks, siis saame järgmise vea:
+  </span>
+  </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/error-handling/errors.png" alt="errors"
+           style="height: 15rem">
+    </div>
+  </div>
+</div>
+<app-multichoice-test [code]="errorLinesCode" [items]="errorLinesItems" [formControlNameBase]="'errorLinesTest'" [title]="'Millised read on vigased?'"></app-multichoice-test>
+<h4 [attr.id]="'puudmine'" class="mt-5">Kuidas erindeid kinni püüda?</h4>
+<div class="box-container mt-3">
+  <div class="row mx-0">
+    <div class="col-lg-9 ps-0">
+  <div><span>Tüüpiliselt me tahame, et meie programm töötaks igas olukorras hästi ja soovime vältida olukordi, kus programm veateatega oma töö lõpetab.
+    Me saame küll ise teha omalt poolt kõik, et programmi vigu sisse ei jääks, aga kuna meie programm suhtleb tihtipeale ka kasutajaga, siis on alati võimalus, et
+    kasutaja sisestab midagi valesti. Näiteks kui küsime kasutajalt täisarvu, aga ta sisestab hoopis mingi teksti. Kui proovie kasutaja sisendit täisarvuks teisendada,
+    võime saada vea. Õnneks on programmeerimiskeeltes võimalik sellistes veaohtlikes kohtades tekkivad vead kinni püüda ja nendele reageerida.
+  </span>
+  </div>
+  <div class="mt-2"><span>Pythonis koosneb erindi püüdmine ja sellele reageerimine kahest blokist: <strong class="strong fst-italic">try</strong> ja <strong class="strong fst-italic">except</strong>.
+    <span class="fst-italic">Try</span>-blokki kirjutatakse need koodiread, kus võib erind tekkida ja <span class="fst-italic">except</span>-blokis on need koodiread, mida tahame
+    täita, kui <span class="fst-italic">try</span>-blokis tekib erind. <span class="fst-italic">Except</span>-bloki kohta võime öelda ka <strong class="strong">püünis</strong>.
+    Näiteks võime püünises kasutajale teada anda, et tema sisestatud väärtus ei sobi ja paluda tal uus väärtus sisestada või määrata ise mingi vaikeväärtus.
+    Nagu paljude konstruktsioonide puhul, siis tuleb ka siin kumbagi blokki kuuluvad read kirjutada taandega.
+  </span>
+  </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/error-handling/catch.png" alt="catch"
+           style="height: 15rem">
+    </div>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-bold">except</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud väärtus ei ole täisarv! Vaikimisi määratakse arvuks 1."</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-number">1</span><br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">kolm</span><br></span>
+    <span>Sisestatud väärtus ei ole täisarv! Vaikimisi määratakse arvuks 1.<br></span>
+    <span>Sisestatud arv on: 1</span>
+  </div>
+  <div class="mt-2"><span>Kui muidu oleks meie programm ebakorrektse sisendi peale veateatega lõpetanud, siis nüüd saame tekkivale veale reageerida ja programmiga edasi minna.
+  </span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Soovi korral saame <span class="fst-italic">except</span>-blokile ka ette anda, mis tüüpi vigu ta peab kinni püüdma (eelmises näites püüti kõiki erindeid). Sellisel juhul võime lisada ka mitu
+    <span class="fst-italic">except</span>-blokki üksteise järele, mis püüavad kinni erinevat tüüpi vigu. Näiteks järgmises koodijupis püüab esimene püünis täisarvuks teisendamise vigu ehk
+    <span class="fst-italic">ValueErroreid</span> ja teine püünis nulliga jagamise vigu ehk <span class="fst-italic">ZeroDivisionErroreid</span>. Tasub veel mainida, et kohe kui
+    <span class="fst-italic">try</span>-blokis tekib viga, siis ülejäänud ridu, mis <span class="fst-italic">try</span>-blockis on, ei täideta. Minnakse hoopis kohe sobivat püünist otsima.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">ZeroDivisionError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Nimetaja ei tohi olla 0!"</span>)<br></span>
+  </div>
+  <div class="mt-2"><span>Näited programmi tööst erinevate sisenditega:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta lugeja: <span class="code-input">üks</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta lugeja: <span class="code-input">9</span><br></span>
+    <span>Sisesta nimetaja: <span class="code-input">0</span><br></span>
+    <span>Nimetaja ei tohi olla 0!</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta lugeja: <span class="code-input">9</span><br></span>
+    <span>Sisesta nimetaja: <span class="code-input">2</span><br></span>
+    <span>Tulemus on: 4.5</span>
+  </div>
+  <div class="mt-2"><span>Ühel püünise jaoks saab täpsustada ka mitu veatüüpi, mida ta püüdma peab. Need lisatakse siis sulgudesse ja komaga eraldatult.
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">(ValueError, ZeroDivisionError)</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud väärtused ei sobi!"</span>)<br></span>
+  </div>
+  <div class="mt-2"><span>Kui erindi jaoks sobivat püünist ei ole, siis lõpetab programm ikkagi veateatega töö:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta lugeja: <span class="code-input">9</span><br></span>
+    <span>Sisesta nimetaja: <span class="code-input">0</span><br></span>
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 4, in &lt;module&gt;<br>
+      print("Tulemus on: " + str(lugeja / nimetaja))<br>
+      ZeroDivisionError: division by zero</span>
+  </div>
+</div>
+<app-radiochoice-test [code]="tryTestCode" [items]="tryTestItems" [formControlNameBase]="'tryTest'" [title]="'Mida väljastab järgmine koodijupp?'"></app-radiochoice-test>
+<h4 class="mt-5">Tsüklis väärtuse küsimine</h4>
+<div class="box-container mt-3">
+  <div><span>Eelmisetes näidetes väljastasime kasutajale, et sisestatud arv ei sobi, aga veel kasulikum oleks kasutajalt arvu lihtsalt uuesti küsida. Muidugi on alati võimalus,
+  et kasutaja sisestab ka teisel korral ebasobiva väärtuse, seepärast on sisendi küismist kõige parem teha tsüklis. Tsüklis küsitakse sisendit nii kaua, kuni saame sobiva sisendi, mille korral enam erindit ei teki.</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">while True</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))</span>
+  </div>
+  <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnkase
+  püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span> käsuni.</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">üks</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!<br></span>
+    <span>Sisesta arv: <span class="code-input">kaks</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!<br></span>
+    <span>Sisesta arv: <span class="code-input">8</span><br></span>
+    <span>Sisestatud arv on: 8<br></span>
+  </div>
+  <div class="mt-2"><span>Sama loogikat saab kasutada ka faili nime küsimisel. Kui faili avamisel tekib erind, siis küsitakse kasutajalt nime uuesti:</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">while True</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;faili_nimi = <span class="code-function">input</span>(<span class="code-string">"Sisesta faili nimi: "</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fail = <span class="code-function">open</span>(faili_nimi)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">except </span><span class="code-function">FileNotFoundError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sellist faili ei leidu!"</span>)<br></span>
+    <span>sisu = fail.read()<br></span>
+    <span><span class="code-function">print</span>(sisu)<br></span>
+  </div>
+</div>
+<h4 [attr.id]="'praktika'" class="mt-5">Erindite püüdmise hea praktika</h4>
+<div class="box-container mt-3">
+  <div><span>Erindite püüdmisel on paar kuldreeglit, millest tasub kinni pidada. Esiteks on hea püüda kinni kindlat sorti vigu ehk täpsustada püünises veatüüp, mida soovime kinni püüda.
+  Kui me ei täpsusta veatüüpi, siis võib juhtuda, et püütakse kinni ka erindid, mida me tegelikult ei taha kinni püüda. Näiteks kui oleme <span class="fst-italic">try</span>-blokis
+  teinud vea muutuja nimetamises ja tekib <span class="fst-italic">NameError</span>-erind, siis me tahaksime seda veateadet näha, et saaksime oma koodi parandada.</span></div>
+  <div class="mt-2"><span>Selles näites püüame kinni kõik vead, ilma veatüüpi täpsustamata:</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(ar))<br></span>
+    <span><span class="code-bold">except</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">5</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!</span>
+  </div>
+  <div class="mt-2"><span>Tegelikult oli sisestatud arv küll täisarv, viga tekkis hoopis järgmisel real, kus proovisime seda arvu väljastada. Kuna aga püünis püüab kinni kõik tekkivad erindid, siis
+  jääb siin ekslikult mulje, et sisestatud arvuga oli probleem. Palju parem on täpsustada veatüüp, siis saame kohe tagasisidet, kui tekib mõni teist sorti erind, mida korrektse
+    koodi korral ei peaks tekkima:</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(ar))<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">5</span><br></span>
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\krist\OneDrive\Documents\Ylikool\magistritoo\test.py", line 3, in &lt;module&gt;<br>
+      print("Sisestatud arv on: " + str(ar))<br>
+      NameError: name 'ar' is not defined</span>
+  </div>
+</div>
+<div class="box-container mt-3">
+  <div><span>Teine hea praktika on panna <span class="fst-italic">try</span>-blokki ainult need read, kus võib viga tekkida. Kogu muu kood peaks olema väljaspool
+  <span class="fst-italic">try-except</span>-blokki. Siin võib aga tekkida küsimus, et kuhu peaks panema need read, mida tahame täita siis, kui viga ei teki? Me ei saa neid alati panna
+  lihtsalt pärast <span class="fst-italic">try-except</span>-blokki, sest kui <span class="fst-italic">try</span>-blokis tekkis viga, siis ei pruugi meil olla kõiki muutujaid ja väärtusi,
+  mida tahame kasutada:</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-bold">except</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">neli</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!<br></span>
+    <span class="code-error">
+    Traceback (most recent call last):<br>
+    File "C:\Users\test.py", line 5, in &lt;module&gt;<br>
+    print("Sisestatud arv on: " + str(arv))<br>
+    NameError: name 'arv' is not defined</span>
+  </div>
+  <div class="mt-2"><span>Siinkohal tuleb appi üks lisablokk, mille saame <span class="fst-italic">try-exceptile</span> veel otsa lisada. Selle bloki nimi
+  on <span class="fst-italic">else</span>, täpselt sama nagu tingimuslause puhul. <span class="fst-italic">Try-except-else</span> puhul pannakse
+  <span class="fst-italic">else</span>-blokki see kood, mida tahetakse täita, kui <span class="fst-italic">try</span>-blokis viga ei tekkinud.
+    <span class="fst-italic">Else</span>-harus tekkivaid erindeid enam kinni ei püüta.</span></div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
+    <span><span class="code-bold">except</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+    <span><span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">5</span><br></span>
+    <span>Sisestatud arv on: 5<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta arv: <span class="code-input">neli</span><br></span>
+    <span>Sisestatud arv ei ole täisarv!<br></span>
+  </div>
+</div>
+<h4 [attr.id]="'tostatamine'" class="mt-5">Kuidas erindeid tõstatada?</h4>
+<div class="mt-3 box-container">
+  <div class="row mx-0">
+    <div class="col-lg-9 ps-0">
+  <div><span>Seni vaatasime, kuidas erindeid kinni püüda. Soovi korral saame neid ka ise tekitada ehk <strong class="strong">tõstada</strong>.
+    Erindi tõstatamiseks kasutatakse võtmesõna <strong class="strong fst-italic">raise</strong>, millele järgneb veatüüp, mida tahame tõstatada.
+    Näiteks võime kirjutada funktsiooni, mis küsib kasutajalt täisarvulist sisendit, mis peaks olema 1 ja 10 vahel ja kui ei ole. Kui sisend ei ole
+    soovitud vahemikus, siis tõstatame <span class="fst-italic">ValueErrori</span>:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def </span><span class="code-def">täisarvu_küsimine</span>():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta täisav vahemikus 1-10: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &lt; <span class="code-number">1 </span><span class="code-bold">or</span> arv &gt; <span class="code-number">10</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">raise </span><span class="code-function">ValueError</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span>arv<br><br></span>
+    <span>arv = täisarvu_küsimine()</span>
+  </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/error-handling/raise_exception.png" alt="raise exception"
+           style="height: 15rem">
+    </div>
+  </div>
+  <div class="mt-2"><span>Katsetame funktsiooni kõigepealt ilma erindeid kinni püüdmata:
+  </span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 7, in &lt;module&gt;<br>
+      arv = täisarvu_küsimine()<br>
+      File "C:\Users\test.py", line 4, in täisarvu_küsimine<br>
+      raise ValueError<br>
+      ValueError</span>
+  </div>
+  <div class="mt-2"><span>Näeme, et tekkis <span class="fst-italic">ValueError</span> erind ja näeme, mis real, aga täpsemat infot meil ei ole, et mis probleem seal siis täpselt oli.
+    Saame aga soovi korral erindit tõstatades ka sõnumi kaasa anda. See käib sõnena erindi tüübi järele sulgudesse:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">def </span><span class="code-def">täisarvu_küsimine</span>():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta täisav vahemikus 1-10: "</span>))<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &lt; <span class="code-number">1 </span><span class="code-bold">or</span> arv &gt; <span class="code-number">10</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">raise </span><span class="code-function">ValueError(<span class="code-string">"vahemik peab olema 1-10"</span>)</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span>arv<br><br></span>
+    <span>arv = täisarvu_küsimine()</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span class="code-error">Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 7, in &lt;module&gt;<br>
+      arv = täisarvu_küsimine()<br>
+      File "C:\Users\test.py", line 4, in täisarvu_küsimine<br>
+      raise ValueError("vahemik peab olema 1-10")<br>
+      ValueError: vahemik peab olema 1-10</span>
+  </div>
+  <div class="mt-2"><span>Põhikoodis võime funktsiooni väljakutse panna <span class="fst-italic">try-excepti</span> sisse ja püüda tekkivad <span class="fst-italic">ValueErrorid</span> kinni:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="code-bold">try</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = täisarvu_küsimine()<br></span>
+    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv vahemikus 1-10!"</span>)<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span>Sisestatud arv ei ole täisarv vahemikus 1-10!</span>
+  </div>
+</div>
+<h4 [attr.id]="'harjutused'" class="mt-5">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Pitsatainas</strong>
+  <div class="mt-2"><span>Võtame jälle ette funktsioonide peatükist tuttava pitsataigna koguse arvutamise funktsiooni:</span></div>
+  <div class="code-block mt-2"><span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
+      class="code-number">2</span> * 3.14<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
+      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br></span></div>
+  <div class="mt-2"><span>Kirjuta funktsioon ümber nii, et kui argumendiks antud läbimõõt ei ole 20, 28 või 38, siis
+  tõstataks funktsioon <span class="fst-italic">ValueErrori</span>. Põhiprogrammis peaks programm kasutajalt küsima pitsa läbimõõdu ja siis väljastama
+  vajaliku taignakoguse. Kui kasutaja sisend ei ole täisarv või funktsiooni väljakutses tekib viga, siis peaks kasutajat sellest teavitama ja programm peaks oma töö lõpetama.</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Sisesta pitsa läbimõõt: <span class="code-input">täisarv</span><br></span>
+    <span>Sisend ei ole 20, 28 ega 38!</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Sisesta pitsa läbimõõt: <span class="code-input">25</span><br></span>
+    <span>Sisend ei ole 20, 28 ega 38!</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Sisesta pitsa läbimõõt: <span class="code-input">28</span><br></span>
+    <span>Vajaminev taignakogus grammides: 1415.5</span>
+  </div>
+  <app-exercise-hints [hints]="pizzaExerciseHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Spordipäev</strong>
+  <div class="mt-2"><span>Koolis korraldati spordipäeva ja paralleelklassidevahelist teatejooksu. Võitnud klasside nimed on kirjutatud faili.
+  Nüüd tahab kool võitnud klassides igale õpilasele väikse kingituse teha. Kirjuta programm, mis loeks failist klasside nimed ja küsiks kasutajalt mitu õpilast selles klassis on.
+  Lõpus peaks programm väljastama, mitu kingitust tuleb kokku teha. Faili nimi tuleks küsida kasutajalt, kui sellise nimega faili ei õnnestu avada, tuleks faili nime uuesti küsida,
+  kuni kasutaja sisestab korrektse nime. Ka klassis õppivate õpilaste arvu küsides peaks programm kasutajalt sisendit küsima, kuni kasutaja sisestab täisarvu.</span></div>
+  <div class="mt-2"><span>Näide faili sisust:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>1A<br></span>
+    <span>2D<br></span>
+    <span>3A<br></span>
+    <span>4A<br></span>
+    <span>5C<br></span>
+    <span>6B<br></span>
+  </div>
+  <div class="mt-2"><span>Näide programmi tööst:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Sisesta teatejooksu tulemuste faili nimi: <span class="code-input">tulemused.txt</span><br></span>
+    <span>Sellist faili ei õnnestu avada!<br></span>
+    <span>Sisesta teatejooksu tulemuste faili nimi: <span class="code-input">teatejooks.txt</span><br></span>
+    <span>Mitu õpilast on 1A klassis? <span class="code-input">20</span><br></span>
+    <span>Mitu õpilast on 2D klassis? <span class="code-input">21e</span><br></span>
+    <span>Vigane arv!<br></span>
+    <span>Mitu õpilast on 2D klassis? <span class="code-input">aa21</span><br></span>
+    <span>Vigane arv!<br></span>
+    <span>Mitu õpilast on 2D klassis? <span class="code-input">21</span><br></span>
+    <span>Mitu õpilast on 3A klassis? <span class="code-input">19</span><br></span>
+    <span>Mitu õpilast on 4A klassis? <span class="code-input">ei tea</span><br></span>
+    <span>Vigane arv!<br></span>
+    <span>Mitu õpilast on 4A klassis? <span class="code-input">17</span><br></span>
+    <span>Mitu õpilast on 5C klassis? <span class="code-input">15</span><br></span>
+    <span>Mitu õpilast on 6B klassis? <span class="code-input">20</span><br></span>
+    <span>Kokku on vaja teha 112 kingitust.</span>
+  </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/error-handling/exception_competition.png" alt="competition"
+         style="height: 7rem">
+  </div>
+  <app-exercise-hints [hints]="competitionExerciseHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/veahaldus'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>
