@@ -10,6 +10,7 @@ $color-pink: #de2899;
 $color-pink-dark: #9e20d4;
 $color-dark: #000000;
 $color-purple: #5a4d94;
+$color-purple-menu: #514586;
 $color-purple-dark: #40366e;
 $color-purple-light: #6858ad;
 $color-lavender-extra-light: #efe6ff;
@@ -441,4 +442,15 @@ a:hover {
   border: solid 2px $color-lavender-light;
   border-radius: 0.5rem;
   padding: 1rem;
+}
+
+.menu-category {
+  background-color: $color-purple-menu;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.menu-category:hover {
+  background-color: $color-purple-menu;
 }

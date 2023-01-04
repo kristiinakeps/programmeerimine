@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-import {TestAnswer} from "../models/test-answer.model";
-import {ExerciseHint} from "../models/exercise-hint.model";
-import {CategorizeTestCategory} from "../models/categorize-test-category.model";
-import {CategorizeTestItem} from "../models/categorize-test-item.model";
+import {TestAnswer} from "../../models/test-answer.model";
+import {ExerciseHint} from "../../models/exercise-hint.model";
+import {CategorizeTestCategory} from "../../models/categorize-test-category.model";
+import {CategorizeTestItem} from "../../models/categorize-test-item.model";
 
 @Component({
   selector: 'app-functions',

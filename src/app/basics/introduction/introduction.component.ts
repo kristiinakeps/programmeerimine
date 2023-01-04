@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TestQuestion} from "../models/test-question.model";
-import {TestAnswer} from "../models/test-answer.model";
+import {TestQuestion} from "../../models/test-question.model";
+import {TestAnswer} from "../../models/test-answer.model";
 
 @Component({
   selector: 'app-introduction',

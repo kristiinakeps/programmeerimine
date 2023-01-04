@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {FillBlankDropdownItem} from "../models/fill-blank-dropdown-item.model";
-import {TestAnswer} from "../models/test-answer.model";
-import {ExerciseHint} from "../models/exercise-hint.model";
+import {FillBlankDropdownItem} from "../../models/fill-blank-dropdown-item.model";
+import {TestAnswer} from "../../models/test-answer.model";
+import {ExerciseHint} from "../../models/exercise-hint.model";
 
 @Component({
   selector: 'app-conditions',

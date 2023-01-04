@@ -7,128 +7,182 @@
     </button>
     <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse my-3">
       <ul class="navbar-nav navbar-nav-scroll">
-        <li class="nav-item">
+        <li class="nav-item menu-category" (click)="toggleBasics()">
+          <a class="nav-link">PÕHITEADMISED</a>
+        </li>
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'sissejuhatus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sissejuhatus</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isIntroductionOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'arvuti'" (click)="collapseNavbar()">Arvuti</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isIntroductionOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'programmeerimiskeeled'" (click)="collapseNavbar()">Programmeerimiskeeled</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/sissejuhatus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isIntroductionOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'programmeerimisega-alustamine'" (click)="collapseNavbar()">Programmeerimisega alustamine</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'algoritm'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Algoritm</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isAlgorithmsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'plokkskeem'" (click)="collapseNavbar()">Plokkskeem</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isAlgorithmsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'tingimused'" (click)="collapseNavbar()">Tingimused</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/algoritm')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isAlgorithmsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'kordused'" (click)="collapseNavbar()">Kordused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Muutujad ja avaldised</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'andmed'" (click)="collapseNavbar()">Andmetüübid</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'muutujad'" (click)="collapseNavbar()">Muutujad</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'tehted'" (click)="collapseNavbar()">Tegevused andmetüüpidega</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/muutujad')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'tingimuslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Tingimuslaused</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'toevaartustehted'" (click)="collapseNavbar()">Tõeväärtustehted</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'mitmeharulised'" (click)="collapseNavbar()">Mitmeharulised tingimuslaused</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/tingimuslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'korduslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Korduslaused</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isLoopsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'while'" (click)="collapseNavbar()"><span class="fst-italic">While</span>-tsükkel</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isLoopsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'break'" (click)="collapseNavbar()">Käsk <span class="fst-italic">break</span></a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/korduslaused')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isLoopsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'funktsioonid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Funktsioonid</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFunctionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'argumendid'" (click)="collapseNavbar()">Argumendid</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFunctionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'tagastamine'" (click)="collapseNavbar()">Tagastamine</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/funktsioonid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFunctionsOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Failid</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/failid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'lugemine'" (click)="collapseNavbar()">Failist lugemine</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/failid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'for'" (click)="collapseNavbar()"><span class="fst-italic">For</span>-tsükkel</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/failid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'kirjutamine'" (click)="collapseNavbar()">Faili kirjutamine</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/failid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'kodeering'" (click)="collapseNavbar()">Kodeering</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/failid')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'failid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veahaldus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veahaldus</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isErrorHandlingOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'puudmine'" (click)="collapseNavbar()">Erindite püüdmine</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isErrorHandlingOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'praktika'" (click)="collapseNavbar()">Hea praktika</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isErrorHandlingOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'tostatamine'" (click)="collapseNavbar()">Erindite tõstatamine</a>
         </li>
-        <li class="nav-subitem" *ngIf="router.url.startsWith('/veahaldus')" @inOutAnimation>
+        <li class="nav-subitem" *ngIf="isErrorHandlingOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Andmestruktuurid</a>
+        <li class="nav-item menu-category" (click)="toggleDataStructures()">
+          <a class="nav-link">ANDMESTRUKTUURID</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'jarjendid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Järjendid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isListsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'jarjendid'" [fragment]="'indeks'" (click)="collapseNavbar()">Indeksid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isListsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'jarjendid'" [fragment]="'operatsioonid'" (click)="collapseNavbar()">Operatsioonid, funktsioonid, meetodid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isListsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'jarjendid'" [fragment]="'range'" (click)="collapseNavbar()">Funktsioon <span class="fst-italic">range()</span></a>
+        </li>
+        <li class="nav-subitem" *ngIf="isListsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'jarjendid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
+        </li>
+        <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sonastikud'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sõnastikud</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isDictionariesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sonastikud'" [fragment]="'operatsioonid'" (click)="collapseNavbar()">Operatsioonid, funktsioonid, meetodid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isDictionariesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'sonastikud'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
+        </li>
+        <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'hulgad'" [routerLinkActive]="'active'"  (click)="collapseNavbar()">Hulgad</a>
+        </li>
+        <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Ennikud</a>
+        </li>
+        <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Mitmemõõtmelised andmestruktuurid</a>
+        </li>
+        <li class="nav-item menu-category" (click)="toggleObjectOrientedProgramming()">
+          <a class="nav-link">OBJEKTORIENTEERITUD PROGRAMMEERIMINE</a>
+        </li>
+        <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Klassid</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Ülem- ja alamklassid</a>
+        </li>
+        <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Liidesed</a>
+        </li>
+        <li class="nav-item menu-category" (click)="toggleProjects()">
+          <a class="nav-link">PROJEKTID</a>
+        </li>
+        <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Mängu loomine</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Veebilehe loomine</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Lisa</a>
+        <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Graafiline kasutajaliides</a>
+        </li>
+        <li class="nav-item menu-category" (click)="toggleAdditional()">
+          <a class="nav-link">LISA</a>
+        </li>
+        <li class="nav-item" *ngIf="!isAdditionalCollapsed" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Arvutiteadus</a>
         </li>
         <li>
           <div class="d-none d-md-block mt-2">

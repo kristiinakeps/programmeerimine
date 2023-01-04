@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {ExerciseHint} from "../models/exercise-hint.model";
-import {TestAnswer} from "../models/test-answer.model";
+import {ExerciseHint} from "../../models/exercise-hint.model";
+import {TestAnswer} from "../../models/test-answer.model";
 
 @Component({
   selector: 'app-error-handling',

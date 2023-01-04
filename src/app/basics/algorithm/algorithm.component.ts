@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {ReorderTestQuestion} from "../models/reorder-test-question.model";
-import {ReorderTestItem} from "../models/reorder-test-item.model";
+import {ReorderTestQuestion} from "../../models/reorder-test-question.model";
+import {ReorderTestItem} from "../../models/reorder-test-item.model";
 
 @Component({
   selector: 'app-algorithm',

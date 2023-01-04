@@ -1,0 +1,431 @@
+<h1>SÕNASTIKUD</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on sõnastikud ja milleks neid kasutatakse?</span></div>
+  <div><span>2. Kuidas sõnastikust elemente kätte saada?</span></div>
+  <div><span>3. Kuidas sõnastikku elemente lisada?</span></div>
+  <div><span>4. Kuidas sõnastikku tsüklis läbida?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kindlasti oled elus sõnastikku näinud. Olgu tegemist siis seletava sõnaraamatuga, kus igale sõnale vastab seletus, või siis mõne
+  võõrkeele sõnastikuga näiteks eesti-inglise sõnastik, kus igale eestikeelsele sõnale vastab ingliskeelne sõna. Ka Pythoni sõnastikud on sarnased, meil on
+  sõnastikus võtmed (näiteks eesti-inglise sõnastikus eestikeelsed sõnad) ja võtmetele vastavad väärtused (ingliskeelsed sõnad). Väärtused leiame just võtmete
+  abil üles.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Sõnastik on inglise keeles <span class="fst-italic">dictionary</span> ja Pythoni tüüp on lühendatult <span
+    class="fst-italic">dict</span>.
+    Sõnastiku võtmeteks saame kasutada muutmatuid tüüpe, näiteks sõnesid ja arve. Järjendid võtmeteks ei sobi. Võtmed on unikaalsed ja ei saa korduda. Sõnastiku ümber on
+  Pythonis loogelised sulud ja võti-väärtus paarid on omavahel komadega eraldatud, nii nagu ka järjendi elemendid. Võtme ja väärtuse vahel on koolon.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
+      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
+        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
+    <span>silmavärvid = {{'{'}}<span class="code-string">"Kerttu"</span>: <span class="code-string">"sinine"</span>,
+      <span class="code-string">"Katriin"</span>: <span class="code-string">"pruun"</span>{{'}'}}<br></span>
+    <span>grupihinnad = {{'{'}}<span class="code-number">10</span>: <span class="code-number">30.0</span>, <span
+      class="code-number">20</span>: <span class="code-number">45.0</span>,
+      <span class="code-number">30</span>: <span class="code-number">55.0</span>{{'}'}}<br></span>
+    <span>segamini = {{'{'}}<span class="code-string">"sünniaasta"</span>: <span class="code-number">2010</span>,
+      <span class="code-string">"nimi"</span>: <span class="code-string">"Gustav"</span>,
+      <span class="code-string">"pikkus"</span>: <span class="code-number">153.9</span>, <span class="code-string">"poiss"</span>: <span
+        class="code-bold">True</span>{{'}'}}<br></span>
+    <span>tühi = {{'{}'}}<br></span>
+    <span>teine_tühi = <span class="code-function">dict</span>()<br></span>
+  </div>
+</div>
+<h4 class="mt-5">Sõnastiku väärtuste uuendamine</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Väärtuse leidmine</strong>
+  <div class="mt-2"><span>Järjendite puhul saime üksiku elemendi kätte tema indeksi järgi. Sõnastike puhul meil indekseid ei ole, saame erinevad väärtused kätte nende võtmete järgi.
+  Koodis on võtme kasutamine väga sarnane indeksi kasutamisele, võti läheb sõnastiku järel kandilistesse sulgudesse ja tagastatakse võtmele vastav väärtus.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
+      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
+        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
+    <span>pikkus = pikkused[<span class="code-string">"Kadri"</span>]<br></span>
+    <span><span class="code-function">print</span>(pikkus)<br></span>
+    <span><span class="code-function">print</span>(pikkused[<span class="code-string">"Ants"</span>])</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>135.3<br></span>
+    <span>146.7</span>
+  </div>
+  <div class="mt-2"><span>Kui üritatada kasutada võtit, mida sõnastikus pole, siis saame veateate.</span></div>
+  <div class="mt-2 code-block">
+    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
+      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
+        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
+    <span><span class="code-function">print</span>(pikkused[<span class="code-string">"Kati"</span>])</span>
+  </div>
+  <div class="mt-2 code-block fst-italic code-error">
+    <span>Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 2, in &lt;module&gt;<br>
+      print(pikkused["Kati"])<br>
+      KeyError: 'Kati'<br></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Väärtuse lisamine</strong>
+  <div class="mt-2"><span>Väärtuse lisamine toimib sarnaselt järjendis väärtuse uuendamisele, aga nüüd kasutame jällegi indeksi asemel võtit. Kui etteantud võtit ei ole veel
+  sõnastikus, siis see lisatakse sinna, kui selline võti oli juba olemas, siis kirjutatakse vana väärtus uuega üle.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
+      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
+        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
+    <span>pikkused[<span class="code-string">"Kati"</span>] = <span class="code-number">138.6</span><br></span>
+    <span>pikkused[<span class="code-string">"Kadri"</span>] = <span class="code-number">132.4</span><br></span>
+    <span><span class="code-function">print</span>(pikkused)</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>{{'{'}}'Madis': 140.8, 'Kadri': 132.4, 'Ants': 146.7, 'Kati': 138.6{{'}'}}</span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="keyTestCode" [formControlNameBase]="'keyTest'" [items]="keyTestItems"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'operatsioonid'">Sõnastikega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Operatsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Avaldis</th>
+      <th style="width: 30%">Väärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>"Kati" in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>True</td>
+      <td>Kontrollib, kas võti on sõnastikus</td>
+    </tr>
+    <tr>
+      <td>"Joosep" not in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>True</td>
+      <td>Kontrollib, ega võtit ei ole sõnastikus</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Funktsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Funktsiooni rakendamine</th>
+      <th style="width: 30%">Tagastusväärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>len({{'{'}}"Kati": 14, "Mart": 15, "Anni": 14, "Andri": 13{{'}'}})</td>
+      <td>4</td>
+      <td>Leiab sõnastiku pikkuse (mitu võti-väärtus paari on sõnastikus)</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Meetodid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Meetodi rakendamine</th>
+      <th style="width: 25%">Sõnastiku väärtus pärast rakendamist</th>
+      <th style="width: 10%">Tagastusväärtus</th>
+      <th style="width: 25%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Joosep", 14)</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>14</td>
+      <td rowspan="3">Leiab võtmele vastava väärtuse või kasutab vaikeväärtust, kui võtit ei ole sõnastikus. Esimene
+        argument on võti ja teine argument vaikeväärtus.
+        Teise argumendi võib ka ära jätta ja siis toimib see meetod nagu kandilised sulud.
+      </td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Mart", 14)</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Anni")</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.clear()</td>
+      <td>{{'{'}}{{'}'}}</td>
+      <td>None</td>
+      <td>Tühjendab sõnastiku</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.keys()</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>['Kati', 'Mart', 'Anni']</td>
+      <td>Tagastab sõnastiku võtmed.</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.values()</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>[14, 15, 14]</td>
+      <td>Tagastab sõnastiku väärtused.</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.items()</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>[('Kati', 14), ('Mart', 15), ('Anni', 14)]</td>
+      <td>Tagastab sõnastiku võti-väärtus paarid ennikutena (sellest meetodist räägime täpsemalt ennikute peatükis).
+      </td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.update({{'{'}}"Madis": 16, "Kati": 15{{'}'}})</td>
+      <td>{{'{'}}"Kati": 15, "Mart": 15, "Anni": 14, "Madis": 16{{'}'}}</td>
+      <td>None</td>
+      <td>Uuendab sõnastikku. Argumendiks saab anda teise sõnastiku, mille põhjal väärtusi uuendatakse või puuduvad
+        väärtused lisatakse.
+      </td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Mart", 16)</td>
+      <td>{{'{'}}"Kati": 14, "Anni": 14{{'}'}}</td>
+      <td>15</td>
+      <td rowspan="3">Eemaldab sõnastikust võtme ja tagastab vastava väärtuse. Teise argumendina saab anda ette
+        vaikeväärtuse, mis tagastatakse siis, kui võtit ei olnud sõnastikus. Kui vaikeväärtust pole ja võtit pole
+        sõnastikus, siis tekib viga.
+      </td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Madis", 16)</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Anni")</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.popitem()</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
+      <td>('Anni', 14)</td>
+      <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võtme-väärtuse paari ennikuna.
+        Kui sõnastik on tühi, siis tekib viga.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="getTestCode" [formControlNameBase]="'getTest'" [items]="getTestItems"></app-radiochoice-test>
+<div class="mt-3 box-container">
+  <strong class="strong">Sõnastik ja tsükkel</strong>
+  <div class="mt-2"><span>Sõnastiku puhul saab kasutada kõige tavalisemat <span class="fst-italic">for</span>-tsüklit ja sellisel juhul käib
+  tsükkel üle sõnastiku võtmete. Seega igal iteratsioonil saab tsüklimuutuja endale väärtuseks järgmise võtme sõnastikust. Kui soovime tsüklis ka väärtust kätte saada,
+  siis saame seda läbi kandiliste sulgude või <span class="fst-italic">get</span>-meetodi.</span></div>
+  <div class="mt-2 code-block">
+    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
+      class="code-string">"leib"</span>: <span class="code-number">1</span>,
+      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
+        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
+    <span><span class="code-bold">for</span> toode <span class="code-bold">in </span> ostukorv:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
+      class="code-string">" - "</span> +
+      <span class="code-function">str</span>(ostukorv[toode]) + <span class="code-string">" tk"</span>)</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>piim - 1 tk<br></span>
+    <span>leib - 1 tk<br></span>
+    <span>õun - 5 tk<br></span>
+    <span>porgand - 8 tk<br></span>
+  </div>
+  <div class="mt-2"><span>Kui meid peaks huvitama ainult sõnastiku väärtused, siis võime <span
+    class="fst-italic">values</span>-meetodiga sõnastiku
+  väärtused küsida ja moodustada tsükli nende põhjal. Väärtuse põhjal me aga võtme väärtust teada ei saa.</span></div>
+  <div class="mt-2 code-block">
+    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
+      class="code-string">"leib"</span>: <span class="code-number">1</span>,
+      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
+        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
+    <span><span class="code-bold">for</span> kogus <span class="code-bold">in </span> ostukorv.values():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(kogus) + <span
+      class="code-string">" tk"</span>)</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>1 tk<br></span>
+    <span>1 tk<br></span>
+    <span>5 tk<br></span>
+    <span>8 tk<br></span>
+  </div>
+  <div class="mt-2"><span>Soovi korral võime ka <span class="fst-italic">items</span>-meetodi abil küsida kohe võti-väärtus paarid ja tsüklis neid läbi käia.
+  Võti ja väärtus on andmestruktuuris nimega ennik ja hiljem uurime seda andmestruktuuri täpsemalt. Seniks aga võib lihtsalt kasutada järgmist süntaksit.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
+      class="code-string">"leib"</span>: <span class="code-number">1</span>,
+      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
+        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
+    <span><span class="code-bold">for</span> toode, kogus <span
+      class="code-bold">in </span> ostukorv.items():<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
+      class="code-string">" - "</span> +
+      <span class="code-function">str</span>(kogus) + <span class="code-string">" tk"</span>)</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>piim - 1 tk<br></span>
+    <span>leib - 1 tk<br></span>
+    <span>õun - 5 tk<br></span>
+    <span>porgand - 8 tk<br></span>
+  </div>
+</div>
+<div class="mt-2 box-container">
+  <strong class="strong">Ostukorvi programmi näide</strong>
+  <div class="mt-2"><span>Proovime kirjutada programmi ostukorvi haldamiseks. Katriin on juba ostlemist alustanud ja poolelioleva ostukorvi andmed on kirjas failis
+  <span class="fst-italic">ostukorv.txt</span>. Seal on igal real toote nimetus ja komaga eraldatult täisarvuline kogus. Need tooted koos kogustega loetakse
+  kõigepealt järjendisse. Seejärel hakatakse kasutajalt küsima, mida ta veel lisada soovib. Kui sellise nimega toode oli juba ostukorvis, siis suurendatakse toote kogust, kui
+  sellist toodet veel ei olnud, siis lisatakse see ostukorvi kogusega 1. Programm lõpetab oma töö kui kasutaja sisestab tühja sõne. Programmi töö lõpus väljastatakse kasutajale ostutšekk.</span>
+  </div>
+  <div class="mt-2">Faili <span class="fst-italic">ostukorv.txt</span> sisu:</div>
+  <div class="mt-2 code-block fst-italic">
+    <span>kanamuna,12<br></span>
+    <span>mahl,1<br></span>
+    <span>pirn,5<br></span>
+    <span>tomat,6<br></span>
+  </div>
+  <div class="mt-2 box-container">
+    <span>ostukorv = {{'{'}}{{'}'}}<br><br></span>
+    <span>fail = <span class="code-function">open</span>(<span class="code-string">"ostukorv.txt"</span>)<br></span>
+    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;tükid = rida.split(<span class="code-string">","</span>) <span class="code-comment"># tükeldame rea koma kohalt ja saame kahe elemendiga järjendi</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[tükid[<span class="code-number">0</span>]] = <span
+      class="code-function">int</span>(tükid[<span class="code-number">1</span>])
+      <span
+        class="code-comment"># esimene element on toode ja teine element kogus (kogus on vaja teha täisarvuks)</span><br><br></span>
+    <span>toode = <span class="code-function">input</span>(<span
+      class="code-string">"Sisesta toode: "</span>)<br><br></span>
+    <span><span class="code-bold">while</span> toode != <span class="code-string">""</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> toode <span
+      class="code-bold">in</span> ostukorv: <span
+      class="code-comment"># kontrollime, kas toode on juba ostukorvis</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[toode] = ostukorv[toode] + <span class="code-number">1</span>
+      <span class="code-comment"> # suurendame hetkel ostukorvis olevat kogust ühe võrra</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[toode] = <span
+      class="code-number">1</span><br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;toode = <span class="code-function">input</span>(<span class="code-string">"Sisesta toode: "</span>)<br><br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Ostutšekk:"</span>)<br></span>
+    <span><span class="code-bold">for</span> toode <span class="code-bold">in</span> ostukorv:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
+      class="code-string">" - "</span> + <span class="code-function">str</span>(ostukorv[toode]))</span>
+  </div>
+  <div class="mt-2"><span>Näide väljundist:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Sisesta toode: <span class="code-input">kommipakk</span><br></span>
+    <span>Sisesta toode: <span class="code-input">mahl</span><br></span>
+    <span>Sisesta toode: <span class="code-input">pirn</span><br></span>
+    <span>Sisesta toode: <span class="code-input">õun</span><br></span>
+    <span>Sisesta toode: <span class="code-input">õun</span><br></span>
+    <span>Sisesta toode:<br></span>
+    <span>Ostutšekk:<br></span>
+    <span>kanamuna - 12<br></span>
+    <span>mahl - 2<br></span>
+    <span>pirn - 6<br></span>
+    <span>tomat - 6<br></span>
+    <span>kommipakk - 1<br></span>
+    <span>õun - 2<br></span>
+  </div>
+  <div class="mt-2">Selles koodis kasutasime <span class="fst-italic">in</span> võtmesõna, et kontrollida, kas toode on
+    juba ostukorvis või mitte. Kui toode oli
+    juba ostukorvis, siis võtsime sõnastikust tootele vastava koguse, suurendasime seda ühe võrra ja panime sõnastikku
+    tagasi. Kui toodet polnud ostukorvis, siis lihtsalt
+    lisasime selle sinna väärtusega 1. Sama asja saaks kirja panna ka ühe reaga kasutades <span
+      class="fst-italic">get</span>-meetodit ja vaikeväärtust.
+  </div>
+  <div class="mt-2 code-block">
+    <span>ostukorv[toode] = ostukorv.get(toode, <span class="code-number">0</span>) + <span class="code-number">1</span></span>
+  </div>
+  <div class="mt-2">Kui toode oli ostukorvis, siis <span class="fst-italic">get</span>-meetod tagastab ostukorvis oleva
+    koguse, kui ei olnud, siis tagastab 0. Igal juhul liidame
+    ühe ja uuendame sõnastikku.
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Autoloendur</strong>
+  <div class="mt-2"><span>Marisel on 6-aastane väike vend Mihkel, kes on suur autode huviline. Iga kord kui nad perega kuhugi autoga sõidavad, meeldib Mihklile autoaknast
+  vastutulevaid autosid loendada. Ta tunneb kõiki tüüpilisemaid automarke ja just markide kaupa talle autosid loendada meeldibki. Kirjuta programm, mis aitab Mihklil
+  järge pidada, mitut eri marki autot ta juba näinud on. Programmi töö lõpus peaks programm teada andma, mitut erimarki autot Mihkel kokku nägi autosõidu jooksul, mitut autot kokku ja
+  mitut autot igast margist.</span></div>
+  <div class="mt-2">Näide programmi väljundist:</div>
+  <div class="mt-2 code-block">
+    <span>Mis marki auto just möödus? <span class="code-input">BMW</span><br></span>
+    <span>Mis marki auto just möödus? <span class="code-input">Toyota</span><br></span>
+    <span>Mis marki auto just möödus? <span class="code-input">Subaru</span><br></span>
+    <span>Mis marki auto just möödus? <span class="code-input">Audi</span><br></span>
+    <span>Mis marki auto just möödus? <span class="code-input">Audi</span><br></span>
+    <span>Mis marki auto just möödus? <span class="code-input">Subaru</span><br></span>
+    <span>Mis marki auto just möödus? <br></span>
+    <span>Kokku nägid täna 4 erinevat automarki, 6 autot.<br></span>
+    <span>BMW: 1<br></span>
+    <span>Toyota: 1<br></span>
+    <span>Subaru: 2<br></span>
+    <span>Audi: 2</span>
+  </div>
+  <app-exercise-hints [hints]="carCounterHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Rahvusvahelised autod</strong>
+  <div class="mt-2"><span>Autodel on kas numbrimärgil või kleepsul kirjas auto riigikood. Need riigikoodid on 1-3 tähemärgilised, näiteks Eesti
+  riigikood on EST ja meie riigis registreeritud autodel on numbrimärgil see kood olemas. Soome autodel on koodiks FIN, Rootsi autodel S jne.
+  Mihkel on hakanud automarkide asemel hoopis kirja panema autode riigikoode. Autosõidu jooksul nähtud riigikoodid on ta kirjutanud faili
+    <span class="fst-italic">koodid.txt</span>. Tal on ka olemas fail <span class="fst-italic">riigid.txt</span> riigi koodide ja nimede jaoks.
+  </span>
+  </div>
+  <div class="mt-2"><span>Kirjuta programm, mis loeks riigi koodid ja nimed failist <span
+    class="fst-italic">riigid.txt</span> sõnastikku ja Mihkli nähtud riigikoodid failist
+    <span class="fst-italic">koodid.txt</span> järjendisse. Teisenda sõnastiku abiga Mihkli nähtud koodid riiginimedeks ja väljasta need. Kui Mihkel nägi mõnda
+  koodi, mida sõnastikus ei olnud, siis tuleks riiginime asemel väljastada "Tundmatu".</span></div>
+  <div class="mt-2">Kuna ülesanne on üsna mahukas, siis tasub mõelda, kas seda annaks väiksemateks funktsioonideks
+    lahutada. Näiteks saaks teha eraldi funktsioonid
+    failidest lugemiseks ja ka koodide järjendi teisendamiseks riiginimedeks.
+  </div>
+  <div class="mt-2"><span>Näide failist <span class="fst-italic">koodid.txt</span></span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>EST<br></span>
+    <span>FIN<br></span>
+    <span>EST<br></span>
+    <span>S<br></span>
+    <span>F<br></span>
+    <span>D<br></span>
+    <span>LT<br></span>
+  </div>
+  <div class="mt-2"><span>Näide failist <span class="fst-italic">riigid.txt</span>:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>FIN Soome<br></span>
+    <span>EST Eesti<br></span>
+    <span>LV Läti<br></span>
+    <span>LT Leedu<br></span>
+    <span>S Rootsi<br></span>
+  </div>
+  <div class="mt-2">Näide programmi väljundist:</div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Autod on järgmistest riikidest:<br></span>
+    <span>Eesti<br></span>
+    <span>Soome<br></span>
+    <span>Eesti<br></span>
+    <span>Rootsi<br></span>
+    <span>Tundmatu<br></span>
+    <span>Tundmatu<br></span>
+    <span>Leedu<br></span>
+  </div>
+  <app-exercise-hints [hints]="carCountriesHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/hulgad'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>

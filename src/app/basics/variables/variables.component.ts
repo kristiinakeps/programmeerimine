@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {CategorizeTestCategory} from "../models/categorize-test-category.model";
-import {CategorizeTestItem} from "../models/categorize-test-item.model";
-import {FillBlankDropdownItem} from "../models/fill-blank-dropdown-item.model";
-import {ExerciseHint} from "../models/exercise-hint.model";
-import {TestAnswer} from "../models/test-answer.model";
+import {CategorizeTestCategory} from "../../models/categorize-test-category.model";
+import {CategorizeTestItem} from "../../models/categorize-test-item.model";
+import {FillBlankDropdownItem} from "../../models/fill-blank-dropdown-item.model";
+import {ExerciseHint} from "../../models/exercise-hint.model";
+import {TestAnswer} from "../../models/test-answer.model";
 
 @Component({
   selector: 'app-variables',

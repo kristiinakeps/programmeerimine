@@ -1,0 +1,541 @@
+<h1>JÄRJENDID</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on andmestruktuurid ja milleks neid kasutatakse?</span></div>
+  <div><span>2. Mis on järjendid?</span></div>
+  <div><span>3. Kuidas järjendist elemente kätte saada?</span></div>
+  <div><span>4. Kuidas järjendit viilutada?</span></div>
+  <div><span>5. Kuidas järjendit tsüklis läbida?</span></div>
+  <div><span>6. Mis operatsioone järjenditega teha saab?</span></div>
+  <div><span>7. Kuidas kasutada funktsiooni <span class="fst-italic">range()</span>?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Seni oleme kasutanud muutujaid nende andmete hoidmiseks, mida programmis kasutada tahame. Vaatasime ka kuidas andmeid failist lugeda,
+    kuid ka siis lugesime kas kogu faili sisu või rea muutujasse. Tihtipeale on meil aga vaja tegeleda suurema hulga andmetega ja hoida neid andmeid
+    programmi töö ajal mälus. Sellisel juhul kasutatakse andmete hoiustamiseks ja töötlemiseks erinevaid <strong
+      class="strong">andmestruktuure</strong>.
+    Nagu ka nimi viitab, siis on tegemist andmete hoiustamiseks mõeldud struktuuriga. Erinevatel andmestruktuuridel on erinevad omadused, mille tõttu
+    sobib erinevates olukordades kasutada erinevaid andmestruktuure. Selle kursuse raames vaatame neist nelja põhilist: järjendid, sõnastikud, hulgad ja ennikud.
+  </span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Esimene ja ühtlasi üks enim kasutatavaid andmestruktuure on <strong class="strong">järjend</strong> (inglise keeles <span class="fst-italic">list</span>). Järjend on kogum erinevaid
+    elemente. Need elemendid võivad olla ükskõik mis tüüpi, arvud, sõned või tõeväärtused ja need võivad järjendis ka korduda. Python lubab ühte järjendisse koondada ka erinevat tüüpi
+    elemente, kuid praktikas seda väga palju ei kasutada. Järjendis eraldatakse elemendid komadega ja ümber järjendi on kandilised sulud. Mõned näited järjenditest:
+  </span>
+  </div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span>sõned = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
+      class="code-string">"banaan"</span>]<br></span>
+    <span>segamini = [<span class="code-string">"a"</span>, <span class="code-number">2.7</span>, <span
+      class="code-number">8</span>, <span class="code-bold">True</span>]<br></span>
+    <span>tühi = []<br></span>
+    <span>teine_tühi = <span class="code-function">list</span>()<br></span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'indeks'">Järjendi üksiku elemendi kasutamine indeksi abil</h4>
+<div class="mt-3 box-container">
+  <div><span>Järjendist on võimalik kätte saada ja ka muuta üksikuid elemente. Selleks kasutatakse elemendi järjekorranumbrit järjendis. Seda
+  järjekorranumbrit nimetatakse <strong class="strong">indeksiks</strong>. Indeksite puhul alustatakse loendamist nullist, seega see erineb natuke sellest, kuidas
+  tavaelus elemete loendaksime. Järjendi esimesel elemendile on indeks 0, teisel elemendil indeks 1, kolmandal indeks 2 jne. Selleks, et saada üksikut
+  elementi indeksi põhjal kätte, lisatakse järjendi järele kandilistesse sulgudesse elemendi indeks.</span></div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span>esimene_element = arvud[<span class="code-number">0</span>]<br></span>
+    <span>kolmas_element = arvud[<span class="code-number">2</span>]<br></span>
+    <span><span class="code-function">print</span>(esimene_element)<br></span>
+    <span><span class="code-function">print</span>(kolmas_element)<br></span>
+  </div>
+  <div class="mt-2"><span>See koodijupp väljastab ekraanile kõigepealt arvu <span class="fst-italic">2</span> ja siis arvu <span
+    class="fst-italic">4</span></span>.
+  </div>
+  <div class="mt-2"><span>Samamoodi saame indeksi kaudu ka järjendis olevat elementi uuendada. Selle süntaks on sarnane muutujasse väärtuse omistamisega, aga nüüd
+  on muutuja nime asemel järjend ja kandilistes sulgudes indeks, kuhu tahame elemendi kirjutada.</span></div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span>arvud[<span class="code-number">0</span>] = <span class="code-number">5</span><br></span>
+    <span><span class="code-function">print</span>(arvud)<br></span>
+  </div>
+  <div class="mt-2"><span>Nüüd näeme, et järjendis on esimene element muudetud: <span class="fst-italic">[5, 7, 4, 11, 2]</span>.</span>
+  </div>
+  <div class="mt-2"><span>Peame aga jälgima, et ei üritaks järjendist võtta sellise indeksiga elementi, mida seal pole. Näiteks kui järjendis on viis elementi,
+  siis me ei saa võtta järjendist elementi indeksiga 7. Kui me seda üritame, siis saame veateate (täpsemalt <span
+      class="fst-italic">IndexError</span> erindi):</span></div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">7</span>])<br></span>
+  </div>
+  <div class="code-block mt-2 code-error fst-italic">
+    <span>Traceback (most recent call last):<br>
+      File "C:\Users\test.py", line 2, in &lt;module&gt;<br>
+      print(arvud[7])<br>
+      IndexError: list index out of range<br></span>
+  </div>
+  <div class="mt-2"><span>Võib tekkida küsimus, et mis saab kui anname indeksiks negatiivse arvu? Kas selline asi on lubatud? Ja tuleb välja,
+  et Pythonis on tõesti lubatud kasutada ka negatiivseid indekseid ja siis hakatakse lugema elemente järjendi lõpust alguse suunas. Viimase elementi saab kätte
+  indeksiga -1, eelviimase indeksiga -2 jne.</span></div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">-1</span>])<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">-3</span>])<br></span>
+  </div>
+  <div class="mt-2"><span>Selles näites saame indeksiga -1 kätte elemendi <span class="fst-italic">2</span> ja indeksiga -3 saame kätte elemendi
+    <span class="fst-italic">4</span>. Samad elemendid saaksime, kui kasutaksime positiivseid indekseid 4 ja 2.</span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="indexTestCode" [items]="indexTestItems"
+                      [formControlNameBase]="'indexTest'"></app-radiochoice-test>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="negativeIndexTestCode"
+                      [items]="negativeIndexTestItems"
+                      [formControlNameBase]="'negativeIndexTest'"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'viilutamine'">Alamjärjendi leidmine ehk viilutamine</h4>
+<div class="mt-3 box-container">
+  <div><span>Viilutamise abil saame järjendist kätte alamjärjendi. See on sarnane elemendi leidmisele, kuid nüüd on tulemuseks
+  järjend ja me saame täpsustada nii algus- kui lõppindeksi. Nende vahele kirjutatakse koolon ja kui soovime, võime kas algus-, lõpuindeksi või mõlemad
+  ka ära jätta. Kui ainult lõppindeks on täpsustatud, siis võetakse kõik elemendid järjendi algusest kuni lõppindeksini. Kui täpsustatud on ainult
+  algusindeks, siis võetakse kõik alates algusindeksist kuni järjendi lõpuni. Kui mõlemad on puudu, siis kopeeritakse kõik elemendid.</span>
+  </div>
+  <div class="mt-2"><span>Tuleb ka arvestada sellega, et algusindeksiga element on kaasaarvatud, aga lõppindeksiga element mitte.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
+      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">1</span>:<span
+      class="code-number">3</span>])<br></span>
+    <span><span class="code-function">print</span>(arvud[:<span class="code-number">3</span>])<br></span>
+    <span><span class="code-function">print</span>(arvud[:<span class="code-number">-2</span>])<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">2</span>:])<br></span>
+    <span><span class="code-function">print</span>(arvud[<span class="code-number">1</span>:<span
+      class="code-number">2</span>])<br></span>
+    <span><span class="code-function">print</span>(arvud[:])<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>[7, 4]<br></span>
+    <span>[2, 7, 4]<br></span>
+    <span>[2, 7, 4]<br></span>
+    <span>[4, 11, 2]<br></span>
+    <span>[7]<br></span>
+    <span>[2, 7, 4, 11, 2]<br></span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'operatsioonid'">Järjenditega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Operatsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Avaldis</th>
+      <th style="width: 30%">Väärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>["ploom", "õun"] + ["pirn"]</td>
+      <td>["ploom", "õun", "pirn"]</td>
+      <td>Kahe järjendi liitmine üheks järjendiks</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun"] * 3</td>
+      <td>["ploom", "õun", "ploom", "õun", "ploom", "õun"]</td>
+      <td>Järjendi korrutamine arvuga (liidab nii mitu korda järjendit iseendaga)</td>
+    </tr>
+    <tr>
+      <td>5 in [1, 5, -2, 11, 7]</td>
+      <td>True</td>
+      <td>Kontrollib, kas element on järjendis</td>
+    </tr>
+    <tr>
+      <td>4 not in [1, 5, -2, 11, 7]</td>
+      <td>True</td>
+      <td>Kontrollib, ega elementi ei ole järjendis</td>
+    </tr>
+    <tr>
+      <td>[1, 2, 3] == [3, 2, 1]</td>
+      <td>False</td>
+      <td>Kontrollib, kas järjendid on võrdsed. Kusjuures elementide järjekord on oluline.</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Funktsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Funktsiooni rakendamine</th>
+      <th style="width: 30%">Tagastusväärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>len(["ploom", "õun", "pirn", "kirss"])</td>
+      <td>4</td>
+      <td>Leiab järjendi pikkuse</td>
+    </tr>
+    <tr>
+      <td>min([1, 5, -2, 11, 7])</td>
+      <td>-2</td>
+      <td>Leiab järjendi väikseima elemendi</td>
+    </tr>
+    <tr>
+      <td>max([1, 5, -2, 11, 7])</td>
+      <td>11</td>
+      <td>Leiab järjendi suurima elemendi</td>
+    </tr>
+    <tr>
+      <td>sum([1, 5, -2, 11, 7])</td>
+      <td>22</td>
+      <td>Leiab järjendi elementide summa (ainult arvude puhul)</td>
+    </tr>
+    <tr>
+      <td>sorted([1, 5, -2, 11, 7])</td>
+      <td>[-2, 1, 5, 7, 11]</td>
+      <td>Sorteerib järjendi</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-multichoice-test [title]="'Mis read väljastab järgmine koodijupp?'"
+                      [formControlNameBase]="'splicingAndFunctionsTest'"
+                      [code]="splicingAndFunctionsTestCode"
+                      [items]="splicingAndFunctionsTestItems"></app-multichoice-test>
+<div class="mt-3 box-container">
+  <strong class="strong">Meetodid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Meetodi rakendamine</th>
+      <th style="width: 25%">Järjendi väärtus pärast rakendamist</th>
+      <th style="width: 10%">Tagastusväärtus</th>
+      <th style="width: 25%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>["ploom", "õun", "kirss"].append("pirn")</td>
+      <td>["ploom", "õun", "kirss", "pirn"]</td>
+      <td>None</td>
+      <td>Lisab järjendi lõppu elemendi</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss"].extend(["õun", "kreek"])</td>
+      <td>["ploom", "õun", "kirss", "õun", "kreek"]</td>
+      <td>None</td>
+      <td>Lisab järjendi lõppu teise järjendi kõik elemendid</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss"].insert(1, "pirn")</td>
+      <td>["ploom", "pirn", "kirss"]</td>
+      <td>None</td>
+      <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine element ise.</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss", "õun"].remove("õun")</td>
+      <td>["ploom", "kirss", "õun"]</td>
+      <td>None</td>
+      <td>Eemaldab järjendist argumendiks antud elemendi. Kui on mitu sellist elementi, siis eemaldab ainult esimese
+      </td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss"].pop()</td>
+      <td>["ploom", "kirss"]</td>
+      <td>"õun"</td>
+      <td rowspan="2">Eemaldab ja tagastab järjendist elemendi. Argumendiks saab anda eemaldatava elemendi indeksi. Kui
+        argumenti ei anta, siis eemaldab viimase elemendi.
+      </td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss"].pop(0)</td>
+      <td>["õun", "kirss"]</td>
+      <td>"ploom"</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss", "õun"].clear()</td>
+      <td>[]</td>
+      <td>None</td>
+      <td>Eemaldab järjendist kõik elemendid.</td>
+    </tr>
+    <tr>
+      <td>["ploom", "õun", "kirss", "õun"].count("õun")</td>
+      <td>["ploom", "õun", "kirss", "õun"]</td>
+      <td>2</td>
+      <td>Loeb kokku, mitu korda antud element järjendis esineb</td>
+    </tr>
+    <tr>
+      <td>[1, 5, 8, 2, 3].sort()</td>
+      <td>[1, 2, 3, 5, 8]</td>
+      <td>None</td>
+      <td>Sorteerib järjendi</td>
+    </tr>
+    <tr>
+      <td>[1, 5, 8, 2, 3].reverse()</td>
+      <td>[3, 2, 8, 5, 1]</td>
+      <td>None</td>
+      <td>Pöörab järjendi ümber</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Järjenditega seotud sõnede meetodid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Meetodi rakendamine</th>
+      <th style="width: 30%">Tagastusväärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>"Õues paistab päike, aga eile sadas lund".split()</td>
+      <td>["Õues", "paistab", "päike,", "aga", "eile", "sadas", "lund."]</td>
+      <td rowspan="2">Tükeldab sõne järjendiks. Argumendiks saab anda ette sõne, mille kohalt tükeldada. Kui argumenti
+        ei anta, siis tükeldab tühikute,
+        reavahetuste ja taanete juurest.
+      </td>
+    </tr>
+    <tr>
+      <td>"piim,munad,leib,õunad".split(",")</td>
+      <td>["piim", "munad", "leib", "õunad"]</td>
+    </tr>
+    <tr>
+      <td>"; ".join(["ploom", "õun", "kirss", "õun"])</td>
+      <td>"ploom; õun; kirss; õun"</td>
+      <td>Ühendab argumendiks antud järjendi elemendid üheks sõneks. Lisab iga elemendi vahele sõne, millel meetodit
+        välja kutsutakse.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-radiochoice-test [title]="'Mis arvu väljastab järgmine koodijupp?'" [code]="methodsTestCode"
+                      [formControlNameBase]="'methodsTest'"
+                      [items]="methodsTestItems"></app-radiochoice-test>
+<div class="mt-3 box-container">
+  <strong class="strong">Järjend ja tsükkel</strong>
+  <div class="mt-2"><span>Tihti on meil vaja käia kshaaval läbi kõik järjendi elemendid. Selleks kasutatakse jällegi tsükleid. Väga mugav on kasutada
+  <span class="fst-italic">for</span>-tsüklit, samamoodi nagu failist lugemisel. Nüüd aga saab tsüklimuutuja igal iteratsioonil oma väärtuseks järjendi
+  järgmise elemendi ja avatud faili asemel rakendame tsüklit järjendil:</span></div>
+  <div class="code-block mt-2">
+    <span>puuviljad = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
+      class="code-string">"pirn"</span>, <span class="code-string">"kirss"</span>]<br></span>
+    <span><span class="code-bold">for</span> puuvili <span class="code-bold">in</span> puuviljad:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(puuvili)<br></span>
+  </div>
+  <div class="mt-2"><span>Saame kasutada ka <span class="fst-italic">while</span>-tsüklit, kuid siis peame koostama hoopis sellise tsükli, mis käiks läbi kõik
+  järjendi indeksid. Indeksi põhjal saame ka vastava elemendi kätte. Seega alustama peame indeksist 0 ja viimane indeks on ühe võrra väiksem kui järjendi pikkus.
+  Järjendi pikkuse saame teada <span class="fst-italic">len</span>-funktsiooniga:</span></div>
+  <div class="code-block mt-2">
+    <span>puuviljad = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
+      class="code-string">"pirn"</span>, <span class="code-string">"kirss"</span>]<br></span>
+    <span>i = <span class="code-number">0</span><br></span>
+    <span><span class="code-bold">while</span> i &lt; <span class="code-function">len</span>(puuviljad):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(puuviljad[i])<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;i += <span class="code-number">1</span><br></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Sõned kui järjendid</strong>
+  <div class="mt-2"><span>Sõned väga sarnased järjenditele. Need on otsekui järjendid üksikutest tähtedest ja sümbolitest. Me saame neid ka kasutada nagu
+  järjendeid. Näiteks saame ka sõnede puhul kasutada indekseid ja viilutamist, et saada kätte kas üksik sümbol või alamsõne.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span>tervitus = <span class="code-string">"Tervitus!"</span><br></span>
+    <span><span class="code-function">print</span>(tervitus[<span class="code-number">1</span>])<br></span>
+    <span><span class="code-function">print</span>(tervitus[<span class="code-number">2</span>:<span
+      class="code-number">6</span>])<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>e<br></span>
+    <span>rvit<br></span>
+  </div>
+  <div class="mt-2"><span>Samuti saame tsüklis sõne tähthaaval läbi käia:</span></div>
+  <div class="code-block mt-2">
+    <span>tervitus = <span class="code-string">"Tere!"</span><br></span>
+    <span><span class="code-bold">for</span> täht <span class="code-bold">in</span> tervitus:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(täht)<br></span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>T<br></span>
+    <span>e<br></span>
+    <span>r<br></span>
+    <span>e<br></span>
+    <span>!<br></span>
+  </div>
+</div>
+<div class="box-container mt-3">
+  <strong class="strong">Faili sisu järjendisse lugemine</strong>
+  <div class="mt-2"><span>Andmete töötlemiseks on väga mugav kasutada järjendeid, aga kuidas saada andmed järjendisse? Väikeste andmemahtude
+  puhul võime muidugi järjendi ka otse koodis valmis kirjutada, aga kui andmemahud lähevad suuremaks, siis on lihtsam otse faili põhjal
+  järjend luua. Me juba oskame faili sisu reahaaval lugeda, nüüd tuleb aga loetud read ka järjendisse lisada.
+    Siin tuleb appi järjendite meetod <span class="fst-italic">append</span>, mille abil saab järjendisse elemente lisada.</span>
+  </div>
+  <div class="mt-2"><span>Alustuseks tuleks luua enne faili läbimist tühi järjend, kuhu hakkame siis järjest elemente lisama. Kui
+  vaja, saame ka faili ridadele tüübiteisendusi teha. Järgmises näites luuakse hindade faili põhjal ujukomaarvude järjend. Leitakse
+  mitme toote hinnad olid failis, mis oli kõrgeim ja mis madalaim hind.</span></div>
+  <div class="mt-2"><span>Faili <span class="fst-italic">hinnad.txt</span> sisu: </span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>13.99<br></span>
+    <span>5.65<br></span>
+    <span>2.95<br></span>
+    <span>15.0<br></span>
+    <span>1.95<br></span>
+    <span>4.51<br></span>
+  </div>
+  <div class="code-block mt-2">
+    <span>hinnad = []<br></span>
+    <span>fail = <span class="code-function">open</span>(<span class="code-string">"hinnad.txt"</span>)<br></span>
+    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;hinnad.append(<span class="code-function">float</span>(rida))<br></span>
+    <span>fail.close()<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Failis olid "</span> +
+      <span class="code-function">str</span>(<span class="code-function">len</span>(hinnad)) + <span
+        class="code-string">" toote hinnad."</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Kõrgeim hind oli "</span> +
+      <span class="code-function">str</span>(<span class="code-function">max</span>(hinnad)) + <span
+        class="code-string">" eurot."</span>)<br></span>
+    <span><span class="code-function">print</span>(<span class="code-string">"Madalaim hind oli "</span> +
+      <span class="code-function">str</span>(<span class="code-function">min</span>(hinnad)) + <span
+        class="code-string">" eurot."</span>)<br></span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'range'">Funktsioon <span class="fst-italic">range</span></h4>
+<div class="mt-3 box-container">
+  <div><span>Pythonis on olemas üks kasulik funktsioon nimega <span class="fst-italic">range</span>, mis inglise keeles tähendab ulatust. Seda funktsiooni saab
+  kasutada arvujadade genereerimiseks. Sellele funktsioonile saab anda üks kuni kolm argumenti. Kui antakse ainult üks argument, siis see tähistab lõpparvu. Funktsioon
+  genereerib siis arvud alates 0-st kuni selle etteantud lõpparvuni. Lõpparv ise pole kaasaarvatud. Tagastatud väärtus on ulatus ehk <span class="fst-italic">range</span>-tüüpi,
+  aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusmeetodit <span class="fst-italic">list()</span>.</span></div>
+  <div class="mt-2 code-block">
+    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">5</span>)))</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>[0, 1, 2, 3, 4]</span>
+  </div>
+  <div class="mt-2">
+    <span>Kui anname <span class="fst-italic">range</span>-funktsioonile kaks argumenti, siis esimene neist tähistab algusarvu ja teine lõpparvu. Algusarv on jadas kaasaarvatud.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">2</span>, <span class="code-number">5</span>)))</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>[2, 3, 4]</span>
+  </div>
+  <div class="mt-2">
+    <span>Kui aga anname argumentideks kolm arvu, siis esimene ja teine tähistavad ikka algus- ja lõpparvu, aga kolmas tähistab sammu. Samm määrab ära, mis arvu võrra iga kord edasi liikuda.
+    See võib olla ka negatiivne arv, siis on arvud meil jadas kahanevas järjekorras ja ka algusarv peaks olema suurem kui lõpparv.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">1</span>, <span class="code-number">7</span>,  <span class="code-number">2</span>)))</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>[1, 3, 5]</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">15</span>, <span class="code-number">5</span>,  <span class="code-number">-3</span>)))</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>[15, 12, 9, 6]</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Funktsiooni <span class="fst-italic">range()</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükkliga. Näiteks saame <span class="fst-italic">range</span>-funktsiooni
+  abil genereerida indeksite jada ja seda kasutada järjendi läbimiseks. Saame kutsuda välja <span class="fst-italic">range</span>-funktsiooni andes argumendiks järjendi pikkuse ja
+  funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span></div>
+  <div class="mt-2 code-block">
+    <span>nädalapäevad = [<span class="code-string">"esmaspäev"</span>, <span class="code-string">"teisipäev"</span>, <span class="code-string">"kolmapäev"</span>,
+      <span class="code-string">"neljapäev"</span>, <span class="code-string">"reede"</span>, <span class="code-string">"laupäev"</span>, <span class="code-string">"pühapäev"</span>]<br></span>
+    <span><span class="code-bold">for</span> i <span class="code-bold">in </span><span class="code-function">range</span>(<span class="code-function">len</span>(nädalapäevad)):<br></span>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(i + <span class="code-number">1</span>) +
+      <span class="code-string">". nädalapäev on "</span> + nädalapäevad[i])</span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>1. nädalapäev on esmaspäev<br></span>
+    <span>2. nädalapäev on teisipäev<br></span>
+    <span>3. nädalapäev on kolmapäev<br></span>
+    <span>4. nädalapäev on neljapäev<br></span>
+    <span>5. nädalapäev on reede<br></span>
+    <span>6. nädalapäev on laupäev<br></span>
+    <span>7. nädalapäev on pühapäev</span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="rangeTestCode" [formControlNameBase]="'rangeTest'" [items]="rangeTestItems"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="box-container mt-3">
+  <strong class="strong">Sõnakett</strong>
+  <div class="mt-2"><span>Kirjutame ühe lihtsa mängu, mis seisneb sõnaketi moodustamises. Kasutaja peab hakkama järjest välja mõtlema sõnu ja iga järgmine
+  sõna peab hakkama tähega, millega eelmine sõna lõppes. Sõnad ei tohi ka korduda. Programmi töö seisneb siin reeglite järgimises ja punktide lugemises.
+  Kasutaja peab järjest sisestama sõnu ja iga sobiv sõna annab ühe punkti. Kui sõna ei alga sama tähega, millega eelmine lõppes või kui sõna kordub, siis
+  programm lõpetab oma töö ja annab kasutajale teada, mitu punkti ta teenis.</span></div>
+  <div class="mt-2"><span>Juba pakutud sõnade jaoks on hea kasutada järjendit ja tasub meelde tuletada, mida teeb võtmesõna <span
+    class="fst-italic">in</span>.
+  Et saada teada, mis tähega viimane pakutud sõna lõppes, saab kasutada indekseid. Näiteid programmi tööst:</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta sõna: <span class="code-input">kirss</span><br></span>
+    <span>Sisesta sõna, mis algab s-tähega: <span class="code-input">saabas</span><br></span>
+    <span>Sisesta sõna, mis algab s-tähega: <span class="code-input">sokk</span><br></span>
+    <span>Sisesta sõna, mis algab k-tähega: <span class="code-input">karu</span><br></span>
+    <span>Sisesta sõna, mis algab u-tähega: <span class="code-input">uba</span><br></span>
+    <span>Sisesta sõna, mis algab a-tähega: <span class="code-input">arbuus</span><br></span>
+    <span>Sisesta sõna, mis algab s-tähega: <span class="code-input">kell</span><br></span>
+    <span>Mäng läbi! Teenisid 6 punkti.</span>
+  </div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Sisesta sõna: <span class="code-input">sokk</span><br></span>
+    <span>Sisesta sõna, mis algab k-tähega: <span class="code-input">koer</span><br></span>
+    <span>Sisesta sõna, mis algab r-tähega: <span class="code-input">raba</span><br></span>
+    <span>Sisesta sõna, mis algab a-tähega: <span class="code-input">arbuus</span><br></span>
+    <span>Sisesta sõna, mis algab s-tähega: <span class="code-input">sokk</span><br></span>
+    <span>Mäng läbi! Teenisid 4 punkti.</span>
+  </div>
+  <app-exercise-hints [hints]="wordChainHints"></app-exercise-hints>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Klassinimekiri</strong>
+  <div class="mt-2"><span>4. klassi õpilased on kõik oma nimed faili kirja pannud, iga nimi eraldi real. Nüüd tahaksid nad teada saada, kellel klassist on
+    tähemärkide poolest kõige pikem perekonnanimi. Samuti tahaksid nad näha perekonnanimesid sorteeritult. Kirjuta programm, mis loeks perekonnanimed
+    järjendisse, leiaks sealt kõige pikema nime (sõne pikkuse leidmiseks sobib funktsioon <span
+      class="fst-italic">len</span>) ja
+    väljastaks perenimed sorteeritult.</span></div>
+  <div class="mt-2"><span>Igalt realt perekonnanime eraldamiseks sobib hästi sõnede <span
+    class="fst-italic">split</span>-meetod, mis tükeldab
+  sõne järjendiks. Näiteks <span class="fst-italic">"Mari Kadri Maasikas".split()</span> annab tulemuseks järjendi <span
+      class="fst-italic">
+      ["Mari", "Kadri", "Maasikas"]</span>. Sealt oskame juba viimase elemendi indeksiga kätte saada.</span></div>
+  <div class="mt-2"><span>Faili <span class="fst-italic">nimed.txt</span> sisu (fail on UTF-8 kodeeringus):</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Kelly Põldmaa<br></span>
+    <span>Kati Rita Svenson<br></span>
+    <span>Ken Paat<br></span>
+    <span>Arto Ellermaa<br></span>
+    <span>Mari-Meeli Kuusk<br></span>
+    <span>Elisabeth Katriin Kuuseoks<br></span>
+    <span>Urmas Rabasoo<br></span>
+    <span>Paul Peeter Kase-Jakobsen</span>
+  </div>
+  <div class="mt-2"><span>Ülaltoodud failiga võiks programmi väljund olla selline:</span></div>
+  <div class="code-block mt-2 fst-italic">
+    <span>Ellermaa<br></span>
+    <span>Kase-Jakobsen<br></span>
+    <span>Kuuseoks<br></span>
+    <span>Kuusk<br></span>
+    <span>Paat<br></span>
+    <span>Põldmaa<br></span>
+    <span>Rabasoo<br></span>
+    <span>Svenson<br></span>
+    <span>Pikim perenimi on: Kase-Jakobsen</span>
+  </div>
+  <app-exercise-hints [hints]="classListHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/sonastikud'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>
