@@ -24,9 +24,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Positiivne arv"</span>)</span>
+    <span [highlight]="wrongIndentationCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span class="code-error">Traceback (most recent call last):<br>
@@ -45,9 +43,7 @@
   <div class="row mx-0">
     <div class="col-lg-8 ps-0">
   <div class="code-block mt-2">
-    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Positiivne arv"</span>)</span>
+    <span [highlight]="noColonCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span class="code-error">Traceback (most recent call last):<br>
@@ -80,8 +76,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-function">print</span>(ar)</span>
+    <span [highlight]="wrongVariableNameCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">7</span><br></span>
@@ -97,7 +92,7 @@
   <div class="row mx-0">
     <div class="col-lg-8 ps-0">
   <div class="code-block mt-2">
-    <span>arv = <span class="code-function">int</span>(<span class="code-string">"Tere!"</span>)</span>
+    <span [highlight]="typeConversionCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span class="code-error">Traceback (most recent call last):<br>
@@ -141,12 +136,7 @@
     </div>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-bold">except</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud väärtus ei ole täisarv! Vaikimisi määratakse arvuks 1."</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-number">1</span><br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))</span>
+    <span [highlight]="tryExceptCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">kolm</span><br></span>
@@ -165,14 +155,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">ZeroDivisionError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Nimetaja ei tohi olla 0!"</span>)<br></span>
+    <span [highlight]="tryExceptsCode"></span>
   </div>
   <div class="mt-2"><span>Näited programmi tööst erinevate sisenditega:
   </span>
@@ -195,23 +178,13 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">(ValueError, ZeroDivisionError)</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud väärtused ei sobi!"</span>)<br></span>
+    <span [highlight]="tryOneExceptCode"></span>
   </div>
   <div class="mt-2"><span>Kui erindi jaoks sobivat püünist ei ole, siis lõpetab programm ikkagi veateatega töö:
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;lugeja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta lugeja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;nimetaja = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta nimetaja: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tulemus on: "</span> + <span class="code-function">str</span>(lugeja / nimetaja))<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
+    <span [highlight]="tryNoSuitableExceptCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta lugeja: <span class="code-input">9</span><br></span>
@@ -228,13 +201,7 @@
   <div><span>Eelmisetes näidetes väljastasime kasutajale, et sisestatud arv ei sobi, aga veel kasulikum oleks kasutajalt arvu lihtsalt uuesti küsida. Muidugi on alati võimalus,
   et kasutaja sisestab ka teisel korral ebasobiva väärtuse, seepärast on sisendi küismist kõige parem teha tsüklis. Tsüklis küsitakse sisendit nii kaua, kuni saame sobiva sisendi, mille korral enam erindit ei teki.</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">while True</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))</span>
+    <span [highlight]="loopTryCode"></span>
   </div>
   <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnkase
   püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span> käsuni.</span></div>
@@ -248,15 +215,7 @@
   </div>
   <div class="mt-2"><span>Sama loogikat saab kasutada ka faili nime küsimisel. Kui faili avamisel tekib erind, siis küsitakse kasutajalt nime uuesti:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">while True</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;faili_nimi = <span class="code-function">input</span>(<span class="code-string">"Sisesta faili nimi: "</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fail = <span class="code-function">open</span>(faili_nimi)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">except </span><span class="code-function">FileNotFoundError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sellist faili ei leidu!"</span>)<br></span>
-    <span>sisu = fail.read()<br></span>
-    <span><span class="code-function">print</span>(sisu)<br></span>
+    <span [highlight]="loopOpenFileCode"></span>
   </div>
 </div>
 <h4 [attr.id]="'praktika'" class="mt-5">Erindite püüdmise hea praktika</h4>
@@ -266,11 +225,7 @@
   teinud vea muutuja nimetamises ja tekib <span class="fst-italic">NameError</span>-erind, siis me tahaksime seda veateadet näha, et saaksime oma koodi parandada.</span></div>
   <div class="mt-2"><span>Selles näites püüame kinni kõik vead, ilma veatüüpi täpsustamata:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(ar))<br></span>
-    <span><span class="code-bold">except</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)</span>
+    <span [highlight]="tryExceptNoTypeCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">5</span><br></span>
@@ -280,11 +235,7 @@
   jääb siin ekslikult mulje, et sisestatud arvuga oli probleem. Palju parem on täpsustada veatüüp, siis saame kohe tagasisidet, kui tekib mõni teist sorti erind, mida korrektse
     koodi korral ei peaks tekkima:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(ar))<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)</span>
+    <span [highlight]="tryExceptValueErrorCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">5</span><br></span>
@@ -300,11 +251,7 @@
   lihtsalt pärast <span class="fst-italic">try-except</span>-blokki, sest kui <span class="fst-italic">try</span>-blokis tekkis viga, siis ei pruugi meil olla kõiki muutujaid ja väärtusi,
   mida tahame kasutada:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-bold">except</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))<br></span>
+    <span [highlight]="tryLinesAfterCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">neli</span><br></span>
@@ -320,12 +267,7 @@
   <span class="fst-italic">else</span>-blokki see kood, mida tahetakse täita, kui <span class="fst-italic">try</span>-blokis viga ei tekkinud.
     <span class="fst-italic">Else</span>-harus tekkivaid erindeid enam kinni ei püüta.</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta arv: "</span>))<br></span>
-    <span><span class="code-bold">except</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv!"</span>)<br></span>
-    <span><span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv on: "</span> + <span class="code-function">str</span>(arv))<br></span>
+    <span [highlight]="tryExceptElseCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">5</span><br></span>
@@ -347,12 +289,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def </span><span class="code-def">täisarvu_küsimine</span>():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta täisav vahemikus 1-10: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &lt; <span class="code-number">1 </span><span class="code-bold">or</span> arv &gt; <span class="code-number">10</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">raise </span><span class="code-function">ValueError</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span>arv<br><br></span>
-    <span>arv = täisarvu_küsimine()</span>
+    <span [highlight]="defRaiseValueErrorCode"></span>
   </div>
     </div>
     <div class="col-lg-2 mt-auto mx-3 mb-3">
@@ -377,12 +314,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def </span><span class="code-def">täisarvu_küsimine</span>():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">int</span>(<span class="code-function">input</span>(<span class="code-string">"Sisesta täisav vahemikus 1-10: "</span>))<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &lt; <span class="code-number">1 </span><span class="code-bold">or</span> arv &gt; <span class="code-number">10</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">raise </span><span class="code-function">ValueError(<span class="code-string">"vahemik peab olema 1-10"</span>)</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span>arv<br><br></span>
-    <span>arv = täisarvu_küsimine()</span>
+    <span [highlight]="defRaiseErrorMessageCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
@@ -397,10 +329,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">try</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = täisarvu_küsimine()<br></span>
-    <span><span class="code-bold">except </span><span class="code-function">ValueError</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Sisestatud arv ei ole täisarv vahemikus 1-10!"</span>)<br></span>
+    <span [highlight]="raiseErrorExceptCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
@@ -411,12 +340,7 @@
 <div class="mt-3 box-container">
   <strong class="strong">Pitsatainas</strong>
   <div class="mt-2"><span>Võtame jälle ette funktsioonide peatükist tuttava pitsataigna koguse arvutamise funktsiooni:</span></div>
-  <div class="code-block mt-2"><span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
-      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br></span></div>
+  <div class="code-block mt-2"><span [highlight]="defPizzaDoughCode"></span></div>
   <div class="mt-2"><span>Kirjuta funktsioon ümber nii, et kui argumendiks antud läbimõõt ei ole 20, 28 või 38, siis
   tõstataks funktsioon <span class="fst-italic">ValueErrori</span>. Põhiprogrammis peaks programm kasutajalt küsima pitsa läbimõõdu ja siis väljastama
   vajaliku taignakoguse. Kui kasutaja sisend ei ole täisarv või funktsiooni väljakutses tekib viga, siis peaks kasutajat sellest teavitama ja programm peaks oma töö lõpetama.</span></div>

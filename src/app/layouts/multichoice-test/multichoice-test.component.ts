@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TestAnswer} from "../../models/test-answer.model";
-import {FormBuilder, FormControl} from "@angular/forms";
+import {UntypedFormBuilder, UntypedFormControl} from "@angular/forms";
 import {shuffle} from "../../utils";
 
 @Component({
@@ -23,12 +23,12 @@ export class MultichoiceTestComponent implements OnInit {
   showFeedback = false;
   form = this.fb.group({});
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     this.items = shuffle([...this.items]);
     for (let i = 0; i < this.items.length; i++) {
-      this.form.addControl(this.formControlNameBase + i, new FormControl(false));
+      this.form.addControl(this.formControlNameBase + i, new UntypedFormControl(false));
     }
   }
 

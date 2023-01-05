@@ -19,20 +19,7 @@
   Pythonis loogelised sulud ja võti-väärtus paarid on omavahel komadega eraldatud, nii nagu ka järjendi elemendid. Võtme ja väärtuse vahel on koolon.</span>
   </div>
   <div class="mt-2 code-block">
-    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
-      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
-        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
-    <span>silmavärvid = {{'{'}}<span class="code-string">"Kerttu"</span>: <span class="code-string">"sinine"</span>,
-      <span class="code-string">"Katriin"</span>: <span class="code-string">"pruun"</span>{{'}'}}<br></span>
-    <span>grupihinnad = {{'{'}}<span class="code-number">10</span>: <span class="code-number">30.0</span>, <span
-      class="code-number">20</span>: <span class="code-number">45.0</span>,
-      <span class="code-number">30</span>: <span class="code-number">55.0</span>{{'}'}}<br></span>
-    <span>segamini = {{'{'}}<span class="code-string">"sünniaasta"</span>: <span class="code-number">2010</span>,
-      <span class="code-string">"nimi"</span>: <span class="code-string">"Gustav"</span>,
-      <span class="code-string">"pikkus"</span>: <span class="code-number">153.9</span>, <span class="code-string">"poiss"</span>: <span
-        class="code-bold">True</span>{{'}'}}<br></span>
-    <span>tühi = {{'{}'}}<br></span>
-    <span>teine_tühi = <span class="code-function">dict</span>()<br></span>
+    <span [highlight]="dictionariesExamplesCode"></span>
   </div>
 </div>
 <h4 class="mt-5">Sõnastiku väärtuste uuendamine</h4>
@@ -42,12 +29,7 @@
   Koodis on võtme kasutamine väga sarnane indeksi kasutamisele, võti läheb sõnastiku järel kandilistesse sulgudesse ja tagastatakse võtmele vastav väärtus.</span>
   </div>
   <div class="mt-2 code-block">
-    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
-      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
-        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
-    <span>pikkus = pikkused[<span class="code-string">"Kadri"</span>]<br></span>
-    <span><span class="code-function">print</span>(pikkus)<br></span>
-    <span><span class="code-function">print</span>(pikkused[<span class="code-string">"Ants"</span>])</span>
+    <span [highlight]="valueByKeyCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>135.3<br></span>
@@ -55,10 +37,7 @@
   </div>
   <div class="mt-2"><span>Kui üritatada kasutada võtit, mida sõnastikus pole, siis saame veateate.</span></div>
   <div class="mt-2 code-block">
-    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
-      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
-        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
-    <span><span class="code-function">print</span>(pikkused[<span class="code-string">"Kati"</span>])</span>
+    <span [highlight]="nonExistingKeyCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic code-error">
     <span>Traceback (most recent call last):<br>
@@ -73,12 +52,7 @@
   sõnastikus, siis see lisatakse sinna, kui selline võti oli juba olemas, siis kirjutatakse vana väärtus uuega üle.</span>
   </div>
   <div class="mt-2 code-block">
-    <span>pikkused = {{'{'}}<span class="code-string">"Madis"</span>: <span class="code-number">140.8</span>,
-      <span class="code-string">"Kadri"</span>: <span class="code-number">135.3</span>, <span
-        class="code-string">"Ants"</span>: <span class="code-number">146.7</span>{{'}'}}<br></span>
-    <span>pikkused[<span class="code-string">"Kati"</span>] = <span class="code-number">138.6</span><br></span>
-    <span>pikkused[<span class="code-string">"Kadri"</span>] = <span class="code-number">132.4</span><br></span>
-    <span><span class="code-function">print</span>(pikkused)</span>
+    <span [highlight]="addingValueCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>{{'{'}}'Madis': 140.8, 'Kadri': 132.4, 'Ants': 146.7, 'Kati': 138.6{{'}'}}</span>
@@ -230,14 +204,7 @@
   tsükkel üle sõnastiku võtmete. Seega igal iteratsioonil saab tsüklimuutuja endale väärtuseks järgmise võtme sõnastikust. Kui soovime tsüklis ka väärtust kätte saada,
   siis saame seda läbi kandiliste sulgude või <span class="fst-italic">get</span>-meetodi.</span></div>
   <div class="mt-2 code-block">
-    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
-      class="code-string">"leib"</span>: <span class="code-number">1</span>,
-      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
-        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
-    <span><span class="code-bold">for</span> toode <span class="code-bold">in </span> ostukorv:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
-      class="code-string">" - "</span> +
-      <span class="code-function">str</span>(ostukorv[toode]) + <span class="code-string">" tk"</span>)</span>
+    <span [highlight]="forLoopCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>piim - 1 tk<br></span>
@@ -249,13 +216,7 @@
     class="fst-italic">values</span>-meetodiga sõnastiku
   väärtused küsida ja moodustada tsükli nende põhjal. Väärtuse põhjal me aga võtme väärtust teada ei saa.</span></div>
   <div class="mt-2 code-block">
-    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
-      class="code-string">"leib"</span>: <span class="code-number">1</span>,
-      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
-        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
-    <span><span class="code-bold">for</span> kogus <span class="code-bold">in </span> ostukorv.values():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(kogus) + <span
-      class="code-string">" tk"</span>)</span>
+    <span [highlight]="forLoopValuesCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>1 tk<br></span>
@@ -267,15 +228,7 @@
   Võti ja väärtus on andmestruktuuris nimega ennik ja hiljem uurime seda andmestruktuuri täpsemalt. Seniks aga võib lihtsalt kasutada järgmist süntaksit.</span>
   </div>
   <div class="mt-2 code-block">
-    <span>ostukorv = {{'{'}}<span class="code-string">"piim"</span>: <span class="code-number">1</span>, <span
-      class="code-string">"leib"</span>: <span class="code-number">1</span>,
-      <span class="code-string">"õun"</span>: <span class="code-number">5</span>, <span
-        class="code-string">"porgand"</span>: <span class="code-number">8</span>{{'}'}}<br><br></span>
-    <span><span class="code-bold">for</span> toode, kogus <span
-      class="code-bold">in </span> ostukorv.items():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
-      class="code-string">" - "</span> +
-      <span class="code-function">str</span>(kogus) + <span class="code-string">" tk"</span>)</span>
+    <span [highlight]="forLoopItemsCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>piim - 1 tk<br></span>
@@ -298,31 +251,8 @@
     <span>pirn,5<br></span>
     <span>tomat,6<br></span>
   </div>
-  <div class="mt-2 box-container">
-    <span>ostukorv = {{'{'}}{{'}'}}<br><br></span>
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"ostukorv.txt"</span>)<br></span>
-    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;tükid = rida.split(<span class="code-string">","</span>) <span class="code-comment"># tükeldame rea koma kohalt ja saame kahe elemendiga järjendi</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[tükid[<span class="code-number">0</span>]] = <span
-      class="code-function">int</span>(tükid[<span class="code-number">1</span>])
-      <span
-        class="code-comment"># esimene element on toode ja teine element kogus (kogus on vaja teha täisarvuks)</span><br><br></span>
-    <span>toode = <span class="code-function">input</span>(<span
-      class="code-string">"Sisesta toode: "</span>)<br><br></span>
-    <span><span class="code-bold">while</span> toode != <span class="code-string">""</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> toode <span
-      class="code-bold">in</span> ostukorv: <span
-      class="code-comment"># kontrollime, kas toode on juba ostukorvis</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[toode] = ostukorv[toode] + <span class="code-number">1</span>
-      <span class="code-comment"> # suurendame hetkel ostukorvis olevat kogust ühe võrra</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ostukorv[toode] = <span
-      class="code-number">1</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;toode = <span class="code-function">input</span>(<span class="code-string">"Sisesta toode: "</span>)<br><br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Ostutšekk:"</span>)<br></span>
-    <span><span class="code-bold">for</span> toode <span class="code-bold">in</span> ostukorv:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(toode + <span
-      class="code-string">" - "</span> + <span class="code-function">str</span>(ostukorv[toode]))</span>
+  <div class="mt-2 code-block">
+    <span [highlight]="shoppingCartCode"></span>
   </div>
   <div class="mt-2"><span>Näide väljundist:</span></div>
   <div class="mt-2 code-block fst-italic">
@@ -348,7 +278,7 @@
       class="fst-italic">get</span>-meetodit ja vaikeväärtust.
   </div>
   <div class="mt-2 code-block">
-    <span>ostukorv[toode] = ostukorv.get(toode, <span class="code-number">0</span>) + <span class="code-number">1</span></span>
+    <span [highlight]="shoppingCartGetCode"></span>
   </div>
   <div class="mt-2">Kui toode oli ostukorvis, siis <span class="fst-italic">get</span>-meetod tagastab ostukorvis oleva
     koguse, kui ei olnud, siis tagastab 0. Igal juhul liidame

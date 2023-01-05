@@ -9,18 +9,16 @@ import {TestAnswer} from "../../models/test-answer.model";
 })
 export class DictionariesComponent  {
 
-  keyTestCode = 'jooksuajad = {<span class="code-string">"Mait"</span>: <span class="code-number">16.5</span>, <span class="code-string">"Kadi"</span>: ' +
-    '<span class="code-number">18.6</span>, <span class="code-string">"Pille"</span>: <span class="code-number">17.9</span>}<br>' +
-    '<span class="code-function">print</span>(jooksuajad[<span class="code-number">1</span>])';
+  keyTestCode = 'jooksuajad = {"Mait": 16.5, "Kadi": 18.6, "Pille": 17.9}\n' +
+    'print(jooksuajad[1])';
   keyTestItems = [new TestAnswer('18.6', false, 'See väärtus vastaks võtmele "Kadi", kuid mis vastab võtmele 1?'),
   new TestAnswer('16.5', false, 'Võtmele "Mait" vastab väärtus 16.5, kuid mida väljastatakse võtme 1 puhul?'),
   new TestAnswer('17.9', false, 'See väärtus vastab võtmele "Pille", kas sõnastikus on olemas võti 1?'),
   new TestAnswer('"Kadi": 17.9', false, 'See paar on küll teine kirje sõnastikus, aga sõnastikuga ei saa kasutada indekseid. Saame kasutada vaid võtmeid. Kas sõnastikus on olemas võti 1?'),
   new TestAnswer('Veateade', true, 'Õige! Sõnastikust minnakse otsima võtit 1, kuid sellist ei ole seal, seega tekib hoopis viga.')];
 
-  getTestCode = 'jooksuajad = {<span class="code-string">"Mait"</span>: <span class="code-number">16.5</span>, <span class="code-string">"Kadi"</span>: ' +
-    '<span class="code-number">18.6</span>, <span class="code-string">"Pille"</span>: <span class="code-number">17.9</span>}<br>' +
-    '<span class="code-function">print</span>(jooksuajad.get(<span class="code-string">"Olev"</span>, <span class="code-number">17.5</span>))';
+  getTestCode = 'jooksuajad = {"Mait": 16.5, "Kadi": 18.6, "Pille": 17.9}\n' +
+    'print(jooksuajad.get("Olev", 17.5))';
 
   getTestItems = [new TestAnswer('17.5', true, 'Õige! Kuna võtit "Olev" ei ole sõnastikus, siis tagastatab <span class="fst-italic">get</span>-meetod teise argumendina antud vaikeväärtuse'),
   new TestAnswer('Veateade', false, 'Võtit "Olev" sõnastikus ei leidu, kuid sellisel juhul tagastab <span class="fst-italic">get</span>-meetod vaikeväärtuse' +
@@ -37,76 +35,76 @@ export class DictionariesComponent  {
     'on juba igaühe enda otsustada.', null),
   new ExerciseHint('Enne tsükli juurde minekut võiks luua tühja sõnastiku, kuhu hakkame automarke lisama.',  'autod = {}'),
   new ExerciseHint('Me teeme siin läbi jätkamistingimusega tsükli variandi. Selleks küsime juba enne tsükli alustamist kasutajalt esimese ' +
-    'automargi, et saaksime tsüklitingimuses seda automarki kasutada.', 'auto = <span class="code-function">input</span>(<span class="code-string">"Mis marki auto just möödus? "</span>)<br><br>' +
-    '<span class="code-bold">while</span> auto != <span class="code-string">""</span>:'),
+    'automargi, et saaksime tsüklitingimuses seda automarki kasutada.', 'auto = input("Mis marki auto just möödus? ")\n' +
+    '\n' +
+    'while auto != "":\n    # tsükli sisu'),
   new ExerciseHint('Tsüklis tuleks kõigepealt sõnastikus vastava automargi väärtust suurendada ja seejärel uus automark küsida (seda saab teha samamoodi nagu enne tsüklit). Sõnastiku muutmiseks on kaks varianti.' +
     ' Esiteks võib <span class="fst-italic">in</span> võtmesõnaga kontrollida, kas võti on juba sõnastikus või mitte. Kui on, siis võtame sõnastikust automargi väärtuse, ' +
     'suurendame seda ühe võrra ja paneme tagasi sõnastikku. Kui võtit pole sõnastikus, siis järelikult pole me sellist automarki varem näinud ja lisame selle sõnastikku ' +
     'väärtusega 1. Teine variant on kasutada <span class="fst-italic">get</span>-meetodit. Sellele meetodile saame anda vaikeväärtuse, mis tagastatakse siis, kui võtit pole sõnastikus.',
-    'autod[auto] = autod.get(auto, <span class="code-number">0</span>) + <span class="code-number">1</span>'),
+    'autod[auto] = autod.get(auto, 0) + 1 # suurendame väärtust'),
   new ExerciseHint('Kui tsükkel lõppeb, siis peame kasutajale väljastama natuke statistikat nähtud autode kohta. Kõigepealt tahame teada, mitut erinevat ' +
     'automarki kasutaja nägi. Selleks tasub meenutada <span class="fst-italic">len</span>-funktsiooni. Kõigi nähtud autode arvu jaoks tuleks sõnastikus olevad väärtused kokku liita. ' +
     'Seda saab teha näiteks abimuutuja ja tsükli abil, või siis kasutada sõnastiku meetodit <span class="fst-italic">values()</span>, et saada kätte sõnastiku väärtused, ning ' +
     'siis kasutada funktsiooni <span class="fst-italic">sum()</span>, mis summeerib arvude järjendis olevad elemendid.', null),
-  new ExerciseHint('Automarkide arvu ja autode arvu võib leida nii:', 'marke = <span class="code-function">len</span>(autod)<br>' +
-    'autosid = <span class="code-function">sum</span>(autod.values())'),
-  new ExerciseHint('Need väärtused saame kasutajale ka väljastada: ', '<span class="code-function">print</span>(<span class="code-string">"Kokku nägid täna "</span>' +
-    ' + <span class="code-function">str</span>(marke) + <span class="code-string">" erinevat automarki, "</span> + ' +
-    '<span class="code-function">str</span>(autosid) + <span class="code-string">" autot."</span>)'),
+  new ExerciseHint('Automarkide arvu ja autode arvu võib leida nii:', 'marke = len(autod)\n' +
+    'autosid = sum(autod.values())'),
+  new ExerciseHint('Need väärtused saame kasutajale ka väljastada: ', 'print("Kokku nägid täna " + str(marke) + " erinevat automarki, " + str(autosid) + " autot.")'),
   new ExerciseHint('Viimaks tuleb väljastada ka sõnastiku sisu ehk mitu autot igast margist nähti. Seda saab teha tavalise <span class="fst-italic">for</span>-tsükliga.', null),
   new ExerciseHint('Tsükkel käib läbi sõnastiku võtmete ja väärtuse saame kätte sõnastiku kaudu.',
-    '<span class="code-bold">for</span> mark <span class="code-bold">in</span> autod:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(mark + <span class="code-string">": "</span> + <span class="code-function">str</span>(autod[mark]))'),
+    'for mark in autod:\n' +
+    '    print(mark + ": " + str(autod[mark]))'),
   new ExerciseHint('Näide lõplikust koodist:',
-    'autod = {}<br>' +
-    'auto = <span class="code-function">input</span>(<span class="code-string">"Mis marki auto just möödus? "</span>)<br><br>' +
-    '<span class="code-bold">while</span> auto != <span class="code-string">""</span>:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;autod[auto] = autod.get(auto, <span class="code-number">0</span>) + <span class="code-number">1</span><br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;auto = <span class="code-function">input</span>(<span class="code-string">"Mis marki auto just möödus? "</span>)<br><br>' +
-    'marke = <span class="code-function">len</span>(autod)<br>' +
-    'autosid = <span class="code-function">sum</span>(autod.values())<br>' +
-    '<span class="code-function">print</span>(<span class="code-string">"Kokku nägid täna "</span>' +
-    ' + <span class="code-function">str</span>(marke) + <span class="code-string">" erinevat automarki, "</span> + ' +
-    '<span class="code-function">str</span>(autosid) + <span class="code-string">" autot."</span>)<br><br>' +
-    '<span class="code-bold">for</span> mark <span class="code-bold">in</span> autod:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(mark + <span class="code-string">": "</span> + <span class="code-function">str</span>(autod[mark]))'
+    'autod = {}\n' +
+    'auto = input("Mis marki auto just möödus? ")\n' +
+    '\n' +
+    'while auto != "":\n' +
+    '    autod[auto] = autod.get(auto, 0) + 1\n' +
+    '    auto = input("Mis marki auto just möödus? ")\n' +
+    '\n' +
+    'marke = len(autod)\n' +
+    'autosid = sum(autod.values())\n' +
+    'print("Kokku nägid täna " + str(marke) + " erinevat automarki, " + str(autosid) + " autot.")\n' +
+    '\n' +
+    'for mark in autod:\n' +
+    '    print(mark + ": " + str(autod[mark]))'
   )];
 
-  carCountriesListFunction = '<span class="code-bold">def</span><span class="code-def"> koodid_failist</span>(failinimi):<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;koodid = []<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;fail = <span class="code-function">open</span>(failinimi)<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;koodid.append(rida.strip())<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;fail.close()<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return</span> koodid';
+  carCountriesListFunction = 'def koodid_failist(failinimi):\n' +
+    '    koodid = []\n' +
+    '    fail = open(failinimi)\n' +
+    '    for rida in fail:\n' +
+    '        koodid.append(rida.strip())\n' +
+    '    fail.close()\n' +
+    '    return koodid';
 
-  carCountriesDictionaryFunction = '<span class="code-bold">def</span><span class="code-def"> riigid_failist</span>(failinimi):<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;riigid = {}<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;fail = <span class="code-function">open</span>(failinimi)<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tükid = rida.strip().split()<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;riigid[tükid[<span class="code-number">0</span>]] = tükid[<span class="code-number">1</span>]<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;fail.close()<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return</span> riigid';
+  carCountriesDictionaryFunction = 'def riigid_failist(failinimi):\n' +
+    '    riigid = {}\n' +
+    '    fail = open(failinimi)\n' +
+    '    for rida in fail:\n' +
+    '        tükid = rida.strip().split()\n' +
+    '        riigid[tükid[0]] = tükid[1]\n' +
+    '    fail.close()\n' +
+    '    return riigid';
 
-  carCountriesConversionFunction = '<span class="code-bold">def</span><span class="code-def"> koodid_riikideks</span>(koodid, riigid):<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;teisendatud = []<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">for</span> kood <span class="code-bold">in</span> koodid:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;riik = riigid.get(kood, <span class="code-string">"Tundmatu"</span>)<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teisendatud.append(riik)<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return</span> teisendatud';
+  carCountriesConversionFunction = 'def koodid_riikideks(koodid, riigid):\n' +
+    '    teisendatud = []\n' +
+    '    for kood in koodid:\n' +
+    '        riik = riigid.get(kood, "Tundmatu")\n' +
+    '        teisendatud.append(riik)\n' +
+    '    return teisendatud';
 
-  carCountriesOutputFunction = '<span class="code-bold">def</span><span class="code-def"> väljasta</span>(teisendatud):<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Autod on järgmistest riikidest:"</span>)<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">for</span> riik <span class="code-bold">in</span> teisendatud:<br>' +
-    '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(riik)';
+  carCountriesOutputFunction = 'def väljasta(teisendatud):\n' +
+    '    print("Autod on järgmistest riikidest:")\n' +
+    '    for riik in teisendatud:\n' +
+    '        print(riik)';
 
-  carCountriesMainProgram = 'koodid = koodid_failist(<span class="code-string">"koodid.txt"</span>)<br>' +
-    'riigid = riigid_failist(<span class="code-string">"riigid.txt"</span>)<br>' +
-    'teisendatud = koodid_riikideks(koodid, riigid)<br>' +
+  carCountriesMainProgram = 'koodid = koodid_failist("koodid.txt")\n' +
+    'riigid = riigid_failist("riigid.txt")\n' +
+    'teisendatud = koodid_riikideks(koodid, riigid)\n' +
     'väljasta(teisendatud)';
 
-  emptyLine = '<br><br>';
+  emptyLine = '\n\n';
 
   carCountriesHints = [new ExerciseHint('Selle ülesande saab jagada neljaks alamosaks: koodide lugemine failist järjendisse, riikide lugemine failist ' +
     'sõnastikku, koodide teisendamine riikide nimedeks ja viimaks andmete väljastamine kasutajale. Võime nende alamülesannete jaoks teha eraldi funktsioonid, et ' +
@@ -135,5 +133,54 @@ export class DictionariesComponent  {
   new ExerciseHint('Kogu kood koos funktsioonide ja põhiprogrammiga.',
     this.carCountriesListFunction + this.emptyLine + this.carCountriesDictionaryFunction + this.emptyLine + this.carCountriesConversionFunction +
   this.emptyLine + this.carCountriesOutputFunction + this.emptyLine + this.carCountriesMainProgram)];
+
+  dictionariesExamplesCode = 'pikkused = {"Madis": 140.8, "Kadri": 135.3, "Ants": 146.7}\n' +
+    'silmavärvid = {"Kerttu": "sinine", "Katriin": "pruun"}\n' +
+    'grupihinnad = {10: 30.0, 20: 45.0, 30: 55.0}\n' +
+    'segamini = {"sünniaasta": 2010, "nimi": "Gustav", "pikkus": 153.9, "poiss": True}\n' +
+    'tühi = {}\n' +
+    'teine_tühi = dict()';
+  valueByKeyCode = 'pikkused = {"Madis": 140.8, "Kadri": 135.3, "Ants": 146.7}\n' +
+    'pikkus = pikkused["Kadri"]\n' +
+    'print(pikkus)\n' +
+    'print(pikkused["Ants"])';
+  nonExistingKeyCode = 'pikkused = {"Madis": 140.8, "Kadri": 135.3, "Ants": 146.7}\n' +
+    'print(pikkused["Kati"])';
+  addingValueCode = 'pikkused = {"Madis": 140.8, "Kadri": 135.3, "Ants": 146.7}\n' +
+    'pikkused["Kati"] = 138.6\n' +
+    'pikkused["Kadri"] = 132.4\n' +
+    'print(pikkused)';
+  forLoopCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
+    '\n' +
+    'for toode in  ostukorv:\n' +
+    '    print(toode + " - " + str(ostukorv[toode]) + " tk")';
+  forLoopValuesCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
+    '\n' +
+    'for kogus in  ostukorv.values():\n' +
+    '    print(str(kogus) + " tk")';
+  forLoopItemsCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
+    '\n' +
+    'for toode, kogus in  ostukorv.items():\n' +
+    '    print(toode + " - " + str(kogus) + " tk")';
+  shoppingCartCode = 'ostukorv = {}\n' +
+    '\n' +
+    'fail = open("ostukorv.txt")\n' +
+    'for rida in fail:\n' +
+    '    tükid = rida.split(",") # tükeldame rea koma kohalt ja saame kahe elemendiga järjendi\n' +
+    '    ostukorv[tükid[0]] = int(tükid[1]) # esimene element on toode ja teine element kogus (kogus on vaja teha täisarvuks)\n' +
+    '\n' +
+    'toode = input("Sisesta toode: ")\n' +
+    '\n' +
+    'while toode != "":\n' +
+    '    if toode in ostukorv: # kontrollime, kas toode on juba ostukorvis\n' +
+    '        ostukorv[toode] = ostukorv[toode] + 1 # suurendame hetkel ostukorvis olevat kogust ühe võrra\n' +
+    '    else:\n' +
+    '        ostukorv[toode] = 1\n' +
+    '    toode = input("Sisesta toode: ")\n' +
+    '\n' +
+    'print("Ostutšekk:")\n' +
+    'for toode in ostukorv:\n' +
+    '    print(toode + " - " + str(ostukorv[toode]))';
+  shoppingCartGetCode = 'ostukorv[toode] = ostukorv.get(toode, 0) + 1 # väärtuse suurendamine ühe võrra';
 
 }

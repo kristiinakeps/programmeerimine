@@ -40,8 +40,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-    <span>fail.close()</span>
+    <span [highlight]="fileOpenCloseCode"></span>
   </div>
   <div class="mt-2"><span>Võid proovida seda pisikest koodijuppi oma arvutis käivitada. Kui kõik töötab ilusti, siis ei ilmu ekraanile midagi.
     Kui aga faili ei leita, siis saad ilmselt sellise veateate:
@@ -64,10 +63,7 @@
   </span>
       </div>
       <div class="code-block mt-2">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-        <span>sisu = fail.read()<br></span>
-        <span><span class="code-function">print</span>(sisu)<br></span>
-        <span>fail.close()</span>
+        <span [highlight]="fileReadWholeContentsCode"></span>
       </div>
     </div>
     <div class="col-lg-1 mt-auto mx-3 mb-3">
@@ -89,12 +85,7 @@
   loeme uue rea kuni rida pole tühi (kui read saavad otsa, siis tagastab meetod tühja sõne).</span>
   </div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-    <span>rida = fail.readline()<br></span>
-    <span><span class="code-bold">while</span> rida != <span class="code-string">""</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(rida)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;rida = fail.readline()<br></span>
-    <span>fail.close()</span>
+    <span [highlight]="fileReadWhileLoopCode"></span>
   </div>
   <div class="mt-2"><span>Sellise tsükliga saame juba rohkem kontrolli selle üle, mida iga reaga tehakse. Ülemise koodijupi väljund oleks:</span>
   </div>
@@ -112,8 +103,7 @@
     aga kui selline sõne väljastada, siis <span class="fst-italic">/n</span> kaob ja selle kohale tekitatakse reavahetus:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tere tere!\nKuidas sul läheb?"</span>)</span>
+    <span [highlight]="printNewLineCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Tere tere!<br>Kuidas sul läheb?</span>
@@ -124,12 +114,7 @@
   reavahetused, taanded ja tühikud, mis on täitsa sõne alguses või lõpus. Muudame oma koodi nii, et eemaldame reavahetuse sümboli enne rea ekraanile väljastamist:</span>
   </div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-    <span>rida = fail.readline()<br></span>
-    <span><span class="code-bold">while</span> rida != <span class="code-string">""</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(rida.strip())<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;rida = fail.readline()<br></span>
-    <span>fail.close()</span>
+    <span [highlight]="fileReadStripCode"></span>
   </div>
   <div class="mt-2"><span>Nüüd kuvatakse read jälle ilma üleliigsete tühjade ridadeta.</span>
   </div>
@@ -142,10 +127,7 @@
   rakendada. Meie puhul on see objekt praegu avatud fail. Igal iteratsioonil omandab tsüklimuutuja järgmise väärtuse objektist ehk meie puhul
     järgmise rea failist. Failist lugemise saaks selle tsükliga kirja panna nii:</span></div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(rida.strip())<br></span>
-    <span>fail.close()</span>
+    <span [highlight]="fileForLoopCode"></span>
   </div>
   <div class="mt-2"><span>Siin panime tsüklimuutujale nimeks <span class="fst-italic">rida</span> ja seda muutujat saame tsükli sees kasutada.
   Kasutame ka jälle <span class="fst-italic">strip</span>-meetodit, et rea lõpust reavahetuse sümbol eemaldada.</span>
@@ -167,23 +149,7 @@
   </div>
 
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"kulutused.txt"</span>)<br></span>
-    <span>kulutused = <span class="code-number">0</span><br></span>
-    <span>teenitud = <span class="code-number">0</span><br></span>
-    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;arv = <span class="code-function">float</span>(rida)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> arv &gt; <span
-      class="code-number">0</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teenitud += arv<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;kulutused += arv<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Kuu jooksul teenitud raha: "</span> + <span
-      class="code-function">str</span>(teenitud))<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Kuu jooksul tehtud kulutused: "</span> + <span
-      class="code-function">str</span>(-kulutused))<br></span>
-    <span>fail.close()</span>
+    <span [highlight]="expensesCode"></span>
   </div>
   <div class="row mx-0 mt-3">
     <div class="col-lg-8 ps-0"><span>Igal real on failis kirjas üks ujukomaarv, aga nagu ka kasutajalt sisendit küsides, saame failist ridu lugedes need kätte sõnedena. Seega jääb meie
@@ -215,8 +181,7 @@
     Faili avamine kirjutamiseks:
   </span></div>
   <div class="code-block mt-2">
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
-      class="code-string">"w"</span>)</span>
+    <span [highlight]="fileOpenWritingCode"></span>
   </div>
   <div class="mt-2"><span>Kirjutamise ja lisamise ehk <span class="fst-italic">"w"</span> ja <span class="fst-italic">"a"</span> vahe on see, et kui avame faili kirjutamiseks,
     siis kirjutatakse failis olnud info üle ehk vanad andmed failist kustutatakse. Lisamise puhul aga lisatakse uued andmed lihtsalt faili lõppu juurde ja ka vanad andmed jäävad alles.
@@ -228,22 +193,12 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
-          class="code-string">"w"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"Faili"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"kirjutamine"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"reavahetustega"</span>)<br></span>
-        <span>fail.close()</span>
+        <span [highlight]="fileWriteWithoutNewLinesCode"></span>
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="code-block ms-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"andmed.txt"</span>, <span
-          class="code-string">"w"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"Faili\n"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"kirjutamine\n"</span>)<br></span>
-        <span>fail.write(<span class="code-string">"reavahetustega\n"</span>)<br></span>
-        <span>fail.close()</span>
+        <span [highlight]="fileWriteNewLinesCode"></span>
       </div>
     </div>
   </div>
@@ -291,17 +246,12 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>fail = <span class="code-function">open</span>(<span class="code-string">"nimekiri.txt"</span>)<br></span>
-        <span><span class="code-function">print</span>(fail.read())<br></span>
-        <span>fail.close()</span>
+        <span [highlight]="fileNoEncodingCode"></span>
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>fail = <span class="code-function">open</span>(<span
-          class="code-string">"nimekiri.txt"</span>, encoding=<span class="code-string">"utf-8"</span>)<br></span>
-        <span><span class="code-function">print</span>(fail.read())<br></span>
-        <span>fail.close()</span>
+        <span [highlight]="fileEncodingCode"></span>
       </div>
     </div>
   </div>

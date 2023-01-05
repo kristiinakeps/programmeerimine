@@ -26,14 +26,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span>sõned = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
-      class="code-string">"banaan"</span>]<br></span>
-    <span>segamini = [<span class="code-string">"a"</span>, <span class="code-number">2.7</span>, <span
-      class="code-number">8</span>, <span class="code-bold">True</span>]<br></span>
-    <span>tühi = []<br></span>
-    <span>teine_tühi = <span class="code-function">list</span>()<br></span>
+    <span [highlight]="listExamplesCode"></span>
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'indeks'">Järjendi üksiku elemendi kasutamine indeksi abil</h4>
@@ -43,12 +36,7 @@
   tavaelus elemete loendaksime. Järjendi esimesel elemendile on indeks 0, teisel elemendil indeks 1, kolmandal indeks 2 jne. Selleks, et saada üksikut
   elementi indeksi põhjal kätte, lisatakse järjendi järele kandilistesse sulgudesse elemendi indeks.</span></div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span>esimene_element = arvud[<span class="code-number">0</span>]<br></span>
-    <span>kolmas_element = arvud[<span class="code-number">2</span>]<br></span>
-    <span><span class="code-function">print</span>(esimene_element)<br></span>
-    <span><span class="code-function">print</span>(kolmas_element)<br></span>
+    <span [highlight]="elemntsByIndexesCode"></span>
   </div>
   <div class="mt-2"><span>See koodijupp väljastab ekraanile kõigepealt arvu <span class="fst-italic">2</span> ja siis arvu <span
     class="fst-italic">4</span></span>.
@@ -56,10 +44,7 @@
   <div class="mt-2"><span>Samamoodi saame indeksi kaudu ka järjendis olevat elementi uuendada. Selle süntaks on sarnane muutujasse väärtuse omistamisega, aga nüüd
   on muutuja nime asemel järjend ja kandilistes sulgudes indeks, kuhu tahame elemendi kirjutada.</span></div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span>arvud[<span class="code-number">0</span>] = <span class="code-number">5</span><br></span>
-    <span><span class="code-function">print</span>(arvud)<br></span>
+    <span [highlight]="modifyElementByIndexCode"></span>
   </div>
   <div class="mt-2"><span>Nüüd näeme, et järjendis on esimene element muudetud: <span class="fst-italic">[5, 7, 4, 11, 2]</span>.</span>
   </div>
@@ -67,9 +52,7 @@
   siis me ei saa võtta järjendist elementi indeksiga 7. Kui me seda üritame, siis saame veateate (täpsemalt <span
       class="fst-italic">IndexError</span> erindi):</span></div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">7</span>])<br></span>
+    <span [highlight]="indexOutOfRangeCode"></span>
   </div>
   <div class="code-block mt-2 code-error fst-italic">
     <span>Traceback (most recent call last):<br>
@@ -81,10 +64,7 @@
   et Pythonis on tõesti lubatud kasutada ka negatiivseid indekseid ja siis hakatakse lugema elemente järjendi lõpust alguse suunas. Viimase elementi saab kätte
   indeksiga -1, eelviimase indeksiga -2 jne.</span></div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">-1</span>])<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">-3</span>])<br></span>
+    <span [highlight]="negativeIndexesCode"></span>
   </div>
   <div class="mt-2"><span>Selles näites saame indeksiga -1 kätte elemendi <span class="fst-italic">2</span> ja indeksiga -3 saame kätte elemendi
     <span class="fst-italic">4</span>. Samad elemendid saaksime, kui kasutaksime positiivseid indekseid 4 ja 2.</span>
@@ -105,16 +85,7 @@
   <div class="mt-2"><span>Tuleb ka arvestada sellega, et algusindeksiga element on kaasaarvatud, aga lõppindeksiga element mitte.</span>
   </div>
   <div class="code-block mt-2">
-    <span>arvud = [<span class="code-number">2</span>, <span class="code-number">7</span>, <span
-      class="code-number">4</span>, <span class="code-number">11</span>, <span class="code-number">2</span>]<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">1</span>:<span
-      class="code-number">3</span>])<br></span>
-    <span><span class="code-function">print</span>(arvud[:<span class="code-number">3</span>])<br></span>
-    <span><span class="code-function">print</span>(arvud[:<span class="code-number">-2</span>])<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">2</span>:])<br></span>
-    <span><span class="code-function">print</span>(arvud[<span class="code-number">1</span>:<span
-      class="code-number">2</span>])<br></span>
-    <span><span class="code-function">print</span>(arvud[:])<br></span>
+    <span [highlight]="splicingCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>[7, 4]<br></span>
@@ -327,21 +298,13 @@
   <span class="fst-italic">for</span>-tsüklit, samamoodi nagu failist lugemisel. Nüüd aga saab tsüklimuutuja igal iteratsioonil oma väärtuseks järjendi
   järgmise elemendi ja avatud faili asemel rakendame tsüklit järjendil:</span></div>
   <div class="code-block mt-2">
-    <span>puuviljad = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
-      class="code-string">"pirn"</span>, <span class="code-string">"kirss"</span>]<br></span>
-    <span><span class="code-bold">for</span> puuvili <span class="code-bold">in</span> puuviljad:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(puuvili)<br></span>
+    <span [highlight]="forLoopCode"></span>
   </div>
   <div class="mt-2"><span>Saame kasutada ka <span class="fst-italic">while</span>-tsüklit, kuid siis peame koostama hoopis sellise tsükli, mis käiks läbi kõik
   järjendi indeksid. Indeksi põhjal saame ka vastava elemendi kätte. Seega alustama peame indeksist 0 ja viimane indeks on ühe võrra väiksem kui järjendi pikkus.
   Järjendi pikkuse saame teada <span class="fst-italic">len</span>-funktsiooniga:</span></div>
   <div class="code-block mt-2">
-    <span>puuviljad = [<span class="code-string">"ploom"</span>, <span class="code-string">"õun"</span>, <span
-      class="code-string">"pirn"</span>, <span class="code-string">"kirss"</span>]<br></span>
-    <span>i = <span class="code-number">0</span><br></span>
-    <span><span class="code-bold">while</span> i &lt; <span class="code-function">len</span>(puuviljad):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(puuviljad[i])<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;i += <span class="code-number">1</span><br></span>
+    <span [highlight]="whileLoopCode"></span>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -350,10 +313,7 @@
   järjendeid. Näiteks saame ka sõnede puhul kasutada indekseid ja viilutamist, et saada kätte kas üksik sümbol või alamsõne.</span>
   </div>
   <div class="code-block mt-2">
-    <span>tervitus = <span class="code-string">"Tervitus!"</span><br></span>
-    <span><span class="code-function">print</span>(tervitus[<span class="code-number">1</span>])<br></span>
-    <span><span class="code-function">print</span>(tervitus[<span class="code-number">2</span>:<span
-      class="code-number">6</span>])<br></span>
+    <span [highlight]="stringSplicingCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>e<br></span>
@@ -361,9 +321,7 @@
   </div>
   <div class="mt-2"><span>Samuti saame tsüklis sõne tähthaaval läbi käia:</span></div>
   <div class="code-block mt-2">
-    <span>tervitus = <span class="code-string">"Tere!"</span><br></span>
-    <span><span class="code-bold">for</span> täht <span class="code-bold">in</span> tervitus:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(täht)<br></span>
+    <span [highlight]="stringLoopCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>T<br></span>
@@ -393,20 +351,7 @@
     <span>4.51<br></span>
   </div>
   <div class="code-block mt-2">
-    <span>hinnad = []<br></span>
-    <span>fail = <span class="code-function">open</span>(<span class="code-string">"hinnad.txt"</span>)<br></span>
-    <span><span class="code-bold">for</span> rida <span class="code-bold">in</span> fail:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;hinnad.append(<span class="code-function">float</span>(rida))<br></span>
-    <span>fail.close()<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Failis olid "</span> +
-      <span class="code-function">str</span>(<span class="code-function">len</span>(hinnad)) + <span
-        class="code-string">" toote hinnad."</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Kõrgeim hind oli "</span> +
-      <span class="code-function">str</span>(<span class="code-function">max</span>(hinnad)) + <span
-        class="code-string">" eurot."</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Madalaim hind oli "</span> +
-      <span class="code-function">str</span>(<span class="code-function">min</span>(hinnad)) + <span
-        class="code-string">" eurot."</span>)<br></span>
+    <span [highlight]="listFromFileCode"></span>
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'range'">Funktsioon <span class="fst-italic">range</span></h4>
@@ -416,7 +361,7 @@
   genereerib siis arvud alates 0-st kuni selle etteantud lõpparvuni. Lõpparv ise pole kaasaarvatud. Tagastatud väärtus on ulatus ehk <span class="fst-italic">range</span>-tüüpi,
   aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusmeetodit <span class="fst-italic">list()</span>.</span></div>
   <div class="mt-2 code-block">
-    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">5</span>)))</span>
+    <span [highlight]="rangeOneArgumentCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>[0, 1, 2, 3, 4]</span>
@@ -425,7 +370,7 @@
     <span>Kui anname <span class="fst-italic">range</span>-funktsioonile kaks argumenti, siis esimene neist tähistab algusarvu ja teine lõpparvu. Algusarv on jadas kaasaarvatud.</span>
   </div>
   <div class="mt-2 code-block">
-    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">2</span>, <span class="code-number">5</span>)))</span>
+    <span [highlight]="rangeTwoArgumentsCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>[2, 3, 4]</span>
@@ -435,13 +380,13 @@
     See võib olla ka negatiivne arv, siis on arvud meil jadas kahanevas järjekorras ja ka algusarv peaks olema suurem kui lõpparv.</span>
   </div>
   <div class="mt-2 code-block">
-    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">1</span>, <span class="code-number">7</span>,  <span class="code-number">2</span>)))</span>
+    <span [highlight]="rangeThreeArgumentsCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>[1, 3, 5]</span>
   </div>
   <div class="mt-2 code-block">
-    <span><span class="code-function">print</span>(<span class="code-function">list</span>(<span class="code-function">range</span>(<span class="code-number">15</span>, <span class="code-number">5</span>,  <span class="code-number">-3</span>)))</span>
+    <span [highlight]="rangeThreeArgumentsNegativeStepCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>[15, 12, 9, 6]</span>
@@ -452,11 +397,7 @@
   abil genereerida indeksite jada ja seda kasutada järjendi läbimiseks. Saame kutsuda välja <span class="fst-italic">range</span>-funktsiooni andes argumendiks järjendi pikkuse ja
   funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span></div>
   <div class="mt-2 code-block">
-    <span>nädalapäevad = [<span class="code-string">"esmaspäev"</span>, <span class="code-string">"teisipäev"</span>, <span class="code-string">"kolmapäev"</span>,
-      <span class="code-string">"neljapäev"</span>, <span class="code-string">"reede"</span>, <span class="code-string">"laupäev"</span>, <span class="code-string">"pühapäev"</span>]<br></span>
-    <span><span class="code-bold">for</span> i <span class="code-bold">in </span><span class="code-function">range</span>(<span class="code-function">len</span>(nädalapäevad)):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(i + <span class="code-number">1</span>) +
-      <span class="code-string">". nädalapäev on "</span> + nädalapäevad[i])</span>
+    <span [highlight]="rangeLoopCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>1. nädalapäev on esmaspäev<br></span>

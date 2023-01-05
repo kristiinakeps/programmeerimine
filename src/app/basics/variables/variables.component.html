@@ -61,7 +61,7 @@
   Sellele käsule saab sulgudesse anda ette mingi väärtuse, mida soovime ekraanile väljastada. Proovi kirjutada Thonnysse järgmine koodijupp:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span class="code-string">"Tere!"</span>)</span>
+    <span [highlight]="printHelloCode"></span>
   </div>
   <div class="mt-2">
    <span>Selleks, et programmi käivitada, võid vajutada tegumiribal rohelist valge noolega nuppu või valida menüüst <span
@@ -74,7 +74,7 @@
     Näiteks "Tere!" tüübi saame teada järgmise koodijupi abil:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">type</span>(<span class="code-string">"Tere!"</span>)</span>
+    <span [highlight]="typeHelloCode"></span>
   </div>
   <div class="mt-2">
   <span>Võid proovida ka seda koodijuppi käivitada, kuid midagi ei tohiks praegu konsooli tekkida. Seda sellepärast, et <span
@@ -84,7 +84,7 @@
   tüübi leidmise käsu väljastamise käsu sisse nii:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span class="code-function">type</span>(<span class="code-string">"Tere!"</span>))</span>
+    <span [highlight]="printTypeHelloCode"></span>
   </div>
   <div class="mt-2">
   <span>Seda programmi käivitades, peaks konsooli ilmuma <span class="fst-italic">&lt;class 'str'&gt;</span>. See tähenab, et "Tere!" on Pythoni keeles
@@ -122,10 +122,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>nimi = <span class="code-string">"Mati"</span><br>vanus = <span class="code-number">10</span><br>
-      <br><span class="code-function">print</span>(nimi)<br><span class="code-function">print</span>(vanus)<br>
-      <br><span class="code-function">print</span>(<span class="code-function">type</span>(nimi))<br>
-      <span class="code-function">print</span>(<span class="code-function">type</span>(vanus))</span>
+    <span [highlight]="matiCode"></span>
   </div>
   <div class="mt-2"><span>Selles koodijupis loome kaks muutujat, omistame neile väärtused, väljastame kummagi väärtuse ekraanile ning seejärel väljastame
     ekraanile ka nende muutujate väärtuste tüübid. Konsooli peaks seepeale ilmuma:
@@ -148,12 +145,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Sisesta oma nimi: "</span>)<br>nimi = <span class="code-function">input</span>()<br><br>
-      <span class="code-function">print</span>(<span class="code-string">"Sisesta oma vanus: "</span>)<br>vanus = <span
-        class="code-function">input</span>()<br>
-    <br><span class="code-function">print</span>(<span class="code-function">type</span>(nimi))<br>
-      <span class="code-function">print</span>(<span class="code-function">type</span>(vanus))</span>
+    <span [highlight]="inputCode"></span>
   </div>
   <div class="mt-2"><span>Kõigepealt anname <span class="fst-italic">print()</span> käsuga kasutajale teada, mis andmed ta sisestama peaks. Seejärel kasutame <span
     class="fst-italic">input()</span>
@@ -169,10 +161,7 @@
       class="fst-italic">print</span>-käsuga väljastasime.</span>
   </div>
   <div class="code-block mt-2">
-    <span>nimi = <span class="code-function">input</span>(<span class="code-string">"Sisesta oma nimi: "</span>)<br>vanus = <span
-      class="code-function">input</span>(<span class="code-string">"Sisesta oma vanus: "</span>)<br>
-    <br><span class="code-function">print</span>(<span class="code-function">type</span>(nimi))<br>
-      <span class="code-function">print</span>(<span class="code-function">type</span>(vanus))</span>
+    <span [highlight]="shortInputCode"></span>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -257,8 +246,7 @@
     class="fst-italic">print()</span> käsku, et
   tehte tulemus ka väljastada. Näiteks:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span class="code-number">21</span> / <span
-      class="code-number">3</span>)</span>
+    <span [highlight]="printDivisionCode"></span>
   </div>
   <div class="mt-2"><span>See koodijupp annab meile konsooli tulemuse <span class="fst-italic">7.0</span>. Paneme tähele, et tavaline jagamise tehe annab meile
   tulemuse alati komakohaga, isegi kui arvud jaguvad täpselt. 21 jagatud 3-ga on täpselt 7, aga Pythonis programmeerides on jagamise tulemuseks alati
@@ -330,11 +318,7 @@
   esinemiste arvu loendamiseks sobiks meile <span class="fst-italic">count</span>-meetod. Seega näiteks k-tähe loendamine ja selle arvu väljastamine
     käiks nii:</span></div>
   <div class="code-block mt-2">
-    <span>nimi = <span class="code-function">input</span>(<span
-      class="code-string">"Sisesta oma nimi: "</span>)<br></span>
-    <span>k_arv = nimi.count(<span class="code-string">"k"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Nimes on "</span> + <span
-      class="code-function">str</span>(k_arv) + <span class="code-string">" k-tähte"</span>)<br></span>
+    <span [highlight]="nameCountKCode"></span>
   </div>
   <div class="mt-2"><span>Siin küsime kasutajalt tema nime ning salvestame selle muutujasse <span class="fst-italic">nimi</span>.
   Seejärel leiame k-tähe esinemiste arvu kasutaja sisestatud nimes ning salvestame selle muutujasse <span
@@ -346,24 +330,13 @@
   <div class="mt-2"><span>Sarnaselt k-tähe loendamisele, saame loendada ka kõiki teisi sulghäälikuid ning liita nende esinemiste arvud omavahel kokku.</span>
   </div>
   <div class="code-block mt-2">
-    <span>nimi = <span class="code-function">input</span>(<span
-      class="code-string">"Sisesta oma nimi: "</span>)<br></span>
-    <span>kpt_arv = nimi.count(<span class="code-string">"k"</span>) + nimi.count(<span class="code-string">"p"</span>) + nimi.count(<span
-      class="code-string">"t"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Nimes on "</span> + <span
-      class="code-function">str</span>(kpt_arv) + <span class="code-string">" tugevat sulghäälikut"</span>)<br></span>
+    <span [highlight]="nameCountCode"></span>
   </div>
   <div class="mt-2"><span>Kuid mis siis kui kasutaja nimi algab suure K-tähega? Hetkel meie programm otsib ainult väikseid tähti. Selle parandamiseks saame
   kas lisada samasugused loendamised ka suurte tähtede jaoks või siis näiteks muuta kõik tähed kasutaja nimes väikesteks. Kas teame mõnda meetodit, mis oskaks seda teha?
   Äkki sobiks meetod <span class="fst-italic">lower</span>?</span></div>
   <div class="code-block mt-2">
-    <span>nimi = <span class="code-function">input</span>(<span
-      class="code-string">"Sisesta oma nimi: "</span>)<br></span>
-    <span>nimi = nimi.lower() <span class="code-comment">#siin muudame nimes kõik tähed väikesteks ja salvestame uuesti samasse muutujasse</span><br></span>
-    <span>kpt_arv = nimi.count(<span class="code-string">"k"</span>) + nimi.count(<span class="code-string">"p"</span>) + nimi.count(<span
-      class="code-string">"t"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Nimes on "</span> + <span
-      class="code-function">str</span>(kpt_arv) + <span class="code-string">" tugevat sulghäälikut"</span>)<br></span>
+    <span [highlight]="nameLowerCountCode"></span>
   </div>
   <div class="col-md-12 m-3">
     <img src="../../../assets/images/variables/name_kpt.png" alt="name_kpt" class="height-5rem">
@@ -377,21 +350,7 @@
   kasutatavad käsud on täpselt samade nimedega nagu tüübid ise: <span class="fst-italic">int(), float(), str(), bool()</span>. Järgnevalt on mõned näited
   tüübiteisendustest:</span></div>
   <div class="code-block mt-2">
-    <span><span class="code-function">str</span>(<span class="code-number">12</span>) <span class="code-comment">#"12"</span><br></span>
-    <span><span class="code-function">str</span>(<span class="code-number">13.5</span>) <span class="code-comment">#"13.5"</span><br></span>
-    <span><span class="code-function">str</span>(<span class="code-bold">True</span>) <span class="code-comment">#"True"</span><br><br></span>
-    <span><span class="code-function">int</span>(<span class="code-string">"12"</span>) <span class="code-comment">#12</span><br></span>
-    <span><span class="code-function">int</span>(<span class="code-number">12.5</span>) <span class="code-comment">#12</span><br></span>
-    <span><span class="code-function">int</span>(<span class="code-bold">True</span>) <span class="code-comment">#1</span><br><br></span>
-    <span><span class="code-function">float</span>(<span class="code-number">5</span>) <span class="code-comment">#5.0</span><br></span>
-    <span><span class="code-function">float</span>(<span class="code-string">"13.7"</span>) <span class="code-comment">#13.7</span><br></span>
-    <span><span class="code-function">float</span>(<span class="code-bold">True</span>) <span class="code-comment">#1.0</span><br><br></span>
-    <span><span class="code-function">bool</span>(<span class="code-string">""</span>) <span class="code-comment">#False</span><br></span>
-    <span><span class="code-function">bool</span>(<span class="code-string">"Tere"</span>) <span class="code-comment">#True</span><br></span>
-    <span><span class="code-function">bool</span>(<span class="code-number">0</span>) <span class="code-comment">#False</span><br></span>
-    <span><span class="code-function">bool</span>(<span class="code-number">6</span>) <span class="code-comment">#True</span><br></span>
-    <span><span class="code-function">bool</span>(<span class="code-number">13.7</span>) <span class="code-comment">#True</span><br><br></span>
-    <span><span class="code-function">int</span>(<span class="code-string">"Tere"</span>) <span class="code-comment">#ValueError: invalid literal for int() with base 10: 'Tere'</span><br></span>
+    <span [highlight]="typeConversionsCode"></span>
   </div>
   <div class="mt-2"><span>Sõnede teisendamisel täisarvudeks ja ujukomaarvudeks on oluline, et sõne sisu oleks arv. Kui proovime näiteks sõnet "Tere"
   teisendada <span class="fst-italic">int</span>-tüübiks, saame hoopis veateate. Tõeväärtuste teisendamine on ka huvitav. Kui teisendada sõne teõväärtuseks, siis

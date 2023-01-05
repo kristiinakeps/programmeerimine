@@ -17,24 +17,14 @@
   hulga loomise meetodit <span class="fst-italic">set()</span>. Võime hulka lisada sama elementi mitu korda, kuid kui proovime näiteks hulka väljastada,
   siis näeme, et seal on hoitakse iga elementi ikkagi ühekordselt.</span></div>
   <div class="mt-2 code-block">
-    <span>arvud = {{'{'}}<span class="code-number">1</span>, <span class="code-number">5</span>, <span
-      class="code-number">3</span>,
-      <span class="code-number">1</span>{{'}'}} <span class="code-comment"># kuigi luues paneme sõnastikku kaks number 1, siis jääb sinna neist ainult üks</span><br></span>
-    <span>värvid = {{'{'}}<span class="code-string">"sinine"</span>, <span class="code-string">"punane"</span>, <span
-      class="code-string">"kollane"</span>{{'}'}}<br></span>
-    <span>segamini = {{'{'}}<span class="code-number">1</span>, <span class="code-string">"esmaspäev"</span>, <span
-      class="code-number">14.5</span>, <span class="code-bold">True</span>{{'}'}}<br></span>
-    <span>tühi = <span class="code-function">set</span>() <span class="code-comment"># tühi = {{'{}'}} loob tühja sõnastiku</span><br></span>
+    <span [highlight]="setsExamplesCode"></span>
   </div>
   <div class="mt-2">
     <span>Võid proovida käivitada järgmist koodijuppi. Esiteks märkad, et korduvad elemendid on tõesti eemaldatud ja teiseks, et elementide
     järjekord ei pruugi olla sama, mis hulka luues.</span>
   </div>
   <div class="mt-2 code-block">
-    <span><span class="code-function">print</span>({{'{'}}<span class="code-number">4</span>, <span class="code-number">7</span>,
-      <span class="code-number">7</span>, <span class="code-number">5</span>, <span class="code-number">9</span>, <span
-        class="code-number">2</span>,
-      <span class="code-number">3</span>, <span class="code-number">2</span>, <span class="code-number">7</span>{{'}'}})</span>
+    <span [highlight]="uniqueElementsCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>{{'{'}}2, 3, 4, 5, 7, 9{{'}'}}<br></span>
@@ -274,13 +264,7 @@
     <span>Kuigi me ei saa hulgast indeksitega elemente kätte, siis lihtsalt <span class="fst-italic">for</span>-tsükliga elemente läbi käia saame ikka.</span>
   </div>
   <div class="mt-2 code-block">
-    <span>nädalapäevad = {{'{'}}<span class="code-string">"esmaspäev"</span>, <span
-      class="code-string">"teisipäev"</span>,
-      <span class="code-string">"kolmapäev"</span>, <span class="code-string">"neljapäev"</span>, <span
-        class="code-string">"reede"</span>,
-      <span class="code-string">"laupäev"</span>, <span class="code-string">"pühapäev"</span>{{'}'}}<br></span>
-    <span><span class="code-bold">for</span> päev <span class="code-bold">in</span> nädalapäevad:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(päev)</span>
+    <span [highlight]="forLoopCode"></span>
   </div>
   <div class="mt-2 code-block fst-italic">
     <span>esmaspäev<br></span>
@@ -295,7 +279,7 @@
     <span>Näeme, et kõik hulga elemendid väljastatakse, kuid nende järjekord on suvaline. Kui teist korda sama koodi käivitad, siis võid saada päevad hoopis uues järjestuses.</span>
   </div>
 </div>
-<h4 class="mt-5">Harjutused</h4>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
   <strong class="strong">Seljakottide võrdlus</strong>
   <div class="mt-2">
@@ -303,18 +287,7 @@
     asjad on neil mõlemal olemas ning mis asjad on näiteks ainult Meelil või ainult Mihklil. Mõlema seljakottide sisud on kirja pandud hulkadena. Leia ja väljasta, mis asjad neil
     kahepeale kokku on, millised asjad on mõlema koolikotis, mis asju leidub Meeli koolikotis, mida Mihklil ei ole, ja vastupidi.</span>
     <div class="mt-2 code-block">
-      <span>meeli = {{'{'}}<span class="code-string">"eesti keele õpik"</span>, <span class="code-string">"matemaatika õpik"</span>,
-        <span class="code-string">"matemaatika vihik"</span>, <span class="code-string">"joonlaud"</span>, <span
-          class="code-string">"sirkel"</span>,
-        <span class="code-string">"akvarellvärvid"</span>, <span class="code-string">"värvipliiatsid"</span>,
-        <span class="code-string">"pastakas"</span>, <span class="code-string">"ajaloo õpik"</span>, <span
-          class="code-string">"bioloogia töövihik"</span>{{'}'}}<br></span>
-      <span>mihkel = {{'{'}}<span class="code-string">"nätsupakk"</span>, <span
-        class="code-string">"matemaatika õpik"</span>,
-        <span class="code-string">"geograafia õpik"</span>, <span class="code-string">"joonlaud"</span>, <span
-          class="code-string">"sirkel"</span>,
-        <span class="code-string">"matemaatika vihik"</span>, <span class="code-string">"harilik pliiats"</span>,
-        <span class="code-string">"pastakas"</span>, <span class="code-string">"ajaloo õpik"</span>{{'}'}}<br></span>
+      <span [highlight]="packpacksCode"></span>
     </div>
   </div>
   <div class="mt-2">

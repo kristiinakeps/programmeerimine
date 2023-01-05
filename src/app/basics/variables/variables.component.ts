@@ -37,34 +37,98 @@ export class VariablesComponent {
                   new FillBlankDropdownItem('"Muutujad"', '" ja andmetüübid" = "Muutujad ja andmetüübid"', '+', this.operatorsStrings, this.operatorsStrings[0])];
 
   greetingExerciseHints = [new ExerciseHint("Kõigepealt on vaja kasutajalt tema nime küsida, selleks sobiks näiteks <span class='fst-italic'>input</span>-käsk.", null),
-  new ExerciseHint("Kasutaja nime küsimist ja salvestamist muutujasse saab teha nii:", "nimi = <span class='code-function'>input</span>(<span class='code-string'>\"Sisesta oma nimi: \"</span>)"),
+  new ExerciseHint("Kasutaja nime küsimist ja salvestamist muutujasse saab teha nii:", 'nimi = input("Sisesta oma nimi: ")'),
   new ExerciseHint("Kasutaja nime korrastamiseks sobib sõne meetod <span class='fst-italic'>title()</span>.", null),
-  new ExerciseHint("Nime korrastamist saab teha näiteks nii:", "nimi = nimi.title()"),
+  new ExerciseHint("Nime korrastamist saab teha näiteks nii:", 'nimi = nimi.title()'),
   new ExerciseHint("Nime korrastamise järel on vaja kokku panna sõne, mida kasutajale väljastada tahame.", null),
-  new ExerciseHint("Tervituse saab kokku panna sõnesid liites: ", "<span class='code-string'>\"Tere tulemast programmeerimise kursusele, \"</span> + nimi + <span class='code-string'>\"!\"</span>"),
+  new ExerciseHint("Tervituse saab kokku panna sõnesid liites: ", '"Tere tulemast programmeerimise kursusele, " + nimi + "!"'),
   new ExerciseHint("Viimase sammuna tuleb tervitus kasutajale väljastada, kasutades <span class='fst-italic'>print</span>-käsku.", null),
-  new ExerciseHint("Väljastamist saab teha nii:", "<span class='code-function'>print</span>(<span class='code-string'>\"Tere tulemast programmeerimise kursusele, \"</span> + nimi + <span class='code-string'>\"!\"</span>)")];
+  new ExerciseHint("Väljastamist saab teha nii:", 'print("Tere tulemast programmeerimise kursusele, " + nimi + "!")'),
+  new ExerciseHint('Kogu kood näeb lõpuks välja selline:', 'nimi = input("Sisesta oma nimi: ")\n' +
+    'nimi = nimi.title()\n' +
+    'print("Tere tulemast programmeerimise kursusele, " + nimi + "!")')];
 
   sandwichCakeExerciseHints = [new ExerciseHint("Alustada võiks kasutajalt sisendi küsimisega. Iga sisendi puhul tasuks ka mõelda, mis tüüpi väärtust me tahame " +
     "ja kas on vaja teha tüübiteisendus.", null),
   new ExerciseHint("Kõik kolm sisendit võiks olla täisarvud ja kuna <span class='fst-italic'>input</span>-käsk tagastab meile kõik sõnena, peame " +
     "need ise muutma <span class='fst-italic'>int</span>-tüübiks.", null),
-  new ExerciseHint("Sisendi küsimise ja tüübiteisenduse võib teha näiteks nii:", "pakid = <span class='code-function'>int</span>(<span class='code-function'>input</span>(<span class='code-string'>\"Sisesta röstsaiapakkide arv: \"</span>))<br>" +
-    "viilud_pakis = <span class='code-function'>int</span>(<span class='code-function'>input</span>(<span class='code-string'>\"Sisesta viilude arv ühes pakis: \"</span>))<br>" +
-    "sööjad = <span class='code-function'>int</span>(<span class='code-function'>input</span>(<span class='code-string'>\"Sisesta sööjate arv: \"</span>))"),
+  new ExerciseHint("Sisendi küsimise ja tüübiteisenduse võib teha näiteks nii:", 'pakid = int(input("Sisesta röstsaiapakkide arv: "))\n' +
+    'viilud_pakis = int(input("Sisesta viilude arv ühes pakis: "))\n' +
+    'sööjad = int(input("Sisesta sööjate arv: "))\n'),
   new ExerciseHint("Meil on vaja teada, mitu röstsaiaviilu meil kokku on. Selleks saame korrutada pakkide arvu igas pakis olevate viilude arvuga.", null),
-  new ExerciseHint("Programmis näeks see välja nii:", "kokku_viilud = pakid * viilud_pakis"),
+  new ExerciseHint("Programmis näeks see välja nii:", 'kokku_viilud = pakid * viilud_pakis'),
   new ExerciseHint("Nüüd on meil olemas ka kõikide viilude arv. Kihtide arvu saame kui jagame viilud tordisööjate arvuga. Kuid paneme tähele, et " +
     "tavalise jagamise puhul võime saada komakohaga arvu, kuid me tahame alati alla ümardatud täisarvu.", null),
-  new ExerciseHint("Kihtide arvu leidmiseks saame kasutada jagamisel täisosa leidmist: ", "kihte = kokku_viilud // sööjad"),
+  new ExerciseHint("Kihtide arvu leidmiseks saame kasutada jagamisel täisosa leidmist: ", 'kihte = kokku_viilud // sööjad'),
   new ExerciseHint("Viimaks tuleb leitud kihtide arv ka kasutajale väljastada, kasutades <span class='fst-italic'>print</span>-käsku.", null),
-  new ExerciseHint("Väljastuse saame teha nii:", "<span class='code-function'>print</span>(<span class='code-string'>\"Röstsaia on piisavalt \"</span> + <span class='code-function'>str</span>(kihte) + <span class='code-string'>\"-kihilise tordi jaoks.\"</span>)")]
+  new ExerciseHint("Väljastuse saame teha nii:", 'print("Röstsaia on piisavalt " + str(kihte) + "-kihilise tordi jaoks.")'),
+  new ExerciseHint('Kogu kood on lõpuks selline:', 'pakid = int(input("Sisesta röstsaiapakkide arv: "))\n' +
+    'viilud_pakis = int(input("Sisesta viilude arv ühes pakis: "))\n' +
+    'sööjad = int(input("Sisesta sööjate arv: "))\n' +
+    'kokku_viilud = pakid * viilud_pakis\n' +
+    'kihte = kokku_viilud // sööjad\n' +
+    'print("Röstsaia on piisavalt " + str(kihte) + "-kihilise tordi jaoks.")')]
 
   variableNamesTest = [new TestAnswer("3põrsakest", false, "Muutuja nimi ei tohi alata numbriga"),
   new TestAnswer("keskmine_pikkus", true, "Alakriipsu võib kasutada tühiku asemel"),
   new TestAnswer("&nimi", false, "Muutuja nimi ei tohi alata &-sümboliga"),
   new TestAnswer("inimeste arv", false, "Muutuja nimi ei tohi sisaldada tühikut"),
   new TestAnswer("_nimi", true, "Muutuja nimi tohib alata alakriipsuga")]
+
+  printHelloCode = 'print("Tere!")';
+  typeHelloCode = 'type("Tere!")';
+  printTypeHelloCode = 'print(type("Tere!"))';
+  matiCode = 'nimi = "Mati"\n' +
+    'vanus = 10\n' +
+    '\n' +
+    'print(nimi)\n' +
+    'print(vanus)\n' +
+    '\n' +
+    'print(type(nimi))\n' +
+    'print(type(vanus))';
+  inputCode = 'print("Sisesta oma nimi: ")\n' +
+    'nimi = input()\n' +
+    '\n' +
+    'print("Sisesta oma vanus: ")\n' +
+    'vanus = input()\n' +
+    '\n' +
+    'print(type(nimi))\n' +
+    'print(type(vanus))';
+  shortInputCode = 'nimi = input("Sisesta oma nimi: ")\n' +
+    'vanus = input("Sisesta oma vanus: ")\n' +
+    '\n' +
+    'print(type(nimi))\n' +
+    'print(type(vanus))';
+  printDivisionCode = 'print(21 / 3)';
+  nameCountKCode = 'nimi = input("Sisesta oma nimi: ")\n' +
+    'k_arv = nimi.count("k")\n' +
+    'print("Nimes on " + str(k_arv) + " k-tähte")';
+  nameCountCode = 'nimi = input("Sisesta oma nimi: ")\n' +
+    'kpt_arv = nimi.count("k") + nimi.count("p") + nimi.count("t")\n' +
+    'print("Nimes on " + str(kpt_arv) + " tugevat sulghäälikut")';
+  nameLowerCountCode = 'nimi = input("Sisesta oma nimi: ")\n' +
+    'nimi = nimi.lower() #siin muudame nimes kõik tähed väikesteks ja salvestame uuesti samasse muutujasse\n' +
+    'kpt_arv = nimi.count("k") + nimi.count("p") + nimi.count("t")\n' +
+    'print("Nimes on " + str(kpt_arv) + " tugevat sulghäälikut")';
+  typeConversionsCode = 'str(12) #"12"\n' +
+    'str(13.5) #"13.5"\n' +
+    'str(True) #"True"\n' +
+    '\n' +
+    'int("12") #12\n' +
+    'int(12.5) #12\n' +
+    'int(True) #1\n' +
+    '\n' +
+    'float(5) #5.0\n' +
+    'float("13.7") #13.7\n' +
+    'float(True) #1.0\n' +
+    '\n' +
+    'bool("") #False\n' +
+    'bool("Tere") #True\n' +
+    'bool(0) #False\n' +
+    'bool(6) #True\n' +
+    'bool(13.7) #True\n' +
+    '\n' +
+    'int("Tere") #ValueError: invalid literal for int() with base 10: \'Tere\'';
 
 }
 

@@ -21,17 +21,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span>...</span>
+    <span [highlight]="pushUpsWithoutLoopCode"></span>
   </div>
   <div class="mt-3"><span>Ilmselt taipad, et niimoodi korduseid kirja panna on väga tülikas. Ja pealegi, mis saaks siis, kui tahaksime kasutajalt küsida, mitu
     kätekõverdust ta teha tahab? Siis me ei saa ju ette teada, mitu <span class="fst-italic">print</span>-käsku koodi kirjutada? Siin tulevadki appi korduslaused.
@@ -72,12 +62,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>tehtud_kätekõverdusi = <span class="code-number">0</span><br><br></span>
-    <span><span class="code-bold">while</span> tehtud_kätekõverdusi &lt; <span class="code-number">20</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;tehtud_kätekõverdusi = tehtud_kätekõverdusi + <span
-      class="code-number">1</span></span>
+    <span [highlight]="pushUpsWithLoopCode"></span>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -87,7 +72,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>tehtud_kätekõverdusi = tehtud_kätekõverdusi + <span class="code-number">1</span></span>
+    <span>tehtud_kätekõverdusi = tehtud_kätekõverdusi + <span class="hljs-number">1</span></span>
   </div>
   <div class="mt-3"><span>
     Siin teeb Python kõigepealt ära tehte <span class="fst-italic">tehtud_kätekõverdusi + 1</span> ning seejärel omistab saadud
@@ -98,7 +83,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>tehtud_kätekõverdusi += <span class="code-number">1</span></span>
+    <span>tehtud_kätekõverdusi += <span class="hljs-number">1</span></span>
   </div>
   <div class="mt-3"><span>
     Lühendatud variandis pannakse kokku tehtemärk ja omistamise märk ning neile järgneb konstant või muutuja, millega tehet sooritatakse. Allolevas
@@ -221,11 +206,7 @@
     </div>
   </div>
   <div class="code-block mt-2">
-    <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
-    <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
-    <span><span class="code-bold">while</span> pakkumine != salajane_sõna:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Tubli! Arvasid õigesti!"</span>)</span>
+    <span [highlight]="secretWordCode"></span>
   </div>
   <div class="mt-2"><span>
     Üks näide selle koodi võimalikust väljundist:
@@ -247,10 +228,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>tehtud_kätekõverdusi = <span class="code-number">0</span><br><br></span>
-    <span><span class="code-bold">while</span> tehtud_kätekõverdusi &lt; <span class="code-number">20</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Tee üks kätekõverdus!"</span>)</span>
+    <span [highlight]="infiniteLoopCode"></span>
   </div>
   <div class="mt-3"><span>
     Võid proovida seda koodijuppi Thonnys käivitada ja ilmselt näed, et programm jääbki aina väljastama "Tee üks kätekõverdus!". Sellist
@@ -293,24 +271,12 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
-        <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
-        <span><span class="code-bold">while</span> pakkumine != salajane_sõna:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
-        <span><span class="code-function">print</span>(<span
-          class="code-string">"Tubli! Arvasid õigesti!"</span>)<br><br><br></span>
+        <span [highlight]="secretWordWithConditionCode"></span>
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="code-block ms-1">
-        <span>salajane_sõna = <span class="code-string">"ploom"</span><br></span>
-        <span>pakkumine = <span class="code-function">input</span>(<span class="code-string">"Mis on sügisel valmiv lilla puuvili? "</span>)<br><br></span>
-        <span><span class="code-bold">while True</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> pakkumine == salajane_sõna:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">break</span><br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;pakkumine = <span class="code-function">input</span>(<span class="code-string">"See ei ole õige. Paku uuesti: "</span>)<br><br></span>
-        <span><span class="code-function">print</span>(<span
-          class="code-string">"Tubli! Arvasid õigesti!"</span>)</span>
+        <span [highlight]="secretWordWithBreakCode"></span>
       </div>
     </div>
   </div>

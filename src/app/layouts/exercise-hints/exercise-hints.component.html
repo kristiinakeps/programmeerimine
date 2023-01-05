@@ -3,7 +3,7 @@
     <span [innerHTML]="hints[currentLevel].text"></span>
   </div>
   <div *ngIf="hints[currentLevel].code" class="code-block mt-2">
-    <span [innerHTML]="hints[currentLevel].code"></span>
+    <span [highlight]="hints[currentLevel].code"></span>
   </div>
   <div class="mt-2">
     <button *ngIf="currentLevel > 0" class="btn btn-hint m-2" (click)="previousHint()">

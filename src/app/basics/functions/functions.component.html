@@ -60,10 +60,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> tervita</span>():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tere-tere vanakere!"</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Kuidas läheb?"</span>)<br></span>
+    <span [highlight]="greetingCode"></span>
   </div>
   <div class="mt-2"><span>Võid proovida seda koodijuppi käivitada, aga ilmselt märkad, et midagi ekraanile ei ilmu. Nimelt lihtsalt funktsiooni kirja panemisest
     ehk kirjeldamisest ei piisa, seda funktsiooni tuleb kuskil koodis ka kasutada ehk funktsiooni tuleb <strong
@@ -72,11 +69,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> tervita</span>():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tere-tere vanakere!"</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Kuidas läheb?"</span>)<br><br></span>
-    <span>tervita()</span>
+    <span [highlight]="greetingCallCode"></span>
   </div>
   <div class="mt-2"><span>Nüüd ilmub tervitus ka ekraanile. Programme kirjutades on tavaks panna kõik funktsioonide kirjeldused programmi algusesse, olenemata sellest, kus
     neid hiljem kasutatakse. Funktsioonidele järgnevat osa nimetatakse <strong class="strong">põhiprogrammiks</strong> ja just seda hakatakse täitma
@@ -103,14 +96,7 @@
     </div>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>():<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (<span class="code-number">20</span> / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"20 cm läbimõõduga pitsa jaoks kulub "</span> +
-      <span class="code-function">str</span>(taigna_kogus) + <span
-        class="code-string">" g tainast."</span>)<br><br></span>
-    <span>pitsatainas()</span>
+    <span [highlight]="pizzaDoughCode"></span>
   </div>
   <div class="mt-2"><span>See koodijupp väljastab meile:
   </span>
@@ -126,14 +112,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
-      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
-      <span class="code-function">str</span>(taigna_kogus) + <span
-        class="code-string">" g tainast."</span>)</span>
+    <span [highlight]="pizzaDoughWithArgumentCode"></span>
   </div>
   <div class="mt-2"><span>Põhiprogrammis, kus funktsiooni välja kutsume, peame nüüd andma funktsioonile argumendiks konkreetse väärtuse. Täpselt nii, nagu
     oleme seni andnud argumente sisseehitatud funktsioonidele nagu <span class="fst-italic">print</span> ja <span
@@ -141,24 +120,14 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span>pitsatainas(<span class="code-number">20</span>)</span>
+    <span>pitsatainas(<span class="hljs-number">20</span>)</span>
   </div>
   <div class="mt-2"><span>Pealtnäha väljastab programm sama asja, mis enne, kuid nüüd saame soovi korral funktsiooni välja kutsuda ka teistsuguste
     argumentidega:
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = pindala * <span class="code-number">2.3</span><br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
-      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
-      <span class="code-function">str</span>(taigna_kogus) + <span
-        class="code-string">" g tainast."</span>)<br><br></span>
-    <span>pitsatainas(<span class="code-number">20</span>)<br></span>
-    <span>pitsatainas(<span class="code-number">28</span>)<br></span>
-    <span>pitsatainas(<span class="code-number">38</span>)<br></span>
+    <span [highlight]="pizzaDoughWithArgumentCallsCode"></span>
   </div>
   <div class="mt-2"><span>See koodijupp väljastab meile nüüd kõigi kolme läbimõõduga pitsa jaoks vajalikud taignakogused:
   </span>
@@ -176,22 +145,13 @@
     arvu 722.1999999999999 ümardada ühe komakohani, siis saaksime seda teha nii:
   </span></div>
   <div class="code-block mt-2">
-    <span><span class="code-function">round</span>(<span class="code-number">722.1999999999999</span>, <span
-      class="code-number">1</span>)</span>
+    <span [highlight]="roundCode"></span>
   </div>
   <div class="mt-2"><span>See annaks meile tulemuseks <span class="fst-italic">722.2</span>. Proovime nüüd ka oma funktsiooni täiendada, et see ümardaks
       tulemuse ühe komakohani:
   </span></div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
-      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
-      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
-      <span class="code-function">str</span>(taigna_kogus) + <span
-        class="code-string">" g tainast."</span>)<br></span>
+    <span [highlight]="pizzaDoughWithRoundCode"></span>
   </div>
 </div>
 <app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="printSubtractionArgumentsTestCode"
@@ -204,17 +164,7 @@
   </span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
-      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-function">str</span>(läbimõõt) +
-      <span class="code-string">" cm läbimõõduga pitsa jaoks kulub "</span> +
-      <span class="code-function">str</span>(taigna_kogus) + <span
-        class="code-string">" g tainast."</span>)<br><br></span>
-    <span>pitsatainas(<span class="code-number">20</span>)<br></span>
-    <span><span class="code-function">print</span>(taigna_kogus)</span>
+    <span [highlight]="pizzaDoughAccessCode"></span>
   </div>
   <div class="mt-2"><span>Kui seda koodi käivitada, siis näeme, et saame hoopis veateate:</span></div>
   <div class="code-block mt-2 fst-italic">
@@ -236,13 +186,7 @@
   <div class="mt-2"><span>Proovime nüüd funktsioonis taigna koguse väljastamise asemel selle hoopis tagastada:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-      class="code-number">2</span> * 3.14<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
-      class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br><br></span>
-    <span>pitsatainas(<span class="code-number">20</span>)</span>
+    <span [highlight]="pizzaDoughReturnCode"></span>
   </div>
   <div class="mt-2"><span>Nüüd küll pitsataigna kogus tagastatakse, aga hetkel ei näe me veel midagi programmi väljundis, sest meie koodis pole ühtegi
   <span class="fst-italic">print</span>-funktsiooni</span>. Võime näiteks väljastada funktsiooni väljakutse tulemuse,
@@ -250,7 +194,7 @@
     tagastas ilusti õige arvu:
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-function">print</span>(pitsatainas(<span class="code-number">20</span>))</span>
+    <span [highlight]="pizzaDoughPrintCallCode"></span>
   </div>
   <div class="mt-2"><span>Nüüd ilmub meil ekraanile arv <span class="fst-italic">722.2</span>, mis on õige tulemus. Nagu näeme, saame funktsiooni
   tagastatud väärtust oma koodis edasi kasutada, võime selle näiteks välja printida, salvestada mõnda muutujasse või teha sellega muid vajalikke tehteid.</span>
@@ -263,18 +207,7 @@
   tagastatud väärtused muutujatesse ning hiljem liidame need kokku, et anda kasutajale teada, palju tal kolme eri suuruses pitsa jaoks tainast kokku läheb.</span>
       </div>
       <div class="code-block mt-2">
-        <span><span class="code-bold">def</span> <span class="code-def"> pitsatainas</span>(läbimõõt):<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;pindala = (läbimõõt / <span class="code-number">2</span>)**<span
-          class="code-number">2</span> * 3.14<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;taigna_kogus = <span class="code-function">round</span>(pindala * <span
-          class="code-number">2.3</span>, <span class="code-number">1</span>)<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">return </span> taigna_kogus<br><br></span>
-        <span>kogus_20 = pitsatainas(<span class="code-number">20</span>)<br></span>
-        <span>kogus_28 = pitsatainas(<span class="code-number">28</span>)<br></span>
-        <span>kogus_38 = pitsatainas(<span class="code-number">38</span>)<br></span>
-        <span>kokku = kogus_20 + kogus_28 + kogus_38<br></span>
-        <span><span class="code-function">print</span>(<span class="code-string">"Kokku kulub 20 cm, 28 cm ja 38 cm pitsa peale "</span> +
-      <span class="code-function">str</span>(kokku) + <span class="code-string">" g tainast."</span>)</span>
+        <span [highlight]="pizzaDoughDifferentSizesCode"></span>
       </div>
     </div>
     <div class="col-lg-3 mt-auto mx-3 mb-3">
@@ -291,10 +224,7 @@
     <span class="fst-italic">None</span>. See on täiesti omaette andmetüüp ja see tähistab puuduvat väärtust. Võid katsetada järgmise funktsiooniga:</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="code-bold">def</span> <span class="code-def"> liida</span>(a, b):<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(a + b)<br><br></span>
-    <span><span class="code-function">print</span>(liida(<span class="code-number">4</span>, <span
-      class="code-number">3</span>))</span>
+    <span [highlight]="returnNoneCode"></span>
   </div>
   <div class="mt-2"><span>See funktsioon väljastab kõigepealt numbri 7, sest funktsiooni sees prinditakse liitmistehte tulemus. Seejärel, kui funktsioon lõpetab,
   siis väljastatakse ka funktsiooni enda väärtus, mis antud juhul on <span class="fst-italic">None</span>.</span>

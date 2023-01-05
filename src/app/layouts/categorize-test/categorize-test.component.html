@@ -5,7 +5,7 @@
     <div *ngFor="let category of categories" class="drag-and-drop-container">
       <h5 *ngIf="category.text" class="self-test">{{ category.text }}</h5>
       <div *ngIf="category.code" class="code-block mb-2">
-        <span [innerHTML]="category.code"></span>
+        <span [highlight]="category.code"></span>
       </div>
       <div
         cdkDropList

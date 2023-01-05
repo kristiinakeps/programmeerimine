@@ -74,6 +74,10 @@ export class NavbarComponent implements OnInit {
     return this.router.url.startsWith('/sonastikud') && !this.isDataStructuresCollapsed;
   }
 
+  isSetsOpened(): boolean {
+    return this.router.url.startsWith('/hulgad') && !this.isDataStructuresCollapsed;
+  }
+
   toggleBasics(): void {
     this.isBasicsCollapsed = !this.isBasicsCollapsed;
   }

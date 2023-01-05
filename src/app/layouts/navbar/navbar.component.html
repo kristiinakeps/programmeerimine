@@ -148,6 +148,12 @@
         <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'hulgad'" [routerLinkActive]="'active'"  (click)="collapseNavbar()">Hulgad</a>
         </li>
+        <li class="nav-subitem" *ngIf="isSetsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'hulgad'" [fragment]="'operatsioonid'" (click)="collapseNavbar()">Operatsioonid, funktsioonid, meetodid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isSetsOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'hulgad'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
+        </li>
         <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Ennikud</a>
         </li>

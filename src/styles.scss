@@ -403,19 +403,19 @@ a:hover {
   color: $color-red-dark;
 }
 
-.code-string {
+.hljs-string {
   color: $color-green-dark;
 }
 
-.code-function {
+.hljs-built_in {
   color: $color-pink-dark;
 }
 
-.code-comment {
+.hljs-comment {
   color: $color-grey-dark;
 }
 
-.code-number {
+.hljs-number {
   color: $color-orange;
 }
 
@@ -423,12 +423,17 @@ a:hover {
   color: $color-blue-dark;
 }
 
-.code-bold {
+.hljs-keyword {
   color: $color-pink-dark;
   font-weight: bold;
 }
 
-.code-def {
+.hljs-literal {
+  color: $color-pink-dark;
+  font-weight: bold;
+}
+
+.hljs-title {
   color: $color-navy;
   font-weight: bold;
 }

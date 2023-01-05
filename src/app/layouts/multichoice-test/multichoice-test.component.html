@@ -6,7 +6,7 @@
     <span [innerHTML]="fileContents"></span>
   </div>
   <div *ngIf="code" class="code-block my-2">
-    <span [innerHTML]="code"></span>
+    <span [highlight]="code"></span>
   </div>
   <div *ngFor="let item of items; let i = index" class="mt-2">
     <div class="form-group form-check">

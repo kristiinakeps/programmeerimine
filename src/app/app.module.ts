@@ -29,6 +29,8 @@ import { ErrorHandlingComponent } from './basics/error-handling/error-handling.c
 import { ListsComponent } from './data-structures/lists/lists.component';
 import { DictionariesComponent } from './data-structures/dictionaries/dictionaries.component';
 import { SetsComponent } from './data-structures/sets/sets.component';
+import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -62,9 +64,19 @@ import { SetsComponent } from './data-structures/sets/sets.component';
     ReactiveFormsModule,
     FontAwesomeModule,
     DragDropModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HighlightModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HIGHLIGHT_OPTIONS,
+    useValue: {
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        languages: {
+          python: () => import('highlight.js/lib/languages/python')
+        }
+      }
+  }],
   bootstrap: [MainComponent]
 })
 export class AppModule {

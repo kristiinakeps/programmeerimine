@@ -30,11 +30,7 @@
   tingimuslausel peab olema vähemalt üks taandega rida, mida täidetakse, kui tingimus on tõene. Selleks, et minna edasi selle programmi osaga, mis
   ei sõltu tingimusest, vähendame taanet.</span></div>
   <div class="code-block mt-2">
-    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
-      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane jope selga!"</span>)</span>
+    <span [highlight]="temperatureIfCode"></span>
   </div>
   <div class="mt-3"><span>See programm väljastab "Pane jope selga!" kui sisestatud temperatuur on väiksem kui 15. Kui see tingimus ei ole täidetud ehk
   temperatuur on 15 või kõrgem, siis ei väljasta programm midagi. Nüüd proovime aga kasutajale veel "Ilusat päeva!" soovida, olenemata sellest, mis temperatuur
@@ -42,12 +38,7 @@
   <div class="row mx-0">
     <div class="col-lg-8 ps-0">
       <div class="code-block mt-2">
-    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
-      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-        <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-          class="code-string">"Pane jope selga!"</span>)<br></span>
-        <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+    <span [highlight]="temperatureAfterIfCode"></span>
       </div>
       <div class="mt-3"><span>Selles näites kasutasime tingimuse koostamiseks "väiksem kui" märki. Kuid mida saab veel tingimuste koostamiseks kasutada?</span>
       </div>
@@ -270,43 +261,37 @@
   <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame mis järjekorras siis tehteid tehakse.</span>
   </div>
   <div class="code-block mt-2">
-    <span class="code-number">5</span> &lt; <span class="code-number">4 </span><span class="code-bold">and </span> <span
-    class="code-number">3</span> &gt;
-    <span class="code-number">2 </span><span class="code-bold">or not </span><span class="code-number">2</span> &gt;
-    <span class="code-number">4 </span><span class="code-bold">and </span>
-    <span class="code-number">5</span> &gt; <span class="code-number">4</span>
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span class="hljs-keyword"> or not </span>
+      <span class="hljs-number">2</span> > <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>
   </div>
   <div class="mt-3"><span>Esimese asjana võime kõik tõeväärtustehted asendada nende tõeväärtustega.</span></div>
   <div class="code-block mt-2">
-    <span class="code-bold">False and True or not False and True</span>
+    <span [highlight]="booleanCombineCode2"></span>
   </div>
   <div class="mt-3"><span>Nüüd võime rakendada <span class="fst-italic">not</span> loogilist tehet ja saame tulemuseks:</span>
   </div>
   <div class="code-block mt-2">
-    <span class="code-bold">False and True or True and True</span>
+    <span [highlight]="booleanCombineCode3"></span>
   </div>
   <div class="mt-3"><span>Seejärel võtame ette <span class="fst-italic">and</span> tehted.</span></div>
   <div class="code-block mt-2">
-    <span class="code-bold">False or True</span>
+    <span [highlight]="booleanCombineCode4"></span>
   </div>
   <div class="mt-3"><span>Ja viimaseks jääb <span
     class="fst-italic">or</span>, mis annab kogu avaldise tulemuseks:</span></div>
   <div class="code-block mt-2">
-    <span class="code-bold">True</span>
+    <span [highlight]="booleanCombineCode5"></span>
   </div>
   <div class="mt-3"><span>Soovi korral saame sulgudega ise prioriteete ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
   tehakse esimesena.</span>
   </div>
   <div class="code-block mt-2">
-    <span class="code-number">5</span> &lt; <span class="code-number">4 </span><span class="code-bold">and </span>
-    (<span class="code-number">3</span> &gt;
-    <span class="code-number">2 </span><span class="code-bold">or not </span><span class="code-number">2</span> &gt;
-    <span class="code-number">4 </span><span class="code-bold">and </span>
-    <span class="code-number">5</span> &gt; <span class="code-number">4</span>)
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span><span class="hljs-keyword"> and </span> (<span class="hljs-number">3</span> > <span class="hljs-number">2</span>
+      <span class="hljs-keyword"> or not </span><span class="hljs-number">2</span> > <span class="hljs-number">4</span><span class="hljs-keyword"> and </span><span class="hljs-number">5</span> > <span class="hljs-number">4</span>)) </span>)
   </div>
   <div class="mt-3"><span>Asendame tõeväärtustehted tõeväärtustega:</span></div>
   <div class="code-block mt-2">
-    <span class="code-bold">False and </span>(<span class="code-bold">True or not False and True</span>)
+    <span [highlight]="booleanOrderCode2"></span>)
   </div>
   <div class="mt-3"><span>Siinkohal tegelikult juba näeme, et ükskõik mis väärtuse saab sulgudes olev avaldis, kogu avaldise väärtus on
   ikka <span class="fst-italic">False</span>, sest <span class="fst-italic">and</span> tehte esimene pool on juba <span
@@ -328,15 +313,7 @@
   võtmeõnaga tingimuslause. Käsud, mida täidetakse <span class="fst-italic">else</span>-harus tuleb kirjutada jälle taandega.</span>
   </div>
   <div class="code-block mt-2">
-    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
-      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane jope selga!"</span>)<br></span>
-    <span><span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Jopet pole vaja!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+    <span [highlight]="temperatureIfElseCode"></span>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -349,20 +326,7 @@
   </div>
   <div class="row mx-0">
     <div class="code-block mt-2 col-lg-9">
-    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
-      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-      <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">if</span> temperatuur &lt; <span
-        class="code-number">0</span>:<br></span>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-        class="code-string">"Pane kasukas selga!"</span>)<br></span>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-bold">else</span>:<br></span>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-        class="code-string">"Pane jope selga!"</span>)<br></span>
-      <span><span class="code-bold">else</span>:<br></span>
-      <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-        class="code-string">"Jopet pole vaja!"</span>)<br></span>
-      <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+    <span [highlight]="temperatureNestedCode"></span>
     </div>
     <div class="col-lg-2 m-3">
       <img src="../../../assets/images/conditions/crow_coat.png" alt="crow" class="height-15rem">
@@ -383,17 +347,7 @@
   täidetakse <span class="fst-italic">else</span> haru. Muidugi vaid juhul kui see on olemas, kui seda ei ole, siis minnakse lihsalt programmi täitmisega edasi.</span>
   </div>
   <div class="code-block mt-2">
-    <span>temperatuur = <span class="code-function">int</span>(<span class="code-function">input</span>(<span
-      class="code-string">"Sisesta temperatuur: "</span>))<br></span>
-    <span><span class="code-bold">if</span> temperatuur &lt; <span class="code-number">0</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Pane kasukas selga!"</span>)<br></span>
-    <span><span class="code-bold">elif</span> temperatuur &lt; <span class="code-number">15</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Pane jope selga!"</span>)<br></span>
-    <span><span class="code-bold">else</span>:<br></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-      class="code-string">"Jopet pole vaja!"</span>)<br></span>
-    <span><span class="code-function">print</span>(<span class="code-string">"Ilusat päeva!"</span>)</span>
+    <span [highlight]="temperatureElifCode"></span>
   </div>
   <div class="mt-3"><span>Pane tähele, et siin muutsime tingimuste järjekorda. Kõigepealt kontrollime, kas temperatuur on väiksem kui 0 ning alles siis,
   kui see on väär, kontrollime, kas temperatuur on väiksem kui 15. Kas taipad miks me nii teeme? Mis juhtuks kui kontrolliksime kõigepealt kas
@@ -417,37 +371,12 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1">
-        <span>arv = <span class="code-number">4</span><br></span>
-        <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
-        <span><span class="code-bold">if</span> arv != <span class="code-number">5</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-          class="code-string">"Arv ei ole 5."</span>)<br></span>
-        <span><span class="code-bold">if</span> arv == <span class="code-number">4</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-          class="code-string">"Arv on 4."</span>)<br></span>
-        <span><span class="code-bold">if</span> arv % <span class="code-number">2</span> != <span
-          class="code-number">0</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
-        <span><span class="code-bold">else</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paarisarvuga."</span>)</span>
+        <span [highlight]="ifsCode"></span>
       </div>
     </div>
     <div class="col-md-6 ">
       <div class="code-block ms-1">
-        <span>arv = <span class="code-number">4</span><br></span>
-        <span><span class="code-bold">if</span> arv &gt; <span class="code-number">0</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on positiivse arvuga."</span>)<br></span>
-        <span><span class="code-bold">elif</span> arv != <span class="code-number">5</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-          class="code-string">"Arv ei ole 5."</span>)<br></span>
-        <span><span class="code-bold">elif</span> arv == <span class="code-number">4</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span
-          class="code-string">"Arv on 4."</span>)<br></span>
-        <span><span class="code-bold">elif</span> arv % <span class="code-number">2</span> != <span class="code-number">0</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paaritu arvuga."</span>)<br></span>
-        <span><span class="code-bold">else</span>:<br></span>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">print</span>(<span class="code-string">"Tegemist on paarisarvuga."</span>)</span>
+        <span [highlight]="elifsCode"></span>
       </div>
     </div>
   </div>
