@@ -1,0 +1,221 @@
+<h1>MITMEMÕÕTMELISED ANDMESTRUKTUURID</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Kuidas teha tüübiteisendusi andmestruktuuride vahel?</span></div>
+  <div><span>2. Kuidas andmestruktuure omavahel kombineerida?</span></div>
+  <div><span>3. Kuidas mitmemõõtmelist andmestruktuuri kasutada?</span></div>
+  <div><span>4. Kuidas mitmemõõtmelist andmestruktuuri tsüklis läbida?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <span>Nüüd on meil neli põhilist andmestruktuuri selged, kuid seni kasutasime elementidena põhiliselt algtüüpe. Tegelikult
+  saame kasutada elementide ja väärtustena ka teisi andmestruktuure. Näiteks saame luua järjendi, mille elemendid on teised järjendid,
+  hulgad, sõnastikud või ennikud.</span>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kõigepealt aga võtame veel kokku seni õpitud andmestruktuurid. Allolevas tabelis on toodud järjendite, sõnastike, hulkade ja
+  ennikute omadused.</span></div>
+  <div class="mt-2">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 20%">Tegevus</th>
+        <th style="width: 20%">Järjend</th>
+        <th style="width: 20%">Sõnastik</th>
+        <th style="width: 20%">Hulk</th>
+        <th style="width: 20%">Ennik</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Tühja andmestuktuuri loomine sulgudega</td>
+        <td>[]</td>
+        <td>{{'{'}}{{'}'}}</td>
+        <td></td>
+        <td>()</td>
+      </tr>
+      <tr>
+        <td>Tühja andmestuktuuri loomise ja tüübiteisenduse funktsioon</td>
+        <td>list()</td>
+        <td>dict()</td>
+        <td>set()</td>
+        <td>tuple()</td>
+      </tr>
+      <tr>
+        <td>Elementidega andmestruktuur</td>
+        <td>['a', 'b']</td>
+        <td>{{'{'}}'a': 1, 'b': 2{{'}'}}</td>
+        <td>{{'{'}}'a', 'b'{{'}'}}</td>
+        <td>('a', 'b')</td>
+      </tr>
+      <tr>
+        <td>Elemendi lisamine</td>
+        <td>järjend.append('c')</td>
+        <td>sõnastik['c'] = 3</td>
+        <td>hulk.add('c')</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Elemendi kättesaamine</td>
+        <td>järjend[0]</td>
+        <td>sõnastik['a']</td>
+        <td></td>
+        <td>ennik[0]</td>
+      </tr>
+      <tr>
+        <td>Kas on järjestatud?</td>
+        <td>jah</td>
+        <td>jah (kuigi varasemates Pythoni versioonides ei olnud)</td>
+        <td>ei</td>
+        <td>jah</td>
+      </tr>
+      <tr>
+        <td>Kas saab viilutada?</td>
+        <td>jah</td>
+        <td>ei</td>
+        <td>ei</td>
+        <td>jah</td>
+      </tr>
+      <tr>
+        <td>Pikkuse leidmine</td>
+        <td>len(järjend)</td>
+        <td>len(sõnastik)</td>
+        <td>len(hulk)</td>
+        <td>len(ennik)</td>
+      </tr>
+      <tr>
+        <td>Kas on muudetav?</td>
+        <td>jah</td>
+        <td>jah</td>
+        <td>jah</td>
+        <td>ei</td>
+      </tr>
+      <tr>
+        <td>Kas elemendid võivad olla muudetavad?</td>
+        <td>jah</td>
+        <td>võtmed ei, väärtused jah</td>
+        <td>ei</td>
+        <td>jah</td>
+      </tr>
+      <tr>
+        <td>Kas elemendid on unikaalsed?</td>
+        <td>ei</td>
+        <td>võtmed jah, väärtused ei</td>
+        <td>jah</td>
+        <td>ei</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Tüübiteisendused andmestruktuuridega</strong>
+  <div class="mt-2"><span>Me oleme juba omajagu kasutanud algtüüpide tüübiteisendusi, muutnud sõnesid arvudeks ja arve sõnedeks. Me saame ka teatud
+  andmestruktuure ühest teiseks muuta. All on toodud mõned näited.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="conversionsCode"></span>
+  </div>
+  <div class="mt-2">
+    <span>Siin sõnastikuks teisendamiste juures näeme juba mitmemõõtmelisi andmestruktuure. Sõnastikuks teisendamisel võib väline andmestruktuur olla
+     kas hulk, järjend või ennik, aga oluline on, et kõik elemendid oleksid ise omakorda kaheelemendilised andmestruktuurid. Olgu nad siis
+    järjendid, ennikud või hulgad. Tasub ka tähele panna, et hulga elemendid peavad olema mittemuudetavad, seega hulga elemendid saavad olla ainult
+    ennikud, teised andmestruktuurid ei sobi. Sama kehtib ka sõnastiku võtmete kohta.</span>
+  </div>
+</div>
+<app-categorize-test [categories]="testCategories" [items]="testItems"
+                     [exerciseTitle]="'Lohista kõik tegevused õige andmestruktuuri alla'"
+                     [correctAnwser]="testCorrectAnswer"></app-categorize-test>
+<h4 class="mt-5" [attr.id]="'jarjend'">Kuidas koostada ja läbida mitmemõõtmelist järjendit?</h4>
+<div class="box-container mt-3">
+  <div><span>Mitmemõõtmeline järjend on selline järjend, mille elemendid on omakorda järjendid. Ja nende sisemiste järjendite elemendid
+  võivad veel omakorda olla järjendid jne. Allpool on toodud näited erinevate mõõtmetega järjenditest.</span></div>
+  <div class="code-block mt-2"><span [highlight]="nestedListExamples"></span></div>
+  <div class="mt-2"><span>Siin lihtsuse mõttes tegeleme põhiliselt kahemõõtmeliste järjenditega. Kui soovime kahemõõtmelisest järjendit elementi
+  kätte saada, siis saame ikka kasutada indekseid, nagu ka tavaliste järjendite puhul. Kui soovime kätte saada sisemise järjendi elementi, siis võime
+  kirjutada ka mitu indeksit üksteise järel. Siis kõigepealt võetakse välimisest järjendist sisemine järjend esimese indeksiga ja siis sealt
+  sisemisest järjendist element teise indeksiga.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="nestedIndexesExamples"></span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>[3, 4]<br></span>
+    <span>3<br></span>
+    <span>2<br></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Maatriksid</strong>
+  <div class="mt-2"><span>Kahemõõtmelist järjendit, mille sisemistes järjendites on kõigis sama palju elemente, nimetatakse ka <strong class="strong">maatriksiks</strong>. Maatriks on
+  justkui tabel, millel on read ja veerud.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="matrixCode"></span>
+  </div>
+  <div class="mt-2"><span>Sellises 3x3 maatriksis saame hoida näiteks mängu trips-traps-trull seisu:</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="ticTacToeCode"></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Kahemõõtmelise järjendi läbimine tsüklis</strong>
+  <div class="mt-2"><span>Kahemõõtmelise järjendi läbimiseks on meil vaja kahte tsüklit, üks välimise järjendi läbimiseks ja üks sisemise jaoks.
+  Kolmemõõtmelise järjendi jaoks oleks meil vaja kolme tsüklit, neljamõõtmelise jaoks nelja jne. Nagu ka järjendid olid üksteise sees, siis on ka
+  nende läbimiseks mõeldud tsüklid üksteise sees.</span></div>
+  <div class="mt-2"><span>Kui soovime lihtsalt kõik sisemiseks elemendid ekraanile väljastada, siis sobib meile tavaline <span class="fst-italic">for</span>-tsükkel.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="twoDimensionalForLoopCode"></span>
+  </div>
+  <div class="mt-2"><span>See programm väljastab kõik sisemised elemendid eraldi ridadel:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>2<br></span>
+    <span>1<br></span>
+    <span>5<br></span>
+    <span>3<br></span>
+    <span>4<br></span>
+    <span>6<br></span>
+  </div>
+  <div class="mt-2"><span>Saame ka tsüklis indekseid läbida ja nii kõik elemendid kätte saada.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="twoDimensionalForLoopRangeCode"></span></div>
+  <div class="mt-2"><span>See koodijupp väljastab täpselt sama, mis eelmine. Siin <span class="fst-italic">i</span> on välimise järjendi indeks ehk
+    rea indeks, <span class="fst-italic">j</span> on sisemise järjendi indeks ehk veeru indeks.
+    Indeksitega saame valikuliselt elemente
+  väljastada. Näiteks võime võtta oma trips-traps-trulli seisu näite ja väljastada sealt diagonaali, mis läheb ülevalt vasakult alla paremale.
+  Kuidas sellise diagonaali elemendid kätte saada?</span></div>
+  <div class="mt-2"><span>Tegelikult on see väga lihtne, sedapidi diagonaali kuuluvad kõik elemendid, kus rea ja veeru indeksid on võrdsed.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="ticTacToeDiagonalCode"></span></div>
+  <div class="mt-2"><span>See tsükkel väljastab ekraanile kolm korda <span class="fst-italic">X</span>.</span></div>
+</div>
+<app-radiochoice-test [title]="'Millised arvud väljastab järgmine koodijupp ekraanile?'" [code]="nestedListTestCode"
+[formControlNameBase]="'nestedListTest'" [items]="nestedListTestItems"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'kombineerimine'">Erinevate andmestruktuuride kombineerimine</h4>
+<div class="mt-3 box-container">
+  <div><span>Nagu ka vilksamisi peatüki alguses nägime, siis saame erinevaid andmestruktuure omavahel kombineerida. Näiteks
+  sõnastiku väärtused võivad olla järjendid, hulgad, ennikud või ka teised sõnastikud. Järjendi ja enniku elemendid võivad samuti olla ükskõik mis
+  teised andmestruktuurid. Vaid hulkade elemendid peavad olema mittemuudetavad, seega sinna sobivad ainult ennikud.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Vaatame ühte näidet, kus meil on sõnastikku pandud kirja õpilaste hinded. Hindeid hoitakse järjendites. Lisaks
+  on meil ka ennik, milles on kirjas ained. Esimene hinne igas järjendis vastab esimesele ainele ennikus. Teine hinne on teise aine kohta jne.
+  Väljastame õpilaste teenitud hinded ekraanile.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="gradesCode"></span></div>
+  <div class="mt-2 code-block fst-italic"><span [highlight]="gradesOutput"></span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Järgmises näites on meil järjend hulkadest. Nendes hulkades on õpilaste lemmikvärvid. Leiame, kas leidub mõni selline värv,
+  mis on kõigi õpilaste lemmikute seas.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="colorsCode"></span></div>
+  <div class="mt-2"><span>Antud juhul on koodijupi väljund selline:</span></div>
+  <div class="mt-2 code-block fst-italic"><span [highlight]="colorsOutput"></span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Trips-traps-trull</strong>
+  <div class="mt-2">
+    <span>Me juba nägime, kuidas trips-traps-trulli mängu seisu saab maatriksiga kujutada. Selles harjutuses kirjutame funktsiooni
+      <span class="fst-italic">võitja</span>, mis leiaks
+    kas ja kes on mängu võitnud. Funktsioon peaks argumendiks võtma mängulaua seisu ja tagastama sõnena "X", kui <span class="fst-italic">X</span>
+      võitis mängu, "O" kui <span class="fst-italic">O</span> võitis mängu ja "?" kui võitjat ei leidu. Meeldetuletuseks, et selles mängus on
+    võitmiseks peab olema kas reas, veerus või diagonaalis kolm mängija tähist järjest.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="gameOutput"></span></div>
+  <app-exercise-hints [hints]="gameHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/klassid'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>

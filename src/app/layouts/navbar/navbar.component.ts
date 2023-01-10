@@ -17,17 +17,29 @@ export class NavbarComponent implements OnInit {
   isProjectsCollapsed = true;
   isAdditionalCollapsed = true;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router) {
+    router.events.subscribe(() => this.uncollapseRouteCategory());
+  }
 
   ngOnInit(): void {
+    this.uncollapseRouteCategory()
+  }
+
+  uncollapseRouteCategory(): void {
     if (this.router.url.startsWith('/sissejuhatus') || this.router.url.startsWith('/algoritm') ||
       this.router.url.startsWith('/muutujad') || this.router.url.startsWith('/tingimuslaused') ||
       this.router.url.startsWith('/korduslaused') || this.router.url.startsWith('/funktsioonid') ||
       this.router.url.startsWith('/failid') || this.router.url.startsWith('/veahaldus'))
       this.isBasicsCollapsed = false;
     else if (this.router.url.startsWith('/jarjendid') || this.router.url.startsWith('/sonastikud') ||
-    this.router.url.startsWith('/hulgad'))
+      this.router.url.startsWith('/hulgad') || this.router.url.startsWith('/ennikud') || this.router.url.startsWith('/mitmemootmelised'))
       this.isDataStructuresCollapsed = false;
+    else if (this.router.url.startsWith('/klassid') || this.router.url.startsWith('/parilus') || this.router.url.startsWith('/liidesed'))
+      this.isObjectOrientedProgrammingCollapsed = false;
+    else if (this.router.url.startsWith('/mang') || this.router.url.startsWith('/veebileht') || this.router.url.startsWith('/graafika'))
+      this.isProjectsCollapsed = false;
+    else if (this.router.url.startsWith('/informaatika'))
+      this.isAdditionalCollapsed = false;
   }
 
   collapseNavbar(): void {
@@ -76,6 +88,38 @@ export class NavbarComponent implements OnInit {
 
   isSetsOpened(): boolean {
     return this.router.url.startsWith('/hulgad') && !this.isDataStructuresCollapsed;
+  }
+
+  isTuplesOpened(): boolean {
+    return this.router.url.startsWith('/ennikud') && !this.isDataStructuresCollapsed;
+  }
+
+  isMultidimensionalOpened(): boolean {
+    return this.router.url.startsWith('/mitmemootmelised') && !this.isDataStructuresCollapsed;
+  }
+
+  isClassesOpened(): boolean {
+    return this.router.url.startsWith('/klassid') && !this.isObjectOrientedProgrammingCollapsed;
+  }
+
+  isInheritanceOpened(): boolean {
+    return this.router.url.startsWith('/parilus') && !this.isObjectOrientedProgrammingCollapsed;
+  }
+
+  isInterfacesOpened(): boolean {
+    return this.router.url.startsWith('/liidesed') && !this.isObjectOrientedProgrammingCollapsed;
+  }
+
+  isGameOpened(): boolean {
+    return this.router.url.startsWith('/mang') && !this.isProjectsCollapsed;
+  }
+
+  isWebOpened(): boolean {
+    return this.router.url.startsWith('/veebileht') && !this.isProjectsCollapsed;
+  }
+
+  isGuiOpened(): boolean {
+    return this.router.url.startsWith('/graafika') && !this.isProjectsCollapsed;
   }
 
   toggleBasics(): void {

@@ -31,6 +31,15 @@ import { DictionariesComponent } from './data-structures/dictionaries/dictionari
 import { SetsComponent } from './data-structures/sets/sets.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
 import {HttpClientModule} from "@angular/common/http";
+import { TuplesComponent } from './data-structures/tuples/tuples.component';
+import { MultidimensionalComponent } from './data-structures/multidimensional/multidimensional.component';
+import { ClassesComponent } from './object-oriented/classes/classes.component';
+import { InheritanceComponent } from './object-oriented/inheritance/inheritance.component';
+import { InterfacesComponent } from './object-oriented/interfaces/interfaces.component';
+import { GameComponent } from './projects/game/game.component';
+import { WebComponent } from './projects/web/web.component';
+import { GuiComponent } from './projects/gui/gui.component';
+import { ComputerScienceComponent } from './additional/computer-science/computer-science.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +63,16 @@ import {HttpClientModule} from "@angular/common/http";
     ErrorHandlingComponent,
     ListsComponent,
     DictionariesComponent,
-    SetsComponent
+    SetsComponent,
+    TuplesComponent,
+    MultidimensionalComponent,
+    ClassesComponent,
+    InheritanceComponent,
+    InterfacesComponent,
+    GameComponent,
+    WebComponent,
+    GuiComponent,
+    ComputerScienceComponent
   ],
   imports: [
     BrowserModule,

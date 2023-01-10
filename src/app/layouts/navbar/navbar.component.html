@@ -155,40 +155,55 @@
           <a class="nav-link" [routerLink]="'hulgad'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Ennikud</a>
+          <a class="nav-link" [routerLink]="'ennikud'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Ennikud</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isTuplesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'ennikud'" [fragment]="'operatsioonid'" (click)="collapseNavbar()">Operatsioonid, funktsioonid, meetodid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isTuplesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'ennikud'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Mitmemõõtmelised andmestruktuurid</a>
+          <a class="nav-link" [routerLink]="'mitmemootmelised'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Mitmemõõtmelised andmestruktuurid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isMultidimensionalOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mitmemootmelised'" [fragment]="'jarjend'" (click)="collapseNavbar()">Järjend</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isMultidimensionalOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mitmemootmelised'" [fragment]="'kombineerimine'" (click)="collapseNavbar()">Kombineerimine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isMultidimensionalOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mitmemootmelised'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item menu-category" (click)="toggleObjectOrientedProgramming()">
           <a class="nav-link">OBJEKTORIENTEERITUD PROGRAMMEERIMINE</a>
         </li>
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Klassid</a>
+          <a class="nav-link" [routerLink]="'klassid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Klassid</a>
         </li>
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Ülem- ja alamklassid</a>
+          <a class="nav-link" [routerLink]="'parilus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Pärilus</a>
         </li>
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Liidesed</a>
+          <a class="nav-link" [routerLink]="'liidesed'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Liidesed</a>
         </li>
         <li class="nav-item menu-category" (click)="toggleProjects()">
           <a class="nav-link">PROJEKTID</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Mängu loomine</a>
+          <a class="nav-link" [routerLink]="'mang'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Mängu loomine</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Veebilehe loomine</a>
+          <a class="nav-link" [routerLink]="'veebileht'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veebilehe loomine</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Graafiline kasutajaliides</a>
+          <a class="nav-link" [routerLink]="'graafika'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Graafiline kasutajaliides</a>
         </li>
         <li class="nav-item menu-category" (click)="toggleAdditional()">
           <a class="nav-link">LISA</a>
         </li>
         <li class="nav-item" *ngIf="!isAdditionalCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'.'" (click)="collapseNavbar()">Arvutiteadus</a>
+          <a class="nav-link" [routerLink]="'informaatika'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Informaatika</a>
         </li>
         <li>
           <div class="d-none d-md-block mt-2">

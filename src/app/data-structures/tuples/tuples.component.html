@@ -1,0 +1,259 @@
+<h1>ENNIKUD</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on ennikud ja milleks neid kasutatakse?</span></div>
+  <div><span>2. Mida saame ennikutega teha?</span></div>
+  <div><span>3. Kuidas ennikut tsüklis läbida?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Viimaseks andmestruktuuriks, millga tutvume, on ennikud. Tegemist on üsna lihtsa andmestruktuuriga, mis on väga
+  sarnane järjenditele, kuid erinevalt järjenditest on ennikud mittemuudetavad. Paljud enniku omadused on sarnased järjendite omadustega.</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Ennikus on sarnaselt järjendile ja hulgale elemendid. Erinevalt hulgast, võivad ennikus elemendid ka korduda ja
+  elementidel on kindel järjekord. Ennikut nimetatakse inglise keeles <span class="fst-italic">tuple</span> ja samamoodi kutsutakse ka
+  Pythonis enniku tüüpi. Enniku ümber on ümarad sulud, kuid ennikut luues võime soovi korral ka sulud ära jätta, Python saab ikka aru, et tegemist on ennikuga.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="tupleExamplesCode"></span>
+  </div>
+  <div class="mt-2"><span>Ennikute puhul on natuke naljakas ühe elemendiga enniku kirjutamine. Nimelt peab seal elemendi järel olema koma, isegi
+  kui ühtegi elementi enam ei järgne. Seda sellepärast, et ümaraid sulge võime ka niisama avaldistes kasutada ja kui elemendi taga koma ei ole,
+  siis Python arvab, et tahtsime lihtsalt seda elementi ennast kirja panna, mitte ennikut.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="oneElementTupleCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    &lt;class 'int'&gt;<br>
+    &lt;class 'tuple'&gt;
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Üksiku elemendi kasutamine</strong>
+  <div class="mt-2">
+    <span>Ennikust saab üksiku elemendi kätte täpselt samamoodi nagu järjendist &ndash; indeksi abil.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="elementFromTupleCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic">sügis</div>
+  <div class="mt-2">
+    <span>Erinevalt järjendist, ei saa me ennikus elemente muuta, eemaldada ega juurde lisada. Kui prooviksime näiteks indeksil 1
+    olevat elementi muuta, saaksime vea.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span [highlight]="changeElementCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic code-error">
+    <span>Traceback (most recent call last):<br></span>
+    <span>File "C:\Users\test.py", line 2, in &lt;module&gt;<br></span>
+    <span>aastaajad[1] = "suvi"<br></span>
+    <span>TypeError: 'tuple' object does not support item assignment</span>
+  </div>
+  <div class="mt-2"><span>Kuna ennikuid ei saa pärast loomist muuta, siis sobib neid kasutada just mittemuutuvate andmete jaoks. Ennikuid
+  sobib kasutada ka siis, kui funktsioonist on vaja tagastada mitu väärtust.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Viilutamine</strong>
+  <div class="mt-2">
+    <span>Ennikut on võimalik viilutada ja saada uus ennik, mis sisaldab ainult mingit osa algsest ennikust. Viilutamine toimib siin täpselt
+    samamoodi nagu järjendite puhul. Algusindeks on kaasaarvatud ja lõpuindeks mitte.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span [highlight]="splicingCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>
+      (4, 7, 2, 1, 9)<br>
+      (9, 8, 7)<br>
+      (2, 1)<br>
+      (4, 7, 2, 1, 9, 8, 7)
+    </span>
+  </div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="immutableTestCode" [formControlNameBase]="'immutableTest'"
+[items]="immutableTestItems"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'operatsioonid'">Ennikutega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Operatsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Avaldis</th>
+      <th style="width: 30%">Väärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>("ploom", "õun") + ("pirn", "kirss")</td>
+      <td>("ploom", "õun", "pirn", "kirss")</td>
+      <td>Ennikute kokku liitmine üheks ennikuks. Selle tehte tulemusena luuakse uus ennik.</td>
+    </tr>
+    <tr>
+      <td>("ploom", "õun") * 3</td>
+      <td>("ploom", "õun", "ploom", "õun", "ploom", "õun")</td>
+      <td>Enniku korrutamine arvuga (liidab nii mitu korda ennikut iseendaga)</td>
+    </tr>
+    <tr>
+      <td>5 in (1, 5, -2, 11, 7)</td>
+      <td>True</td>
+      <td>Kontrollib, kas element on ennikus</td>
+    </tr>
+    <tr>
+      <td>4 not in (1, 5, -2, 11, 7)</td>
+      <td>True</td>
+      <td>Kontrollib, ega elementi ei ole ennikus</td>
+    </tr>
+    <tr>
+      <td>(1, 2) == (2, 1)</td>
+      <td>False</td>
+      <td>Kontrollib, kas ennikud on võrdsed. Elementide järjekord on siin oluline.</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Funktsioonid</strong>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Funktsiooni rakendamine</th>
+      <th style="width: 30%">Tagastusväärtus</th>
+      <th style="width: 30%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>len(("ploom", "õun", "pirn", "kirss"))</td>
+      <td>4</td>
+      <td>Leiab enniku pikkuse</td>
+    </tr>
+    <tr>
+      <td>min((1, 5, -2, 11, 7))</td>
+      <td>-2</td>
+      <td>Leiab enniku väikseima elemendi</td>
+    </tr>
+    <tr>
+      <td>max((1, 5, -2, 11, 7))</td>
+      <td>11</td>
+      <td>Leiab enniku suurima elemendi</td>
+    </tr>
+    <tr>
+      <td>sum((1, 5, -2, 11, 7))</td>
+      <td>22</td>
+      <td>Leiab enniku elementide summa (ainult arvude puhul)</td>
+    </tr>
+    <tr>
+      <td>sorted((1, 5, -2, 11, 7))</td>
+      <td>[-2, 1, 5, 7, 11]</td>
+      <td>Tagastab enniku elemendid sorteeritud järjendina</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Meetodid</strong>
+  <div class="mt-2"><span>Kui operatsioonid ja funktsioonid olid järjenditega üsna sarnased, siis meetode on ennikutel palju vähem.
+  Ennikutel pole selliseid meetode, mis sinna elemente lisaksid, neid eemaldaksid või mõnel muul moel ennikut muudaksid.</span>
+  </div>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 40%">Meetodi rakendamine</th>
+      <th style="width: 25%">Enniku väärtus pärast rakendamist</th>
+      <th style="width: 10%">Tagastusväärtus</th>
+      <th style="width: 25%">Selgitus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>("ploom", "õun", "kirss", "õun").count("õun")</td>
+      <td>("ploom", "õun", "kirss", "õun")</td>
+      <td>2</td>
+      <td>Loeb kokku, mitu korda antud element ennikus esineb</td>
+    </tr>
+    <tr>
+      <td>("ploom", "õun", "kirss", "õun").index("õun")</td>
+      <td>("ploom", "õun", "kirss", "õun")</td>
+      <td>1</td>
+      <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on ennikus mitu korda, siis leiab esimese indeksi.
+        Teiseks argumendiks saab soovi korral
+        anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
+      </td>
+    </tr>
+    <tr>
+      <td>("ploom", "õun", "kirss", "õun").index("õun", 2)</td>
+      <td>("ploom", "õun", "kirss", "õun")</td>
+      <td>3</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-multichoice-test [title]="'Mida väljastab järgmine programmijupp?'" [code]="operationsTestCode"
+[formControlNameBase]="'operationsTest'" [items]="operationsTestItems"></app-multichoice-test>
+<div class="mt-3 box-container">
+  <strong class="strong">Ennik ja tsükkel</strong>
+  <div class="mt-2"><span>Enniku tsüklis läbimine on sarnane järjendi läbimisele, siin midagi väga üllatavat pole. Erinevalt
+  hulgast saame siin jälle ka elementide endi asemel indekseid kasutada.</span></div>
+  <div class="code-block mt-2">
+    <span [highlight]="forLoopCode"></span>
+  </div>
+  <div class="code-block mt-2">
+    <span [highlight]="forRangeLoopCode"></span>
+  </div>
+  <div class="code-block mt-2">
+    <span [highlight]="whileLoopCode"></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Omistamine muutujate ennikusse</strong>
+  <div class="mt-2"><span>Üks mugav trikk, mida veel ennikutega teha saame, on omistamise süntaksi kaudu väärtusi muutujate ennikusse salvestada.
+    Vilksamisi nägime seda ka sõnastike peatükis, kus kasutasime võti-väärtus paare. Selleks loome muutuja nimedest enniku ja omistame sinna
+  väärtused kas ennikust, järjendist või hulgast, aga muutujate ja väärtuste arv peab võrne olema.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="assignmentsCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>5<br></span>
+    <span>Y<br></span>
+    <span>2<br></span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Funktsioonist mitme väärtuse tagastamine</strong>
+  <div class="mt-2"><span>Vahepeal võib meil tekkida olukordi, kus meil on vaja funktsioonist rohkem kui üks väärtus tagastada. Sellisel
+  juhul sobib hästi kasutada ennikut.</span></div>
+  <div class="mt-2"><span>Järgmine funktsioon leiab etteantud sõnest kõige sagedamini esineva sümboli ja tagastab nii selle sümboli kui ka ta esinemiste arvu.</span>
+  </div>
+  <div class="mt-2 code-block">
+    <span [highlight]="functionReturnTupleCode"></span>
+  </div>
+  <div class="mt-2 code-block fst-italic">
+    <span>('t', 5)<br>Kõige sagedasem sümbol on 't', sagedusega 5</span>
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Mälumängu võitja</strong>
+  <div class="mt-2"><span>Klassis korraldatakse mälumängu ja kõigi õpilaste nimed koos teenitud punktidega on kirjutatud faili
+  <span class="fst-italic">mälumäng.txt</span>, kus igal real on õpilase nimi ja komaga eraldatult tema tulemus. Kirjuta programm, mis kõigepealt loeks
+  need andmed sealt failist sõnastikku. Seejärel lisa funktsioon, mis võtaks selle sõnastiku argumendiks ja tagastaks enim punkte teeninud
+  õpilase nime ja teenitud punktid ennikuna (sarnaselt ülaltoodud näitele).</span></div>
+  <div class="mt-2"><span>Faili <span class="fst-italic">mälumäng.txt</span> sisu:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Marit,35<br></span>
+    <span>Keit,46<br></span>
+    <span>Katriin,29<br></span>
+    <span>Hele Mari,44<br></span>
+    <span>Mihkel,50<br></span>
+    <span>Marit,56<br></span>
+    <span>Kelly,55<br></span>
+    <span>Kevin,44</span>
+  </div>
+  <div class="mt-2"><span>Programmi väljund ülaltoodud faili korral peaks olema:</span></div>
+  <div class="mt-2 code-block fst-italic"><span>Võitis Marit, kes sai 56 punkti.</span></div>
+  <app-exercise-hints [hints]="quizHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/mitmemootmelised'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>
