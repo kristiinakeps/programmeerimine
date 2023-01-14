@@ -20,7 +20,8 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Esimene ja ühtlasi üks enim kasutatavaid andmestruktuure on <strong class="strong">järjend</strong> (inglise keeles <span class="fst-italic">list</span>). Järjend on kogum erinevaid
+  <div><span>Esimene ja ühtlasi üks enim kasutatavaid andmestruktuure on <strong class="strong">järjend</strong> (inglise keeles <span
+    class="fst-italic">list</span>). Järjend on kogum erinevaid
     elemente. Need elemendid võivad olla ükskõik mis tüüpi, arvud, sõned või tõeväärtused ja need võivad järjendis ka korduda. Python lubab ühte järjendisse koondada ka erinevat tüüpi
     elemente, kuid praktikas seda väga palju ei kasutada. Järjendis eraldatakse elemendid komadega ja ümber järjendi on kandilised sulud. Mõned näited järjenditest:
   </span>
@@ -31,10 +32,16 @@
 </div>
 <h4 class="mt-5" [attr.id]="'indeks'">Järjendi üksiku elemendi kasutamine indeksi abil</h4>
 <div class="mt-3 box-container">
-  <div><span>Järjendist on võimalik kätte saada ja ka muuta üksikuid elemente. Selleks kasutatakse elemendi järjekorranumbrit järjendis. Seda
+  <div class="row px-0">
+    <div class="col-lg-8"><span>Järjendist on võimalik kätte saada ja ka muuta üksikuid elemente. Selleks kasutatakse elemendi järjekorranumbrit järjendis. Seda
   järjekorranumbrit nimetatakse <strong class="strong">indeksiks</strong>. Indeksite puhul alustatakse loendamist nullist, seega see erineb natuke sellest, kuidas
   tavaelus elemete loendaksime. Järjendi esimesel elemendile on indeks 0, teisel elemendil indeks 1, kolmandal indeks 2 jne. Selleks, et saada üksikut
   elementi indeksi põhjal kätte, lisatakse järjendi järele kandilistesse sulgudesse elemendi indeks.</span></div>
+    <div class="col-lg-3 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/indexes.png" alt="indexes"
+           style="height: 5rem">
+    </div>
+  </div>
   <div class="code-block mt-2">
     <span [highlight]="elemntsByIndexesCode"></span>
   </div>
@@ -69,6 +76,10 @@
   <div class="mt-2"><span>Selles näites saame indeksiga -1 kätte elemendi <span class="fst-italic">2</span> ja indeksiga -3 saame kätte elemendi
     <span class="fst-italic">4</span>. Samad elemendid saaksime, kui kasutaksime positiivseid indekseid 4 ja 2.</span>
   </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/lists/dog.png" alt="dog"
+         style="height: 10rem">
+  </div>
 </div>
 <app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="indexTestCode" [items]="indexTestItems"
                       [formControlNameBase]="'indexTest'"></app-radiochoice-test>
@@ -77,10 +88,16 @@
                       [formControlNameBase]="'negativeIndexTest'"></app-radiochoice-test>
 <h4 class="mt-5" [attr.id]="'viilutamine'">Alamjärjendi leidmine ehk viilutamine</h4>
 <div class="mt-3 box-container">
-  <div><span>Viilutamise abil saame järjendist kätte alamjärjendi. See on sarnane elemendi leidmisele, kuid nüüd on tulemuseks
+  <div class="row px-0">
+    <div class="col-lg-9"><span>Viilutamise abil saame järjendist kätte alamjärjendi. See on sarnane elemendi leidmisele, kuid nüüd on tulemuseks
   järjend ja me saame täpsustada nii algus- kui lõppindeksi. Nende vahele kirjutatakse koolon ja kui soovime, võime kas algus-, lõpuindeksi või mõlemad
   ka ära jätta. Kui ainult lõppindeks on täpsustatud, siis võetakse kõik elemendid järjendi algusest kuni lõppindeksini. Kui täpsustatud on ainult
   algusindeks, siis võetakse kõik alates algusindeksist kuni järjendi lõpuni. Kui mõlemad on puudu, siis kopeeritakse kõik elemendid.</span>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/slicing.png" alt="slicing"
+           style="height: 7rem">
+    </div>
   </div>
   <div class="mt-2"><span>Tuleb ka arvestada sellega, et algusindeksiga element on kaasaarvatud, aga lõppindeksiga element mitte.</span>
   </div>
@@ -257,8 +274,10 @@
       <td>["ploom", "õun", "kirss", "õun"].index("õun")</td>
       <td>["ploom", "õun", "kirss", "õun"]</td>
       <td>1</td>
-      <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on järjendis mitu korda, siis leiab esimese indeksi. Teiseks argumendiks saab soovi korral
-        anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.</td>
+      <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on järjendis mitu korda, siis leiab esimese indeksi.
+        Teiseks argumendiks saab soovi korral
+        anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
+      </td>
     </tr>
     <tr>
       <td>["ploom", "õun", "kirss", "õun"].index("õun", 2)</td>
@@ -315,8 +334,16 @@
   <div class="mt-2"><span>Saame kasutada ka <span class="fst-italic">while</span>-tsüklit, kuid siis peame koostama hoopis sellise tsükli, mis käiks läbi kõik
   järjendi indeksid. Indeksi põhjal saame ka vastava elemendi kätte. Seega alustama peame indeksist 0 ja viimane indeks on ühe võrra väiksem kui järjendi pikkus.
   Järjendi pikkuse saame teada <span class="fst-italic">len</span>-funktsiooniga:</span></div>
-  <div class="code-block mt-2">
-    <span [highlight]="whileLoopCode"></span>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div class="code-block">
+        <span [highlight]="whileLoopCode"></span>
+      </div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/fruit.png" alt="fruit"
+           style="height: 8rem">
+    </div>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -345,10 +372,16 @@
 </div>
 <div class="box-container mt-3">
   <strong class="strong">Faili sisu järjendisse lugemine</strong>
-  <div class="mt-2"><span>Andmete töötlemiseks on väga mugav kasutada järjendeid, aga kuidas saada andmed järjendisse? Väikeste andmemahtude
+  <div class="row px-0 mt-2">
+    <div class="col-lg-10"><span>Andmete töötlemiseks on väga mugav kasutada järjendeid, aga kuidas saada andmed järjendisse? Väikeste andmemahtude
   puhul võime muidugi järjendi ka otse koodis valmis kirjutada, aga kui andmemahud lähevad suuremaks, siis on lihtsam otse faili põhjal
   järjend luua. Me juba oskame faili sisu reahaaval lugeda, nüüd tuleb aga loetud read ka järjendisse lisada.
     Siin tuleb appi järjendite meetod <span class="fst-italic">append</span>, mille abil saab järjendisse elemente lisada.</span>
+    </div>
+    <div class="col-lg-1 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/pricetag.png" alt="price"
+           style="height: 7rem">
+    </div>
   </div>
   <div class="mt-2"><span>Alustuseks tuleks luua enne faili läbimist tühi järjend, kuhu hakkame siis järjest elemente lisama. Kui
   vaja, saame ka faili ridadele tüübiteisendusi teha. Järgmises näites luuakse hindade faili põhjal ujukomaarvude järjend. Leitakse
@@ -370,8 +403,10 @@
 <div class="mt-3 box-container">
   <div><span>Pythonis on olemas üks kasulik funktsioon nimega <span class="fst-italic">range</span>, mis inglise keeles tähendab ulatust. Seda funktsiooni saab
   kasutada arvujadade genereerimiseks. Sellele funktsioonile saab anda üks kuni kolm argumenti. Kui antakse ainult üks argument, siis see tähistab lõpparvu. Funktsioon
-  genereerib siis arvud alates 0-st kuni selle etteantud lõpparvuni. Lõpparv ise pole kaasaarvatud. Tagastatud väärtus on ulatus ehk <span class="fst-italic">range</span>-tüüpi,
-  aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusmeetodit <span class="fst-italic">list()</span>.</span></div>
+  genereerib siis arvud alates 0-st kuni selle etteantud lõpparvuni. Lõpparv ise pole kaasaarvatud. Tagastatud väärtus on ulatus ehk <span
+      class="fst-italic">range</span>-tüüpi,
+  aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusmeetodit <span class="fst-italic">list()</span>.</span>
+  </div>
   <div class="mt-2 code-block">
     <span [highlight]="rangeOneArgumentCode"></span>
   </div>
@@ -405,23 +440,34 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Funktsiooni <span class="fst-italic">range()</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükkliga. Näiteks saame <span class="fst-italic">range</span>-funktsiooni
+  <div><span>Funktsiooni <span class="fst-italic">range()</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükkliga. Näiteks saame <span
+    class="fst-italic">range</span>-funktsiooni
   abil genereerida indeksite jada ja seda kasutada järjendi läbimiseks. Saame kutsuda välja <span class="fst-italic">range</span>-funktsiooni andes argumendiks järjendi pikkuse ja
-  funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span></div>
+  funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span>
+  </div>
   <div class="mt-2 code-block">
     <span [highlight]="rangeLoopCode"></span>
   </div>
-  <div class="mt-2 code-block fst-italic">
-    <span>1. nädalapäev on esmaspäev<br></span>
-    <span>2. nädalapäev on teisipäev<br></span>
-    <span>3. nädalapäev on kolmapäev<br></span>
-    <span>4. nädalapäev on neljapäev<br></span>
-    <span>5. nädalapäev on reede<br></span>
-    <span>6. nädalapäev on laupäev<br></span>
-    <span>7. nädalapäev on pühapäev</span>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-10">
+      <div class="code-block fst-italic">
+        <span>1. nädalapäev on esmaspäev<br></span>
+        <span>2. nädalapäev on teisipäev<br></span>
+        <span>3. nädalapäev on kolmapäev<br></span>
+        <span>4. nädalapäev on neljapäev<br></span>
+        <span>5. nädalapäev on reede<br></span>
+        <span>6. nädalapäev on laupäev<br></span>
+        <span>7. nädalapäev on pühapäev</span>
+      </div>
+    </div>
+    <div class="col-lg-1 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/calendar.png" alt="calendar"
+           style="height: 7rem">
+    </div>
   </div>
 </div>
-<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="rangeTestCode" [formControlNameBase]="'rangeTest'" [items]="rangeTestItems"></app-radiochoice-test>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="rangeTestCode"
+                      [formControlNameBase]="'rangeTest'" [items]="rangeTestItems"></app-radiochoice-test>
 <h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="box-container mt-3">
   <strong class="strong">Sõnakett</strong>
@@ -451,19 +497,31 @@
     <span>Mäng läbi! Teenisid 4 punkti.</span>
   </div>
   <app-exercise-hints [hints]="wordChainHints"></app-exercise-hints>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/lists/chain.png" alt="chain"
+         style="height: 7rem">
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Klassinimekiri</strong>
-  <div class="mt-2"><span>4. klassi õpilased on kõik oma nimed faili kirja pannud, iga nimi eraldi real. Nüüd tahaksid nad teada saada, kellel klassist on
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div><span>4. klassi õpilased on kõik oma nimed faili kirja pannud, iga nimi eraldi real. Nüüd tahaksid nad teada saada, kellel klassist on
     tähemärkide poolest kõige pikem perekonnanimi. Samuti tahaksid nad näha perekonnanimesid sorteeritult. Kirjuta programm, mis loeks perekonnanimed
     järjendisse, leiaks sealt kõige pikema nime (sõne pikkuse leidmiseks sobib funktsioon <span
-      class="fst-italic">len</span>) ja
+          class="fst-italic">len</span>) ja
     väljastaks perenimed sorteeritult.</span></div>
-  <div class="mt-2"><span>Igalt realt perekonnanime eraldamiseks sobib hästi sõnede <span
-    class="fst-italic">split</span>-meetod, mis tükeldab
+      <div class="mt-2"><span>Igalt realt perekonnanime eraldamiseks sobib hästi sõnede <span
+        class="fst-italic">split</span>-meetod, mis tükeldab
   sõne järjendiks. Näiteks <span class="fst-italic">"Mari Kadri Maasikas".split()</span> annab tulemuseks järjendi <span
-      class="fst-italic">
+          class="fst-italic">
       ["Mari", "Kadri", "Maasikas"]</span>. Sealt oskame juba viimase elemendi indeksiga kätte saada.</span></div>
+    </div>
+    <div class="col-lg-2 mt-auto mx-3 mb-3">
+      <img src="../../../assets/images/lists/class_list.png" alt="class list"
+           style="height: 10rem">
+    </div>
+  </div>
   <div class="mt-2"><span>Faili <span class="fst-italic">nimed.txt</span> sisu (fail on UTF-8 kodeeringus):</span></div>
   <div class="code-block mt-2 fst-italic">
     <span>Kelly Põldmaa<br></span>

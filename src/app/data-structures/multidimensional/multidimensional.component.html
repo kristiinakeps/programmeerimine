@@ -142,10 +142,19 @@
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Maatriksid</strong>
-  <div class="mt-2"><span>Kahemõõtmelist järjendit, mille sisemistes järjendites on kõigis sama palju elemente, nimetatakse ka <strong class="strong">maatriksiks</strong>. Maatriks on
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div><span>Kahemõõtmelist järjendit, mille sisemistes järjendites on kõigis sama palju elemente, nimetatakse ka <strong
+        class="strong">maatriksiks</strong>. Maatriks on
   justkui tabel, millel on read ja veerud.</span></div>
-  <div class="mt-2 code-block">
-    <span [highlight]="matrixCode"></span>
+      <div class="mt-2 code-block">
+        <span [highlight]="matrixCode"></span>
+      </div>
+    </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/multidimensional/matrix.png" alt="matrix"
+           style="height: 10rem">
+    </div>
   </div>
   <div class="mt-2"><span>Sellises 3x3 maatriksis saame hoida näiteks mängu trips-traps-trull seisu:</span></div>
   <div class="mt-2 code-block">
@@ -157,7 +166,8 @@
   <div class="mt-2"><span>Kahemõõtmelise järjendi läbimiseks on meil vaja kahte tsüklit, üks välimise järjendi läbimiseks ja üks sisemise jaoks.
   Kolmemõõtmelise järjendi jaoks oleks meil vaja kolme tsüklit, neljamõõtmelise jaoks nelja jne. Nagu ka järjendid olid üksteise sees, siis on ka
   nende läbimiseks mõeldud tsüklid üksteise sees.</span></div>
-  <div class="mt-2"><span>Kui soovime lihtsalt kõik sisemiseks elemendid ekraanile väljastada, siis sobib meile tavaline <span class="fst-italic">for</span>-tsükkel.</span></div>
+  <div class="mt-2"><span>Kui soovime lihtsalt kõik sisemiseks elemendid ekraanile väljastada, siis sobib meile tavaline <span
+    class="fst-italic">for</span>-tsükkel.</span></div>
   <div class="mt-2 code-block">
     <span [highlight]="twoDimensionalForLoopCode"></span>
   </div>
@@ -177,31 +187,57 @@
     Indeksitega saame valikuliselt elemente
   väljastada. Näiteks võime võtta oma trips-traps-trulli seisu näite ja väljastada sealt diagonaali, mis läheb ülevalt vasakult alla paremale.
   Kuidas sellise diagonaali elemendid kätte saada?</span></div>
-  <div class="mt-2"><span>Tegelikult on see väga lihtne, sedapidi diagonaali kuuluvad kõik elemendid, kus rea ja veeru indeksid on võrdsed.</span></div>
-  <div class="mt-2 code-block"><span [highlight]="ticTacToeDiagonalCode"></span></div>
+  <div class="mt-2"><span>Tegelikult on see väga lihtne, sedapidi diagonaali kuuluvad kõik elemendid, kus rea ja veeru indeksid on võrdsed.</span>
+  </div>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div class="code-block"><span [highlight]="ticTacToeDiagonalCode"></span></div>
+    </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/multidimensional/tic_tack_toe.png" alt="tic-tack-toe"
+           style="height: 10rem">
+    </div>
+  </div>
   <div class="mt-2"><span>See tsükkel väljastab ekraanile kolm korda <span class="fst-italic">X</span>.</span></div>
 </div>
 <app-radiochoice-test [title]="'Millised arvud väljastab järgmine koodijupp ekraanile?'" [code]="nestedListTestCode"
-[formControlNameBase]="'nestedListTest'" [items]="nestedListTestItems"></app-radiochoice-test>
+                      [formControlNameBase]="'nestedListTest'" [items]="nestedListTestItems"></app-radiochoice-test>
 <h4 class="mt-5" [attr.id]="'kombineerimine'">Erinevate andmestruktuuride kombineerimine</h4>
 <div class="mt-3 box-container">
   <div><span>Nagu ka vilksamisi peatüki alguses nägime, siis saame erinevaid andmestruktuure omavahel kombineerida. Näiteks
   sõnastiku väärtused võivad olla järjendid, hulgad, ennikud või ka teised sõnastikud. Järjendi ja enniku elemendid võivad samuti olla ükskõik mis
-  teised andmestruktuurid. Vaid hulkade elemendid peavad olema mittemuudetavad, seega sinna sobivad ainult ennikud.</span></div>
+  teised andmestruktuurid. Vaid hulkade elemendid peavad olema mittemuudetavad, seega sinna sobivad ainult ennikud.</span>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Vaatame ühte näidet, kus meil on sõnastikku pandud kirja õpilaste hinded. Hindeid hoitakse järjendites. Lisaks
   on meil ka ennik, milles on kirjas ained. Esimene hinne igas järjendis vastab esimesele ainele ennikus. Teine hinne on teise aine kohta jne.
   Väljastame õpilaste teenitud hinded ekraanile.</span></div>
-  <div class="mt-2 code-block"><span [highlight]="gradesCode"></span></div>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div class="code-block"><span [highlight]="gradesCode"></span></div>
+    </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/multidimensional/grades.png" alt="grades"
+           style="height: 10rem">
+    </div>
+  </div>
   <div class="mt-2 code-block fst-italic"><span [highlight]="gradesOutput"></span></div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Järgmises näites on meil järjend hulkadest. Nendes hulkades on õpilaste lemmikvärvid. Leiame, kas leidub mõni selline värv,
   mis on kõigi õpilaste lemmikute seas.</span></div>
   <div class="mt-2 code-block"><span [highlight]="colorsCode"></span></div>
-  <div class="mt-2"><span>Antud juhul on koodijupi väljund selline:</span></div>
-  <div class="mt-2 code-block fst-italic"><span [highlight]="colorsOutput"></span></div>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div><span>Antud juhul on koodijupi väljund selline:</span></div>
+      <div class="mt-2 code-block fst-italic"><span [highlight]="colorsOutput"></span></div>
+    </div>
+    <div class="col-lg-2 my-3 mx-3">
+      <img src="../../../assets/images/multidimensional/paint.png" alt="paint"
+           style="height: 10rem">
+    </div>
+  </div>
 </div>
 <h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
@@ -209,12 +245,17 @@
   <div class="mt-2">
     <span>Me juba nägime, kuidas trips-traps-trulli mängu seisu saab maatriksiga kujutada. Selles harjutuses kirjutame funktsiooni
       <span class="fst-italic">võitja</span>, mis leiaks
-    kas ja kes on mängu võitnud. Funktsioon peaks argumendiks võtma mängulaua seisu ja tagastama sõnena "X", kui <span class="fst-italic">X</span>
+    kas ja kes on mängu võitnud. Funktsioon peaks argumendiks võtma mängulaua seisu ja tagastama sõnena "X", kui <span
+        class="fst-italic">X</span>
       võitis mängu, "O" kui <span class="fst-italic">O</span> võitis mängu ja "?" kui võitjat ei leidu. Meeldetuletuseks, et selles mängus on
     võitmiseks peab olema kas reas, veerus või diagonaalis kolm mängija tähist järjest.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="gameOutput"></span></div>
   <app-exercise-hints [hints]="gameHints"></app-exercise-hints>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/multidimensional/players.png" alt="players"
+         style="height: 10rem">
+  </div>
 </div>
 <button [routerLink]="'/klassid'" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>

@@ -51,30 +51,56 @@
       <td>2 in a</td>
       <td>True</td>
       <td>Kontrollib, kas element on hulgas</td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/element.png" alt="element"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>3 not in b</td>
       <td>True</td>
       <td>Kontrollib, ega elementi ei ole hulgas</td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/no_element.png" alt="no element"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a == {{'{'}}3, 6, 7, 1, 2{{'}'}}</td>
       <td>True</td>
       <td>Kontrollib, kas hulgad on võrdsed. Kusjuures elementide järjekord pole oluline</td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/set.png" alt="set"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a != b</td>
       <td>True</td>
       <td>Kontrollib, ega hulgad ei ole võrdsed. Elementide järjekord pole oluline.</td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/sets.png" alt="sets"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a & b</td>
       <td>{{'{'}}1, 2{{'}'}}</td>
       <td>Ühisosa ehk hulk elementidest, mida sisaldavad mõlemad hulgad.</td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/union.png" alt="union"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a | b</td>
@@ -82,7 +108,12 @@
       <td>Ühend ehk hulk elementidest, mida sisaldab vähemalt üks hulkadest. Ehk siis elemendid mis on hulgas A, hulgas
         B või neis mõlemas.
       </td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/intersection.png" alt="intersection"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a - b</td>
@@ -90,7 +121,12 @@
       <td>Vahe ehk hulk elementidest, mis on hulgas A, aga mida ei ole hulgas B. Teisisõnu hulk A, millest on ära võetud
         A ja B ühisosa.
       </td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/difference.png" alt="difference"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a ^ b</td>
@@ -98,7 +134,12 @@
       <td>Sümmeetriline vahe ehk hulk elementidest, mis on hulgas A või hulgas B, aga mitte neis mõlemas. Teisisõnu
         ühend, millest on ära võetud ühisosa.
       </td>
-      <td></td>
+      <td>
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/symmetric_difference.png" alt="symmetric difference"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>c < a</td>
@@ -106,7 +147,12 @@
       <td>Kontrollib, kas C on hulga A range alamhulk ehk kas hulk C koosneb ainult elementidest, mis on ka hulgas A.
         Kusjuures C ja A ei tohi olla võrdsed.
       </td>
-      <td></td>
+      <td rowspan="4">
+        <div class="text-center my-2">
+          <img src="../../../assets/images/sets/subset.png" alt="subset"
+               style="height: 10rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>a > c</td>
@@ -114,7 +160,6 @@
       <td>Kontrollib, kas A on hulga C range ülemhulk ehk kas kõik hulga C elemendid on olemas ka hulgas A. Kusjuures C
         ja A ei tohi olla võrdsed.
       </td>
-      <td></td>
     </tr>
     <tr>
       <td>c <= a</td>
@@ -122,7 +167,6 @@
       <td>Kontrollib, kas C on hulga A mitterange alamhulk ehk kas hulk C koosneb ainult elementidest, mis on ka hulgas
         A. Hulgad tohivad olla võrdsed.
       </td>
-      <td></td>
     </tr>
     <tr>
       <td>a >= c</td>
@@ -130,13 +174,13 @@
       <td>Kontrollib, kas A on hulga C mitterange ülemhulk ehk kas kõik hulga C elemendid on olemas ka hulgas A. Hulgad
         tohivad olla võrdsed.
       </td>
-      <td></td>
     </tr>
     </tbody>
   </table>
 </div>
-<app-radiochoice-test [title]="'Millised arvud on hulgas?'" [code]="symmetricDifferenceTestCode" [formControlNameBase]="'symmetricDifferenceTest'"
-[items]="symmetricDifferenceTestItems"></app-radiochoice-test>
+<app-radiochoice-test [title]="'Millised arvud on hulgas?'" [code]="symmetricDifferenceTestCode"
+                      [formControlNameBase]="'symmetricDifferenceTest'"
+                      [items]="symmetricDifferenceTestItems"></app-radiochoice-test>
 <div class="mt-3 box-container">
   <strong class="strong">Funktsioonid</strong>
   <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
@@ -256,8 +300,9 @@
     </tbody>
   </table>
 </div>
-<app-radiochoice-test [title]="'Millised elemendid on hulgas programmi töö lõpuks?'" [code]="methodsTestCode" [formControlNameBase]="'methodsTets'"
-[items]="methodsTestItems"></app-radiochoice-test>
+<app-radiochoice-test [title]="'Millised elemendid on hulgas programmi töö lõpuks?'" [code]="methodsTestCode"
+                      [formControlNameBase]="'methodsTets'"
+                      [items]="methodsTestItems"></app-radiochoice-test>
 <div class="mt-3 box-container">
   <strong class="strong">Hulk ja tsükkel</strong>
   <div class="mt-2">
@@ -303,6 +348,10 @@
     <span>Ainult Mihklil on: {{'{'}}'geograafia õpik', 'harilik pliiats', 'nätsupakk'{{'}'}}<br></span>
   </div>
   <app-exercise-hints [hints]="backpackHints"></app-exercise-hints>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/sets/backpacks.png" alt="backpacks"
+         style="height: 10rem">
+  </div>
 </div>
 <button [routerLink]="'/ennikud'" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>
