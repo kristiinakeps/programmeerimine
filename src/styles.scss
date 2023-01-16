@@ -116,6 +116,22 @@ a:hover {
   }
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-purple;
+}
+
+::-webkit-scrollbar-thumb {
+  background:  $color-purple-light;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:  $color-purple-light;
+}
+
 .navbar {
   background-color: $color-purple !important;
 

@@ -16,6 +16,8 @@ export class FillBlankDropdownTestComponent {
   title!: string;
   @Input()
   showArrow = false;
+  @Input()
+  code: string | null = null;
   correct = 'Tubli! Kõik lüngad on õigesti täidetud.'
   incorrect = 'Mõnes lüngas pole veel päris õige vastus. Proovi uuesti!'
   isCorrect = false;

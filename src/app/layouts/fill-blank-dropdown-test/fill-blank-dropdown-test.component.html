@@ -1,6 +1,9 @@
 <div class="intro-container mt-4">
   <h5 class="self-test">Enesekontroll.</h5>
   <div class="my-3"><span>{{ title }}</span></div>
+  <div *ngIf="code" class="code-block my-2">
+    <span [highlight]="code"></span>
+  </div>
   <div *ngFor="let item of items" class="mt-2">
     <div class="d-inline-block"><span>{{ item.textBeforeBlank }}</span></div>
     <fa-icon *ngIf="showArrow" class="code-input mx-3" [icon]="'arrow-right'"></fa-icon>

@@ -179,7 +179,22 @@
           <a class="nav-link">OBJEKTORIENTEERITUD PROGRAMMEERIMINE</a>
         </li>
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'klassid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Klassid</a>
+          <a class="nav-link" [routerLink]="'klassid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Klassid ja isendid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'klassid'" [fragment]="'konstruktor'" (click)="collapseNavbar()">Konstruktor</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'klassid'" [fragment]="'meetodid'" (click)="collapseNavbar()">Isendimeetodid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'klassid'" [fragment]="'str'" (click)="collapseNavbar()">Meetod <span class="fst-italic">__str__</span></a>
+        </li>
+        <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'klassid'" [fragment]="'andmestruktuurid'" (click)="collapseNavbar()">Isendid andmestruktuurides</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'klassid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'parilus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Pärilus</a>
