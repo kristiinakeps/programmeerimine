@@ -12,7 +12,7 @@
     <div class="form-group form-check">
       <input type="radio" [(ngModel)]="selection" name="{{ formControlNameBase }}" class="form-check-input"
              id="{{ formControlNameBase }}{{ i }}" [value]="item">
-      <label class="form-check-label" for="{{ formControlNameBase }}{{ i }}">{{ item.answer }}</label>
+      <label class="form-check-label" for="{{ formControlNameBase }}{{ i }}" [innerText]="item.answer"></label>
     </div>
   </div>
   <div class="mt-2">

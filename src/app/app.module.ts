@@ -14,32 +14,31 @@ import {AlgorithmComponent} from './basics/algorithm/algorithm.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {ReorderTestComponent} from './layouts/reorder-test/reorder-test.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { VariablesComponent } from './basics/variables/variables.component';
-import { CategorizeTestComponent } from './layouts/categorize-test/categorize-test.component';
-import { FillBlankDropdownTestComponent } from './layouts/fill-blank-dropdown-test/fill-blank-dropdown-test.component';
-import { ExerciseHintsComponent } from './layouts/exercise-hints/exercise-hints.component';
-import { MultichoiceTestComponent } from './layouts/multichoice-test/multichoice-test.component';
+import {VariablesComponent} from './basics/variables/variables.component';
+import {CategorizeTestComponent} from './layouts/categorize-test/categorize-test.component';
+import {FillBlankDropdownTestComponent} from './layouts/fill-blank-dropdown-test/fill-blank-dropdown-test.component';
+import {ExerciseHintsComponent} from './layouts/exercise-hints/exercise-hints.component';
+import {MultichoiceTestComponent} from './layouts/multichoice-test/multichoice-test.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { ConditionsComponent } from './basics/conditions/conditions.component';
-import { LoopsComponent } from './basics/loops/loops.component';
-import { RadiochoiceTestComponent } from './layouts/radiochoice-test/radiochoice-test.component';
-import { FunctionsComponent } from './basics/functions/functions.component';
-import { FilesComponent } from './basics/files/files.component';
-import { ErrorHandlingComponent } from './basics/error-handling/error-handling.component';
-import { ListsComponent } from './data-structures/lists/lists.component';
-import { DictionariesComponent } from './data-structures/dictionaries/dictionaries.component';
-import { SetsComponent } from './data-structures/sets/sets.component';
+import {ConditionsComponent} from './basics/conditions/conditions.component';
+import {LoopsComponent} from './basics/loops/loops.component';
+import {RadiochoiceTestComponent} from './layouts/radiochoice-test/radiochoice-test.component';
+import {FunctionsComponent} from './basics/functions/functions.component';
+import {FilesComponent} from './basics/files/files.component';
+import {ErrorHandlingComponent} from './basics/error-handling/error-handling.component';
+import {ListsComponent} from './data-structures/lists/lists.component';
+import {DictionariesComponent} from './data-structures/dictionaries/dictionaries.component';
+import {SetsComponent} from './data-structures/sets/sets.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
 import {HttpClientModule} from "@angular/common/http";
-import { TuplesComponent } from './data-structures/tuples/tuples.component';
-import { MultidimensionalComponent } from './data-structures/multidimensional/multidimensional.component';
-import { ClassesComponent } from './object-oriented/classes/classes.component';
-import { InheritanceComponent } from './object-oriented/inheritance/inheritance.component';
-import { InterfacesComponent } from './object-oriented/interfaces/interfaces.component';
-import { GameComponent } from './projects/game/game.component';
-import { WebComponent } from './projects/web/web.component';
-import { GuiComponent } from './projects/gui/gui.component';
-import { ComputerScienceComponent } from './additional/computer-science/computer-science.component';
+import {TuplesComponent} from './data-structures/tuples/tuples.component';
+import {MultidimensionalComponent} from './data-structures/multidimensional/multidimensional.component';
+import {ClassesComponent} from './object-oriented/classes/classes.component';
+import {InheritanceComponent} from './object-oriented/inheritance/inheritance.component';
+import {GameComponent} from './projects/game/game.component';
+import {WebComponent} from './projects/web/web.component';
+import {GuiComponent} from './projects/gui/gui.component';
+import {ComputerScienceComponent} from './additional/computer-science/computer-science.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +67,6 @@ import { ComputerScienceComponent } from './additional/computer-science/computer
     MultidimensionalComponent,
     ClassesComponent,
     InheritanceComponent,
-    InterfacesComponent,
     GameComponent,
     WebComponent,
     GuiComponent,
@@ -89,11 +87,11 @@ import { ComputerScienceComponent } from './additional/computer-science/computer
   providers: [{
     provide: HIGHLIGHT_OPTIONS,
     useValue: {
-        coreLibraryLoader: () => import('highlight.js/lib/core'),
-        languages: {
-          python: () => import('highlight.js/lib/languages/python')
-        }
+      coreLibraryLoader: () => import('highlight.js/lib/core'),
+      languages: {
+        python: () => import('highlight.js/lib/languages/python')
       }
+    }
   }],
   bootstrap: [MainComponent]
 })

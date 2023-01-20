@@ -1,7 +1,210 @@
 <h1>PÄRILUS</h1>
-<div class="mt-lg-5 box-container">
-  <span>See peatükk on veel valmimas!</span>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on pärilus?</span></div>
+  <div><span>2. Mis omadused on ülem- ja alamklassidel?</span></div>
+  <div><span>3. Kuidas määrata koodis ülemklassi?</span></div>
 </div>
-<button [routerLink]="'/liidesed'" class="btn btn-primary my-5 float-end">
+<div class="mt-3 box-container">
+  <div><span>Me oskame juba klasse ja isendeid luua ning kasutada. Kuid mis saab olukorras, kus meil on vaja mitmeid erinevaid klasse,
+  mis on omavahel üsna sarnased, kuid mitte päris samad. Näiteks Õpilane ja Õpetaja. Mõlemal on nimi, isikukood, elukoht, sünniaasta jne, kuid
+  vaid õpilasel on klassinumber ja vaid õpetajal on õpetatav aine. Kas siis peamegi lihtsalt kaks klassi looma ja mõlemale need korduvad
+  isendiväljad lisama?</span></div>
+  <div><span>Nagu ilmselt aimata võid, siis tegelikult ei pea. Selles peatükis räägime täpsemalt, kuidas panna klasse üksteiselt omadusi pärima.</span>
+  </div>
+</div>
+<h4 class="mt-5">Ülem- ja alamklassid</h4>
+<div class="mt-3 box-container">
+  <div><span><strong class="strong">Päriluse</strong> puhul on tegemist klassidevahelise omaduste pärimisega. Päritakse nii isendivälju
+    kui ka meetode. Kaks klassi ei saa üksteise omadusi pärida, aga üks neist saab olla <strong
+      class="strong">ülemklass</strong> ehk klass, millelt omadusi päritakse,
+  ja teine klass on <strong class="strong">alamklass</strong> ehk klass, mis pärib. Tüüpiliselt ülemklass on üldisem ja sellel võib olla mitmeid
+  alamklasse, mis on täpsemad. Näiteks meil võib olla ülemklass Isik, millel on alamklassid Õpilane ja Õpetaja. Või siis klass Sõiduk,
+  millel on alamklassid Auto, Mootorratas ja Kaubik.</span></div>
+  <div class="mt-2"><span>Klassil saab olla ainult üks ülemklass, aga sellel ülemklassil võib omakorda olla ülemklass ja
+sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid.</span></div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/inheritance/tree.png" alt="tree"
+         style="height: 25rem">
+  </div>
+</div>
+<app-reorder-test [question]="classesOrderQuestion"></app-reorder-test>
+<div class="mt-3 box-container">
+  <div><span>Vaatame kuidas ülem- ja alamklasse koodis kirja panna. Ülemklass on tegelikult täiesti tavaline klass ja ei erine kuidagi nendest,
+  mida eelmises peatükis kirjutasime. Loome näiteks klassi Isik, millel on isendiväljad nimi, sünniaasta ja elukoht. Lisame ka
+  näiteks meetodi <span class="fst-italic">tervita()</span>, mis väljastab ekraanile lihtsa tervituse.</span></div>
+  <div class="mt-2 code-block">
+    <span [highlight]="classPersonCode"></span>
+  </div>
+  <div class="mt-2">Selles klassis on meil kõik omadused, mis on kõikidel isikutel, kaasaarvatud näitks õpetajatel ja
+    õpilastel.
+    Nüüd loomegi klassile Isik kaks alamklassi &ndash; Õpetaja ja Õpilane.
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Alamklass on väga sarnane tavalisele klassile, on ainult üks väike erinevus. Nimelt tuleb klassi nime järele lisada ka
+  sulud ja sulgudesse ülemklassi nimi. Näiteks klassi Õpilane algus näeks välja nii:</span></div>
+  <div class="mt-2 code-block"><span [highlight]="classStudentStartCode"></span></div>
+  <div class="mt-2"><span>Kõik isendiväljad, mis olid ülemklassis, on ka alamklassis kättesaadavad ja need tuleb ka alamklassi isendit
+  luues väärtustada. Kui me ei taha alamklassi ühtegi isendivälja lisada, siis võime konstruktori ka kirjutamata jätta ja vaikimisi
+  kasutatakse alamklassi puhul konstruktorit, millel on samad argumendid nagu ülemklassil.</span></div>
+  <div class="mt-2">
+    <span>Jätame esialgu klassi Õpilane konstruktori lisamata. Lisame klassi hoopis ühe meetodi nimega <span
+      class="fst-italic">mine_kooli()</span>, mis lihtsalt väljastab ekraanile, et õpilane käis täna koolis.</span>
+  </div>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-9">
+      <div class="mt-2 code-block"><span [highlight]="classStudentsNoConstructorCode"></span></div>
+    </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/inheritance/student.png" alt="student"
+           style="height: 10rem">
+    </div>
+  </div>
+  <div class="mt-2"><span>Proovime ka luua mõned isendid ja veendume, et meie klassid toimivad nii nagu peavad.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="classStudentNoConstructorObjectsCode"></span></div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="classStudentNoConstructorOutput"></span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'super'">Ülemklassi poole pöördumine funktsiooniga <span class="fst-italic">super()</span>
+</h4>
+<div class="mt-3 box-container">
+  <div><span>Nüüd tahaksime klassile Õpilane lisada uue isendivälja klassinumbri jaoks. Seega tahame konstruktoris väärtustada nii ülemklassis
+  kirjeldatud väljad kui ka Õpilase enda isendivälja. Ülemklassi isendivälju saame väärtustada läbi ülemklassi konstruktori, aga kuidas selle poole
+  pöörduda?</span></div>
+  <div class="mt-2"><span>Ülemklassi poole pöördumiseks on meil funktsioon <strong
+    class="strong fst-italic">super()</strong>, mille abil
+  saame kasutada kõiki sealseid meetode, nende hulgas ka konstruktorit. Täiendame oma Õpilane klassi konstruktoriga, mis võtab
+  kõigepealt argumentideks kõik Isik klassi isendiväljade väärtused ja siis lisaks ka õpilase klassi numbri (mitmendas klassis ta õpib).</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="classStudentConstructorCode"></span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Proovime nüüd luua klassile Isik veel ühe alamklassi nimega Õpetaja. Õpetaja konstruktor peaks samuti väärtustama kõik
+  ülemklassi väljad, aga lisaks peaks selles klassis olema isendiväli õpetatava aine jaoks. Lisame ka ühe isendimeetodi
+  <span class="fst-italic">anna_tundi()</span>, mis võtab argumendiks klassi, kellele tundi antakse.</span></div>
+  <div class="row px-0 mt-2">
+    <div class="col-lg-8">
+      <div class="mt-2 code-block"><span [highlight]="classTeacherCode"></span></div>
+    </div>
+    <div class="col-lg-3 my-auto mx-3">
+      <img src="../../../assets/images/inheritance/teacher.png" alt="teacher"
+           style="height: 18rem">
+    </div>
+  </div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="classTeacherOutput"></span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Võime ka veenuda, et teise klassi omadustele ligipääs toimib ainult ühte pidi. Ülemklass ei tea midagi oma alamklasside
+  isendiväljade ega meetodite kohta.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="superHasNoAccessCode"></span></div>
+  <div class="mt-2 code-block fst-italic code-error"><span [innerText]="superHasNoAccessOutput"></span></div>
+  <div class="mt-2 code-block"><span [highlight]="superHasNoAccessFieldCode"></span></div>
+  <div class="mt-2 code-block fst-italic code-error"><span [innerText]="superHasNoAccessFieldOutput"></span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'ulekatmine'">Meetodite ülekatmine</h4>
+<div class="mt-3 box-container">
+  <div><span>Ülemklassis kirjeldatud meetodid on ka alamklassidel olemas. Näiteks meetodit <span class="fst-italic">tervita()</span>
+  saame ka klasside Õpilane ja Õpetaja isendite puhul kasutada, kuigi me pole seda nendes klassides kirja pannud.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="greetingCode"></span></div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="greetingOutput"></span></div>
+  <div class="mt-2"><span>Vahepeal aga võib juhtuda, et tahame, et alamklassis mõni ülemklassis kirjutatud meetod käituks natuke teistmoodi.
+  Sellisel juhul saame selle ülemklassi meetodi üle katta ehk kirjutada alamklassi täpselt sama nime ja argumentidega meetodi. Proovime näiteks
+  täiendada oma Õpetaja klassi meetodiga <span class="fst-italic">tervita()</span>.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="classTeacherOverrideCode"></span></div>
+  <div class="mt-2"><span>Kui nüüd proovime täpselt samade isenditega uuesti tervitamise meetodit, siis näeme, et klassi Õpetaja isendil
+  on see asendunud uue ülekaetud meetodiga.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="greetingCode"></span></div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="greetingOutputOverride"></span></div>
+</div>
+<app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="inheritedMethodsTestCode" [formControlNameBase]="'inheritanceTest'"
+[items]="inheritedMethodsTestItems"></app-radiochoice-test>
+<h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
+<div class="mt-3 box-container">
+  <strong class="strong">Arvutimängu mängijad</strong>
+  <div class="mt-2"><span>Arvutimängu mängijate andmete hoidmiseks on klass Mängija. Selles klassis on isendiväljad
+  <span class="fst-italic">kasutajanimi</span> ja <span class="fst-italic">tase</span>. Lisaks on klassis meetod
+  <span class="fst-italic">liigu_järgmisele_tasemele()</span>, mis tõstab kasutaja taset ühe võrra ja väljastab ta uue taseme.</span>
+  </div>
+  <div class="mt-2">Mängijad, kes jõuavad teatud tasemele, muutuvad supermängijateks. Supermängijad saavad oma tegelaste
+    välimust muuta ja iga tasemega teenivad ühe stiili juurde.
+    Supermängijate kujutamiseks on Mängijal alamklass Supermängija, millel on lisaks isendiväli saadud stiilide hulga
+    jaoks. Meetod <span class="fst-italic">liigu_järgmisele_tasemele()</span> on ülekaetud ja lisaks
+    taseme tõstmisele loositakse seal kasutajale uus stiil, mis lisatakse ta stiilide hulka. Uus tase, saadud stiil ja
+    kõik kasutaja stiilid
+    väljastatakse ekraanile.
+  </div>
+  <div class="mt-2">Mängus saadaolevad stiilid on allolevas järjendis. Selle võib lihtsalt oma koodi algusesse
+    kopeerida.
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="gameExerciseGivenStylesCode"></span></div>
+  <div class="mt-2">Uue stiili loosimiseks on meil vaja teeki <span class="fst-italic">random</span>, mida kasutasime ka
+    funktsioonide peatükis. Selles teegis on meetod <span class="fst-italic">choice</span>, mille abil saame loosida
+    etteantud järjendist
+    ühe suvalise elemendi.
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="gameExerciseGivenChoiceCode"></span></div>
+  <div class="mt-2"><span>Proovi kummagi klassi isendeid koodis luua ja nende meetode välja kutsuda.</span></div>
+  <app-exercise-hints [hints]="playerClassesExerciseHints"></app-exercise-hints>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/inheritance/game.png" alt="game"
+         style="height: 15rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Edasiarendus: mäng</strong>
+  <div class="mt-2"><span>Loome lisaks mängijate klassidele ka klassi Mäng, millel on üks isendiväli &ndash; sõnastik kõigist mängijatest, kus kasutajanimi
+  on võti ja mängija isend on väärtus. Uut Mängu isendit luues pole ühtegi kasutajat lisatud. Klassis on kaks meetodit, esimene neist on
+  <span class="fst-italic">lisa_mängija()</span>, mis küsib kasutajalt uue mängija nime ja taseme. Kusjuures
+  kui kasutajanimi on juba olemas, siis uut sama nimega mängijat ei lubata lisada. Kui tase on üle 1000, siis luuakse uus Supermängija isend (alguses on saadud stiilide hulk tühi),
+  kui alla 1000, siis luuakse Mängija isend ja lisatakse mängu sõnastikku. Teiseks meetodiks on <span
+      class="fst-italic">liiguta_järgmisele_tasemele()</span>,
+   mis küsib kasutajalt mängija kasutajanime, kes tuleks uuele tasemele liigutada, ja kutsub välja selle mängija meetodit
+    <span class="fst-italic">liigu_järgmisele_tasemele()</span>. Kui kasutaja sisestab kasutajanime, mida sõnastikus ei ole, siis väljastatakse
+  vastav teade.</span></div>
+  <div class="mt-2"><span>Lihtsuse mõttes jätame siit praegu välja olukorra, kus mängija saab mängu keskle taseme 1000 ja peaks muutuma
+  supermängijaks. Kes tahab, võib aga proovida sellele olukorrale ka lahendus leida.</span></div>
+  <div class="mt-2"><span>Põhiprogrammis luuakse uus Mängu isend ja hakatakse kasutajalt käsklusi küsima: "l" mängija lisamiseks ja
+  "j" järgmisele tasemele liigutamiseks. Kui kasutaja sisestab midagi muud, siis programm lõpetab oma töö.</span></div>
+  <div class="mt-2"><span>Näide programmi väljundist:</span></div>
+  <div class="mt-2 code-block fst-italic">
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">l</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">keit</span><br></span>
+    <span>Sisesta tase: <span class="code-input">3</span><br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">l</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">ossu12</span><br></span>
+    <span>Sisesta tase: <span class="code-input">1100</span><br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">l</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">keit</span><br></span>
+    <span>Sellise nimega kasutaja on juba olemas. Ei saa lisada...<br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">j</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">keit</span><br></span>
+    <span>keit liikus tasemele 4<br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">j</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">karro</span><br></span>
+    <span>Sellise nimega kasutajat pole. Ei saa järgmisele tasemele liigutada...<br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">j</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">ossu12</span><br></span>
+    <span>ossu12 liikus tasemele 1101<br></span>
+    <span>ossu12 sai uue stiili: draakon<br></span>
+    <span>ossu12 kõik stiilid: {{'{'}}'draakon'{{'}'}}<br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span
+      class="code-input">j</span><br></span>
+    <span>Sisesta kasutajanimi: <span class="code-input">ossu12</span><br></span>
+    <span>ossu12 liikus tasemele 1102<br></span>
+    <span>ossu12 sai uue stiili: rebane<br></span>
+    <span>ossu12 kõik stiilid: {{'{'}}'draakon', 'rebane'{{'}'}}<br></span>
+    <span>Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? <span class="code-input">kõik</span><br></span>
+  </div>
+  <app-exercise-hints [hints]="gameExerciseHints"></app-exercise-hints>
+</div>
+<button [routerLink]="'/mang'" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>
   <span class="ps-2">Järgmine peatükk</span></button>

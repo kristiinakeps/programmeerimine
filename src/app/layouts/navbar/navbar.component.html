@@ -199,8 +199,14 @@
         <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'parilus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Pärilus</a>
         </li>
-        <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'liidesed'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Liidesed</a>
+        <li class="nav-subitem" *ngIf="isInheritanceOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'parilus'" [fragment]="'super'" (click)="collapseNavbar()">Funktsioon <span class="fst-italic">super()</span></a>
+        </li>
+        <li class="nav-subitem" *ngIf="isInheritanceOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'parilus'" [fragment]="'ulekatmine'" (click)="collapseNavbar()">Ülekatmine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isInheritanceOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'parilus'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
         </li>
         <li class="nav-item menu-category" (click)="toggleProjects()">
           <a class="nav-link">PROJEKTID</a>

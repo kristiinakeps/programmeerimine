@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
     else if (this.router.url.startsWith('/jarjendid') || this.router.url.startsWith('/sonastikud') ||
       this.router.url.startsWith('/hulgad') || this.router.url.startsWith('/ennikud') || this.router.url.startsWith('/mitmemootmelised'))
       this.isDataStructuresCollapsed = false;
-    else if (this.router.url.startsWith('/klassid') || this.router.url.startsWith('/parilus') || this.router.url.startsWith('/liidesed'))
+    else if (this.router.url.startsWith('/klassid') || this.router.url.startsWith('/parilus'))
       this.isObjectOrientedProgrammingCollapsed = false;
     else if (this.router.url.startsWith('/mang') || this.router.url.startsWith('/veebileht') || this.router.url.startsWith('/graafika'))
       this.isProjectsCollapsed = false;
@@ -104,10 +104,6 @@ export class NavbarComponent implements OnInit {
 
   isInheritanceOpened(): boolean {
     return this.router.url.startsWith('/parilus') && !this.isObjectOrientedProgrammingCollapsed;
-  }
-
-  isInterfacesOpened(): boolean {
-    return this.router.url.startsWith('/liidesed') && !this.isObjectOrientedProgrammingCollapsed;
   }
 
   isGameOpened(): boolean {

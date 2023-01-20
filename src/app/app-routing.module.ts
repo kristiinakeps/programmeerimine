@@ -17,7 +17,6 @@ import {TUPLES_ROUTE} from "./data-structures/tuples/tuples.route";
 import {MULTIDIMENSIONAL_ROUTE} from "./data-structures/multidimensional/multidimensional.route";
 import {CLASSES_ROUTE} from "./object-oriented/classes/classes.route";
 import {INHERITANCE_ROUTE} from "./object-oriented/inheritance/inheritance.route";
-import {INTERFACES_ROUTE} from "./object-oriented/interfaces/interfaces.route";
 import {GAME_ROUTE} from "./projects/game/game.route";
 import {WEB_ROUTE} from "./projects/web/web.route";
 import {GUI_ROUTE} from "./projects/gui/gui.route";
@@ -25,7 +24,7 @@ import {COMPUTER_SCIENCE_ROUTE} from "./additional/computer-science/computer-sci
 
 const routes: Routes = [NAVBAR_ROUTE, HOME_ROUTE, INTRODUCTION_ROUTE, ALGORITHM_ROUTE, VARIABLES_ROUTE, CONDITIONS_ROUTE,
   LOOPS_ROUTE, FUNCTIONS_ROUTE, FILES_ROUTE, ERROR_HANDLING_ROUTE, LISTS_ROUTE, DICTIONARIES_ROUTE,
-  SETS_ROUTE, TUPLES_ROUTE, MULTIDIMENSIONAL_ROUTE, CLASSES_ROUTE, INHERITANCE_ROUTE, INTERFACES_ROUTE,
+  SETS_ROUTE, TUPLES_ROUTE, MULTIDIMENSIONAL_ROUTE, CLASSES_ROUTE, INHERITANCE_ROUTE,
   GAME_ROUTE, WEB_ROUTE, GUI_ROUTE, COMPUTER_SCIENCE_ROUTE];
 
 const routerOptions: ExtraOptions = {
