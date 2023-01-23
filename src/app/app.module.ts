@@ -38,7 +38,6 @@ import {InheritanceComponent} from './object-oriented/inheritance/inheritance.co
 import {GameComponent} from './projects/game/game.component';
 import {WebComponent} from './projects/web/web.component';
 import {GuiComponent} from './projects/gui/gui.component';
-import {ComputerScienceComponent} from './additional/computer-science/computer-science.component';
 
 @NgModule({
   declarations: [
@@ -69,8 +68,7 @@ import {ComputerScienceComponent} from './additional/computer-science/computer-s
     InheritanceComponent,
     GameComponent,
     WebComponent,
-    GuiComponent,
-    ComputerScienceComponent
+    GuiComponent
   ],
   imports: [
     BrowserModule,

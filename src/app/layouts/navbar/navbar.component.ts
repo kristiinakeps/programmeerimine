@@ -38,8 +38,6 @@ export class NavbarComponent implements OnInit {
       this.isObjectOrientedProgrammingCollapsed = false;
     else if (this.router.url.startsWith('/mang') || this.router.url.startsWith('/veebileht') || this.router.url.startsWith('/graafika'))
       this.isProjectsCollapsed = false;
-    else if (this.router.url.startsWith('/informaatika'))
-      this.isAdditionalCollapsed = false;
   }
 
   collapseNavbar(): void {
@@ -132,10 +130,6 @@ export class NavbarComponent implements OnInit {
 
   toggleProjects(): void {
     this.isProjectsCollapsed = !this.isProjectsCollapsed;
-  }
-
-  toggleAdditional(): void {
-    this.isAdditionalCollapsed = !this.isAdditionalCollapsed;
   }
 
 }
