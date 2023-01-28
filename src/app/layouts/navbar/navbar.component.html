@@ -214,6 +214,33 @@
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'mang'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Mängu loomine</a>
         </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'aken'" (click)="collapseNavbar()">Akna loomine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'tegelane'" (click)="collapseNavbar()">Tegelase loomine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'liikumine'" (click)="collapseNavbar()">Liikumine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'lumepallid'" (click)="collapseNavbar()">Lumepallid</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'kokkuporked'" (click)="collapseNavbar()">Kokkupõrked</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'kingitused'" (click)="collapseNavbar()">Kingitused</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'aeg'" (click)="collapseNavbar()">Aja loendamine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'lopp'" (click)="collapseNavbar()">Lõpuaken</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'mang'" [fragment]="'heli'" (click)="collapseNavbar()">Heli</a>
+        </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'veebileht'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veebilehe loomine</a>
         </li>
