@@ -454,6 +454,22 @@ a:hover {
   font-weight: bold;
 }
 
+.hljs-tag {
+  color: $color-blue-dark;
+}
+
+.hljs-name {
+  color: $color-blue-dark;
+}
+
+.hljs-attr {
+  color: $color-pink;
+}
+
+.hljs-meta {
+  color: $color-blue-dark;
+}
+
 .code-error {
   color: $color-red-error;
 }

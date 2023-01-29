@@ -1,6 +1,467 @@
-<h1>VEEBILEHE LOOMINE</h1>
-<div class="mt-lg-5 box-container">
-  <span>See peatükk on veel valmimas!</span>
+<h1>VEEBIRAKENDUSE LOOMINE</h1>
+<div class="mt-4 intro-container">
+  <h5>Mida selles peatükis õpime?</h5>
+  <div><span>1. Mis on <span class="fst-italic">flask</span>?</span></div>
+  <div><span>2. Kuidas veebirakendused töötavad?</span></div>
+  <div><span>3. Kuidas luua lihtsat veebirakendust?</span></div>
+  <div><span>4. Mis on HTML ja CSS ning kuidas neid kasutada?</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Veebirakendusi kasutame me kõik igapäevaselt, seega oskad ilmselt hästi ette kujutada, millised veebirakendused välja näevad.
+  Selles peatükis vaatame ühte lihtsat näidet, kuidas Pythoni abiga oma veebirakendust luua.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kasutame veebirakenduse loomiseks Pythoni veebiraamistikku <span class="fst-italic">Flask</span>. Teegid pakuvad meile
+  igasugu klasse ja funktsioone oma rakenduste loomiseks. Raamistikud on aga juba valmis rakendused, mida saab ise oma vajaduste järgi
+  edasi arendada. Õnneks pole nende paigaldamine keerulisem teekide paigaldamisest ja Thonnys saab <span
+      class="fst-italic">Flask</span>'i
+  paigaldada täpselt samamoodi nagu paigaldasime <span class="fst-italic">pygame</span>'i.</span> Ülevalt menüüst <span
+    class="fst-italic">Tools</span>,
+    sealt edasi <span class="fst-italic">Manage packages...</span> ja siis tuleb otsinguribale kirjutada <span
+      class="fst-italic">Flask</span>,
+    käivitada otsing ja installida sellenimeline raamistik.
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'veebirakendused'">Kuidas veebirakendused töötavad?</h4>
+<div class="mt-3 box-container">
+  <div><span>Enne veel kui hakkame ise veebirakendust looma, räägime lühidalt, kuidas veebirakendused töötavad. Veebirakendused on programmid, mis
+    käivad tüüpiliselt kuskil serveris.
+  Server on kindlat tüüpi arvuti, mis pakub mingit teenust. Näiteks meiliserver tegeleb e-kirjade saatmisega. Mänguserverid võimaldavad mängida mänge teiste
+    kasutajatega. Veebiserver tegeleb veebilehtede kättesaadavaks tegemisega.</span></div>
+  <div class="mt-2">Serveril on oma kindel IP-aadress ehk internetiaadress, mille järgi saavad teised seadmed tema poole
+    läbi võrgu pöörduda. IP-aadresseid on
+    näiteks 192.168.104.183 ja 127.0.0.1. Kuid tüüpiliselt me ei pea mingile veebilehele minemiseks kirjutama
+    brauseriribale sellist aadressi. Me
+    kasutame tüüpiliselt midagi loetavamat nagu näiteks <span class="fst-italic">https://www.progema.ee/</span> või
+    <span class="fst-italic">https://www.youtube.com/</span>.
+    Neid nimetatakse domeeninimedeks ja arvutid kasutavad eraldi domeeninimede süsteemi (DNS) teenust, mis teisendab
+    sellised inimloetavad nimed IP-aadressiteks. Meie
+    jaoks see teisendus on tüüpiliselt peidetud ja me näeme vaid domeeninime.
+  </div>
+  <div class="mt-2">Igal arvutil on ka oma lokaalne IP 127.0.0.1, mille kaudu saame kasutada ka meie arvutis käivaid
+    veebirakendusi. Sellele vastab ka nimi
+    <span class="fst-italic">localhost</span>. Hiljem, kui oma veebirakenduse käima paneme, siis saame samuti brauserist
+    selle IP või nimega oma rakendusele ligi.
+  </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/web/dns.png" alt="dns"
+         style="height: 10rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Räägime nüüd ka natuke veebirakenduse enda ülesehitusest. Tüüpiliselt on veebirakendusel kaks poolt. Esimene neist on kasutajapoolne osa ehk see, mida kasutaja oma
+  brauseris näeb. Seda kutsutakse inglise keeles <span class="fst-italic">frontend</span>. Teine osa on serveripool, kus toimub tööloogika ja ka suhtlus andmebaasiga. Seda
+    poolt kutsutakse inglise keeles <span class="fst-italic">backend</span>. Kasutajapoole tööks on kasutajale infot kuvada ja sisendeid küsida, ülejäänud töö toimub
+    serveripoolel. Kasutajapool suhtleb serveripoolega läbi päringute. Ta saab serveripoolele saata erinevaid päringuid ja serveripool oskab nendele vastavalt käituda
+    ja kasutajapoolele vastata.
+  Vahepeal on vaja päringuga serveripoolelt lihtsalt mingit infot saada, vahepeal andmeid salvestada. </span></div>
+  <div class="mt-2"><span>Kasutajapoolel kasutatakse peamiselt järgmiseid programmeerimiskeeli: HTML, CSS ja JavaScript. HTML määrab ära, mis elemendid meil
+  brauseriaknas olema peavad, CSS-iga antakse neile ilus kujundus ja JavaScripti abil määratakse ära veebilehe käitumine. Sellise lihtsa rakenduse puhul, nagu meil,
+    polegi tihtipeale JavaScripti vaja. HTML-ist ja CSS-ist räägime hiljem täpsemalt.
+  Pythonit kasutame serveripoolse programmeerimiskeelena.</span></div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/web/webapp.png" alt="webapp"
+         style="height: 15rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Tavaliselt suhtlevad veebirakendused HTTP-meetodite kaudu. Nende meetodite abil suhtleb kasutajapool serveripoolega ning ka
+    erinevad veebirakendused omavahel. Põhilised neli HTTP-meetodit, mida kasutatakse on järgmised:</span></div>
+  <div class="mt-2"><span><strong class="strong">GET</strong> - andmete ja info küsimiseks.</span></div>
+  <div class="mt-2"><span><strong class="strong">POST</strong> - uue kirje loomiseks.</span></div>
+  <div class="mt-2"><span><strong class="strong">PUT</strong> - olemasoleva kirje muutmiseks.</span></div>
+  <div class="mt-2"><span><strong class="strong">DELETE</strong> - kirje kustutamiseks.</span></div>
+  <div class="mt-2"><span>Meie veebirakendus hakkab kasutama neist esimest kaht.</span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'loomine'">Kuidas luua veebirakendust?</h4>
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-lg-9"><span>Selles peatükis loome lihtsa kodutööde haldamise veebirakenduse. Kui veebirakendus käivitada, siis algselt ühtegi kodutööd ei ole, kuid
+  läbi rakenduse saame neid endale lisada. Veebirakendus kuvab meile ootel kodutööde nimekirja ja saame sealt tehtud kodutööd ka eemdaldada.</span>
+    </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/web/book.png" alt="book"
+           style="height: 5rem">
+    </div>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Alustame kõige lihtsamast <span class="fst-italic">Flask</span>'i rakenduse näitest.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="webBasicCode"></span></div>
+  <div class="mt-2">Kõigepealt on meil vaja <span class="fst-italic">Flask</span> importida. Seejärel saame luua uue
+    veebirakenduse.
+    Konstruktorile peame andma argumendi <span class="fst-italic">__name__</span>. See on eriline muutuja, mis annab
+    <span class="fst-italic">Flask</span>'ile
+    vajalikku infot selle kohta, kuidas rakendus käivitati.
+  </div>
+  <div class="mt-2"><span>Määrame ära meie rakenduses olevad aadressid. Lihtsalt üksik kaldkriips tähistab avalehte ehk aadressi, millel pole oma
+  konkreetset nime. See aadress määratakse ära funktsiooni kohal oleva annotatsiooniga, mis algab @-sümboliga. Funktsioonis tagastatakse selle lehekülje sisu.
+  Hetkel me tagastame lihtsalt sõne, mis tuleks veebibrauseris kuvada. </span></div>
+  <div class="mt-2"><span>Proovi see rakendus käivitada. Konsooli peaks ilmuma midagi sellist:</span></div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="webOutput"></span></div>
+  <div class="mt-2"><span>Oma veebirakendusele saame ligi aadressil <a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a> või
+  <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>. 127.0.0.1 on meie lokaalne IP ja sellele viitab ka nimi <span
+      class="fst-italic">localhost</span>.
+  Kooloniga järgneb arv 5000, mis tähistab arvuti porti, kus meie rakendus käib. Vaikimisi tehakse lehele minnes GET-päring. Kõik tehtud päringud
+  ilmuvad ka Thonny konsooli, kus on näha, mis ajal milline päring tehti.</span></div>
+  <div class="mt-2 code-block fst-italic"><span [innerText]="requestLog"></span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'html'">Mis on HTML?</h4>
+<div class="mt-3 box-container">
+  <div><span>Veebirakendustes kasutatakse ekraanile kuvatavate elementide määramiseks keelt nimega HTML. See tuleb ingliskeelsest nimest
+    <span class="fst-italic">HyperText Markup Language</span>. Kui me tahame oma rakenduses midagi vähegi keerulisemat kuvada, siis peaksime samuti
+    HTML-i kasutama hakkama. Vaatame ühte lihtsat HTML-i näidet.
+  </span></div>
+  <div class="mt-2 code-block"><span [highlight]="simpleHtmlCode"></span></div>
+  <div class="mt-2"><span>Siin esimene rida ütleb ära, et meil on tegemist HTML dokumendiga. Ülejäänud sisu on <span
+    class="fst-italic">html</span>-märgendite vahel.
+  Kogu HTML-i keel koosnebki märgendite abil loodud elementidest. Igal elemendil on algusmärgend ja lõpumärgend. Algusmärgend on nurgeliste sulgude vahel ja
+  lõpumärgendil on alguses lisaks nurksulule ka kaldkriips. Nende abil määratakse ära, kus element algab ja lõppeb. </span>
+  </div>
+  <div class="mt-2">Märgend <span class="fst-italic">head</span> tähistab HTML-faili päist. Seal saab ära määrata,
+    mis kodeeringus meie fail on,
+    importida teisi vajalikke faile ja määrata ka lehekülje nime. Märgendi <span class="fst-italic">title</span> vahele
+    läheb lehekülje nimi, mida
+    kuvatakse ka brauseris vahelehe kaardil.
+  </div>
+  <div class="mt-2">Sellele järgneb märhend <span class="fst-italic">body</span>, kus on kõik need elemendid, mida
+    brauseris kuvatakse. Näiteks
+    <span class="fst-italic">h1</span>-märgend tähistab kõige suuremat pealkirja.
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-lg-8"><span>Siin on ära toodud mõned kasulikud HTML-i märgendid, mida hakkame oma veebilehel kasutama. Neid märgendeid on tegelikult veel omajagu,
+  aga praegu meile nendest piisab. Kogu nimekiri koos ingliskeelsete selgitustega on leitav näiteks leheküljelt
+    <a href="https://www.w3schools.com/TAGS/default.asp" target="_blank">https://www.w3schools.com/TAGS/default.asp</a>.</span>
+    </div>
+    <div class="col-lg-3 my-auto mx-3">
+      <img src="../../../assets/images/web/tag.png" alt="tag"
+           style="height: 8rem">
+    </div>
+  </div>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 30%">Märgendi nimi</th>
+      <th style="width: 70%">Seletus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>h1, h2, h3, h4, h5, h6</td>
+      <td>Pealkirjad erinevas suuruses, h1 on kõige suurem ja h6 kõige väiksem</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Link</td>
+    </tr>
+    <tr>
+      <td>div</td>
+      <td>Dokumendi osa, kasutatakse põhiliselt teiste elementide paigutuse määramiseks</td>
+    </tr>
+    <tr>
+      <td>form</td>
+      <td>Vorm kasutajalt sisendi küsimiseks</td>
+    </tr>
+    <tr>
+      <td>button</td>
+      <td>Nupp</td>
+    </tr>
+    <tr>
+      <td>img</td>
+      <td>Pilt</td>
+    </tr>
+    <tr>
+      <td>input</td>
+      <td>Element kasutajalt sisendi küsimiseks</td>
+    </tr>
+    <tr>
+      <td>span</td>
+      <td>Dokumendi või teksti osa, kasutatakse näiteks lühikese teksti kirjutamiseks või tekstis teatud osale teise
+        stiili määramiseks
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-lg-8"><span>Proovime panna oma rakenduse avalehe hoopis meie kirjutatud HTML-i tagastama. Selleks impordime funktsiooni <span
+      class="fst-italic">render_template()</span>,
+  millele saab ette anda HTML-faili nime ja mis tagastab selle faili sisu. Selleks, et see funktsioon leiaks meie HTML-faili üles, peab meie HTML-fail asuma
+  kaustas nimega <span class="fst-italic">templates</span>. See kaust peab olema samas kaustas nagu meie Pythoni koodifail. Tekitame sellise kausta ja
+  loome sinna faili nimega <span class="fst-italic">avaleht.html</span>. Kopeerime sellesse faili ülealtoodud lihtsa HTML-faili näite.</span>
+    </div>
+    <div class="col-lg-3 my-auto mx-3">
+      <img src="../../../assets/images/web/folders_templates.png" alt="templates folder"
+           style="height: 8rem">
+    </div>
+  </div>
+  <div class="mt-2">Nüüd tagastame oma veebirakenduses sõne asemel funktsiooni <span class="fst-italic">render_template()</span>
+    tagastusväärtuse.
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="webWithHtmlCode"></span></div>
+</div>
+<div class="mt-3 box-container">
+  <strong class="strong">Jinja mallid</strong>
+  <div class="mt-2"><span>Flask kasutab Jinja malle, mis võimaldavad meil HTML-failis sees kasutada muutujaid ja kirjutada tingimus- ja korduslauseid. Me
+  soovime oma Pythoni programmis luua järjendi, kus hakkame ootel kodutöid hoidma. Veebirakenduse avalehel sooviksime neid kuvada. <span
+      class="fst-italic">Flask</span>
+  laseb meil selle järjendi kaasa anda ja tänu Jinja malli võimalustele saame seal tsüklis seda järjendit läbi käia ja iga järjendi elemendi jaoks jupi
+  HTML-i luua. Jinja malli osad kirjutatakse loogeliste sulgude ja protsendimärkide vahele.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="htmlWithTasksLoopCode"></span></div>
+  <div class="mt-2"><span>Erinevalt Pythonist pole siin taanded tegelikult üldse olulised, neid kasutatakse ainult loetavuse huvides. Iga
+  HTML-elemendi lõpetab lõpumärgend ja Jinja malli <span class="fst-italic">for</span>-tsükli lõpetab <span
+      class="fst-italic">{{'{'}}% endfor %{{'}'}}</span>.
+    Kui soovime lihtsalt muutuja väärtust kuvada, siis paneme muutuja nime kahekordsete loogeliste sulgude vahele.</span>
+  </div>
+  <div class="mt-2"><span>Põhiprogrammis loome testimiseks mõne elemendiga ootel kodutööde järjendi ja anname selle funktsioonile
+  <span class="fst-italic">render_template()</span> argumendiks kaasa. Me peame seal täpsustama, millise nimega argumendile soovime selle väärtuse omistada,
+  seega peame kirjutama kõigepealt selle muutuja nime, mida oma Jinja mallis kasutasime ja siis omistama sellele väärtuse meie põhiprogrammist.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="mainAppWithTasksCode"></span></div>
+  <div class="mt-2"><span>Rakendust taaskäivitades peaks nüüd kodutööd ka üksteise järel eraldi ridadele tekkima.</span>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Kui ikkagi jätame oma kodutööde järjendi programmi alguses tühjaks, siis kuvab meie rakendus ikka "Siin on sinu ootel kodutööd:". Selle asemel
+  võiks sellisel juhul kuvada hoopis "Ootel kodutöid ei ole". Õnneks saame seda Jinja malli abil korraldada. Sarnaselt tsüklile, saab seal kirja panna ka
+  tingimuslauseid. Järjendi pikkuse leidmine käib Jinja mallis natuke teisiti kui Pythonis. Selle saab leida nii: <span
+      class="fst-italic">kodutööd | length</span>.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="htmlWithConditionCode"></span></div>
+</div>
+<h4 class="mt-5" [attr.id]="'lisamine'">Uue kodutöö lisamine</h4>
+<div class="mt-3 box-container">
+  <div><span>Proovime nüüd hakata lisama oma rakendusele tööloogikat. Alustame uue kodutöö lisamisest. Loome selleks eraldi lehekülje, kus oleks
+  tekstikast, kuhu kasutaja saab uue kodutöö kirja panna ja nupp, millega see salvestada. Proovime kõigepealt luua oma uue lehekülje jaoks HTML-i
+  faili nimega <span class="fst-italic">lisamine.html</span>. See peaks minema samuti kausta nimega <span
+      class="fst-italic">templates</span>.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="addingNewPageHtmlCode"></span></div>
+  <div class="mt-2"><span>Siin kasutame <span class="fst-italic">form</span>-märgendit, mis tekitab meile vormi kasutajalt sisendi küsimiseks. Määrame vormile
+    meetodiks <span class="fst-italic">post</span>, sest tahame vormi esitades POST-päringuga need andmed oma serveripoolele saata. Meil on vaja kasutajalt
+  küsida vaid uue kodutöö kirjeldust, selleks kasutame <span class="fst-italic">input</span>-märgendit. Selle sisendi tüübiks paneme <span
+      class="fst-italic">text</span>,
+  sest tahame, et kasutaja meile teksti sisestaks. Lisaks määrame sisendile ka ID ja nime. Nime järgi saame hiljem Pythoni poolel sisestatud väärtuse kätte. Kui
+  sooviksime rohkem andmeid küsida, siis saaksime veel teisi <span class="fst-italic">input</span>-märgendeid lisada ja anda neile lihtsalt erinevaid ID-d ja nimed.
+  Viimane element meie vormis on nupp, mis vajutamisel meie vormi esitab ehk teeb POST-päringu sisestatud andmetega.</span>
+  </div>
+  <div class="mt-2"><span>Oma veebirakendusse lisame nüüd uue lehekülje. Paneme selle nimeks näiteks "/lisamine". Kui kasutaja sellele aadressile läheb,
+  siis peaks meie rakendus kuvama <span class="fst-italic">lisamine.html</span> sisu.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="addingNewPageCode"></span></div>
+  <div class="mt-2"><span>Nüüd kui brauseris lähed aadressile <a href="http://127.0.0.1:5000/lisamine" target="_blank">http://127.0.0.1:5000/lisamine</a>,
+  siis peaks sulle avanema meie uus vorm. Kuid kui proovid vajutada nuppu "Lisa", siis saad veateate, mis ütleb
+  <span class="fst-italic">Method Not Allowed</span> ehk selline meetod pole lubatud. Me oleme oma veebirakenduse seadistanud lubama
+  ainult GET-päringuid sellel aadressil, nüüd tahame lisada ka POST-päringud.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Veebirakenduses saame uut aadressi lisades määrata ära, mis tüüpi päringud on sellele aadressile lubatud. Vaikimisi on lubatud ainult
+  GET-päringud. Nüüd lisame oma "/lisamine" aadressile ka POST-päringu võimaluse. Funktsiooni sees peame siis lisama kontrolli, mis vaataks, mis tüüpi
+  päring tehti. GET-päringu puhul tagastame jätkuvalt lihtsalt vastava HTML-i, aga POST-päringu puhul tahame nüüd uue kodutöö järjendisse lisada ja seejärel
+  võikisme kasutaja tagasi avalehele suunata.</span></div>
+  <div class="mt-2"><span>Kõigepealt peame lisama mõned vajalikud impordid:</span></div>
+  <div class="mt-2 code-block"><span
+    [highlight]="'from flask import Flask, render_template, request, url_for, redirect'"></span></div>
+  <div class="mt-2"><span>Seejärel täiendame oma lisamise funktsiooni:</span></div>
+  <div class="mt-2 code-block"><span [highlight]="addingNewPostCode"></span></div>
+  <div class="mt-2"><span>Kõigepealt anname aadressile teada, mis sorti meetodid seal lubatud on.
+  Seejärel peame funkstiooni sisus kontrollima, mis sorti päring tehti. Selle info saame kätte <span class="fst-italic">request</span>-objektist.
+  Väljal <span class="fst-italic">method</span> on kirjas kasutatud meetodi nimi. Kui tegemist oli POST-meetodiga, siis saame
+  <span class="fst-italic">request</span>-objekti küljest kätte ka oma vormi (väljal <span
+      class="fst-italic">form</span>). See vorm on sõnastik, kus
+  võtmed on HTML-is <span class="fst-italic">input</span>-märgendile antud nimed.</span></div>
+  <div class="mt-2"><span>Lõpuks, kui tegemist oli POST-päringuga, siis tahame suunata kasutaja tagasi avalehele. Selleks kasutame funktsiooni
+  <span class="fst-italic">redirect</span>, millele argumendiks anname funktsiooni <span
+      class="fst-italic">url_for</span> tagastusväärtuse.
+  Funktsioon <span class="fst-italic">url_for</span> paneb meile soovitud lehekülje jaoks täispika aadressi kokku, mida saab kasutaja suunamiseks kasutada.</span>
+  </div>
+  <div class="mt-2"><span>Proovi nüüd rakendus taaskäivitada ja uuesti kodutööd lisada. Seekord peaks lisamine toimima ja avalehel peaks uus lisatud
+  kodutöö ka nähtavale ilmuma.</span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Lisame veel natuke lehekülgede vahel liikumist. Esiteks tahaks me nüüd oma avalehele lingi, mille abil saab liikuda uue kodutöö lisamise lehele.
+  Teiseks võiks lisamise lehel olla võimalus ka tagasi avalehele minna, juhul kui kasutaja mõtleb ümber ja ikkagi ei soovi uut kodutööd lisada.</span>
+  </div>
+  <div class="mt-2"><span>Täiendame kõigepealt oma <span
+    class="fst-italic">avaleht.html</span> faili ja lisame sinna <span class="fst-italic">for</span>-tsükli järele
+  ühe lingi. Lingil on omadus nimega <span class="fst-italic">href</span>, kus saab ära määrata, millisele aadressile link peaks viima. Siin saame
+  samuti kasutada funktsiooni <span class="fst-italic">url_for()</span> kui lisame ta kahekordsete loogeliste sulgude vahele. Paneme lingi ka
+  <span
+    class="fst-italic">div</span>-märgendite vahele, et meil oleks hiljem lihtsam veebilehele kujundust lisada.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="homePageWithAddNewCode"></span></div>
+  <div class="mt-2"><span>Brauseris suunatakse meid nüüd sellel lingil vajutades lisamise lehele. Samasuguse loogikaga saame ka lisamise lehele panna "Tagasi" lingi,
+  mis suunaks meid avalehele.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="addPageWithBackCode"></span></div>
+  <div class="mt-2">Sellega on meil valmis kogu loogika uue kodutöö lisamiseks. Järgmiseks vaatame olemasoleva kodutöö
+    kustutamist.
+  </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/web/adding_no_css.png" alt="adding"
+         style="height: 20rem">
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'kustutamine'">Olemasoleva kodutöö kustutamine</h4>
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-lg-9"><span>Kustutamiseks pole meil otseselt eraldi lehekülge vaja, piisaks sellest, kui iga kodutöö juures oleks eemaldamise nupp. Kõige lihtsam variant on
+  jälle kasutada ära <span class="fst-italic">form</span>-elementi, milles on üks <span class="fst-italic">input</span>-element eemaldatava väärtusega.
+  Me tahame selle <span class="fst-italic">input</span>-elemendi kasutaja eest ära peita ja ise sinna kodutöö kirjelduse automaatselt väärtuseks panna. Õnneks saame
+  kõike seda lihtsasti teha. Saame määrata tüübiks "hidden", mis tähendabki peidetud välja, ja väärtuse saame läbi omaduse <span
+        class="fst-italic">value</span> ette anda.
+    Kugi HTTP-meetoditest sobiks kustutamiseks kõige paremini DELETE, siis peame siin ikkagi POST-meetodit kasutama, sest HTML ei luba kasutada
+  PUT- ja DELETE-meetode.</span></div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/web/bin.png" alt="bin"
+           style="height: 13rem">
+    </div>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="homePageWithDeleteCode"></span></div>
+  <div class="mt-2"><span>Veebirakenduses lisame avalehe lubatud meetodite hulka ka POST-meetodi, mille korral eemdaldame etteantud kodutöö ootel kodutööde järjendist.</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="applicationWithDeleteCode"></span></div>
+  <div class="mt-2"><span>Nüüd peaks iga kodutöö all olema ka eemdalamise nupp, millele vajutades vastav kodutöö järjendist eemaldatakse. Sellega on kogu
+  meie veebirakenduse loogika olemas, aga kindlasti nõustud, et see rakendus ei näe just kõige ilusam välja. Järgmiseks vaatamegi, kuidas neid elemente kujundada.</span>
+  </div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/web/home_no_css.png" alt="home"
+         style="height: 20rem">
+  </div>
+</div>
+<h4 class="mt-5" [attr.id]="'css'">CSS ehk kuidas asjad ilusaks teha</h4>
+<div class="mt-3 box-container">
+  <div><span>Tavalised HTML-elemendid näevad üsna igavad välja. Nende kujundamiseks kasutatakse omaette keelt nimega CSS. HTML-elemendile kujunduse lisamiseks on kaks
+  varianti. Esiteks on HTML-elementidel omadus <span class="fst-italic">style</span>, kuhu saab sõnena CSS-i stiilielemente ette anda. Näiteks on CSS-is olemas
+  omadus <span class="fst-italic">color</span> teksti värvi määramiseks. Kui tahaksime pealkirjale näiteks sinaka värvi anda, siis võiksime seda teha nii:</span>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="cssStyleExample"></span></div>
+  <div class="mt-2"><span><span class="fst-italic">#0f436e</span> on värvi HEX-kood. Üks lihtne viis omale meelepärane värv leida on
+  <a href="https://g.co/kgs/hqPXBv" target="_blank">Google'i värvivalija</a> abil. See näitab kohe ära iga värvi HEX-koodi.</span>
+  </div>
+  <div class="mt-2"><span>Teine (ja tihtipeale eelistatum) variant on luua eraldi CSS-fail, mis hoiab endas rakenduse stiile. CSS failis saab
+    luua erinevaid stiiliklasse, need võivad olla üldised, mis muudavad näiteks kogu rakenduse <span class="fst-italic">h1</span>-elementide stiili
+    või siis võime neile anda konkreetse klassinime ja muuta ainult nende elementide stiili, millele selle klassi külge paneme. See lubab meil sama stiili
+  mitu korda kasutada ja hoiab meie koodi puhtamana.</span></div>
+  <div class="text-center my-3">
+    <img src="../../../assets/images/web/css.png" alt="css"
+         style="height: 15rem">
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>CSS-iga määratavaid omadusi on väga palju, siin on välja toodud vaid need, mida oma rakenduses hakkame kasutama. Kellel on huvi, saab neid uurida näiteks
+  ingliskeelselt lehelt <a href="https://www.w3schools.com/cssref/index.php" target="_blank">https://www.w3schools.com/cssref/index.php</a>.</span>
+  </div>
+  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+    <thead>
+    <tr>
+      <th style="width: 30%">Omadus</th>
+      <th style="width: 70%">Seletus</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>background-color</td>
+      <td>Taustavärv</td>
+    </tr>
+    <tr>
+      <td>color</td>
+      <td>Teksti värv</td>
+    </tr>
+    <tr>
+      <td>padding (padding-top, padding-bottom, padding-left, padding-right)</td>
+      <td>Polster, määrab ära palju tühja ruumi elemendi sisse äärtesse jätta. Võib määrata kohe kõikidele külgedele või
+        siis ka ükshaaval (üles, alla, vasakule, paremale)
+      </td>
+    </tr>
+    <tr>
+      <td>border</td>
+      <td>Piirjoon</td>
+    </tr>
+    <tr>
+      <td>border-radius</td>
+      <td>Piirjoone raadius ehk kui ümaraid piirjoone nurki tahame</td>
+    </tr>
+    <tr>
+      <td>text-align</td>
+      <td>Tekstijoondus, näiteks vasakule, keskele või paremale</td>
+    </tr>
+    <tr>
+      <td>font-size</td>
+      <td>Teksti suurus</td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td>Laius</td>
+    </tr>
+    <tr>
+      <td>margin (margin-top, margin-bottom, margin-left, margin-right)</td>
+      <td>Ääris, määrab ära kui palju tühja ruumi tahame elemendist väljapoole äärtesse jätta.</td>
+    </tr>
+    <tr>
+      <td>outline</td>
+      <td>Välisjoon</td>
+    </tr>
+    <tr>
+      <td>justify-content</td>
+      <td>Alamelementide paigutus</td>
+    </tr>
+    <tr>
+      <td>display</td>
+      <td>Kuva, määrab ära kuidas elementi kuvada tuleb</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-lg-8"><span>Loome me endale samuti CSS-faili. <span class="fst-italic">Flask</span> nõuab, et CSS-failid oleksid kaustas nimega
+  <span class="fst-italic">static</span>, seega loome oma projektikausta sellenimelise uue kausta ja lisame sinna faili <span
+        class="fst-italic">kujundus.css</span>. Kopeerime faili järgmise sisu:</span></div>
+    <div class="col-lg-3 my-auto mx-3">
+      <img src="../../../assets/images/web/folders.png" alt="folders"
+           style="height: 13rem">
+    </div>
+  </div>
+  <div class="mt-2 code-block"><span [highlight]="cssContents"></span></div>
+  <div class="mt-2">
+    <span>Faili alguses oleme lisanud stiile elemendi tüübi järgi, aga allpool on ka mõned meie loodud klassid. Erinevalt
+    konkreetsetele HTML-elementidele mõeldud stiilidest algavad klassid punktiga. Nende nimed on ka meie enda valitud. Siin on meil neli
+    enda kirjutatud stiiliklassi: <span class="fst-italic">kodutöö-rida</span>, <span class="fst-italic">kodutöö-kirjeldus</span>,
+    <span class="fst-italic">kodutöö-kustutamine</span> ja <span class="fst-italic">link</span>. Need nimed juba vihjavad sellele, kus me neid kasutada tahame.
+    Erinevalt konkreetsele HTML-elemendile mõeldud stiilist ei rakendu need meie loodud stiiliklassid automaatselt. Me peame oma HTML-failis
+    elementidele need käsitsi külge panema. Selleks on kõigil HTML-märgenditel omadus <span
+        class="fst-italic">class</span>. Sellele omadusele
+    saab tühikutega eraldatult anda ette kõik stiiliklasside nimed, mis sellele elemendile peavad rakenduma.</span>
+  </div>
+  <div class="mt-2"><span>Lisaks sellele peame oma HTML-failis ka viitama CSS-failile, mida soovime kasutada. Seda tuleb teha <span
+    class="fst-italic">head</span>-märgendite
+  vahel.</span></div>
+  <div class="mt-2">Meie <span class="fst-italic">avaleht.html</span> näeb koos stiilidega välja selline:</div>
+  <div class="mt-2 code-block"><span [highlight]="homepageWithStyleCode"></span></div>
+  <div class="mt-2">Ja <span class="fst-italic">lisamine.html</span> selline:</div>
+  <div class="mt-2 code-block"><span [highlight]="addingPageWithStyleCode"></span></div>
+  <div class="mt-2"><span>Proovi kõik need failid salvestada ja rakendus taaskäivitada. Nüüd peaks meie veebirakendus juba palju ilusam olema.</span>
+  </div>
+  <div class="text-center my-3 row px-0">
+    <div class="col"><img src="../../../assets/images/web/home_no_items.png" alt="home with no items"
+                          style="height: 15rem"></div>
+    <div class="col"><img src="../../../assets/images/web/home_items.png" alt="home with items"
+                          style="height: 15rem"></div>
+    <div class="col"><img src="../../../assets/images/web/adding.png" alt="adding with css"
+                          style="height: 15rem"></div>
+  </div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Viimase väikse lihvina võime oma veebirakendusele ka ikooni määrata, mida kuvatakse brauseris vahelehel enne veebirakenduse pealkirja.
+  Selleks lisame ikooni pildi oma <span class="fst-italic">static</span> kausta. Ikooni faili võid alla laadida
+    <a download="ikoon" target="_blank" href="/assets/web/icon.png">siit</a>. Seejärel peame mõlemasse HTML-faili selle samuti lisama. See läheb
+  samuti <span class="fst-italic">head</span>-märgendite vahele, näiteks kohe pärast meie CSS-faili.</span></div>
+  <div class="mt-2 code-block"><span [highlight]="iconCode"></span></div>
+</div>
+<div class="mt-3 box-container">
+  <div><span>Võid proovida seda rakendust veel endale meelepärasemaks kujundada. Ja miks ka mitte proovida luua
+täiesti uut veebirakendust mõnel teisel teemal. Selles peatükis loodud veebirakenduse lõpliku koodi saad alla laadida
+<a download="veebirakendus" target="_blank" href="/assets/web/veebirakendus.zip">siit</a></span></div>
 </div>
 <button [routerLink]="'/graafika'" class="btn btn-primary my-5 float-end">
   <fa-icon [icon]="'arrow-right'"></fa-icon>

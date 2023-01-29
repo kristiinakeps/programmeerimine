@@ -87,7 +87,9 @@ import {GuiComponent} from './projects/gui/gui.component';
     useValue: {
       coreLibraryLoader: () => import('highlight.js/lib/core'),
       languages: {
-        python: () => import('highlight.js/lib/languages/python')
+        python: () => import('highlight.js/lib/languages/python'),
+        html: () => import('highlight.js/lib/languages/xml'),
+        css: () => import('highlight.js/lib/languages/css'),
       }
     }
   }],

@@ -2,9 +2,9 @@ import {Route} from "@angular/router";
 import {WebComponent} from "./web.component";
 
 export const WEB_ROUTE: Route = {
-  path: 'veebileht',
+  path: 'veebirakendus',
   component: WebComponent,
   data: {
-    pageTitle: 'Veebilehe loomine'
+    pageTitle: 'Veebirakenduse loomine'
   }
 };

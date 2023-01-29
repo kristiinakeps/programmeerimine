@@ -242,7 +242,25 @@
           <a class="nav-link" [routerLink]="'mang'" [fragment]="'heli'" (click)="collapseNavbar()">Heli</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'veebileht'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veebilehe loomine</a>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veebilehe loomine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'veebirakendused'" (click)="collapseNavbar()">Tööpõhimõte</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'loomine'" (click)="collapseNavbar()">Loomine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'html'" (click)="collapseNavbar()">HTML</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'lisamine'" (click)="collapseNavbar()">Kodutöö lisamine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'kustutamine'" (click)="collapseNavbar()">Kodutöö kustutamine</a>
+        </li>
+        <li class="nav-subitem" *ngIf="isWebOpened" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'css'" (click)="collapseNavbar()">CSS</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
           <a class="nav-link" [routerLink]="'graafika'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Graafiline kasutajaliides</a>
