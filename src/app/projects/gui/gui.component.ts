@@ -186,25 +186,25 @@ export class GuiComponent {
   addPlayerCode = 'def lisa_liige(self):\n' +
     '    mängija = Mängija(self.vorm.nimi.text(), self.vorm.sünnipäev.date().toString("dd.MM.yyyy"), self.vorm.sugu.currentText(), self.vorm.põhimängija.isChecked())\n' +
     '    self.mängijad.append(mängija)';
-  saveButtonHints = [new ExerciseHint('Kõigepealt võime uue nupu vidina luua ja ära paigutada. Kõigepealt loome uue <span class="fst-italic">QPushButton</span> ' +
+  saveButtonHints = [new ExerciseHint('Kõigepealt võime uue nupu vidina luua ja ära paigutada. Selleks loome uue <span class="fst-italic">QPushButton</span> ' +
     'isendi.', null), new ExerciseHint('Salvestame selle nupu ka oma Põhiakna isendiväljale.', 'self.salvesta_nupp = QPushButton()'),
-  new ExerciseHint('Nupule oleks vaja lisada ka tekst. Seda sai teha meetodi <span class="fst-italic">setText()</sapn> abil.', null),
+  new ExerciseHint('Nupule oleks vaja lisada ka tekst. Seda sai teha meetodi <span class="fst-italic">setText</sapn> abil.', null),
   new ExerciseHint('Nupu tekstiks võime panna näiteks "Salvesta".', 'self.salvesta_nupp.setText("Salvesta")'),
   new ExerciseHint('Võime kohe siduda nupuvajutuse ka uue meetodiga. Näiteks meetodiga nimega <span class="fst-italic">salvesta</span>. ' +
     'Praegu meil seda meetodit veel pole, aga kohe lisame.', null),
   new ExerciseHint('Nupuvajutuse sidumist meetodiga saab teha nii:', 'self.salvesta_nupp.clicked.connect(self.salvesta)'),
   new ExerciseHint('Lõpuks paigutame oma nupu ära ka. Selleks lisame ta lihtsalt oma <span class="fst-italic">QVBoxLayout</span> paigutusse.', null),
-  new ExerciseHint('Selleks on <span class="fst-italic">QVBoxLayout</span>\'il meetod <span class="fst-italic">addWidget()</span>.',
+  new ExerciseHint('Selleks on <span class="fst-italic">QVBoxLayout</span>\'il meetod <span class="fst-italic">addWidget</span>.',
    'self.paigutus.addWidget(self.salvesta_nupp)'),
   new ExerciseHint('Nüüd jääb üle vaid see salvestamise meetod luua. Selles meetodis tahame kirjutada kõik lisatud mängijad faili. Alustame sellest, ' +
-    'et avame faili kirjutamiseks. Failinime võid ise valida.', null),
-  new ExerciseHint('Siin valime failinimeks <span class="fst-italic">mängijad.txt</span>.', 'def salvesta(self):\n' +
+    'et avame faili kirjutamiseks. Faili nime võid ise valida.', null),
+  new ExerciseHint('Siin valime faili nimeks <span class="fst-italic">mängijad.txt</span>.', 'def salvesta(self):\n' +
     '    fail = open("mängijad.txt", "w")\n' +
     '    fail.close()'), new ExerciseHint('Lisatud mängijad on meil kõik isendiväljal <span class="fst-italic">mängijad</span>. Seda ' +
       'järjendit saame tsüklis läbi käia ja sealt iga mängija faili kirjutada.', null),
-  new ExerciseHint('Ei maksa unustada, et peame iga rea lõppu käsitsi reavahtussümboli lisama.', 'for mängija in self.mängijad:\n' +
+  new ExerciseHint('Ei maksa unustada, et peame iga rea lõppu käsitsi reavahtussümboli lisama.', 'for mängija in self.mängijad: # mängijad isendiväljalt\n' +
     '    fail.write(mängija.__str__() + "\\n")'), new ExerciseHint('Pärast mängijate salvestamist võime tegelikult ka kogu oma programmiakna ' +
-      'kinni panna. Selleks on klassis <span class="fst-italic">QMainWindow</span> olemas meetod <span class="fst-italic">close()</span>. Kuna meie ' +
+      'kinni panna. Selleks on klassis <span class="fst-italic">QMainWindow</span> olemas meetod <span class="fst-italic">close</span>. Kuna meie ' +
       'Põhiaken klass on selle klassi alamklass, siis saame siin ka seda meetodit kasutada:', 'self.close()'),
   new ExerciseHint('Kogu salvestamise meetod on lõpuks selline:', 'def salvesta(self):\n' +
     '    fail = open("mängijad.txt", "w")\n' +

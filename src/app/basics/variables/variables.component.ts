@@ -38,7 +38,7 @@ export class VariablesComponent {
 
   greetingExerciseHints = [new ExerciseHint("Kõigepealt on vaja kasutajalt tema nime küsida, selleks sobiks näiteks <span class='fst-italic'>input</span>-käsk.", null),
   new ExerciseHint("Kasutaja nime küsimist ja salvestamist muutujasse saab teha nii:", 'nimi = input("Sisesta oma nimi: ")'),
-  new ExerciseHint("Kasutaja nime korrastamiseks sobib sõne meetod <span class='fst-italic'>title()</span>.", null),
+  new ExerciseHint("Kasutaja nime korrastamiseks sobib sõne meetod <span class='fst-italic'>title</span>.", null),
   new ExerciseHint("Nime korrastamist saab teha näiteks nii:", 'nimi = nimi.title()'),
   new ExerciseHint("Nime korrastamise järel on vaja kokku panna sõne, mida kasutajale väljastada tahame.", null),
   new ExerciseHint("Tervituse saab kokku panna sõnesid liites: ", '"Tere tulemast programmeerimise kursusele, " + nimi + "!"'),
@@ -57,7 +57,7 @@ export class VariablesComponent {
     'sööjad = int(input("Sisesta sööjate arv: "))\n'),
   new ExerciseHint("Meil on vaja teada, mitu röstsaiaviilu meil kokku on. Selleks saame korrutada pakkide arvu igas pakis olevate viilude arvuga.", null),
   new ExerciseHint("Programmis näeks see välja nii:", 'kokku_viilud = pakid * viilud_pakis'),
-  new ExerciseHint("Nüüd on meil olemas ka kõikide viilude arv. Kihtide arvu saame kui jagame viilud tordisööjate arvuga. Kuid paneme tähele, et " +
+  new ExerciseHint("Nüüd on meil olemas ka kõikide viilude arv. Kihtide arvu saame, kui jagame viilud tordisööjate arvuga. Kuid paneme tähele, et " +
     "tavalise jagamise puhul võime saada komakohaga arvu, kuid me tahame alati alla ümardatud täisarvu.", null),
   new ExerciseHint("Kihtide arvu leidmiseks saame kasutada jagamisel täisosa leidmist: ", 'kihte = kokku_viilud // sööjad'),
   new ExerciseHint("Viimaks tuleb leitud kihtide arv ka kasutajale väljastada, kasutades <span class='fst-italic'>print</span>-käsku.", null),
@@ -69,7 +69,7 @@ export class VariablesComponent {
     'kihte = kokku_viilud // sööjad\n' +
     'print("Röstsaia on piisavalt " + str(kihte) + "-kihilise tordi jaoks.")')]
 
-  variableNamesTest = [new TestAnswer("3põrsakest", false, "Muutuja nimi ei tohi alata numbriga"),
+  variableNamesTest = [new TestAnswer("5korrust", false, "Muutuja nimi ei tohi alata numbriga"),
   new TestAnswer("keskmine_pikkus", true, "Alakriipsu võib kasutada tühiku asemel"),
   new TestAnswer("&nimi", false, "Muutuja nimi ei tohi alata &-sümboliga"),
   new TestAnswer("inimeste arv", false, "Muutuja nimi ei tohi sisaldada tühikut"),

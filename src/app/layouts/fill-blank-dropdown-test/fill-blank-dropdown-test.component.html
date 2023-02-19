@@ -1,6 +1,5 @@
 <div class="intro-container mt-4">
-  <h5 class="self-test">Enesekontroll.</h5>
-  <div class="my-3"><span>{{ title }}</span></div>
+  <h5 class="self-test">Enesekontroll. {{ title }}</h5>
   <div *ngIf="code" class="code-block my-2">
     <span [highlight]="code"></span>
   </div>

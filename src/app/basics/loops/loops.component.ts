@@ -49,7 +49,7 @@ export class LoopsComponent {
     'while tehtud_kätekõverdusi < 20:\n' +
     '    print("Tee üks kätekõverdus!")\n' +
     '    tehtud_kätekõverdusi = tehtud_kätekõverdusi + 1'),
-  new ExerciseHint('Sisendit saame küsida <span class="fst-italic">input</span>-käsuga ning sisestatud arv tuleks ka täisarvuks teisendada. ' +
+  new ExerciseHint('Sisendit saame küsida <span class="fst-italic">input</span>-käsuga ja sisestatud arv tuleks ka täisarvuks teisendada. ' +
     'Seda saab teha näiteks nii:', 'kätekõverduste_arv = int(input("Sisesta kätekõverduste arv: "))'),
   new ExerciseHint('Nüüd tuleks muuta tsükli tingimust. Varasema 20 asemel, peaks seal nüüd kontrollima, et tehtud kätekõverduste arv oleks ' +
     'väiksem kasutaja sisestatud kätekõverduste arvust.', null),
@@ -66,7 +66,7 @@ export class LoopsComponent {
 
   guessNumberExerciseHints = [new ExerciseHint('Selle ülesande lahendamiseks on mitmeid erinevaid variante. Siin vihjetes teeme läbi ' +
     'ainult ühe võimalikest lahendustest. Alustame sellest, et valime välja salajase arvu ja salvestame selle muutujasse.', null),
-  new ExerciseHint('Näiteks valime salajaseks arvuks 17 nagu ka näidetes. Siin võid muidugi valida ka ükskõik mis teise arvu, ülejäänud ' +
+  new ExerciseHint('Valime salajaseks arvuks 17 nagu ka näidetes. Siin võid muidugi valida ka ükskõik mis teise arvu, ülejäänud ' +
     'kood sellest ei muutu.', 'salajane_arv = 17 # valime siin kindla salajase arvu'),
   new ExerciseHint('Järgmine samm on mõelda tsükli struktuuri peale. Tsükkel peaks käima kuni kasutaja leiab õige arvu. Selle tingimuse võib ' +
     'panna kohe tsüklitingimuseks või siis hoopis teha lõpmatu tsükkel ja lisada tsükli sisusse tingimuslause <span class="fst-italic">break</span>-käsuga. ' +
@@ -101,16 +101,17 @@ export class LoopsComponent {
     '    else:\n' +
     '        print("Salajane arv on väiksem")')]
 
-  guessNumberLimitedTriesExerciseHints = [new ExerciseHint('Eelmine programm lasi kasutajal pakkuda täpselt nii kaua kui tal kulus, et õige arv leida. ' +
-    'Nüüd teeme kasutaja elu natuke raskemaks ja ütleme, et ta peab viie pakkumisega õige arvu leidma, või kaotab mängu.<br>Nüüd ei sõltu meie tsükkel enam ainult sellest kas kasutaja arvas sõna ära või mitte, vaid ka järele jäänud katsete arvust. ' +
+  guessNumberLimitedTriesExerciseHints = [new ExerciseHint('Eelmine programm lasi kasutajal pakkuda täpselt nii kaua, kui tal kulus, et õige arv leida. ' +
+    'Nüüd teeme kasutaja elu natuke raskemaks ja ütleme, et ta peab viie pakkumisega õige arvu leidma, või kaotab mängu.<br>Nüüd ei sõltu meie tsükkel enam ainult sellest,' +
+    ' kas kasutaja arvas sõna ära või mitte, vaid ka järele jäänud katsete arvust. ' +
     'Ka siin võid vabalt ise valida, kas soovid lisada katsete tingimuse tsüklitingimusse või tsükli sisusse koos <span class="fst-italic">break</span>-käsuga.', null),
   new ExerciseHint('Alustame võib-olla sellest, et lisame muutuja katsete arvu jaoks.', 'katseid = 5 # määrame katsete arvu'),
   new ExerciseHint('Pärast iga pakkumist tahame hakata seda katsete arvu vähendama. Tsükli tahame lõpetada kui katsete arv jõuab nullini.', null),
   new ExerciseHint('Lisame seekord siin katsete tingimuse tsüklitingimusse. Tsükli sees lõpetab <span class="fst-italic">break</span>-käsk ' +
-    'tsükli kui kasutaja pakub arvu õigest ning tsüklitingimus lõpetab tsükli juhul kui katsed saavad otsa. Muidugi võib lisada mõlemad tingimused ka kas ' +
+    'tsükli, kui kasutaja pakub arvu õigesti, ja tsüklitingimus lõpetab tsükli, kui katsed saavad otsa. Muidugi võib lisada mõlemad tingimused ka kas ' +
     'tsüklitingimusse või tsükli sisse. Tsüklitingimuses tahame tsüklit jätkata seni kuni katsete arv on suurem kui null.',
     'while katseid > 0:\n    # siia tuleb tsükli sisu'),
-  new ExerciseHint('Tsükli sees tahame kõige lõpus vähendada katsete arvu ning siis väljastada järele jäänud katsete arvu ka kasutajale.', null),
+  new ExerciseHint('Tsükli sees tahame kõige lõpus vähendada katsete arvu ja siis väljastada järele jäänud katsete arvu ka kasutajale.', null),
   new ExerciseHint('Seda võime teha nii:', 'katseid -= 1\n' +
     'print("Jäänud katseid: " + str(katseid))'),
   new ExerciseHint('Kogu kood võiks kokku näha välja selline:',

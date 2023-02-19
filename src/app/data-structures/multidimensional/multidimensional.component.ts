@@ -79,7 +79,7 @@ export class MultidimensionalComponent {
     'for j in range(3):\n' +
     '    if mäng[0][j] == mäng[1][j] and mäng[1][j] == mäng[2][j] and mäng[0][j] in mängijad:\n' +
     '        return mäng[0][j]'),
-  new ExerciseHint('Diagonaalide kontrollid on nüüd natuke keerulisemad. Nende puhul nüüd on lihtsam panna kummagi jaoks kirja üks kontroll, ilma ' +
+  new ExerciseHint('Diagonaalide kontrollid on natuke keerulisemad. Nende puhul on lihtsam panna kummagi jaoks kirja üks kontroll, ilma ' +
     'tsüklit kasutamata. Esimeses diagonaalis (vasakult ülevalt alla paremale) on kolm elementi, iga elemendi rea ja veeru indeks peavad võrdsed olema', null),
   new ExerciseHint('Esimese diagonaali kontroll:', '# kontrollime esimest diagonaali\n' +
     'if mäng[0][0] == mäng[1][1] and mäng[1][1] == mäng[2][2] and mäng[0][0] in mängijad:\n' +

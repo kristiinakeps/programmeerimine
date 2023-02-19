@@ -1,6 +1,6 @@
 <div class="intro-container mt-4">
-  <h5 class="self-test">Enesekontroll.</h5>
-  <div class="my-3"><span>{{ exerciseTitle }}.</span></div>
+  <h5 class="self-test">Enesekontroll. {{ exerciseTitle }}</h5>
+  <div class="my-3"><span>Haara hiirega kastidest ning lohista need õigesse tulpa.</span></div>
   <div cdkDropListGroup>
     <div *ngFor="let category of categories" class="drag-and-drop-container">
       <h5 *ngIf="category.text" class="self-test">{{ category.text }}</h5>

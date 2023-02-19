@@ -20,7 +20,7 @@ export class ConditionsComponent{
     new FillBlankDropdownItem('"aed" < "puu" and not "a" == "A"', '', this.booleanTrue, this.booleanValues, this.booleanValues[0])];
 
   conditionsIndent = 'taane';
-  conditionsNoIndent = 'taane puudub';
+  conditionsNoIndent = '-';
   conditionsIndentation = [this.conditionsNoIndent, this.conditionsIndent];
   conditionsIndentationTest = [new FillBlankDropdownItem('', 'vastus = int(input("Kui palju on 2 + 2? "))', this.conditionsNoIndent, this.conditionsIndentation, this.conditionsIndentation[0]),
     new FillBlankDropdownItem('', 'if vastus == 4:', this.conditionsNoIndent, this.conditionsIndentation, this.conditionsIndentation[0]),
@@ -45,10 +45,10 @@ export class ConditionsComponent{
     new TestAnswer('Arv on suurem kui 10.', true, 'Kas programm ei peaks minema lõpuks ka <span class="fst-italic">else</span>-harusse?')]
 
   gradingExerciseHints = [new ExerciseHint("Alustada tuleb saadud punktide arvu küsimisest. Selleks sobib <span class='fst-italic'>input</span>-käsk.", null),
-  new ExerciseHint("Punktide arv tuleks teisendada täisarvuks ning salvestada kuhugi muutujasse. Seda võib teha kohe samal real sisendi küsimisega.", null),
+  new ExerciseHint("Punktide arv tuleks teisendada täisarvuks ja salvestada kuhugi muutujasse. Seda võib teha kohe samal real sisendi küsimisega.", null),
   new ExerciseHint("Variant punktide küsimiseks ja teisendamiseks:", 'punkte = int(input("Sisesta saadud punktide arv: "))'),
   new ExerciseHint("Nüüd on vaja hakata tingimusi koostama. Esimese tingimuse jaoks kasuta võtmesõna <span class='fst-italic'>if</span>.", null),
-  new ExerciseHint("Esimese tingimuse võid vabalt ise valida. Võid alustada kontrollimist sellest, et kas äkki sisestatud punktide arv on lubatud piiridest väljas. Või kas see vastab näiteks ühele hinnetest.", null),
+  new ExerciseHint("Esimese tingimuse võid vabalt ise valida. Näiteks võid kontrollida, kas sisestatud punktide arv on lubatud piiridest väljas. Või kas see vastab näiteks ühele hinnetest.", null),
   new ExerciseHint("Kui tahaksime kontrollida esimese asjana, kas punktide arv on lubatud piiridest väljas, siis võiksime seda teha nii:",
     'if punkte < 0 or punkte > 30:\n' +
     '    print("Selline punktide arv pole võimalik.")'),
@@ -76,7 +76,7 @@ export class ConditionsComponent{
   new ExerciseHint('Nii õpilaste arv kui bussi istekohtade arv peaksid olema täisarvud.', 'õpilasi = int(input("Sisesta õpilaste arv: "))\n' +
     'istekohti = int(input("Sisesta bussi istekohtade arv: "))'),
   new ExerciseHint('Nüüd on vaja välja arvutada, mitu bussi tellida. Selleks on meil vaja teada, kas õpilased mahuvad bussidesse täpselt või jääb mõni buss poolikult täidetuks.', null),
-  new ExerciseHint('Kuidas leida kas õpilased mahuvad bussidesse täpselt? Selleks saame kasutada jääki. Kui meil on 25 õpilast ja 20 istekohta bussis, siis ' +
+  new ExerciseHint('Kuidas leida, kas õpilased mahuvad bussidesse täpselt? Selleks saame kasutada jääki. Kui meil on 25 õpilast ja 20 istekohta bussis, siis ' +
     'õpilaste arvu jagamisel istekohtade arvuga tekib meil jääk 5, sest 5 õpilast jääb üle. Kui jääk on 0, siis järelikult kedagi üle ei jäänud ja õpilased mahtusid täpselt bussidesse ära. Jäägi leidmiseks saab Pythonis kasutada tehet %. Kuidas see tingimus kirja panna?', null),
   new ExerciseHint('Leiame jäägi õpilaste arvu jagamisel istekohtade arvuga ja kontrollime kas see on 0.', 'if õpilasi % istekohti == 0:\n' +
     '    # siin tuleb leida busside arv'),

@@ -41,7 +41,7 @@ export class ErrorHandlingComponent {
     new TestAnswer('print(Oled alaealine)', true, 'Jälgi mida <span class="fst-italic">print</span>-funktsioonidele argumentideks antakse, kas need väärtused on igalpool korrektsed?')]
 
   pizzaExerciseHints = [new ExerciseHint('Alustada võib nii põhiprogrammi kui funktsiooni muutmisest. Alustame siin näiteks funktsioonist. ' +
-    'Sinna võib kohe algusesse lisada tingimuslause, mis kontrolliks, ega läbimõõt pole 20, 28 ja 38 seas. Kui ei ole, siis saame tõstatada uue erindi.', null),
+    'Sinna võib kohe algusesse lisada tingimuslause, mis kontrolliks, ega läbimõõt pole 20, 28 või 38 seas. Kui ei ole, siis saame tõstatada uue erindi.', null),
     new ExerciseHint('Tingimuslauses saame teha kolm võrdlust ja siduda need omavahel tehtega <span class="fst-italic">and</span>. Erindi tõstatamiseks kasutame ' +
       'võtmesõna <span class="fst-italic">raise</span> ja võime lisada ka väikse teate.', 'if läbimõõt != 20 and läbimõõt != 28 and läbimõõt != 38:\n' +
       '    raise ValueError("läbimõõt peab olema 20, 28 või 38")'),
@@ -84,11 +84,11 @@ export class ErrorHandlingComponent {
       '    except FileNotFoundError:\n' +
       '        print("Sellist faili ei õnnestu avada!")'),
     new ExerciseHint('Kuna me teame, et tsüklist ei saa me enne edasi, kui fail on leitud ja avatud, siis võime julgelt põhiprogrammi kirjutada koodi, mis loeb faili sisu.', null),
-    new ExerciseHint('Kuna iga rea kohta on meil vaja küsida õpilaste arvu, siis sobiks siin kõige paremini faili rida rea kaupa läbimine, mitte kogu sisu korraga sisse lugemine.', null),
-    new ExerciseHint('Samuti tuleks mõelda sellele, et faili rida rea haaval tsüklis lugedes, peame kokku liitma kasutajalt küsitud õpilaste arvud. Selle õpilaste arvu hoiustamiseks võiks enne tsüklit luua muutuja.', null),
+    new ExerciseHint('Kuna iga rea kohta on meil vaja küsida õpilaste arvu, siis sobiks siin kõige paremini faili reakaupa läbimine, mitte kogu sisu korraga sisse lugemine.', null),
+    new ExerciseHint('Samuti tuleks mõelda sellele, et faili reahaaval tsüklis lugedes, peame kokku liitma kasutajalt küsitud õpilaste arvud. Selle õpilaste arvu hoiustamiseks võiks enne tsüklit luua muutuja.', null),
     new ExerciseHint('Õpilaste arvu muutuja ja tsükli algus:', 'õpilaste_arv = 0\n' +
       'for klass in fail:\n    # tsükli sisu'),
-    new ExerciseHint('Tsükli sees tuleks kasutajalt küsida õpilaste arvu ja see täisarvuks teisendada. Seda peaks nüüd jälle tegema tsüklis ja küsima seda arvu nii kaua, kuni ' +
+    new ExerciseHint('<span class="fst-italic">For</span>-tsükli sees tuleks kasutajalt küsida õpilaste arvu ja see täisarvuks teisendada. Seda peaks nüüd jälle tegema tsüklis ja küsima seda arvu nii kaua, kuni ' +
       'kasutaja sisend õnnestub täisarvuks teisendada.', null),
     new ExerciseHint('Ei tasu ka unustada, et kui soovime klassi nime väljastada, siis võiks sealt lõpust reavahetuse sümboli eemaldada:',
       'while True:\n' +

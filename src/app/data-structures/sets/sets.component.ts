@@ -30,12 +30,12 @@ export class SetsComponent {
   backpackHints = [new ExerciseHint('See ülesanne koosneb põhiliselt hulga operatsioonide tundmises. Esimese asjana on meil vaja saada kätte hulk, kus oleksid ' +
     'olemas nii kõik Meeli kui ka kõik Mihkli asjad. Millist hulga operatsiooni saaks selleks kasutada?', null),
   new ExerciseHint('Selleks sobiks hästi kahe hulga ühend. Ühendi saab leida kas operaatori <span class="fst-italic">|</span> abil või meetodiga ' +
-    '<span class="fst-italic">union()</span>.', 'print("Meelil ja Mihklil kokku on: " + str(meeli | mihkel))'),
+    '<span class="fst-italic">union</span>.', 'print("Meelil ja Mihklil kokku on: " + str(meeli | mihkel))'),
   new ExerciseHint('Järgmiseks on meil vaja leida kõik asjad, mis on nii Meeli kui ka Mihkli koolikotis. Selleks kasutame hulkade ühisosa. Võib kasutada ' +
-    'kas operaatorit <span class="fst-italic">&</span> või meetodit <span class="fst-italic">intersection()</span>.',
+    'kas operaatorit <span class="fst-italic">&</span> või meetodit <span class="fst-italic">intersection</span>.',
     'print("Meelil ja Mihlil mõlemal on: " + str(meeli & mihkel))'),
-  new ExerciseHint('Kui tahame leida sellised esemes, mis on vaid Meelil või ainult Mihklil, siis saame kasutada hulkade vahet. Kõigepealt leiame vahe ühtepidi ja siis teistpidi. ' +
-    'Vahe jaoks sobib operaator <span class="fst-italic">-</span> või meetod <span class="fst-italic">difference()</span>.',
+  new ExerciseHint('Kui tahame leida sellised esemed, mis on vaid Meelil või ainult Mihklil, siis saame kasutada hulkade vahet. Kõigepealt leiame vahe ühtepidi ja siis teistpidi. ' +
+    'Vahe jaoks sobib operaator <span class="fst-italic">-</span> või meetod <span class="fst-italic">difference</span>.',
     'print("Ainult Meelil on: " + str(meeli - mihkel))\n' +
     'print("Ainult Mihklil on: " + str(mihkel - meeli))'),
   new ExerciseHint('Kokku näeb programm välja selline: ',
@@ -46,7 +46,7 @@ export class SetsComponent {
     'print("Ainult Meelil on: " + str(meeli - mihkel))\n' +
     'print("Ainult Mihklil on: " + str(mihkel - meeli))')];
 
-  setsExamplesCode = 'arvud = {1, 5, 3, 1} # kuigi luues paneme sõnastikku kaks number 1, siis jääb sinna neist ainult üks\n' +
+  setsExamplesCode = 'arvud = {1, 5, 3, 1} # kuigi luues paneme sõnastikku kaks number ühte, siis jääb sinna neist ainult üks\n' +
     'värvid = {"sinine", "punane", "kollane"}\n' +
     'segamini = {1, "esmaspäev", 14.5, True}\n' +
     'tühi = set() # tühi = {} loob tühja sõnastiku';

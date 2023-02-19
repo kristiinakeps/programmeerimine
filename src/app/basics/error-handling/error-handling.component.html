@@ -3,7 +3,7 @@
   <h5>Mida selles peatükis õpime?</h5>
   <div><span>1. Mis sorti vigu on olemas?</span></div>
   <div><span>2. Mis on erind?</span></div>
-  <div><span>3. Kuidas erindeid kinnni püüda?</span></div>
+  <div><span>3. Kuidas erindeid kinni püüda?</span></div>
   <div><span>4. Kuidas erindeid tõstatada?</span></div>
 </div>
 <div class="mt-3 box-container">
@@ -17,7 +17,7 @@
 <div class="mt-3 box-container">
   <strong class="strong">Süntaksivead</strong>
   <div class="mt-2"><span>Programmeerimisega alustades on kõige tüüpilisemad <strong class="strong">süntaksivead</strong>. Süntaksivea puhul ei suuda arvuti kirjutatud
-    koodist aru saada. Tüüpiliselt on siis mõni taane või koolon on puudu, mõni võtmesõna valesti kirjutatud, sõne ümbert on unustatud jutumärgid jne.
+    koodist aru saada. Tüüpiliselt on siis mõni taane või koolon puudu, mõni võtmesõna valesti kirjutatud, sõne ümbert on unustatud jutumärgid jne.
   </span>
   </div>
   <div class="mt-2"><span>Allolevas näites oleme unustanud tingimuslause sisu taandega kirjutada.
@@ -35,7 +35,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;^<br>
       IndentationError: expected an indented block</span>
   </div>
-  <div class="mt-2"><span>Võtmesõnale <span class="fst-italic">if</span> (ning ka paljudele teistele, näiteks tsüklites) peab alati järgnema vähemalt üks taandega rida.
+  <div class="mt-2"><span>Võtmesõnale <span class="fst-italic">if</span> (ning ka paljudele teistele, näiteks tsüklitele) peab alati järgnema vähemalt üks taandega rida.
     Kui sellist rida pole, siis on tegemist <span class="fst-italic">IndentationErrori</span> ehk taandeveaga. Veateade ütleb meile, millisel real viga on (<span class="fst-italic">line 3</span>) ja kuvab meile ka selle rea
     (<span class="fst-italic">print("Positiivne arv")</span>). See teeb meie jaoks nende vigade leidmise ja parandamise kõvasti lihtsamaks.
   </span>
@@ -100,8 +100,8 @@
       arv = int("Tere!")<br>
       ValueError: invalid literal for int() with base 10: 'Tere!'</span>
   </div>
-  <div class="mt-2"><span>Veateade näitab, et tegemist on <span class="fst-italic">NameErroriga</span>. Täpsemalt, et sellist nime pole programmis defineeritud.
-    Kui proovime teisendada sõnet, mis ei koosne numbritest, täisarvuks, siis saame järgmise vea:
+  <div class="mt-2"><span>Selline veateade ütleb, et väärtusega oli mingi probleem. Täpsemalt, et väärtust "Tere!" ei
+    saa täisarvuks teisendada.
   </span>
   </div>
     </div>
@@ -118,7 +118,7 @@
     <div class="col-lg-9 ps-0">
   <div><span>Tüüpiliselt me tahame, et meie programm töötaks igas olukorras hästi ja soovime vältida olukordi, kus programm veateatega oma töö lõpetab.
     Me saame küll ise teha omalt poolt kõik, et programmi vigu sisse ei jääks, aga kuna meie programm suhtleb tihtipeale ka kasutajaga, siis on alati võimalus, et
-    kasutaja sisestab midagi valesti. Näiteks kui küsime kasutajalt täisarvu, aga ta sisestab hoopis mingi teksti. Kui proovie kasutaja sisendit täisarvuks teisendada,
+    kasutaja sisestab midagi valesti. Näiteks kui küsime kasutajalt täisarvu, aga ta sisestab hoopis mingi teksti. Kui proovime kasutaja sisendit täisarvuks teisendada,
     võime saada vea. Õnneks on programmeerimiskeeltes võimalik sellistes veaohtlikes kohtades tekkivad vead kinni püüda ja nendele reageerida.
   </span>
   </div>
@@ -148,10 +148,10 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Soovi korral saame <span class="fst-italic">except</span>-blokile ka ette anda, mis tüüpi vigu ta peab kinni püüdma (eelmises näites püüti kõiki erindeid). Sellisel juhul võime lisada ka mitu
+  <div><span>Soovi korral saame <span class="fst-italic">except</span>-blokile ette anda, mis tüüpi vigu ta peab kinni püüdma (eelmises näites püüti kõiki erindeid). Sellisel juhul võime lisada ka mitu
     <span class="fst-italic">except</span>-blokki üksteise järele, mis püüavad kinni erinevat tüüpi vigu. Näiteks järgmises koodijupis püüab esimene püünis täisarvuks teisendamise vigu ehk
     <span class="fst-italic">ValueErroreid</span> ja teine püünis nulliga jagamise vigu ehk <span class="fst-italic">ZeroDivisionErroreid</span>. Tasub veel mainida, et kohe kui
-    <span class="fst-italic">try</span>-blokis tekib viga, siis ülejäänud ridu, mis <span class="fst-italic">try</span>-blockis on, ei täideta. Minnakse hoopis kohe sobivat püünist otsima.
+    <span class="fst-italic">try</span>-blokis tekib viga, siis ülejäänud ridu, mis <span class="fst-italic">try</span>-blokis on, ei täideta. Minnakse hoopis kohe sobivat püünist otsima.
   </span>
   </div>
   <div class="code-block mt-2">
@@ -174,7 +174,7 @@
     <span>Sisesta nimetaja: <span class="code-input">2</span><br></span>
     <span>Tulemus on: 4.5</span>
   </div>
-  <div class="mt-2"><span>Ühel püünise jaoks saab täpsustada ka mitu veatüüpi, mida ta püüdma peab. Need lisatakse siis sulgudesse ja komaga eraldatult.
+  <div class="mt-2"><span>Ühe püünise jaoks saab täpsustada ka mitu veatüüpi, mida ta püüdma peab. Need lisatakse siis sulgudesse ja komaga eraldatult.
   </span>
   </div>
   <div class="code-block mt-2">
@@ -204,7 +204,7 @@
     <span [highlight]="loopTryCode"></span>
   </div>
   <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnkase
-  püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span> käsuni.</span></div>
+  püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span>-käsuni.</span></div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">üks</span><br></span>
     <span>Sisestatud arv ei ole täisarv!<br></span>
@@ -282,10 +282,10 @@
 <div class="mt-3 box-container">
   <div class="row mx-0">
     <div class="col-lg-9 ps-0">
-  <div><span>Seni vaatasime, kuidas erindeid kinni püüda. Soovi korral saame neid ka ise tekitada ehk <strong class="strong">tõstada</strong>.
+  <div><span>Seni vaatasime, kuidas erindeid kinni püüda. Soovi korral saame neid ka ise tekitada ehk <strong class="strong">tõstatada</strong>.
     Erindi tõstatamiseks kasutatakse võtmesõna <strong class="strong fst-italic">raise</strong>, millele järgneb veatüüp, mida tahame tõstatada.
-    Näiteks võime kirjutada funktsiooni, mis küsib kasutajalt täisarvulist sisendit, mis peaks olema 1 ja 10 vahel ja kui ei ole. Kui sisend ei ole
-    soovitud vahemikus, siis tõstatame <span class="fst-italic">ValueErrori</span>:
+    Näiteks võime kirjutada funktsiooni, mis küsib kasutajalt täisarvulist sisendit, mis peaks olema 1 ja 10 vahel. Kui sisend ei ole
+    soovitud vahemikus, siis tõstatame erindi <span class="fst-italic">ValueError</span>:
   </span>
   </div>
   <div class="code-block mt-2">
@@ -309,7 +309,7 @@
       raise ValueError<br>
       ValueError</span>
   </div>
-  <div class="mt-2"><span>Näeme, et tekkis <span class="fst-italic">ValueError</span> erind ja näeme, mis real, aga täpsemat infot meil ei ole, et mis probleem seal siis täpselt oli.
+  <div class="mt-2"><span>Näeme, et tekkis erind <span class="fst-italic">ValueError</span> ja näeme, mis real, aga täpsemat infot meil ei ole, et mis probleem seal siis täpselt oli.
     Saame aga soovi korral erindit tõstatades ka sõnumi kaasa anda. See käib sõnena erindi tüübi järele sulgudesse:
   </span>
   </div>
@@ -362,8 +362,8 @@
   <strong class="strong">Spordipäev</strong>
   <div class="mt-2"><span>Koolis korraldati spordipäeva ja paralleelklassidevahelist teatejooksu. Võitnud klasside nimed on kirjutatud faili.
   Nüüd tahab kool võitnud klassides igale õpilasele väikse kingituse teha. Kirjuta programm, mis loeks failist klasside nimed ja küsiks kasutajalt mitu õpilast selles klassis on.
-  Lõpus peaks programm väljastama, mitu kingitust tuleb kokku teha. Faili nimi tuleks küsida kasutajalt, kui sellise nimega faili ei õnnestu avada, tuleks faili nime uuesti küsida,
-  kuni kasutaja sisestab korrektse nime. Ka klassis õppivate õpilaste arvu küsides peaks programm kasutajalt sisendit küsima, kuni kasutaja sisestab täisarvu.</span></div>
+  Lõpus peaks programm väljastama, mitu kingitust tuleb kokku teha. Faili nimi tuleks küsida kasutajalt ja kui sellise nimega faili ei õnnestu avada, tuleks faili nime uuesti küsida,
+  kuni kasutaja sisestab korrektse nime. Ka klassis õppivate õpilaste arvu küsides peaks programm kasutajalt sisendit küsima seni, kuni kasutaja sisestab täisarvu.</span></div>
   <div class="mt-2"><span>Näide faili sisust:</span></div>
   <div class="mt-2 code-block fst-italic">
     <span>1A<br></span>

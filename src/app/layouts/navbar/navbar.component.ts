@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
       this.isDataStructuresCollapsed = false;
     else if (this.router.url.startsWith('/klassid') || this.router.url.startsWith('/parilus'))
       this.isObjectOrientedProgrammingCollapsed = false;
-    else if (this.router.url.startsWith('/mang') || this.router.url.startsWith('/veebirakendus') || this.router.url.startsWith('/graafika'))
+    else if (this.router.url.startsWith('/mang') || this.router.url.startsWith('/veebirakendus') || this.router.url.startsWith('/rakendus'))
       this.isProjectsCollapsed = false;
   }
 
@@ -113,7 +113,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isGuiOpened(): boolean {
-    return this.router.url.startsWith('/graafika') && !this.isProjectsCollapsed;
+    return this.router.url.startsWith('/rakendus') && !this.isProjectsCollapsed;
   }
 
   toggleBasics(): void {

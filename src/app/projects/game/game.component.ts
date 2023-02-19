@@ -8,8 +8,8 @@ import {ExerciseHint} from "../../models/exercise-hint.model";
 })
 export class GameComponent {
   giftsHints = [new ExerciseHint('Alustame sellest, et proovime liigutada suure osa koodist klassist Lumepall uude ülemklassi. Võime selle ülemklassi nimeks ' +
-    'panna näiteks Lendav, kuna meie koodis koonsab see enda alla lendavd lumepallid ja lendavad kingitused. Tõstame ta ka eraldi faili nimega <span class="fst-italic">lendav.py</span>.' +
-    'Alamklasse eristavad üksteisest vaid pildid, mille seast isendi pilt valida.', null),
+    'panna näiteks Lendav, kuna meie koodis koondab see enda alla lendavd lumepallid ja lendavad kingitused. Tõstame ta ka eraldi faili nimega <span class="fst-italic">lendav.py</span>.' +
+    ' Alamklasse eristavad üksteisest vaid pildid, mille seast isendi pilt valida.', null),
   new ExerciseHint('Kopeerime kõik klassist Lumepall, kuid lisame konstruktorile veel ühe lisaargumenti &ndash; pilt. Alamklassid saavad siis oma piltide järjendist ühe juhuslikult valida ja ' +
     'anda kaasa ülemklassi konstruktorile.', 'import pygame\n' +
     'import random\n' +
@@ -155,8 +155,8 @@ export class GameComponent {
     'except:\n' +
     '    rekord = 0.0'),
   new ExerciseHint('Sellega saame kätte varasema rekordi. Kui nüüd meie mängija saadud tulemus oli suurem kui see rekord, siis peame ka faili sisu uuendama. ' +
-    'Selleks saame sama faili avada kirjutamiseks (teine argument peab olema <span class="fst-italic">"w"</span>.', null),
-  new ExerciseHint('Lõpus võiks ka faili sulgeda.', 'if tulemus > rekord:\n' +
+    'Selleks saame sama faili avada kirjutamiseks (teine argument peab olema <span class="fst-italic">"w"</span>).', null),
+  new ExerciseHint('Lõpus võiks ka faili sulgeda.', 'if tulemus > rekord: # uus tulemus on suurem\n' +
     '    fail = open("rekord.txt", "w")\n' +
     '    fail.write(str(tulemus))\n' +
     '    fail.close()'),

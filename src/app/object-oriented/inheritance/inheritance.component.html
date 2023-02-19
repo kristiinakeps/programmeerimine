@@ -7,7 +7,7 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Me oskame juba klasse ja isendeid luua ning kasutada. Kuid mis saab olukorras, kus meil on vaja mitmeid erinevaid klasse,
-  mis on omavahel üsna sarnased, kuid mitte päris samad. Näiteks Õpilane ja Õpetaja. Mõlemal on nimi, isikukood, elukoht, sünniaasta jne, kuid
+  mis on omavahel üsna sarnased, kuid mitte päris samad? Näiteks Õpilane ja Õpetaja. Mõlemal on nimi, isikukood, elukoht, sünniaasta jne, kuid
   vaid õpilasel on klassinumber ja vaid õpetajal on õpetatav aine. Kas siis peamegi lihtsalt kaks klassi looma ja mõlemale need korduvad
   isendiväljad lisama?</span></div>
   <div><span>Nagu ilmselt aimata võid, siis tegelikult ei pea. Selles peatükis räägime täpsemalt, kuidas panna klasse üksteiselt omadusi pärima.</span>
@@ -30,9 +30,10 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
 </div>
 <app-reorder-test [question]="classesOrderQuestion"></app-reorder-test>
 <div class="mt-3 box-container">
-  <div><span>Vaatame kuidas ülem- ja alamklasse koodis kirja panna. Ülemklass on tegelikult täiesti tavaline klass ja ei erine kuidagi nendest,
-  mida eelmises peatükis kirjutasime. Loome näiteks klassi Isik, millel on isendiväljad nimi, sünniaasta ja elukoht. Lisame ka
-  näiteks meetodi <span class="fst-italic">tervita()</span>, mis väljastab ekraanile lihtsa tervituse.</span></div>
+  <div><span>Vaatame, kuidas ülem- ja alamklasse koodis kirja panna. Ülemklass on tegelikult täiesti tavaline klass ja ei erine kuidagi nendest,
+  mida eelmises peatükis kirjutasime. Loome näiteks klassi Isik, millel on isendiväljad <span class="fst-italic">nimi</span>,
+    <span class="fst-italic">sünniaasta</span> ja <span class="fst-italic">elukoht</span>. Lisame ka
+  näiteks meetodi <span class="fst-italic">tervita</span>, mis väljastab ekraanile lihtsa tervituse.</span></div>
   <div class="mt-2 code-block">
     <span [highlight]="classPersonCode"></span>
   </div>
@@ -50,7 +51,7 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
   kasutatakse alamklassi puhul konstruktorit, millel on samad argumendid nagu ülemklassil.</span></div>
   <div class="mt-2">
     <span>Jätame esialgu klassi Õpilane konstruktori lisamata. Lisame klassi hoopis ühe meetodi nimega <span
-      class="fst-italic">mine_kooli()</span>, mis lihtsalt väljastab ekraanile, et õpilane käis täna koolis.</span>
+      class="fst-italic">mine_kooli</span>, mis väljastab ekraanile, et õpilane käis täna koolis.</span>
   </div>
   <div class="row px-0 mt-2">
     <div class="col-lg-9">
@@ -73,7 +74,7 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
   kirjeldatud väljad kui ka Õpilase enda isendivälja. Ülemklassi isendivälju saame väärtustada läbi ülemklassi konstruktori, aga kuidas selle poole
   pöörduda?</span></div>
   <div class="mt-2"><span>Ülemklassi poole pöördumiseks on meil funktsioon <strong
-    class="strong fst-italic">super()</strong>, mille abil
+    class="strong fst-italic">super</strong>, mille abil
   saame kasutada kõiki sealseid meetode, nende hulgas ka konstruktorit. Täiendame oma Õpilane klassi konstruktoriga, mis võtab
   kõigepealt argumentideks kõik Isik klassi isendiväljade väärtused ja siis lisaks ka õpilase klassi numbri (mitmendas klassis ta õpib).</span>
   </div>
@@ -82,7 +83,7 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
 <div class="mt-3 box-container">
   <div><span>Proovime nüüd luua klassile Isik veel ühe alamklassi nimega Õpetaja. Õpetaja konstruktor peaks samuti väärtustama kõik
   ülemklassi väljad, aga lisaks peaks selles klassis olema isendiväli õpetatava aine jaoks. Lisame ka ühe isendimeetodi
-  <span class="fst-italic">anna_tundi()</span>, mis võtab argumendiks klassi, kellele tundi antakse.</span></div>
+  <span class="fst-italic">anna_tundi</span>, mis võtab argumendiks klassi numbri, kellele tundi antakse.</span></div>
   <div class="row px-0 mt-2">
     <div class="col-lg-8">
       <div class="mt-2 code-block"><span [highlight]="classTeacherCode"></span></div>
@@ -104,14 +105,14 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
 </div>
 <h4 class="mt-5" [attr.id]="'ulekatmine'">Meetodite ülekatmine</h4>
 <div class="mt-3 box-container">
-  <div><span>Ülemklassis kirjeldatud meetodid on ka alamklassidel olemas. Näiteks meetodit <span class="fst-italic">tervita()</span>
+  <div><span>Ülemklassis kirjeldatud meetodid on ka alamklassidel olemas. Näiteks meetodit <span class="fst-italic">tervita</span>
   saame ka klasside Õpilane ja Õpetaja isendite puhul kasutada, kuigi me pole seda nendes klassides kirja pannud.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="greetingCode"></span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="greetingOutput"></span></div>
-  <div class="mt-2"><span>Vahepeal aga võib juhtuda, et tahame, et alamklassis mõni ülemklassis kirjutatud meetod käituks natuke teistmoodi.
+  <div class="mt-2"><span>Vahepeal võib aga juhtuda, et tahame, et alamklassis mõni ülemklassis kirjutatud meetod käituks natuke teistmoodi.
   Sellisel juhul saame selle ülemklassi meetodi üle katta ehk kirjutada alamklassi täpselt sama nime ja argumentidega meetodi. Proovime näiteks
-  täiendada oma Õpetaja klassi meetodiga <span class="fst-italic">tervita()</span>.</span></div>
+  täiendada oma Õpetaja klassi meetodiga <span class="fst-italic">tervita</span>.</span></div>
   <div class="mt-2 code-block"><span [highlight]="classTeacherOverrideCode"></span></div>
   <div class="mt-2"><span>Kui nüüd proovime täpselt samade isenditega uuesti tervitamise meetodit, siis näeme, et klassi Õpetaja isendil
   on see asendunud uue ülekaetud meetodiga.</span></div>
@@ -125,12 +126,12 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
   <strong class="strong">Arvutimängu mängijad</strong>
   <div class="mt-2"><span>Arvutimängu mängijate andmete hoidmiseks on klass Mängija. Selles klassis on isendiväljad
   <span class="fst-italic">kasutajanimi</span> ja <span class="fst-italic">tase</span>. Lisaks on klassis meetod
-  <span class="fst-italic">liigu_järgmisele_tasemele()</span>, mis tõstab kasutaja taset ühe võrra ja väljastab ta uue taseme.</span>
+  <span class="fst-italic">liigu_järgmisele_tasemele</span>, mis tõstab kasutaja taset ühe võrra ja väljastab ta uue taseme.</span>
   </div>
   <div class="mt-2">Mängijad, kes jõuavad teatud tasemele, muutuvad supermängijateks. Supermängijad saavad oma tegelaste
     välimust muuta ja iga tasemega teenivad ühe stiili juurde.
     Supermängijate kujutamiseks on Mängijal alamklass Supermängija, millel on lisaks isendiväli saadud stiilide hulga
-    jaoks. Meetod <span class="fst-italic">liigu_järgmisele_tasemele()</span> on ülekaetud ja lisaks
+    jaoks. Meetod <span class="fst-italic">liigu_järgmisele_tasemele</span> on ülekaetud ja lisaks
     taseme tõstmisele loositakse seal kasutajale uus stiil, mis lisatakse ta stiilide hulka. Uus tase, saadud stiil ja
     kõik kasutaja stiilid
     väljastatakse ekraanile.
@@ -156,12 +157,12 @@ sellel jälle omakorda ülemklass. Nii saame moodustada terveid klasside ahelaid
   <strong class="strong">Edasiarendus: mäng</strong>
   <div class="mt-2"><span>Loome lisaks mängijate klassidele ka klassi Mäng, millel on üks isendiväli &ndash; sõnastik kõigist mängijatest, kus kasutajanimi
   on võti ja mängija isend on väärtus. Uut Mängu isendit luues pole ühtegi kasutajat lisatud. Klassis on kaks meetodit, esimene neist on
-  <span class="fst-italic">lisa_mängija()</span>, mis küsib kasutajalt uue mängija nime ja taseme. Kusjuures
+  <span class="fst-italic">lisa_mängija</span>, mis küsib kasutajalt uue mängija nime ja taseme. Kusjuures
   kui kasutajanimi on juba olemas, siis uut sama nimega mängijat ei lubata lisada. Kui tase on üle 1000, siis luuakse uus Supermängija isend (alguses on saadud stiilide hulk tühi),
   kui alla 1000, siis luuakse Mängija isend ja lisatakse mängu sõnastikku. Teiseks meetodiks on <span
-      class="fst-italic">liiguta_järgmisele_tasemele()</span>,
+      class="fst-italic">liiguta_järgmisele_tasemele</span>,
    mis küsib kasutajalt mängija kasutajanime, kes tuleks uuele tasemele liigutada, ja kutsub välja selle mängija meetodit
-    <span class="fst-italic">liigu_järgmisele_tasemele()</span>. Kui kasutaja sisestab kasutajanime, mida sõnastikus ei ole, siis väljastatakse
+    <span class="fst-italic">liigu_järgmisele_tasemele</span>. Kui kasutaja sisestab kasutajanime, mida sõnastikus ei ole, siis väljastatakse
   vastav teade.</span></div>
   <div class="mt-2"><span>Lihtsuse mõttes jätame siit praegu välja olukorra, kus mängija saab mängu keskle taseme 1000 ja peaks muutuma
   supermängijaks. Kes tahab, võib aga proovida sellele olukorrale ka lahendus leida.</span></div>

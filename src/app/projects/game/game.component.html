@@ -16,15 +16,15 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Mängu loomiseks kasutame ühte Pythoni teekidest nimega <span class="fst-italic">pygame</span>.
-    Erinealt teegist <span class="fst-italic">random</span>, mida varem oleme kasutanud, ei tule <span
+    Erinevalt teegist <span class="fst-italic">random</span>, mida varem oleme kasutanud, ei tule <span
       class="fst-italic">pygame</span>
   Pythoniga automaatselt kaasa. See on vaja eraldi installida. Õnneks on seda Thonnyga väga lihtne teha.</span></div>
-  <div class="mt-2"><span>Thonnyl on üleval menüüribas <span class="fst-italic">Tools</span>, millele vajutades avaneb tööriistada menüü.
-  Sealt esimene variant on <span class="fst-italic">Manage packages...</span>, millele vajutades avaneb uus aken, kust saame erinevaid teeke
+  <div class="mt-2"><span>Thonnyl on üleval menüüribas <span class="fst-italic">Tööriistad</span>, millele vajutades avaneb tööriistada menüü.
+  Sealt esimene variant on <span class="fst-italic">Halda lisapakette...</span>, millele vajutades avaneb uus aken, kust saame erinevaid teeke
   installida. Üles otsingukasti kirjutame <span class="fst-italic">pygame</span> ja otsime sellise nimega teeki. Valikusse tekib ilmselt palju
   erinevaid teeke, mis sisaldavad nime <span class="fst-italic">pygame</span>, aga me tahame seda, mille nimi ongi lihtsalt
   <span class="fst-italic">pygame</span> ja ei midagi muud. Vajutades selle teegi nimele kuvatakse veel infot selle teegi kohta ja akna all on ka
-  nupp nimega <span class="fst-italic">Install</span>. Sellele vajutades insallitaksegi vajalik teek ja pärast installimist võime selle
+  nupp nimega <span class="fst-italic">Installi</span>. Sellele vajutades insallitaksegi vajalik teek ja pärast installimist võime selle
   akna sulgeda ja <span class="fst-italic">pygame</span> ongi kasutamiseks valmis.</span></div>
 </div>
 <h4 class="mt-5" [attr.id]="'aken'">Kuidas luua mänguakent?</h4>
@@ -38,43 +38,43 @@
   <div class="mt-2"><span>See rida importib meile kõik funktsioonid ja meetodid sellest teegist ning saame neid kohe kasutada. Seekord aga
   kasutame sellist importi:</span></div>
   <div class="mt-2 code-block"><span [highlight]="'import pygame'"></span></div>
-  <div class="mt-2"><span>See rida impordib teegi ja kui tahame sealt mõnda meetodit kasutada, siis peame kõigepealt tüpsustama
+  <div class="mt-2"><span>See rida impordib teegi ja kui tahame sealt mõnda meetodit kasutada, siis peame kõigepealt täpsustama
   ka teegi nime. Teegi nime järele läheb punktiga meetodi nimi. Näiteks on teegis <span class="fst-italic">pygame</span> meetod
-  nimega <span class="fst-italic">init()</span>. Ülemise importimise variandi puhul saaksimegi kasutada otse seda meetodi, aga teise variandi
+  nimega <span class="fst-italic">init</span>. Ülemise importimise variandi puhul saaksimegi kasutada otse seda meetodi, aga teise variandi
   puhul peame ka teegi täpsustama: <span class="fst-italic">pygame.init()</span>.</span></div>
   <div class="mt-2"><span>Võib tekkida küsimus, et miks eelistada seda teist varianti, kui selle tulemusena peab rohkem vaeva nägema? Selle eeliseks
   on nimelt see, et siis on igal pool koodis kohe näha, kust kasutatav meetod tuleb. On see meie enda kirjutatud või tuleb see kuskilt teegist.</span>
   </div>
   <div class="mt-2"><span>Kasutades <span class="fst-italic">pygame</span>'i on oluline koodi alguses <span
     class="fst-italic">pygame</span>
-  seadistada meetodiga <span class="fst-italic">init()</span> ning lõpus sulgeda meetodiga <span class="fst-italic">quit()</span>.
+  seadistada meetodiga <span class="fst-italic">init</span> ja lõpus sulgeda meetodiga <span class="fst-italic">quit</span>.
   Mooduli <span class="fst-italic">display</span> abil saame seadistada oma akna suuruse ja pealkirja.</span></div>
   <div class="mt-2"><span>Kogu mängu loogika asub mängutsüklis,
   mis käib väga kiiresti kogu mängu jooksul ja loeb aina kasutaja klahvivajutusi ja hiireliigutusi. Need tegevused saame kätte
-  moodulist <span class="fst-italic">event</span> meetodiga <span class="fst-italic">get()</span> ja oma programmis saame
+  moodulist <span class="fst-italic">event</span> meetodiga <span class="fst-italic">get</span> ja oma programmis saame
     tsüklis kõik need tegevused läbi käia ja vaadata kas mõni neist huvitab meid ja kuidas tahame nendele reageerida. Hetkel huvitab meid ainult
   ristist akna sulgemise tegevus, mille korral tahame mängutsükli lõpetada. Siin oleme kasutanud muutujat <span
       class="fst-italic">käib</span>,
-  mis on tõene kui mäng veel käib ja muutub vääraks kui mäng saab läbi. Meie mängutsükkel kontrollib selle muutuja väärtust oma tsüklitingimuses.</span>
+  mis on tõene, kui mäng veel käib, ja muutub vääraks, kui mäng saab läbi. Meie mängutsükkel kontrollib selle muutuja väärtust oma tsüklitingimuses.</span>
   </div>
   <div class="mt-2"><span>Edaspidi hakkame ekraanile ka erinevaid asju joonistama ja tsüklis nende omadusi muutma. Selleks, et muudatused ka
   kasutaja mänguaknasse jõuaksid, tuleb mänguakent uuendada. Seda tehakse mooduli <span
       class="fst-italic">display</span> meetodiga
-  <span class="fst-italic">flip()</span>.</span></div>
+  <span class="fst-italic">flip</span>.</span></div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Muudame oma mänguakna natuke huvitavamaks ja lisame sinna vähemalt tausta. Kõik selle mängu loomiseks vajalikud pildid
   saate alla laadida <a download="mangufailid" target="_blank" href="/assets/game/mangufailid.zip">siit</a>. Seal kasutas on pilt nimega
   <span class="fst-italic">taust.png</span>, mida tahame oma mängu taustana kasutada.</span></div>
   <div class="mt-2"><span>Pildi laadimiseks <span class="fst-italic">pygame</span>'is</span> saab kasutada mooduli
-    <span class="fst-italic">image</span> meetodit <span class="fst-italic">load()</span>, mis võtab argumendiks pildi
+    <span class="fst-italic">image</span> meetodit <span class="fst-italic">load</span>, mis võtab argumendiks pildi
     failitee. Eeldusel,
-    et pildid on Pythongi failiga samas kaustas, siis piisab lihtsalt faili nimest. Seda pilti saame nüüd endale
+    et pildid on Pythoni failiga samas kaustas, siis piisab lihtsalt faili nimest. Seda pilti saame nüüd endale
     meelepärases kohas ekraanil
     kuvada. Kõik asukohad ekraanil on määratud kahe koordinaadiga: x-koordinaat ja y-koordinaat. Võib-olla olete juba
     matemaatikas neid õppinud.
     X-koordinaat tähistab horisontaalset asukohta ehk kui vasakul või paremal element asub. Y-koordinaat tähistab
-    vertikaalset asulohta, ehk kui
+    vertikaalset asukohta ehk kui
     üleval või all midagi asub. Alguspuntis on nii x- kui y-koordinaat 0 ja Pythoni jaoks asub see punkt vasakul üleval
     servas. Mida suuremaks
     muutub x-koordiaat, seda rohkem paremale nihkub element, ja mida suuremaks muutub y-koordinaat, seda allapoole
@@ -84,8 +84,8 @@
   mängu tsüklit peame pildi laadima ja muutujasse salvestama:</span></div>
   <div class="mt-2 code-block"><span [highlight]=backgroundLoadCode></span></div>
   <div class="mt-2"><span>Ja selle kuvamiseks, peame mängu tsüklis selle ekraanile joonistama. Selleks kasutame oma mänguakna
-  objekti peal meetodit <span class="fst-italic">blit()</span>, mis võtab argumendiks pildi, mis tuleb joonistada ja koordinaadid, kuhu
-  pilt lisada tuleb. See joonistamine tuleks teha enne <span class="fst-italic">flip()</span> meetodit ehk enne akna uuendamist.</span>
+  objekti peal meetodit <span class="fst-italic">blit</span>, mis võtab argumendiks pildi, mis tuleb joonistada ja koordinaadid, kuhu
+  pilt lisada tuleb. See joonistamine tuleks teha enne <span class="fst-italic">flip</span>-meetodit ehk enne akna uuendamist.</span>
   </div>
   <div class="mt-2 code-block"><span
     [highlight]="'aken.blit(taustapilt, (0, 0)) # koordinaadid võime anda ennikuna'"></span></div>
@@ -100,7 +100,7 @@
 <div class="mt-3 box-container">
   <div><span>Tegelasi ja teisi mängu elemente kutsutakse <span
     class="fst-italic">sprite</span>'ideks ja nad on kõik <span class="fst-italic">pygame</span>'i klassi
-  Sprite alamklassid. Klassis Sprite on meetod nimega <span class="fst-italic">update()</span>, mida kutsutakse välja iga kord kui on vaja
+  Sprite alamklassid. Klassis Sprite on meetod nimega <span class="fst-italic">update</span>, mida kutsutakse välja iga kord kui on vaja
   tegelast uuendada. Tüüpiliselt on see meetod vaja üle katta.</span></div>
   <div class="mt-2"><span>Ilmselt märkasid, et juba ainuüksi mängu käivitamiseks ja akna joonistamiseks pidime kirjutama palju koodi ja arvestades, et
   me pole veel mängu loogikani jõudnud, läheks meie koodifail päris pikaks. Õnneks saame tegelikult oma koodi mitme Pythoni faili vahele ära jagada
@@ -120,7 +120,7 @@
     See on lühend sõnast <span class="fst-italic">rectangle</span> ja tähendab ristkülikut. Seda isendivälja kasutatakse mängus hiljem
     tegelase paiknemise ala arvutamisel ja seda läheb vaja kui hakkame vaatama, kas meie tegelane põrkab mõne muu elemendiga kokku.
     Selle isendivälja väärtustamiseks saame oma tegelase pildi põhjal ta <span class="fst-italic">rect</span> väärtuse arvutada
-    meetodiga <span class="fst-italic">get_rect()</span>.</span>
+    meetodiga <span class="fst-italic">get_rect</span>.</span>
   </div>
   <div class="mt-2">
     <span>Samuti võiksime määrata ära oma tegelase algse asukoha. Näiteks väljale <span class="fst-italic">self.rect.centerx</span>
@@ -139,14 +139,14 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Nüüd liigume tagasi oma põhiprogrammi juurde ja vaatame, kuidas teises failis asuvat Päkapiku klassi kasutada ja
-  tegelane ka ekraanile kuvada. Kuna meie Päkapikk klass ei asu enam samas failis, siis tuleb kõigepealt too fail importida. Panime
+  tegelane ka ekraanile kuvada. Kuna meie Päkapikk klass ei asu enam samas failis, siis tuleb kõigepealt see fail importida. Panime
   faili nimeks <span class="fst-italic">päkapikk.py</span> ja faili importides kirjutame faili nime ilma faililaiendita.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="'import päkapikk'"></span></div>
-  <div class="mt-2"><span>Nüüd saame failis <span>päkapikk.py</span> olevaid asju kasutada täpselt samamoodi nagu kasutame
+  <div class="mt-2"><span>Nüüd saame failis <span class="fst-italic">päkapikk.py</span> olevaid asju kasutada täpselt samamoodi nagu kasutame
   <span class="fst-italic">pygame</span>'i asju. Näiteks loome ühe uue päkapiku isendi (samas kohas kus laadisime sisse taustapilti).
   Paneme oma päkapikku x-koordinaadiks akna keskpukti. Saame selle kätte kui jagame laiuse kahega (kasutame täisarvulist jagamist).
-  Y-koordinaadiks sobib midagi natuke alumisest äärest ülevalpool ehk siis näiteks 50 pikslit vähem kui kogu akna kõrgus.</span>
+  Y-koordinaadiks sobib midagi natuke alumisest äärest ülevalpool, näiteks 30 pikslit vähem kui kogu akna kõrgus.</span>
   </div>
   <div class="mt-2 code-block"><span
     [highlight]="'# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\ntegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 30)'"></span>
@@ -178,14 +178,14 @@
 <h4 class="mt-5" [attr.id]="'liikumine'">Kuidas panna tegelased liikuma?</h4>
 <div class="mt-3 box-container">
   <div><span>Paneme nüüd oma päkapiku ka liikuma. Ta peaks saama liikuda ekraani ulatuses nii paremale kui ka vasakule. Selleks
-  uuendame natuke oma Päkapikk klassi ja katame üle ülemklassi meetodi <span class="fst-italic">update()</span>. Seda
+  uuendame natuke oma Päkapikk klassi ja katame üle ülemklassi meetodi <span class="fst-italic">update</span>. Seda
   meetodit kutsutakse välja igal mängutsükli iteratsioonil tegelase andmete uuendamiseks. Sealhulgas ka näiteks ta asukoha muutmiseks.</span>
   </div>
   <div class="mt-2"><span>Paneme oma tegelase liikuma nooleklahvide vajutuste peale. Iga parema nooleklahvi vajutusega peaks tegelane liikuma
   natuke paremale ja iga vasaku nooleklahvi vajutusega natuke vasakule. Selleks peame suurendama või vähendama tegelase x-koordinaati.
   </span></div>
   <div class="mt-2"><span>Kuidas teada, mis klahvi kasutaja vajutas? Selleks saame kasutada <span class="fst-italic">pygame</span>'i
-  mooduli <span class="fst-italic">key</span> meetodit <span class="fst-italic">get_pressed()</span>. See meetod tagastab jada klaviatuuri
+  mooduli <span class="fst-italic">key</span> meetodit <span class="fst-italic">get_pressed</span>. See meetod tagastab jada klaviatuuri
   klahvide staatustest. Iga element selles jadas sümboliseerib mingit klahvi ja on <span class="fst-italic">True</span>, kui
   klahv on alla vajutatud, ja <span class="fst-italic">False</span>, kui ei ole.</span></div>
   <div class="mt-2"><span>Kuidas saada kätte meile huvipakkuv klahv?
@@ -199,7 +199,7 @@
   <div class="mt-2"><span>Proovime nüüd kokku panna vastavad tingimuslaused. Kui vasak nooleklahv on alla vajutatud, siis
   tahame tegelase x-koordinaati natuke vähendada, parema nooleklahvi puhul natuke suurendada.</span></div>
   <div class="mt-2 code-block"><span [highlight]="elfUpdateInitialCode"></span></div>
-  <div class="mt-2"><span>Kui oma Päkapikk klassi selle meetodiga uuendad, siis peaksid märkama, et tegelane tõesti liigub
+  <div class="mt-2"><span>Nüüd peaksid märkama, et tegelane tõesti liigub
   nooleklahvide vajutamise peale. Kui tahad, võid proovida ka liikumiskiirust muuta. Mis saab kui hoiad ühte nooleklahvidest all?
   Ilmselt märkad, et tegelane läheb akna piiridest välja ja kaob ära. Peaksime seadma talle piirid ja mitte lubama piiridest välja minna.
   Hetkel ei tea meie tegelane aga midagi selle kohta, mis on akna laius, kus tal on lubatud liikuda. Vasakul ei tohiks lubada
@@ -208,7 +208,7 @@
   <div class="mt-2"><span>Muudame selleks kõigepealt oma konstruktorit:</span></div>
   <div class="mt-2 code-block"><span [highlight]="elfConstructorWithWidthCode"></span></div>
   <div class="mt-2">Nüüd saame seda isendiväljale salvestatud akna laiust ka meetodis <span
-    class="fst-italic">update()</span>
+    class="fst-italic">update</span>
     kasutada. Tegelikult on meie tegelase isendiväljal <span class="fst-italic">rect</span> veel teisi variante peale
     <span class="fst-italic">centerx</span>, et x-koordinaati mõjutada. Näiteks <span class="fst-italic">left</span> ja
     <span class="fst-italic">right</span>, mis kontrollivad vastavalt tegelase vasaku ja parema ääre x-koordinaati. Need
@@ -238,8 +238,8 @@
   <div class="mt-2 code-block"><span [highlight]="snowballInitCode"></span></div>
   <div class="mt-2"><span>Peame nüüd mängus mõne Lumepalli isendi looma. Loome näiteks kohe kaheksa tükki ja lisame nad kõik ühte
   <span class="fst-italic">sprite</span>'ide gruppi. Seejärel mängu tsüklis kutsume välja selle grupi meetodit <span
-      class="fst-italic">update()</span>
-  ja joonistame grupi ekraanile (<span class="fst-italic">update()</span> meetod pole meil veel küll üle kaetud, aga kohe lisame ka selle).</span>
+      class="fst-italic">update</span>
+  ja joonistame grupi ekraanile (<span class="fst-italic">update</span>-meetod pole meil veel küll üle kaetud, aga kohe lisame ka selle).</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="snowballMainClassCode"></span></div>
   <div class="mt-2"><span>Kui nüüd koodi käivitad, siis näed, et kaheksa lumepalli on iga kord erinevates kohtades ekraanil. Kuid hetkel nad ei
@@ -250,7 +250,7 @@
   sadama. Selleks muudame natuke nende konstruktorit ja genereerime neile y-koordinaadi hoopis väiksest negatiivsest vahemikust, näiteks -150 kuni -50.
     See tagab selle, et ühtegi lumepalli pole mängu alustamise hetkel näha, aga siis nad hakkavad vaikselt allapoole liikuma.
   </span></div>
-  <div class="mt-2"><span>Liikumise saame tekitada jälle meetodis <span class="fst-italic">update()</span>. Alustame lihtsalt sellest,
+  <div class="mt-2"><span>Liikumise saame tekitada jälle meetodis <span class="fst-italic">update</span>. Alustame lihtsalt sellest,
   et suurendame seal lumepalli y-koordinaati mingi kindla arvu võrra.</span></div>
   <div class="mt-2 code-block"><span [highlight]="snowballUpdateInitCode"></span></div>
   <div class="mt-2"><span>Nüüd lumepallid liiguvad tõesti ülevalt alla, kuid see liikumine on veel üsna igav. Nad liiguvad sama kiirusega lihtsalt otse ülevalt alla ja siis kaovad akna piiri taha.
@@ -284,8 +284,8 @@
   </div>
   <div class="mt-2"><span>Nüüd lisame mängu klassi eluderiba joonistamise. Kuna eluderiba puhul pole otseselt tegu tegelasega, siis ei ole meil siin
   mõtet hakata selle jaoks uut klassi looma. <span>Pygame</span>'il on endal olemas võimalused erinevate kujundite joonistamiseks ja siin kasutamegi
-  lihtsalt ristkülikute joonistamist. Lisame valget värvi piirjoone ja selle sisse rohelise eluderiba. Eluderiba pikkus oleneb sellest, kui palju kasutajal on
-  elusid alles. Kui elud on täis, siis on eluderiba ka maksimaalse laiusega. Vastasel juhul peame arvutama, mitu protsenti elusid kasutajal alles on, ja selle
+  lihtsalt ristkülikute joonistamist. Lisame valget värvi piirjoone ja selle sisse rohelise eluderiba. Eluderiba pikkus oleneb sellest, kui palju on kasutajal
+  elusid alles. Kui elud on täis, siis on eluderiba ka maksimaalse laiusega. Vastasel juhul peame arvutama, mitu protsenti eludest kasutajal alles on, ja selle
   põhjal saame kätte eluderiba laiuse.</span></div>
   <div class="mt-2"><span>Kogu eluderiba joonistamise võiksime panna eraldi funktsiooni ja siis mängutsüklis seda funktsiooni välja kutsuda. Funktsiooni argumendid
   võiks olla akna objekt (seda läheb joonistamisel vaja) ja kui palju on eluderiba täidetud ehk mitu protsenti kasutaja eludest on alles. Funktsiooni
@@ -297,7 +297,7 @@
   eluderiba laius ja täidise puhul peame selle arvutama (korrutame maksimaalse eluderiba laiuse argumendiks saadud protsendiga).</span>
   </div>
   <div class="mt-2"><span>Seejärel joonistame
-  kummagi ristküliku ekraanile. Selleks kasutame meetodit <span class="fst-italic">pygame.draw.rect()</span>, mille esimeseks argumendiks anname akna objekti,
+  kummagi ristküliku ekraanile. Selleks kasutame meetodit <span class="fst-italic">pygame.draw.rect</span>, mille esimeseks argumendiks anname akna objekti,
   teiseks värvi, kolmandaks <span class="fst-italic">pygame.Rect</span> objekti. Piirjoone joonistamisel anname ka neljanda argumendi &ndash; piirjoone laiuse.
   </span></div>
   <div class="mt-2"><span>Värvid on siin RGB-koodid ehk kolmeelemendilised ennikud, kus esimene element on punase, teine rohelise ja kolmas sinise värvi intensiivsus (täisarv vahemikus 0 - 255).
@@ -310,7 +310,7 @@
     [highlight]="'joonista_elud(aken, tegelane_päkapikk.elud / tegelane_päkapikk.täiselud)'"></span></div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Nüüd oleme valmis liikuma kokkupõrgete juurde. Selleks on olemas meetod <span class="fst-italic">pygame.sprite.spritecollide()</span>, mille
+  <div><span>Nüüd oleme valmis liikuma kokkupõrgete juurde. Selleks on olemas meetod <span class="fst-italic">pygame.sprite.spritecollide</span>, mille
   abil saame kätte ühe <span class="fst-italic">sprite</span>'i kokkupõrked mingis etteantud grupis asuvate <span
       class="fst-italic">sprite</span>'idega.
     Argumentideks tuleb esiteks anda tegelane, teiseks grupp, kellega kokkupõrkeid jälgime, ja kolmandaks tõeväärtus, mis ütleb, kas
@@ -318,10 +318,10 @@
   anname argumendiks peategelase, siis lumepallide grupi ja viimasena tõeväärtuse <span class="fst-italic">False</span>. Lumepalli eemaldamise asemel on meil
   mõistlikum talle jälle lihtsalt uus asukoht määrata.</span></div>
   <div class="mt-2"><span>Lisaks tahame peategelase elusid vähendada. Selleks võime lisada Päkapikk klassi meetodi <span
-    class="fst-italic">vähenda_elusid()</span>
+    class="fst-italic">vähenda_elusid</span>
   ja kutsuda seda iga kokkupõrke korral välja.</span></div>
   <div class="mt-2 code-block"><span [highlight]="deductLivesCode"></span></div>
-  <div class="mt-2"><span>Mängutsüklis järgime kokkupõrkeid pärast seda kui oleme oma tegelast ja lumepalle uuendanud, kuid enne seda kui nad
+  <div class="mt-2"><span>Mängutsüklis jälgime kokkupõrkeid pärast seda kui oleme oma tegelast ja lumepalle uuendanud, kuid enne seda kui nad
   ekraanile joonistame. Kui peategelase elud jõuavad nulli, siis peaksime ka mängu lõpetama.</span></div>
   <div class="mt-2 code-block"><span [highlight]="deductLivesMainCode"></span></div>
   <div class="mt-2"><span>Nüüd on ilusti näha, kuidas lumepalliga kokku põrgates elude arv väheneb. Tasub veel ära mainida, et kokkupõrgetes vaadatakse, kas
@@ -359,18 +359,18 @@
   </div>
   <div class="mt-2 code-block"><span [highlight]="'font = pygame.font.SysFont(\'Cooper Black\', 40)'"></span></div>
   <div class="mt-2"><span>Enne mängutsüklit peame salvestama ka hetkeaja kuhugi muutujasse. Hiljem saame selle kaudu arvutada, kaua mäng käinud on.
-  See meetod tagastab hetkeaja millisekundites.</span></div>
+  See meetod tagastab hetkeaja millisekundites:</span></div>
   <div class="mt-2 code-block"><span [highlight]="'algusaeg = pygame.time.get_ticks()  # mängu algusaeg'"></span></div>
   <div class="mt-2"><span>Mängutsüklis tahame iga kord arvutada, kaua mäng käinud on. Selleks võtame jälle hetkeaja ja lahutame sellest mängu algusaja.
-  Muudame selle ka millisekunditst sekunditeks, selleks jagame tuhandega, ning ümardame ühe komakohani.</span></div>
+  Muudame selle ka millisekunditst sekunditeks. Selleks jagame tuhandega ja ümardame ühe komakohani.</span></div>
   <div class="mt-2 code-block"><span
     [highlight]="'aeg = round((pygame.time.get_ticks() - algusaeg) / 1000, 1) # aeg sekundites'"></span></div>
   <div class="mt-2"><span>Nüüd jääb üle ainult see aeg ekraanile lisada. Selleks kasutame kõigepealt oma fondi meetodit <span
-    class="fst-italic">render()</span>,
+    class="fst-italic">render</span>,
   mis joonistab meile tekstist pildi. Argumentideks anname teksti, mida tahame kasutada (meie puhul aeg sõnena), tõeväärtuse, mis ütleb kas tahame
   kõrgema kvaliteediga pilti (<span class="fst-italic">True</span>) või väiksemat madalama kvaliteediga pilti (<span
       class="fst-italic">False</span>), ja
-  kolmandaks teksti värvi. Seejärel saame selle oma akna meetodi <span class="fst-italic">blit()</span> abil aknasse soovitud asukohta lisada.
+  kolmandaks teksti värvi. Seejärel saame selle oma akna meetodi <span class="fst-italic">blit</span> abil aknasse soovitud asukohta lisada.
   Selle rea võiks lisada tsüklis pärast eluderiba joonistamist.</span></div>
   <div class="mt-2 code-block"><span
     [highlight]="'aken.blit(font.render(str(aeg), True, (255, 255, 255)), (300, 10))'"></span></div>
@@ -383,7 +383,7 @@
 <div class="mt-3 box-container">
   <div><span>Nüüd lisame mängule keerukust. Me teame igal tsükli iteratsioonil, mitu sekundit on mängu algusest möödunud. Proovime lisada
   iga 5 sekundi järel uue lumepalli oma lumepallide gruppi ja iga 10 sekundi järel uue kingituse. Kui soovime kontrollida 5 sekundi möödumist, siis võime
-    leida jäägi kui jagame aega viiega. Siin on aga üks lõks, nimelt käib mängutsükkel väga kiiresti ja tingimus <span
+    leida jäägi aja jagamisel viiega. Siin on aga üks lõks, nimelt käib mängutsükkel väga kiiresti ja tingimus <span
       class="fst-italic">aeg % 5 == 0</span>
     on tõene ilmselt mitme iteratsiooni puhul. Siiski tahame vaid ühe korra lumepalli või kingitust lisada. Selleks saame lisada tingimuse, mis vaataks mitu
     lumepalli või kingitust juba vastavas grupis on ja palju neid selleks hetkeks peaks olema. Teame, et algselt oli meil lendavaid objekte kaheksa ja iga 5-
@@ -398,14 +398,14 @@
 <div class="mt-3 box-container">
   <div><span>Lõpuakna joonistamine sarnaneb tavalise mänguakna joonistamisele, aga see peaks oma olemuselt juba palju lihtsam olema.
   Alustame aga hoopis oma koodi korrastamiseks. Tõstame senise mänguloogika eraldi funktsiooni.
-  Akna laiuse, kõrguse, akna objekti ja taustapildi võime luua põhiprogrammis ja anda funktsioonile argumentidena ette. Hilejm loome
+  Akna laiuse, kõrguse, akna objekti ja taustapildi võime luua põhiprogrammis ja anda funktsioonile argumentidena ette. Hiljem loome
   ka lõpuakna joonistamiseks eraldi funktsiooni ja seal on neid samu andmeid ja objekte vaja.</span></div>
   <div class="mt-2"><span>Natuke muudame ka oma tsükli struktuuri. Kuna nüüd on meil mängutsükkel funktsiooni sees, siis lihtsalt
   tsükli lõpetamise asemel tahame funktsioonist ka midagi tagastada. Kui kasutaja mängis mängu lõpuni ja kaotas, siis tahame tagastada kasutaja aja. Kui
   ta pani keset mängu akna ristist kinni, siis võime tagastada näiteks <span class="fst-italic">None</span>. Esimesel juhul
   tahame pärast kaotust näidata ka lõpuakent, teisel juhul mitte.</span></div>
   <div class="mt-2 code-block"><span [highlight]="gameInFunctionCode"></span></div>
-  <div class="mt-2"><span>Tekitame nüüd veel uue funktsiooni <span class="fst-italic">lõpuaken()</span>, mis võtab
+  <div class="mt-2"><span>Tekitame nüüd veel uue funktsiooni <span class="fst-italic">lõpuaken</span>, mis võtab
     argumentideks akna objekti, taustapildi ja mängija saadud tulemuse. See funktsioon võiks tagastada tõeväärtuse:
   <span class="fst-italic">False</span>, kui kasutaja paneb akna ristist kinni, ja <span class="fst-italic">True</span>,
   kui kasutaja soovib uut mängu mängida.</span></div>
@@ -414,7 +414,7 @@
   <div><span>Alustame sellest, et kuvame kasutajale lihtsa akna, kus on kõigepealt suurelt tekst "MÄNG LÄBI" ja siis väiksemalt
   all kasutaja saadud tulemus. Teksti kuvamiseks on meil jälle vaja fonte. Loome siin kaks fonti, ühe suure teksti jaoks ja teise väikse jaoks.
   Kasutame nende tekstide puhul tumepunast värvi, RGB-ennikuna sobib näiteks (195, 20, 20). Kutsume välja ka fondi meetodit <span
-      class="fst-italic">render()</span>,
+      class="fst-italic">render</span>,
   et muuta tekst pildiks, mida saame tsüklis aknale joonistada.</span></div>
   <div class="mt-2 code-block"><span [highlight]="endScreenInitialCode"></span></div>
   <div class="text-center my-3">
@@ -432,10 +432,10 @@
   ristist akna kinni vajutamise sündmus. Nüüd kui tahame kontrollida, kas hiireklahv vajutati alla, siis selleks sobib
   <span class="fst-italic">event.type == pygame.MOUSEBUTTONDOWN</span>. Kui tahame ka veenduda, et tegemist oli kindlasti vasakpoolse hiireklahviga, siis kontrollime
   lisaks kas <span class="fst-italic">event.button == 1</span>. Vähe sellest, et me nüüd teame, et hiire vasak klahv vajutati alla. Meil on vaja ka kontrollida, kas
-  hiir asus sel hetkel "Mängi uuesti" teksti kohal. Hiire asukoha saame kätte meetodiga <span class="fst-italic">pygame.mouse.get_pos()</span> ja
+  hiir asus sel hetkel "Mängi uuesti" teksti kohal. Hiire asukoha saame kätte meetodiga <span class="fst-italic">pygame.mouse.get_pos</span> ja
   selleks, et kontrollida, kas see oli "Mängi uuesti" teksti kohtal, on meil vaja sellest tekstist <span
       class="fst-italic">rect</span>'i. Täpselt nii nagu ka
-  tegelaste kokkupõrgetel. Mängi uuesti <span class="fst-italic">rect</span>'i saame kätte <span class="fst-italic">get_rect()</span> meetodiga ja me peame sellele
+  tegelaste kokkupõrgetel. Mängi uuesti <span class="fst-italic">rect</span>'i saame kätte <span class="fst-italic">get_rect</span>-meetodiga ja me peame sellele
   ise käsitsi ka x- ja y-koordinaadid määrama.</span></div>
   <div class="mt-2 code-block"><span [highlight]="'mängi_uuesti_rect = mängi_uuesti_roheline.get_rect()\n'+
 'mängi_uuesti_rect.x = mängi_uuesti_asukoht[0] # peame käsitsi koordinaadid määrama\n'+
@@ -443,15 +443,15 @@
   <div class="mt-2"><span>Hiirekliki kontrolli saame lisada nii: </span></div>
   <div class="mt-2 code-block"><span [highlight]="playAgainMouseClickCode"></span></div>
   <div class="mt-2"><span>Lõpuks tuleb ka see tekst ekraanile kuvada:</span></div>
-  <div class="mt-2"><span [highlight]="'aken.blit(mängi_uuesti, mängi_uuesti_asukoht)'"></span></div>
+  <div class="mt-2 code-block"><span [highlight]="'aken.blit(mängi_uuesti, mängi_uuesti_asukoht)'"></span></div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Põhiprogrammis võime kõigepealt kutsuda välja oma funktsiooni <span class="fst-italic">mäng()</span>. Selle funktsiooni
+  <div><span>Põhiprogrammis võime kõigepealt kutsuda välja oma funktsiooni <span class="fst-italic">mäng</span>. Selle funktsiooni
   tagastusväärtuse salvestame muutujasse ja seejärel loome tsükli. Kuniks tulemus ei ole <span
       class="fst-italic">None</span>, siis
-  kutsume välja funktsiooni <span class="fst-italic">lõpuaken()</span> ja salvestame selle tagastusväärtuse ka muutujasse. Kui see tagastusväärtus oli
+  kutsume välja funktsiooni <span class="fst-italic">lõpuaken</span> ja salvestame selle tagastusväärtuse ka muutujasse. Kui see tagastusväärtus oli
     <span class="fst-italic">True</span>, siis järelikult tahtis kasutaja uut mängu mängida ja võime uuesti funktsiooni <span
-      class="fst-italic">mäng()</span>
+      class="fst-italic">mäng</span>
   välja kutsuda. Kui tagastatud väärtus oli <span class="fst-italic">False</span>, siis kasutaja tahtis mängu lõpetada. Sellisel juhul me tahame, et ka meie tsükkel lõpetaks.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="mainMethodCode"></span></div>
@@ -468,7 +468,7 @@
   Kui kasutaja saab parema tulemuse, siis muutub see uueks rekordiks. Kuna me tahame, et rekord püsiks alles ka siis kui programmi vahepeal kinni paneme, siis võiks selle
   kirjutada kuhugi faili. Sobib tavaline tekstifail, milles ongi ainult üks rida &ndash; rekord.</span></div>
   <div class="mt-2"><span>Tuleb ka arvestada võimalusega, et mängu mängitakse esimest korda ja sellise nimega faili veel ei ole. Sellisel juhul ei tohiks meie programm
-  katki minna. Võime sellisel juhul kuvada kasutajale eelmiseks rekordiks 0.0. Tuleta meelde veahaldust ja failist lugemist/kirjutamist ja proovi lisada ka rekordi
+  katki minna. Võime sellisel juhul kuvada kasutajale eelmiseks rekordiks 0.0. Tuleta meelde veahaldust ja failist lugemist/kirjutamist ning proovi lisada ka rekordi
   arvestamine. Kui jääd hätta, siis vaata vihjeid.</span></div>
   <app-exercise-hints [hints]="recordHints"></app-exercise-hints>
   <div class="text-center my-3">
@@ -477,7 +477,7 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Sellega on meie lõpuaken valmis. Kes soovib, siis võib sarnaselt luua mängule ka algusakna, mida kuvatakse kui kasutaja mängu käima paneb.</span>
+  <div><span>Sellega on meie lõpuaken valmis. Kes soovib, siis võib sarnaselt luua mängule ka algusakna, mida kuvatakse, kui kasutaja mängu käima paneb.</span>
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'heli'">Heliefektide ja muusika lisamine</h4>
@@ -486,13 +486,13 @@
   <span class="fst-italic">pygame</span>'is heli väga lihtne lisada. Mängu jaoks allalaetud piltide kaustas oli ka fail <span
       class="fst-italic">vuhin.mp3</span>.
   Loome sellest failist endale heliobjekti. Seda võime teha näiteks kohe funktsiooni <span
-      class="fst-italic">mäng()</span> alguses:</span></div>
+      class="fst-italic">mäng</span> alguses:</span></div>
   <div class="mt-2 code-block"><span [highlight]="soundLoadCode"></span></div>
-  <div class="mt-2"><span>Loodud Sound-tüüpi objektil on olemas meetod <span class="fst-italic">play()</span>, mille abil saab ühekordselt heli mängida. Võime seda meetodit välja kutsuda
+  <div class="mt-2"><span>Loodud Sound-tüüpi objektil on olemas meetod <span class="fst-italic">play</span>, mille abil saab ühekordselt heli mängida. Võime seda meetodit välja kutsuda,
   kui peategelane põrkab kokku lumepalli või kingitusega:</span></div>
   <div class="mt-2 code-block"><span [highlight]="soundUseCode"></span></div>
-  <div class="mt-2"><span>Ja nii lihtne see ongi. Kui kellelgi on veel mõni oma helifail, mida tahaks kasutada mängu taustamuusikana. Selleks tuleks feli laadida mängu
-  taustamuusikana ja kutsuda välja meetodit <span class="fst-italic">pygame.mixer.music.play()</span>. Sellele meetodile saab anda argumendiks korduste arvu, mitu korda muusikapala
+  <div class="mt-2"><span>Ja nii lihtne see ongi. Kui kellelgi on mõni oma helifail, mida tahaks kasutada mängu taustamuusikana, siis ka seda saab mängu lisada. Selleks tuleks heli laadida mängu
+  taustamuusikana ja kutsuda välja meetodit <span class="fst-italic">pygame.mixer.music.play</span>. Sellele meetodile saab anda argumendiks korduste arvu, mitu korda muusikapala
   korrata. Kui anda argumendiks -1, siis mängitakse muusikapala lõputult.</span></div>
   <div class="mt-2 code-block"><span [highlight]="musicCode"></span></div>
 </div>

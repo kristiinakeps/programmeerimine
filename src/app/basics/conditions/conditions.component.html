@@ -134,7 +134,7 @@
       <tr>
         <td>"re" in "Tere"</td>
         <td>True</td>
-        <td rowspan="2"><span class="fst-italic">in</span> kontrollib tähe või alamsõne leidumist sõnes</td>
+        <td rowspan="2">Operaator <span class="fst-italic">in</span> kontrollib tähe või alamsõne leidumist sõnes.</td>
       </tr>
       <tr>
         <td>"o" in "Tere"</td>
@@ -143,7 +143,7 @@
       <tr>
         <td>"Tere päevast!".startswith("Te")</td>
         <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne algab etteantud sõnega</td>
+        <td rowspan="2">Kontrollib, kas sõne algab etteantud sõnega.</td>
       </tr>
       <tr>
         <td>"Tere päevast!".startswith("!")</td>
@@ -152,7 +152,7 @@
       <tr>
         <td>"Tere päevast!".endswith("!")</td>
         <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne lõppeb etteantud sõnega</td>
+        <td rowspan="2">Kontrollib, kas sõne lõppeb etteantud sõnega.</td>
       </tr>
       <tr>
         <td>"Tere päevast!".endswith("Te")</td>
@@ -161,7 +161,7 @@
       <tr>
         <td>"123".isdigit()</td>
         <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult numbreid</td>
+        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult numbreid.</td>
       </tr>
       <tr>
         <td>"12a".isdigit()</td>
@@ -170,7 +170,7 @@
       <tr>
         <td>"abc".isalpha()</td>
         <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult tähti</td>
+        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult tähti.</td>
       </tr>
       <tr>
         <td>"12a".isalpha()</td>
@@ -182,12 +182,11 @@
 </div>
 <div class="mt-3 box-container">
   <div><strong class="strong">Tõeväärtuste kombineerimine</strong></div>
-  <div class="mt-3"><span>Nägime just milliseid tehteid on võimalik kasutada tõeväärtuste saamiseks. Kuid kas tõeväärtuste endiga saame ka mingeid tehteid teha?
+  <div class="mt-2"><span>Nägime just erinevaid tehteid, mida on võimalik kasutada tõeväärtuste saamiseks. Kuid kas tõeväärtuste endiga saame ka mingeid tehteid teha?
   Saame küll. Me saame tõeväärtusi omavahel kombineerida <strong class="strong">loogiliste tehete</strong> abil. Neid loogilisi tehteid on kolm:
   <strong class=" fst-italic strong">and</strong>, <strong class=" fst-italic strong">or</strong> ja <strong
       class=" fst-italic strong">not</strong>.
-  Eesti keeles tähendaksid need <span class="fst-italic">ja</span>, <span class="fst-italic">või</span> ning <span
-      class="fst-italic">ei</span>.
+  Eesti keeles tähendaksid need "ja", "või" ning "ei".
   Tulemuseks annavad need samuti tõeväärtuse.</span>
   </div>
   <div class="mt-3">
@@ -205,7 +204,7 @@
         <td rowspan="4">and</td>
         <td>True and True</td>
         <td>True</td>
-        <td rowspan="4">Tulemus on tõene ainult siis kui kõik tehte <span class="fst-italic">and</span> abil seotud
+        <td rowspan="4">Tulemus on tõene ainult siis, kui kõik tehte <span class="fst-italic">and</span> abil seotud
           tõeväärtused on tõesed.
         </td>
       </tr>
@@ -255,10 +254,10 @@
     </table>
   </div>
   <div class="mt-3"><span>Võime neid tehteid kasutades erinevaid tõeväärtustehteid omavahel kombineerida, kuid tähtis on ka
-  nende tehete prioriteet. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
-  rakendub <span class="fst-italic">and</span> ning viimasena <span class="fst-italic">or</span>.</span>
+  nende tehete järjekord. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
+  rakendub <span class="fst-italic">and</span> ja viimasena <span class="fst-italic">or</span>.</span>
   </div>
-  <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame mis järjekorras siis tehteid tehakse.</span>
+  <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame, mis järjekorras siis tehteid tehakse.</span>
   </div>
   <div class="code-block mt-2">
     <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span class="hljs-keyword"> or not </span>
@@ -282,7 +281,7 @@
   <div class="code-block mt-2">
     <span [highlight]="booleanCombineCode5"></span>
   </div>
-  <div class="mt-3"><span>Soovi korral saame sulgudega ise prioriteete ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
+  <div class="mt-3"><span>Soovi korral saame sulgudega ise järjekorda ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
   tehakse esimesena.</span>
   </div>
   <div class="code-block mt-2">
@@ -296,7 +295,7 @@
   <div class="mt-3"><span>Siinkohal tegelikult juba näeme, et ükskõik mis väärtuse saab sulgudes olev avaldis, kogu avaldise väärtus on
   ikka <span class="fst-italic">False</span>, sest <span class="fst-italic">and</span> tehte esimene pool on juba <span
       class="fst-italic">False</span>.
-  Ka Python on tegelikult piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
+  Ka Python on piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
   </div>
 </div>
 <app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest"
@@ -310,7 +309,7 @@
       class="fst-italic">Else</span> tähendabki
   inglise keeles "vastasel juhul". <span class="fst-italic">Else</span> peaks olema sama taandega nagu oli <span
       class="fst-italic">if</span>
-  võtmeõnaga tingimuslause. Käsud, mida täidetakse <span class="fst-italic">else</span>-harus tuleb kirjutada jälle taandega.</span>
+  võtmeõnaga tingimuslause. Käsud, mida täidetakse <span class="fst-italic">else</span>-harus, tuleb kirjutada jälle taandega.</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="temperatureIfElseCode"></span>
@@ -319,9 +318,9 @@
 <div class="mt-3 box-container">
   <div><strong class="strong">Tingimuslaused üksteise sees</strong></div>
   <div class="mt-3"><span>Oletame nüüd, et tahaksime lisaks veel kontrollida, et äkki on
-  temperatuur lausa alla 0 kraadi ja sellisel juhul väljastada "Pane kasukas selga!". Üks variant selleks on lisada esimese <span
+  temperatuur lausa alla 0 kraadi, ja sellisel juhul väljastada "Pane kasukas selga!". Üks variant selleks on lisada esimese <span
       class="fst-italic">if</span>-lause
-  alla veel teinegi, mis siis kontrolliks, kas temperatuur on alla 0 kraadi. Selleks, et Pythoni interpretaator saaks aru, mis käsud kuhu alla lähevad
+  alla veel teinegi, mis kontrolliks, kas temperatuur on alla 0 kraadi. Selleks, et Pythoni interpretaator saaks aru, mis käsud kuhu alla lähevad,
   kasutame taandeid. Sisemise tingimuslause alla kuuluvad käsud peavad olema nüüd lausa kahe taandega.</span>
   </div>
   <div class="row mx-0">
@@ -335,26 +334,25 @@
 </div>
 <div class="mt-3 box-container">
   <div><strong class="strong">Mitmeharuline tingimuslause</strong></div>
-  <div class="mt-3"><span>Ilmselt märkad, et kui tahaksime nüüd veel tingimusi lisada, siis peaksime üksteise sisse päris palju
-  tingimuslauseid lisama ning kood võib minna natuke raskesti loetavaks. Õnneks on olemas ka lihtsustatud viis mitme haruga tingimuslausete
+  <div class="mt-2"><span>Ilmselt märkad, et kui tahaksime nüüd veel tingimusi lisada, siis peaksime üksteise sisse päris palju
+  tingimuslauseid lisama ja kood võib minna natuke raskesti loetavaks. Õnneks on olemas ka lihtsustatud viis mitme haruga tingimuslausete
   kirja panemiseks. Selleks kasutatakse seekord võtmesõna <strong class="fst-italic strong">elif</strong>. See on kokku pandud sõnadest
   <span class="fst-italic">else</span> ja <span class="fst-italic">if</span> ning sellele võtmesõnale järgneb samuti tingimus ja koolon. Selliselt
   võime <span class="fst-italic">elif</span>-tingimusi lisada nii palju kui tahame. Programm hakkab järjest neid tingimusi läbi käima kuni leiab mõne, mille
-  tingimus on tõene. Kui tõene tingimus on leitud, siis sellele järgnevaid <span class="fst-italic">elif</span> ja <span
-      class="fst-italic">else</span>
-  osasid üldse ei vaadatagi. Kui aga ei <span class="fst-italic">if</span> ega ükski <span
-      class="fst-italic">elif</span> tingimustest pole tõene, siis
-  täidetakse <span class="fst-italic">else</span> haru. Muidugi vaid juhul kui see on olemas, kui seda ei ole, siis minnakse lihsalt programmi täitmisega edasi.</span>
+  tingimus on tõene. Kui tõene tingimus on leitud, siis sellele järgnevaid <span class="fst-italic">elif</span>- ja <span
+      class="fst-italic">else</span>-osasid üldse ei vaadatagi. Kui aga ei <span class="fst-italic">if</span> ega ükski <span
+      class="fst-italic">elif</span>-tingimustest pole tõene, siis
+  täidetakse <span class="fst-italic">else</span>-haru. Muidugi vaid juhul, kui see on olemas. Kui seda ei ole, siis minnakse lihsalt programmi täitmisega edasi.</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="temperatureElifCode"></span>
   </div>
-  <div class="mt-3"><span>Pane tähele, et siin muutsime tingimuste järjekorda. Kõigepealt kontrollime, kas temperatuur on väiksem kui 0 ning alles siis,
-  kui see on väär, kontrollime, kas temperatuur on väiksem kui 15. Kas taipad miks me nii teeme? Mis juhtuks kui kontrolliksime kõigepealt kas
+  <div class="mt-2"><span>Pane tähele, et siin muutsime tingimuste järjekorda. Kõigepealt kontrollime, kas temperatuur on väiksem kui 0 ning alles siis
+  kontrollime, kas temperatuur on väiksem kui 15. Kas taipad miks me nii teeme? Mis juhtuks kui kontrolliksime kõigepealt kas
   temperatuur on väiksem kui 15?</span>
-    <div class="mt-3"><span>Oletame, et meil on temperatuur -2 ning alustame sellest, et kontrollime, kas temperatuur on väiksem kui 15. See tingimus oleks
-  tõene, sest -2 on väiksem kui 15. Pärast esimese tõese tingimuse leidmist, programm enam teisi samas komplektis olevaid tingimusi edasi ei vaata. Seega -2 kraadi
-    korral prindiks meie programm välja "Pane jope selga!".</span>
+    <div class="mt-3"><span>Oletame, et meil on temperatuur -2 ja alustame sellest, et kontrollime, kas temperatuur on väiksem kui 15. See tingimus oleks
+  tõene, sest -2 on väiksem kui 15. Pärast esimese tõese tingimuse leidmist programm enam teisi samas komplektis olevaid tingimusi edasi ei vaata. Seega -2 kraadi
+    korral väljastaks meie programm "Pane jope selga!".</span>
     </div>
   </div>
 </div>

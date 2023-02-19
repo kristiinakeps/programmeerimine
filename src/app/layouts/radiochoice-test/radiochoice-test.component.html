@@ -1,6 +1,5 @@
 <div class="intro-container mt-4">
-  <h5 class="self-test">Enesekontroll.</h5>
-  <div class="my-3"><span>{{ title }}</span></div>
+  <h5 class="self-test">Enesekontroll. {{ title }}</h5>
   <div class="mt-2" *ngIf="fileName"><span>{{ fileName }}</span></div>
   <div *ngIf="fileContents" class="code-block fst-italic my-2">
     <span [innerHTML]="fileContents"></span>

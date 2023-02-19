@@ -17,8 +17,8 @@
   <div class="row mx-0 mt-2">
     <div class="px-0 col col-lg-9"><span>Ka programme kirjutades on hea jagada suur programm väikesteks alamprogrammideks. Esiteks saab siis alamprogrammide
     kirjutamise jagada erinevate inimeste vahel, aga teine eelis on see, et saame olemasolevad väikseid alamprogramme korduvalt mitmes kohas kasutada.
-    Oletame näiteks, et tahame kirjutada programmi pitsarestoranile. Pitsarestoran valmistab ette uut menüüd ja nad hakkavad pakkuma pitsasid kolmes suuruses:
-    20 cm, 28 cm ja 38 cm läbimõõduga. Nad teavad, et ühe ruutsentimeetri pitsa jaoks on neil vaja 2,3 grammi tainast ning nüüd tahavad nad iga pitsasuuruse
+    Oletame näiteks, et tahame kirjutada programmi pitsarestoranile. Pitsarestoran koostab uut menüüd ja nad hakkavad pakkuma pitsasid kolmes suuruses:
+    20 cm, 28 cm ja 38 cm läbimõõduga. Nad teavad, et ühe ruutsentimeetri pitsa jaoks on neil vaja 2,3 grammi tainast, ja nüüd tahavad nad iga pitsasuuruse
     jaoks vajamineva taigna koguse arvutada. Väga mugav oleks, kui saaks vajamineva taigna koguse arvutamise valemi panna kirja ühes kohas ning siis
     iga kord, kui on vaja seda valemit kasutada, viidata sellele koodijupile. Just siin tulevad appi <strong
         class="strong">funktsioonid</strong>, mille
@@ -33,21 +33,21 @@
 </div>
 <div class="mt-3 box-container">
   <div><strong class="strong">Sisseehitatud funktsioonid</strong></div>
-  <div class="mt-3"><span>Tegelikult oleme me funktsioone juba kasutanud, seni oleme neid aga nimetanud lihtsalt käskudeks. Näiteks <span
+  <div class="mt-2"><span>Tegelikult oleme me funktsioone juba kasutanud, kuid oleme neid nimetanud lihtsalt käskudeks. Näiteks <span
     class="fst-italic">print()</span>,
     <span class="fst-italic">input()</span>, <span class="fst-italic">type()</span>, <span
       class="fst-italic">int()</span>, <span class="fst-italic">str()</span>,
     <span class="fst-italic">float()</span>, <span class="fst-italic">bool()</span> on kõik funktsioonid. Need on mõned Pythoni sisseehitatud funktsioonidest.
-    Me ei tea täpselt, milline on see kood, mille abil funktsioon <span class="fst-italic">print()</span> etteantud väärtuse ekraanile väljastab, aga meil ei
+    Me ei tea täpselt, milline on see kood, mille abil funktsioon <span class="fst-italic">print</span> etteantud väärtuse ekraanile väljastab, aga meil ei
     olegi vaja teada. Meile piisab teadmisest, et selline funktsioon on olemas ja saame seda kasutada.
   </span>
   </div>
   <div class="mt-2"><span>Funktsioonidele saab sulgudes ette anda <strong class="strong">argumente</strong>
     ehk teisisõnu <strong
       class="strong">parameetreid</strong>, mida funktsioonid oma töös kasutada saavad. Näiteks <span
-      class="fst-italic">print()</span> funktsioonile
+      class="fst-italic">print</span>-funktsioonile
     võime anda argumendiks mingi sõne, arvu või tõeväärtuse, mis siis ekraanile väljastatakse. Funktsioonile <span
-      class="fst-italic">int()</span> anname argumendiks
+      class="fst-italic">int</span> anname argumendiks
     näiteks sõne või ujukomaarvu, mille tahame täisarvuks teisendada.
     Järgmiseks vaatame juba, kuidas ise funktsioone kirja panna.</span></div>
 </div>
@@ -73,7 +73,7 @@
   </div>
   <div class="mt-2"><span>Nüüd ilmub tervitus ka ekraanile. Programme kirjutades on tavaks panna kõik funktsioonide kirjeldused programmi algusesse, olenemata sellest, kus
     neid hiljem kasutatakse. Funktsioonidele järgnevat osa nimetatakse <strong class="strong">põhiprogrammiks</strong> ja just seda hakatakse täitma
-    programmi käivitamisel. Seni olemegi ainult põhiprogrammist koosnevat koodi kirjutanud. Programmi aluses olevad funktsioonide kirjeldused õpetavad Pythonile, kuidas
+    programmi käivitamisel. Seni olemegi ainult põhiprogrammist koosnevat koodi kirjutanud. Programmi alguses olevad funktsioonide kirjeldused õpetavad Pythonile, kuidas
     ta peab käituma, kui põhiprogrammis mõnda nendest funktsioonidest kasutatakse.
   </span>
   </div>
@@ -174,11 +174,11 @@
   ju näeme, et funktsiooni sees on selline muutuja? Tegelikult tulebki välja, et kõik funktsiooni sees loodud muutujad ongi kättesaadavad ainult selle
   sama funktsiooni seest. Väljastpoolt me nendele ligi ei pääse. Seega ei saa me otse funktsiooni seest mingit muutujat kasutada. Kuidas siis aga
   taigna koguse arvutamise tulemus kätte saada?</span></div>
-  <div class="mt-2"><span>Selleks, et funktsioonist mingi väärtus kätte saada, tuleb see funktsioonis <strong
+  <div class="mt-2"><span>Selleks, et funktsioonist mingi väärtus kätte saada, tuleb see funktsioonist <strong
     class="strong">tagastada</strong>.
   Kui funktsioonist väärtus tagastatakse, siis see funktsioon omandab selle väärtuse oma töö lõpus ja saame seda väärtust oma koodis kasutada. Näiteks
   <span class="fst-italic">input</span>-funktsioon tagastab selle sõne, mis kasutaja sisestas. Funktsioon <span
-      class="fst-italic">int</span>() tagastab
+      class="fst-italic">int</span> tagastab
   teisenduse tulemusel saadud täisarvu. Kui ise funktsioone kirjeldame, siis peame funktsioonis ära märkima selle väärtuse, mida funktsioon peab tagastama.
   Selleks kirjutame vastava väärtuse ette võtmesõna <strong class="strong">return</strong>. Kohe kui funktsioonis jõutakse <span
       class="fst-italic">return</span>
@@ -238,7 +238,7 @@
   </div>
 </div>
 <app-categorize-test [categories]="testCategories" [items]="testItems"
-                     [exerciseTitle]="'Lohista kõik väited õige funktsiooni alla'"
+                     [exerciseTitle]="'Lohista kõik väited õige funktsiooni alla.'"
                      [correctAnwser]="testCorrectAnswer"></app-categorize-test>
 <h4 [attr.id]="'harjutused'" class="mt-5">Harjutused</h4>
 <div class="mt-3 box-container">
@@ -247,10 +247,11 @@
     <div class="px-0 col col-lg-9">
       <div class="mt-2"><span>Ühes eelnevas näites arvutasime kokku pitsataignakoguse ühe 20 cm, ühe 28 cm ja ühe 38 cm läbimõõduga pitsa jaoks. Nüüd tee oma programm
     pitsarestoranile veelgi kasulikumaks ja küsi hoopis kasutajalt, mitu igas suuruses pitsat ta plaanib täna teha. Siis saad kokku arvutada, palju tainast peaks
-    pitsarestoran hommikul valmistama, et nad saaks terve päeva sellest pitsasid teha. Täienda funktsiooni nii, et see võtaks ka teise argumendi - pitsade koguse.
-    Lisaks võiks teisendada lõpliku koguse grammidest kilogrammidesse, sest nii on see kogus paremini loetav. Tulemus võiks ka olla ümardatud ühe komakohani.
-    Väljund võiks olla näiteks selline:</span>
+    pitsarestoran hommikul valmistama, et nad saaks terve päeva sellest pitsasid teha.</span>
       </div>
+      <div class="mt-2"><span> Täienda funktsiooni nii, et see võtaks ka teise argumendi &ndash; pitsade koguse.
+    Lisaks võiks teisendada lõpliku koguse grammidest kilogrammidesse, sest nii on see kogus paremini loetav. Tulemus võiks ka olla ümardatud ühe komakohani.
+    Väljund võiks olla näiteks selline:</span></div>
       <div class="code-block mt-2 fst-italic">
         <span>Mitu 20 cm läbimõõduga pitsat plaanid teha? <span class="code-input">23</span><br></span>
         <span>Mitu 28 cm läbimõõduga pitsat plaanid teha? <span class="code-input">45</span><br></span>
@@ -272,7 +273,7 @@
   </div>
   <div class="mt-2"><span>Esimene lisatav
   funktsioon võiks võtta argumendiks pitsa läbimõõdu, küsida kasutajalt mitu sellise läbimõõduga pitsat ta soovib teha, ja tagastada taignakoguse. Arvutamise töö
-  peaks ikka jääma meie algsele funktsioonile <span class="fst-italic">pitsatainas()</span>.</span></div>
+  peaks ikka jääma meie algsele funktsioonile <span class="fst-italic">pitsatainas</span>.</span></div>
   <div class="mt-2"><span>Teiseks võiks eraldi funktsiooni tõsta koguse teisendamise grammidest kilogrammidesse koos ümardamisega. Selleks võiks luua
     funktsiooni, mis võtab argumendiks koguse grammides ja tagastab selle koguse kilogrammides, ümardatult ühe komakohani.</span>
   </div>
@@ -281,10 +282,11 @@
 <div class="mt-3 box-container">
   <strong class="strong">Kinokülastuse eelarve</strong>
   <div class="mt-2 row mx-0">
-  <div class="px-0 col-lg-9"><span>Meelil on sünnipäev tulemas ja ta tahab selle puhul kutsuda mõned sõbrad endaga kinno. Kinopilet õpilasele maksab
-  5,8 eurot. Kui aga tulemas on vähemalt 10 inimest, saavad nad grupisoodustust ja siis on iga pilet 4 eurot. Lisaks plaanib Meeli igale sõbrale 6 euro
-  eest popkorni ja juua osta. Kirjuta funktsioon <span class="fst-italic">kinokülastuse_maksumus</span>, mis võtab argumendiks kinokülastajate arvu ja tagastab
-  kui palju läheb kinokülastus maksma. Põhiprogrammis küsi kasutajalt kinokülastajate arvu ja väljasta kinokülastuse maksumus. Mõned näited programmi väljundist:</span>
+  <div class="px-0 col-lg-9"><div><span>Meelil on sünnipäev tulemas ja ta tahab selle puhul kutsuda mõned sõbrad endaga kinno. Kinopilet õpilasele maksab
+  5,8 eurot. Kui tulemas on vähemalt 10 inimest, saavad nad grupisoodustust ja siis on iga pilet 4 eurot. Lisaks plaanib Meeli igale sõbrale 6 euro
+  eest popkorni ja juua osta.</span></div>
+    <div class="mt-2"><span>Kirjuta funktsioon <span class="fst-italic">kinokülastuse_maksumus</span>, mis võtab argumendiks kinokülastajate arvu ja tagastab,
+  kui palju läheb kinokülastus maksma. Põhiprogrammis küsi kasutajalt kinokülastajate arvu ja väljasta kinokülastuse maksumus. Mõned näited programmi väljundist:</span></div>
   </div>
   <div class="col-lg-2 mt-auto mx-3 mb-3">
     <img src="../../../assets/images/functions/cinema.png" alt="cinema"

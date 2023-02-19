@@ -32,7 +32,7 @@ export class FilesComponent {
   new ExerciseHint('Nüüd on faili nimi olemas ja võime selle avada <span class="fst-italic">open</span>-funktsiooniga.', null),
   new ExerciseHint('Avatud fail tuleks ka kuhugi muutujasse salvestada:', 'fail = open(faili_nimi)'),
   new ExerciseHint('Järgmine samm on hakata failist ridu lugema ja iga rea peaks teisendama täisarvuks.', null),
-  new ExerciseHint('Ridade lugemiseks võib kasutada nii <span class="fst-italic">while</span>- või <span class="fst-italic">for</span>-tsüklit.' +
+  new ExerciseHint('Ridade lugemiseks võib kasutada nii <span class="fst-italic">while</span>- kui ka <span class="fst-italic">for</span>-tsüklit.' +
     ' Siin kasutame <span class="fst-italic">for</span>-tsüklit:',
     'for rida in fail:\n' +
     '    temperatuur = int(rida)'),
@@ -60,7 +60,7 @@ export class FilesComponent {
   ordersExerciseHints = [new ExerciseHint('Alustuseks tuleks fail avada, kasutades <span class="fst-italic">open</span>-funktsiooni. Faili nime ' +
     'võid soovi korral küsida kasutajalt, aga võid ka programmi sisse kirjutada.', null),
   new ExerciseHint('Faili avamise võib teha nii:', 'fail = open("tellimused.txt")'),
-  new ExerciseHint('Enne kui hakata faili rida rea haaval lugema, võiks luua muutujad erinevate pitsasuuruste tellimuste arvude jaoks. Alguses ' +
+  new ExerciseHint('Enne kui hakata faili reahaaval lugema, võiks luua muutujad erinevate pitsasuuruste tellimuste arvude jaoks. Alguses ' +
     'on kõiki tellimusi 0, aga iga failist loetava rea puhul suurendame vastavat muutujat.', null),
   new ExerciseHint('Muutujad võib luua nii:', 'tellimused_20 = 0 # alguses on kõiki tellimusi 0\n' +
     'tellimused_28 = 0\n' +

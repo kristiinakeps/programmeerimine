@@ -10,7 +10,7 @@
 <div class="mt-3 box-container">
   <div><span>Seni oleme alati küsinud sisendandmed kasutajalt või kirjutanud need ise programmi sisse. Aga mis siis kui tahame
     töödelda suurt hunnikut andmeid? Me ei saa ju paluda kasutajal sadu või tuhandeid andmeid käsitsi sisestada. Siin tulevad appi failid.
-    Failidesse saame salvestada igasugu andmeid, mis meid huvitavad, ja saame kirjutada programme, mis neid andmeid failist lugevad või ka faili
+    Failidesse saame salvestada igasugu andmeid, mis meid huvitavad, ja saame kirjutada programme, mis neid andmeid failist loevad või ka faili
     kirjutavad. Siin peatükis tegeleme lihtsate tekstifailidega, mille sisu saame lugeda sisse sõnedena.
   </span>
   </div>
@@ -19,24 +19,24 @@
 <div class="mt-3 box-container">
   <div><span>Alustame sellest, et kõigepealt on meil vaja mingit faili, mida sooviksime oma programmis kasutada. Loome selleks tavalise tekstifaili,
     mille tunneb ära faililaiendi <span class="fst-italic">.txt</span> järgi. Windowsis sobib selleks sisseehitatud rakendus Notepad,
-    MacBookis näiteks TextEdit. Kui näiteks Notepad avada, siis saame kirjutada avanenud aknasse oma faili sisu, ja seejärel faili salvestada. Selleks, et
+    MacBookis näiteks TextEdit. Kui näiteks Notepad avada, siis saame kirjutada avanenud aknasse oma faili sisu ja seejärel faili salvestada. Selleks, et
     Python oskaks tekstifaili üles leida, tuleb see salvestada samasse kausta, kus on ka programmi fail, mis seda tekstifaili tahab kasutada. Seega kui
     loome näiteks programmifaili <span class="fst-italic">programm.py</span> ja tekstifaili <span class="fst-italic">andmed.txt</span>, siis need peavad
     asuma arvutis samas kaustas.
   </span>
   </div>
-  <div class="mt-2"><span>Proovi luua uus tekstifail järgmise sisuga ning pane faili nimeks <span class="fst-italic">nimekiri.txt</span>.
+  <div class="mt-2"><span>Proovi luua uus tekstifail järgmise sisuga ja pane faili nimeks <span class="fst-italic">nimekiri.txt</span>.
   </span>
   </div>
   <div class="code-block mt-2 fst-italic">
     <span>Marit Maasikas<br>Madis Must<br>Keit Sarapuu<br>Kaarel Tamm<br>Gustav Kask</span>
   </div>
-  <div class="mt-2"><span>Faili avamiseks on Pythonis funktsioon nimega <span class="fst-italic">open()</span>. Argumendiks võtab see funktsioon
-    ei midagi muud kui faili nime, mida soovime avada. See faili nimi tuleb anda sõnena. Meie puhul oleks see siis
+  <div class="mt-2"><span>Faili avamiseks on Pythonis funktsioon nimega <span class="fst-italic">open</span>. Argumendiks võtab see funktsioon
+    faili nime, mida soovime avada. See faili nimi tuleb anda sõnena. Meie puhul oleks see siis
     <span class="fst-italic">"nimekiri.txt"</span>. Kui faili ei leita, siis lõpetab programm oma töö veaga. Funktsioon <span
-      class="fst-italic">open()</span>
+      class="fst-italic">open</span>
     tagastab meile n-ö avatud faili, mida saame edaspidi kasutada. See tagastatud väärtus tuleks kuhugi muutujasse salvestada. Faili sulgemiseks on avatud
-    failidel meetod nimega <span class="fst-italic">close()</span>. Faili avamine ja koheselt sulgemine võiks programmis välja näha nii:
+    failidel meetod nimega <span class="fst-italic">close</span>. Faili avamine ja koheselt sulgemine võiks programmis välja näha nii:
   </span>
   </div>
   <div class="code-block mt-2">
@@ -59,7 +59,7 @@
     <div class="col-lg-10 ps-0">
       <div><span>Me juba oskame faili avada ja seda hiljem ka sulgeda. Nüüd vaatame, kuidas sealt info kätte saada. Failidel on mitmeid meetode, me juba
     kasutasime <span class="fst-italic">close</span>-meetodit, et fail sulgeda. Nüüd vaatame kahte meetodit, millega saab failist sisu lugeda. Esimene neist
-    on meetod <span class="fst-italic">read()</span>, mis loeb failist kogu sisu ühe sõnena, ja me saame seda siis väljastada või edasi kasutada, kuidas tahame.
+    on meetod <span class="fst-italic">read</span>, mis loeb failist kogu sisu ühe sõnena, ja me saame seda siis väljastada või edasi kasutada.
   </span>
       </div>
       <div class="code-block mt-2">
@@ -79,8 +79,8 @@
   </div>
 </div>
 <div class="box-container mt-3">
-  <div class="mt-2"><span>Järgmine kasulik meetod on <span class="fst-italic">readline()</span>, mis loeb failist ühe rea ja liigutab avatud failis
-  järjehoidjat ühe rea võrra edasi, seega kui kutsuda sama meetodit teist korda välja, siis loetakse teine rida ja nii faili lõpuni. Seda meetodit saab edukalt
+  <div><span>Järgmine kasulik meetod on <span class="fst-italic">readline</span>, mis loeb failist ühe rea ja liigutab avatud failis
+  järjehoidjat ühe rea võrra edasi. Seega kui kutsuda sama meetodit teist korda välja, siis loetakse teine rida ja nii faili lõpuni. Seda meetodit saab edukalt
   kasutada koos <span class="fst-italic">while</span>-tükliga. Enne tsükliga alustamist võime juba esimese rea failist ära lugeda ja siis saame panna tingimuseks, et
   loeme uue rea kuni rida pole tühi (kui read saavad otsa, siis tagastab meetod tühja sõne).</span>
   </div>
@@ -94,13 +94,13 @@
   </div>
 </div>
 <div class="box-container mt-3">
-  <div class="mt-2"><span>Kindlasti märkad, et nüüd on mingil põhjusel tekkinud väljundisse ridade vahele tühjad read. Kuid kust ja miks need tekivad?
+  <div><span>Kindlasti märkad, et nüüd on mingil põhjusel tekkinud väljundisse ridade vahele tühjad read. Kuid kust ja miks need tekivad?
   Nimelt on tekstifailides iga rea lõpus peidetud uue rea sümbol. Seda tähistatakse nii: <span
       class="fst-italic">\n</span>. Kui kuskil sõnes esineb selline
     sümbol, siis see asendatakse reavahetusega. Proovi näiteks väljastada järgmine sõne:
     <span class="fst-italic">"Tere tere!\nKuidas sul läheb?"</span>. Nagu näed, siis kirjutasime selle ühe sõnena, kus keskel on sümbol <span
-      class="fst-italic">/n</span>,
-    aga kui selline sõne väljastada, siis <span class="fst-italic">/n</span> kaob ja selle kohale tekitatakse reavahetus:</span>
+      class="fst-italic">\n</span>,
+    aga kui selline sõne väljastada, siis <span class="fst-italic">\n</span> kaob ja selle kohale tekitatakse reavahetus:</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="printNewLineCode"></span>
@@ -108,8 +108,8 @@
   <div class="code-block mt-2 fst-italic">
     <span>Tere tere!<br>Kuidas sul läheb?</span>
   </div>
-  <div class="mt-2"><span>Vahepeal aga on meil vaja kätte saada rea sisu ilma reavahetuseta. Selle reavahetuse sümboli eemaldamiseks sobib hästi üks sõnede
-  meetod nimega <span class="fst-italic">strip()</span>. See meetod eemaldab nii sõne algusest kui lõpust soovimatud sümbolid. Kui tahame mingit konkreetset
+  <div class="mt-2"><span>Vahepeal on meil vaja kätte saada rea sisu ilma reavahetuseta. Selle reavahetuse sümboli eemaldamiseks sobib hästi üks sõnede
+  meetod nimega <span class="fst-italic">strip</span>. See meetod eemaldab nii sõne algusest kui lõpust soovimatud sümbolid. Kui tahame mingit konkreetset
   sümbolit või tähte eemaldada, siis võime selle anda meetodile argumendina. Kui me argumenti ei täpsusta, siis eemaldab see meetod vaikimisi kõik
   reavahetused, taanded ja tühikud, mis on täitsa sõne alguses või lõpus. Muudame oma koodi nii, et eemaldame reavahetuse sümboli enne rea ekraanile väljastamist:</span>
   </div>
@@ -122,7 +122,7 @@
 <h4 [attr.id]="'for'" class="mt-5">Kuidas kirjutada <span class="fst-italic">for</span>-tsüklit?</h4>
 <div class="mt-3 box-container">
   <div><span>Seni oleme õppinud ja kasutanud <span class="fst-italic">while</span>-tsüklit, kuid tegelikult on olemas veel üks teist sorti tsükkel, mida
-  on ka väga mugav kasutada failide lugemisel. Seda tsüklit nimetatakse <strong class="fst-italic strong">for</strong>-tsükliks ja see tsükkel koosneb kahest võtmesõnast:
+  on väga mugav kasutada failide lugemisel. Seda tsüklit nimetatakse <strong class="fst-italic strong">for</strong>-tsükliks ja see tsükkel koosneb kahest võtmesõnast:
   <strong class="strong fst-italic">for</strong> ja <strong class="strong fst-italic">in</strong>, lisaks tsüklimuutujast ja objektist, millel tahteakse tsüklit
   rakendada. Meie puhul on see objekt praegu avatud fail. Igal iteratsioonil omandab tsüklimuutuja järgmise väärtuse objektist ehk meie puhul
     järgmise rea failist. Failist lugemise saaks selle tsükliga kirja panna nii:</span></div>
@@ -274,7 +274,7 @@
 <div class="mt-3 box-container">
   <strong class="strong">Tulpdiagramm</strong>
   <div class="mt-2"><span>Faili on kirjutatud novembrikuu temperatuurid, iga päeva keskmine temperatuur täisarvuna eraldi real.
-  Kirjuta programm, mis kuvaks need temperatuurid tulpdiagrammina. Väljundis peaks olema igal real sama palju tärne nagu temperatuur sel päeva.
+  Kirjuta programm, mis kuvaks need temperatuurid tulpdiagrammina. Väljundis peaks olema igal real sama palju tärne nagu temperatuur sel päeval.
     Faili nime võiks küsida kasutajalt. Näide failist ja vastavast programmi väljundist:</span></div>
   <div class="row mx-0">
     <div class="code-block mt-2 fst-italic col-lg-8">
@@ -305,7 +305,7 @@
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Pitsatellimused</strong>
-  <div class="row mx-0">
+  <div class="row px-0">
     <div class="mt-2 col-lg-7"><span>Meile juba tuttav pitsarestoran pakub 20, 28 ja 38 cm läbimõõduga pitsasid. Mõned kliendid tellivad pitsad juba
   ette ära ja pitsarestoran paneb tellitud pitsade suurused faili kirja. Igal real täisarvuna tellitud pitsa suurus (20, 28 või 38). Kirjuta
   programm, mis loendaks kokku, mitu igas suuruses pitsat neilt tellitud on. Edasiarendusena võid ka kasutada eelmises peatükis koostatud funktsiooni

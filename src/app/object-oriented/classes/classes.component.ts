@@ -72,7 +72,7 @@ export class ClassesComponent {
   new TestAnswer('Müüki tuli 3-korruseline eramaja aadressil Püütoni tee 5, Tartu', false, 'Mitu korrust on majal müükipaneku hetkel?'),
   new TestAnswer('Veateade', false, 'Selles koodis toimib kõik ilusti ja veateadet ei tule.')];
 
-  classExerciseHints = [new ExerciseHint('Alustame klasside loomisest ja võtame kõigepealt klassi Õpilane. Õpilasel peaks olema kolm isendivälja: nimi, ' +
+  classExerciseHints = [new ExerciseHint('Alustame klasside loomisest ja võtame kõigepealt ette klassi Õpilane. Õpilasel peaks olema kolm isendivälja: nimi, ' +
     'sugu ja keskmine hinne, mis kõik konstruktoris väärtustatakse', null),
     new ExerciseHint('Klass Õpilane koos konstruktoriga näeb välja selline:', 'class Õpilane:\n' +
       '    \n' +
@@ -81,7 +81,7 @@ export class ClassesComponent {
       '        self.sugu = sugu;\n' +
       '        self.keskmine_hinne = keskmine_hinne'),
     new ExerciseHint('Lisaks konstruktorile peaksime lisama ka meetodi <span class="fst-italic">__str__</span>. See meetod peaks tagastama õpilase andmed ' +
-      'sõnena sellisel kujul nagu programmi väljundi näites', null),
+      'sõnena sellisel kujul, nagu programmi väljundi näites.', null),
     new ExerciseHint('Rohkem argumente peale <span class="fst-italic">self</span>\'i see meetod ei võta.',
       'def __str__(self):\n' +
       '    return self.nimi + " (" + self.sugu + "), keskmine hinne: " + str(self.keskmine_hinne)'),
@@ -92,13 +92,13 @@ export class ClassesComponent {
       '    def __init__(self, number):\n' +
       '        self.number = number\n' +
       '        self.õpilased = []'),
-    new ExerciseHint('Lisaks konstruktorile peaks sellel klassile olema veel kaks isendimeetodit. Võtame kõigepealt meetodi <span class="fst-italic">lisa_õpilane()</span>,' +
-      'mis võtab argumendiks õpilase ja lisab selle vastavale isendiväljale järjendisse.', null),
+    new ExerciseHint('Lisaks konstruktorile peaks sellel klassil olema veel kaks isendimeetodit. Võtame kõigepealt meetodi <span class="fst-italic">lisa_õpilane</span>,' +
+      ' mis võtab argumendiks õpilase ja lisab selle vastavale isendiväljale järjendisse.', null),
     new ExerciseHint('Kuna tegemist on isendimeetodiga, siis peab esimene argument olema jällegi <span class="fst-italic">self</span>. Teine argument on õpilase isend. ' +
       'Järjendisse lisamiseks kasutame meetodit <span class="fst-italic">append</span>.',
       'def lisa_õpilane(self, õpilane):\n' +
       '    self.õpilased.append(õpilane)'),
-    new ExerciseHint('Teine meetod on nimega <span class="fst-italic">kuva()</span> ja see meetod peaks väljastama kõigepealt info, mis klassi õpilastega on tegu ja ' +
+    new ExerciseHint('Teine meetod on nimega <span class="fst-italic">kuva</span> ja see meetod peaks väljastama kõigepealt info, mis klassi õpilastega on tegu, ja ' +
       'seejärel väljastama kõik klassi õpilased.', null),
     new ExerciseHint('Õpilaste väljastamiseks sobib hästi <span class="fst-italic">for</span>-tsükkel. Lõpus võime lisada ka tühja <span class="fst-italic">print</span>-käsu, ' +
       'et tekidada lõppu veel üks tühi rida. Nii on hiljem väljund paremini loetav.', 'def kuva(self):\n' +
@@ -106,9 +106,9 @@ export class ClassesComponent {
       '    for õpilane in self.õpilased:\n' +
       '        print(õpilane)\n' +
       '    print() # lisame paremaks loetavuseks tühja rea'),
-    new ExerciseHint('Sellega peaks meie klassid valmis olema. Nüüd on vaja kokku panna põhiprogramm. Esiteks tasub mõelda, et kus me hakkame loodud klasside isendeid ' +
+    new ExerciseHint('Sellega peaks meie klassid valmis olema. Nüüd on vaja kokku panna põhiprogramm. Esiteks tasub mõelda, kus me hakkame loodud klasside isendeid ' +
       'hoidma? ', null),
-    new ExerciseHint('Selleks sobiks hästi sõnastik, kus võtmed on klasside numbrid ja väärtused on vastavad klasside isendid. Siis kui uut õpilast lisame, saame ' +
+    new ExerciseHint('Selleks sobiks hästi sõnastik, kus võtmed on klasside numbrid ja väärtused on vastavate klasside isendid. Kui uut õpilast lisame, saame ' +
       'kontrollida, kas sellise klassinumbriga klass on juba sõnastikus või mitte. Kui ei ole, siis loome Klassi isendi ja lisame selle sõnastikku. Seejärel saame ' +
       'ka õpilase klassi lisada.', null),
     new ExerciseHint('Alustamegi sellest, et loome klasside jaoks tühja sõnastiku. Seejärel võime faili avada ja hakata sealt ridu lugema. Määrame failile ka ' +
@@ -117,7 +117,7 @@ export class ClassesComponent {
       'for rida in fail:\n' +
       '    # tsükli sisu\n' +
       'fail.close()'),
-    new ExerciseHint('Tsükli sees tuleb rida kõigepealt tükeldada. Saadud järjendi võime salvestada muutujatesse ja siis indeksitega sealt väärtused võtta, kuid ' +
+    new ExerciseHint('Tsükli sees tuleb rida kõigepealt tükeldada. Saadud järjendi võime salvestada muutujasse ja siis indeksitega sealt väärtused võtta, kuid ' +
       'võime ka kasutada ennikute juures õpitud kiiremat varianti, kus saab mitu väärtust korraga mitmesse muutujasse salvestada. Tasub ka meeles pidada, et rea ' +
       'lõpus on reavahetusmärk, mis tuleks eemaldada.', null),
     new ExerciseHint('Failireast erinevad andmed saab kätte näiteks nii:', 'nimi, sugu, keskmine_hinne, klassi_number = rida.strip().split(",")'),
@@ -130,10 +130,10 @@ export class ClassesComponent {
       '        klassid[klassi_number] = Klass(klassi_number) # loome uue Klassi isendi ja lisame ta kohe sõnastikku'),
     new ExerciseHint('Nüüd me teame, et failist loetud klassi numbrile vastav kirje peab sõnasikus olemas olema. Me tahame selle sealt kätte saada ja Klassi ' +
       'isendile lisada uue õpilase.', null),
-    new ExerciseHint('Küsime sõnastikust klassi numbrile vastava Klassi isendi ja rakendame selle meetodit <span class="fst-italic">lisa_õpilane()</span>.',
+    new ExerciseHint('Küsime sõnastikust klassi numbrile vastava Klassi isendi ja rakendame selle meetodit <span class="fst-italic">lisa_õpilane</span>.',
       'klassid[klassi_number].lisa_õpilane(õpilane)'),
     new ExerciseHint('Sellega saamegi kõik õpilased klassidesse ära jaotatud. Lõpus jääb veel üle klasside andmed väljastada. Selleks saame tsüklis kõik ' +
-      'klassid läbi käia ja kutsuda välja nende meetodit <span class="fst-italic">kuva()</span>.', null),
+      'klassid läbi käia ja kutsuda välja nende meetodit <span class="fst-italic">kuva</span>.', null),
     new ExerciseHint('Näiteks võime kasutada tavalist <span class="fst-italic">for</span>-tsüklit, mis käib läbi kõik sõnastiku võtmed. Võtme abil saame kätte ka väärtuse.',
       'for klassi_number in klassid:\n' +
       '    klassid[klassi_number].kuva() # kutsume välja isendimeetodit'),
@@ -180,21 +180,21 @@ export class ClassesComponent {
     'maksimaalse sõiduulatuse ja laadimiskiiruse. Konstruktori sees tuleb need omistada vastavatele isendiväljadele. Maksimaalne sõiduulatus tuleks ' +
     'omistada ka allesjäänud sõiduulatuse isendiväljale.', null),
   new ExerciseHint('Klassi ja konstruktori saame kirja panna järgmiselt. Kuigi me tahame konstruktorisse isendiväljade määramiseks anda ainult ' +
-    'kahte argumenti, siis ei tasu unustada, et lisaks tuleb esimese argumendina anda konstruktorile ka <span class="fst-italic">self</span>.',
+    'kaks argumenti, siis ei tasu unustada, et lisaks tuleb esimese argumendina anda konstruktorile ka <span class="fst-italic">self</span>.',
     'class Puldiauto:\n' +
     '    \n' +
     '    def __init__(self, maksimaalne, laadimiskiirus):\n' +
     '        self.maksimaalne = maksimaalne\n' +
     '        self.allesjäänud = maksimaalne\n' +
     '        self.laadimiskiirus = laadimiskiirus'),
-  new ExerciseHint('Järgmiseks võtame ette isendimeetodid. Esimene neist on meetod nimega <span class="fst-italic">sõida()</span>. ' +
+  new ExerciseHint('Järgmiseks võtame ette isendimeetodid. Esimene neist on meetod nimega <span class="fst-italic">sõida</span>. ' +
     'See meetod peaks argumendiks võtma vahemaa meetrites ja meetodi sees tuleks allesjäänud sõiduulatust selle võrra vähendada. Kuid ' +
     'negatiivseks ei saa allesjäänud sõiduulatus minna. Peaks ka väljastama, mitu meetrit sõideti.', null),
   new ExerciseHint('Tingimuslausega saame kontrollida, kas etteantud vahemaa on suurem kui allesjäänud sõiduulatus. Kui on, siis ' +
     'järelikult saab meil aku enne tühjaks, kui jõuame soovitud vahemaa ära sõita. Seega väljastame kasutajale, et aku sai tühjaks ja palju ' +
-    'jõudsime ära sõita (allesjäänud sõiduulatus). Seejärel paneme sõiduulatuse nulliks. Kui soovitud vahemaa oli väiksem, siis saame ' +
+    'jõudsime ära sõita (allesjäänud sõiduulatus). Seejärel muudame allesjäänud sõiduulatuse nulliks. Kui soovitud vahemaa oli väiksem, siis saame ' +
     'kasutajale lihtsalt teada anda, et sõitsime nii palju ja vähendada allesjäänud sõiduulatust selle võrra.', null),
-  new ExerciseHint('Üks variant meetodi <span class="fst-italic">sõida()</span> kirjutamiseks:',
+  new ExerciseHint('Üks variant meetodi <span class="fst-italic">sõida</span> kirjutamiseks:',
     'def sõida(self, meetrit):\n' +
     '    if meetrit > self.allesjäänud:\n' +
     '        print("Aku sai enne tühjaks, sõitsin " + str(self.allesjäänud) + " meetrit.")\n' +
@@ -202,14 +202,14 @@ export class ClassesComponent {
     '    else:\n' +
     '        print("Sõitsin " + str(meetrit) + " meetrit.")\n' +
     '        self.allesjäänud -= meetrit'),
-  new ExerciseHint('Nüüd on meil jäänud veel meetod <span class="fst-italic">lae()</span>. See meetod võtab argumendiks minutid ja ' +
+  new ExerciseHint('Nüüd on meil jäänud veel meetod <span class="fst-italic">lae</span>. See meetod võtab argumendiks minutid ja ' +
     'peab arvutama, mitu meetrit sellise laadimisajaga juurde saame. Allesjäänud sõiduulatust tuleb selle võrra suurendada, ' +
     'kuid üle maksimaalse sõiduulatuse me minna ei saa. Kasutajale peaks ka teada andma, mitu meetrit ta laadimise lõppedes sõita saab.', null),
   new ExerciseHint('Kõigepealt võime siin teha ära teisenduse laadimisminutitest saadud meetriteks. Selleks korrutame minutid laadimiskiirusega. ' +
-    'Seejärel peame kontrollima, kui lisaksime saadud meetrid allesjäänud sõiduulatusele, kas me siis ületame maksimaalset sõiduulatust? Kui jah, ' +
+    'Seejärel peame kontrollima, kui lisaksime saadud meetrid allesjäänud sõiduulatusele, kas siis ületame maksimaalset sõiduulatust? Kui jah, ' +
     'siis muudame allesjäänud sõiduulatuse lihtsalt võrdseks maksimaalse sõiduulatusega. Kui me ei ületa maksimaalset sõiduulatust, siis võime lihtsalt ' +
     'liita meetrid allesjäänud sõiduulatusele. Lõpus väljastame allesjäänud sõiduulatuse ka kasutajale.', null),
-  new ExerciseHint('Meetod <span class="fst-italic">lae()</span> võib välja näha selline:',
+  new ExerciseHint('Meetod <span class="fst-italic">lae</span> võib välja näha selline:',
     'def lae(self, minutit):\n' +
     '    meetreid = minutit * self.laadimiskiirus\n' +
     '    if self.allesjäänud + meetreid > self.maksimaalne:\n' +
@@ -222,7 +222,7 @@ export class ClassesComponent {
   new ExerciseHint('Tsaub ka mõelda, mis tüüpi need võiks olla. Kindlasti mingid arvud, kas ujukomaarvud või täisarvud &ndash; seda ' +
     'saab igaüks ise otsustada.', 'maksimaalne = int(input("Sisesta puldiauto maksimaalne sõiduulatus: "))\n' +
     'laadimiskiirus = int(input("Sisesta puldiauto laadimiskiirus: "))'),
-  new ExerciseHint('Seejärel on vaja luua puldiauto isend. Selleks anname Puldiauto klassi konstruktorile ette sobivad argumendid ja ' +
+  new ExerciseHint('Seejärel on vaja luua puldiauto isend. Selleks anname Puldiauto klassi konstruktorile ette vastavad argumendid ja ' +
     'salvestame loodud isendi muutujasse.', null),
   new ExerciseHint('Konstruktorile anname argumentideks kõigepealt maksimaalse sõiduulatuse ja siis laadimiskiiruse. Argumenti ' +
     '<span class="fst-italic">self</span> me käsitsi lisama ei pea.', 'puldiauto = Puldiauto(maksimaalne, laadimiskiirus)'),
@@ -235,13 +235,13 @@ export class ClassesComponent {
     '    if tegevus == "l":\n' +
     '        break'),
   new ExerciseHint('Tegevus võib olla ka "s" või "a". Kirjutame järgmiseks juhu kui see on "s". Siis peaksime küsima kasutajalt ka ' +
-    'sõitmiseks soovitud vahemaad ja kutsuma välja Puldiauto meetodit <span class="fst-italic">sõida()</span>.', null),
+    'sõitmiseks soovitud vahemaad ja kutsuma välja Puldiauto meetodit <span class="fst-italic">sõida</span>.', null),
   new ExerciseHint('Selleks lisame uue haru oma tingimuslause konstruktsiooni. Kasutajalt küsitud meetrite arv tuleks ka ' +
     'arvuks teisendada.', 'elif tegevus == "s":\n' +
     '    meetreid = int(input("Sisesta, mitu meetrit soovid sõita: "))\n' +
     '    puldiauto.sõida(meetreid)'),
   new ExerciseHint('Viimaseks on jäänud tegevus "a". Selle tegevuse puhul tahame kasutajalt küsida laadimisminutite arvu ja kutsuda ' +
-    'välja Puldiauto meetodit <span class="fst-italic">lae()</span>.', null),
+    'välja Puldiauto meetodit <span class="fst-italic">lae</span>.', null),
   new ExerciseHint('Sarnaselt eelmisele tegevusele, saame lisada uue tingimuslause haru.', 'elif tegevus == "a":\n' +
     '    minuteid = int(input("Sisesta, mitu minutit akut laed: "))\n' +
     '    puldiauto.lae(minuteid)'),

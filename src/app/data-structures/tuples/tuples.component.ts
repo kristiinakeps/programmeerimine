@@ -112,7 +112,7 @@ export class TuplesComponent {
 
   emptyLine = '\n\n';
 
-  quizHints = [new ExerciseHint('Kõigepealt võime alustada sõnastiku koostamisega. Selleks võime luua kohe eraldi meetodi, mis võtab argumendiks failinime ja ' +
+  quizHints = [new ExerciseHint('Kõigepealt võime alustada sõnastiku koostamisega. Selleks võime luua kohe eraldi meetodi, mis võtab argumendiks faili nime ja ' +
   'tagastab tulemuste sõnastiku, kus võtmed on õpilaste nimed ja väärtused punktid.', null),
   new ExerciseHint('Sarnast asja saime juba sõnastike peatükis teha. Nüüd aga nägime, kuidas ennikuid saab omistamises mugavalt kasutada, seega kuna teame, ' +
     'et rea tükeldamisel peaks meil alati tekkima kaks elementi, siis võime need kohe muutujate ennikusse salvestada. Nii on meil lihtsam neid hiljem kasutada.', this.dictionaryFromFileCode),
@@ -127,6 +127,3 @@ export class TuplesComponent {
     this.dictionaryFromFileCode + this.emptyLine + this.bestResultFromDictionaryCode + this.emptyLine + this.mainProgramCode)];
 
 }
-
-//todo mitmemõõtmeliste andmestruktuuride peatüki algusesse kordamist, tabel andmestruktuuride võrdlusest, selle kohta lohistamisega enesekontroll.
-//todo näidata kordamise juures tüübiteisendusi ja konstruktoreid, sõne -> hulk, hulk -> list jne

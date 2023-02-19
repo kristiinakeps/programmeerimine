@@ -61,7 +61,7 @@ export class FunctionsComponent {
   new ExerciseHint('Nüüd saame uut argumenti funktsiooni sees kasutada. Selleks, et ühe pitsa taignakoguse asemel tagastada ' +
     'etteantud arvu pitsade jaoks vajalik taignakogus, tuleb üksiku pitsa kogus korrutada argumendiks antud pitsade arvuga.', null),
   new ExerciseHint('Õige koguse saame arvutada nüüd nii:', 'taigna_kogus = round(pindala * 2.3 * mitu, 1)'),
-  new ExerciseHint('Järgmise sammuna võiks kasutajalt kõikide suurust jaoks küsida, mitu sellist pitsat ta plaanib teha.', null),
+  new ExerciseHint('Järgmise sammuna võiks kasutajalt kõikide suuruste jaoks küsida, mitu sellist pitsat ta plaanib teha.', null),
   new ExerciseHint('Selleks kasutame funktsiooni <span class="fst-italic">input</span>. Näiteks 20 cm läbimõõduga pitsade arvu küsimine võiks välja näha nii:',
     'mitu_20 = int(input("Mitu 20 cm läbimõõduga pitsat plaanid täna teha? "))'),
   new ExerciseHint('Nüüd saame leida 20 cm läbimõõduga pitsade jaoks kuluva koguse kutsudes välja oma täiendatud funktsiooni:',
@@ -89,7 +89,7 @@ export class FunctionsComponent {
     'print("Kokku kulub täna pitsadele " + str(kokku) + " kg tainast.")')];
 
   pizzaMoreFunctionsHints = [new ExerciseHint('Esimese edasiarendusena loome funktsiooni, mis küsiks kasutajalt pitsade arvu, arvutaks vastava taignakoguse ' +
-    'funktsiooni <span class="fst-italic">pitsatainas()</span> abil, ja tagastaks selle tulemuse.', null),
+    'funktsiooni <span class="fst-italic">pitsatainas</span> abil, ja tagastaks selle tulemuse.', null),
   new ExerciseHint('Paneme selle uue funktsiooni nimeks näiteks <span class="fst-italic">mitme_pitsa_tainas</span>. Koodis võiks see välja näha selline:',
     'def mitme_pitsa_tainas(läbimõõt):\n' +
     '    mitu = int(input("Mitu " + str(läbimõõt) + " cm läbimõõduga pitsat plaanid täna teha? "))\n' +
@@ -121,7 +121,7 @@ export class FunctionsComponent {
   cinemaHints = [new ExerciseHint('Alustame funktsiooni kirjeldamisest. Funktsiooni nimeks paneme <span class="fst-italic">kinokülastuse_maksumus</span> ' +
     'ja see funktsioon peaks võtma ühe argumendi &ndash; külastajate arvu.', null),
   new ExerciseHint('Funktsiooni algus võiks välja näha selline:', 'def kinokülastuse_maksumus(külastajate_arv):\n    # siia tuleb funktsiooni sisu'),
-  new ExerciseHint('Kinokülastuse maksumus koosneb piletite hindadest ja söögi hinnast. Söögi hind külastaja kohta on alati sama, aga pileti hind' +
+  new ExerciseHint('Kinokülastuse maksumus koosneb piletite hindadest ja söögi hinnast. Söögi hind külastaja kohta on alati sama, aga pileti hind ' +
     'oleneb sellest, kas külastajaid on rohkem või vähem kui kümme. Kogu maksumuse arvutamist võib näiteks alustada söögile kuluva summa leidmisest.', null),
   new ExerciseHint('Söögi maksumuse saab leida nii:', 'maksumus = külastajate_arv * 6 # söögi maksumus'),
   new ExerciseHint('Selleks, et teada palju piletid maksma lähevad, peame kontrollima tingimuslausega külastajate arvu. Kui see on suurem kui 10, siis ' +
@@ -157,10 +157,10 @@ export class FunctionsComponent {
     'print("Kinokülastus läheb maksma " + str(kinokülastuse_maksumus(külastajaid)) + " eurot.")')];
 
   greetingCode = 'def tervita():\n' +
-    '    print("Tere-tere vanakere!")\n' +
+    '    print("Tere-tere, vanakere!")\n' +
     '    print("Kuidas läheb?")';
   greetingCallCode = 'def tervita():\n' +
-    '    print("Tere-tere vanakere!")\n' +
+    '    print("Tere-tere, vanakere!")\n' +
     '    print("Kuidas läheb?")\n' +
     '\n' +
     'tervita()';
@@ -174,7 +174,7 @@ export class FunctionsComponent {
     '    pindala = (läbimõõt / 2)**2 * 3.14\n' +
     '    taigna_kogus = pindala * 2.3\n' +
     '    print(str(läbimõõt) + " cm läbimõõduga pitsa jaoks kulub " + str(taigna_kogus) + " g tainast.")';
-  pizzaDoughWithArgumentCallsCode = 'def pitsatainas(läbimõõt):\n' +
+  pizzaDoughWithArgumentCallsCode = 'def pitsatainas(läbimõõt): # üks funktsiooni kirjeldus erinevate väljakutsete jaoks\n' +
     '    pindala = (läbimõõt / 2)**2 * 3.14\n' +
     '    taigna_kogus = pindala * 2.3\n' +
     '    print(str(läbimõõt) + " cm läbimõõduga pitsa jaoks kulub " + str(taigna_kogus) + " g tainast.")\n' +

@@ -28,15 +28,15 @@
     class="fst-italic">
     <strong class="strong">int</strong></span> (lühendatud ingliskeelsest sõnast <span class="fst-italic">integer</span>, mis tähendab täisarvu).</span>
   </div>
-  <div class="mt-2"><span><strong class="strong">Ujukomaarvud</strong> on, nagu nimi ütleb, komadega arvud. Siia alla kuuluvad näiteks 1,5 ja 24,345.
+  <div class="mt-2"><span><strong class="strong">Ujukomaarvud</strong>, nagu ka nimi ütleb, on komadega arvud. Siia alla kuuluvad näiteks 1,5 ja 24,345.
     Ujukomaarvu tüüpi nimetatakse Pythonis <span class="fst-italic">
-    <strong class="strong">float</strong></span> (mis tuleb ingliskeelsest sõnast <span class="fst-italic">floating-point number</span>). Nende juures tuleb ka tähele panna, et kuigi eesti keeles
+    <strong class="strong">float</strong></span> (mis tuleb ingliskeelsest sõnast <span class="fst-italic">floating-point number</span>). Nende juures tuleb tähele panna, et kuigi eesti keeles
   kasutame komakohaga numbris koma, siis Pythoni jaoks peab olema koma asemel punkt. Ehk siis 1,5 tuleb Pythonis kirjutada 1.5 ja 24,345 oleks 24.345.</span>
   </div>
   <div class="mt-2"><span><strong class="strong">Sõned</strong> on lihtsalt tekst. Pythonis tuleb kõik sõned alati kirjutada kas jutumärkide või
     ülakomade vahele. Näiteks "tere" ja 'tere' on sõned. Inglise keeles kutsutakse seda andmetüüpi <span
       class="fst-italic">string</span>. Pythonis on
-    kasutatakse tüübinimena jällegi lühendatud varianti <span class="fst-italic"><strong
+    tüübinimena kasutusel jällegi lühendatud variant <span class="fst-italic"><strong
       class="strong">str</strong></span>.</span>
   </div>
   <div class="mt-2"><span><strong class="strong">Tõeväärtusel</strong> on ainult kaks võimalikku väärtust: tõene või väär. Inglise keeles
@@ -53,11 +53,11 @@
 <div class="mt-2 box-container">
   <div><span>Proovime nüüd ka oma esimese programmi kirjutada ning uurida tõeväärtusi Thonny abil. Selleks ava kõigepealt Thonny. Tavaliselt loob Thonny avades
   ka kohe tühja programmifaili ära. Erinevaid faile näed koodiredaktori kohal vahelehtedel. Veel salvestamata faili puhul kuvatakse vahelehel
-    <span class="fst-italic">&lt;untitled&gt;</span>. Kui tühja faili pole ise tekkinud, siis saab selle luua vajutades tegumiribal valge paberilehe ikooni või
-  valides menüüst <span class="fst-italic">File</span> ning siis <span class="fst-italic">New</span>.</span>
+    <span class="fst-italic">&lt;nimetu&gt;</span>. Kui tühja faili pole ise tekkinud, siis saab selle luua vajutades tegumiribal valge paberilehe ikooni või
+  valides menüüst <span class="fst-italic">Fail</span> ning siis <span class="fst-italic">Uus</span>.</span>
   </div>
   <div class="mt-2"><span>Selleks, et saaksime asuda andmetüüpe uurima, läheb meil vaja kahte Pythoni käsku. Esimene neist on <span
-    class="fst-italic">print()</span>.
+    class="fst-italic">print</span>.
   Sellele käsule saab sulgudesse anda ette mingi väärtuse, mida soovime ekraanile väljastada. Proovi kirjutada Thonnysse järgmine koodijupp:</span>
   </div>
   <div class="code-block mt-2">
@@ -65,22 +65,22 @@
   </div>
   <div class="mt-2">
    <span>Selleks, et programmi käivitada, võid vajutada tegumiribal rohelist valge noolega nuppu või valida menüüst <span
-     class="fst-italic">Run</span> ning
-   sealt omakorda <span class="fst-italic">Run current script</span>. Esimesel käivitamisel palub Thonny programmi salvestada ka, kui see pole juba salvestatud.
-     Mõtle programmi failile mingi nimi ning salvesta see endale kuhugi ära. Pärast salvestamist kood käivitub ja koodiredaktori alla konsooli peaks ilmuma "Tere!".</span>
+     class="fst-italic">Käivita</span> ning
+   sealt omakorda <span class="fst-italic">Jooksuta käesolev skript</span>. Esimesel käivitamisel palub Thonny programm salvestada, kui see pole juba salvestatud.
+     Mõtle programmifailile mingi nimi ja salvesta see endale kuhugi ära. Pärast salvestamist kood käivitub ja koodiredaktori alla konsooli peaks ilmuma "Tere!".</span>
   </div>
   <div class="mt-2">
-  <span>Teine vajaminev käsk on <span class="fst-italic">type()</span>, millele antakse sulgude sisse samuti mingi väärtus ning see käsk tagastab selle väärtuse tüübi.
+  <span>Teine vajaminev käsk on <span class="fst-italic">type</span>, millele antakse sulgude sisse samuti mingi väärtus, ja see käsk tagastab selle väärtuse tüübi.
     Näiteks "Tere!" tüübi saame teada järgmise koodijupi abil:</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="typeHelloCode"></span>
   </div>
   <div class="mt-2">
-  <span>Võid proovida ka seda koodijuppi käivitada, kuid midagi ei tohiks praegu konsooli tekkida. Seda sellepärast, et <span
-    class="fst-italic">type()</span> käsk
+  <span>Võid proovida seda koodijuppi käivitada, kuid midagi ei tohiks praegu konsooli tekkida. Seda sellepärast, et <span
+    class="fst-italic">type</span>-käsk
   küll leiab väärtuse tüübi, aga ei väljasta seda konsooli. Väljastamiseks läheb meil jälle vaja <span
-      class="fst-italic">print()</span> käsku. Saame panna oma
+      class="fst-italic">print</span>-käsku. Saame panna oma
   tüübi leidmise käsu väljastamise käsu sisse nii:</span>
   </div>
   <div class="code-block mt-2">
@@ -91,40 +91,44 @@
   <span class="fst-italic">str</span> tüüpi, meie inimkeeles kutsume seda tüüpi sõneks.</span>
   </div>
 </div>
-<app-categorize-test [categories]="testCategories" [items]="testItems" [exerciseTitle]="'Lohista kõik väärtused õigete andmetüüpide alla'"
+<app-categorize-test [categories]="testCategories" [items]="testItems"
+                     [exerciseTitle]="'Määra igale väärtusele õige andmetüüp.'"
                      [correctAnwser]="testCorrectAnswer"></app-categorize-test>
 <h4 class="mt-5" [attr.id]="'muutujad'">Mis on muutujad?</h4>
-<div class="mt-3 box-container row mx-0">
-  <div class="col-md-12 col-lg-8">
-    <div><span>Nüüd me teame, millist tüüpi andmeid me programmeerides kasutada saame. Aga kuidas neid kasutada? Me saame erinevaid andmeid kas otse
+<div class="mt-3 box-container">
+  <div class="row px-0">
+    <div class="col-md-12 col-lg-8">
+      <div><span>Nüüd me teame, millist tüüpi andmeid me programmeerides kasutada saame. Aga kuidas neid kasutada? Me saame erinevaid andmeid kas otse
   programmi sisse kirjutada või kasutajalt küsida. Selleks, et saaksime andmetega tööd teha, peab arvuti neid oma mälus hoidma. Arvuti mälus on palju
     erinevaid registreid, kus saab andmeid hoiustada, aga meil inimesena on keeruline mäluregistrite tasandil andmetega tööd teha. Siin tulevad nüüd mängu
-    <strong class="strong">muutujad</strong>. Muutujatega saame tähistada mingi koha arvuti mälus ning hoida seal mingeid andmeid. Me saame muutujale anda mingi
-    oma valitud nime. Näiteks kui tahame hoida muutujas kellegi nime, siis võime pannagi muutuja nimeks "nimi". Kui tahame hoida muutujas vanust, siis võime panna
+    <strong class="strong">muutujad</strong>. Muutujatega saame tähistada mingi koha arvuti mälus ning hoida seal andmeid. Me saame muutujale anda
+    enda valitud nime. Näiteks kui tahame hoida muutujas kellegi nime, siis võime pannagi muutuja nimeks "nimi". Kui tahame hoida muutujas vanust, siis võime panna
     muutuja nimeks "vanus".
   </span>
-    </div>
-    <div class="mt-2"><span>Muutujatest võib mõelda kui maitseainepurkidest. Meil on mingi hunnik maitseaineid (andmeid) ning me paneme nad erinevatesse purkidesse
-    (mälusse) ning selleks, et hiljem lihtsamalt soovitud maitseained üles leida, paneme purkidele ka täpsustavad sildid, mis ütlevad, mis sorti maitseaine antud purgis on
+      </div>
+      <div class="mt-2"><span>Muutujatest võib mõelda kui maitseainepurkidest. Meil on mingi hunnik maitseaineid (andmeid) ja me paneme nad erinevatesse purkidesse
+    (mälusse) ning selleks, et hiljem lihtsamalt soovitud maitseained üles leida, paneme purkidele ka täpsustavad sildid, mis ütlevad, mis sorti maitseaine on purgis
     (muutujad).
   </span>
+      </div>
     </div>
-  </div>
-  <div class="col-md-12 col-lg-3 my-auto">
-    <img src="../../../assets/images/variables/spices.png" alt="spices" style="height: 7rem">
+    <div class="col-md-12 col-lg-3 my-auto">
+      <img src="../../../assets/images/variables/spices.png" alt="spices" style="height: 7rem">
+    </div>
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div class="mt-2"><span>Muutujate loomiseks programmis saame kirjutada muutuja nime (mille me ise valime) ja võrdusmärgiga saame sinna muutujasse panna mingi
-    väärtuse. Seda tegemust nimetatakse muutujale väärtuse <strong class="strong">omistamiseks</strong>. Järgnevas koodijupis loome kaks muutujat "nimi" ja "vanus" ning
-    omistame neile vastavalt väärtusteks "Mati" ja "10". Jälgi, et "Mati" on sõne tüüpi ja 10 on täisarvu tüüpi. Saame eelnevalt õpitud käsu "type" abil ka kontrollida
-    mis tüüpi on muutujas hoitav väärtus. Siis tuleb käsule "type" anda argumendiks muutuja nimi.
+  <div><span>Muutuja loomiseks saame programmi kirjutada muutuja nime (mille me ise valime) ja võrdusmärgiga saame sinna muutujasse panna mingi
+    väärtuse. Seda tegevust nimetatakse muutujale väärtuse <strong class="strong">omistamiseks</strong>. Järgnevas koodijupis loome kaks muutujat &ndash; <span class="fst-italic">nimi</span>
+    ja <span class="fst-italic">vanus</span> ning
+    omistame neile vastavalt väärtusteks "Mati" ja 10. Jälgi, et "Mati" on sõne tüüpi ja 10 on täisarvu tüüpi. Saame eelnevalt õpitud käsu <span class="fst-italic">type</span> abil ka kontrollida
+    mis tüüpi on muutujas hoitav väärtus. Siis tuleb käsule <span class="fst-italic">type</span> anda argumendiks muutuja nimi.
   </span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="matiCode"></span>
   </div>
-  <div class="mt-2"><span>Selles koodijupis loome kaks muutujat, omistame neile väärtused, väljastame kummagi väärtuse ekraanile ning seejärel väljastame
+  <div class="mt-2"><span>Selles koodijupis loome kaks muutujat, omistame neile väärtused, väljastame kummagi väärtuse ekraanile ja seejärel väljastame
     ekraanile ka nende muutujate väärtuste tüübid. Konsooli peaks seepeale ilmuma:
   </span>
   </div>
@@ -132,33 +136,32 @@
     <span class="fst-italic">Mati<br>10<br>&lt;class 'str'&gt;<br>&lt;class 'int'&gt;</span>
   </div>
 </div>
+<h4 class="mt-5" [attr.id]="'input'">Sisendi küsimine käsuga <span class="fst-italic">input</span></h4>
 <div class="mt-3 box-container">
-  <div><span>Õpime nüüd ära veel ühe uue käsu, milleks on <span class="fst-italic">input()</span>. Inglise keeles tähendab <span
+  <div><span>Õpime nüüd ära veel ühe uue käsu, milleks on <span class="fst-italic">input</span>. Inglise keeles tähendab <span
     class="fst-italic">input</span>
-    sisendit ning just kasutajalt sisendi saamiseks seda käsku kasutataksegi. Kui programmis on <span
-      class="fst-italic">input()</span> käsk, siis jääb arvuti ootama, et
-    kasutaja konsooli midagi trükiks ja <span class="fst-italic">Enter</span> klahvi vajutaks. Siis tagastab <span
-      class="fst-italic">input()</span> programmile kasutaja sisestatud
-    sõne ning me saame seda oma programmis kasutada. Näiteks võime kasutajalt küsida tema nime ja teda siis nimeliselt tervitada. Või küsida tema sünniaastat ja arvutada, kui
-    vana ta praegu on. Käsk <span class="fst-italic">input()</span> tagastab sisestatud väärtuse alati sõnena, isegi kui kasutaja sisestab arvu. Võid seda kohe ka ise proovida. Näiteks
-    küsime käsu <span class="fst-italic">input()</span> abil kasutajalt kõigepealt ta nime ja siis vanust ning kontrollime, mis tüüpi sisestatud  väärtused on:
+    sisendit ja just kasutajalt sisendi saamiseks seda käsku kasutataksegi. Kui programmis on <span
+      class="fst-italic">input</span>-käsk, siis jääb arvuti ootama, et
+    kasutaja konsooli midagi trükiks ja <span class="fst-italic">Enter</span> klahvi vajutaks. Seejärel tagastab <span
+      class="fst-italic">input</span>-käsk programmile kasutaja sisestatud
+    sõne ja me saame seda oma programmis kasutada. Näiteks võime kasutajalt küsida tema nime ja teda siis nimeliselt tervitada. Või küsida tema sünniaastat ja arvutada, kui
+    vana ta praegu on. Käsk <span class="fst-italic">input</span> tagastab sisestatud väärtuse alati sõnena, isegi kui kasutaja sisestab arvu. Võid seda kohe ka ise proovida. Näiteks
+    küsime käsu <span class="fst-italic">input</span> abil kasutajalt kõigepealt ta nime ja siis vanust ning kontrollime, mis tüüpi sisestatud  väärtused on:
   </span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="inputCode"></span>
   </div>
-  <div class="mt-2"><span>Kõigepealt anname <span class="fst-italic">print()</span> käsuga kasutajale teada, mis andmed ta sisestama peaks. Seejärel kasutame <span
-    class="fst-italic">input()</span>
-    käsku ning salvestame kasutaja sisestatud väärtuse muutujasse. Konsoolis võiks programmi käivitamine välja näha selline:
+  <div class="mt-2"><span>Kõigepealt anname <span class="fst-italic">print</span>-käsuga kasutajale teada, mis andmed ta sisestama peaks. Seejärel kasutame <span
+    class="fst-italic">input</span>-käsku ja salvestame kasutaja sisestatud väärtuse muutujasse. Konsoolis võiks programmi käivitamine välja näha selline:
   </span>
   </div>
   <div class="code-block mt-2">
     <span class="fst-italic">Sisesta oma nimi: <br><span class="code-input">Mati</span><br>Sisesta oma vanus: <br><span
       class="code-input">13</span><br>&lt;class 'str'&gt;<br>&lt;class 'str'&gt;</span>
   </div>
-  <div class="mt-2"><span>Tegelikult saab sama asja ka natuke lühemalt kirjutada ning hoopis <span class="fst-italic">input</span>-käsule
-    sulgudes argumendiks anda need juhised, mida praegu ise <span
-      class="fst-italic">print</span>-käsuga väljastasime.</span>
+  <div class="mt-2"><span>Tegelikult saab sama asja ka natuke lühemalt kirjutada ja hoopis <span class="fst-italic">input</span>-käsule
+    sulgudesse anda sõnena need juhised, mida praegu ise <span class="fst-italic">print</span>-käsuga väljastasime.</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="shortInputCode"></span>
@@ -166,12 +169,12 @@
 </div>
 <div class="mt-3 box-container">
   <div><strong>Muutujate nimetamine</strong></div>
-  <div class="mt-2"><span>Siiski ei saa me muutujatele päris igasuguseid nimesid panna, on ka mõned piirangud. Muutuja nimi ei tohi sisaldada tühikuid.
-  Tühikute asemel kasutatakse tihtipeale alakriipsu "_". Kuigi Python lubab kasutada muutuja nimes nii suuri kui väikseid tähti, on pigem kombeks kasutada
-  ainult väikseid tähti. Samuti peab muutuja nimi algama kas tähe või alakriipsuga, numbrid ja paljud teised sümbolid pole nime alguses lubatud. Muutujaid nimetades
+  <div class="mt-2"><span>Siiski ei saa me muutujatele päris igasuguseid nimesid panna, on mõned piirangud. Muutuja nimi ei tohi sisaldada tühikuid.
+  Tühikute asemel kasutatakse tihtipeale alakriipsu "_". Samuti peab muutuja nimi algama kas tähe või alakriipsuga, numbrid ja paljud teised sümbolid pole nime alguses lubatud.
+    Hea tava on alustada muutuja nime väikse algustähega. Muutujaid nimetades
   on alati hea kasutada tähendusega nimesid. Võime küll panna muutujale nimeks <span
       class="fst-italic">a</span> või <span class="fst-italic">b</span>,
-  kui näiteks <span class="fst-italic">pikkus</span> ja <span class="fst-italic">kõrgus</span> näitavad palju paremini, mida see muutujasse salvestatud
+  kuid näiteks <span class="fst-italic">pikkus</span> ja <span class="fst-italic">kõrgus</span> näitavad palju paremini, mida see muutujasse salvestatud
   väärtus tähendab.</span></div>
 </div>
 <app-multichoice-test [items]="variableNamesTest" [title]="'Millised järgmistest on korrektsed muutuja nimed?'"
@@ -180,12 +183,9 @@
 <div class="mt-3 box-container">
   <div><span>Erinevate andmetüüpidega saame sooritada erinevaid tegevusi. Näiteks täis- ja ujukomaarvudega saame sooritada erinevaid arvutustehteid.
     Sõnesid saame omavahel kokku liita ja moodustada nii uusi sõnesid. Tõeväärtusi kasutatakse loogilistes avaldistes ehk tingimuslausetes.
-    <strong class="strong">Loogilise avaldise</strong> vastus on alati kas <span
-      class="fst-italic">tõene</span> või <span class="fst-italic">väär</span> ning
-    kõnekeeles saab neid esitada kas-küsimustena. Näiteks <span class="fst-italic">2 + 2 = 4</span> on loogiline avaldis, mille väärtus on <span
-      class="fst-italic">tõene</span>.
-    Küsimusele <span class="fst-italic">Kas 2 + 2 = 4?</span> oskame vastata <span class="fst-italic">Jah</span>. Loogilise avaldise
-    <span class="fst-italic">2 + 2 = 5</span> väärtus oleks aga <span class="fst-italic">väär</span>.
+    <strong class="strong">Loogilise avaldise</strong> vastus on alati kas tõene või väär ja
+    kõnekeeles saab neid esitada kas-küsimustena. Näiteks 2 + 2 = 4 on loogiline avaldis, mille väärtus on tõene.
+    Küsimusele "Kas 2 + 2 = 4?" oskame vastata "Jah". Loogilise avaldise 2 + 2 = 5 väärtus oleks aga väär.
   </span>
   </div>
 </div>
@@ -243,21 +243,22 @@
     </table>
   </div>
   <div class="mt-2"><span>Neid tehteid võid ka ise Thonnys järele proovida. Ära unusta kasutada <span
-    class="fst-italic">print()</span> käsku, et
+    class="fst-italic">print</span>-käsku, et
   tehte tulemus ka väljastada. Näiteks:</span></div>
   <div class="code-block mt-2">
     <span [highlight]="printDivisionCode"></span>
   </div>
-  <div class="mt-2"><span>See koodijupp annab meile konsooli tulemuse <span class="fst-italic">7.0</span>. Paneme tähele, et tavaline jagamise tehe annab meile
+  <div class="mt-2"><span>See koodijupp annab meile konsooli tulemuse 7.0. Paneme tähele, et tavaline jagamise tehe annab meile
   tulemuse alati komakohaga, isegi kui arvud jaguvad täpselt. 21 jagatud 3-ga on täpselt 7, aga Pythonis programmeerides on jagamise tulemuseks alati
   ujukomaarv. Seega on 21 / 3 tulemus 7.0, mitte 7.</span></div>
 </div>
 <div class="mt-3 box-container">
   <div><strong class="strong">Tehted sõnedega</strong></div>
   <div class="mt-2"><span>Sõnedega on samuti võimalik erinevaid tehteid teha. Näiteks saame sõnesid omavahel liita ja sõnet korrutada mingi arvuga.
-  Siin aga pole tulemused võib-olla nii iseenesest mõistetavad kui arvudega toimetades. Sõnesid liites saame tulemuseks uue sõne, mis on kokku pandud liidetavatest.
+  Siin aga pole tulemused võib-olla nii iseenesest mõistetavad, kui arvudega toimetades. Sõnesid liites saame tulemuseks uue sõne, mis on kokku pandud liidetavatest.
     Sõnet arvuga korrutades liidetakse sõnet iseendaga see arv kordi. Lisaks on sõnedel terve hulk erinevaid meetodeid, mis näiteks muudavad kõik
-  sõnes olevad tähed trükitähtedeks või hoopis muudavad iga sõna esimese tähe suureks. Meetodid lisatakse sõnede külge punktiga ja meetodi lõpus on sulud. </span></div>
+  sõnes olevad tähed suurteks või hoopis muudavad iga sõna esimese tähe suureks. Meetodid lisatakse sõnede külge punktiga ja meetodi lõpus on sulud. Olenevalt
+  meetodist on sulud tühjad või lisatakse sulgude vahele veel midagi.</span></div>
   <div class="mt-3">
     <table class="table table-bordered table-custom" aria-describedby="tehted">
       <thead>
@@ -313,7 +314,7 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Proovime näiteks kirjutada programmi, mis küsib kasutajalt tema nime ja väljastab mitu pikka sulghäälikut on kasutaja nimes.
+  <div><span>Proovime näiteks kirjutada programmi, mis küsib kasutajalt tema nime ja väljastab, mitu pikka sulghäälikut on kasutaja nimes.
   Kõigepealt peame mõtlema, millised on pikad sulghäälikud? Need on teatavasti <span class="fst-italic">k, p, t</span>. Konkreetse tähe
   esinemiste arvu loendamiseks sobiks meile <span class="fst-italic">count</span>-meetod. Seega näiteks k-tähe loendamine ja selle arvu väljastamine
     käiks nii:</span></div>
@@ -333,7 +334,7 @@
     <span [highlight]="nameCountCode"></span>
   </div>
   <div class="mt-2"><span>Kuid mis siis kui kasutaja nimi algab suure K-tähega? Hetkel meie programm otsib ainult väikseid tähti. Selle parandamiseks saame
-  kas lisada samasugused loendamised ka suurte tähtede jaoks või siis näiteks muuta kõik tähed kasutaja nimes väikesteks. Kas teame mõnda meetodit, mis oskaks seda teha?
+  kas lisada samasugused loendamised ka suurte tähtede jaoks või siis muuta kõik tähed kasutaja nimes väikesteks. Kas teame mõnda meetodit, mis oskaks seda teha?
   Äkki sobiks meetod <span class="fst-italic">lower</span>?</span></div>
   <div class="code-block mt-2">
     <span [highlight]="nameLowerCountCode"></span>
@@ -344,21 +345,24 @@
 </div>
 <div class="mt-3 box-container">
   <div><strong class="strong">Andmetüüpide teisendamine</strong></div>
-  <div class="mt-2"><span>Vahepeal on meil vaja andmeid teisendada ühest tüübist teise. <span class="fst-italic">Input</span>-käsk annab meile
+  <div class="mt-2"><span>Vahepeal on meil vaja andmeid teisendada ühest tüübist teise. <span
+    class="fst-italic">Input</span>-käsk annab meile
   tulemuse alati sõnena, isegi kui kasutaja sisestab mingi arvu. Kui aga tahame kasutaja sisendit arvuna kasutada ja sellega näiteks arvutusi teha,
     siis peame sisendi ise käsitsi <span class="fst-italic">int</span>- või <span class="fst-italic">float</span>-tüübiks teisendama. Tüübiteisendusteks
-  kasutatavad käsud on täpselt samade nimedega nagu tüübid ise: <span class="fst-italic">int(), float(), str(), bool()</span>. Järgnevalt on mõned näited
+  kasutatavad käsud on täpselt samade nimedega nagu tüübid ise: <span
+      class="fst-italic">int, float, str, bool</span>. Järgnevalt on mõned näited
   tüübiteisendustest:</span></div>
   <div class="code-block mt-2">
     <span [highlight]="typeConversionsCode"></span>
   </div>
   <div class="mt-2"><span>Sõnede teisendamisel täisarvudeks ja ujukomaarvudeks on oluline, et sõne sisu oleks arv. Kui proovime näiteks sõnet "Tere"
-  teisendada <span class="fst-italic">int</span>-tüübiks, saame hoopis veateate. Tõeväärtuste teisendamine on ka huvitav. Kui teisendada sõne teõväärtuseks, siis
-  on tulemus <span class="fst-italic">False</span> juhul kui sõne on tühi ja <span class="fst-italic">True</span> kui seal on vähemalt üks täht, number või sümbol. Arvude
-  teisendamisel tõeväärtuseks on tulemus <span class="fst-italic">False</span> juhul kui arv on 0 ning kõikide teiste arvude puhul on tulemus <span class="fst-italic">True</span>.</span></div>
+  teisendada <span class="fst-italic">int</span>-tüübiks, saame hoopis veateate. Tõeväärtuste teisendamine on ka huvitav. Kui tühi sõne
+    teisendada tõeväärtuseks, siis on tulemus <span class="fst-italic">False</span>. Kui sõnes on vähemalt üks  täht, number või sümbol, siis
+    on tulemus <span class="fst-italic">True</span>. Arvude teisendamisel annab 0 tulemuseks <span class="fst-italic">False</span> ja kõik teised
+    arvud tulemuseks <span class="fst-italic">True</span>.</span></div>
 </div>
-<app-fill-blank-dropdown-test [title]="'Vali iga avaldise jaoks rippmenüüst sobiv tehtemärk.'"
-                             [items]="operatorsTest"></app-fill-blank-dropdown-test>
+<app-fill-blank-dropdown-test [title]="'Vali iga avaldise jaoks rippmenüüst sobiv tehtemärk või meetod.'"
+                              [items]="operatorsTest"></app-fill-blank-dropdown-test>
 <h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
   <div><strong class="strong">Tervitus</strong></div>
@@ -380,17 +384,17 @@
   <app-exercise-hints [hints]="greetingExerciseHints"></app-exercise-hints>
 </div>
 <div class="mt-3 box-container">
-  <div class="row mx-0">
+  <div class="row px-0">
     <div class="col-md-12 col-lg-8">
       <div><strong class="strong">Võileivatort</strong></div>
       <div class="mt-2"><span>Mari tahab oma sünnipäeval külalistele võileivatorti pakkuda ja tal on juba tordi tegemiseks röstsaiapakid
-  ostetud. Ta teab ka mitu külalist ta sünnipäevale tuleb. Kirjuta programm, mis aitaks Maril arvutada, mitme kihiga tordi ta teha saab
-    (eeldusel, et igaüks saab ühe tüki).
+  ostetud. Ta teab ka külaliste arvu. Mari tahaks igale külalisele pakkuda ühe tüki võileivatorti (üks tükk on ühe viilu suurune).
+        Kirjuta programm, mis aitaks Maril arvutada, mitme kihiga tordi ta teha saab.
     Programm peaks:</span></div>
       <div class="mt-2"><span>1. Küsima kasutajalt mitu röstsaiapakki tal on</span></div>
-      <div><span>2. Küsima mitu viilu on ühes pakis</span></div>
-      <div><span>3. Küsima mitu tordisööjat on</span></div>
-      <div><span>4. Arvutama ja väljastama mitu kihti saab sellest röstsaiakogusest teha (arvestame, et poolikut kihti ei tee)</span>
+      <div><span>2. Küsima viilude arvu ühes pakis</span></div>
+      <div><span>3. Küsima tordisööjate arvu</span></div>
+      <div><span>4. Arvutama ja väljastama, mitu kihti saab sellest röstsaiakogusest teha (arvestame, et poolikut kihti ei tee)</span>
       </div>
     </div>
     <div class="col-md-12 col-lg-3 m-3">

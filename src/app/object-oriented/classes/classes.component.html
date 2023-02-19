@@ -8,18 +8,18 @@
   <div><span>5. Kuidas klassile meetodeid lisada?</span></div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Nüüdseks me teame, kuidas kasutada erinevaid algtüüpe nagu täisarvud, ujukomaarvud, sõned ja tõeväärtused. Õppisime kasutama ka
+  <div><span>Nüüdseks teame, kuidas kasutada erinevaid algtüüpe, nagu täisarvud, ujukomaarvud, sõned ja tõeväärtused. Õppisime kasutama ka
   erinevaid andmestruktuure, mis lihtsustasid suurema hulga andmetega töötamist. Kuid vahepeal võib juhtuda, et algtüüpidest jääb väheks. Näiteks kui
     tahame kirja panna hunniku õpilasi, kellel on kõigil ports omadusi, nagu nimi, isikukood, sugu, elukoht, pikkus jne.
-    Selles peatükis õpime, kuidas ise uut andmetüüpi programmis defineerida ja kasutada.</span></div>
+    Selles peatükis õpime, kuidas ise uut andmetüüpi programmis kirjeldada ja kasutada.</span></div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Objektorienteeritud programmeerimises, nagu nimigi ütleb, on peamisel kohal objektid. Nii nende loomine kui kasutamine. Objekti võib
   teisiti nimetada ka <strong class="strong">isendiks</strong>. Objekt on tegelikult lihtsalt andemtüüp, tal on omadused ja meetodid.
-    Meetodid on väga sarnased funktsioonidele, erinevus on aga see, et meetodid rakenduvad mingile konkreetsele isendile. Tegelikult oleme ju juba päris palju
-    meetode kasutanud. Näiteks sõnede meetodeid <span class="fst-italic">lower()</span>, <span class="fst-italic">split()</span> ja
-    <span class="fst-italic">count()</span>.</span></div>
-  <div class="mt-2">Võime mõelda igasugustest asjadest enda ümber kui objektidest. Võtame näiteks koera. Ühel koera
+    Meetodid on väga sarnased funktsioonidele, erinevus on aga see, et meetodid rakenduvad mingile konkreetsele isendile. Tegelikult oleme juba päris palju
+    meetode kasutanud. Näiteks sõnede meetodeid <span class="fst-italic">lower</span>, <span class="fst-italic">split</span> ja
+    <span class="fst-italic">count</span>.</span></div>
+  <div class="mt-2">Võime mõelda igasugustest asjadest enda ümber kui objektidest. Võtame näiteks koera. Ühe koera
     omadusteks on näiteks tõug, nimi ja
     vanus. Meetoditeks või teisiti mõeldes iseloomulikuks käitumiseks võib olla saba liputamine, haukumine ja istumine.
   </div>
@@ -51,7 +51,7 @@
     kirjutatakse sarnaselt teistele funktsioonidele, kuid tal
     on alati kindel nimi <strong class="strong fst-italic">__init__</strong>. Konstruktoris määratakse ära klassi
     omadused, mida kutsutakse <strong class="strong">isendiväljadeks</strong>. Tegelikult on
-    isendiväljad lihtsalt muutujad, mis kirjeldavad ära klassi põhjal loodud isendi. Konstruktorile tuleb isendiväljade
+    isendiväljad lihtsalt muutujad, mis kirjeldavad ära klassi põhjal loodud isendi. Konstruktorile saab isendiväljade
     väärtused argumentideks anda ja konstruktori
     sees omistatakse need väärtused vastavatele isendiväljadele. Argumendi ja isendivälja nimi ei pea samad olema, aga
     võivad.
@@ -118,18 +118,18 @@
 <div class="mt-3 box-container">
   <div><span>Klassi meetodeid pannakse kirja sarnaselt tavalistele funktsioonidele. Ainuke erinevus on, et esimene argument peab jällegi
   olema <span class="fst-italic">self</span>. Meetodeid ei saa me kutsuda välja samamoodi nagu tavalisi enda loodud funktsioone. Meetodeid kutsutakse välja
-  läbi isendi. Isendi nime järele lisatakse punktiga meetodi nimi ja sulgudes argumendid. Meetodis saame kasutada isendivälju ja lisaks võivad meetodid võtta veel ka
+  läbi isendi. Isendi nime järele lisatakse punktiga meetodi nimi ja sulgudes argumendid. Meetodis saame kasutada isendivälju ja lisaks võivad meetodid võtta ka
   lisaargumente. </span></div>
   <div class="mt-2"><span>Lisame näiteks oma Koer klassile kolm meetodit &ndash; <span
-    class="fst-italic">tervita()</span>,
-  <span class="fst-italic">täida_käsklust()</span> ja <span class="fst-italic">vanus()</span>. Esimene meetod ei võta ühtegi lisaargumenti, lihtsalt
+    class="fst-italic">tervita</span>,
+  <span class="fst-italic">täida_käsklust</span> ja <span class="fst-italic">vanus</span>. Esimene meetod ei võta ühtegi lisaargumenti, lihtsalt
     väljastab tervituse. Teisele anname lisaargumendiks käskluse sõnena ja väljastame tegevuse, kolmandale anname argumendiks aasta ja see meetod tagastab koera vanuse sellel aastal.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="dogClassMethodsCode"></span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="dogClassMethodsOutput"></span></div>
-  <div class="mt-2"><span>Üks huvitav tähelepanek meetodi <span class="fst-italic">täida_käsklust()</span> juures, jälgige kuidas väljastatavas sõnes jutumärke kasutatakse.
+  <div class="mt-2"><span>Üks huvitav tähelepanek meetodi <span class="fst-italic">täida_käsklust</span> juures &ndash; jälgi, kuidas väljastatavas sõnes jutumärke kasutatakse.
   Kuna me juba kogu sõne ümber kasutame jutumärke, siis ei saa me lihtsalt jutumärke keset sõne kirjutada, muidu Python arvab, et tahame seal sõne lõpetada. Et Pythonile öelda,
-  et seal tahame lihtsalt jutumärkide sümbolit kasutada ilma sõne lõpetamata, siis lisama jutumärkide ette längkriipsu <span
+  et seal tahame lihtsalt jutumärkide sümbolit kasutada, ilma sõne lõpetamata, siis lisama jutumärkide ette längkriipsu <span
       class="fst-italic">\</span>.</span></div>
 </div>
 <div class="mt-3 box-container">
@@ -143,7 +143,7 @@
 <div class="mt-3 box-container">
   <div class="row px-0">
     <div class="col-lg-9">
-      <div><span>Mis saab kui proovime väljastada kogu isendit, mitte ainult mõnda üksikut välja? Võime selle kohe järele proovida. Võtame oma eelmise koodi ja
+      <div><span>Mis saab, kui proovime väljastada kogu isendit, mitte ainult mõnda üksikut välja? Võime seda kohe järele proovida. Võtame oma eelmise koodi ja
 proovime ühe isendi ekraanile väljastada.</span></div>
       <div class="mt-2 code-block"><span [highlight]="dogNoStrCode"></span></div>
       <div class="mt-2"><span>Ilmselt näed ekraanil midagi sellist:</span></div>
@@ -158,14 +158,14 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   saame soovi korral ise ära määrata, mida isendi väljastamisel kuvada tuleks. Selleks on klassidel olemas spetsiaalne meetod nimega
   <strong class="strong fst-italic">__str__</strong>. See meetod ei võta ühtegi argumenti peale isendiviida <span
       class="fst-italic">self</span>
-    ja tagastab sõne. Proovime lisada oma Koer klassile selle meetodi.</span></div>
+    ja tagastab sõne. Proovime lisada oma klassile Koer selle meetodi.</span></div>
   <div class="mt-2 code-block"><span [highlight]="dogStrCode"></span></div>
   <div class="mt-2"><span>Nüüd rakendatakse meie äsja loodud meetodit <span class="fst-italic">__str__</span> kui väljastame isendeid:</span>
   </div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="dogStrOutput"></span></div>
 </div>
 <div class="mt-3 box-container">
-  <strong class="strong">Isendimeetodi välja kutsumine teises isendimeetodis</strong>
+  <strong class="strong">Isendimeetodi kasutamine teises isendimeetodis</strong>
   <div class="mt-2"><span>Isendimeetodeid saame üksteise sees ka kasutada. See käib väga sarnaselt isendiväljade kasutamisele. Kõigepealt on isendiviit
   <span class="fst-italic">self</span> ja seejärel punktiga eraldatult meetodi nimi, mida soovime välja kutsuda, koos argumentidega. Näiteks kui sooviksime meetodit
   <span class="fst-italic">__str__</span> või meetodit <span class="fst-italic">vanus()</span> mõnest teisest meetodist välja kutsuda, siis teeksime seda nii:</span>
@@ -178,14 +178,14 @@ proovime ühe isendi ekraanile väljastada.</span></div>
                       [items]="methodsTestItems"></app-multichoice-test>
 <h4 class="mt-5" [attr.id]="'andmestruktuurid'">Isendite kasutamine andmestruktuuridega</h4>
 <div class="mt-3 box-container">
-  <div><span>Isendeid saame kasutada ka erinevates andmestruktuurides, samamoodi nagu kasutasime algtüüpe.</span></div>
+  <div><span>Isendeid saame kasutada ka erinevates andmestruktuurides &ndash; samamoodi, nagu kasutasime algtüüpe.</span></div>
   <div class="mt-2 code-block"><span [highlight]="objectsInDataStructuresCode"></span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="objectsInDataStructuresOutput"></span></div>
   <div class="row ps-0 mt-2">
     <div class="col-lg-9">
       <div class="mt-2"><span>Isendite puhul on küll üks oluline erinevus, millega tuleb arvestada. Nimelt on meil kahte sorti tüüpe: algtüübid ja viittüübid. Isendid on kõik
-    viittüüpi, mis tähendab et isendi väärtuseks on viit mäluaadressile, kus seda isendit hoitakse. Kui kahte isendit võrreldakse, siis võrreldakse samuti nende viitasid,
-    mitte isendiväljade väärtusi. Seega kui loome mitu erinevat isendit samade väärtustega, siis Pythoni jaoks need pole võrdsed.
+    viittüüpi, mis tähendab, et isendi väärtuseks on viit mäluaadressile, kus seda isendit hoitakse. Kui kahte isendit võrreldakse, siis võrreldakse samuti nende viitasid,
+    mitte isendiväljade väärtusi. Seega, kui loome mitu erinevat isendit samade väärtustega, siis Pythoni jaoks need pole võrdsed.
     See tuleb välja näiteks hulkade ja sõnastike puhul, kus meil ei tohiks olla korduvaid elemente, aga kui isendite viidad on erinevad, siis Pythoni jaoks need ongi
     erinevad, isegi kui kõikide isendiväljade väärtused on võrdsed.</span></div>
     </div>
@@ -198,7 +198,7 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   <div class="mt-2"><span>Siin on näha, et kui lisame hulka kaks korda sama muutujat, siis nende viidad on samad ja lõpuks on isend hulgas ikkagi ühekordselt</span>
   </div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="setExampleOutput"></span></div>
-  <div class="mt-2"><span>Kui aga lisame nüüd kaks erinevat isendit, kelle isendiväljade väärtused on samad, siis on ka hulgas need mõlemad isendid olemas:</span>
+  <div class="mt-2"><span>Kui aga lisame nüüd kaks erinevat isendit, mille isendiväljade väärtused on samad, siis on ka hulgas need mõlemad isendid olemas:</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="setExampleExtraCode"></span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="setExampleExtraOutput"></span></div>
@@ -208,21 +208,21 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   <strong class="strong">Klass</strong>
   <div class="mt-2">
     <span>Selles ülesandes kirjutame kaks klassi: Õpilane ja Klass. Igal õpilasel on järgmised omadused: nimi, sugu ("N" või "M") ja keskmine hinne. Klassil
-    on klassi number ja järjend õpilastest, kes selles klassis õpivad. Klassi Õpilane konstruktoris tuleks nimi, sugu ja keksmine hinne isendiväljad väärtustada. Lisaks
+    on klassi number ja järjend õpilastest, kes selles klassis õpivad. Klassi Õpilane konstruktoris tuleks nime, soo ja keksmise hinde isendiväljad väärtustada. Lisaks
       peaks seal klassis olema meetod <span class="fst-italic">__str__</span>, mis aitab õpilase andmeid ilusti kuvada. Klassis Klass peaks konstruktoris looma isendivälja
       <span class="fst-italic">õpilased</span> ja omistama sinna tühja järjendi. Lisaks peaks seal klassis olema meetod <span
-        class="fst-italic">lisa_õpilane()</span>,
-        mis võtab argumendiks õpilase isendi ja lisab selle klassi õpilaste järjendisse. Samuti võiks klassis olla meetod <span
-        class="fst-italic">kuva()</span>, mis
-        väljastab kõik klassi õpilased ekraanile. Kooli õpilaste andmed on kirjutatud faili, kus iga rida tähistab ühte õpilast.</span>
+        class="fst-italic">lisa_õpilane</span>,
+        mis võtab argumendiks õpilase isendi ja lisab selle õpilaste järjendisse. Samuti võiks klassis olla meetod <span
+        class="fst-italic">kuva</span>, mis
+        väljastab kõik õpilased ekraanile. Kooli õpilaste andmed on kirjutatud faili, kus iga rida tähistab ühte õpilast.</span>
   </div>
   <div class="mt-2"><span>Faili <span class="fst-italic">õpilased.txt</span> sisu:</span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="classExerciseFile"></span></div>
   <div class="mt-2"><span>Nagu näha, siis iga õpilase juures on kirjas, mis klassis ta käib. Siin tasub mõelda, kuidas oleks hea klasside üle arvet pidada?
     Tahame klassi numbri järgi esiteks teada, kas oleme sellele klassile isendi juba loonud ja teiseks tahame numbri järgi loodud isendi kätte saada.
-    Kui juba Klassi isend on käes, siis saab <span class="fst-italic">lisa_õpilane()</span> meetodi kaudu klassi uue õpilase lisada. </span>
+    Kui juba Klassi isend on käes, siis saab <span class="fst-italic">lisa_õpilane</span>-meetodi kaudu klassi uue õpilase lisada. </span>
   </div>
-  <div class="mt-2">Põhiprogrammis tuleks kõikide klasside õpilased väljastada Klassi meetodi <span class="fst-italic">kuva()</span>
+  <div class="mt-2">Põhiprogrammis tuleks kõikide klasside õpilased väljastada Klassi meetodi <span class="fst-italic">kuva</span>
     kaudu. Väljund võiks olla selline:
   </div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="classExerciseOutput"></span></div>
@@ -236,16 +236,16 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   <strong class="strong">Puldiauto</strong>
   <div class="mt-2">
     <span>Selles ülesandes koostame klassi nimega Puldiauto. Sellel klassil on isendiväljad maksimaalse sõiduulatuse (meetrites),
-    allesjäänud sõiduulatuse (mitu meetrit õnnestub veel sõita enne kui aku tühjas saab) ja laadimiskiiruse (mitu meetrit saab sõita, kui puldiautot laadida üks minut) jaoks.
-      Lisaks on tal meetodid <span class="fst-italic">sõida()</span> ja
-    <span class="fst-italic">lae()</span>. Allesjäänud sõiduulatus on alguses võrdne maksimaalse sõiduulatusega ja selle jaoks ei pea konstruktorile eraldi argumenti andma.</span>
+    allesjäänud sõiduulatuse (mitu meetrit õnnestub veel sõita, enne kui aku tühjas saab) ja laadimiskiiruse (mitu meetrit saab sõita, kui puldiautot laadida üks minut) jaoks.
+      Lisaks on tal meetodid <span class="fst-italic">sõida</span> ja
+    <span class="fst-italic">lae</span>. Allesjäänud sõiduulatus on alguses võrdne maksimaalse sõiduulatusega ja selle jaoks ei pea konstruktorile eraldi argumenti andma.</span>
   </div>
   <div class="row px-0 mt-2">
     <div class="col-lg-8">
-      <div class="mt-2"><span>Meetod <span class="fst-italic">sõida()</span> võtab argumendiks meetrite arvu, mis tuleks sõita, ja vähendab allesjäänud sõiduulatust selle võrra.
+      <div class="mt-2"><span>Meetod <span class="fst-italic">sõida</span> võtab argumendiks meetrite arvu, mis tuleks sõita, ja vähendab allesjäänud sõiduulatust selle võrra.
   Kui argumendiks antud arv on suurem kui allesjäänud sõiduulatus, siis vähendadakse allesjäänud sõiduulatust ainult nullini. Meetod peaks kasutajat teavitama sellest, mitu
   meetrit sõideti ja ka sellest, kui aku sai enne soovitud vahemaad tühjaks.</span></div>
-      <div class="mt-2"><span>Meetod <span class="fst-italic">lae()</span> võtab argumendiks laadimisminutite arvu. Arvutab, mitu meetrit selle ajaga sõiduulatust juurde tuli ja
+      <div class="mt-2"><span>Meetod <span class="fst-italic">lae</span> võtab argumendiks laadimisminutite arvu. Arvutab, mitu meetrit selle ajaga sõiduulatust juurde tuli ja
   suurendab allesjäänud sõiduulatust selle võrra. Kuid kuna akul on kindel mahutavus, siis tuleb jälgida, et üle maksimaalse sõiduulatuse siiski laadida ei saa. Meetod
   peaks ka väljastama, mitu meetrit laadimisaja lõpus sõita saab.</span></div>
     </div>
@@ -256,9 +256,9 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   </div>
   <div class="mt-2"><span>Põhiprogrammis küsitakse kasutajalt puldiauto andmed, mille põhjal luuakse Puldiauto isend. Seejärel hakkab programm kasutajalt tsüklis küsima,
   kas ta soovib sõita või autot laadida. Kui kasutaja soovib sõita, siis tuleb tal sisestada meetrite arv ja rakendatakse puldiauto meetodit <span
-      class="fst-italic">sõida()</span>.
+      class="fst-italic">sõida</span>.
   Kui kasutaja soovib autot laadida, siis küsitakse laadimisminutite arv ja rakendatakse meetodit <span
-      class="fst-italic">lae()</span>. Sõitmiseks peaks kasutaja
+      class="fst-italic">lae</span>. Sõitmiseks peaks kasutaja
   sisestama "s", aku laadimiseks "a" ja lõpetamiseks "l".</span></div>
   <div class="mt-2 code-block fst-italic">
     <span>Sisesta puldiauto maksimaalne sõiduulatus: <span class="code-input">1000</span><br></span>

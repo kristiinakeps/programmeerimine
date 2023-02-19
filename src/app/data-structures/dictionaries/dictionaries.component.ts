@@ -29,9 +29,9 @@ export class DictionariesComponent  {
   new TestAnswer('None', false, '<span class="fst-italic">None</span> on tagastatav väärtus, kui <span class="fst-italic">get</span>-meetodile ' +
     'ei ole ette antud vaikeväärtust ja küsitud võtit pole sõnastikus. Siin on aga vaikeväärtus ette antud.')];
 
-  carCounterHints = [new ExerciseHint('Kõigepealt võiks mõelda, mida meil siin ülesandes vaja on. Meil on vaja loendada erinevatest automarkidest autosid.' +
+  carCounterHints = [new ExerciseHint('Kõigepealt võiks mõelda, mida meil siin ülesandes vaja on. Meil on vaja loendada erinevatest automarkidest autosid. ' +
     'Selleks sobiks hästi sõnastik, kus võtmed on automargid ja väärtused on selle automargi esinemiste arvud. Lisaks näeme, et peame kasutajalt korduvalt ' +
-    'automarki küsima, seega läheb meil vaja tsüklit. Siia sobiks hästi <span class="fst-italic">while</span>-tsükkel, kas jätkamistingimusega või lõpmatu, ' +
+    'automarki küsima, seega läheb meil vaja tsüklit. Siia sobiks hästi <span class="fst-italic">while</span>-tsükkel &ndash; kas jätkamistingimusega või lõpmatu, ' +
     'on juba igaühe enda otsustada.', null),
   new ExerciseHint('Enne tsükli juurde minekut võiks luua tühja sõnastiku, kuhu hakkame automarke lisama.',  'autod = {}'),
   new ExerciseHint('Me teeme siin läbi jätkamistingimusega tsükli variandi. Selleks küsime juba enne tsükli alustamist kasutajalt esimese ' +
@@ -45,8 +45,8 @@ export class DictionariesComponent  {
     'autod[auto] = autod.get(auto, 0) + 1 # suurendame väärtust'),
   new ExerciseHint('Kui tsükkel lõppeb, siis peame kasutajale väljastama natuke statistikat nähtud autode kohta. Kõigepealt tahame teada, mitut erinevat ' +
     'automarki kasutaja nägi. Selleks tasub meenutada <span class="fst-italic">len</span>-funktsiooni. Kõigi nähtud autode arvu jaoks tuleks sõnastikus olevad väärtused kokku liita. ' +
-    'Seda saab teha näiteks abimuutuja ja tsükli abil, või siis kasutada sõnastiku meetodit <span class="fst-italic">values()</span>, et saada kätte sõnastiku väärtused, ning ' +
-    'siis kasutada funktsiooni <span class="fst-italic">sum()</span>, mis summeerib arvude järjendis olevad elemendid.', null),
+    'Seda saab teha näiteks abimuutuja ja tsükli abil, või siis kasutada sõnastiku meetodit <span class="fst-italic">values</span>, et saada kätte sõnastiku väärtused, ning ' +
+    'siis kasutada funktsiooni <span class="fst-italic">sum</span>, mis summeerib arvude järjendis olevad elemendid.', null),
   new ExerciseHint('Automarkide arvu ja autode arvu võib leida nii:', 'marke = len(autod)\n' +
     'autosid = sum(autod.values())'),
   new ExerciseHint('Need väärtused saame kasutajale ka väljastada: ', 'print("Kokku nägid täna " + str(marke) + " erinevat automarki, " + str(autosid) + " autot.")'),

@@ -62,20 +62,21 @@ export class ListsComponent{
   wordChainHints = [new ExerciseHint('Kõigepealt peame enda jaoks välja mõtlema programmi struktuuri. Kuna peame kasutajalt järjest sõnu küsima, ' +
     'siis ilmselt läheb meil vaja tsüklit. Enne tsükliga alustamist on aga vaja teha eeltöö. Luua muutuja punktide jaoks, järjend pakutud sõnade jaoks ja ' +
     'küsida juba esimene sõna, mis mängu alustaks.', null),
-  new ExerciseHint('Järjend võib alguses tühi olla. Punktideks võime panna alguses 1 kui tahame ka esimese sõna eest punkti anda (kes tahab, võib ka alustada punktide lugemist 0-st).',
+  new ExerciseHint('Järjend võib alguses tühi olla. Punktideks võime panna alguses 1, kui tahame ka esimese sõna eest punkti anda (kes tahab, võib ka alustada punktide lugemist 0-st).',
     'pakutud_sõnad = []\n' +
     'punktid = 1\n' +
     'sõna = input("Sisesta sõna: ")'),
   new ExerciseHint('Võime ka mängu alustuseks sisestatud sõna lisada pakutud sõnede järjendisse. Selleks saab kasutada näiteks <span class="fst-italic">append</span>-meetodit.',
     'pakutud_sõnad.append(sõna)'),
-  new ExerciseHint('Nüüd tuleks alustada tsükliga. Tsüklis on meil vaja küsida ka uue sõna pakkumine. Tsükkel lõpetatakse, kui uue sõna esimene täht' +
+  new ExerciseHint('Nüüd tuleks alustada tsükliga. Tsüklis on meil vaja küsida uue sõna pakkumine. Tsükkel lõpetatakse, kui uue sõna esimene täht' +
     ' ei ole sama, mis eelmise sõna viimane täht, või kui uus sõna on juba pakutud sõnade järjendis. Esimene samm, enne kui saame neid tingimusi kontrollida, on ' +
     'kasutajalt uus sõna küsida. Võime talle ka teada anda, mis tähega sõna algama peab.', null),
-  new ExerciseHint('Kasutame siin näiteks lõpmatut tsüklit. Tsüklis küsime kõigepealt uut sõna. Eelmise sõna saame kätte pakutud sõnade järjendist, see peaks olema seal' +
-    ' viimane element ja kõige lihtsam viis seda kätte saada, on indeksiga -1. Samamoodi saame kätte ka viimase sõna viimase tähe.',
+  new ExerciseHint('Kasutame siin näiteks lõpmatut tsüklit. Eelmise sõna saame kätte pakutud sõnade järjendist, see peaks olema seal' +
+    ' viimane element ja kõige lihtsam viis seda kätte saada, on indeksiga -1. Samamoodi saame kätte ka viimase sõna viimase tähe. Seejärel saame ' +
+    'kasutajalt küsida uut sõna, andes vihjena teada, mis tähega uus sõna algama peab.',
     'while True:\n' +
-    '    sõna = input("Sisesta sõna, mis algab " + sõna[-1] + "-tähega: ")\n' +
-    '    eelmine_sõna = pakutud_sõnad[-1]'),
+    '    eelmine_sõna = pakutud_sõnad[-1]\n' +
+    '    sõna = input("Sisesta sõna, mis algab " + eelmine_sõna[-1] + "-tähega: ")'),
   new ExerciseHint('Järgmiseks paneme kirja tsükli lõpetamistingimuse. Me juba nägime, kuidas saada kätte eelmise sõna viimane täht. Nüüd uue sõna esimese ' +
     'tähe jaoks saame samuti indeksit kasutada, aga seekord indeksit 0. Siis saame neid tähti võrrelda. Samuti tuleb kasuks võtmesõna <span class="fst-italic">in</span>, ' +
     'millega saame kontrollida, kas sõna on juba pakutud sõnade järjendis olemas.', null),
@@ -93,10 +94,10 @@ export class ListsComponent{
     'sõna = input("Sisesta sõna: ")\n' +
     'pakutud_sõnad.append(sõna)\n' +
     'while True:\n' +
-    '    sõna = input("Sisesta sõna, mis algab " + sõna[-1] + "-tähega: ")\n' +
     '    eelmine_sõna = pakutud_sõnad[-1]\n' +
-    '    if sõna[0] != eelmine_sõna[-1]     or sõna in pakutud_sõnad:\n' +
-    '        print("Mäng läbi! Teenisid " +     str(punktid) + " punkti.")\n' +
+    '    sõna = input("Sisesta sõna, mis algab " + eelmine_sõna[-1] + "-tähega: ")\n' +
+    '    if sõna[0] != eelmine_sõna[-1] or sõna in pakutud_sõnad:\n' +
+    '        print("Mäng läbi! Teenisid " + str(punktid) + " punkti.")\n' +
     '        break\n' +
     '    punktid += 1\n' +
     '    pakutud_sõnad.append(sõna)')];
@@ -108,16 +109,16 @@ export class ListsComponent{
     'fail = open("nimed.txt", encoding="utf-8")\n' +
     'for rida in fail:\n' +
     '    perenimed.append(rida)\n' +
-    'fail.close()'), new ExerciseHint('Nime tükeldamiseks sobib hästi meetod <span class="fst-italic">split()</span>, mis tekitab meile järjendi. Sellele' +
-      ' meetodile saab argumendiks anda sõne, mille kohalt tahame tükeldada, vaikimisi tükeldatakse tühikute, taanete ja reavahetuste juurest. Me soovimegi just tühikute ' +
-      'juurest rida tükeldada, seega me võime kasutada seda meetodit ilma argumentideta.',
+    'fail.close()'), new ExerciseHint('Nime tükeldamiseks sobib hästi meetod <span class="fst-italic">split</span>, mis tekitab meile järjendi. Sellele' +
+      ' meetodile saab argumendiks anda sõne, mille kohalt tahame tükeldada. Vaikimisi tükeldatakse tühikute, taanete ja reavahetuste juurest. Me soovimegi just tühikute ' +
+      'juurest rida tükeldada, seega võime kasutada seda meetodit ilma argumentideta.',
       'nimetükid = rida.split()'),
-  new ExerciseHint('Perekonnanimi on nimetükkide järjendis viimane element, seega saame selle kätte indeksiga -1.',
+  new ExerciseHint('Perekonnanimi on nimetükkide järjendis viimane element, saame selle kätte indeksiga -1.',
     'perenimi = nimetükid[-1] # saame kätte viimase elemendi'),
-  new ExerciseHint('Nüd võime asendada aldses failist järjendisse lugemise koodis järjendisse lisamise rea:',
+  new ExerciseHint('Nüüd võime asendada algses failist järjendisse lugemise koodis järjendisse lisamise rea:',
     'perenimed.append(perenimi)'),
   new ExerciseHint('Nüüd on meil perekonnanimede järjend olemas. Kuna seda taheti väljastada sorteeritud kujul, siis võimegi järgmiseks selle sorteerida. ' +
-    'Siinkohal on kõige lihtsam kasutada juba kas vastavat funktsiooni või meetodit. Kasutame siin näiteks järjendite meetodit <span class="fst-italic">sort()</span>.' +
+    'Siinkohal on kõige lihtsam kasutada vastavat funktsiooni või meetodit. Kasutame siin näiteks järjendite meetodit <span class="fst-italic">sort</span>.' +
     'See meetod lihtsalt sorteerib järjendi, mille peal teda välja kutsutakse, ega tagasta midagi.',
     'perenimed.sort()'),
   new ExerciseHint('Sorteeritud nimekirja väljastamiseks võime näiteks <span class="fst-italic">for</span>-tsükliga järjendi läbi käia ja iga elemendi ' +
@@ -127,7 +128,7 @@ export class ListsComponent{
     'for nimi in perenimed:\n' +
     '    print(nimi)'),
   new ExerciseHint('Lisaks nime väljastamisele, tahame tsüklis iga elemendi puhul kontrollida, kas hetkel vaadeldav perekonnanimi on pikem,' +
-    ' kui seni leitud pikim perekonnanimi. Sõnede pikkuste leidmiseks kasutame funktsiooni <span class="fst-italic">len</span.',
+    ' kui seni leitud pikim perekonnanimi. Sõnede pikkuste leidmiseks kasutame funktsiooni <span class="fst-italic">len</span>.',
     'if len(nimi) > len(pikim):\n' +
     '    pikim = nimi'),
   new ExerciseHint('Viimaks jääbki väljastada veel vaid pikim leitud perekonnanimi. Seda tuleks teha pärast tsüklit.',

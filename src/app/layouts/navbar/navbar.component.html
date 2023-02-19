@@ -44,6 +44,9 @@
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'muutujad'" (click)="collapseNavbar()">Muutujad</a>
         </li>
         <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
+          <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'input'" (click)="collapseNavbar()">Käsk <span class="fst-italic">input</span></a>
+        </li>
+        <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
           <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'tehted'" (click)="collapseNavbar()">Tegevused andmetüüpidega</a>
         </li>
         <li class="nav-subitem" *ngIf="isVariablesOpened()" @inOutAnimation>
@@ -263,31 +266,31 @@
           <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'css'" (click)="collapseNavbar()">CSS</a>
         </li>
         <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Töölauarakendus</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Töölauarakendus</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'aken'" (click)="collapseNavbar()">Rakenduse aken</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'aken'" (click)="collapseNavbar()">Rakenduse aken</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'vidinad'" (click)="collapseNavbar()">Vidinad</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'vidinad'" (click)="collapseNavbar()">Vidinad</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'paigutus'" (click)="collapseNavbar()">Paigutus</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'paigutus'" (click)="collapseNavbar()">Paigutus</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'vorm'" (click)="collapseNavbar()">Vorm</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'vorm'" (click)="collapseNavbar()">Vorm</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'vormiklass'" (click)="collapseNavbar()">Vormiklass</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'vormiklass'" (click)="collapseNavbar()">Vorm vidinaks</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'mangija'" (click)="collapseNavbar()">Mängija klass</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'mangija'" (click)="collapseNavbar()">Mängija klass</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'nupud'" (click)="collapseNavbar()">Nupud</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'nupud'" (click)="collapseNavbar()">Nupud</a>
         </li>
         <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
-          <a class="nav-link" [routerLink]="'graafika'" [fragment]="'kujundus'" (click)="collapseNavbar()">Kujundus</a>
+          <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'kujundus'" (click)="collapseNavbar()">Kujundus</a>
         </li>
         <li>
           <div class="d-none d-md-block mt-2">

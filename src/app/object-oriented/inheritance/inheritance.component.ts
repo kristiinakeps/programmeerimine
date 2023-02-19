@@ -58,12 +58,12 @@ export class InheritanceComponent {
       '    def __init__(self, kasutajanimi, tase):\n' +
       '        self.kasutajanimi = kasutajanimi\n' +
       '        self.tase = tase'),
-    new ExerciseHint('Lisaks on klassis meetod <span class="fst-italic">liigu_järgmisele_tasemele()</span>, mis ei võta ühtegi ' +
+    new ExerciseHint('Lisaks on klassis meetod <span class="fst-italic">liigu_järgmisele_tasemele</span>, mis ei võta ühtegi ' +
       'argumenti, suurendab kasutaja taset ühe võrra ja väljastab teate kasutaja uue tasemega.', null),
     new ExerciseHint('Kuigi meie meetod ei võta ühtegi argumenti, siis meetodit kirjeldades tuleb üks argument ikka alati anda ' +
-      '&ndash; <span class="fst-italic">self</span>.', '    def liigu_järgmisele_tasemele(self):\n' +
-      '        self.tase += 1\n' +
-      '        print(self.kasutajanimi + " liikus tasemele " + str(self.tase))'),
+      '&ndash; <span class="fst-italic">self</span>.', 'def liigu_järgmisele_tasemele(self):\n' +
+      '    self.tase += 1\n' +
+      '    print(self.kasutajanimi + " liikus tasemele " + str(self.tase))'),
     new ExerciseHint('Sellega saame tõmmata joone alla Mängija klassile ja liikuda Supermängija juurde. Siin on igaühe enda otsustada, kas ' +
       'ta tahab anda stiilide hulga argumendina konstruktorile või väärtustada isendiväli konstruktoris tühja hulgaga.', null),
     new ExerciseHint('Me valime siin tühja hulgaga väärtustamise variandi. Siiski peame konstruktorile argumentideks andma ülemklassi ' +
@@ -72,18 +72,18 @@ export class InheritanceComponent {
       '    def __init__(self, kasutajanimi, tase):\n' +
       '        super().__init__(kasutajanimi, tase)\n' +
       '        self.stiilid = set()'),
-    new ExerciseHint('Supermängija klassis tuleb üle katta meetod <span class="fst-italic">liigu_järgmisele_tasemele()</span>. See meetod ' +
+    new ExerciseHint('Supermängija klassis tuleb üle katta meetod <span class="fst-italic">liigu_järgmisele_tasemele</span>. See meetod ' +
       'peaks jätkuvalt kasutaja taset suurendama ja uue taseme väljastama, aga nüüd peaks lisaks kasutajale ka uue stiili lisama. Siin oleks jube hea, kui ' +
-      'saaks kõigepealt välja kutsuda ülemklassi meetodit <span class="fst-italic">liigu_järgmisele_tasemele()</span>, mis tõstaks taset ja väljastaks teate, ' +
-      'ning seejärel lisada uue loogika. Kas suudad välja mõelda, kuidas ülemklassi meetodit kasutada?', null),
-    new ExerciseHint('Ülemklassi meetodile saame siit ligi funktsiooni <span class="fst-italic">super()</span> abil. Kutsume kõigepealt seda välja, ' +
+      'saaks kõigepealt välja kutsuda ülemklassi meetodit <span class="fst-italic">liigu_järgmisele_tasemele</span>, mis tõstaks taset ja väljastaks teate, ' +
+      'ning seejärel lisada uus loogika. Kas suudad välja mõelda, kuidas ülemklassi meetodit kasutada?', null),
+    new ExerciseHint('Ülemklassi meetodile saame siit ligi funktsiooni <span class="fst-italic">super</span> abil. Kutsume kõigepealt seda välja, ' +
       'siis loosime uue stiili ja lisame selle isendiväljale stiilide hulka. Anname teada, mis stiili kasutaja sai ja millised stiilid tal nüüd kokku on.',
-      '    def liigu_järgmisele_tasemele(self):\n' +
-      '        super().liigu_järgmisele_tasemele()\n' +
-      '        uus_stiil = choice(stiilid)\n' +
-      '        self.stiilid.add(uus_stiil)\n' +
-      '        print(self.kasutajanimi + " sai uue stiili: " + uus_stiil)\n' +
-      '        print(self.kasutajanimi + " kõik stiilid: " + str(self.stiilid))'),
+      'def liigu_järgmisele_tasemele(self):\n' +
+      '    super().liigu_järgmisele_tasemele()\n' +
+      '    uus_stiil = choice(stiilid)\n' +
+      '    self.stiilid.add(uus_stiil)\n' +
+      '    print(self.kasutajanimi + " sai uue stiili: " + uus_stiil)\n' +
+      '    print(self.kasutajanimi + " kõik stiilid: " + str(self.stiilid))'),
     new ExerciseHint('Nüüd on meil klassid valmis, jääb üle vaid neid katsetada.',
       'from random import *\n' +
       '\n' +
@@ -124,14 +124,14 @@ export class InheritanceComponent {
   gameExerciseHints = [new ExerciseHint('Eelmises harjutuses lõime mängijate klassid. Selles ülesandes loome vaid ühe uue klassi Mäng, ' +
     'mis kasutab ka mängijate klasse, ja põhiprogrammi, mis küsib kasutajalt tegevusi. Alustame klassist Mäng, mille konstruktor ei ' +
     'pea küll ühtegi argumenti võtma, aga konstruktori sees tuleks isendiväljale omistada tühi sõnastik.', null),
-    new ExerciseHint('Selle klassi konstruktor on üsna lihtne.´:', 'class Mäng:\n' +
+    new ExerciseHint('Selle klassi konstruktor on üsna lihtne:', 'class Mäng:\n' +
       '    \n' +
       '    def __init__(self):\n' +
       '        self.mängijad = {}'),
-    new ExerciseHint('Edasi tuleb meil luua kaks meetodit. Alustame meetodist <span class="fst-italic">lisa_mängija()</span>, mis ' +
-      'peaks küsima kasutajalt mängija kasutajanime ja taseme, looma õiget tüüpi kasutaja ja lisama selle isendiväljale sõnastikku. Juhul kui ' +
+    new ExerciseHint('Edasi tuleb meil luua kaks meetodit. Alustame meetodist <span class="fst-italic">lisa_mängija</span>, mis ' +
+      'peaks küsima kasutajalt mängija kasutajanime ja taseme, looma õiget tüüpi kasutaja ja lisama selle sõnastikku. Juhul kui ' +
       'kasutajanimi on juba sõnastikus, siis peaks lihtsalt väljastama vastava teate ja uut mängijat mitte looma.', null),
-    new ExerciseHint('Alustame kasutajanime küsimisest ja kontrollist, kas selline nimi on meil juba sõnastikus,',
+    new ExerciseHint('Alustame kasutajanime küsimisest ja kontrollist, kas selline nimi on meil juba sõnastikus.',
       'def lisa_mängija(self):\n' +
       '    kasutajanimi = input("Sisesta kasutajanimi: ")\n' +
       '    if (kasutajanimi in self.mängijad):\n' +
@@ -154,7 +154,7 @@ export class InheritanceComponent {
       '    if (kasutajanimi not in self.mängijad):\n' +
       '        print("Sellise nimega kasutajat pole. Ei saa järgmisele tasemele liigutada...")'),
     new ExerciseHint('Kui kasutajanimi oli olemas, siis saame sõnastikust selle kaudu kätte ka vastava mängija isendi. Isendil saame välja ' +
-      'kutsuda meetodit <span class="fst-italic">liigu_järgmisele_tasemele()</span>.', null),
+      'kutsuda meetodit <span class="fst-italic">liigu_järgmisele_tasemele</span>.', null),
     new ExerciseHint('Sõnastikust mängija leidmise ja ta taseme tõstmise saame kõik ühe reaga teha:', 'else:\n' +
       '    self.mängijad[kasutajanimi].liigu_järgmisele_tasemele()'),
     new ExerciseHint('Nüüd on meil klass Mäng valmis. Järgmine samm on seda klassi kasutada ja luua põhiprogramm.', null),
@@ -175,7 +175,7 @@ export class InheritanceComponent {
     new ExerciseHint('Kui tegevus on "l", siis tuleks lisada uus mängija. Selleks pole vaja teha muud kui kutsuda välja vastavat Mängu meetodit.', null),
     new ExerciseHint('Mängija lisamine Mängu isendi kaudu:', 'mäng.lisa_mängija()'),
     new ExerciseHint('Sarnaselt tuleb tegevuse "j" puhul välja kutsuda vastavat Mängu meetodit.', null),
-    new ExerciseHint('Mängija järgmisele tasemele liigutamiseks on selleks meetodiks <span class="fst-italic">liiguta_järgmisele_tasemele()</span>.',
+    new ExerciseHint('Mängija järgmisele tasemele liigutamiseks on selleks meetodiks <span class="fst-italic">liiguta_järgmisele_tasemele</span>.',
       'mäng.liiguta_järgmisele_tasemele()'),
     new ExerciseHint('Nii eelmise kui selle harjutuse peale kokku tuleb päris pikk kood:',
       'from random import *\n' +
