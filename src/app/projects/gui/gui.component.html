@@ -10,24 +10,27 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Lisaks veebirakendustele oled kindlasti kasutanud ka töölauarakendusi. Ka Thonny, mida ilmselt programmeerimiseks
-  kasutad, on oma iseloomult töölauarakendus. Selles peatükis vaatame, kuidas luua ise lihtsat töölauarakendust.</span></div>
+  kasutad, on oma iseloomult töölauarakendus. Selles peatükis vaatame, kuidas luua ise lihtsat töölauarakendust.</span>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Töölauarakenduse jaoks hakkame kasutama tööriistakomplekti nimega <span class="fst-italic">PyQt</span>. Täpsemalt
   selle kuuendat versiooni <span class="fst-italic">PyQt6</span>. See on üks populaarsemaid tööriistu Pythonis töölauarakenduste valmistamiseks,
     sest see pakub palju võimalusi ja selle abil saab väga lihtsa vaevaga töölauarakenduse luua.
-  Paigaldamine käib täpselt samamoodi nagu <span class="fst-italic">pygame</span>'i ja <span class="fst-italic">Flask</span>'i puhul.
+  Paigaldamine käib täpselt samamoodi nagu <span class="fst-italic">pygame</span>'i ja <span
+      class="fst-italic">Flask</span>'i puhul.
   Otsingusse sisesta seekord lihtsalt <span class="fst-italic">PyQt6</span>.</span></div>
 </div>
 <h4 class="mt-5" [attr.id]="'aken'">Kuidas luua töölauarakenduse akent?</h4>
 <div class="mt-3 box-container">
   <div class="row px-0">
-  <div class="col-lg-10"><span>Loome väikse rakenduse klassidevahelise jalgpallivõistluse jaoks meeskonna koostamiseks. Rakenduse kaudu saab lisada meeskonda mängijaid
-  ja lõpus need mängijad faili salvestada. Iga mängija jaoks küsime ta nime, sünnipäeva, soo ja kas ta on põhi- või varumängija.</span></div>
-  <div class="col-lg-1 my-auto mx-3">
-    <img src="../../../assets/images/gui/ball.png" alt="ball"
-         style="height: 4rem">
-  </div>
+    <div class="col-lg-10"><span>Loome väikse rakenduse klassidevahelise jalgpallivõistluse jaoks meeskonna koostamiseks. Rakenduse kaudu saab lisada meeskonda mängijaid
+  ja lõpus need mängijad faili salvestada. Iga mängija jaoks küsime ta nime, sünnipäeva, soo ja kas ta on põhi- või varumängija.</span>
+    </div>
+    <div class="col-lg-1 my-auto mx-3">
+      <img src="../../../assets/images/gui/ball.png" alt="ball"
+           style="height: 4rem">
+    </div>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -36,16 +39,20 @@
   Vidinate asukohad saab määrata erinevate paigutustega. Alustame kõigepealt täiesti tühjast aknast, seejärel vaatame, milliseid vidinaid ja
   paigutusi on olemas.</span></div>
   <div class="mt-2 code-block"><span [highlight]="emptyCode"></span></div>
-  <div class="mt-2"><span>Tühja akna kuvamiseks on meil vaja importida kaks asja: <span class="fst-italic">QApplication</span> ja
+  <div class="mt-2"><span>Tühja akna kuvamiseks on meil vaja importida kaks asja: <span
+    class="fst-italic">QApplication</span> ja
   <span class="fst-italic">QMainWindow</span>. Esimene neist on klass rakenduse loomiseks ja teine põhiakna loomiseks. Oma programmis
   loomegi kõigepealt rakenduse objekti. Konstruktorile anname argumendiks tühja järjendi. Selle järjendi abil saab tegelikult rakendusele
   argumente ette anda, aga meil pole seda vaja.</span></div>
   <div class="mt-2"><span>Teiseks loome akna objekti. Aknale saame määrata näiteks pealkirja. Viimaks on vaja akent näidata, kutsudes selleks
-  välja akna meetodit <span class="fst-italic">show</span>, ja rakendus käivitada meetodiga <span class="fst-italic">exec</span>.</span></div>
+  välja akna meetodit <span class="fst-italic">show</span>, ja rakendus käivitada meetodiga <span class="fst-italic">exec</span>.</span>
+  </div>
 </div>
 <div class="mt-3 box-container">
-  <div>Lisame oma aknasse ka ühe vidina nimega <span class="fst-italic">QLabel</span>. Seda vidinat kasutatakse siltide jaoks ja selle
-    konstruktorile võime argumendiks anda teksti, mida soovime kuvada. Seejärel määrame ta oma akna keskele.</div>
+  <div>Lisame oma aknasse ka ühe vidina nimega <span class="fst-italic">QLabel</span>. Seda vidinat kasutatakse siltide
+    jaoks ja selle
+    konstruktorile võime argumendiks anda teksti, mida soovime kuvada. Seejärel määrame ta oma akna keskele.
+  </div>
   <div class="mt-2 code-block"><span [highlight]="labelCode"></span></div>
   <div class="mt-2"><span>Nüüd peaks akna keskele ka sõna "Rakendus" ilmuma. <span class="fst-italic">QLabel</span> on üks
   võimalikke vidinaid, mida saame kasutada. Milliseid vidinaid on veel olemas?</span></div>
@@ -76,9 +83,12 @@
     </tr>
     <tr>
       <td>QRadioButton</td>
-      <td>Valikuvariant ümmarguse nupukesega. Kasutatakse tavaliselt mitmekesi koos, nendest ainult üks saab korraga valitud olla.</td>
+      <td>Valikuvariant ümmarguse nupukesega. Kasutatakse tavaliselt mitmekesi koos, nendest ainult üks saab korraga
+        valitud olla.
+      </td>
       <td>vidin = QRadioButton("Esimene")<br>
-        teine_vidin = QRadioButton("Teine")</td>
+        teine_vidin = QRadioButton("Teine")
+      </td>
       <td>
         <div class="m-2">
           <img src="../../../assets/images/gui/radio.png" alt="radio"
@@ -90,11 +100,14 @@
       <td>QComboBox</td>
       <td>Rippmenüü valikutega.</td>
       <td>vidin = QComboBox()<br>
-        vidin.addItems(["Esimene", "Teine", "Kolmas"])</td>
-      <td>        <div class="m-2">
-        <img src="../../../assets/images/gui/combobox.png" alt="combobox"
-             style="height: 6rem">
-      </div></td>
+        vidin.addItems(["Esimene", "Teine", "Kolmas"])
+      </td>
+      <td>
+        <div class="m-2">
+          <img src="../../../assets/images/gui/combobox.png" alt="combobox"
+               style="height: 6rem">
+        </div>
+      </td>
     </tr>
     <tr>
       <td>QLabel</td>
@@ -122,7 +135,8 @@
       <td>QPushButton</td>
       <td>Nupp tekstiga.</td>
       <td>vidin = QPushButton()
-        vidin.setText("Vajuta mind!")</td>
+        vidin.setText("Vajuta mind!")
+      </td>
       <td>
         <div class="m-2">
           <img src="../../../assets/images/gui/button.png" alt="button"
@@ -135,7 +149,8 @@
       <td>Riba, millelt saab libistades kindlast vahemikust arvu valida.</td>
       <td>vidin = QSlider()<br>
         vidin.setMinimum(0)<br>
-        vidin.setMaximum(10)</td>
+        vidin.setMaximum(10)
+      </td>
       <td>
         <div class="m-2">
           <img src="../../../assets/images/gui/slider.png" alt="slider"
@@ -223,7 +238,8 @@
       <td>paigutus = QHBoxLayout()<br>
         paigutus.addWidget(esimene)<br>
         paigutus.addWidget(teine)<br>
-        paigutus.addWidget(kolmas)</td>
+        paigutus.addWidget(kolmas)
+      </td>
       <td>
         <div class="m-2">
           <img src="../../../assets/images/gui/hbox.png" alt="hbox"
@@ -252,7 +268,8 @@
       <td>paigutus = QGridLayout()<br>
         paigutus.addWidget(esimene, 0, 0)<br>
         paigutus.addWidget(teine, 0, 1)<br>
-        paigutus.addWidget(kolmas, 1, 0)</td>
+        paigutus.addWidget(kolmas, 1, 0)
+      </td>
       <td>
         <div class="m-2">
           <img src="../../../assets/images/gui/grid.png" alt="grid"
@@ -266,12 +283,14 @@
       <td>paigutus = QStackedLayout()<br>
         paigutus.addWidget(esimene)<br>
         paigutus.addWidget(teine)<br>
-        paigutus.addWidget(kolmas)</td>
+        paigutus.addWidget(kolmas)
+      </td>
       <td>
         <div class="m-2">
-        <img src="../../../assets/images/gui/stack.png" alt="stacked"
-             style="height: 1.2rem">
-      </div></td>
+          <img src="../../../assets/images/gui/stack.png" alt="stacked"
+               style="height: 1.2rem">
+        </div>
+      </td>
     </tr>
     </tbody>
   </table>
@@ -291,8 +310,10 @@
   lubavad valida ühe etteantud valikutest. Kasutame siin <span class="fst-italic">QComboBox</span>'i. Põhi- või varumängija jaoks sobiks
   ka need variandid, kuid kasutame siin hoopis <span class="fst-italic">QCheckbox</span>'i. Kui märkeruutu on linnuke tehtud, siis on tegemist
   põhimängijaga, kui linnukest pole, siis varumängijaga.</span></div>
-  <div class="mt-2">Impordime vajalikud vidinad ja loome vastavad isendid. <span class="fst-italic">QComboBox</span>'ile paneme
-  valikuvariantideks "poiss" ja "tüdruk".</div>
+  <div class="mt-2">Impordime vajalikud vidinad ja loome vastavad isendid. <span class="fst-italic">QComboBox</span>'ile
+    paneme
+    valikuvariantideks "poiss" ja "tüdruk".
+  </div>
   <div class="mt-2 code-block"><span [highlight]="formWidgetsCode"></span></div>
   <div class="mt-2"><span>Hetkel veel midagi aknasse ei ilmu, kui rakenduse käivitame. Selleks peame oma loodud vidinad ka mõnda paigutusse lisama ja
   paigutust aknas kuvama.</span></div>
@@ -300,14 +321,17 @@
 <div class="mt-3 box-container">
   <div><span>Lisaks sisendiväljadele võiksime kasutajale iga välja juures ka väikse vihje anda, mida sinna väljale sisestama peab. Iga
   sisendiväli koos selgitava vihjega võiks olla eraldi real.
-    Vihje jaoks saame igal real kasutada <span class="fst-italic">QLabel</span> vidinat. Siin sobiks hästi kasutada ruudustikku ehk <span class="fst-italic">QGridLayout</span>'i.
+    Vihje jaoks saame igal real kasutada <span class="fst-italic">QLabel</span> vidinat. Siin sobiks hästi kasutada ruudustikku ehk <span
+      class="fst-italic">QGridLayout</span>'i.
   Iga ruudustiku rea esimeses veerus on vastava rea vihje ja teises veerus sisendiväli. Vidina ruudustikku paigutamiseks kasutatakse meetodit
-  <span class="fst-italic">addWidget()</span>, mille esimene argument on vidin, seejärel rea indeks ja kolmandaks veeru indeks.</span></div>
+  <span class="fst-italic">addWidget()</span>, mille esimene argument on vidin, seejärel rea indeks ja kolmandaks veeru indeks.</span>
+  </div>
   <div class="mt-2 code-block"><span [highlight]="formLayoutCode"></span></div>
   <div class="mt-2"><span>Nüüd ilmub meie vorm aknas nähtavale. Küll aga märkame, et meie kood on juba päris pikk ja läheb ilmselt veel pikemaks.
   Oleks hea kui saaksime seda kuidagi paremini organiseerida ja tõsta vormi joonistamise osa kuhugi eraldi. Eriti hea oleks, kui
     saaksime moodustada sellest täiesti uue vidina, mida hiljem kasutada. Praktikas
-    kasutatakse päris palju sellist stiili, kus erinevad kasutajaliidese osad koondatakse uutesse, meie endi loodud vidinatesse.</span></div>
+    kasutatakse päris palju sellist stiili, kus erinevad kasutajaliidese osad koondatakse uutesse, meie endi loodud vidinatesse.</span>
+  </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/form.png" alt="form"
          style="height: 15rem">
@@ -316,12 +340,14 @@
 <h4 class="mt-5" [attr.id]="'vormiklass'">Kuidas muuta vorm vidinaks?</h4>
 <div class="mt-3 box-container">
   <div><span>Vidina loomine ei ole eriti keeruline. Peame vaid looma uue klassi, mis oleks mõne vidina alamklass ja ongi kõik. Võtame näiteks kõige
-  üldisema vidina <span class="fst-italic">QWidget</span> ja loome uue klassi nimega Vorm, mis on <span class="fst-italic">QWidget</span>'i alamklassi.
+  üldisema vidina <span class="fst-italic">QWidget</span> ja loome uue klassi nimega Vorm, mis on <span
+      class="fst-italic">QWidget</span>'i alamklassi.
   Seejärel lisame sinna isendiväljadena kõik meie vormi elemendid, mis enne olid tavalised muutujad.</span></div>
   <div class="mt-2 code-block"><span [highlight]="formClassCode"></span></div>
   <div class="mt-2"><span>Tasub tähelepanu pöörata meie uue klassi viimasele reale.
     Varem lõime oma põhiprogrammi lõpus <span class="fst-italic">QWidget</span> isendi ja lisasime sellele paigutuseks oma ruudustiku.
-  Nüüd konstuktoris me enam uut <span class="fst-italic">QWidget</span> isendit ei loo. Meie klass ise on <span class="fst-italic">QWidget</span>'i
+  Nüüd konstuktoris me enam uut <span class="fst-italic">QWidget</span> isendit ei loo. Meie klass ise on <span
+      class="fst-italic">QWidget</span>'i
   alamklass, seega saame paigutuse otse oma klassi isendi külge panna.</span></div>
   <div class="mt-2"><span>Põhiprogramm on meil nüüd palju lühem:</span></div>
   <div class="mt-2 code-block"><span [highlight]="formMainCode"></span></div>
@@ -332,7 +358,8 @@
 <h4 class="mt-5" [attr.id]="'mangija'">Loome Mängija klassi</h4>
 <div class="mt-3 box-container">
   <div><span>Loome klassi, mis aitaks meil hoiustada mängija infot: nime, sünnipäeva, sugu ja kas tegemist on põhi- või varumängijaga. Esimesed
-  kolm isendivälja võiks olla sõne-tüüpi ja viimane tõeväärtus. Lisaks võiks klassis olla meetod <span class="fst-italic">__str__</span>, mis
+  kolm isendivälja võiks olla sõne-tüüpi ja viimane tõeväärtus. Lisaks võiks klassis olla meetod <span
+      class="fst-italic">__str__</span>, mis
   aitaks mängija infot ilusti kuvada.</span></div>
   <div class="mt-2"><span>Proovi see klass kõigepealt ise valmis meisterdada. Kui jääd hätta või soovid oma klassi võrrelda siinse näitega, siis
   vaata vihjet.</span></div>
@@ -344,43 +371,61 @@
 </div>
 <h4 class="mt-5" [attr.id]="'nupud'">Nupud mängija lisamiseks ja mängijate salvestamiseks</h4>
 <div class="mt-3 box-container">
-  <div>Kasutaja saab ilusti läbi meie loodud vormi jalgapallimängija andmed sisestada. Nüüd võiksime lisada nupu, mille abil saab uue mängija luua ja
-  lisada olemasolevate mängijate nimekirja. Selleks võiksime luua uue vidina klassi, millest saab meie rakenduse põhiaken. Võimegi talle nimeks panna
-  Põhiaken. Põhiaknas kuvame kõigepealt oma vormi, selle all nuppu "Lisa mängija" ja omakorda selle all eraldi ridadel lisatud mängijate andmeid.</div>
-  <div class="mt-2">Kuna see vidin on meil põhiakna eest, siis võime ta muuta <span class="fst-italic">QMainWindow</span> alamklassiks. Sobiks ka
-    <span class="fst-italic">QWidget</span>, kuid <span class="fst-italic">QMainWindow</span> alamklassina saame ära kasutada ka selle klassi omadusi, näiteks
-    aknale pealkirja lisamist. Kuna soovime erinevaid vidinaid üksteise all kuvada, siis sobib siin kasutada <span class="fst-italic">QVBoxLayout</span> paigutust.
-  Võime konstruktoris määrata aknale pealkirja ja luua <span class="fst-italic">QVBoxLayout</span> paigutuse. Loome ka uue Vormi isendi ja lisame ta paigutusse.
-  Lõpuks tahame paigutuse ka oma aknasse lisama. Selleks saame kasutada meetodit <span class="fst-italic">setCentralWidget</span>. Kuna paigutust ei saa otse
-    sellele meetodile ette anda, siis peame ta mähkima mõne vidina sisse. Näiteks loome uue <span class="fst-italic">QWidget</span> isendi, seame talle
-  meetodiga <span class="fst-italic">setLayout()</span> paigutuse ja seejärel lisame selle vidina aknasse.</div>
-  <div class="mt-2"><span>Nüüd, kus oleme ka põhiakna seadistamise tõstnud eraldi klassi, on meie põhiprogramm kohe eriti lühikeseks muutunud.</span></div>
+  <div>Kasutaja saab ilusti läbi meie loodud vormi jalgapallimängija andmed sisestada. Nüüd võiksime lisada nupu, mille
+    abil saab uue mängija luua ja
+    lisada olemasolevate mängijate nimekirja. Selleks võiksime luua uue vidina klassi, millest saab meie rakenduse
+    põhiaken. Võimegi talle nimeks panna
+    Põhiaken. Põhiaknas kuvame kõigepealt oma vormi, selle all nuppu "Lisa mängija" ja omakorda selle all eraldi ridadel
+    lisatud mängijate andmeid.
+  </div>
+  <div class="mt-2">Kuna see vidin on meil põhiakna eest, siis võime ta muuta <span
+    class="fst-italic">QMainWindow</span> alamklassiks. Sobiks ka
+    <span class="fst-italic">QWidget</span>, kuid <span class="fst-italic">QMainWindow</span> alamklassina saame ära
+    kasutada ka selle klassi omadusi, näiteks
+    aknale pealkirja lisamist. Kuna soovime erinevaid vidinaid üksteise all kuvada, siis sobib siin kasutada <span
+      class="fst-italic">QVBoxLayout</span> paigutust.
+    Võime konstruktoris määrata aknale pealkirja ja luua <span class="fst-italic">QVBoxLayout</span> paigutuse. Loome ka
+    uue Vormi isendi ja lisame ta paigutusse.
+    Lõpuks tahame paigutuse ka oma aknasse lisama. Selleks saame kasutada meetodit <span class="fst-italic">setCentralWidget</span>.
+    Kuna paigutust ei saa otse
+    sellele meetodile ette anda, siis peame ta mähkima mõne vidina sisse. Näiteks loome uue <span class="fst-italic">QWidget</span>
+    isendi, seame talle
+    meetodiga <span class="fst-italic">setLayout()</span> paigutuse ja seejärel lisame selle vidina aknasse.
+  </div>
+  <div class="mt-2"><span>Nüüd, kus oleme ka põhiakna seadistamise tõstnud eraldi klassi, on meie põhiprogramm kohe eriti lühikeseks muutunud.</span>
+  </div>
   <div class="mt-2 code-block"><span [highlight]="mainWindowInitCode"></span></div>
-  <div class="mt-2"><span>Jälgi ka, et kõik kasutatud vidinad ja paigutused saaksid imporditud. Hetkel peaks import selline välja nägema:</span></div>
-  <div class="mt-2 code-block"><span [highlight]="'from PyQt6.QtWidgets import QApplication, QMainWindow, QCheckBox, QComboBox, QDateEdit, QLineEdit, QLabel, QGridLayout, QWidget, QVBoxLayout'"></span></div>
-  <div class="mt-2"><span>Praegu peaks avanema täpselt samasugune pilt nagu enne Põhiaken klassi loomist. Järgmiseks lisame sinna aknasse ka uue nupu.</span></div>
+  <div class="mt-2"><span>Jälgi ka, et kõik kasutatud vidinad ja paigutused saaksid imporditud. Hetkel peaks import selline välja nägema:</span>
+  </div>
+  <div class="mt-2 code-block"><span
+    [highlight]="'from PyQt6.QtWidgets import QApplication, QMainWindow, QCheckBox, QComboBox, QDateEdit, QLineEdit, QLabel, QGridLayout, QWidget, QVBoxLayout'"></span>
+  </div>
+  <div class="mt-2"><span>Praegu peaks avanema täpselt samasugune pilt nagu enne Põhiaken klassi loomist. Järgmiseks lisame sinna aknasse ka uue nupu.</span>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <div class="row px-0">
-  <div class="col-lg-10">
-  <div><span>Uue nupu lisamiseks loome konstruktoris uue <span class="fst-italic">QPushButton</span> isendi (ei tasu unustada seda ka importidesse lisamast).
+    <div class="col-lg-10">
+      <div><span>Uue nupu lisamiseks loome konstruktoris uue <span class="fst-italic">QPushButton</span> isendi (ei tasu unustada seda ka importidesse lisamast).
     Nupule saame teksti määrata meetodiga <span class="fst-italic">setText</span>. Lisaks peaksime uue nupu oma paigutusse lisama. Kuna tahame, et nupp oleks
   vormi all, siis tuleb jälgida, et kõigepealt saaks paigutusse vorm lisatud ja alles pärast seda nupp.</span></div>
-  <div class="mt-2 code-block"><span [highlight]="buttonCode"></span></div>
-  </div>
-  <div class="col-lg-1 my-auto mx-3">
-    <img src="../../../assets/images/gui/list.png" alt="list"
-         style="height: 10rem">
-  </div>
+      <div class="mt-2 code-block"><span [highlight]="buttonCode"></span></div>
+    </div>
+    <div class="col-lg-1 my-auto mx-3">
+      <img src="../../../assets/images/gui/list.png" alt="list"
+           style="height: 10rem">
+    </div>
   </div>
   <div class="mt-2"><span>Nüüd on meil vormi all ilusti ka nupp olemas. Aga kui nuppu vajutada, siis hetkel ei juhtu veel midagi. Järgmiseks peaksime looma meetodi,
   mida tahame nupu vajutusel välja kutsuda.</span></div>
-  <div class="mt-2"><span>Selleks lisame oma Põhiaken klassi uue meetodi. Võime sellele nimeks panna <span class="fst-italic">lisa_liige</span>. See
+  <div class="mt-2"><span>Selleks lisame oma Põhiaken klassi uue meetodi. Võime sellele nimeks panna <span
+    class="fst-italic">lisa_liige</span>. See
   meetod peaks vormist kõik vajalikud andmed kokku korjama, looma nende põhjal uue mängija isendi ja lisama ta kuhugi mängijate nimekirja. Esimese sammuna võiksimegi
   täiendada oma konstruktorit ja lisada sinna isendivälja mängijate järjendi jaoks.</span></div>
   <div class="mt-2 code-block"><span [highlight]="'self.mängijad = []'"></span></div>
   <div class="mt-2"><span>Nüüd peame vaatama, kuidas erinevatest vidinatest sisestatud väärtused kätte saada. Alustame nimest, mis on meil
-    <span class="fst-italic">QLineEdit</span> vidinas. Sellest vidinast saab sisestatud teksti kätte meetodiga <span class="fst-italic">text</span>.
+    <span class="fst-italic">QLineEdit</span> vidinas. Sellest vidinast saab sisestatud teksti kätte meetodiga <span
+      class="fst-italic">text</span>.
   Vorm on meil salvestatud isendiväljale nimega <span class="fst-italic">vorm</span> ja sellel vormi isendil on omakorda isendiväli
     <span class="fst-italic">nimi</span>. Seega nime saame kätte nii:</span></div>
   <div class="mt-2 code-block"><span [highlight]="'self.vorm.nimi.text()'"></span></div>
@@ -390,17 +435,21 @@
   kuupäeva kuvamise mustri. Selles mustris "dd" tähistab päeva, "MM" kuud ja "yyyy" aastat. Näiteks kui tahame neid punktidega eraldatult, siis
   võime anda arguemndiks "dd.MM.yyyy"</span></div>
   <div class="mt-2 code-block"><span [highlight]="dateCode"></span></div>
-<div class="mt-2"><span>Sugu oli meil rippmenüüst valitav ja selleks kasutasime <span class="fst-italic">QComboBox</span> vidinat.
-Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <span class="fst-italic">currentText</span>.</span></div>
+  <div class="mt-2"><span>Sugu oli meil rippmenüüst valitav ja selleks kasutasime <span
+    class="fst-italic">QComboBox</span> vidinat.
+Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <span class="fst-italic">currentText</span>.</span>
+  </div>
   <div class="mt-2 code-block"><span [highlight]="'self.vorm.sugu.currentText()'"></span></div>
   <div class="mt-2"><span>Viimane vormis kasutatud vidin on <span class="fst-italic">QCheckBox</span>, millel on kaks võimalikku olekut
-    &ndash; kas märgitud või mitte. Selle tõeväärtuse saab kätte meetodiga <span class="fst-italic">isChecked</span>.</span></div>
+    &ndash; kas märgitud või mitte. Selle tõeväärtuse saab kätte meetodiga <span
+      class="fst-italic">isChecked</span>.</span></div>
   <div class="mt-2 code-block"><span [highlight]="'self.vorm.põhimängija.isChecked()'"></span></div>
   <div class="mt-2"><span>Korjame need väärtused oma vormist kokku ja anname Mängija konstruktorile argumendiks. Loodud mängija
   lisame ka isendiväljale järjendisse.</span></div>
   <div class="mt-2 code-block"><span [highlight]="addPlayerCode"></span></div>
   <div class="mt-2"><span>Nii saame mängijaid luua ja oma järjendisse lisada. Kuid kasutajaliideses me lisatud mängijaid veel ei kuva. Õnneks pole
-  raske loodud mängijat ka kasutajaliidesesse lisada. Selleks võime lihtsalt luua uue <span class="fst-italic">QLabel</span> isendi ja
+  raske loodud mängijat ka kasutajaliidesesse lisada. Selleks võime lihtsalt luua uue <span
+      class="fst-italic">QLabel</span> isendi ja
   lisada selle paigutusse. <span class="fst-italic">QLabel</span> konstruktorile saame anda kuvatava teksti argumeniks ja meil sobib selleks hästi
   Mängija meetodi <span class="fst-italic">__str__</span> tagastatud väärtus.</span></div>
   <div class="mt-2 code-block"><span [highlight]="'silt = QLabel(mängija.__str__())\n'+
@@ -410,9 +459,10 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   <div class="mt-2 code-block"><span [highlight]="'self.lisa_nupp.clicked.connect(self.lisa_liige)'"></span></div>
 </div>
 <div class="mt-3 box-container">
-    <div><span>Päris suur osa programmi loogikast on meil nüüd olemas. Võiksime veel lisada nupu, mille abil saab lisatud mängijad ka tekstifaili salvestada.
-  Selleks võime lisada uue nupu praeguse "Lisa mängija" nupu alla. Proovi ise see nupp luua ja kirjutada ka vastav meetod. Kui jääd hätta, siis vaata vihjeid.</span></div>
-    <app-exercise-hints [hints]="saveButtonHints"></app-exercise-hints>
+  <div><span>Päris suur osa programmi loogikast on meil nüüd olemas. Võiksime veel lisada nupu, mille abil saab lisatud mängijad ka tekstifaili salvestada.
+  Selleks võime lisada uue nupu praeguse "Lisa mängija" nupu alla. Proovi ise see nupp luua ja kirjutada ka vastav meetod. Kui jääd hätta, siis vaata vihjeid.</span>
+  </div>
+  <app-exercise-hints [hints]="saveButtonHints"></app-exercise-hints>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/full.png" alt="full"
          style="height: 20rem">
@@ -422,32 +472,38 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
 <div class="mt-3 box-container">
   <div class="row px-0">
     <div class="col-lg-9">
-  <div><span>Nüüd on meil töötav rakendus olemas. Proovime aga natuke oma akna ja vidinate värve muutja ja muud kujundust lisada.
-  Eelmises peatükis tutvusime natuke CSS-iga ja just CSS-i abil saame ka siin oma vidinaid kujundada. Meie rakendusel (<span class="fst-italic">QApplication</span>)
+      <div><span>Nüüd on meil töötav rakendus olemas. Proovime aga natuke oma akna ja vidinate värve muutja ja muud kujundust lisada.
+  Eelmises peatükis tutvusime natuke CSS-iga ja just CSS-i abil saame ka siin oma vidinaid kujundada. Meie rakendusel (<span
+          class="fst-italic">QApplication</span>)
   on olemas meetod <span class="fst-italic">setStyleSheet</span>, millele saame CSS-i sõnena argumendiks anda. Võimegi CSS-i kirjutada programmi sõnena sisse
-  või siis lugeda lihtsalt CSS-faili sisu sõnena oma programmi sisse. Lihtsuse mõttes kirjutame siin oma kujunduse otse koodi sisse.</span></div>
-  <div class="mt-2"><span>Proovime kõigepealt oma <span class="fst-italic">QMainWindow</span> vidinale uue taustavärvi lisada. Kui tahame muuta kõiki
+  või siis lugeda lihtsalt CSS-faili sisu sõnena oma programmi sisse. Lihtsuse mõttes kirjutame siin oma kujunduse otse koodi sisse.</span>
+      </div>
+      <div class="mt-2"><span>Proovime kõigepealt oma <span class="fst-italic">QMainWindow</span> vidinale uue taustavärvi lisada. Kui tahame muuta kõiki
   vidinaid, siis saame CSS-is kirjutada vidina nime ja loogelistes sulgudes vidinale rakendatava kujunduse.</span></div>
     </div>
-  <div class="col-lg-2 my-auto mx-3">
-    <img src="../../../assets/images/gui/paint.png" alt="paint"
-         style="height: 8rem">
-  </div>
+    <div class="col-lg-2 my-auto mx-3">
+      <img src="../../../assets/images/gui/paint.png" alt="paint"
+           style="height: 8rem">
+    </div>
   </div>
   <div class="mt-2 code-block"><span [highlight]="mainWindowStyle"></span></div>
-  <div class="mt-2"><span>Sarnaselt saame kujundada ka teisi vidinaid. Näieks võime ka nuppude värve natuke muuta:</span></div>
+  <div class="mt-2">
+    <span>Sarnaselt saame kujundada ka teisi vidinaid. Näieks võime ka nuppude värve natuke muuta:</span></div>
   <div class="mt-2 code-block"><span [highlight]="buttonsStyle"></span></div>
   <div class="mt-2"><span>Mis saab aga siis, kui soovime ainult mõne üksiku isendi stiili muuta, mitte kõikide sama tüüpi isendite? Eelmises
   peatükis nägime, et saame ise CSS-is stiiliklasse kirjeldada ja panna oma elementidele vastavad stiiliklassi külge. Täpselt sama saame teha ka siin.
-  Loome näiteks kujunduse nimega <span class="fst-italic">liige</span>, mille tahame määrata ainult nendele <span class="fst-italic">QLabel</span>
-  isenditele, mis hoiavad endas mängijate infot. Kui kirjeldame oma uut stiiliklassi, siis tuleb CSS-is selle nime ette ka punkt lisada:</span></div>
+  Loome näiteks kujunduse nimega <span class="fst-italic">liige</span>, mille tahame määrata ainult nendele <span
+      class="fst-italic">QLabel</span>
+  isenditele, mis hoiavad endas mängijate infot. Kui kirjeldame oma uut stiiliklassi, siis tuleb CSS-is selle nime ette ka punkt lisada:</span>
+  </div>
   <div class="mt-2 code-block"><span [highlight]="styleFull" [languages]="['python']"></span></div>
   <div class="mt-2"><span>Vidinale stiiliklassi lisamiseks saame kasutada vidinate meetodit <span class="fst-italic">setProperty</span>.
   Selle esimene argument on omadus, mida tahame lisada. Kui soovime lisada stiiliklassi, siis on selleks omaduseks "class". Teine argument on
   omaduse väärtus. Meie puhul siis stiiliklassi nimi "liige".</span></div>
   <div class="mt-2 code-block"><span [highlight]="styleAppliedCode"></span></div>
   <div class="mt-2"><span>Kui nüüd rakendust käivitad, siis peaks taust olema heleroheline, nupud tumerohelised valge tekstiga ja lisatud mängijad peaks olema
-  valge taustaga kastides. Soovi korral võid rakenduse enda maitse järgi ümber kujundada, proovida teistsuguseid värve ja ka muid CSS-i omadusi.</span></div>
+  valge taustaga kastides. Soovi korral võid rakenduse enda maitse järgi ümber kujundada, proovida teistsuguseid värve ja ka muid CSS-i omadusi.</span>
+  </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/styled.png" alt="styled"
          style="height: 20rem">
@@ -461,4 +517,11 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   <div><span>Meie väike rakendus on nüüd valmis ja loodetavasti saime näha kuidas mõningaid <span class="fst-italic">PyQt</span> vidinaid ja
   paigutusi kasutada. Miks mitte proovida luua graafilist kasutajaliidest veel mõnele varem loodud programmile. Või mõelda välja mõni uus idee, mida
   saaks graafilise kaustajaliidese abil teostada.</span></div>
+</div>
+<div class="box-container mt-5">
+  <div><span>Sellega ongi meie õpik läbi. Ole hea ja võta hetk õpikule tagasiside andmiseks. Tagasiside põhjal
+  saame muuta õpiku paremaks ja huvi korral lisada ka uusi teemasid. Tagasisidet saad anda
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLScJZlY3eIGTcRTprFhq0Jc4hjjPxY1DuIKgPycqPCDRflUghw/viewform?usp=sf_link"
+      target="_blank">siin</a>.</span></div>
 </div>

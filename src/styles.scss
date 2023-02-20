@@ -197,10 +197,17 @@ a:hover {
 
 .nav-link:hover{
   text-decoration: none !important;
+  color: $color-white !important;
 }
 
-.nav-link:hover {
-  color: $color-white !important;
+.nav-link-feedback {
+  color: $color-grey !important;
+  cursor: pointer;
+}
+
+.nav-link-feedback:hover{
+  text-decoration: none !important;
+  color: $color-blue-light !important;
 }
 
 .navbar-brand:focus, .nav-link:focus {
@@ -214,6 +221,10 @@ a:hover {
 
 .nav-item:hover {
   background-color: $color-purple-dark;
+}
+
+.nav-item-feedback:hover {
+  background-color: $color-purple;
 }
 
 .box-container {
