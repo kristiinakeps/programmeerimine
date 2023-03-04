@@ -72,6 +72,9 @@
           tingimuslaused</a>
       </li>
       <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
+        <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'kombineerimine'" (click)="collapseNavbar()">Tõeväärtuste kombineerimine</a>
+      </li>
+      <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>

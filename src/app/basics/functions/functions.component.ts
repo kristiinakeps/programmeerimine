@@ -23,8 +23,8 @@ export class FunctionsComponent {
     new TestAnswer('23', false, 'See oleks õige, kui a ja b väärtused oleksid sõned.'),
     new TestAnswer('Mitte midagi', false, 'See funktsioon siiski väljastab midagi ja põhiprogrammis kutsutakse funktsiooni välja.')];
 
-  printSubtractionArgumentsTestCode = 'def lahuta(a, b):\n' +
-    '    print(b - a)\n' +
+  printSubtractionArgumentsTestCode = 'def lahuta(esimene, teine):\n' +
+    '    print(teine - esimene)\n' +
     '\n' +
     'lahuta(3, 7)';
   printSubtractionArgumentsTestAnswers = [new TestAnswer('-4', false, 'Kontrolli üle, mis järjekorras on argumendid funktsiooni kirjelduses ja mis järjekorras lahtamistehtes.'),
@@ -68,7 +68,7 @@ export class FunctionsComponent {
     'kogus_20 = pitsatainas(20, mitu_20) # funktsiooni väljakutse'),
   new ExerciseHint('Sarnaselt saame küsida ka 28 ja 38 cm läbimõõduga pitsade arvu ja arvutada kogused.', null),
   new ExerciseHint('Viimaks tuleb nüüd saadud kogused kokku liita, teisendada grammideks ja ümardada. Kuna ühes kilogrammis on 1000 grammi, siis ' +
-    'saame oma taignakoguse teisendada kilogrammidesse kui jagama selle 1000-ga. Ümardamiseks saame kasutada funktsiooni <span class="fst-italic">round</span>.', null),
+    'saame oma taignakoguse teisendada kilogrammidesse kui jagame selle 1000-ga. Ümardamiseks saame kasutada funktsiooni <span class="fst-italic">round</span>.', null),
   new ExerciseHint('Seda kõike saame teha nii:', 'kokku = round((kogus_20 + kogus_28 + kogus_38) / 1000, 1)'),
   new ExerciseHint('Kogu programm võiks kokku välja näha selline:',
     'def pitsatainas(läbimõõt, mitu):\n' +
@@ -89,7 +89,7 @@ export class FunctionsComponent {
     'print("Kokku kulub täna pitsadele " + str(kokku) + " kg tainast.")')];
 
   pizzaMoreFunctionsHints = [new ExerciseHint('Esimese edasiarendusena loome funktsiooni, mis küsiks kasutajalt pitsade arvu, arvutaks vastava taignakoguse ' +
-    'funktsiooni <span class="fst-italic">pitsatainas</span> abil, ja tagastaks selle tulemuse.', null),
+    'funktsiooni <span class="fst-italic">pitsatainas</span> abil ja tagastaks selle tulemuse.', null),
   new ExerciseHint('Paneme selle uue funktsiooni nimeks näiteks <span class="fst-italic">mitme_pitsa_tainas</span>. Koodis võiks see välja näha selline:',
     'def mitme_pitsa_tainas(läbimõõt):\n' +
     '    mitu = int(input("Mitu " + str(läbimõõt) + " cm läbimõõduga pitsat plaanid täna teha? "))\n' +
@@ -211,8 +211,8 @@ export class FunctionsComponent {
     'kogus_38 = pitsatainas(38)\n' +
     'kokku = kogus_20 + kogus_28 + kogus_38\n' +
     'print("Kokku kulub 20 cm, 28 cm ja 38 cm pitsa peale " + str(kokku) + " g tainast.")';
-  returnNoneCode = 'def liida(a, b):\n' +
-    '    print(a + b)\n' +
+  returnNoneCode = 'def liida(esimene, teine):\n' +
+    '    print(esimene + teine)\n' +
     '\n' +
     'print(liida(4, 3))';
 }

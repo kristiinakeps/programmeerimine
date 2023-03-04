@@ -99,17 +99,18 @@ export class VariablesComponent {
     '\n' +
     'print(type(nimi))\n' +
     'print(type(vanus))';
+  commentExampleCode = 'nimi = input("Sisesta oma nimi: ") # küsime kasutajale nime ja salvestame muutujasse';
   printDivisionCode = 'print(21 / 3)';
   nameCountKCode = 'nimi = input("Sisesta oma nimi: ")\n' +
     'k_arv = nimi.count("k")\n' +
     'print("Nimes on " + str(k_arv) + " k-tähte")';
   nameCountCode = 'nimi = input("Sisesta oma nimi: ")\n' +
     'kpt_arv = nimi.count("k") + nimi.count("p") + nimi.count("t")\n' +
-    'print("Nimes on " + str(kpt_arv) + " tugevat sulghäälikut")';
+    'print("Nimes on " + str(kpt_arv) + " pikka sulghäälikut")';
   nameLowerCountCode = 'nimi = input("Sisesta oma nimi: ")\n' +
     'nimi = nimi.lower() #siin muudame nimes kõik tähed väikesteks ja salvestame uuesti samasse muutujasse\n' +
     'kpt_arv = nimi.count("k") + nimi.count("p") + nimi.count("t")\n' +
-    'print("Nimes on " + str(kpt_arv) + " tugevat sulghäälikut")';
+    'print("Nimes on " + str(kpt_arv) + " pikka sulghäälikut")';
   typeConversionsCode = 'str(12) #"12"\n' +
     'str(13.5) #"13.5"\n' +
     'str(True) #"True"\n' +

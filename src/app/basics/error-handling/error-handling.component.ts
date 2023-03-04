@@ -46,7 +46,8 @@ export class ErrorHandlingComponent {
       'võtmesõna <span class="fst-italic">raise</span> ja võime lisada ka väikse teate.', 'if läbimõõt != 20 and läbimõõt != 28 and läbimõõt != 38:\n' +
       '    raise ValueError("läbimõõt peab olema 20, 28 või 38")'),
     new ExerciseHint('Järgmiseks tuleks kirjutada põhiprogramm. Alustuseks võib ilma erindite püüdmiseta prgrammi valmis kirjutada ja seejärel lisada <span class="fst-italic">try-excepi</span>. ' +
-      'Põhiprogrammis peaks kõigepealt kasutajalt läbimõõdu küsima, selle täisarvuks teisendama ning seejärel funktsiooni välja kutsuma ja väljastama funktsiooni tagastatud väärtuse.', null),
+      'Põhiprogrammis peaks kõigepealt kasutajalt läbimõõdu küsima, selle täisarvuks teisendama ning seejärel funktsiooni välja kutsuma ja väljastama funktsiooni tagastatud väärtuse. ' +
+      'Osaliselt sai see tehtud juba funktsioonide peatükis.', null),
     new ExerciseHint('Kasutajalt saadud läbimõõdu võime salvestada muutujasse ja seejärel kasutada seda muutujat funktsiooni argumendina.',
       'läbimõõt = int(input("Sisesta pitsa läbimõõt: "))\n' +
       'print("Vajaminev taignakogus grammides: " + str(pitsatainas(läbimõõt)))'),

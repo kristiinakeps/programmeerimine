@@ -54,7 +54,7 @@ export class ConditionsComponent{
     '    print("Selline punktide arv pole võimalik.")'),
   new ExerciseHint("Teise tingimuse jaoks peame valima mõne hinnetest. Hea on alustada kas kõige kõrgemast või kõige madalamast hindest. Teise tingimuse jaoks võime kasutada <span class='fst-italic'>elif</span>-tingimust.", null),
   new ExerciseHint("Kui tahame teiseks kontrollida näiteks punktide vastavust hindele 5, võime kontrolli kirjutada nii:",
-    'elif punkte >=  25:\n' +
+    'elif punkte >=  26:\n' +
     '    print("Saadud hinne on 5.")'),
   new ExerciseHint("Sarnaselt eelmisele <span class='fst-italic'>elif</span>-harule, võime nüüd koostada ka järgmised harud. Hinde 4 jaoks peame kontrollima, " +
     "kas punktide arv on &gt;= 20.", null),
@@ -63,7 +63,7 @@ export class ConditionsComponent{
     'punkte = int(input("Sisesta saadud punktide arv: "))\n' +
     'if punkte < 0 or punkte > 30:\n' +
     '    print("Selline punktide arv pole võimalik.")\n' +
-    'elif punkte >=  25:\n' +
+    'elif punkte >=  26:\n' +
     '    print("Saadud hinne on 5.")\n' +
     'elif punkte >=  20:\n' +
     '    print("Saadud hinne on 4.")\n' +

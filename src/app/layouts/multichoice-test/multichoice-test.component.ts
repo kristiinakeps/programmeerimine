@@ -16,6 +16,7 @@ export class MultichoiceTestComponent implements OnInit {
   @Input() formControlNameBase!: string;
   @Input() fileName: string | null = null;
   @Input() fileContents: string | null = null;
+  @Input() shuffle: boolean = true;
 
   correct = 'Tubli! Kõik on õigesti valitud!'
   incorrect = 'Esineb veel mõni viga. Proovi uuesti!'
@@ -26,7 +27,7 @@ export class MultichoiceTestComponent implements OnInit {
   constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
-    this.items = shuffle([...this.items]);
+    if (this.shuffle) this.items = shuffle([...this.items]);
     for (let i = 0; i < this.items.length; i++) {
       this.form.addControl(this.formControlNameBase + i, new UntypedFormControl(false));
     }

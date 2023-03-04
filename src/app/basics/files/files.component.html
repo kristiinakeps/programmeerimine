@@ -57,7 +57,7 @@
 <div class="mt-3 box-container">
   <div class="row mx-0">
     <div class="col-lg-10 ps-0">
-      <div><span>Me juba oskame faili avada ja seda hiljem ka sulgeda. Nüüd vaatame, kuidas sealt info kätte saada. Failidel on mitmeid meetode, me juba
+      <div><span>Me juba oskame faili avada ja seda hiljem ka sulgeda. Nüüd vaatame, kuidas sealt info kätte saada. Failidel on mitmeid meetodeid, me juba
     kasutasime <span class="fst-italic">close</span>-meetodit, et fail sulgeda. Nüüd vaatame kahte meetodit, millega saab failist sisu lugeda. Esimene neist
     on meetod <span class="fst-italic">read</span>, mis loeb failist kogu sisu ühe sõnena, ja me saame seda siis väljastada või edasi kasutada.
   </span>
@@ -81,7 +81,7 @@
 <div class="box-container mt-3">
   <div><span>Järgmine kasulik meetod on <span class="fst-italic">readline</span>, mis loeb failist ühe rea ja liigutab avatud failis
   järjehoidjat ühe rea võrra edasi. Seega kui kutsuda sama meetodit teist korda välja, siis loetakse teine rida ja nii faili lõpuni. Seda meetodit saab edukalt
-  kasutada koos <span class="fst-italic">while</span>-tükliga. Enne tsükliga alustamist võime juba esimese rea failist ära lugeda ja siis saame panna tingimuseks, et
+  kasutada koos <span class="fst-italic">while</span>-tsükliga. Enne tsükli alustamist võime juba esimese rea failist ära lugeda ja siis saame panna tingimuseks, et
   loeme uue rea kuni rida pole tühi (kui read saavad otsa, siis tagastab meetod tühja sõne).</span>
   </div>
   <div class="code-block mt-2">
@@ -123,7 +123,7 @@
 <div class="mt-3 box-container">
   <div><span>Seni oleme õppinud ja kasutanud <span class="fst-italic">while</span>-tsüklit, kuid tegelikult on olemas veel üks teist sorti tsükkel, mida
   on väga mugav kasutada failide lugemisel. Seda tsüklit nimetatakse <strong class="fst-italic strong">for</strong>-tsükliks ja see tsükkel koosneb kahest võtmesõnast:
-  <strong class="strong fst-italic">for</strong> ja <strong class="strong fst-italic">in</strong>, lisaks tsüklimuutujast ja objektist, millel tahteakse tsüklit
+  <strong class="strong fst-italic">for</strong> ja <strong class="strong fst-italic">in</strong>, lisaks tsüklimuutujast ja objektist, millel tahetakse tsüklit
   rakendada. Meie puhul on see objekt praegu avatud fail. Igal iteratsioonil omandab tsüklimuutuja järgmise väärtuse objektist ehk meie puhul
     järgmise rea failist. Failist lugemise saaks selle tsükliga kirja panna nii:</span></div>
   <div class="code-block mt-2">
@@ -153,7 +153,7 @@
   </div>
   <div class="row mx-0 mt-3">
     <div class="col-lg-8 ps-0"><span>Igal real on failis kirjas üks ujukomaarv, aga nagu ka kasutajalt sisendit küsides, saame failist ridu lugedes need kätte sõnedena. Seega jääb meie
-  ülesandes read sobivaks andmetüübiks teisendada. Kui soovime kogu rea teisendada näiteks täis- või ujukomaarvuks, siis ei pea me enne eraldi reavahetuse sümbolit eemaldama.
+  ülesandeks read sobivaks andmetüübiks teisendada. Kui soovime kogu rea teisendada näiteks täis- või ujukomaarvuks, siis ei pea me enne eraldi reavahetuse sümbolit eemaldama.
     Tüübiteisendusfunktsioonid oskavad teisenduse ka reavahetussümboliga õigesti teha. Kui oleme teisenduse ära teinud, siis saame tingimuslausega kontrollida,
     kas real olev arv on positiivne või negatiivne, ja selle järgi saame suurendada kas kulutuste või teenitud raha hulka.</span>
     </div>
@@ -206,7 +206,7 @@
   <div class="row mx-0 mt-2">
     <div class="col-md-6 ">
       <div class="code-block me-1 fst-italic">
-        <span>Failikirjutaminereavahetustega<br><br><br></span>
+        <span>Failikirjutaminereavahetusteta<br><br><br></span>
       </div>
     </div>
     <div class="col-md-6 ">
@@ -272,9 +272,9 @@
 </div>
 <h4 [attr.id]="'harjutused'" class="mt-5">Harjutused</h4>
 <div class="mt-3 box-container">
-  <strong class="strong">Tulpdiagramm</strong>
+  <strong class="strong">Lintdiagramm</strong>
   <div class="mt-2"><span>Faili on kirjutatud novembrikuu temperatuurid, iga päeva keskmine temperatuur täisarvuna eraldi real.
-  Kirjuta programm, mis kuvaks need temperatuurid tulpdiagrammina. Väljundis peaks olema igal real sama palju tärne nagu temperatuur sel päeval.
+  Kirjuta programm, mis kuvaks need temperatuurid lintdiagrammina. Väljundis peaks olema igal real sama palju tärne nagu temperatuur sel päeval.
     Faili nime võiks küsida kasutajalt. Näide failist ja vastavast programmi väljundist:</span></div>
   <div class="row mx-0">
     <div class="code-block mt-2 fst-italic col-lg-8">

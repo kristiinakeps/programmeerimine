@@ -3,9 +3,9 @@
   <h5>Mida selles peatükis õpime?</h5>
   <div><span>1. Mis on tingimuslaused?</span></div>
   <div><span>2. Kuidas tingimuslauseid kirjutada?</span></div>
-  <div><span>4. Millised on tõeväärtustehted?</span></div>
+  <div><span>3. Millised on tõeväärtustehted?</span></div>
+  <div><span>4. Kuidas koostada mitmeharulist tingimuslauset?</span></div>
   <div><span>5. Kuidas tõeväärtusi kombineerida?</span></div>
-  <div><span>3. Kuidas koostada mitmeharulist tingimuslauset?</span></div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Kas mäletad kuidas algoritmide peatükis joonistasime plokkskeeme, mis teatud tingimustel hargnesid? Selles peatükis
@@ -117,7 +117,7 @@
         <td>False</td>
       </tr>
       <tr>
-        <td>3 =< 3</td>
+        <td>3 <= 3</td>
         <td>True</td>
       </tr>
       <tr>
@@ -180,126 +180,6 @@
     </table>
   </div>
 </div>
-<div class="mt-3 box-container">
-  <div><strong class="strong">Tõeväärtuste kombineerimine</strong></div>
-  <div class="mt-2"><span>Nägime just erinevaid tehteid, mida on võimalik kasutada tõeväärtuste saamiseks. Kuid kas tõeväärtuste endiga saame ka mingeid tehteid teha?
-  Saame küll. Me saame tõeväärtusi omavahel kombineerida <strong class="strong">loogiliste tehete</strong> abil. Neid loogilisi tehteid on kolm:
-  <strong class=" fst-italic strong">and</strong>, <strong class=" fst-italic strong">or</strong> ja <strong
-      class=" fst-italic strong">not</strong>.
-  Eesti keeles tähendaksid need "ja", "või" ning "ei".
-  Tulemuseks annavad need samuti tõeväärtuse.</span>
-  </div>
-  <div class="mt-3">
-    <table class="table table-bordered table-custom" aria-describedby="tehted">
-      <thead>
-      <tr>
-        <th>Loogiline tehe</th>
-        <th>Avaldis</th>
-        <th>Väärtus</th>
-        <th>Selgitus</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td rowspan="4">and</td>
-        <td>True and True</td>
-        <td>True</td>
-        <td rowspan="4">Tulemus on tõene ainult siis, kui kõik tehte <span class="fst-italic">and</span> abil seotud
-          tõeväärtused on tõesed.
-        </td>
-      </tr>
-      <tr>
-        <td>True and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>False and True</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>False and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td rowspan="4">or</td>
-        <td>True and True</td>
-        <td>True</td>
-        <td rowspan="4">Tulemus on tõene siis, kui vähemalt üks <span class="fst-italic">or</span> abil seotud
-          tõeväärtustest on tõene.
-        </td>
-      </tr>
-      <tr>
-        <td>True and False</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>False and True</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>False and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td rowspan="2">not</td>
-        <td>not True</td>
-        <td>False</td>
-        <td rowspan="2">Tehe <span class="fst-italic">not</span> pöörab tõeväärtuse ümber.</td>
-      </tr>
-      <tr>
-        <td>not False</td>
-        <td>True</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="mt-3"><span>Võime neid tehteid kasutades erinevaid tõeväärtustehteid omavahel kombineerida, kuid tähtis on ka
-  nende tehete järjekord. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
-  rakendub <span class="fst-italic">and</span> ja viimasena <span class="fst-italic">or</span>.</span>
-  </div>
-  <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame, mis järjekorras siis tehteid tehakse.</span>
-  </div>
-  <div class="code-block mt-2">
-    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span class="hljs-keyword"> or not </span>
-      <span class="hljs-number">2</span> > <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>
-  </div>
-  <div class="mt-3"><span>Esimese asjana võime kõik tõeväärtustehted asendada nende tõeväärtustega.</span></div>
-  <div class="code-block mt-2">
-    <span [highlight]="booleanCombineCode2"></span>
-  </div>
-  <div class="mt-3"><span>Nüüd võime rakendada <span class="fst-italic">not</span> loogilist tehet ja saame tulemuseks:</span>
-  </div>
-  <div class="code-block mt-2">
-    <span [highlight]="booleanCombineCode3"></span>
-  </div>
-  <div class="mt-3"><span>Seejärel võtame ette <span class="fst-italic">and</span> tehted.</span></div>
-  <div class="code-block mt-2">
-    <span [highlight]="booleanCombineCode4"></span>
-  </div>
-  <div class="mt-3"><span>Ja viimaseks jääb <span
-    class="fst-italic">or</span>, mis annab kogu avaldise tulemuseks:</span></div>
-  <div class="code-block mt-2">
-    <span [highlight]="booleanCombineCode5"></span>
-  </div>
-  <div class="mt-3"><span>Soovi korral saame sulgudega ise järjekorda ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
-  tehakse esimesena.</span>
-  </div>
-  <div class="code-block mt-2">
-    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span><span class="hljs-keyword"> and </span> (<span class="hljs-number">3</span> > <span class="hljs-number">2</span>
-      <span class="hljs-keyword"> or not </span><span class="hljs-number">2</span> > <span class="hljs-number">4</span><span class="hljs-keyword"> and </span><span class="hljs-number">5</span> > <span class="hljs-number">4</span>)) </span>)
-  </div>
-  <div class="mt-3"><span>Asendame tõeväärtustehted tõeväärtustega:</span></div>
-  <div class="code-block mt-2">
-    <span [highlight]="booleanOrderCode2"></span>)
-  </div>
-  <div class="mt-3"><span>Siinkohal tegelikult juba näeme, et ükskõik mis väärtuse saab sulgudes olev avaldis, kogu avaldise väärtus on
-  ikka <span class="fst-italic">False</span>, sest <span class="fst-italic">and</span> tehte esimene pool on juba <span
-      class="fst-italic">False</span>.
-  Ka Python on piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
-  </div>
-</div>
-<app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest"
-                              [showArrow]="true"></app-fill-blank-dropdown-test>
 <h4 class="mt-5" [attr.id]="'mitmeharulised'">Kuidas kirjutada rohkem kui ühe haruga tingimuslauseid?</h4>
 <div class="mt-3 box-container">
   <div><strong class="strong">Kaheharuline tingimuslause</strong></div>
@@ -406,6 +286,126 @@
 <app-multichoice-test [title]="'Vali kõik read, mis väljastatakse ekraanile.'" [code]="conditionsOutputLinesCode"
                       [items]="condtionsOutputLinesTest"
                       [formControlNameBase]="'conditionsOutput'"></app-multichoice-test>
+<h4 class="mt-5" [attr.id]="'kombineerimine'">Tõeväärtustehete kombineerimine</h4>
+<div class="mt-3 box-container">
+  <div><span>Oskame nüüd teha mitmeharulisi tingimuslauseid, kuid vahepeal on meil vaja ka keerulisemaid tingimusi koostada. Selleks
+    saame tõeväärtusi omavahel kombineerida <strong class="strong">loogiliste tehete</strong> abil. Neid loogilisi tehteid on kolm:
+  <strong class=" fst-italic strong">and</strong>, <strong class=" fst-italic strong">or</strong> ja <strong
+      class=" fst-italic strong">not</strong>.
+  Eesti keeles tähendaksid need "ja", "või" ning "ei".
+  Tulemuseks annavad need samuti tõeväärtuse.</span>
+  </div>
+  <div class="mt-3">
+    <table class="table table-bordered table-custom" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th>Loogiline tehe</th>
+        <th>Avaldis</th>
+        <th>Väärtus</th>
+        <th>Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td rowspan="4">and</td>
+        <td>True and True</td>
+        <td>True</td>
+        <td rowspan="4">Tulemus on tõene ainult siis, kui kõik tehte <span class="fst-italic">and</span> abil seotud
+          tõeväärtused on tõesed.
+        </td>
+      </tr>
+      <tr>
+        <td>True and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>False and True</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td>False and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td rowspan="4">or</td>
+        <td>True and True</td>
+        <td>True</td>
+        <td rowspan="4">Tulemus on tõene siis, kui vähemalt üks <span class="fst-italic">or</span> abil seotud
+          tõeväärtustest on tõene.
+        </td>
+      </tr>
+      <tr>
+        <td>True and False</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>False and True</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>False and False</td>
+        <td>False</td>
+      </tr>
+      <tr>
+        <td rowspan="2">not</td>
+        <td>not True</td>
+        <td>False</td>
+        <td rowspan="2">Tehe <span class="fst-italic">not</span> pöörab tõeväärtuse ümber.</td>
+      </tr>
+      <tr>
+        <td>not False</td>
+        <td>True</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-3"><span>Võime neid tehteid kasutades erinevaid tõeväärtustehteid omavahel kombineerida, kuid tähtis on ka
+  nende tehete järjekord. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
+  rakendub <span class="fst-italic">and</span> ja viimasena <span class="fst-italic">or</span>.</span>
+  </div>
+  <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame, mis järjekorras siis tehteid tehakse.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span class="hljs-keyword"> or not </span>
+      <span class="hljs-number">2</span> > <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>
+  </div>
+  <div class="mt-3"><span>Esimese asjana võime kõik tõeväärtustehted asendada nende tõeväärtustega.</span></div>
+  <div class="code-block mt-2">
+    <span [highlight]="booleanCombineCode2"></span>
+  </div>
+  <div class="mt-3"><span>Nüüd võime rakendada <span class="fst-italic">not</span> loogilist tehet ja saame tulemuseks:</span>
+  </div>
+  <div class="code-block mt-2">
+    <span [highlight]="booleanCombineCode3"></span>
+  </div>
+  <div class="mt-3"><span>Seejärel võtame ette <span class="fst-italic">and</span> tehted.</span></div>
+  <div class="code-block mt-2">
+    <span [highlight]="booleanCombineCode4"></span>
+  </div>
+  <div class="mt-3"><span>Ja viimaseks jääb <span
+    class="fst-italic">or</span>, mis annab kogu avaldise tulemuseks:</span></div>
+  <div class="code-block mt-2">
+    <span [highlight]="booleanCombineCode5"></span>
+  </div>
+  <div class="mt-3"><span>Soovi korral saame sulgudega ise järjekorda ümber tõsta. Täpselt nii, nagu matemaatikas. Siis sulgudes olevad tehted
+  tehakse esimesena.</span>
+  </div>
+  <div class="code-block mt-2">
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span><span class="hljs-keyword"> and </span> (<span class="hljs-number">3</span> > <span class="hljs-number">2</span>
+      <span class="hljs-keyword"> or not </span><span class="hljs-number">2</span> > <span class="hljs-number">4</span><span class="hljs-keyword"> and </span><span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>)
+  </div>
+  <div class="mt-3"><span>Asendame tõeväärtustehted tõeväärtustega:</span></div>
+  <div class="code-block mt-2">
+    <span [highlight]="booleanOrderCode2"></span>
+  </div>
+  <div class="mt-3"><span>Siinkohal tegelikult juba näeme, et ükskõik mis väärtuse saab sulgudes olev avaldis, kogu avaldise väärtus on
+  ikka <span class="fst-italic">False</span>, sest <span class="fst-italic">and</span> tehte esimene pool on juba <span
+      class="fst-italic">False</span>.
+  Ka Python on piisavalt tark ja sellises olukorras ta sulgudes olevat osa ei vaatakski, sest see ei saaks lõpptulemust mõjutada. </span>
+  </div>
+</div>
+<app-fill-blank-dropdown-test [title]="'Vali igale avaldisele vastav tõeväärtus.'" [items]="logicalOperatorsTest"
+                              [showArrow]="true"></app-fill-blank-dropdown-test>
 <h4 class="mt-5" [attr.id]="'harjutused'">Harjutused</h4>
 <div class="mt-3 box-container">
   <div><strong class="strong">Kontrolltööde hindamine</strong></div>
@@ -417,7 +417,7 @@
       <div><span>Hinne 4: 20-25 punkti</span></div>
       <div><span>Hinne 3: 10-19 punkti</span></div>
       <div><span>Hinne 2: 0-9 punkti</span></div>
-      <div class="mt-2"><span>Kirjut programm, mis küsib kontrolltöös saadud punktide summat ning väljastab vastava hinde. Kui punkte on rohkem kui 30
+      <div class="mt-2"><span>Saadud punktid on alati täisarvud. Kirjuta programm, mis küsib kontrolltöös saadud punktide summat ning väljastab vastava hinde. Kui punkte on rohkem kui 30
   või vähem kui 0, peaks programm kasutajale ütlema, et selline punktide arv pole võimalik. Mõned näited programmi tööst:</span>
       </div>
     </div>
@@ -442,7 +442,7 @@
 <div class="mt-3 box-container">
   <div><strong class="strong">Klassiekskursioon</strong></div>
   <div class="mt-2"><span>Õpetaja Maria korraldab õpilastele ekskursiooni Rakvere linnusesse. Tal on olemas nimekiri õpilastest, kes
-  soovivad ekskursioonile tulla, ja nüüd on tal vaja transpordiks bussid tellida. Kirjut programm, mis küsib ekskursioonile minejate arvu,
+  soovivad ekskursioonile tulla, ja nüüd on tal vaja transpordiks bussid tellida. Kirjuta programm, mis küsib ekskursioonile minejate arvu,
     bussi istekohtade arvu ning arvutab, mitu sellist bussi on vaja tellida. Näited programmi tööst:</span></div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta õpilaste arv: <span class="code-input">30</span><br></span>
@@ -472,7 +472,7 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Proovi ka ise mõelda välja mõni programm, mis kasutaks tingimuslauset. Näiteks võid kasutajalt küsida kellaaega ja
-  and soovitusi, mida sellisel ajal teha võiks. Näiteks kell 7 võiks ärgata või hambaid pesta ja kell 18 õhtust süüa.</span>
+  anda soovitusi, mida sellisel ajal teha võiks. Näiteks kell 7 võiks ärgata või hambaid pesta ja kell 18 õhtust süüa.</span>
   </div>
 </div>
 <button [routerLink]="'/korduslaused'" class="btn btn-primary my-5 float-end">

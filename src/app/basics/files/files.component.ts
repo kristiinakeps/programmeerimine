@@ -68,7 +68,7 @@ export class FilesComponent {
   new ExerciseHint('Nüüd võib hakata failist ridu lugema. Seda on mugav teha näiteks <span class="fst-italic">for</span>-tsükliga.', null),
   new ExerciseHint('Näide <span class="fst-italic">for</span>-tsüklist:', 'for rida in fail:\n    # tsükli sisu'),
   new ExerciseHint('Soovi korral võib loetud rea ka täisarvuks teisendada ja siis kontrollida, kas real olev arv on 20, 28 või 38. Vastavalt sellele teame, ' +
-    'millist tellimuste arvu muutujat suurendada', null),
+    'millist tellimuste arvu muutujat suurendada.', null),
   new ExerciseHint('Tsükli sisus tellimuste arvude leidmine:', 'suurus = int(rida)\n' +
     'if suurus == 20:\n' +
     '    tellimused_20 += 1\n' +
@@ -108,10 +108,9 @@ export class FilesComponent {
   new ExerciseHint('Kolm automaatselt lisatavat toodet võib kirjutada ka ühe korraga faili. Pärast kirjutamist võime kasutajale väljastada, et need tooted on nüüd ' +
     'ostunimekirja lisatud:', 'fail.write("piim\\nmunad\\nleib\\n")\n' +
     'print("Ostunimekirja on lisatud piim, munad ja leib.")\n'),
-  new ExerciseHint('Nüüd tuleb hakata kasutajalt tsüklis küsima, mida ta veel lisada soovib. Siin sobib kõige paremini kasutada <span class="fst-italic">while</span>-tsüklit, ' +
-    'võib vabalt valida, millist tsükli konstruktsiooni kasutada.', null),
-  new ExerciseHint('Me kasutame siin <span class="fst-italic">while True</span> konstuktsiooni. Tsükli sees küsime kasutajalt sisendit ja kui sisend on tühi sõne, siis ' +
-    'lõpetame tsükli <span class="fst-italic">break</span>.käsuga.',
+  new ExerciseHint('Nüüd tuleb hakata kasutajalt tsüklis küsima, mida ta veel lisada soovib. Siin sobib kõige paremini kasutada <span class="fst-italic">while</span>-tsüklit.', null),
+  new ExerciseHint('Me kasutame siin <span class="fst-italic">while True</span> konstruktsiooni. Tsükli sees küsime kasutajalt sisendit ja kui sisend on tühi sõne, siis ' +
+    'lõpetame tsükli <span class="fst-italic">break</span>-käsuga.',
     'while True:\n' +
     '    toode = input("Lisa uus toode: ")\n' +
     '    if toode == "":\n' +
@@ -119,7 +118,7 @@ export class FilesComponent {
   new ExerciseHint('Kui kasutaja lisatud toode ei olnud tühi sõne, siis tahame selle ka faili kirjutada. Selleks on failidel ' +
     '<span class="fst-italic">write</span>-meetod. Jällegi peame ise käsitsi lisama ka reavahetuse sümboli.', null),
     new ExerciseHint('Toote faili kirjutamine:', 'fail.write(toode + "\\n")'),
-  new ExerciseHint('Kõige lõpus, kui tsükkel on oma töö lõpetanud, siis sulgeme ka faili ja teavitame kasutajat ostunimekirja loomisest', null),
+  new ExerciseHint('Kõige lõpus, kui tsükkel on oma töö lõpetanud, siis sulgeme ka faili ja teavitame kasutajat ostunimekirja loomisest.', null),
   new ExerciseHint('Seda saab teha nii:', 'fail.close()\n' +
     'print("Ostunimekiri loodud!")'),
   new ExerciseHint('Näide lõplikust koodist:',
@@ -173,7 +172,7 @@ export class FilesComponent {
   fileWriteWithoutNewLinesCode = 'fail = open("andmed.txt", "w")\n' +
     'fail.write("Faili")\n' +
     'fail.write("kirjutamine")\n' +
-    'fail.write("reavahetustega")\n' +
+    'fail.write("reavahetusteta")\n' +
     'fail.close()';
   fileWriteNewLinesCode = 'fail = open("andmed.txt", "w")\n' +
     'fail.write("Faili\\n")\n' +

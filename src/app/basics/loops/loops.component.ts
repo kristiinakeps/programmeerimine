@@ -81,7 +81,7 @@ export class LoopsComponent {
     'pakkumise korral öeldakse "Leidsid õige arvu!". Järgmisena tulekski kasutajale väljastada, kas pakutud arv oli suurem või väiksem salajasest arvust.',
     null),
   new ExerciseHint('Seda saab teha ilusti tingimuslausetega. Me juba lisasime tingimuslause, mis kontrollis, kas arvud on võrdsed. Nüüd tuleks ' +
-    'sarnanste tingimuslausetega kontrollida, kas pakkumine oli suurem kui salajane arv või kas pakkumine oli väiksem kui salajane arv.', null),
+    'sarnaste tingimuslausetega kontrollida, kas pakkumine oli suurem kui salajane arv või kas pakkumine oli väiksem kui salajane arv.', null),
   new ExerciseHint('Vahet ei ole kumba pidi me kontrollid teeme. Lihtsalt väljastatav teade peab olema vastav. Siin kontrollime kõigepealt, kas ' +
     'pakkumine oli väiksem kui salajane arv. Lisame selle <span class="fst-italic">elif</span>-tingimusena. Teistpidi kontrolli meil polegi otseselt vaja teha, ' +
     'saame lihtsalt lisada <span class="fst-italic">else</span>-haru.',
@@ -103,7 +103,7 @@ export class LoopsComponent {
 
   guessNumberLimitedTriesExerciseHints = [new ExerciseHint('Eelmine programm lasi kasutajal pakkuda täpselt nii kaua, kui tal kulus, et õige arv leida. ' +
     'Nüüd teeme kasutaja elu natuke raskemaks ja ütleme, et ta peab viie pakkumisega õige arvu leidma, või kaotab mängu.<br>Nüüd ei sõltu meie tsükkel enam ainult sellest,' +
-    ' kas kasutaja arvas sõna ära või mitte, vaid ka järele jäänud katsete arvust. ' +
+    ' kas kasutaja arvas arvu ära või mitte, vaid ka järele jäänud katsete arvust. ' +
     'Ka siin võid vabalt ise valida, kas soovid lisada katsete tingimuse tsüklitingimusse või tsükli sisusse koos <span class="fst-italic">break</span>-käsuga.', null),
   new ExerciseHint('Alustame võib-olla sellest, et lisame muutuja katsete arvu jaoks.', 'katseid = 5 # määrame katsete arvu'),
   new ExerciseHint('Pärast iga pakkumist tahame hakata seda katsete arvu vähendama. Tsükli tahame lõpetada kui katsete arv jõuab nullini.', null),
@@ -133,7 +133,7 @@ export class LoopsComponent {
   new ExerciseHint('Kogu kood võiks lõpuks välja näha selline:',
     'from random import *\n' +
     '\n' +
-    'salajane_arv = randint(0, 100)\n' +
+    'salajane_arv = randint(1, 100)\n' +
     'katseid = 5\n' +
     'while katseid > 0:\n' +
     '    pakkumine = int(input("Paku arvu vahemikus 1-100: "))\n' +

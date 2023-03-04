@@ -69,7 +69,7 @@
   <div class="mt-2"><span>Programmi töö käigus võib ette tulla ka igasuguseid muid vigu. Näiteks kui proovida teisendada sõnet, mis sisaldab tähti, täisarvuks. Või kui
     avada faili, mida ei ole olemas, või ka näiteks jagada mingit arvu nulliga (see pole matemaatikas võimalik). Samuti kui mõnes muutuja või funktsiooni nimes oleme
     programmi kirjutades vea teinud ja selle tulemusena üritame kasutada muutujat või funktsiooni, mida pole olemas. Selliste vigade puhul programm küll käivitub, kuid kui
-    kui töö käigus tekib viga, siis lõpetab oma töö veateatega. Neid programmi töö käigus tekkivaid vigasid nimetatakse <strong class="strong">erinditeks</strong>.
+    töö käigus tekib viga, siis lõpetab oma töö veateatega. Neid programmi töö käigus tekkivaid vigasid nimetatakse <strong class="strong">erinditeks</strong>.
   </span>
   </div>
   <div class="mt-2"><span>Järgmises näites on ununenud v-täht muutuja <span class="fst-italic">arv</span> lõpust.
@@ -111,7 +111,7 @@
     </div>
   </div>
 </div>
-<app-multichoice-test [code]="errorLinesCode" [items]="errorLinesItems" [formControlNameBase]="'errorLinesTest'" [title]="'Millised read on vigased?'"></app-multichoice-test>
+<app-multichoice-test [code]="errorLinesCode" [items]="errorLinesItems" [shuffle]="false" [formControlNameBase]="'errorLinesTest'" [title]="'Millised read on vigased?'"></app-multichoice-test>
 <h4 [attr.id]="'puudmine'" class="mt-5">Kuidas erindeid kinni püüda?</h4>
 <div class="box-container mt-3">
   <div class="row mx-0">
@@ -199,11 +199,11 @@
 <h4 class="mt-5">Tsüklis väärtuse küsimine</h4>
 <div class="box-container mt-3">
   <div><span>Eelmisetes näidetes väljastasime kasutajale, et sisestatud arv ei sobi, aga veel kasulikum oleks kasutajalt arvu lihtsalt uuesti küsida. Muidugi on alati võimalus,
-  et kasutaja sisestab ka teisel korral ebasobiva väärtuse, seepärast on sisendi küismist kõige parem teha tsüklis. Tsüklis küsitakse sisendit nii kaua, kuni saame sobiva sisendi, mille korral enam erindit ei teki.</span></div>
+  et kasutaja sisestab ka teisel korral ebasobiva väärtuse, seepärast on sisendi küsimist kõige parem teha tsüklis. Tsüklis küsitakse sisendit nii kaua, kuni saame sobiva sisendi, mille korral enam erindit ei teki.</span></div>
   <div class="code-block mt-2">
     <span [highlight]="loopTryCode"></span>
   </div>
-  <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnkase
+  <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnakse
   püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span>-käsuni.</span></div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">üks</span><br></span>
