@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRouteSnapshot, NavigationEnd, NavigationError, Router} from "@angular/router";
 import {Title} from "@angular/platform-browser";
+import {filter} from "rxjs";
+
+declare let gtag: Function;
 
 @Component({
   selector: 'app-main',
@@ -9,7 +12,21 @@ import {Title} from "@angular/platform-browser";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private titleService: Title, private router: Router) {}
+  constructor(private titleService: Title, private router: Router) {
+  }
+
+  setUpAnalytics() {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        if (event instanceof NavigationEnd) {
+          gtag('config', 'G-YOUR-GOOGLE-ID',
+            {
+              page_path: event.urlAfterRedirects
+            }
+          );
+        }
+      });
+  }
 
   private getPageTitle(routeSnapshot: ActivatedRouteSnapshot): string {
     let title: string = routeSnapshot.data && routeSnapshot.data['pageTitle'] ? routeSnapshot.data['pageTitle'] : 'Programmeerimine';
@@ -20,6 +37,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setUpAnalytics();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.titleService.setTitle(this.getPageTitle(this.router.routerState.snapshot.root));
@@ -29,5 +47,5 @@ export class MainComponent implements OnInit {
       }
     });
   }
-
 }
+
