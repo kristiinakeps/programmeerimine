@@ -19,7 +19,7 @@ export class MainComponent implements OnInit {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event) => {
         if (event instanceof NavigationEnd) {
-          gtag('config', 'G-YOUR-GOOGLE-ID',
+          gtag('config', 'G-2RLT8V4PQ2',
             {
               page_path: event.urlAfterRedirects
             }
