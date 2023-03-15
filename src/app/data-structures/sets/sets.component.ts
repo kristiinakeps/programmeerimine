@@ -46,7 +46,7 @@ export class SetsComponent {
     'print("Ainult Meelil on: " + str(meeli - mihkel))\n' +
     'print("Ainult Mihklil on: " + str(mihkel - meeli))')];
 
-  setsExamplesCode = 'arvud = {1, 5, 3, 1} # kuigi luues paneme sõnastikku kaks number ühte, siis jääb sinna neist ainult üks\n' +
+  setsExamplesCode = 'arvud = {1, 5, 3, 1} # kuigi luues paneme hulka kaks number ühte, siis jääb sinna neist ainult üks\n' +
     'värvid = {"sinine", "punane", "kollane"}\n' +
     'segamini = {1, "esmaspäev", 14.5, True}\n' +
     'tühi = set() # tühi = {} loob tühja sõnastiku';

@@ -119,7 +119,7 @@ export class ListsComponent{
     'perenimed.append(perenimi)'),
   new ExerciseHint('Nüüd on meil perekonnanimede järjend olemas. Kuna seda taheti väljastada sorteeritud kujul, siis võimegi järgmiseks selle sorteerida. ' +
     'Siinkohal on kõige lihtsam kasutada vastavat funktsiooni või meetodit. Kasutame siin näiteks järjendite meetodit <span class="fst-italic">sort</span>.' +
-    'See meetod lihtsalt sorteerib järjendi, mille peal teda välja kutsutakse, ega tagasta midagi.',
+    'See meetod lihtsalt sorteerib järjendi, millel teda välja kutsutakse, ega tagasta midagi.',
     'perenimed.sort()'),
   new ExerciseHint('Sorteeritud nimekirja väljastamiseks võime näiteks <span class="fst-italic">for</span>-tsükliga järjendi läbi käia ja iga elemendi ' +
     'väljastada. Võime sama tsüklit kasutada ühtlasi ära selleks, et leida pikim perekonnanimi.', null),

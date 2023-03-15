@@ -16,16 +16,16 @@
 </div>
 <div class="mt-3 box-container">
   <div><span>Mängu loomiseks kasutame ühte Pythoni teekidest nimega <span class="fst-italic">pygame</span>.
-    Erinevalt teegist <span class="fst-italic">random</span>, mida varem oleme kasutanud, ei tule <span
+    Erinevalt teegist <span class="fst-italic">random</span>, mida oleme varem kasutanud, ei tule <span
       class="fst-italic">pygame</span>
-  Pythoniga automaatselt kaasa. See on vaja eraldi installida. Õnneks on seda Thonnyga väga lihtne teha.</span></div>
+  Pythoniga automaatselt kaasa. See on vaja eraldi paigaldada. Õnneks on seda Thonnyga väga lihtne teha.</span></div>
   <div class="mt-2"><span>Thonnyl on üleval menüüribas <span class="fst-italic">Tööriistad</span>, millele vajutades avaneb tööriistada menüü.
   Sealt esimene variant on <span class="fst-italic">Halda lisapakette...</span>, millele vajutades avaneb uus aken, kust saame erinevaid teeke
-  installida. Üles otsingukasti kirjutame <span class="fst-italic">pygame</span> ja otsime sellise nimega teeki. Valikusse tekib ilmselt palju
+  paigaldada. Üles otsingukasti kirjutame <span class="fst-italic">pygame</span> ja otsime sellise nimega teeki. Valikusse tekib ilmselt palju
   erinevaid teeke, mis sisaldavad nime <span class="fst-italic">pygame</span>, aga me tahame seda, mille nimi ongi lihtsalt
   <span class="fst-italic">pygame</span> ja ei midagi muud. Vajutades selle teegi nimele kuvatakse veel infot selle teegi kohta ja akna all on ka
-  nupp nimega <span class="fst-italic">Installi</span>. Sellele vajutades insallitaksegi vajalik teek ja pärast installimist võime selle
-  akna sulgeda ja <span class="fst-italic">pygame</span> ongi kasutamiseks valmis.</span></div>
+  nupp nimega <span class="fst-italic">Installi</span>. Sellele vajutades paigaldataksegi vajalik teek ja pärast paigaldamist võime selle
+  akna sulgeda ning <span class="fst-italic">pygame</span> ongi kasutamiseks valmis.</span></div>
 </div>
 <h4 class="mt-5" [attr.id]="'aken'">Kuidas luua mänguakent?</h4>
 <div class="mt-3 box-container">
@@ -47,12 +47,12 @@
   </div>
   <div class="mt-2"><span>Kasutades <span class="fst-italic">pygame</span>'i on oluline koodi alguses <span
     class="fst-italic">pygame</span>
-  seadistada meetodiga <span class="fst-italic">init</span> ja lõpus sulgeda meetodiga <span class="fst-italic">quit</span>.
+  algseadistada meetodiga <span class="fst-italic">init</span> ja lõpus sulgeda meetodiga <span class="fst-italic">quit</span>.
   Mooduli <span class="fst-italic">display</span> abil saame seadistada oma akna suuruse ja pealkirja.</span></div>
   <div class="mt-2"><span>Kogu mängu loogika asub mängutsüklis,
   mis käib väga kiiresti kogu mängu jooksul ja loeb aina kasutaja klahvivajutusi ja hiireliigutusi. Need tegevused saame kätte
   moodulist <span class="fst-italic">event</span> meetodiga <span class="fst-italic">get</span> ja oma programmis saame
-    tsüklis kõik need tegevused läbi käia ja vaadata kas mõni neist huvitab meid ja kuidas tahame nendele reageerida. Hetkel huvitab meid ainult
+    tsüklis kõik need tegevused läbi käia ja vaadata, kas mõni neist huvitab meid ja kuidas tahame nendele reageerida. Hetkel huvitab meid ainult
   ristist akna sulgemise tegevus, mille korral tahame mängutsükli lõpetada. Siin oleme kasutanud muutujat <span
       class="fst-italic">käib</span>,
   mis on tõene, kui mäng veel käib, ja muutub vääraks, kui mäng saab läbi. Meie mängutsükkel kontrollib selle muutuja väärtust oma tsüklitingimuses.</span>
@@ -75,7 +75,7 @@
     matemaatikas neid õppinud.
     X-koordinaat tähistab horisontaalset asukohta ehk kui vasakul või paremal element asub. Y-koordinaat tähistab
     vertikaalset asukohta ehk kui
-    üleval või all midagi asub. Alguspuntis on nii x- kui y-koordinaat 0 ja Pythoni jaoks asub see punkt vasakul üleval
+    üleval või all midagi asub. Alguspuntis on nii x- kui y-koordinaat 0 ja Pythoni jaoks asub see alguspunkt vasakul üleval
     servas. Mida suuremaks
     muutub x-koordiaat, seda rohkem paremale nihkub element, ja mida suuremaks muutub y-koordinaat, seda allapoole
     nihkub element.
@@ -84,7 +84,7 @@
   mängu tsüklit peame pildi laadima ja muutujasse salvestama:</span></div>
   <div class="mt-2 code-block"><span [highlight]=backgroundLoadCode></span></div>
   <div class="mt-2"><span>Ja selle kuvamiseks, peame mängu tsüklis selle ekraanile joonistama. Selleks kasutame oma mänguakna
-  objekti peal meetodit <span class="fst-italic">blit</span>, mis võtab argumendiks pildi, mis tuleb joonistada ja koordinaadid, kuhu
+  objekti peal meetodit <span class="fst-italic">blit</span>, mis võtab argumendiks pildi, mis tuleb joonistada, ja koordinaadid, kuhu
   pilt lisada tuleb. See joonistamine tuleks teha enne <span class="fst-italic">flip</span>-meetodit ehk enne akna uuendamist.</span>
   </div>
   <div class="mt-2 code-block"><span
@@ -160,14 +160,14 @@
 'peategelane = pygame.sprite.Group()\n'+
 'peategelane.add(tegelane_päkapikk)'"></span></div>
     <div class="mt-2">Viimase sammuna tuleb mängutsüklis see grupp ka joonistada. Selleks on klassil Group olemas meetod
-      <span class="fst-italic">draw()</span>, mis joonistab gruppi lisatud tegelased ekraanile. See rida tuleks lisada
+      <span class="fst-italic">draw</span>, mis joonistab gruppi lisatud tegelased ekraanile. See rida tuleks lisada
       kindlasti pärast
       taustapildi joonistamist, sest kui tegelane joonistada enne taustapilti, siis jääb ta taustapildi taha peitu ja me
       ei näe teda.
     </div>
     <div class="mt-2 code-block"><span [highlight]="'peategelane.draw(aken)'"></span></div>
     <div class="mt-2"><span>Kogu põhiprogramm on selle sammu lõpuks selline. Enne programmi käivitamist tuleks kindlasti salvestada
-      <span class="fst-italic">päkapikk.py</span> fail, et kõik sealsed muudatused salvestuksid.</span></div>
+      <span class="fst-italic">päkapikk.py</span> fail, et kõik sealsed muudatused rakenduksid.</span></div>
     <div class="mt-2 code-block"><span [highlight]="gameWithElfCode"></span></div>
     <div class="text-center my-3">
       <img src="../../../assets/images/game/background_and_elf.png" alt="background and elf"
@@ -201,7 +201,7 @@
   <div class="mt-2 code-block"><span [highlight]="elfUpdateInitialCode"></span></div>
   <div class="mt-2"><span>Nüüd peaksid märkama, et tegelane tõesti liigub
   nooleklahvide vajutamise peale. Kui tahad, võid proovida ka liikumiskiirust muuta. Mis saab kui hoiad ühte nooleklahvidest all?
-  Ilmselt märkad, et tegelane läheb akna piiridest välja ja kaob ära. Peaksime seadma talle piirid ja mitte lubama piiridest välja minna.
+  Ilmselt märkad, et tegelane läheb akna piiridest välja ja kaob ära. Peaksime seadma talle piirid ja mitte lubama tal piiridest välja minna.
   Hetkel ei tea meie tegelane aga midagi selle kohta, mis on akna laius, kus tal on lubatud liikuda. Vasakul ei tohiks lubada
   x-koordinaadil negatiivseks minna, aga mis on piir paremal? Peaksime ilmselt isendit luues talle akna laiuse ette andma ja
   isendiväljale salvestama.</span></div>
@@ -282,7 +282,7 @@
   <div class="mt-2 code-block"><span
     [highlight]="'# anname nüüd lisaks ka algse elude arvu\ntegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 50, laius, 10)'"></span>
   </div>
-  <div class="mt-2"><span>Nüüd lisame mängu klassi eluderiba joonistamise. Kuna eluderiba puhul pole otseselt tegu tegelasega, siis ei ole meil siin
+  <div class="mt-2"><span>Nüüd lisame mängu eluderiba joonistamise. Kuna eluderiba puhul pole otseselt tegu tegelasega, siis ei ole meil siin
   mõtet hakata selle jaoks uut klassi looma. <span>Pygame</span>'il on endal olemas võimalused erinevate kujundite joonistamiseks ja siin kasutamegi
   lihtsalt ristkülikute joonistamist. Lisame valget värvi piirjoone ja selle sisse rohelise eluderiba. Eluderiba pikkus oleneb sellest, kui palju on kasutajal
   elusid alles. Kui elud on täis, siis on eluderiba ka maksimaalse laiusega. Vastasel juhul peame arvutama, mitu protsenti eludest kasutajal alles on, ja selle
@@ -304,7 +304,7 @@
   Musta värvi jaoks on kõik kolm elementi nullid, valge jaoks on kõik kolm 255 ja näiteks rohelise jaoks on esimene ja kolmas nullid, aga teine element 255. Võite proovida neid koode muuta ja vaadata kuidas
   värvid muutuvad.</span></div>
   <div class="mt-2 code-block"><span [highlight]="livesBarCode"></span></div>
-  <div class="mt-2"><span>Mängutsüklis lisame selle funktsiooni väljakutse enne enne <span class="fst-italic">pygame.display.flip()</span> rida.</span>
+  <div class="mt-2"><span>Mängutsüklis lisame selle funktsiooni väljakutse enne <span class="fst-italic">pygame.display.flip()</span> rida.</span>
   </div>
   <div class="mt-2 code-block"><span
     [highlight]="'joonista_elud(aken, tegelane_päkapikk.elud / tegelane_päkapikk.täiselud)'"></span></div>

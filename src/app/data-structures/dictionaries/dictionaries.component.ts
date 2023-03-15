@@ -123,7 +123,7 @@ export class DictionariesComponent  {
   new ExerciseHint('Kui riigikoodi pole sõnastikus, siis peaks teisendatud järjendisse lisama "Tundmatu". Sõnastikust väärtuse küsimist on mugav teha ' +
     ' <span class="fst-italic">get</span>-meetodiga, ' +
     'millele saab anda teiseks argumendiks vaikeväärtuse, mis tagastatakse, kui võtit pole sõnastikus.',this.carCountriesConversionFunction),
-  new ExerciseHint('Viimaseks funktsiooniks võime teha teisendatud riikide väljastamise. Sellel funktsioonil tagastusväärtust ei ole, sest selle tööks on lihtsalt ' +
+  new ExerciseHint('Viimaseks funktsiooniks võime teha teisendatud riikide väljastamise. Sellel funktsioonil tagastusväärtust ei ole, sest selle eesmärgiks on lihtsalt ' +
     'andmed ilusal kujul ekraanile väljastada. Argumendiks võiks see funktsioon võtta riiginimede järjendi.', null),
   new ExerciseHint('Kõigepealt anname kasutajale teada, mida väljastama hakkame. Seejärel väljastame järjendist kõik riiginimed eraldi ridadel.',this.carCountriesOutputFunction),
   new ExerciseHint('Nüüd on meil kõik alamülesannete lahendamiseks vajalikud funktsioonid olemas, jääb üle ainult kokku panna põhiprogramm, mis neid' +

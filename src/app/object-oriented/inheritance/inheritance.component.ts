@@ -51,7 +51,7 @@ export class InheritanceComponent {
 
   playerClassesExerciseHints = [new ExerciseHint('Esimene samm on kopeerida oma koodi teegi <span class="fst-italic">random</span> ' +
     'import ja stiilide järjend. Seejärel võiks ette võtta Mängija klassi loomise.', null),
-    new ExerciseHint('Klassi Mängija konstruktor peaks võtma kaks argumenti &ndash; kasutajanime ja taseme &ndash; ja omistama need isendiväljadele.', null),
+    new ExerciseHint('Klassi Mängija konstruktor peaks võtma kaks argumenti &ndash; kasutajanime ja taseme &ndash; ning omistama need isendiväljadele.', null),
     new ExerciseHint('Konstruktori meetodi nimi on <span class="fst-italic">__init__</span> ja esimene argument peab olema <span class="fst-italic">self</span>.',
       'class Mängija:\n' +
       '    \n' +
@@ -73,7 +73,7 @@ export class InheritanceComponent {
       '        super().__init__(kasutajanimi, tase)\n' +
       '        self.stiilid = set()'),
     new ExerciseHint('Supermängija klassis tuleb üle katta meetod <span class="fst-italic">liigu_järgmisele_tasemele</span>. See meetod ' +
-      'peaks jätkuvalt kasutaja taset suurendama ja uue taseme väljastama, aga nüüd peaks lisaks kasutajale ka uue stiili lisama. Siin oleks jube hea, kui ' +
+      'peaks jätkuvalt kasutaja taset suurendama ja uue taseme väljastama, aga nüüd peaks lisaks kasutajale ka uue stiili lisama. Siin oleks hea, kui ' +
       'saaks kõigepealt välja kutsuda ülemklassi meetodit <span class="fst-italic">liigu_järgmisele_tasemele</span>, mis tõstaks taset ja väljastaks teate, ' +
       'ning seejärel lisada uus loogika. Kas suudad välja mõelda, kuidas ülemklassi meetodit kasutada?', null),
     new ExerciseHint('Ülemklassi meetodile saame siit ligi funktsiooni <span class="fst-italic">super</span> abil. Kutsume kõigepealt seda välja, ' +
@@ -137,11 +137,11 @@ export class InheritanceComponent {
       '    if (kasutajanimi in self.mängijad):\n' +
       '        print("Sellise nimega kasutaja on juba olemas. Ei saa lisada...")\n'),
     new ExerciseHint('Kui kasutajanime polnud sõnastikus, siis peame lisaks küsima ka mängija taseme. Selle põhjal saame otsustada, kas ' +
-      'luua uus Mängija või Supermängija. Kui tase on suurem kui 1000, siis peaks olema tegu Supermängijaga. Loodud mängija tuleks ka sõnastikku lisada.', null),
+      'luua uus Mängija või Supermängija. Kui tase on suurem või võrdne kui 1000, siis peaks olema tegu Supermängijaga. Loodud mängija tuleks ka sõnastikku lisada.', null),
     new ExerciseHint('Mängija tüübi otsustamiseks läheb meil vaja teist tingimuslauset.',
       'else:\n' +
       '    tase = int(input("Sisesta tase: "))\n' +
-      '    if tase > 1000:\n' +
+      '    if tase >= 1000:\n' +
       '        self.mängijad[kasutajanimi] = Supermängija(kasutajanimi, tase)\n' +
       '    else:\n' +
       '        self.mängijad[kasutajanimi] = Mängija(kasutajanimi, tase)'),
@@ -219,7 +219,7 @@ export class InheritanceComponent {
       '            print("Sellise nimega kasutaja on juba olemas. Ei saa lisada...")\n' +
       '        else:\n' +
       '            tase = int(input("Sisesta tase: "))\n' +
-      '            if tase > 1000:\n' +
+      '            if tase >= 1000:\n' +
       '                self.mängijad[kasutajanimi] = Supermängija(kasutajanimi, tase)\n' +
       '            else:\n' +
       '                self.mängijad[kasutajanimi] = Mängija(kasutajanimi, tase)\n' +

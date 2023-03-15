@@ -205,7 +205,7 @@
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.popitem()</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
       <td>('Anni', 14)</td>
-      <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võtme-väärtuse paari ennikuna.
+      <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võti-väärtus paari ennikuna.
         Kui sõnastik on tühi, siis tekib viga.
       </td>
     </tr>
@@ -218,7 +218,7 @@
   <strong class="strong">Sõnastik ja tsükkel</strong>
   <div class="mt-2"><span>Sõnastiku puhul saab kasutada kõige tavalisemat <span class="fst-italic">for</span>-tsüklit ja sellisel juhul käib
   tsükkel üle sõnastiku võtmete. Seega igal iteratsioonil saab tsüklimuutuja endale väärtuseks järgmise võtme sõnastikust. Kui soovime tsüklis ka väärtust kätte saada,
-  siis saame selle läbi kandiliste sulgude või <span class="fst-italic">get</span>-meetodi.</span></div>
+  siis saame selle sõnastikust läbi kandiliste sulgude või <span class="fst-italic">get</span>-meetodi.</span></div>
   <div class="mt-2 code-block">
     <span [highlight]="forLoopCode"></span>
   </div>
@@ -241,7 +241,7 @@
     <span>8 tk<br></span>
   </div>
   <div class="mt-2"><span>Soovi korral võime ka <span class="fst-italic">items</span>-meetodi abil küsida kohe võti-väärtus paarid ja tsüklis neid läbi käia.
-  Võti ja väärtus on andmestruktuuris nimega ennik ja hiljem uurime seda andmestruktuuri täpsemalt. Seniks aga võib lihtsalt kasutada järgmist süntaksit:</span>
+  Võti ja väärtus on andmestruktuuris nimega ennik ning hiljem uurime seda andmestruktuuri täpsemalt. Seniks aga võib lihtsalt kasutada järgmist süntaksit:</span>
   </div>
   <div class="mt-2 code-block">
     <span [highlight]="forLoopItemsCode"></span>
@@ -262,7 +262,7 @@
   <div class="mt-2"><span>Proovime kirjutada programmi ostukorvi haldamiseks. Katriin on juba ostlemist alustanud ja poolelioleva ostukorvi andmed on kirjas failis
   <span class="fst-italic">ostukorv.txt</span>. Seal on igal real toote nimetus ja komaga eraldatult täisarvuline kogus. Need tooted koos kogustega loetakse
   kõigepealt sõnastikku. Seejärel hakatakse kasutajalt küsima, mida ta veel lisada soovib. Kui sellise nimega toode oli juba ostukorvis, siis suurendatakse toote kogust, kui
-  sellist toodet veel ei olnud, siis lisatakse see ostukorvi kogusega 1. Programm lõpetab oma töö kui kasutaja sisestab tühja sõne. Programmi töö lõpus väljastatakse kasutajale ostutšekk.</span>
+  sellist toodet veel ei olnud, siis lisatakse see ostukorvi kogusega 1. Programm lõpetab oma töö, kui kasutaja sisestab tühja sõne. Programmi töö lõpus väljastatakse kasutajale ostutšekk.</span>
   </div>
   <div class="mt-2">Faili <span class="fst-italic">ostukorv.txt</span> sisu:</div>
   <div class="mt-2 code-block fst-italic">

@@ -62,7 +62,7 @@
   <div class="mt-2 code-block"><span [highlight]="basicDogClassCode"></span></div>
 </div>
 <div class="mt-3 box-container">
-  <strong class="strong">Mis on see argument <span class="fst-italic">self</span> siis endast ikkagi kujutab?</strong>
+  <strong class="strong">Mis see argument <span class="fst-italic">self</span> siis endast ikkagi kujutab?</strong>
   <div class="mt-2">Isendi loomise hetkel antakse konstruktoris esimeks argumendiks automaatselt kaasa viide äsja loodud
     isendile. Selle argumendi kaudu
     saame klassis ära määrata, millised väljad ja meetodid kuuluvad klassi isenditele. See viide isendile on esimeseks
@@ -168,7 +168,7 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   <strong class="strong">Isendimeetodi kasutamine teises isendimeetodis</strong>
   <div class="mt-2"><span>Isendimeetodeid saame üksteise sees ka kasutada. See käib väga sarnaselt isendiväljade kasutamisele. Kõigepealt on isendiviit
   <span class="fst-italic">self</span> ja seejärel punktiga eraldatult meetodi nimi, mida soovime välja kutsuda, koos argumentidega. Näiteks kui sooviksime meetodit
-  <span class="fst-italic">__str__</span> või meetodit <span class="fst-italic">vanus()</span> mõnest teisest meetodist välja kutsuda, siis teeksime seda nii:</span>
+  <span class="fst-italic">__str__</span> või meetodit <span class="fst-italic">vanus</span> mõnest teisest meetodist välja kutsuda, siis teeksime seda nii:</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="'self.__str__()'"></span></div>
   <div class="mt-2 code-block"><span [highlight]="'self.vanus(2023)'"></span></div>
@@ -243,9 +243,9 @@ proovime ühe isendi ekraanile väljastada.</span></div>
   <div class="row px-0 mt-2">
     <div class="col-lg-8">
       <div class="mt-2"><span>Meetod <span class="fst-italic">sõida</span> võtab argumendiks meetrite arvu, mis tuleks sõita, ja vähendab allesjäänud sõiduulatust selle võrra.
-  Kui argumendiks antud arv on suurem kui allesjäänud sõiduulatus, siis vähendadakse allesjäänud sõiduulatust ainult nullini. Meetod peaks kasutajat teavitama sellest, mitu
+  Kui argumendiks antud arv on suurem, kui allesjäänud sõiduulatus, siis vähendadakse allesjäänud sõiduulatust ainult nullini. Meetod peaks kasutajat teavitama sellest, mitu
   meetrit sõideti ja ka sellest, kui aku sai enne soovitud vahemaad tühjaks.</span></div>
-      <div class="mt-2"><span>Meetod <span class="fst-italic">lae</span> võtab argumendiks laadimisminutite arvu. Arvutab, mitu meetrit selle ajaga sõiduulatust juurde tuli ja
+      <div class="mt-2"><span>Meetod <span class="fst-italic">lae</span> võtab argumendiks laadimisminutite arvu. Arvutab, mitu meetrit selle ajaga sõiduulatust juurde tuli, ja
   suurendab allesjäänud sõiduulatust selle võrra. Kuid kuna akul on kindel mahutavus, siis tuleb jälgida, et üle maksimaalse sõiduulatuse siiski laadida ei saa. Meetod
   peaks ka väljastama, mitu meetrit laadimisaja lõpus sõita saab.</span></div>
     </div>

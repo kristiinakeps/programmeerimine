@@ -32,10 +32,10 @@ export class TuplesComponent {
     '    print("Kolm")';
   operationsTestItems = [new TestAnswer('On võrdsed', false, 'Kas ennikute puhul oli võrdsuse kontrollimisel elementide järjekord oluline või mitte?'),
   new TestAnswer('Vaarikas', true, 'Kas enniku teine element "vaarikas" ei ole indeksiga 1?'),
-  new TestAnswer('Üks', false, 'Enniku viilutamisel ilma algusindeksita võetakse tulemusse kõik elemendid alates algusest kuni etteantud lõpuindeksini. ' +
-    'Kui lõpuindeks on 2, siis peaks tulemuses olema elemendid indeksitega 0 ja 1.'),
-  new TestAnswer('Kaks', true, 'Enniku viilutamisel ilma algusindeksita võetakse tulemusse kõik elemendid alates algusest kuni etteantud lõpuindeksini. ' +
-    'Kui lõpuindeks on 2, siis peaks tulemuses olema elemendid indeksitega 0 ja 1.'),
+  new TestAnswer('Üks', false, 'Enniku viilutamisel ilma algusindeksita võetakse tulemusse kõik elemendid alates algusest kuni etteantud lõppindeksini. ' +
+    'Kui lõppindeks on 2, siis peaks tulemuses olema elemendid indeksitega 0 ja 1.'),
+  new TestAnswer('Kaks', true, 'Enniku viilutamisel ilma algusindeksita võetakse tulemusse kõik elemendid alates algusest kuni etteantud lõppindeksini. ' +
+    'Kui lõppindeks on 2, siis peaks tulemuses olema elemendid indeksitega 0 ja 1.'),
   new TestAnswer('Kolm', false, 'Kas enniku viilutamisel tekib rohkem kui kaheelemendiline ennik?')]
 
   tupleExamplesCode = 'arvud = (16, 18, 3, 9)\n' +
@@ -112,7 +112,7 @@ export class TuplesComponent {
 
   emptyLine = '\n\n';
 
-  quizHints = [new ExerciseHint('Kõigepealt võime alustada sõnastiku koostamisega. Selleks võime luua kohe eraldi meetodi, mis võtab argumendiks faili nime ja ' +
+  quizHints = [new ExerciseHint('Kõigepealt võime alustada sõnastiku koostamisega. Selleks võime luua kohe eraldi funktsiooni, mis võtab argumendiks faili nime ja ' +
   'tagastab tulemuste sõnastiku, kus võtmed on õpilaste nimed ja väärtused punktid.', null),
   new ExerciseHint('Sarnast asja saime juba sõnastike peatükis teha. Nüüd aga nägime, kuidas ennikuid saab omistamises mugavalt kasutada, seega kuna teame, ' +
     'et rea tükeldamisel peaks meil alati tekkima kaks elementi, siis võime need kohe muutujate ennikusse salvestada. Nii on meil lihtsam neid hiljem kasutada.', this.dictionaryFromFileCode),

@@ -6,11 +6,11 @@
   <div><span>3. Kuidas järjendist elemente kätte saada?</span></div>
   <div><span>4. Kuidas järjendit viilutada?</span></div>
   <div><span>5. Kuidas järjendit tsüklis läbida?</span></div>
-  <div><span>6. Mis operatsioone järjenditega teha saab?</span></div>
+  <div><span>6. Mis tehteid järjenditega teha saab?</span></div>
   <div><span>7. Kuidas kasutada funktsiooni <span class="fst-italic">range</span>?</span></div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Seni oleme kasutanud muutujaid nende andmete hoidmiseks, mida programmis kasutada tahame. Vaatasime ka kuidas andmeid failist lugeda,
+  <div><span>Seni oleme kasutanud muutujaid nende andmete hoidmiseks, mida programmis kasutada tahame. Vaatasime kuidas andmeid failist lugeda,
     kuid ka siis lugesime kas kogu faili sisu või rea muutujasse. Tihtipeale on meil aga vaja tegeleda suurema hulga andmetega ja hoida neid andmeid
     programmi töö ajal mälus. Sellisel juhul kasutatakse andmete hoiustamiseks ja töötlemiseks erinevaid <strong
       class="strong">andmestruktuure</strong>.
@@ -33,9 +33,9 @@
 <h4 class="mt-5" [attr.id]="'indeks'">Järjendi üksiku elemendi kasutamine indeksi abil</h4>
 <div class="mt-3 box-container">
   <div class="row px-0">
-    <div class="col-lg-8"><span>Järjendist on võimalik kätte saada ja ka muuta üksikuid elemente. Selleks kasutatakse elemendi järjekorranumbrit järjendis. Seda
+    <div class="col-lg-8"><span>Järjendist on võimalik kätte saada ja muuta üksikuid elemente. Selleks kasutatakse elemendi järjekorranumbrit järjendis. Seda
   järjekorranumbrit nimetatakse <strong class="strong">indeksiks</strong>. Indeksite puhul alustatakse loendamist nullist, seega see erineb natuke sellest, kuidas
-  tavaelus elemete loendaksime. Järjendi esimesel elemendile on indeks 0, teisel elemendil indeks 1, kolmandal indeks 2 jne. Selleks, et saada üksikut
+  tavaelus elemete loendaksime. Järjendi esimesel elemendil on indeks 0, teisel elemendil indeks 1, kolmandal indeks 2 jne. Selleks, et saada üksikut
   elementi indeksi põhjal kätte, lisatakse järjendi järele kandilistesse sulgudesse elemendi indeks.</span></div>
     <div class="col-lg-3 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/indexes.png" alt="indexes"
@@ -67,8 +67,8 @@
       print(arvud[7])<br>
       IndexError: list index out of range<br></span>
   </div>
-  <div class="mt-2"><span>Võib tekkida küsimus, et mis saab kui anname indeksiks negatiivse arvu? Kas selline asi on lubatud? Ja tuleb välja,
-  et Pythonis on tõesti lubatud kasutada ka negatiivseid indekseid ja siis hakatakse lugema elemente järjendi lõpust alguse suunas. Viimase elementi saab kätte
+  <div class="mt-2"><span>Võib tekkida küsimus, et mis saab, kui anname indeksiks negatiivse arvu? Kas selline asi on lubatud? Ja tuleb välja,
+  et Pythonis on tõesti lubatud kasutada ka negatiivseid indekseid ja siis hakatakse lugema elemente järjendi lõpust alguse suunas. Viimase elemendi saab kätte
   indeksiga -1, eelviimase indeksiga -2 jne.</span></div>
   <div class="code-block mt-2">
     <span [highlight]="negativeIndexesCode"></span>
@@ -224,7 +224,7 @@
       <td>["ploom", "õun", "kirss"].insert(1, "pirn")</td>
       <td>["ploom", "pirn", "kirss"]</td>
       <td>None</td>
-      <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine element ise.</td>
+      <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine argument on element ise.</td>
     </tr>
     <tr>
       <td>["ploom", "õun", "kirss", "õun"].remove("õun")</td>
@@ -348,7 +348,7 @@
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Sõned kui järjendid</strong>
-  <div class="mt-2"><span>Sõned väga sarnased järjenditele. Need on otsekui järjendid üksikutest tähtedest ja sümbolitest. Me saame neid ka kasutada nagu
+  <div class="mt-2"><span>Sõned on väga sarnased järjenditele. Need on otsekui järjendid üksikutest tähtedest ja sümbolitest. Me saame neid ka kasutada nagu
   järjendeid. Näiteks saame ka sõnede puhul kasutada indekseid ja viilutamist, et saada kätte kas üksik sümbol või alamsõne.</span>
   </div>
   <div class="code-block mt-2">
@@ -440,7 +440,7 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Funktsiooni <span class="fst-italic">range()</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükkliga. Näiteks saame <span
+  <div><span>Funktsiooni <span class="fst-italic">range</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükkliga. Näiteks saame <span
     class="fst-italic">range</span>-funktsiooni
   abil genereerida indeksite jada ja seda kasutada järjendi läbimiseks. Saame kutsuda välja <span class="fst-italic">range</span>-funktsiooni andes argumendiks järjendi pikkuse ja
   funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span>

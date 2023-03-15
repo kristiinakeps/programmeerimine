@@ -19,7 +19,7 @@
     class="fst-italic">Tööriistad</span>,
     sealt edasi <span class="fst-italic">Halda lisapakette...</span> ja siis tuleb otsinguribale kirjutada <span
       class="fst-italic">Flask</span>,
-    käivitada otsing ja installida sellenimeline raamistik.
+    käivitada otsing ja paigaldada sellenimeline raamistik.
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'veebirakendused'">Kuidas veebirakendused töötavad?</h4>
@@ -205,10 +205,10 @@
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Jinja mallid</strong>
-  <div class="mt-2"><span>Flask kasutab Jinja malle, mis võimaldavad meil HTML-failis sees kasutada muutujaid ja kirjutada tingimus- ja korduslauseid. Me
+  <div class="mt-2"><span>Flask kasutab Jinja malle, mis võimaldavad meil HTML-faili sees kasutada muutujaid ja kirjutada tingimus- ja korduslauseid. Me
   soovime oma Pythoni programmis luua järjendi, kus hakkame ootel kodutöid hoidma. Veebirakenduse avalehel sooviksime neid kuvada. <span
       class="fst-italic">Flask</span>
-  laseb meil selle järjendi kaasa anda ja tänu Jinja malli võimalustele saame seal tsüklis seda järjendit läbi käia ja iga järjendi elemendi jaoks jupi
+  laseb meil selle järjendi HTML-i kaasa anda ja tänu Jinja malli võimalustele saame seal tsüklis seda järjendit läbi käia ja iga järjendi elemendi jaoks jupi
   HTML-i luua. Jinja malli osad kirjutatakse loogeliste sulgude ja protsendimärkide vahele.</span></div>
   <div class="mt-2 code-block"><span [highlight]="htmlWithTasksLoopCode"></span></div>
   <div class="mt-2"><span>Erinevalt Pythonist pole siin taanded tegelikult üldse olulised, neid kasutatakse ainult loetavuse huvides. Iga
@@ -307,7 +307,7 @@
     <div class="col-lg-9"><span>Kustutamiseks pole meil otseselt eraldi lehekülge vaja, piisaks sellest, kui iga kodutöö juures oleks eemaldamise nupp. Kõige lihtsam variant on
   jälle kasutada ära <span class="fst-italic">form</span>-elementi, milles on üks <span class="fst-italic">input</span>-element eemaldatava väärtusega.
   Me tahame selle <span class="fst-italic">input</span>-elemendi kasutaja eest ära peita ja ise sinna kodutöö kirjelduse automaatselt väärtuseks panna. Õnneks saame
-  kõike seda lihtsasti teha. Saame määrata tüübiks "hidden", mis tähendabki peidetud välja, ja väärtuse saame läbi omaduse <span
+  kõike seda lihtsasti teha. Saame määrata <span class="fst-italic">input</span>-elemendi tüübiks "hidden", mis tähendabki peidetud välja, ja väärtuse saame läbi omaduse <span
         class="fst-italic">value</span> ette anda.
     Kugi HTTP-meetoditest sobiks kustutamiseks kõige paremini DELETE, siis peame siin ikkagi POST-meetodit kasutama, sest HTML ei luba kasutada
   PUT- ja DELETE-meetode.</span></div>

@@ -73,7 +73,7 @@ export class ClassesComponent {
   new TestAnswer('Veateade', false, 'Selles koodis toimib kõik ilusti ja veateadet ei tule.')];
 
   classExerciseHints = [new ExerciseHint('Alustame klasside loomisest ja võtame kõigepealt ette klassi Õpilane. Õpilasel peaks olema kolm isendivälja: nimi, ' +
-    'sugu ja keskmine hinne, mis kõik konstruktoris väärtustatakse', null),
+    'sugu ja keskmine hinne, mis kõik konstruktoris väärtustatakse.', null),
     new ExerciseHint('Klass Õpilane koos konstruktoriga näeb välja selline:', 'class Õpilane:\n' +
       '    \n' +
       '    def __init__(self, nimi, sugu, keskmine_hinne):\n' +
@@ -123,7 +123,7 @@ export class ClassesComponent {
     new ExerciseHint('Failireast erinevad andmed saab kätte näiteks nii:', 'nimi, sugu, keskmine_hinne, klassi_number = rida.strip().split(",")'),
     new ExerciseHint('Nende andmete põhjal saame juba Õpilase isendi ära luua ja kuhugi muutujasse salvestada.', null),
     new ExerciseHint('Uue Õpilase isendi loomine failist loetud andmete põhjal:', 'õpilane = Õpilane(nimi, sugu, float(keskmine_hinne))'),
-    new ExerciseHint('Nüüd tulebki vaadata, millisesse klassi õpilane paigutada ja kas selline klassi isend on juba olemas. Võibki alustada kontrollist, kas' +
+    new ExerciseHint('Nüüd tulebki vaadata, millisesse klassi õpilane paigutada, ja kas selline klassi isend on juba olemas. Võibki alustada kontrollist, kas' +
       ' klassinumbri võti on sõnastikus. Kui ei ole, siis loome uue Klassi isendi ja lisame selle sõnastikku.', null),
     new ExerciseHint('Siin ongi tegelikult lihtsam kontrollida, kas võtit pole sõnastikus, sest just sellisel juhul tahame sinna uue võti-väärtus paari lisada.',
       'if klassi_number not in klassid:\n' +

@@ -146,7 +146,7 @@
     </tr>
     <tr>
       <td>QSlider</td>
-      <td>Riba, millelt saab libistades kindlast vahemikust arvu valida.</td>
+      <td>Riba, millega saab libistades kindlast vahemikust arvu valida.</td>
       <td>vidin = QSlider()<br>
         vidin.setMinimum(0)<br>
         vidin.setMaximum(10)
@@ -296,15 +296,15 @@
   </table>
   <div class="mt-2"><span>Üksikut vidinat luues saime selle lisada oma akna keskele meetodiga <span class="fst-italic">setCentralWidget</span>.
   Paigutust ei saa me niimoodi otse aknale lisada. Paigutuse lisamiseks saame luua üldise <span class="fst-italic">QWidget</span>-tüüpi vidina ja
-  panna paigutuse selle külge. Seejärel saame selle vidina aknale lisada.</span></div>
+  panna paigutuse selle külge. Seejärel saame selle vidina aknasse lisada.</span></div>
   <div class="mt-2 code-block"><span [highlight]="layoutSetCentralCode"></span></div>
 </div>
 <h4 class="mt-5" [attr.id]="'vorm'">Loome vormi mängija andmete küsimiseks</h4>
 <div class="mt-3 box-container">
   <div><span>Meie rakendus peaks lubama kasutajal klassidevahelisel jalgpallivõistlusel osalevate mängijate andmeid sisestada.
-  Iga mängija kohta tahame teada nime, sünnipäeva, sugu ja kas on põhi- või varumängija. Proovime luua vormi, mille kaudu kasutaja saaks need
+  Iga mängija kohta tahame teada nime, sünnipäeva, sugu ja kas ta on põhi- või varumängija. Proovime luua vormi, mille kaudu kasutaja saaks need
   andmed sisestada.</span></div>
-  <div class="mt-2"><span>Nime jaoks sobiks meile hästi <span class="fst-italic">QLineEdit</span>, mille kaudu saab lihtsalt teksti sisestada.
+  <div class="mt-2"><span>Nime jaoks sobiks meile hästi <span class="fst-italic">QLineEdit</span>, mille kaudu saab teksti sisestada.
   Sünnipäeva puhul on tegemist kuupäevaga, seega meile võiks sobida <span class="fst-italic">QDateEdit</span>. Kellaaeg pole meile siin oluline.
   Soo valimiseks sobiks nii <span class="fst-italic">QRadioButton</span> kui <span class="fst-italic">QComboBox</span>, sest mõlemad
   lubavad valida ühe etteantud valikutest. Kasutame siin <span class="fst-italic">QComboBox</span>'i. Põhi- või varumängija jaoks sobiks
@@ -386,11 +386,11 @@
       class="fst-italic">QVBoxLayout</span> paigutust.
     Võime konstruktoris määrata aknale pealkirja ja luua <span class="fst-italic">QVBoxLayout</span> paigutuse. Loome ka
     uue Vormi isendi ja lisame ta paigutusse.
-    Lõpuks tahame paigutuse ka oma aknasse lisama. Selleks saame kasutada meetodit <span class="fst-italic">setCentralWidget</span>.
+    Lõpuks tahame paigutuse ka oma aknasse lisada. Selleks saame kasutada meetodit <span class="fst-italic">setCentralWidget</span>.
     Kuna paigutust ei saa otse
     sellele meetodile ette anda, siis peame ta mähkima mõne vidina sisse. Näiteks loome uue <span class="fst-italic">QWidget</span>
     isendi, seame talle
-    meetodiga <span class="fst-italic">setLayout()</span> paigutuse ja seejärel lisame selle vidina aknasse.
+    meetodiga <span class="fst-italic">setLayout</span> paigutuse ja seejärel lisame selle vidina aknasse.
   </div>
   <div class="mt-2"><span>Nüüd, kus oleme ka põhiakna seadistamise tõstnud eraldi klassi, on meie põhiprogramm kohe eriti lühikeseks muutunud.</span>
   </div>
@@ -472,14 +472,14 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
 <div class="mt-3 box-container">
   <div class="row px-0">
     <div class="col-lg-9">
-      <div><span>Nüüd on meil töötav rakendus olemas. Proovime aga natuke oma akna ja vidinate värve muutja ja muud kujundust lisada.
+      <div><span>Nüüd on meil töötav rakendus olemas. Proovime aga natuke oma akna ja vidinate värve muuta ja muud kujundust lisada.
   Eelmises peatükis tutvusime natuke CSS-iga ja just CSS-i abil saame ka siin oma vidinaid kujundada. Meie rakendusel (<span
           class="fst-italic">QApplication</span>)
   on olemas meetod <span class="fst-italic">setStyleSheet</span>, millele saame CSS-i sõnena argumendiks anda. Võimegi CSS-i kirjutada programmi sõnena sisse
   või siis lugeda lihtsalt CSS-faili sisu sõnena oma programmi sisse. Lihtsuse mõttes kirjutame siin oma kujunduse otse koodi sisse.</span>
       </div>
       <div class="mt-2"><span>Proovime kõigepealt oma <span class="fst-italic">QMainWindow</span> vidinale uue taustavärvi lisada. Kui tahame muuta kõiki
-  vidinaid, siis saame CSS-is kirjutada vidina nime ja loogelistes sulgudes vidinale rakendatava kujunduse.</span></div>
+   ühte tüüpi vidinaid, siis saame CSS-is kirjutada vidina nime ja loogelistes sulgudes vidinale rakendatava kujunduse.</span></div>
     </div>
     <div class="col-lg-2 my-auto mx-3">
       <img src="../../../assets/images/gui/paint.png" alt="paint"
