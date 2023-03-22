@@ -131,16 +131,16 @@
     </thead>
     <tbody>
     <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Joosep", 14)</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Joosep", 16)</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>14</td>
+      <td>16</td>
       <td rowspan="3">Leiab võtmele vastava väärtuse või kasutab vaikeväärtust, kui võtit ei ole sõnastikus. Esimene
         argument on võti ja teine argument vaikeväärtus.
         Teise argumendi võib ka ära jätta ja siis toimib see meetod nagu kandilised sulud.
       </td>
     </tr>
     <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Mart", 14)</td>
+      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Mart", 16)</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
       <td>15</td>
     </tr>
@@ -158,7 +158,7 @@
     <tr>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.keys()</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>['Kati', 'Mart', 'Anni']</td>
+      <td>["Kati", "Mart", "Anni"]</td>
       <td>Tagastab sõnastiku võtmed.</td>
     </tr>
     <tr>
@@ -170,7 +170,7 @@
     <tr>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.items()</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>[('Kati', 14), ('Mart', 15), ('Anni', 14)]</td>
+      <td>[("Kati", 14), ("Mart", 15), ("Anni", 14)]</td>
       <td>Tagastab sõnastiku võti-väärtus paarid ennikutena (ennikutest räägime täpsemalt vastavas peatükis).
       </td>
     </tr>
@@ -204,7 +204,7 @@
     <tr>
       <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.popitem()</td>
       <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
-      <td>('Anni', 14)</td>
+      <td>("Anni", 14)</td>
       <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võti-väärtus paari ennikuna.
         Kui sõnastik on tühi, siis tekib viga.
       </td>

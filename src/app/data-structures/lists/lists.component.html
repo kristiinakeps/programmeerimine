@@ -23,7 +23,7 @@
   <div><span>Esimene ja ühtlasi üks enim kasutatavaid andmestruktuure on <strong class="strong">järjend</strong> (inglise keeles <span
     class="fst-italic">list</span>). Järjend on kogum erinevaid
     elemente. Need elemendid võivad olla ükskõik mis tüüpi (arvud, sõned või tõeväärtused) ja need võivad järjendis ka korduda. Python lubab ühte järjendisse koondada ka erinevat tüüpi
-    elemente, kuid praktikas seda väga palju ei kasutada. Järjendis eraldatakse elemendid komadega ja ümber järjendi on kandilised sulud. Mõned näited järjenditest:
+    elemente, kuid praktikas seda väga palju ei kasutata. Järjendis eraldatakse elemendid komadega ja ümber järjendi on kandilised sulud. Mõned näited järjenditest:
   </span>
   </div>
   <div class="code-block mt-2">
@@ -73,7 +73,7 @@
   <div class="code-block mt-2">
     <span [highlight]="negativeIndexesCode"></span>
   </div>
-  <div class="mt-2"><span>Selles näites saame indeksiga -1 kätte elemendi <span class="fst-italic">2</span> ja indeksiga -3 saame kätte elemendi
+  <div class="mt-2"><span>Selles näites saame indeksiga -1 kätte elemendi <span class="fst-italic">5</span> ja indeksiga -3 saame kätte elemendi
     <span class="fst-italic">4</span>. Samad elemendid saaksime, kui kasutaksime positiivseid indekseid 4 ja 2.</span>
   </div>
   <div class="text-center my-3">
@@ -167,7 +167,7 @@
     <tr>
       <td>len(["ploom", "õun", "pirn", "kirss"])</td>
       <td>4</td>
-      <td>Leiab järjendi pikkuse.</td>
+      <td>Leiab järjendi elementide arvu.</td>
     </tr>
     <tr>
       <td>min([1, 5, -2, 11, 7])</td>
@@ -222,7 +222,7 @@
     </tr>
     <tr>
       <td>["ploom", "õun", "kirss"].insert(1, "pirn")</td>
-      <td>["ploom", "pirn", "kirss"]</td>
+      <td>["ploom", "pirn", "õun", "kirss"]</td>
       <td>None</td>
       <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine argument on element ise.</td>
     </tr>
@@ -235,8 +235,8 @@
     </tr>
     <tr>
       <td>["ploom", "õun", "kirss"].pop()</td>
-      <td>["ploom", "kirss"]</td>
-      <td>"õun"</td>
+      <td>["ploom", "õun"]</td>
+      <td>"kirss"</td>
       <td rowspan="2">Eemaldab ja tagastab järjendist elemendi. Argumendiks saab anda eemaldatava elemendi indeksi. Kui
         argumenti ei anta, siis eemaldab viimase elemendi.
       </td>

@@ -20,7 +20,7 @@ export class DictionariesComponent  {
   getTestCode = 'jooksuajad = {"Mait": 16.5, "Kadi": 18.6, "Pille": 17.9}\n' +
     'print(jooksuajad.get("Olev", 17.5))';
 
-  getTestItems = [new TestAnswer('17.5', true, 'Õige! Kuna võtit "Olev" ei ole sõnastikus, siis tagastatab <span class="fst-italic">get</span>-meetod teise argumendina antud vaikeväärtuse'),
+  getTestItems = [new TestAnswer('17.5', true, 'Õige! Kuna võtit "Olev" ei ole sõnastikus, siis tagastatab <span class="fst-italic">get</span>-meetod teise argumendina antud vaikeväärtuse.'),
   new TestAnswer('Veateade', false, 'Võtit "Olev" sõnastikus ei leidu, kuid sellisel juhul tagastab <span class="fst-italic">get</span>-meetod vaikeväärtuse' +
     ', kui see on teise argumendina antud. Kui vaikeväärtust pole, siis tagastaks <span class="fst-italic">None</span>.'),
   new TestAnswer('16.5', false, '16.5 vastab võtmele "Mait", kuid küsime väärtust, mis vastaks võtmele "Olev".'),
@@ -45,7 +45,7 @@ export class DictionariesComponent  {
     'autod[auto] = autod.get(auto, 0) + 1 # suurendame väärtust'),
   new ExerciseHint('Kui tsükkel lõppeb, siis peame kasutajale väljastama natuke statistikat nähtud autode kohta. Kõigepealt tahame teada, mitut erinevat ' +
     'automarki kasutaja nägi. Selleks tasub meenutada <span class="fst-italic">len</span>-funktsiooni. Kõigi nähtud autode arvu jaoks tuleks sõnastikus olevad väärtused kokku liita. ' +
-    'Seda saab teha näiteks abimuutuja ja tsükli abil, või siis kasutada sõnastiku meetodit <span class="fst-italic">values</span>, et saada kätte sõnastiku väärtused, ning ' +
+    'Seda saab teha näiteks abimuutuja ja tsükli abil või siis kasutada sõnastiku meetodit <span class="fst-italic">values</span>, et saada kätte sõnastiku väärtused, ning ' +
     'siis kasutada funktsiooni <span class="fst-italic">sum</span>, mis summeerib arvude järjendis olevad elemendid.', null),
   new ExerciseHint('Automarkide arvu ja autode arvu võib leida nii:', 'marke = len(autod)\n' +
     'autosid = sum(autod.values())'),
@@ -152,15 +152,15 @@ export class DictionariesComponent  {
     'print(pikkused)';
   forLoopCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
     '\n' +
-    'for toode in  ostukorv:\n' +
+    'for toode in ostukorv:\n' +
     '    print(toode + " - " + str(ostukorv[toode]) + " tk")';
   forLoopValuesCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
     '\n' +
-    'for kogus in  ostukorv.values():\n' +
+    'for kogus in ostukorv.values():\n' +
     '    print(str(kogus) + " tk")';
   forLoopItemsCode = 'ostukorv = {"piim": 1, "leib": 1, "õun": 5, "porgand": 8}\n' +
     '\n' +
-    'for toode, kogus in  ostukorv.items():\n' +
+    'for toode, kogus in ostukorv.items():\n' +
     '    print(toode + " - " + str(kogus) + " tk")';
   shoppingCartCode = 'ostukorv = {}\n' +
     '\n' +

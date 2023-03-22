@@ -104,12 +104,12 @@ export class ListsComponent{
 
   classListHints = [new ExerciseHint('Esimene pool ülesandest on perekonnanimed failist järjendisse lugeda. Keeruliseks teeb asja aga see, et' +
     ' failis on kirjas täispikad nimed, millest me peame perenimed eraldama.', null),
-  new ExerciseHint('Meile on juba tuttav kood, millega saab failist andmed järjendisse lugeda. Nüüd aga peame terve rea asemel lisama ainult osa reast.',
+  new ExerciseHint('Meile on juba tuttav kood, millega saab failist andmed järjendisse lugeda. Selles näites lisatakse järjendisse terve rida.',
     'perenimed = []\n' +
     'fail = open("nimed.txt", encoding="utf-8")\n' +
     'for rida in fail:\n' +
     '    perenimed.append(rida)\n' +
-    'fail.close()'), new ExerciseHint('Nime tükeldamiseks sobib hästi meetod <span class="fst-italic">split</span>, mis tekitab meile järjendi. Sellele' +
+    'fail.close()'), new ExerciseHint('Nüüd oleks meil vaja lisada vaid osa sellest reast. Nime tükeldamiseks sobib hästi meetod <span class="fst-italic">split</span>, mis tekitab meile järjendi. Sellele' +
       ' meetodile saab argumendiks anda sõne, mille kohalt tahame tükeldada. Vaikimisi tükeldatakse tühikute, taanete ja reavahetuste juurest. Me soovimegi just tühikute ' +
       'juurest rida tükeldada, seega võime kasutada seda meetodit ilma argumentideta.',
       'nimetükid = rida.split()'),
@@ -118,7 +118,7 @@ export class ListsComponent{
   new ExerciseHint('Nüüd võime asendada algses failist järjendisse lugemise koodis järjendisse lisamise rea:',
     'perenimed.append(perenimi)'),
   new ExerciseHint('Nüüd on meil perekonnanimede järjend olemas. Kuna seda taheti väljastada sorteeritud kujul, siis võimegi järgmiseks selle sorteerida. ' +
-    'Siinkohal on kõige lihtsam kasutada vastavat funktsiooni või meetodit. Kasutame siin näiteks järjendite meetodit <span class="fst-italic">sort</span>.' +
+    'Siinkohal on kõige lihtsam kasutada vastavat funktsiooni või meetodit. Kasutame siin näiteks järjendite meetodit <span class="fst-italic">sort</span>. ' +
     'See meetod lihtsalt sorteerib järjendi, millel teda välja kutsutakse, ega tagasta midagi.',
     'perenimed.sort()'),
   new ExerciseHint('Sorteeritud nimekirja väljastamiseks võime näiteks <span class="fst-italic">for</span>-tsükliga järjendi läbi käia ja iga elemendi ' +
@@ -167,7 +167,7 @@ export class ListsComponent{
     'print(arvud)';
   indexOutOfRangeCode = 'arvud = [2, 7, 4, 11, 2]\n' +
     'print(arvud[7])';
-  negativeIndexesCode = 'arvud = [2, 7, 4, 11, 2]\n' +
+  negativeIndexesCode = 'arvud = [2, 7, 4, 11, 5]\n' +
     'print(arvud[-1])\n' +
     'print(arvud[-3])';
   splicingCode = 'arvud = [2, 7, 4, 11, 2]\n' +
