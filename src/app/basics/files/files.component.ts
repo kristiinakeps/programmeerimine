@@ -18,7 +18,7 @@ export class FilesComponent {
 
   fileReadTestCode = 'fail = open("tulemused.txt")\n' +
     'tekst = fail.read()\n' +
-    'print(text)'
+    'print(tekst)'
   fileReadTestFile = 'Maris Maarikas - 1:34<br>Kadi Kuusk - 1:45<br>Karl Lumi - 1:25'
   fileReadTest = [new TestAnswer('Väljastab kogu faili sisu ekraanile.', true, 'Jah, see koodijupp loeb kogu faili sisu ja väljastab selle ekraanile.'),
   new TestAnswer('Väljastab kogu faili sisu ekraanile nii, et iga rea vahel on tühi rida.', false, 'Selles näites tühje ridu ei teki.'),
