@@ -7,28 +7,28 @@
 <h4 class="mt-4">Kuidas seda õpikut kasutada?</h4>
 <div class="mt-4 box-container">
     <div><span>Õpik on jaotatud nelja suuremasse peatükki, millel igaühel on alapeatükid:</span></div>
-    <div class="mt-2"><span>1. Põhiteadmised</span></div>
-    <div class="ms-4"><span>1.1 Sissejuhatus</span></div>
-    <div class="ms-4"><span>1.2 Algoritm</span></div>
-    <div class="ms-4"><span>1.3 Muutujad ja avaldised</span></div>
-    <div class="ms-4"><span>1.4 Tingimuslaused</span></div>
-    <div class="ms-4"><span>1.5 Korduslaused</span></div>
-    <div class="ms-4"><span>1.6 Funktsioonid</span></div>
-    <div class="ms-4"><span>1.7 Failid</span></div>
-    <div class="ms-4"><span>1.8 Veahaldus</span></div>
+    <div class="mt-2"><span >1. Põhiteadmised</span></div>
+    <div class="ms-4"><a [routerLink]="'sissejuhatus'"><span>1.1 Sissejuhatus</span></a></div>
+    <div class="ms-4"><a [routerLink]="'algoritm'"><span>1.2 Algoritm</span></a></div>
+    <div class="ms-4"><a [routerLink]="'muutujad'"><span>1.3 Muutujad ja avaldised</span></a></div>
+    <div class="ms-4"><a [routerLink]="'tingimuslaused'"><span>1.4 Tingimuslaused</span></a></div>
+    <div class="ms-4"><a [routerLink]="'korduslaused'"><span>1.5 Korduslaused</span></a></div>
+    <div class="ms-4"><a [routerLink]="'funktsioonid'"><span>1.6 Funktsioonid</span></a></div>
+    <div class="ms-4"><a [routerLink]="'failid'"><span>1.7 Failid</span></a></div>
+    <div class="ms-4"><a [routerLink]="'veahaldus'"><span>1.8 Veahaldus</span></a></div>
     <div><span>2. Andmestruktuurid</span></div>
-  <div class="ms-4"><span>2.1 Järjendid</span></div>
-  <div class="ms-4"><span>2.2 Sõnastikud</span></div>
-  <div class="ms-4"><span>2.3 Hulgad</span></div>
-  <div class="ms-4"><span>2.4 Ennikud</span></div>
-  <div class="ms-4"><span>2.5 Mitmemõõtmelised andmestruktuurid</span></div>
+  <div class="ms-4"><a [routerLink]="'jarjendid'"><span>2.1 Järjendid</span></a></div>
+  <div class="ms-4"><a [routerLink]="'sonastikud'"><span>2.2 Sõnastikud</span></a></div>
+  <div class="ms-4"><a [routerLink]="'hulgad'"><span>2.3 Hulgad</span></a></div>
+  <div class="ms-4"><a [routerLink]="'ennikud'"><span>2.4 Ennikud</span></a></div>
+  <div class="ms-4"><a [routerLink]="'mitmemootmelised'"><span>2.5 Mitmemõõtmelised andmestruktuurid</span></a></div>
     <div><span>3. Objektorienteeritud programmeerimine</span></div>
-  <div class="ms-4"><span>3.1 Klassid ja isendid</span></div>
-  <div class="ms-4"><span>3.2 Pärilus</span></div>
+  <div class="ms-4"><a [routerLink]="'klassid'"><span>3.1 Klassid ja isendid</span></a></div>
+  <div class="ms-4"><a [routerLink]="'parilus'"><span>3.2 Pärilus</span></a></div>
     <div><span>4. Projektid</span></div>
-  <div class="ms-4"><span>4.1 Mäng</span></div>
-  <div class="ms-4"><span>4.2 Veebirakendus</span></div>
-  <div class="ms-4"><span>4.3 Töölauarakendus</span></div>
+  <div class="ms-4"><a [routerLink]="'mang'"><span>4.1 Mäng</span></a></div>
+  <div class="ms-4"><a [routerLink]="'veebirakendus'"><span>4.2 Veebirakendus</span></a></div>
+  <div class="ms-4"><a [routerLink]="'rakendus'"><span>4.3 Töölauarakendus</span></a></div>
     <div class="mt-2">
       <span>Need erinevad teemad on kättesaadavad menüüst. Suured peatükid saad avada neile vajutades. Kõige parem on alustada põhiteadmiste esimesest peatükist "</span>
       <a [routerLink]="'sissejuhatus'"><span>Sissejuhatus</span></a><span>" ja siis liikuda järjest edasi. Iga järgmine peatükk
@@ -43,7 +43,7 @@
     omandanud, teeme läbi ka paar projekti, kus vaatame, kuidas luua lihtsat mängu, veebirakendust ja töölauarakendust.</span></div>
 </div>
 <h4 class="mt-4">Kasutatud allikad ja litsents</h4>
-<div class="mt-4 box-container">Selle õpiku ja ülesannete loomisel on toetutud erienvatele Tartu Ülikooli programmeerimiskursustele:
+<div class="mt-4 box-container">Selle õpiku ja ülesannete loomisel on toetutud erinevatele Tartu Ülikooli programmeerimiskursustele:
   Programmeerimise alused (MTAT.03.236), Programmeerimise alused II (MTAT.03.256), Programmeerimine (LTAT.03.001) ja Objektorienteeritud programmeerimine (LTAT.03.003).
 Lisaks on kasutatud programmeerimisõpikut <a href="https://progeopik.cs.ut.ee/" target="_blank">https://progeopik.cs.ut.ee/</a>.</div>
 <div class="mt-3 box-container">

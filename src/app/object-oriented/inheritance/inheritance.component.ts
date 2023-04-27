@@ -32,9 +32,10 @@ export class InheritanceComponent {
     '        print("Müüa kortermaja!")\n' +
     '\n' +
     'class Suvila(Maja):\n' +
-    '    def pane_müüki(self):\n' +
+    '    def müü(self):\n' +
     '        print("Müüa suvila!")\n' +
     '        \n' +
+    '# põhiprogramm\n' +
     'maja = Maja()\n' +
     'kortermaja = Kortermaja()\n' +
     'suvila = Suvila()\n' +
@@ -42,15 +43,14 @@ export class InheritanceComponent {
     'maja.kuulutus()\n' +
     'kortermaja.kuulutus()\n' +
     'suvila.kuulutus()\n';
-  inheritedMethodsTestItems = [new TestAnswer('Müüa maja!\nMüüa kortermaja!\nMüüa suvila!', false, 'Jägi, mis meetodit suvila puhul rakendatakse.'),
+  inheritedMethodsTestItems = [new TestAnswer('Müüa maja!\nMüüa kortermaja!\nMüüa suvila!', false, 'Jälgi, mis meetodit suvila puhul rakendatakse.'),
     new TestAnswer('Müüa maja!\nMüüa kortermaja!\nMüüa maja!', true, 'Õige! Suvilal pole endal meetodit <span class="fst-italic">kuuluta</span>, seega rakendatakse ülemklassi oma.'),
     new TestAnswer('Müüa maja!\nMüüa kortermaja!\nVeateade', false, 'Veateadet siin ei teki, kas mäletad, et alamklassid said kasutada ülemklasside meetodeid?'),
     new TestAnswer('Müüa maja!\nMüüa maja!\nMüüa maja!\n', false, 'Kas kortermaja isendi puhul ei väljastata midagi teistsugust?'),
     new TestAnswer('Müüa kortermaja!\nMüüa kortermaja!\nMüüa kortermaja!', false, 'Maja ja suvila isendi puhul väljastatakse midagi muud.'),
     new TestAnswer('Mitte midagi', false, 'Midagi siiski väljastatakse.')];
 
-  playerClassesExerciseHints = [new ExerciseHint('Esimene samm on kopeerida oma koodi teegi <span class="fst-italic">random</span> ' +
-    'import ja stiilide järjend. Seejärel võiks ette võtta Mängija klassi loomise.', null),
+  playerClassesExerciseHints = [new ExerciseHint('Võtame kõigepealt ette Mängija klassi loomise.', null),
     new ExerciseHint('Klassi Mängija konstruktor peaks võtma kaks argumenti &ndash; kasutajanime ja taseme &ndash; ning omistama need isendiväljadele.', null),
     new ExerciseHint('Konstruktori meetodi nimi on <span class="fst-italic">__init__</span> ja esimene argument peab olema <span class="fst-italic">self</span>.',
       'class Mängija:\n' +
@@ -65,7 +65,7 @@ export class InheritanceComponent {
       '    self.tase += 1\n' +
       '    print(self.kasutajanimi + " liikus tasemele " + str(self.tase))'),
     new ExerciseHint('Sellega saame tõmmata joone alla Mängija klassile ja liikuda Supermängija juurde. Siin on igaühe enda otsustada, kas ' +
-      'ta tahab anda stiilide hulga argumendina konstruktorile või väärtustada isendiväli konstruktoris tühja hulgaga.', null),
+      'ta tahab anda mängija olemasolevate stiilide hulga argumendina konstruktorile või väärtustada isendiväli konstruktoris tühja hulgaga.', null),
     new ExerciseHint('Me valime siin tühja hulgaga väärtustamise variandi. Siiski peame konstruktorile argumentideks andma ülemklassi ' +
       'isendiväljad ja kutsuma välja ka ülemklassi konstruktorit.', 'class Supermängija(Mängija):\n' +
       '    \n' +
@@ -80,17 +80,16 @@ export class InheritanceComponent {
       'siis loosime uue stiili ja lisame selle isendiväljale stiilide hulka. Anname teada, mis stiili kasutaja sai ja millised stiilid tal nüüd kokku on.',
       'def liigu_järgmisele_tasemele(self):\n' +
       '    super().liigu_järgmisele_tasemele()\n' +
+      '    stiilid = ["metall", "roosa", "rebane", "soomused", "vampiir", "zombie",\n' +
+      '           "roheline", "võlur", "karu", "hunt", "libahunt", "nõid",\n' +
+      '           "tume", "draakon", "haldjas", "läbipaistev", "näkk", "sinine",\n' +
+      '           "tuli", "jää", "madu", "tulnukas", "vesi"]\n' +
       '    uus_stiil = choice(stiilid)\n' +
       '    self.stiilid.add(uus_stiil)\n' +
       '    print(self.kasutajanimi + " sai uue stiili: " + uus_stiil)\n' +
       '    print(self.kasutajanimi + " kõik stiilid: " + str(self.stiilid))'),
     new ExerciseHint('Nüüd on meil klassid valmis, jääb üle vaid neid katsetada.',
       'from random import *\n' +
-      '\n' +
-      'stiilid = ["metall", "roosa", "rebane", "soomused", "vampiir", "zombie",\n' +
-      '           "roheline", "võlur", "karu", "hunt", "libahunt", "nõid",\n' +
-      '           "tume", "draakon", "haldjas", "läbipaistev", "näkk", "sinine",\n' +
-      '           "tuli", "jää", "madu", "tulnukas", "vesi"]\n' +
       '\n' +
       'class Mängija:\n' +
       '    \n' +
@@ -110,6 +109,10 @@ export class InheritanceComponent {
       '        \n' +
       '    def liigu_järgmisele_tasemele(self):\n' +
       '        super().liigu_järgmisele_tasemele()\n' +
+      '        stiilid = ["metall", "roosa", "rebane", "soomused", "vampiir", "zombie",\n' +
+      '           "roheline", "võlur", "karu", "hunt", "libahunt", "nõid",\n' +
+      '           "tume", "draakon", "haldjas", "läbipaistev", "näkk", "sinine",\n' +
+      '           "tuli", "jää", "madu", "tulnukas", "vesi"]\n' +
       '        uus_stiil = choice(stiilid)\n' +
       '        self.stiilid.add(uus_stiil)\n' +
       '        print(self.kasutajanimi + " sai uue stiili: " + uus_stiil)\n' +
@@ -163,7 +166,7 @@ export class InheritanceComponent {
       'Mõlema tegevuse puhul tuleb välja kutsuda vastavat Mängu meetodit. Kui tegevus pole "l" ega "j", siis tuleks tsükkel lõpetada.', null),
     new ExerciseHint('Kõigepealt uue mängu loomiseks kutsume välja Mängu konstruktorit ja salvestame isendi muutujasse.', 'mäng = Mäng()'),
     new ExerciseHint('Tsükliks valime siin <span class="fst-italic">while True</span> tsükli (kes tahab võib ka jätkamistingimusega tsüklit kasutada). ' +
-      'Igal tsükli tätimise korral tuleks kasutajalt tegevus küsida.', 'while True:\n' +
+      'Igal tsükli täitmise korral tuleks kasutajalt tegevus küsida.', 'while True:\n' +
       '    tegevus = input("Kas soovid mängijat lisada (l) või järgmisele tasemele liigutada (j)? ")'),
     new ExerciseHint('Tegevuse põhjal saame otsustada, mida teha. Ei tasu unustada, et mingil juhul peame ka tsükli lõpetama. Siin on selleks ' +
       'tingimuseks, et sisend on midagi muud kui "l" või "j".', 'if tegevus == "l":\n' +
@@ -179,11 +182,6 @@ export class InheritanceComponent {
       'mäng.liiguta_järgmisele_tasemele()'),
     new ExerciseHint('Nii eelmise kui selle harjutuse peale kokku tuleb päris pikk kood:',
       'from random import *\n' +
-      '\n' +
-      'stiilid = ["metall", "roosa", "rebane", "soomused", "vampiir", "zombie",\n' +
-      '           "roheline", "võlur", "karu", "hunt", "libahunt", "nõid",\n' +
-      '           "tume", "draakon", "haldjas", "läbipaistev", "näkk", "sinine",\n' +
-      '           "tuli", "jää", "madu", "tulnukas", "vesi"]\n' +
       '\n' +
       'class Mängija:\n' +
       '    \n' +
@@ -203,6 +201,11 @@ export class InheritanceComponent {
       '        \n' +
       '    def liigu_järgmisele_tasemele(self):\n' +
       '        super().liigu_järgmisele_tasemele()\n' +
+      '        stiilid = ["metall", "roosa", "rebane", "soomused", "vampiir", "zombie",\n' +
+      '           "roheline", "võlur", "karu", "hunt", "libahunt", "nõid",\n' +
+      '           "tume", "draakon", "haldjas", "läbipaistev", "näkk", "sinine",\n' +
+      '           "tuli", "jää", "madu", "tulnukas", "vesi"]\n' +
+      '\n' +
       '        uus_stiil = choice(stiilid)\n' +
       '        self.stiilid.add(uus_stiil)\n' +
       '        print(self.kasutajanimi + " sai uue stiili: " + uus_stiil)\n' +

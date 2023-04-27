@@ -8,7 +8,7 @@ import {ExerciseHint} from "../../models/exercise-hint.model";
 })
 export class GameComponent {
   giftsHints = [new ExerciseHint('Alustame sellest, et proovime liigutada suure osa koodist klassist Lumepall uude ülemklassi. Võime selle ülemklassi nimeks ' +
-    'panna näiteks Lendav, kuna meie koodis koondab see enda alla lendavd lumepallid ja lendavad kingitused. Tõstame ta ka eraldi faili nimega <span class="fst-italic">lendav.py</span>.' +
+    'panna näiteks Lendav, kuna meie koodis koondab see enda alla lendavad lumepallid ja lendavad kingitused. Tõstame ta ka eraldi faili nimega <span class="fst-italic">lendav.py</span>.' +
     ' Alamklasse eristavad üksteisest vaid pildid, mille seast isendi pilt valida.', null),
   new ExerciseHint('Kopeerime kõik klassist Lumepall, kuid lisame konstruktorile veel ühe lisaargumenti &ndash; pilt. Alamklassid saavad siis oma piltide järjendist ühe juhuslikult valida ja ' +
     'anda kaasa ülemklassi konstruktorile.', 'import pygame\n' +
@@ -17,7 +17,7 @@ export class GameComponent {
     'class Lendav(pygame.sprite.Sprite):\n' +
     '    \n' +
     '    def __init__(self, akna_laius, akna_kõrgus, pilt):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
+    '        super().__init__()\n' +
     '        self.image = pygame.image.load(pilt)\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.akna_laius = akna_laius\n' +
@@ -27,9 +27,9 @@ export class GameComponent {
     '    \n' +
     '    def määra_asukoht(self):\n' +
     '        self.rect.x = random.randint(0, self.akna_laius)\n' +
-    '        self.rect.y = random.randint(-150, -50)\n' +
-    '        self.kiirusy = random.randint(1, 8)\n' +
-    '        self.kiirusx = random.randint(-3, 3)\n' +
+    '        self.rect.y = random.randint(-75, -25)\n' +
+    '        self.kiirusy = 1\n' +
+    '        self.kiirusx = random.randint(-1, 1)\n' +
     '        \n' +
     '    def update(self):\n' +
     '        self.rect.x += self.kiirusx\n' +
@@ -70,8 +70,8 @@ export class GameComponent {
     'import kingitus\n' +
     '\n' +
     'def joonista_elud(aken, palju_täidetud):\n' +
-    '    riba_laius = 250\n' +
-    '    riba_kõrgus = 20\n' +
+    '    riba_laius = 100\n' +
+    '    riba_kõrgus = 10\n' +
     '    x = 15\n' +
     '    y = 15\n' +
     '    täidise_laius = palju_täidetud * riba_laius\n' +
@@ -83,8 +83,8 @@ export class GameComponent {
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius =  1262# laius ja pikkus on pikslites\n' +
-    'kõrgus = 845\n' +
+    'laius =  630# laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
     'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     'pygame.display.set_caption("Jõulumäng")\n' +
     '\n' +
@@ -92,14 +92,14 @@ export class GameComponent {
     'taustapilt = pygame.image.load("taust.png")\n' +
     '\n' +
     '# peategelane\n' +
-    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 30, laius, 10)\n' +
+    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15, laius, 10)\n' +
     'peategelane = pygame.sprite.Group()\n' +
     'peategelane.add(tegelane_päkapikk)\n' +
     '\n' +
     '# lumepallid ja kingitused\n' +
     'lumepallid = pygame.sprite.Group()\n' +
     'kingitused = pygame.sprite.Group()\n' +
-    'for i in range(8):\n' +
+    'for i in range(4):\n' +
     '    lumepallid.add(lumepall.Lumepall(laius, kõrgus))\n' +
     '    kingitused.add(kingitus.Kingitus(laius, kõrgus))\n' +
     '\n' +
@@ -115,7 +115,7 @@ export class GameComponent {
     '    # joonistame tausta\n' +
     '    aken.blit(taustapilt, (0, 0))\n' +
     '    \n' +
-    '    # uuendame ja joonistame sprite\'ide grupid\n' +
+    '    # uuendame sprite\'ide grupid\n' +
     '    peategelane.update()\n' +
     '    lumepallid.update()\n' +
     '    kingitused.update()\n' +
@@ -156,7 +156,7 @@ export class GameComponent {
     '    rekord = 0.0'),
   new ExerciseHint('Sellega saame kätte varasema rekordi. Kui nüüd meie mängija saadud tulemus oli suurem kui see rekord, siis peame ka faili sisu uuendama. ' +
     'Selleks saame sama faili avada kirjutamiseks (teine argument peab olema <span class="fst-italic">"w"</span>).', null),
-  new ExerciseHint('Lõpus võiks ka faili sulgeda.', 'if tulemus > rekord: # uus tulemus on suurem\n' +
+  new ExerciseHint('Need read võib lisada kohe peale varasema tulemuse failist lugemist.', 'if tulemus > rekord: # uus tulemus on suurem\n' +
     '    fail = open("rekord.txt", "w")\n' +
     '    fail.write(str(tulemus))\n' +
     '    fail.close()'),
@@ -178,8 +178,8 @@ export class GameComponent {
     '        fail.close()\n' +
     '    \n' +
     '    # fondid\n' +
-    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 120)\n' +
-    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 80)\n' +
+    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 60)\n' +
+    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 40)\n' +
     '    \n' +
     '    punane = (195, 20, 20)\n' +
     '    roheline = (50, 150, 0)\n' +
@@ -190,7 +190,7 @@ export class GameComponent {
     '    varasem_rekord = väike_font.render("Varasem rekord: " + str(rekord), True, punane)\n' +
     '    \n' +
     '    # uuesti mängimise tekst, peale liikudes muudab värvi\n' +
-    '    mängi_uuesti_asukoht = (360, 640)\n' +
+    '    mängi_uuesti_asukoht = (180, 320)\n' +
     '    mängi_uuesti_roheline = väike_font.render("Mängi uuesti", True, roheline)\n' +
     '    mängi_uuesti_tumeroheline = väike_font.render("Mängi uuesti", True, tumeroheline)\n' +
     '    \n' +
@@ -207,9 +207,9 @@ export class GameComponent {
     '            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and mängi_uuesti_rect.collidepoint(hiire_asukoht):\n' +
     '                return True\n' +
     '        aken.blit(taustapilt, (0, 0))\n' +
-    '        aken.blit(mäng_läbi, (260, 200))\n' +
-    '        aken.blit(saadud_tulemus, (340, 440))\n' +
-    '        aken.blit(varasem_rekord, (200, 540))\n' +
+    '        aken.blit(mäng_läbi, (130, 100))\n' +
+    '        aken.blit(saadud_tulemus, (180, 220))\n' +
+    '        aken.blit(varasem_rekord, (100, 270))\n' +
     '\n' +
     '        if mängi_uuesti_rect.collidepoint(hiire_asukoht):\n' +
     '            aken.blit(mängi_uuesti_tumeroheline, mängi_uuesti_asukoht)\n' +
@@ -224,9 +224,9 @@ export class GameComponent {
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius = 1262 # laius ja pikkus on pikslites\n' +
-    'pikkus = 845\n' +
-    'aken = pygame.display.set_mode((laius, pikkus))\n' +
+    'laius = 630 # laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
+    'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     '\n' +
     '# aknale pealkirja lisamine\n' +
     'pygame.display.set_caption("Jõulumäng")\n' +
@@ -248,15 +248,14 @@ export class GameComponent {
     'pygame.quit()\n';
   backgroundLoadCode = 'taustapilt = pygame.image.load("taust.png")'
   backgroundCode = 'import pygame\n' +
-    'from päkapikk import *\n' +
     '\n' +
     '# teegi laadimine ja seadistamine\n' +
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius = 1262 # laius ja pikkus on pikslites\n' +
-    'pikkus = 845\n' +
-    'aken = pygame.display.set_mode((laius, pikkus))\n' +
+    'laius = 630 # laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
+    'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     '\n' +
     '# aknale pealkirja lisamine\n' +
     'pygame.display.set_caption("Jõulumäng")\n' +
@@ -283,10 +282,10 @@ export class GameComponent {
     '\n' +
     'class Päkapikk(pygame.sprite.Sprite):\n' +
     '    def __init__(self):\n' +
-    '        super().__init__(self)';
+    '        super().__init__()';
   elfFieldsCode = 'import pygame\n\nclass Päkapikk(pygame.sprite.Sprite):\n' +
     '    def __init__(self, x, y):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
+    '        super().__init__()\n' +
     '        self.image = pygame.image.load("päkapikk.png")\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.rect.centerx = x\n' +
@@ -298,8 +297,8 @@ export class GameComponent {
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius = 1262 # laius ja pikkus on pikslites\n' +
-    'kõrgus = 845\n' +
+    'laius = 630 # laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
     'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     '\n' +
     '# aknale pealkirja lisamine\n' +
@@ -307,7 +306,7 @@ export class GameComponent {
     '\n' +
     'taustapilt = pygame.image.load("taust.png")\n' +
     '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\n' +
-    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 30)\n' +
+    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15)\n' +
     '# tekitame tegelase jaoks Group objekti ja lisame ta sinna\n' +
     'peategelane = pygame.sprite.Group()\n' +
     'peategelane.add(tegelane_päkapikk)\n' +
@@ -333,7 +332,7 @@ export class GameComponent {
     'pygame.quit()\n';
 
   elfUpdateInitialCode = 'def update(self):\n' +
-    '    kiirus = 5\n' +
+    '    kiirus = 1\n' +
     '    klahvid = pygame.key.get_pressed()\n' +
     '    if klahvid[pygame.K_LEFT]:\n' +
     '        self.rect.centerx -= kiirus\n' +
@@ -341,14 +340,14 @@ export class GameComponent {
     '        self.rect.centerx += kiirus';
 
   elfConstructorWithWidthCode = 'def __init__(self, x, y, akna_laius):\n' +
-    '    pygame.sprite.Sprite.__init__(self)\n' +
+    '    super().__init__()\n' +
     '    self.image = pygame.image.load("päkapikk.png")\n' +
     '    self.rect = self.image.get_rect()\n' +
     '    self.rect.centerx = x\n' +
     '    self.rect.bottom = y\n' +
     '    self.akna_laius = akna_laius';
   elfUpdateWithWidthCheckCode = 'def update(self):\n' +
-    '    kiirus = 5\n' +
+    '    kiirus = 1\n' +
     '    klahvid = pygame.key.get_pressed()\n' +
     '    if klahvid[pygame.K_LEFT]:\n' +
     '        self.rect.centerx -= kiirus\n' +
@@ -358,15 +357,19 @@ export class GameComponent {
     '        self.rect.left = 0\n' +
     '    if self.rect.right > self.akna_laius:\n' +
     '        self.rect.right = self.akna_laius';
+  elfUpdateMainCode = '# uuendame sprite\'ide grupid\n' +
+    'peategelane.update()';
+  elfMainCodeConstructorCode = '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\n' +
+    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15, laius)';
   snowballInitCode = 'import pygame\n' +
     'import random\n' +
     '\n' +
     'class Lumepall(pygame.sprite.Sprite):\n' +
     '    \n' +
     '    def __init__(self, akna_laius, akna_kõrgus):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
+    '        super().__init__()\n' +
     '        võimalikud_pildid = ["lumepall_1.png", "lumepall_2.png", "lumepall_3.png", "lumepall_4.png", "lumepall_5.png"]\n' +
-    '        self.image = random.choice(võimalikud_pildid)\n' +
+    '        self.image = pygame.image.load(random.choice(võimalikud_pildid))\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.akna_laius = akna_laius\n' +
     '        self.akna_kõrgus = akna_kõrgus\n' +
@@ -379,8 +382,8 @@ export class GameComponent {
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius = 1262 # laius ja pikkus on pikslites\n' +
-    'kõrgus = 845\n' +
+    'laius = 630 # laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
     'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     'pygame.display.set_caption("Jõulumäng")\n' +
     '\n' +
@@ -388,13 +391,13 @@ export class GameComponent {
     'taustapilt = pygame.image.load("taust.png")\n' +
     '\n' +
     '# peategelane\n' +
-    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 30, laius)\n' +
+    'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15, laius)\n' +
     'peategelane = pygame.sprite.Group()\n' +
     'peategelane.add(tegelane_päkapikk)\n' +
     '\n' +
     '# lumepallid\n' +
     'lumepallid = pygame.sprite.Group()\n' +
-    'for i in range(8):\n' +
+    'for i in range(4):\n' +
     '    lumepallid.add(lumepall.Lumepall(laius, kõrgus))\n' +
     '\n' +
     '# mängu tsükkel\n' +
@@ -421,13 +424,14 @@ export class GameComponent {
     '\n' +
     'pygame.quit()\n';
   snowballUpdateInitCode = 'def __init__(self, akna_laius, akna_kõrgus):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
-    '        self.image = random.choice(võimalikud_pildid)\n' +
+    '        super().__init__()\n' +
+    '        võimalikud_pildid = ["lumepall_1.png", "lumepall_2.png", "lumepall_3.png", "lumepall_4.png", "lumepall_5.png"]\n' +
+    '        self.image = pygame.image.load(random.choice(võimalikud_pildid))\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.akna_laius = akna_laius\n' +
     '        self.akna_kõrgus = akna_kõrgus\n' +
     '        self.rect.x = random.randint(0, self.akna_laius)\n' +
-    '        self.rect.y = random.randint(-150, -50)\n' +
+    '        self.rect.y = random.randint(-75, -25)\n' +
     '        \n' +
     '    def update(self):\n' +
     '        self.rect.y += 5';
@@ -437,9 +441,9 @@ export class GameComponent {
     'class Lumepall(pygame.sprite.Sprite):\n' +
     '    \n' +
     '    def __init__(self, akna_laius, akna_kõrgus):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
+    '        super().__init__()\n' +
     '        võimalikud_pildid = ["lumepall_1.png", "lumepall_2.png", "lumepall_3.png", "lumepall_4.png", "lumepall_5.png"]\n' +
-    '        self.image = random.choice(võimalikud_pildid)\n' +
+    '        self.image = pygame.image.load(random.choice(võimalikud_pildid))\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.akna_laius = akna_laius\n' +
     '        self.akna_kõrgus = akna_kõrgus\n' +
@@ -448,9 +452,9 @@ export class GameComponent {
     '    \n' +
     '    def määra_asukoht(self):\n' +
     '        self.rect.x = random.randint(0, self.akna_laius)\n' +
-    '        self.rect.y = random.randint(-150, -50)\n' +
-    '        self.kiirusy = random.randint(1, 8)\n' +
-    '        self.kiirusx = random.randint(-3, 3)\n' +
+    '        self.rect.y = random.randint(-75, -25)\n' +
+    '        self.kiirusy = 1\n' +
+    '        self.kiirusx = random.randint(-1, 1)\n' +
     '        \n' +
     '    def update(self):\n' +
     '        self.rect.x += self.kiirusx\n' +
@@ -459,7 +463,7 @@ export class GameComponent {
     '            self.määra_asukoht()\n' +
     '        \n';
   elfLivesCode = '    def __init__(self, x, y, akna_laius, täiselud):\n' +
-    '        pygame.sprite.Sprite.__init__(self)\n' +
+    '        super().__init__()\n' +
     '        self.image = pygame.image.load("päkapikk.png")\n' +
     '        self.rect = self.image.get_rect()\n' +
     '        self.rect.centerx = x\n' +
@@ -468,15 +472,16 @@ export class GameComponent {
     '        self.täiselud = täiselud\n' +
     '        self.elud = täiselud';
   livesBarInitCode = 'def joonista_elud(aken, palju_täidetud):\n' +
-    '    riba_laius = 250\n' +
-    '    riba_kõrgus = 20\n' +
+    '    riba_laius = 100\n' +
+    '    riba_kõrgus = 10\n' +
     '    x = 15\n' +
     '    y = 15';
   livesBarCode = 'def joonista_elud(aken, palju_täidetud):\n' +
-    '    riba_laius = 250\n' +
-    '    riba_kõrgus = 20\n' +
+    '    riba_laius = 100\n' +
+    '    riba_kõrgus = 10\n' +
     '    x = 15\n' +
     '    y = 15\n' +
+    '    # arvutame kui pikk peaks olema roheline osa\n' +
     '    täidise_laius = palju_täidetud * riba_laius\n' +
     '    piirjoon = pygame.Rect(x, y, riba_laius, riba_kõrgus)\n' +
     '    täidis = pygame.Rect(x, y, täidise_laius, riba_kõrgus)\n' +
@@ -486,7 +491,7 @@ export class GameComponent {
     '    self.elud -= 1\n' +
     '    if self.elud < 0:\n' +
     '        self.elud = 0';
-  deductLivesMainCode = '# uuendame ja joonistame sprite\'ide grupid\n' +
+  deductLivesMainCode = '# uuendame sprite\'ide grupid\n' +
     'peategelane.update()\n' +
     'lumepallid.update()\n' +
     '\n' +
@@ -502,9 +507,9 @@ export class GameComponent {
     'lumepallid.draw(aken)';
   timeDifficultyCode = '# arvutame aja ja vajadusel lisame lumepalle ja kingitusi\n' +
     'aeg = round((pygame.time.get_ticks() - algusaeg) / 1000, 1) # aeg sekundites\n' +
-    'if aeg % 5 == 0 and len(lumepallid) < 8 + aeg // 5:\n' +
+    'if aeg % 5 == 0 and len(lumepallid) < 4 + aeg // 5:\n' +
     '    lumepallid.add(lumepall.Lumepall(laius, kõrgus))\n' +
-    'if aeg % 10 == 0 and len(kingitused) < 8 + aeg // 10:\n' +
+    'if aeg % 10 == 0 and len(kingitused) < 4 + aeg // 10:\n' +
     '    kingitused.add(kingitus.Kingitus(laius, kõrgus))';
   gameInFunctionCode = 'import pygame\n' +
     'import päkapikk\n' +
@@ -512,8 +517,8 @@ export class GameComponent {
     'import kingitus\n' +
     '\n' +
     'def joonista_elud(aken, palju_täidetud):\n' +
-    '    riba_laius = 250\n' +
-    '    riba_kõrgus = 20\n' +
+    '    riba_laius = 100\n' +
+    '    riba_kõrgus = 10\n' +
     '    x = 15\n' +
     '    y = 15\n' +
     '    täidise_laius = palju_täidetud * riba_laius\n' +
@@ -524,16 +529,16 @@ export class GameComponent {
     '    \n' +
     'def mäng(laius, kõrgus, aken, taustapilt):\n' +
     '    # font\n' +
-    '    font = pygame.font.SysFont(\'Cooper Black\', 40)\n\n' +
+    '    font = pygame.font.SysFont(\'Cooper Black\', 30)\n\n' +
     '    # peategelane\n' +
-    '    tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 30, laius, 10)\n' +
+    '    tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15, laius, 10)\n' +
     '    peategelane = pygame.sprite.Group()\n' +
     '    peategelane.add(tegelane_päkapikk)\n' +
     '\n' +
     '    # lumepallid ja kingitused\n' +
     '    lumepallid = pygame.sprite.Group()\n' +
     '    kingitused = pygame.sprite.Group()\n' +
-    '    for i in range(8):\n' +
+    '    for i in range(4):\n' +
     '        lumepallid.add(lumepall.Lumepall(laius, kõrgus))\n' +
     '        kingitused.add(kingitus.Kingitus(laius, kõrgus))\n' +
     '\n' +
@@ -564,9 +569,9 @@ export class GameComponent {
     '            \n' +
     '        # arvutame aja ja vajadusel lisame lumepalle ja kingitusi\n' +
     '        aeg = round((pygame.time.get_ticks() - algusaeg) / 1000, 1) # aeg sekundites\n' +
-    '        if aeg % 5 == 0 and len(lumepallid) < 8 + aeg // 5:\n' +
+    '        if aeg % 5 == 0 and len(lumepallid) < 4 + aeg // 5:\n' +
     '            lumepallid.add(lumepall.Lumepall(laius, kõrgus))\n' +
-    '        if aeg % 10 == 0 and len(kingitused) < 8 + aeg // 10:\n' +
+    '        if aeg % 10 == 0 and len(kingitused) < 4 + aeg // 10:\n' +
     '            kingitused.add(kingitus.Kingitus(laius, kõrgus))\n' +
     '            \n' +
     '        if tegelane_päkapikk.elud == 0:\n' +
@@ -581,7 +586,7 @@ export class GameComponent {
     '        \n' +
     '        # elud ja aeg\n' +
     '        joonista_elud(aken, tegelane_päkapikk.elud / tegelane_päkapikk.täiselud)\n' +
-    '        aken.blit(font.render(str(aeg), True, (255, 255, 255)), (300, 10))\n' +
+    '        aken.blit(font.render(str(aeg), True, (255, 255, 255)), (150, 5))\n' +
     '        \n' +
     '        # uuendame kasutaja jaoks vaadet\n' +
     '        pygame.display.flip()\n' +
@@ -589,8 +594,8 @@ export class GameComponent {
     'pygame.init()\n' +
     '\n' +
     '# akna loomine\n' +
-    'laius = 1262 # laius ja pikkus on pikslites\n' +
-    'kõrgus = 845\n' +
+    'laius = 630 # laius ja kõrgus on pikslites\n' +
+    'kõrgus = 422\n' +
     'aken = pygame.display.set_mode((laius, kõrgus))\n' +
     'pygame.display.set_caption("Jõulumäng")\n' +
     '\n' +
@@ -603,8 +608,8 @@ export class GameComponent {
 
   endScreenInitialCode = 'def lõpuaken(aken, taustapilt, tulemus):\n' +
     '    # fondid\n' +
-    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 120)\n' +
-    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 80)\n' +
+    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 60)\n' +
+    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 40)\n' +
     '    \n' +
     '    punane = (195, 20, 20)\n' +
     '    \n' +
@@ -616,13 +621,13 @@ export class GameComponent {
     '            if event.type == pygame.QUIT:\n' +
     '                return False\n' +
     '        aken.blit(taustapilt, (0, 0))\n' +
-    '        aken.blit(mäng_läbi, (260, 200))\n' +
-    '        aken.blit(saadud_tulemus, (340, 440))\n' +
+    '        aken.blit(mäng_läbi, (130, 100))\n' +
+    '        aken.blit(saadud_tulemus, (180, 220))\n' +
     '\n' +
     '        pygame.display.flip()';
 
   playAgainCode = 'roheline = (50, 150, 0)\n' +
-    'mängi_uuesti_asukoht = (360, 600)\n' +
+    'mängi_uuesti_asukoht = (180, 320)\n' +
     'mängi_uuesti = väike_font.render("Mängi uuesti", True, roheline)';
   playAgainMouseClickCode = 'hiire_asukoht = pygame.mouse.get_pos()\n' +
     'for event in pygame.event.get():\n' +
@@ -639,8 +644,8 @@ export class GameComponent {
     '        tulemus = None';
   endScreenWithPlayAgainCode = 'def lõpuaken(aken, taustapilt, tulemus):\n' +
     '    # fondid\n' +
-    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 120)\n' +
-    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 80)\n' +
+    '    suur_font = pygame.font.SysFont(\'Cooper Black\', 60)\n' +
+    '    väike_font = pygame.font.SysFont(\'Cooper Black\', 40)\n' +
     '    \n' +
     '    punane = (195, 20, 20)\n' +
     '    roheline = (50, 150, 0)\n' +
@@ -650,7 +655,7 @@ export class GameComponent {
     '    saadud_tulemus = väike_font.render("Tulemus: " + str(tulemus), True, punane)\n' +
     '    \n' +
     '    # uuesti mängimise tekst, peale liikudes muudab värvi\n' +
-    '    mängi_uuesti_asukoht = (360, 600)\n' +
+    '    mängi_uuesti_asukoht = (180, 320)\n' +
     '    mängi_uuesti_roheline = väike_font.render("Mängi uuesti", True, roheline)\n' +
     '    mängi_uuesti_tumeroheline = väike_font.render("Mängi uuesti", True, tumeroheline)\n' +
     '    \n' +
@@ -667,8 +672,8 @@ export class GameComponent {
     '            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and mängi_uuesti_rect.collidepoint(hiire_asukoht):\n' +
     '                return True\n' +
     '        aken.blit(taustapilt, (0, 0))\n' +
-    '        aken.blit(mäng_läbi, (260, 200))\n' +
-    '        aken.blit(saadud_tulemus, (340, 440))\n' +
+    '        aken.blit(mäng_läbi, (130, 100))\n' +
+    '        aken.blit(saadud_tulemus, (180, 220))\n' +
     '\n' +
     '        if mängi_uuesti_rect.collidepoint(hiire_asukoht):\n' +
     '            aken.blit(mängi_uuesti_tumeroheline, mängi_uuesti_asukoht)\n' +

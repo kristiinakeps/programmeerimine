@@ -128,7 +128,7 @@ export class ClassesComponent {
     new ExerciseHint('Siin ongi tegelikult lihtsam kontrollida, kas võtit pole sõnastikus, sest just sellisel juhul tahame sinna uue võti-väärtus paari lisada.',
       'if klassi_number not in klassid:\n' +
       '        klassid[klassi_number] = Klass(klassi_number) # loome uue Klassi isendi ja lisame ta kohe sõnastikku'),
-    new ExerciseHint('Nüüd me teame, et failist loetud klassi numbrile vastav kirje peab sõnasikus olemas olema. Me tahame selle sealt kätte saada ja Klassi ' +
+    new ExerciseHint('Nüüd me teame, et failist loetud klassi numbrile vastav kirje peab sõnastikus olemas olema. Me tahame selle sealt kätte saada ja Klassi ' +
       'isendile lisada uue õpilase.', null),
     new ExerciseHint('Küsime sõnastikust klassi numbrile vastava Klassi isendi ja rakendame selle meetodit <span class="fst-italic">lisa_õpilane</span>.',
       'klassid[klassi_number].lisa_õpilane(õpilane)'),
