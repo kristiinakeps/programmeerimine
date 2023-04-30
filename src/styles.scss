@@ -6,8 +6,9 @@
 $navbar-sidebar-width: 20rem;
 $navbar-sidebar-breakpoint: 'md';
 
-$color-pink: #de2899;
+$color-pink: #d82292;
 $color-pink-dark: #9e20d4;
+$color-pink-light: #fba7db;
 $color-dark: #000000;
 $color-purple: #5a4d94;
 $color-purple-menu: #514586;
@@ -179,6 +180,7 @@ a:hover {
 
 .navbar-toggler {
   margin-right: 1rem;
+  color: $color-white;
 }
 
 .nav-item {
@@ -243,7 +245,7 @@ a:hover {
 }
 
 .active {
-  color: $color-pink !important;
+  color: $color-pink-light !important;
 }
 
 .intro-container {
