@@ -202,7 +202,7 @@ export class GuiComponent {
     '    fail = open("mängijad.txt", "w")\n' +
     '    fail.close()'), new ExerciseHint('Lisatud mängijad on meil kõik isendiväljal <span class="fst-italic">mängijad</span>. Seda ' +
       'järjendit saame tsüklis läbi käia ja sealt iga mängija faili kirjutada.', null),
-  new ExerciseHint('Ei maksa unustada, et peame iga rea lõppu käsitsi reavahtussümboli lisama.', 'for mängija in self.mängijad: # mängijad isendiväljalt\n' +
+  new ExerciseHint('Ei maksa unustada, et peame iga rea lõppu käsitsi reavahetussümboli lisama.', 'for mängija in self.mängijad: # mängijad isendiväljalt\n' +
     '    fail.write(mängija.__str__() + "\\n")'), new ExerciseHint('Pärast mängijate salvestamist võime tegelikult ka kogu oma programmiakna ' +
       'kinni panna. Selleks on klassis <span class="fst-italic">QMainWindow</span> olemas meetod <span class="fst-italic">close</span>. Kuna meie ' +
       'Põhiaken klass on selle klassi alamklass, siis saame siin ka seda meetodit kasutada:', 'self.close()'),

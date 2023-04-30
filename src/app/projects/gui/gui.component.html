@@ -71,7 +71,7 @@
     </thead>
     <tbody>
     <tr>
-      <td>QCheckbox</td>
+      <td>QCheckBox</td>
       <td>Märkeruut, kuhu saab linnukese teha.</td>
       <td>vidin = QCheckBox()</td>
       <td>
@@ -308,7 +308,7 @@
   Sünnipäeva puhul on tegemist kuupäevaga, seega meile võiks sobida <span class="fst-italic">QDateEdit</span>. Kellaaeg pole meile siin oluline.
   Soo valimiseks sobiks nii <span class="fst-italic">QRadioButton</span> kui <span class="fst-italic">QComboBox</span>, sest mõlemad
   lubavad valida ühe etteantud valikutest. Kasutame siin <span class="fst-italic">QComboBox</span>'i. Põhi- või varumängija jaoks sobiks
-  ka need variandid, kuid kasutame siin hoopis <span class="fst-italic">QCheckbox</span>'i. Kui märkeruutu on linnuke tehtud, siis on tegemist
+  ka need variandid, kuid kasutame siin hoopis <span class="fst-italic">QCheckBox</span>'i. Kui märkeruutu on linnuke tehtud, siis on tegemist
   põhimängijaga, kui linnukest pole, siis varumängijaga.</span></div>
   <div class="mt-2">Impordime vajalikud vidinad ja loome vastavad isendid. <span class="fst-italic">QComboBox</span>'ile
     paneme
@@ -342,7 +342,8 @@
   <div><span>Vidina loomine ei ole eriti keeruline. Peame vaid looma uue klassi, mis oleks mõne vidina alamklass ja ongi kõik. Võtame näiteks kõige
   üldisema vidina <span class="fst-italic">QWidget</span> ja loome uue klassi nimega Vorm, mis on <span
       class="fst-italic">QWidget</span>'i alamklassi.
-  Seejärel lisame sinna isendiväljadena kõik meie vormi elemendid, mis enne olid tavalised muutujad.</span></div>
+  Seejärel lisame sinna isendiväljadena kõik meie vormi elemendid, mis enne olid tavalised muutujad. Kui soovid, võid luua selle klassi jaoks eraldi faili,
+    nagu tegime mängu luues. Lihtsuse mõttes kirjutame siin näites kõik ühte koodifaili.</span></div>
   <div class="mt-2 code-block"><span [highlight]="formClassCode"></span></div>
   <div class="mt-2"><span>Tasub tähelepanu pöörata meie uue klassi viimasele reale.
     Varem lõime oma põhiprogrammi lõpus <span class="fst-italic">QWidget</span> isendi ja lisasime sellele paigutuseks oma ruudustiku.
@@ -351,7 +352,7 @@
   alamklass, seega saame paigutuse otse oma klassi isendi külge panna.</span></div>
   <div class="mt-2"><span>Põhiprogramm on meil nüüd palju lühem:</span></div>
   <div class="mt-2 code-block"><span [highlight]="formMainCode"></span></div>
-  <div class="mt-2"><span>Nüüd arendame oma rakendust edasi. Saame vormi kaudu kõik jalgapllimängija jaoks vajaliku info kokku korjata ning
+  <div class="mt-2"><span>Nüüd arendame oma rakendust edasi. Saame vormi kaudu kõik jalgpallimängija jaoks vajaliku info kokku korjata ning
   peaksime selle info kuhugi salvestama. Selleks võiksime luua ka mängija jaoks klassi. See on nüüd täiesti tavaline klass, mis ei ole seotud
   vidinatega.</span></div>
 </div>
@@ -395,7 +396,7 @@
   <div class="mt-2"><span>Nüüd, kus oleme ka põhiakna seadistamise tõstnud eraldi klassi, on meie põhiprogramm kohe eriti lühikeseks muutunud.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="mainWindowInitCode"></span></div>
-  <div class="mt-2"><span>Jälgi ka, et kõik kasutatud vidinad ja paigutused saaksid imporditud. Hetkel peaks import selline välja nägema:</span>
+  <div class="mt-2"><span>Jälgi ka, et kõik kasutatud vidinad ja paigutused saaksid imporditud. Hetkel peaks faili alguses import selline välja nägema:</span>
   </div>
   <div class="mt-2 code-block"><span
     [highlight]="'from PyQt6.QtWidgets import QApplication, QMainWindow, QCheckBox, QComboBox, QDateEdit, QLineEdit, QLabel, QGridLayout, QWidget, QVBoxLayout'"></span>
@@ -433,7 +434,7 @@
   <span class="fst-italic">date</span>, aga see kättesaadud kuupäev on <span class="fst-italic">QDate</span>-tüüpi. Meile piisaks siin tavalisest sõnest.
   Saame õnneks selle kuupäeva isendi muuta sõneks meetodiga <span class="fst-italic">toString</span>. Sellele meetodile argumendiks võime anda
   kuupäeva kuvamise mustri. Selles mustris "dd" tähistab päeva, "MM" kuud ja "yyyy" aastat. Näiteks kui tahame neid punktidega eraldatult, siis
-  võime anda arguemndiks "dd.MM.yyyy"</span></div>
+  võime anda argumendiks "dd.MM.yyyy".</span></div>
   <div class="mt-2 code-block"><span [highlight]="dateCode"></span></div>
   <div class="mt-2"><span>Sugu oli meil rippmenüüst valitav ja selleks kasutasime <span
     class="fst-italic">QComboBox</span> vidinat.
@@ -491,7 +492,7 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
     <span>Sarnaselt saame kujundada ka teisi vidinaid. Näieks võime ka nuppude värve natuke muuta:</span></div>
   <div class="mt-2 code-block"><span [highlight]="buttonsStyle"></span></div>
   <div class="mt-2"><span>Mis saab aga siis, kui soovime ainult mõne üksiku isendi stiili muuta, mitte kõikide sama tüüpi isendite? Eelmises
-  peatükis nägime, et saame ise CSS-is stiiliklasse kirjeldada ja panna oma elementidele vastavad stiiliklassi külge. Täpselt sama saame teha ka siin.
+  peatükis nägime, et saame ise CSS-is stiiliklasse kirjeldada ja panna oma elementidele vastavad stiiliklassid külge. Täpselt sama saame teha ka siin.
   Loome näiteks kujunduse nimega <span class="fst-italic">liige</span>, mille tahame määrata ainult nendele <span
       class="fst-italic">QLabel</span>
   isenditele, mis hoiavad endas mängijate infot. Kui kirjeldame oma uut stiiliklassi, siis tuleb CSS-is selle nime ette ka punkt lisada:</span>

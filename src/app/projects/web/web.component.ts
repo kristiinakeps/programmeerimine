@@ -9,9 +9,9 @@ export class WebComponent {
 
   webBasicCode = 'from flask import Flask\n' +
     '\n' +
-    'app = Flask(__name__)\n' +
+    'rakendus = Flask(__name__)\n' +
     '\n' +
-    '@app.route("/")\n' +
+    '@akendus.route("/")\n' +
     'def avaleht():\n' +
     '    return \'Tere! Veebirakendus töötab.\'';
   webOutput = ' # Running the app with options chosen by Thonny. See Help for details.\n' +
@@ -310,6 +310,6 @@ export class WebComponent {
     '        </div>\n' +
     '    </body>\n' +
     '</html>';
-  iconCode = '<link rel="shortcut icon" href="{{ url_for(\'static\', filename=\'icon.png\') }}">';
+  iconCode = '<link rel="shortcut icon" href="{{ url_for(\'static\', filename=\'ikoon.png\') }}">';
 
 }

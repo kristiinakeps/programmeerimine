@@ -25,7 +25,7 @@
 <h4 class="mt-5" [attr.id]="'veebirakendused'">Kuidas veebirakendused töötavad?</h4>
 <div class="mt-3 box-container">
   <div><span>Enne veel kui hakkame ise veebirakendust looma, räägime lühidalt, kuidas veebirakendused töötavad. Veebirakendused on programmid, mis
-    käivad tüüpiliselt kuskil serveris.
+    tüüpiliselt töötavad kuskil serveris.
   Server on kindlat tüüpi arvuti, mis pakub mingit teenust. Näiteks meiliserver tegeleb e-kirjade saatmisega. Mänguserverid võimaldavad mängida mänge teiste
     kasutajatega. Veebiserver tegeleb veebilehtede kättesaadavaks tegemisega.</span></div>
   <div class="mt-2">Serveril on oma kindel IP-aadress ehk internetiaadress, mille järgi saavad teised seadmed tema poole
@@ -77,7 +77,7 @@
 <div class="mt-3 box-container">
   <div class="row px-0">
     <div class="col-lg-9"><span>Selles peatükis loome lihtsa kodutööde haldamise veebirakenduse. Kui veebirakendus käivitada, siis algselt ühtegi kodutööd ei ole, kuid
-  läbi rakenduse saame neid endale lisada. Veebirakendus kuvab meile ootel kodutööde nimekirja ja saame sealt tehtud kodutööd ka eemdaldada.</span>
+  läbi rakenduse saame neid endale lisada. Veebirakendus kuvab meile ootel kodutööde nimekirja ja saame sealt tehtud kodutööd ka eemaldada.</span>
     </div>
     <div class="col-lg-2 my-auto mx-3">
       <img src="../../../assets/images/web/book.png" alt="book"
@@ -105,6 +105,7 @@
   Kooloniga järgneb arv 5000, mis tähistab arvuti porti, kus meie rakendus käib. Vaikimisi tehakse lehele minnes GET-päring. Kõik tehtud päringud
   ilmuvad ka Thonny konsooli, kus on näha, mis ajal milline päring tehti.</span></div>
   <div class="mt-2 code-block fst-italic"><span [innerText]="requestLog"></span></div>
+  <div class="mt-2"><span>Kui soovid rakendust peatada, siis pead seda tegema Thonnys STOP-nupule vajutades, muidu jääbki rakendus tööle.</span></div>
 </div>
 <h4 class="mt-5" [attr.id]="'html'">Mis on HTML?</h4>
 <div class="mt-3 box-container">
@@ -115,8 +116,8 @@
   <div class="mt-2 code-block"><span [highlight]="simpleHtmlCode"></span></div>
   <div class="mt-2"><span>Siin esimene rida ütleb ära, et meil on tegemist HTML dokumendiga. Ülejäänud sisu on <span
     class="fst-italic">html</span>-märgendite vahel.
-  Kogu HTML-i keel koosnebki märgendite abil loodud elementidest. Igal elemendil on algusmärgend ja lõpumärgend. Algusmärgend on nurgeliste sulgude vahel ja
-  lõpumärgendil on alguses lisaks nurksulule ka kaldkriips. Nende abil määratakse ära, kus element algab ja lõppeb. </span>
+  Kogu HTML-i keel koosnebki märgendite abil loodud elementidest. Igal elemendil on algusmärgend ja lõpumärgend. Algusmärgend on noolsulgude vahel ja
+  lõpumärgendil on alguses lisaks noolsulule ka kaldkriips. Nende abil määratakse ära, kus element algab ja lõppeb. </span>
   </div>
   <div class="mt-2">Märgend <span class="fst-italic">head</span> tähistab HTML-faili päist. Seal saab ära määrata,
     mis kodeeringus meie fail on,
@@ -191,7 +192,8 @@
       class="fst-italic">render_template</span>,
   millele saab ette anda HTML-faili nime ja mis tagastab selle faili sisu. Selleks, et see funktsioon leiaks meie HTML-faili üles, peab meie HTML-fail asuma
   kaustas nimega <span class="fst-italic">templates</span>. See kaust peab olema samas kaustas nagu meie Pythoni koodifail. Tekitame sellise kausta ja
-  loome sinna faili nimega <span class="fst-italic">avaleht.html</span>. Kopeerime sellesse faili ülealtoodud lihtsa HTML-faili näite.</span>
+  loome sinna faili nimega <span class="fst-italic">avaleht.html</span>. Faili saad luua ka Thonnyga, kuid salvestades tuleb jälgida, et faili lõppu ei lisataks
+      <span class="fst-italic">.py</span>-laiendit. Kopeerime sellesse faili ülaltoodud lihtsa HTML-faili näite.</span>
     </div>
     <div class="col-lg-3 my-auto mx-3">
       <img src="../../../assets/images/web/folders_templates.png" alt="templates folder"
@@ -258,7 +260,7 @@
   <div><span>Veebirakenduses saame uut aadressi lisades määrata ära, mis tüüpi päringud on sellele aadressile lubatud. Vaikimisi on lubatud ainult
   GET-päringud. Nüüd lisame oma "/lisamine" aadressile ka POST-päringu võimaluse. Funktsiooni sees peame siis lisama kontrolli, mis vaataks, mis tüüpi
   päring tehti. GET-päringu puhul tagastame jätkuvalt lihtsalt vastava HTML-i, aga POST-päringu puhul tahame nüüd uue kodutöö järjendisse lisada ja seejärel
-  võikisme kasutaja tagasi avalehele suunata.</span></div>
+  võiksime kasutaja tagasi avalehele suunata.</span></div>
   <div class="mt-2"><span>Kõigepealt peame lisama mõned vajalikud impordid:</span></div>
   <div class="mt-2 code-block"><span
     [highlight]="'from flask import Flask, render_template, request, url_for, redirect'"></span></div>
@@ -269,7 +271,7 @@
   Väljal <span class="fst-italic">method</span> on kirjas kasutatud meetodi nimi. Kui tegemist oli POST-meetodiga, siis saame
   <span class="fst-italic">request</span>-objekti küljest kätte ka oma vormi (väljal <span
       class="fst-italic">form</span>). See vorm on sõnastik, kus
-  võtmed on HTML-is <span class="fst-italic">input</span>-märgenditele antud nimed.</span></div>
+  võtmed on HTML-is <span class="fst-italic">input</span>-märgenditele antud nimed. Sealt saadud kodutöö kirjelduse lisame ootel kodutööde järjendisse.</span></div>
   <div class="mt-2"><span>Lõpuks, kui tegemist oli POST-päringuga, siis tahame suunata kasutaja tagasi avalehele. Selleks kasutame funktsiooni
   <span class="fst-italic">redirect</span>, millele argumendiks anname funktsiooni <span
       class="fst-italic">url_for</span> tagastusväärtuse.
@@ -317,10 +319,10 @@
     </div>
   </div>
   <div class="mt-2 code-block"><span [highlight]="homePageWithDeleteCode"></span></div>
-  <div class="mt-2"><span>Veebirakenduses lisame avalehe lubatud meetodite hulka ka POST-meetodi, mille korral eemdaldame etteantud kodutöö ootel kodutööde järjendist.</span>
+  <div class="mt-2"><span>Veebirakenduses lisame avalehe lubatud meetodite hulka ka POST-meetodi, mille korral eemaldame etteantud kodutöö ootel kodutööde järjendist.</span>
   </div>
   <div class="mt-2 code-block"><span [highlight]="applicationWithDeleteCode"></span></div>
-  <div class="mt-2"><span>Nüüd peaks iga kodutöö all olema ka eemdalamise nupp, millele vajutades vastav kodutöö järjendist eemaldatakse. Sellega on kogu
+  <div class="mt-2"><span>Nüüd peaks iga kodutöö all olema ka eemaldamise nupp, millele vajutades vastav kodutöö järjendist eemaldatakse. Sellega on kogu
   meie veebirakenduse loogika olemas, aga kindlasti nõustud, et see rakendus ei näe just kõige ilusam välja. Järgmiseks vaatamegi, kuidas neid elemente kujundada.</span>
   </div>
   <div class="text-center my-3">
@@ -416,7 +418,7 @@
   <div class="row px-0">
     <div class="col-lg-8"><span>Loome me endale samuti CSS-faili. <span class="fst-italic">Flask</span> nõuab, et CSS-failid oleksid kaustas nimega
   <span class="fst-italic">static</span>, seega loome oma projektikausta sellenimelise uue kausta ja lisame sinna faili <span
-        class="fst-italic">kujundus.css</span>. Kopeerime faili järgmise sisu:</span></div>
+        class="fst-italic">kujundus.css</span>, selle faili loomiseks võib samuti Thonnyt kasutada. Kopeerime faili järgmise sisu:</span></div>
     <div class="col-lg-3 my-auto mx-3">
       <img src="../../../assets/images/web/folders.png" alt="folders"
            style="height: 13rem">
