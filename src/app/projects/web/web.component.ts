@@ -11,7 +11,7 @@ export class WebComponent {
     '\n' +
     'rakendus = Flask(__name__)\n' +
     '\n' +
-    '@akendus.route("/")\n' +
+    '@rakendus.route("/")\n' +
     'def avaleht():\n' +
     '    return \'Tere! Veebirakendus töötab.\'';
   webOutput = ' # Running the app with options chosen by Thonny. See Help for details.\n' +
