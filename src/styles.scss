@@ -180,7 +180,8 @@ a:hover {
 
 .navbar-toggler {
   margin-right: 1rem;
-  color: $color-white;
+  color: $color-white !important;
+  border-color: $color-white !important;
 }
 
 .nav-item {
