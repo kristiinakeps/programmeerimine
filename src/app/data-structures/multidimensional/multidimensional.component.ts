@@ -192,26 +192,26 @@ export class MultidimensionalComponent {
     '          "Merit": [3, 3, 4]}\n' +
     'ained = ("eesti keel", "matemaatika", "inglise keel")\n' +
     'for õpilane in hinded:\n' +
-    '    print(õpilane + " sai järjmised hinded:")\n' +
+    '    print(õpilane + " sai järgmised hinded:")\n' +
     '    for i in range(len(ained)):\n' +
     '        print(ained[i] + ": " + str(hinded[õpilane][i]))\n' +
     '    print("-------------------") # see on lihtsalt õpilaste eraldamiseks';
-  gradesOutput = 'Katrin sai järjmised hinded:\n' +
+  gradesOutput = 'Katrin sai järgmised hinded:\n' +
     'eesti keel: 5\n' +
     'matemaatika: 5\n' +
     'inglise keel: 4\n' +
     '-------------------\n' +
-    'Merilin sai järjmised hinded:\n' +
+    'Merilin sai järgmised hinded:\n' +
     'eesti keel: 3\n' +
     'matemaatika: 5\n' +
     'inglise keel: 4\n' +
     '-------------------\n' +
-    'Karl sai järjmised hinded:\n' +
+    'Karl sai järgmised hinded:\n' +
     'eesti keel: 5\n' +
     'matemaatika: 4\n' +
     'inglise keel: 5\n' +
     '-------------------\n' +
-    'Merit sai järjmised hinded:\n' +
+    'Merit sai järgmised hinded:\n' +
     'eesti keel: 3\n' +
     'matemaatika: 3\n' +
     'inglise keel: 4\n' +

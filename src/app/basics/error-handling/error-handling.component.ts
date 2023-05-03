@@ -192,14 +192,14 @@ export class ErrorHandlingComponent {
     'else:\n' +
     '    print("Sisestatud arv on: " + str(arv))';
   defRaiseValueErrorCode = 'def täisarvu_küsimine():\n' +
-    '    arv = int(input("Sisesta täisav vahemikus 1-10: "))\n' +
+    '    arv = int(input("Sisesta täisarv vahemikus 1-10: "))\n' +
     '    if arv < 1 or arv > 10:\n' +
     '        raise ValueError\n' +
     '    return arv\n' +
     '\n' +
     'arv = täisarvu_küsimine()';
   defRaiseErrorMessageCode = 'def täisarvu_küsimine():\n' +
-    '    arv = int(input("Sisesta täisav vahemikus 1-10: "))\n' +
+    '    arv = int(input("Sisesta täisarv vahemikus 1-10: "))\n' +
     '    if arv < 1 or arv > 10:\n' +
     '        raise ValueError("vahemik peab olema 1-10")\n' +
     '    return arv\n' +

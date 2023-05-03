@@ -122,11 +122,11 @@
     võime saada vea. Õnneks on programmeerimiskeeltes võimalik sellistes veaohtlikes kohtades tekkivad vead kinni püüda ja nendele reageerida.
   </span>
   </div>
-  <div class="mt-2"><span>Pythonis koosneb erindi püüdmine ja sellele reageerimine kahest blokist: <strong class="strong fst-italic">try</strong> ja <strong class="strong fst-italic">except</strong>.
-    <span class="fst-italic">Try</span>-blokki kirjutatakse need koodiread, kus võib erind tekkida ja <span class="fst-italic">except</span>-blokis on need koodiread, mida tahame
-    täita, kui <span class="fst-italic">try</span>-blokis tekib erind. <span class="fst-italic">Except</span>-bloki kohta võime öelda ka <strong class="strong">püünis</strong>.
+  <div class="mt-2"><span>Pythonis koosneb erindi püüdmine ja sellele reageerimine kahest plokist: <strong class="strong fst-italic">try</strong> ja <strong class="strong fst-italic">except</strong>.
+    <span class="fst-italic">Try</span>-plokki kirjutatakse need koodiread, kus võib erind tekkida ja <span class="fst-italic">except</span>-plokis on need koodiread, mida tahame
+    täita, kui <span class="fst-italic">try</span>-plokis tekib erind. <span class="fst-italic">Except</span>-ploki kohta võime öelda ka <strong class="strong">püünis</strong>.
     Näiteks võime püünises kasutajale teada anda, et tema sisestatud väärtus ei sobi ja paluda tal uus väärtus sisestada või määrata ise mingi vaikeväärtus.
-    Nagu paljude konstruktsioonide puhul, siis tuleb ka siin kumbagi blokki kuuluvad read kirjutada taandega.
+    Nagu paljude konstruktsioonide puhul, siis tuleb ka siin kumbagi plokki kuuluvad read kirjutada taandega.
   </span>
   </div>
     </div>
@@ -148,10 +148,10 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Soovi korral saame <span class="fst-italic">except</span>-blokile ette anda, mis tüüpi vigu ta peab kinni püüdma (eelmises näites püüti kõiki erindeid). Sellisel juhul võime lisada ka mitu
-    <span class="fst-italic">except</span>-blokki üksteise järele, mis püüavad kinni erinevat tüüpi vigu. Näiteks järgmises koodijupis püüab esimene püünis täisarvuks teisendamise vigu ehk
+  <div><span>Soovi korral saame <span class="fst-italic">except</span>-plokile ette anda, mis tüüpi vigu ta peab kinni püüdma (eelmises näites püüti kõiki erindeid). Sellisel juhul võime lisada ka mitu
+    <span class="fst-italic">except</span>-plokki üksteise järele, mis püüavad kinni erinevat tüüpi vigu. Näiteks järgmises koodijupis püüab esimene püünis täisarvuks teisendamise vigu ehk
     <span class="fst-italic">ValueErroreid</span> ja teine püünis nulliga jagamise vigu ehk <span class="fst-italic">ZeroDivisionErroreid</span>. Tasub veel mainida, et kohe kui
-    <span class="fst-italic">try</span>-blokis tekib viga, siis ülejäänud ridu, mis <span class="fst-italic">try</span>-blokis on, ei täideta. Minnakse hoopis kohe sobivat püünist otsima.
+    <span class="fst-italic">try</span>-plokis tekib viga, siis ülejäänud ridu, mis <span class="fst-italic">try</span>-plokis on, ei täideta. Minnakse hoopis kohe sobivat püünist otsima.
   </span>
   </div>
   <div class="code-block mt-2">
@@ -198,13 +198,13 @@
 <app-radiochoice-test [code]="tryTestCode" [items]="tryTestItems" [formControlNameBase]="'tryTest'" [title]="'Mida väljastab järgmine koodijupp?'"></app-radiochoice-test>
 <h4 class="mt-5">Tsüklis väärtuse küsimine</h4>
 <div class="box-container mt-3">
-  <div><span>Eelmisetes näidetes väljastasime kasutajale, et sisestatud arv ei sobi, aga veel kasulikum oleks kasutajalt arvu lihtsalt uuesti küsida. Muidugi on alati võimalus,
+  <div><span>Eelmistes näidetes väljastasime kasutajale, et sisestatud arv ei sobi, aga veel kasulikum oleks kasutajalt arvu lihtsalt uuesti küsida. Muidugi on alati võimalus,
   et kasutaja sisestab ka teisel korral ebasobiva väärtuse, seepärast on sisendi küsimist kõige parem teha tsüklis. Tsüklis küsitakse sisendit nii kaua, kuni saame sobiva sisendi, mille korral enam erindit ei teki.</span></div>
   <div class="code-block mt-2">
     <span [highlight]="loopTryCode"></span>
   </div>
-  <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-bloki ridasid ei täideta, vaid minnakse
-  püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-bloki ridu edasi ja jõutakse <span class="fst-italic">break</span>-käsuni.</span></div>
+  <div class="mt-2"><span>Kui sisendi teisendamisel arvuks tekib erind, siis ülejäänud <span class="fst-italic">try</span>-ploki ridasid ei täideta, vaid minnakse
+  püüniste juurde. Kui viga ei teki, siis täidetakse <span class="fst-italic">try</span>-ploki ridu edasi ja jõutakse <span class="fst-italic">break</span>-käsuni.</span></div>
   <div class="code-block mt-2 fst-italic">
     <span>Sisesta arv: <span class="code-input">üks</span><br></span>
     <span>Sisestatud arv ei ole täisarv!<br></span>
@@ -221,7 +221,7 @@
 <h4 [attr.id]="'praktika'" class="mt-5">Erindite püüdmise hea praktika</h4>
 <div class="box-container mt-3">
   <div><span>Erindite püüdmisel on paar kuldreeglit, millest tasub kinni pidada. Esiteks on hea püüda kinni kindlat sorti vigu ehk täpsustada püünises veatüüp, mida soovime kinni püüda.
-  Kui me ei täpsusta veatüüpi, siis võib juhtuda, et püütakse kinni ka erindid, mida me tegelikult ei taha kinni püüda. Näiteks kui oleme <span class="fst-italic">try</span>-blokis
+  Kui me ei täpsusta veatüüpi, siis võib juhtuda, et püütakse kinni ka erindid, mida me tegelikult ei taha kinni püüda. Näiteks kui oleme <span class="fst-italic">try</span>-plokis
   teinud vea muutuja nimetamises ja tekib <span class="fst-italic">NameError</span>-erind, siis me tahaksime seda veateadet näha, et saaksime oma koodi parandada.</span></div>
   <div class="mt-2"><span>Selles näites püüame kinni kõik vead, ilma veatüüpi täpsustamata:</span></div>
   <div class="code-block mt-2">
@@ -246,9 +246,9 @@
   </div>
 </div>
 <div class="box-container mt-3">
-  <div><span>Teine hea praktika on panna <span class="fst-italic">try</span>-blokki ainult need read, kus võib viga tekkida. Kogu muu kood peaks olema väljaspool
-  <span class="fst-italic">try-except</span>-blokki. Siin võib aga tekkida küsimus, et kuhu peaks panema need read, mida tahame täita siis, kui viga ei teki? Me ei saa neid alati panna
-  lihtsalt pärast <span class="fst-italic">try-except</span>-blokki, sest kui <span class="fst-italic">try</span>-blokis tekkis viga, siis ei pruugi meil olla kõiki muutujaid ja väärtusi,
+  <div><span>Teine hea praktika on panna <span class="fst-italic">try</span>-plokki ainult need read, kus võib viga tekkida. Kogu muu kood peaks olema väljaspool
+  <span class="fst-italic">try-except</span>-plokki. Siin võib aga tekkida küsimus, et kuhu peaks panema need read, mida tahame täita siis, kui viga ei teki? Me ei saa neid alati panna
+  lihtsalt pärast <span class="fst-italic">try-except</span>-plokki, sest kui <span class="fst-italic">try</span>-plokis tekkis viga, siis ei pruugi meil olla kõiki muutujaid ja väärtusi,
   mida tahame kasutada:</span></div>
   <div class="code-block mt-2">
     <span [highlight]="tryLinesAfterCode"></span>
@@ -262,9 +262,9 @@
     print("Sisestatud arv on: " + str(arv))<br>
     NameError: name 'arv' is not defined</span>
   </div>
-  <div class="mt-2"><span>Siinkohal tuleb appi üks lisablokk, mille saame <span class="fst-italic">try-exceptile</span> veel otsa lisada. Selle bloki nimi
+  <div class="mt-2"><span>Siinkohal tuleb appi üks lisaplokk, mille saame <span class="fst-italic">try-exceptile</span> veel otsa lisada. Selle ploki nimi
   on <span class="fst-italic">else</span>, täpselt sama nagu tingimuslause puhul. <span class="fst-italic">Try-except-else</span> puhul pannakse
-  <span class="fst-italic">else</span>-blokki see kood, mida tahetakse täita, kui <span class="fst-italic">try</span>-blokis viga ei tekkinud.
+  <span class="fst-italic">else</span>-plokki see kood, mida tahetakse täita, kui <span class="fst-italic">try</span>-plokis viga ei tekkinud.
     <span class="fst-italic">Else</span>-harus tekkivaid erindeid enam kinni ei püüta.</span></div>
   <div class="code-block mt-2">
     <span [highlight]="tryExceptElseCode"></span>
@@ -301,7 +301,7 @@
   </span>
   </div>
   <div class="code-block mt-2 fst-italic">
-    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span>Sisesta täisarv vahemikus 1-10: <span class="code-input">12</span><br></span>
     <span class="code-error">Traceback (most recent call last):<br>
       File "C:\Users\test.py", line 7, in &lt;module&gt;<br>
       arv = täisarvu_küsimine()<br>
@@ -317,7 +317,7 @@
     <span [highlight]="defRaiseErrorMessageCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
-    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span>Sisesta täisarv vahemikus 1-10: <span class="code-input">12</span><br></span>
     <span class="code-error">Traceback (most recent call last):<br>
       File "C:\Users\test.py", line 7, in &lt;module&gt;<br>
       arv = täisarvu_küsimine()<br>
@@ -332,7 +332,7 @@
     <span [highlight]="raiseErrorExceptCode"></span>
   </div>
   <div class="code-block mt-2 fst-italic">
-    <span>Sisesta täisav vahemikus 1-10: <span class="code-input">12</span><br></span>
+    <span>Sisesta täisarv vahemikus 1-10: <span class="code-input">12</span><br></span>
     <span>Sisestatud arv ei ole täisarv vahemikus 1-10!</span>
   </div>
 </div>

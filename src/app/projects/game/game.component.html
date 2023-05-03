@@ -146,11 +146,11 @@
   <div class="mt-2 code-block"><span [highlight]="'import päkapikk'"></span></div>
   <div class="mt-2"><span>Nüüd saame failis <span class="fst-italic">päkapikk.py</span> olevaid asju kasutada täpselt samamoodi nagu kasutame
   <span class="fst-italic">pygame</span>'i asju. Näiteks loome ühe uue päkapiku isendi (samas kohas kus laadisime sisse taustapilti).
-  Paneme oma päkapikku x-koordinaadiks akna keskpukti. Saame selle kätte kui jagame laiuse kahega (kasutame täisarvulist jagamist).
+  Paneme oma päkapikku x-koordinaadiks akna keskpunkti. Saame selle kätte kui jagame laiuse kahega (kasutame täisarvulist jagamist).
   Y-koordinaadiks sobib midagi natuke alumisest äärest ülevalpool, näiteks 15 pikslit vähem kui kogu akna kõrgus.</span>
   </div>
   <div class="mt-2 code-block"><span
-    [highlight]="'# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\ntegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15)'"></span>
+    [highlight]="'# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani all servas\ntegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15)'"></span>
   </div>
   <div class="mt-2">
     <span>Selleks, et oma tegelast mängus kasutada, peame ta lisama mõnda <span class="fst-italic">pygame</span>'i
@@ -267,7 +267,7 @@
   x-suunas kiiruse jaoks. X-kiirus võib olla ka negatiivne, siis liigub lumepall oma alguspunktist vasakule.</span>
   </div>
   <div class="mt-2"><span>Teiseks pole meil mõtet lasta lumepallil peale akna piiridest väljumist enam edasi minna.
-  Pigem viime ta siis hoopis üles tagasi ja laseme tal uuesti alla langeda. See tekitab pideva lumesaju effekti. Võime
+  Pigem viime ta siis hoopis üles tagasi ja laseme tal uuesti alla langeda. See tekitab pideva lumesaju efekti. Võime
   samamoodi, nagu konstruktoris, uue juhusliku asukoha ja juhuslikud kiirused määrata. Kuna see kood on sama, mis konstruktoris,
   siis oleks loogiline see eraldi meetodisse tõsta, mida saame mõlemas kohas välja kutsuda.</span></div>
   <div class="mt-2 code-block"><span [highlight]="snowballUpdateCode"></span></div>
@@ -340,7 +340,7 @@
   <div class="row px-0">
     <div class="col-lg-10"><span>Lisaks lumepallidele on meil mängus ka kingitused. Need toimivad väga sarnaselt lumepallidele, need peaks hakkama ülevalt taevast sadama, kuid
   kokkupõrkel mängijaga hoopis suurendavad ta elusid. Kingituste jaoks tuleks luua klass Kingitus. Kuna see klass on Lumepalliga väga sarnane, siis tasuks ehk isegi
-  mõelda neile ühise ülemklassi loomise peale, mis hoiaks endas neid meetode ja isendivälju, mida need kaks klassi jagavad.</span>
+  mõelda neile ühise ülemklassi loomise peale, mis hoiaks endas neid meetodeid ja isendivälju, mida need kaks klassi jagavad.</span>
     </div>
     <div class="col-lg-1 my-auto mx-3">
       <img src="../../../assets/images/game/gift.png" alt="gift"
@@ -358,7 +358,7 @@
   </div>
   <div class="mt-2">Kõigepealt aga aja lugemine. Kuna tahame aega ka ekraanil kuvada, siis on meil vaja luua uus
     muutuja, mis hoiaks andmeid fondi
-    (teksi kujunduse ja stiili) kohta, mida tahame teksti ekraanil kuvamiseks kasutada. Selle fondi objekti kaudu saame
+    (teksti kujunduse ja stiili) kohta, mida tahame teksti ekraanil kuvamiseks kasutada. Selle fondi objekti kaudu saame
     hiljem teksti ekraanile ka joonistada.
     Me valime siin fondi nimega <span class="fst-italic">Cooper Black</span> ja tekstisuurusega 30. Selle muutuja loome
     kuskil programmi alguses, enne mängutsüklit.

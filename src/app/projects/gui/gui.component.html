@@ -347,7 +347,7 @@
   <div class="mt-2 code-block"><span [highlight]="formClassCode"></span></div>
   <div class="mt-2"><span>Tasub tähelepanu pöörata meie uue klassi viimasele reale.
     Varem lõime oma põhiprogrammi lõpus <span class="fst-italic">QWidget</span> isendi ja lisasime sellele paigutuseks oma ruudustiku.
-  Nüüd konstuktoris me enam uut <span class="fst-italic">QWidget</span> isendit ei loo. Meie klass ise on <span
+  Nüüd konstruktoris me enam uut <span class="fst-italic">QWidget</span> isendit ei loo. Meie klass ise on <span
       class="fst-italic">QWidget</span>'i
   alamklass, seega saame paigutuse otse oma klassi isendi külge panna.</span></div>
   <div class="mt-2"><span>Põhiprogramm on meil nüüd palju lühem:</span></div>
@@ -451,7 +451,7 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   <div class="mt-2"><span>Nii saame mängijaid luua ja oma järjendisse lisada. Kuid kasutajaliideses me lisatud mängijaid veel ei kuva. Õnneks pole
   raske loodud mängijat ka kasutajaliidesesse lisada. Selleks võime lihtsalt luua uue <span
       class="fst-italic">QLabel</span> isendi ja
-  lisada selle paigutusse. <span class="fst-italic">QLabel</span> konstruktorile saame anda kuvatava teksti argumeniks ja meil sobib selleks hästi
+  lisada selle paigutusse. <span class="fst-italic">QLabel</span> konstruktorile saame anda kuvatava teksti argumendiks ja meil sobib selleks hästi
   Mängija meetodi <span class="fst-italic">__str__</span> tagastatud väärtus.</span></div>
   <div class="mt-2 code-block"><span [highlight]="'silt = QLabel(mängija.__str__())\n'+
     'self.paigutus.addWidget(silt)'"></span></div>
@@ -489,7 +489,7 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   </div>
   <div class="mt-2 code-block"><span [highlight]="mainWindowStyle"></span></div>
   <div class="mt-2">
-    <span>Sarnaselt saame kujundada ka teisi vidinaid. Näieks võime ka nuppude värve natuke muuta:</span></div>
+    <span>Sarnaselt saame kujundada ka teisi vidinaid. Näiteks võime ka nuppude värve natuke muuta:</span></div>
   <div class="mt-2 code-block"><span [highlight]="buttonsStyle"></span></div>
   <div class="mt-2"><span>Mis saab aga siis, kui soovime ainult mõne üksiku isendi stiili muuta, mitte kõikide sama tüüpi isendite? Eelmises
   peatükis nägime, et saame ise CSS-is stiiliklasse kirjeldada ja panna oma elementidele vastavad stiiliklassid külge. Täpselt sama saame teha ka siin.

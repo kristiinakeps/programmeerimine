@@ -33,7 +33,7 @@ export class SetsComponent {
     '<span class="fst-italic">union</span>.', 'print("Meelil ja Mihklil kokku on: " + str(meeli | mihkel))'),
   new ExerciseHint('Järgmiseks on meil vaja leida kõik asjad, mis on nii Meeli kui ka Mihkli koolikotis. Selleks kasutame hulkade ühisosa. Võib kasutada ' +
     'kas operaatorit <span class="fst-italic">&</span> või meetodit <span class="fst-italic">intersection</span>.',
-    'print("Meelil ja Mihlil mõlemal on: " + str(meeli & mihkel))'),
+    'print("Meelil ja Mihklil mõlemal on: " + str(meeli & mihkel))'),
   new ExerciseHint('Kui tahame leida sellised esemed, mis on vaid Meelil või ainult Mihklil, siis saame kasutada hulkade vahet. Kõigepealt leiame vahe ühtepidi ja siis teistpidi. ' +
     'Vahe jaoks sobib operaator <span class="fst-italic">-</span> või meetod <span class="fst-italic">difference</span>.',
     'print("Ainult Meelil on: " + str(meeli - mihkel))\n' +
@@ -42,7 +42,7 @@ export class SetsComponent {
     'meeli = {"eesti keele õpik", "matemaatika õpik", "matemaatika vihik", "joonlaud", "sirkel", "akvarellvärvid", "värvipliiatsid", "pastakas", "ajaloo õpik", "bioloogia töövihik"}\n' +
     'mihkel = {"nätsupakk", "matemaatika õpik", "geograafia õpik", "joonlaud", "sirkel", "matemaatika vihik", "harilik pliiats", "pastakas", "ajaloo õpik"}\n' +
     'print("Meelil ja Mihklil kokku on: " + str(meeli | mihkel))\n' +
-    'print("Meelil ja Mihlil mõlemal on: " + str(meeli & mihkel))\n' +
+    'print("Meelil ja Mihklil mõlemal on: " + str(meeli & mihkel))\n' +
     'print("Ainult Meelil on: " + str(meeli - mihkel))\n' +
     'print("Ainult Mihklil on: " + str(mihkel - meeli))')];
 

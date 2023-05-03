@@ -305,7 +305,7 @@ export class GameComponent {
     'pygame.display.set_caption("Jõulumäng")\n' +
     '\n' +
     'taustapilt = pygame.image.load("taust.png")\n' +
-    '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\n' +
+    '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani all servas\n' +
     'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15)\n' +
     '# tekitame tegelase jaoks Group objekti ja lisame ta sinna\n' +
     'peategelane = pygame.sprite.Group()\n' +
@@ -359,7 +359,7 @@ export class GameComponent {
     '        self.rect.right = self.akna_laius';
   elfUpdateMainCode = '# uuendame sprite\'ide grupid\n' +
     'peategelane.update()';
-  elfMainCodeConstructorCode = '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani allservas\n' +
+  elfMainCodeConstructorCode = '# loome peategelase, x-koordinaat on ekraani keskel, y-koordinaat peaaegu ekraani all servas\n' +
     'tegelane_päkapikk = päkapikk.Päkapikk(laius // 2, kõrgus - 15, laius)';
   snowballInitCode = 'import pygame\n' +
     'import random\n' +
