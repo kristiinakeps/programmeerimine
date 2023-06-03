@@ -355,19 +355,19 @@ a:hover {
 }
 
 .height-20rem {
-  height: 20rem;
+  max-height: 20rem;
 }
 
 .height-15rem {
-  height: 15rem;
+  max-height: 15rem;
 }
 
 .height-10rem {
-  height: 10rem;
+  max-height: 10rem;
 }
 
 .height-5rem {
-  height: 5rem;
+  max-height: 5rem;
 }
 
 .drag-and-drop-list {
@@ -520,4 +520,8 @@ a:hover {
 
 .menu-category:hover {
   background-color: $color-purple-menu;
+}
+
+.img-max-width {
+  max-width: 100%;
 }

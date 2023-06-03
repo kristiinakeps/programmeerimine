@@ -14,7 +14,7 @@
   abil üles.</span></div>
     <div class="col-lg-2 mt-auto mx-3">
       <img src="../../../assets/images/dictionaries/dictionary.png" alt="dictionary"
-           style="height: 8rem">
+           style="max-height: 8rem" class="img-max-width">
     </div>
   </div>
 </div>
@@ -68,7 +68,7 @@
     </div>
     <div class="col-lg-2 mt-auto mx-3">
       <img src="../../../assets/images/dictionaries/height.png" alt="height"
-           style="height: 20rem">
+           class="height-20rem img-max-width">
     </div>
   </div>
 </div>
@@ -77,140 +77,146 @@
 <h4 class="mt-5" [attr.id]="'operatsioonid'">Sõnastikega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
 <div class="mt-3 box-container">
   <strong class="strong">Operatsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Avaldis</th>
-      <th style="width: 30%">Väärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>"Kati" in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>True</td>
-      <td>Kontrollib, kas võti on sõnastikus.</td>
-    </tr>
-    <tr>
-      <td>"Joosep" not in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>True</td>
-      <td>Kontrollib, ega võtit ei ole sõnastikus.</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Avaldis</th>
+        <th style="width: 30%">Väärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>"Kati" in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>True</td>
+        <td>Kontrollib, kas võti on sõnastikus.</td>
+      </tr>
+      <tr>
+        <td>"Joosep" not in {{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>True</td>
+        <td>Kontrollib, ega võtit ei ole sõnastikus.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Funktsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Funktsiooni rakendamine</th>
-      <th style="width: 30%">Tagastusväärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>len({{'{'}}"Kati": 14, "Mart": 15, "Anni": 14, "Andri": 13{{'}'}})</td>
-      <td>4</td>
-      <td>Leiab sõnastiku pikkuse (mitu võti-väärtus paari on sõnastikus).</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Funktsiooni rakendamine</th>
+        <th style="width: 30%">Tagastusväärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>len({{'{'}}"Kati": 14, "Mart": 15, "Anni": 14, "Andri": 13{{'}'}})</td>
+        <td>4</td>
+        <td>Leiab sõnastiku pikkuse (mitu võti-väärtus paari on sõnastikus).</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Meetodid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Meetodi rakendamine</th>
-      <th style="width: 25%">Sõnastiku väärtus pärast rakendamist</th>
-      <th style="width: 10%">Tagastusväärtus</th>
-      <th style="width: 25%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Joosep", 16)</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>16</td>
-      <td rowspan="3">Leiab võtmele vastava väärtuse või kasutab vaikeväärtust, kui võtit ei ole sõnastikus. Esimene
-        argument on võti ja teine argument vaikeväärtus.
-        Teise argumendi võib ka ära jätta ja siis toimib see meetod nagu kandilised sulud.
-      </td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Mart", 16)</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Anni")</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.clear()</td>
-      <td>{{'{'}}{{'}'}}</td>
-      <td>None</td>
-      <td>Tühjendab sõnastiku.</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.keys()</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>["Kati", "Mart", "Anni"]</td>
-      <td>Tagastab sõnastiku võtmed.</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.values()</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>[14, 15, 14]</td>
-      <td>Tagastab sõnastiku väärtused.</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.items()</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>[("Kati", 14), ("Mart", 15), ("Anni", 14)]</td>
-      <td>Tagastab sõnastiku võti-väärtus paarid ennikutena (ennikutest räägime täpsemalt vastavas peatükis).
-      </td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.update({{'{'}}"Madis": 16, "Kati": 15{{'}'}})</td>
-      <td>{{'{'}}"Kati": 15, "Mart": 15, "Anni": 14, "Madis": 16{{'}'}}</td>
-      <td>None</td>
-      <td>Uuendab sõnastikku. Argumendiks saab anda teise sõnastiku, mille põhjal väärtusi uuendatakse või puuduvad
-        väärtused lisatakse.
-      </td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Mart", 16)</td>
-      <td>{{'{'}}"Kati": 14, "Anni": 14{{'}'}}</td>
-      <td>15</td>
-      <td rowspan="3">Eemaldab sõnastikust võtme ja tagastab vastava väärtuse. Teise argumendina saab anda ette
-        vaikeväärtuse, mis tagastatakse siis, kui võtit ei olnud sõnastikus. Kui vaikeväärtust pole ja võtit pole
-        sõnastikus, siis tekib viga.
-      </td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Madis", 16)</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Anni")</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.popitem()</td>
-      <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
-      <td>("Anni", 14)</td>
-      <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võti-väärtus paari ennikuna.
-        Kui sõnastik on tühi, siis tekib viga.
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Meetodi rakendamine</th>
+        <th style="width: 25%">Sõnastiku väärtus pärast rakendamist</th>
+        <th style="width: 10%">Tagastusväärtus</th>
+        <th style="width: 25%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Joosep", 16)</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>16</td>
+        <td rowspan="3">Leiab võtmele vastava väärtuse või kasutab vaikeväärtust, kui võtit ei ole sõnastikus. Esimene
+          argument on võti ja teine argument vaikeväärtus.
+          Teise argumendi võib ka ära jätta ja siis toimib see meetod nagu kandilised sulud.
+        </td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Mart", 16)</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.get("Anni")</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.clear()</td>
+        <td>{{'{'}}{{'}'}}</td>
+        <td>None</td>
+        <td>Tühjendab sõnastiku.</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.keys()</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>["Kati", "Mart", "Anni"]</td>
+        <td>Tagastab sõnastiku võtmed.</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.values()</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>[14, 15, 14]</td>
+        <td>Tagastab sõnastiku väärtused.</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.items()</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>[("Kati", 14), ("Mart", 15), ("Anni", 14)]</td>
+        <td>Tagastab sõnastiku võti-väärtus paarid ennikutena (ennikutest räägime täpsemalt vastavas peatükis).
+        </td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.update({{'{'}}"Madis": 16, "Kati": 15{{'}'}})</td>
+        <td>{{'{'}}"Kati": 15, "Mart": 15, "Anni": 14, "Madis": 16{{'}'}}</td>
+        <td>None</td>
+        <td>Uuendab sõnastikku. Argumendiks saab anda teise sõnastiku, mille põhjal väärtusi uuendatakse või puuduvad
+          väärtused lisatakse.
+        </td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Mart", 16)</td>
+        <td>{{'{'}}"Kati": 14, "Anni": 14{{'}'}}</td>
+        <td>15</td>
+        <td rowspan="3">Eemaldab sõnastikust võtme ja tagastab vastava väärtuse. Teise argumendina saab anda ette
+          vaikeväärtuse, mis tagastatakse siis, kui võtit ei olnud sõnastikus. Kui vaikeväärtust pole ja võtit pole
+          sõnastikus, siis tekib viga.
+        </td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Madis", 16)</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}</td>
+        <td>16</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.pop("Anni")</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>{{'{'}}"Kati": 14, "Mart": 15, "Anni": 14{{'}'}}.popitem()</td>
+        <td>{{'{'}}"Kati": 14, "Mart": 15{{'}'}}</td>
+        <td>("Anni", 14)</td>
+        <td>Eemaldab sõnastikust viimase elemendi (viimasena lisatud element) ja tagastab võti-väärtus paari ennikuna.
+          Kui sõnastik on tühi, siis tekib viga.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="getTestCode"
                       [formControlNameBase]="'getTest'" [items]="getTestItems"></app-radiochoice-test>
@@ -254,7 +260,7 @@
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/dictionaries/groceries.png" alt="groceries"
-         style="height: 10rem">
+         class="height-10rem img-max-width">
   </div>
 </div>
 <div class="mt-2 box-container">
@@ -311,7 +317,7 @@
     </div>
     <div class="col-lg-2 mt-auto mb-3 mx-3">
       <img src="../../../assets/images/dictionaries/basket.png" alt="basket"
-           style="height: 12rem">
+           style="max-height: 12rem" class="img-max-width">
     </div>
   </div>
 </div>
@@ -340,7 +346,7 @@
   <app-exercise-hints [hints]="carCounterHints"></app-exercise-hints>
   <div class="text-center my-3">
     <img src="../../../assets/images/dictionaries/car.png" alt="car"
-         style="height: 10rem">
+         class="height-10rem img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -364,7 +370,7 @@
     </div>
     <div class="col-lg-2 my-auto mx-3">
       <img src="../../../assets/images/dictionaries/licence_plates.png" alt="licence plates"
-           style="height: 7rem">
+           style="max-height: 7rem" class="img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Näide failist <span class="fst-italic">koodid.txt</span></span></div>

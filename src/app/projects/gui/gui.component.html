@@ -29,7 +29,7 @@
     </div>
     <div class="col-lg-1 my-auto mx-3">
       <img src="../../../assets/images/gui/ball.png" alt="ball"
-           style="height: 4rem">
+           style="max-height: 4rem" class="img-max-width">
     </div>
   </div>
 </div>
@@ -60,161 +60,163 @@
 <h4 class="mt-5" [attr.id]="'vidinad'">Vidinad</h4>
 <div class="mt-3 box-container">
   <div><span>Siin on toodud mõned enim kasutatavad vidinad. Mitut neist hakkame ka oma rakenduses kasutama.</span></div>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="vidinad">
-    <thead>
-    <tr>
-      <th style="width: 20%">Vidin</th>
-      <th style="width: 30%">Seletus</th>
-      <th style="width: 25%">Näide</th>
-      <th style="width: 25%">Joonis</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>QCheckBox</td>
-      <td>Märkeruut, kuhu saab linnukese teha.</td>
-      <td>vidin = QCheckBox()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/checkbox.png" alt="checkbox"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QRadioButton</td>
-      <td>Valikuvariant ümmarguse nupukesega. Kasutatakse tavaliselt mitmekesi koos, nendest ainult üks saab korraga
-        valitud olla.
-      </td>
-      <td>vidin = QRadioButton("Esimene")<br>
-        teine_vidin = QRadioButton("Teine")
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/radio.png" alt="radio"
-               style="height: 4rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QComboBox</td>
-      <td>Rippmenüü valikutega.</td>
-      <td>vidin = QComboBox()<br>
-        vidin.addItems(["Esimene", "Teine", "Kolmas"])
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/combobox.png" alt="combobox"
-               style="height: 6rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QLabel</td>
-      <td>Silt teksti kuvamiseks.</td>
-      <td>vidin = QLabel("Rakendus!")</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/label.png" alt="label"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QLineEdit</td>
-      <td>Tekstiväli teksti sisestamiseks.</td>
-      <td>vidin = QLineEdit()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/edit.png" alt="edit"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QPushButton</td>
-      <td>Nupp tekstiga.</td>
-      <td>vidin = QPushButton()
-        vidin.setText("Vajuta mind!")
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/button.png" alt="button"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QSlider</td>
-      <td>Riba, millega saab libistades kindlast vahemikust arvu valida.</td>
-      <td>vidin = QSlider()<br>
-        vidin.setMinimum(0)<br>
-        vidin.setMaximum(10)
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/slider.png" alt="slider"
-               style="height: 6rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QSpinBox</td>
-      <td>Numbriväli täisarvu sisestamiseks. Paremal ääres on nooled, millega arvu suurendada ja vähendada.</td>
-      <td>vidin = QSpinBox()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/spin.png" alt="spin"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QDoubleSpinBox</td>
-      <td>Numbriväli ujukomaarvu sisestamiseks. Paremal ääres on nooled, millega arvu suurendada ja vähendada.</td>
-      <td>vidin = QDoubleSpinBox()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/double_spin.png" alt="double spin"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QDateEdit</td>
-      <td>Väli kuupäeva valimiseks ja muutmiseks.</td>
-      <td>vidin = QDateEdit()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/date.png" alt="date"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QTimeEdit</td>
-      <td>Väli aja valimiseks ja muutmiseks.</td>
-      <td>vidin = QTimeEdit()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/time.png" alt="time"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QDateTimeEdit</td>
-      <td>Kuupäevaväli koos kellaajaga.</td>
-      <td>vidin = QDateTimeEdit()</td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/datetime.png" alt="datetime"
-               style="height: 2rem">
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="vidinad">
+      <thead>
+      <tr>
+        <th style="width: 20%">Vidin</th>
+        <th style="width: 30%">Seletus</th>
+        <th style="width: 25%">Näide</th>
+        <th style="width: 25%">Joonis</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>QCheckBox</td>
+        <td>Märkeruut, kuhu saab linnukese teha.</td>
+        <td>vidin = QCheckBox()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/checkbox.png" alt="checkbox"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QRadioButton</td>
+        <td>Valikuvariant ümmarguse nupukesega. Kasutatakse tavaliselt mitmekesi koos, nendest ainult üks saab korraga
+          valitud olla.
+        </td>
+        <td>vidin = QRadioButton("Esimene")<br>
+          teine_vidin = QRadioButton("Teine")
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/radio.png" alt="radio"
+                 style="max-height: 4rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QComboBox</td>
+        <td>Rippmenüü valikutega.</td>
+        <td>vidin = QComboBox()<br>
+          vidin.addItems(["Esimene", "Teine", "Kolmas"])
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/combobox.png" alt="combobox"
+                 style="max-height: 6rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QLabel</td>
+        <td>Silt teksti kuvamiseks.</td>
+        <td>vidin = QLabel("Rakendus!")</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/label.png" alt="label"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QLineEdit</td>
+        <td>Tekstiväli teksti sisestamiseks.</td>
+        <td>vidin = QLineEdit()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/edit.png" alt="edit"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QPushButton</td>
+        <td>Nupp tekstiga.</td>
+        <td>vidin = QPushButton()
+          vidin.setText("Vajuta mind!")
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/button.png" alt="button"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QSlider</td>
+        <td>Riba, millega saab libistades kindlast vahemikust arvu valida.</td>
+        <td>vidin = QSlider()<br>
+          vidin.setMinimum(0)<br>
+          vidin.setMaximum(10)
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/slider.png" alt="slider"
+                 style="max-height: 6rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QSpinBox</td>
+        <td>Numbriväli täisarvu sisestamiseks. Paremal ääres on nooled, millega arvu suurendada ja vähendada.</td>
+        <td>vidin = QSpinBox()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/spin.png" alt="spin"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QDoubleSpinBox</td>
+        <td>Numbriväli ujukomaarvu sisestamiseks. Paremal ääres on nooled, millega arvu suurendada ja vähendada.</td>
+        <td>vidin = QDoubleSpinBox()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/double_spin.png" alt="double spin"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QDateEdit</td>
+        <td>Väli kuupäeva valimiseks ja muutmiseks.</td>
+        <td>vidin = QDateEdit()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/date.png" alt="date"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QTimeEdit</td>
+        <td>Väli aja valimiseks ja muutmiseks.</td>
+        <td>vidin = QTimeEdit()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/time.png" alt="time"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QDateTimeEdit</td>
+        <td>Kuupäevaväli koos kellaajaga.</td>
+        <td>vidin = QDateTimeEdit()</td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/datetime.png" alt="datetime"
+                 style="max-height: 2rem">
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <h4 class="mt-5" [attr.id]="'paigutus'">Paigutus</h4>
 <div class="mt-3 box-container">
@@ -222,78 +224,80 @@
   rakendusse paigutada. Selleks kasutatakse erinevaid paigutuse objekte. Allolevas tabelis on toodud erinevad paigutuste variandid.
   Igas näites paigutame järgmised kolm vidinat:</span></div>
   <div class="mt-2 code-block"><span [highlight]="layoutWidgetsCode"></span></div>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="vidinad">
-    <thead>
-    <tr>
-      <th style="width: 20%">Paigutus</th>
-      <th style="width: 30%">Seletus</th>
-      <th style="width: 25%">Näide</th>
-      <th style="width: 25%">Joonis</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>QHBoxLayout</td>
-      <td>Elemendid paigutatakse üksteise kõrvale (H tähistab horisontaalset).</td>
-      <td>paigutus = QHBoxLayout()<br>
-        paigutus.addWidget(esimene)<br>
-        paigutus.addWidget(teine)<br>
-        paigutus.addWidget(kolmas)
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/hbox.png" alt="hbox"
-               style="height: 1.5rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QVBoxLayout</td>
-      <td>Elemendid paigutatakse üksteise alla (V tähistab vertikaalset).</td>
-      <td>paigutus = QVBoxLayout()<br>
-        paigutus.addWidget(esimene)<br>
-        paigutus.addWidget(teine)<br>
-        paigutus.addWidget(kolmas)
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/vbox.png" alt="vbox"
-               style="height: 5rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QGridLayout</td>
-      <td>Elemendid paigutatakse ruudustikku. Igale elemendile saame määrata ta rea ja veeru koordinaadid.</td>
-      <td>paigutus = QGridLayout()<br>
-        paigutus.addWidget(esimene, 0, 0)<br>
-        paigutus.addWidget(teine, 0, 1)<br>
-        paigutus.addWidget(kolmas, 1, 0)
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/grid.png" alt="grid"
-               style="height: 4rem">
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>QStackedLayout</td>
-      <td>Elemendid paigutatakse üksteise taha. Esimesena paigutatud element jääb kõige ette.</td>
-      <td>paigutus = QStackedLayout()<br>
-        paigutus.addWidget(esimene)<br>
-        paigutus.addWidget(teine)<br>
-        paigutus.addWidget(kolmas)
-      </td>
-      <td>
-        <div class="m-2">
-          <img src="../../../assets/images/gui/stack.png" alt="stacked"
-               style="height: 1.2rem">
-        </div>
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="vidinad">
+      <thead>
+      <tr>
+        <th style="width: 20%">Paigutus</th>
+        <th style="width: 30%">Seletus</th>
+        <th style="width: 25%">Näide</th>
+        <th style="width: 25%">Joonis</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>QHBoxLayout</td>
+        <td>Elemendid paigutatakse üksteise kõrvale (H tähistab horisontaalset).</td>
+        <td>paigutus = QHBoxLayout()<br>
+          paigutus.addWidget(esimene)<br>
+          paigutus.addWidget(teine)<br>
+          paigutus.addWidget(kolmas)
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/hbox.png" alt="hbox"
+                 style="max-height: 1.5rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QVBoxLayout</td>
+        <td>Elemendid paigutatakse üksteise alla (V tähistab vertikaalset).</td>
+        <td>paigutus = QVBoxLayout()<br>
+          paigutus.addWidget(esimene)<br>
+          paigutus.addWidget(teine)<br>
+          paigutus.addWidget(kolmas)
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/vbox.png" alt="vbox"
+                 class="height-5rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QGridLayout</td>
+        <td>Elemendid paigutatakse ruudustikku. Igale elemendile saame määrata ta rea ja veeru koordinaadid.</td>
+        <td>paigutus = QGridLayout()<br>
+          paigutus.addWidget(esimene, 0, 0)<br>
+          paigutus.addWidget(teine, 0, 1)<br>
+          paigutus.addWidget(kolmas, 1, 0)
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/grid.png" alt="grid"
+                 style="max-height: 4rem">
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>QStackedLayout</td>
+        <td>Elemendid paigutatakse üksteise taha. Esimesena paigutatud element jääb kõige ette.</td>
+        <td>paigutus = QStackedLayout()<br>
+          paigutus.addWidget(esimene)<br>
+          paigutus.addWidget(teine)<br>
+          paigutus.addWidget(kolmas)
+        </td>
+        <td>
+          <div class="m-2">
+            <img src="../../../assets/images/gui/stack.png" alt="stacked"
+                 style="max-height: 1.2rem">
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
   <div class="mt-2"><span>Üksikut vidinat luues saime selle lisada oma akna keskele meetodiga <span class="fst-italic">setCentralWidget</span>.
   Paigutust ei saa me niimoodi otse aknale lisada. Paigutuse lisamiseks saame luua üldise <span class="fst-italic">QWidget</span>-tüüpi vidina ja
   panna paigutuse selle külge. Seejärel saame selle vidina aknasse lisada.</span></div>
@@ -334,7 +338,7 @@
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/form.png" alt="form"
-         style="height: 15rem">
+         class="height-15rem img-max-width">
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'vormiklass'">Kuidas muuta vorm vidinaks?</h4>
@@ -367,7 +371,7 @@
   <app-exercise-hints [hints]="playerHints"></app-exercise-hints>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/game.png" alt="game"
-         style="height: 20rem">
+         class="height-20rem img-max-width">
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'nupud'">Nupud mängija lisamiseks ja mängijate salvestamiseks</h4>
@@ -414,7 +418,7 @@
     </div>
     <div class="col-lg-1 my-auto mx-3">
       <img src="../../../assets/images/gui/list.png" alt="list"
-           style="height: 10rem">
+           class="height-10rem img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Nüüd on meil vormi all ilusti ka nupp olemas. Aga kui nuppu vajutada, siis hetkel ei juhtu veel midagi. Järgmiseks peaksime looma meetodi,
@@ -466,7 +470,7 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   <app-exercise-hints [hints]="saveButtonHints"></app-exercise-hints>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/full.png" alt="full"
-         style="height: 20rem">
+         class="height-20rem img-max-width">
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'kujundus'">Kuidas rakendusele kujundust lisada?</h4>
@@ -480,11 +484,12 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   või siis lugeda lihtsalt CSS-faili sisu sõnena oma programmi sisse. Lihtsuse mõttes kirjutame siin oma kujunduse otse koodi sisse.</span>
       </div>
       <div class="mt-2"><span>Proovime kõigepealt oma <span class="fst-italic">QMainWindow</span> vidinale uue taustavärvi lisada. Kui tahame muuta kõiki
-   ühte tüüpi vidinaid, siis saame CSS-is kirjutada vidina nime ja loogelistes sulgudes vidinale rakendatava kujunduse.</span></div>
+   ühte tüüpi vidinaid, siis saame CSS-is kirjutada vidina nime ja loogelistes sulgudes vidinale rakendatava kujunduse.</span>
+      </div>
     </div>
     <div class="col-lg-2 my-auto mx-3">
       <img src="../../../assets/images/gui/paint.png" alt="paint"
-           style="height: 8rem">
+           style="max-height: 8rem" class="img-max-width">
     </div>
   </div>
   <div class="mt-2 code-block"><span [highlight]="mainWindowStyle"></span></div>
@@ -507,7 +512,7 @@ Kui soovime sealt kätte saada hetkel valitud teksti, siis selleks on meetod <sp
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/gui/styled.png" alt="styled"
-         style="height: 20rem">
+         class="height-20rem img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">

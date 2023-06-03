@@ -54,7 +54,7 @@
   sobib kasutada ka siis, kui funktsioonist on vaja tagastada mitu väärtust.</span></div>
   <div class="text-center my-3">
     <img src="../../../assets/images/tuples/seasons.png" alt="seasons"
-         style="height: 10rem">
+         class="height-15rem img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -81,119 +81,125 @@
 <h4 class="mt-5" [attr.id]="'operatsioonid'">Ennikutega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
 <div class="mt-3 box-container">
   <strong class="strong">Operatsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Avaldis</th>
-      <th style="width: 30%">Väärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>("ploom", "õun") + ("pirn", "kirss")</td>
-      <td>("ploom", "õun", "pirn", "kirss")</td>
-      <td>Ennikute kokku liitmine üheks ennikuks. Selle tehte tulemusena luuakse uus ennik.</td>
-    </tr>
-    <tr>
-      <td>("ploom", "õun") * 3</td>
-      <td>("ploom", "õun", "ploom", "õun", "ploom", "õun")</td>
-      <td>Enniku korrutamine arvuga (liidab nii mitu korda ennikut iseendaga).</td>
-    </tr>
-    <tr>
-      <td>5 in (1, 5, -2, 11, 7)</td>
-      <td>True</td>
-      <td>Kontrollib, kas element on ennikus.</td>
-    </tr>
-    <tr>
-      <td>4 not in (1, 5, -2, 11, 7)</td>
-      <td>True</td>
-      <td>Kontrollib, ega elementi ei ole ennikus.</td>
-    </tr>
-    <tr>
-      <td>(1, 2) == (2, 1)</td>
-      <td>False</td>
-      <td>Kontrollib, kas ennikud on võrdsed. Elementide järjekord on siin oluline.</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Avaldis</th>
+        <th style="width: 30%">Väärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>("ploom", "õun") + ("pirn", "kirss")</td>
+        <td>("ploom", "õun", "pirn", "kirss")</td>
+        <td>Ennikute kokku liitmine üheks ennikuks. Selle tehte tulemusena luuakse uus ennik.</td>
+      </tr>
+      <tr>
+        <td>("ploom", "õun") * 3</td>
+        <td>("ploom", "õun", "ploom", "õun", "ploom", "õun")</td>
+        <td>Enniku korrutamine arvuga (liidab nii mitu korda ennikut iseendaga).</td>
+      </tr>
+      <tr>
+        <td>5 in (1, 5, -2, 11, 7)</td>
+        <td>True</td>
+        <td>Kontrollib, kas element on ennikus.</td>
+      </tr>
+      <tr>
+        <td>4 not in (1, 5, -2, 11, 7)</td>
+        <td>True</td>
+        <td>Kontrollib, ega elementi ei ole ennikus.</td>
+      </tr>
+      <tr>
+        <td>(1, 2) == (2, 1)</td>
+        <td>False</td>
+        <td>Kontrollib, kas ennikud on võrdsed. Elementide järjekord on siin oluline.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Funktsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Funktsiooni rakendamine</th>
-      <th style="width: 30%">Tagastusväärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>len(("ploom", "õun", "pirn", "kirss"))</td>
-      <td>4</td>
-      <td>Leiab enniku pikkuse.</td>
-    </tr>
-    <tr>
-      <td>min((1, 5, -2, 11, 7))</td>
-      <td>-2</td>
-      <td>Leiab enniku väikseima elemendi.</td>
-    </tr>
-    <tr>
-      <td>max((1, 5, -2, 11, 7))</td>
-      <td>11</td>
-      <td>Leiab enniku suurima elemendi.</td>
-    </tr>
-    <tr>
-      <td>sum((1, 5, -2, 11, 7))</td>
-      <td>22</td>
-      <td>Leiab enniku elementide summa (ainult arvude puhul).</td>
-    </tr>
-    <tr>
-      <td>sorted((1, 5, -2, 11, 7))</td>
-      <td>[-2, 1, 5, 7, 11]</td>
-      <td>Tagastab enniku elemendid sorteeritud järjendina.</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Funktsiooni rakendamine</th>
+        <th style="width: 30%">Tagastusväärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>len(("ploom", "õun", "pirn", "kirss"))</td>
+        <td>4</td>
+        <td>Leiab enniku pikkuse.</td>
+      </tr>
+      <tr>
+        <td>min((1, 5, -2, 11, 7))</td>
+        <td>-2</td>
+        <td>Leiab enniku väikseima elemendi.</td>
+      </tr>
+      <tr>
+        <td>max((1, 5, -2, 11, 7))</td>
+        <td>11</td>
+        <td>Leiab enniku suurima elemendi.</td>
+      </tr>
+      <tr>
+        <td>sum((1, 5, -2, 11, 7))</td>
+        <td>22</td>
+        <td>Leiab enniku elementide summa (ainult arvude puhul).</td>
+      </tr>
+      <tr>
+        <td>sorted((1, 5, -2, 11, 7))</td>
+        <td>[-2, 1, 5, 7, 11]</td>
+        <td>Tagastab enniku elemendid sorteeritud järjendina.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Meetodid</strong>
   <div class="mt-2"><span>Kui operatsioonid ja funktsioonid olid järjenditega üsna sarnased, siis meetodeid on ennikutel palju vähem.
   Ennikutel pole selliseid meetode, mis sinna elemente lisaksid, neid eemaldaksid või mõnel muul moel ennikut muudaksid.</span>
   </div>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Meetodi rakendamine</th>
-      <th style="width: 25%">Enniku väärtus pärast rakendamist</th>
-      <th style="width: 10%">Tagastusväärtus</th>
-      <th style="width: 25%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>("ploom", "õun", "kirss", "õun").count("õun")</td>
-      <td>("ploom", "õun", "kirss", "õun")</td>
-      <td>2</td>
-      <td>Loeb kokku, mitu korda antud element ennikus esineb.</td>
-    </tr>
-    <tr>
-      <td>("ploom", "õun", "kirss", "õun").index("õun")</td>
-      <td>("ploom", "õun", "kirss", "õun")</td>
-      <td>1</td>
-      <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on ennikus mitu korda, siis leiab esimese indeksi.
-        Teiseks argumendiks saab soovi korral
-        anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
-      </td>
-    </tr>
-    <tr>
-      <td>("ploom", "õun", "kirss", "õun").index("õun", 2)</td>
-      <td>("ploom", "õun", "kirss", "õun")</td>
-      <td>3</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Meetodi rakendamine</th>
+        <th style="width: 25%">Enniku väärtus pärast rakendamist</th>
+        <th style="width: 10%">Tagastusväärtus</th>
+        <th style="width: 25%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>("ploom", "õun", "kirss", "õun").count("õun")</td>
+        <td>("ploom", "õun", "kirss", "õun")</td>
+        <td>2</td>
+        <td>Loeb kokku, mitu korda antud element ennikus esineb.</td>
+      </tr>
+      <tr>
+        <td>("ploom", "õun", "kirss", "õun").index("õun")</td>
+        <td>("ploom", "õun", "kirss", "õun")</td>
+        <td>1</td>
+        <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on ennikus mitu korda, siis leiab esimese indeksi.
+          Teiseks argumendiks saab soovi korral
+          anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
+        </td>
+      </tr>
+      <tr>
+        <td>("ploom", "õun", "kirss", "õun").index("õun", 2)</td>
+        <td>("ploom", "õun", "kirss", "õun")</td>
+        <td>3</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <app-multichoice-test [title]="'Mida väljastab järgmine programmijupp?'" [code]="operationsTestCode"
                       [formControlNameBase]="'operationsTest'" [items]="operationsTestItems"></app-multichoice-test>
@@ -212,7 +218,7 @@
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/tuples/berries.png" alt="berries"
-         style="height: 7rem">
+         style="max-height: 7rem" class="img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -265,7 +271,7 @@
     </div>
     <div class="col-lg-2 my-auto mx-3">
       <img src="../../../assets/images/tuples/prize.png" alt="prize"
-           style="height: 15rem">
+           class="height-15rem img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Programmi väljund ülaltoodud faili korral peaks olema:</span></div>

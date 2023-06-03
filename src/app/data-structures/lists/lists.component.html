@@ -39,7 +39,7 @@
   elementi indeksi põhjal kätte, lisatakse järjendi järele kandilistesse sulgudesse elemendi indeks.</span></div>
     <div class="col-lg-3 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/indexes.png" alt="indexes"
-           style="height: 5rem">
+           class="height-5rem img-max-width">
     </div>
   </div>
   <div class="code-block mt-2">
@@ -78,7 +78,7 @@
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/lists/dog.png" alt="dog"
-         style="height: 10rem">
+         class="height-10rem img-max-width">
   </div>
 </div>
 <app-radiochoice-test [title]="'Mida väljastab järgmine koodijupp?'" [code]="indexTestCode" [items]="indexTestItems"
@@ -96,7 +96,7 @@
     </div>
     <div class="col-lg-2 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/slicing.png" alt="slicing"
-           style="height: 7rem">
+           style="max-height: 7rem" class="img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Tuleb ka arvestada sellega, et algusindeksiga element on kaasaarvatud, aga lõppindeksiga element mitte.</span>
@@ -116,81 +116,85 @@
 <h4 class="mt-5" [attr.id]="'operatsioonid'">Järjenditega kasutatavad operatsioonid, funktsioonid ja meetodid</h4>
 <div class="mt-3 box-container">
   <strong class="strong">Operatsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Avaldis</th>
-      <th style="width: 30%">Väärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>["ploom", "õun"] + ["pirn"]</td>
-      <td>["ploom", "õun", "pirn"]</td>
-      <td>Kahe järjendi liitmine üheks järjendiks.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun"] * 3</td>
-      <td>["ploom", "õun", "ploom", "õun", "ploom", "õun"]</td>
-      <td>Järjendi korrutamine arvuga (liidab nii mitu korda järjendit iseendaga).</td>
-    </tr>
-    <tr>
-      <td>5 in [1, 5, -2, 11, 7]</td>
-      <td>True</td>
-      <td>Kontrollib, kas element on järjendis.</td>
-    </tr>
-    <tr>
-      <td>4 not in [1, 5, -2, 11, 7]</td>
-      <td>True</td>
-      <td>Kontrollib, ega elementi ei ole järjendis.</td>
-    </tr>
-    <tr>
-      <td>[1, 2, 3] == [3, 2, 1]</td>
-      <td>False</td>
-      <td>Kontrollib, kas järjendid on võrdsed. Kusjuures elementide järjekord on oluline.</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Avaldis</th>
+        <th style="width: 30%">Väärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>["ploom", "õun"] + ["pirn"]</td>
+        <td>["ploom", "õun", "pirn"]</td>
+        <td>Kahe järjendi liitmine üheks järjendiks.</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun"] * 3</td>
+        <td>["ploom", "õun", "ploom", "õun", "ploom", "õun"]</td>
+        <td>Järjendi korrutamine arvuga (liidab nii mitu korda järjendit iseendaga).</td>
+      </tr>
+      <tr>
+        <td>5 in [1, 5, -2, 11, 7]</td>
+        <td>True</td>
+        <td>Kontrollib, kas element on järjendis.</td>
+      </tr>
+      <tr>
+        <td>4 not in [1, 5, -2, 11, 7]</td>
+        <td>True</td>
+        <td>Kontrollib, ega elementi ei ole järjendis.</td>
+      </tr>
+      <tr>
+        <td>[1, 2, 3] == [3, 2, 1]</td>
+        <td>False</td>
+        <td>Kontrollib, kas järjendid on võrdsed. Kusjuures elementide järjekord on oluline.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Funktsioonid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Funktsiooni rakendamine</th>
-      <th style="width: 30%">Tagastusväärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>len(["ploom", "õun", "pirn", "kirss"])</td>
-      <td>4</td>
-      <td>Leiab järjendi elementide arvu.</td>
-    </tr>
-    <tr>
-      <td>min([1, 5, -2, 11, 7])</td>
-      <td>-2</td>
-      <td>Leiab järjendi väikseima elemendi.</td>
-    </tr>
-    <tr>
-      <td>max([1, 5, -2, 11, 7])</td>
-      <td>11</td>
-      <td>Leiab järjendi suurima elemendi.</td>
-    </tr>
-    <tr>
-      <td>sum([1, 5, -2, 11, 7])</td>
-      <td>22</td>
-      <td>Leiab järjendi elementide summa (ainult arvude puhul).</td>
-    </tr>
-    <tr>
-      <td>sorted([1, 5, -2, 11, 7])</td>
-      <td>[-2, 1, 5, 7, 11]</td>
-      <td>Sorteerib järjendi.</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Funktsiooni rakendamine</th>
+        <th style="width: 30%">Tagastusväärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>len(["ploom", "õun", "pirn", "kirss"])</td>
+        <td>4</td>
+        <td>Leiab järjendi elementide arvu.</td>
+      </tr>
+      <tr>
+        <td>min([1, 5, -2, 11, 7])</td>
+        <td>-2</td>
+        <td>Leiab järjendi väikseima elemendi.</td>
+      </tr>
+      <tr>
+        <td>max([1, 5, -2, 11, 7])</td>
+        <td>11</td>
+        <td>Leiab järjendi suurima elemendi.</td>
+      </tr>
+      <tr>
+        <td>sum([1, 5, -2, 11, 7])</td>
+        <td>22</td>
+        <td>Leiab järjendi elementide summa (ainult arvude puhul).</td>
+      </tr>
+      <tr>
+        <td>sorted([1, 5, -2, 11, 7])</td>
+        <td>[-2, 1, 5, 7, 11]</td>
+        <td>Sorteerib järjendi.</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <app-multichoice-test [title]="'Mis read väljastab järgmine koodijupp?'"
                       [formControlNameBase]="'splicingAndFunctionsTest'"
@@ -198,127 +202,135 @@
                       [items]="splicingAndFunctionsTestItems"></app-multichoice-test>
 <div class="mt-3 box-container">
   <strong class="strong">Meetodid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Meetodi rakendamine</th>
-      <th style="width: 25%">Järjendi väärtus pärast rakendamist</th>
-      <th style="width: 10%">Tagastusväärtus</th>
-      <th style="width: 25%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>["ploom", "õun", "kirss"].append("pirn")</td>
-      <td>["ploom", "õun", "kirss", "pirn"]</td>
-      <td>None</td>
-      <td>Lisab järjendi lõppu elemendi.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss"].extend(["õun", "kreek"])</td>
-      <td>["ploom", "õun", "kirss", "õun", "kreek"]</td>
-      <td>None</td>
-      <td>Lisab järjendi lõppu teise järjendi kõik elemendid.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss"].insert(1, "pirn")</td>
-      <td>["ploom", "pirn", "õun", "kirss"]</td>
-      <td>None</td>
-      <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine argument on element ise.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss", "õun"].remove("õun")</td>
-      <td>["ploom", "kirss", "õun"]</td>
-      <td>None</td>
-      <td>Eemaldab järjendist argumendiks antud elemendi. Kui on mitu sellist elementi, siis eemaldab ainult esimese.
-      </td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss"].pop()</td>
-      <td>["ploom", "õun"]</td>
-      <td>"kirss"</td>
-      <td rowspan="2">Eemaldab ja tagastab järjendist elemendi. Argumendiks saab anda eemaldatava elemendi indeksi. Kui
-        argumenti ei anta, siis eemaldab viimase elemendi.
-      </td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss"].pop(0)</td>
-      <td>["õun", "kirss"]</td>
-      <td>"ploom"</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss", "õun"].clear()</td>
-      <td>[]</td>
-      <td>None</td>
-      <td>Eemaldab järjendist kõik elemendid.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss", "õun"].count("õun")</td>
-      <td>["ploom", "õun", "kirss", "õun"]</td>
-      <td>2</td>
-      <td>Loeb kokku, mitu korda antud element järjendis esineb.</td>
-    </tr>
-    <tr>
-      <td>[1, 5, 8, 2, 3].sort()</td>
-      <td>[1, 2, 3, 5, 8]</td>
-      <td>None</td>
-      <td>Sorteerib järjendi.</td>
-    </tr>
-    <tr>
-      <td>[1, 5, 8, 2, 3].reverse()</td>
-      <td>[3, 2, 8, 5, 1]</td>
-      <td>None</td>
-      <td>Pöörab järjendi ümber.</td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss", "õun"].index("õun")</td>
-      <td>["ploom", "õun", "kirss", "õun"]</td>
-      <td>1</td>
-      <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on järjendis mitu korda, siis leiab esimese indeksi.
-        Teiseks argumendiks saab soovi korral
-        anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
-      </td>
-    </tr>
-    <tr>
-      <td>["ploom", "õun", "kirss", "õun"].index("õun", 2)</td>
-      <td>["ploom", "õun", "kirss", "õun"]</td>
-      <td>3</td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Meetodi rakendamine</th>
+        <th style="width: 25%">Järjendi väärtus pärast rakendamist</th>
+        <th style="width: 10%">Tagastusväärtus</th>
+        <th style="width: 25%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>["ploom", "õun", "kirss"].append("pirn")</td>
+        <td>["ploom", "õun", "kirss", "pirn"]</td>
+        <td>None</td>
+        <td>Lisab järjendi lõppu elemendi.</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss"].extend(["õun", "kreek"])</td>
+        <td>["ploom", "õun", "kirss", "õun", "kreek"]</td>
+        <td>None</td>
+        <td>Lisab järjendi lõppu teise järjendi kõik elemendid.</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss"].insert(1, "pirn")</td>
+        <td>["ploom", "pirn", "õun", "kirss"]</td>
+        <td>None</td>
+        <td>Lisab järjendis kindlale kohale uue elemendi. Esimene argument on uue elemendi indeks, teine argument on
+          element ise.
+        </td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss", "õun"].remove("õun")</td>
+        <td>["ploom", "kirss", "õun"]</td>
+        <td>None</td>
+        <td>Eemaldab järjendist argumendiks antud elemendi. Kui on mitu sellist elementi, siis eemaldab ainult esimese.
+        </td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss"].pop()</td>
+        <td>["ploom", "õun"]</td>
+        <td>"kirss"</td>
+        <td rowspan="2">Eemaldab ja tagastab järjendist elemendi. Argumendiks saab anda eemaldatava elemendi indeksi.
+          Kui
+          argumenti ei anta, siis eemaldab viimase elemendi.
+        </td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss"].pop(0)</td>
+        <td>["õun", "kirss"]</td>
+        <td>"ploom"</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss", "õun"].clear()</td>
+        <td>[]</td>
+        <td>None</td>
+        <td>Eemaldab järjendist kõik elemendid.</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss", "õun"].count("õun")</td>
+        <td>["ploom", "õun", "kirss", "õun"]</td>
+        <td>2</td>
+        <td>Loeb kokku, mitu korda antud element järjendis esineb.</td>
+      </tr>
+      <tr>
+        <td>[1, 5, 8, 2, 3].sort()</td>
+        <td>[1, 2, 3, 5, 8]</td>
+        <td>None</td>
+        <td>Sorteerib järjendi.</td>
+      </tr>
+      <tr>
+        <td>[1, 5, 8, 2, 3].reverse()</td>
+        <td>[3, 2, 8, 5, 1]</td>
+        <td>None</td>
+        <td>Pöörab järjendi ümber.</td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss", "õun"].index("õun")</td>
+        <td>["ploom", "õun", "kirss", "õun"]</td>
+        <td>1</td>
+        <td rowspan="2">Leiab etteantud elemendi indeksi. Kui element on järjendis mitu korda, siis leiab esimese
+          indeksi.
+          Teiseks argumendiks saab soovi korral
+          anda indeksi, millest tuleks elementi otsima hakata. Kui elementi pole, siis viskab vea.
+        </td>
+      </tr>
+      <tr>
+        <td>["ploom", "õun", "kirss", "õun"].index("õun", 2)</td>
+        <td>["ploom", "õun", "kirss", "õun"]</td>
+        <td>3</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <div class="mt-3 box-container">
   <strong class="strong">Järjenditega seotud sõnede meetodid</strong>
-  <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
-    <thead>
-    <tr>
-      <th style="width: 40%">Meetodi rakendamine</th>
-      <th style="width: 30%">Tagastusväärtus</th>
-      <th style="width: 30%">Selgitus</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>"Õues paistab päike, aga eile sadas lund".split()</td>
-      <td>["Õues", "paistab", "päike,", "aga", "eile", "sadas", "lund."]</td>
-      <td rowspan="2">Tükeldab sõne järjendiks. Argumendiks saab anda ette sõne, mille kohalt tükeldada. Kui argumenti
-        ei anta, siis tükeldab tühikute,
-        reavahetuste ja taanete juurest.
-      </td>
-    </tr>
-    <tr>
-      <td>"piim,munad,leib,õunad".split(",")</td>
-      <td>["piim", "munad", "leib", "õunad"]</td>
-    </tr>
-    <tr>
-      <td>"; ".join(["ploom", "õun", "kirss", "õun"])</td>
-      <td>"ploom; õun; kirss; õun"</td>
-      <td>Ühendab argumendiks antud järjendi elemendid üheks sõneks. Lisab iga elemendi vahele sõne, millel meetodit
-        välja kutsutakse.
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered table-custom mt-3" aria-describedby="tehted">
+      <thead>
+      <tr>
+        <th style="width: 40%">Meetodi rakendamine</th>
+        <th style="width: 30%">Tagastusväärtus</th>
+        <th style="width: 30%">Selgitus</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>"Õues paistab päike, aga eile sadas lund".split()</td>
+        <td>["Õues", "paistab", "päike,", "aga", "eile", "sadas", "lund."]</td>
+        <td rowspan="2">Tükeldab sõne järjendiks. Argumendiks saab anda ette sõne, mille kohalt tükeldada. Kui argumenti
+          ei anta, siis tükeldab tühikute,
+          reavahetuste ja taanete juurest.
+        </td>
+      </tr>
+      <tr>
+        <td>"piim,munad,leib,õunad".split(",")</td>
+        <td>["piim", "munad", "leib", "õunad"]</td>
+      </tr>
+      <tr>
+        <td>"; ".join(["ploom", "õun", "kirss", "õun"])</td>
+        <td>"ploom; õun; kirss; õun"</td>
+        <td>Ühendab argumendiks antud järjendi elemendid üheks sõneks. Lisab iga elemendi vahele sõne, millel meetodit
+          välja kutsutakse.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 <app-radiochoice-test [title]="'Mis arvu väljastab järgmine koodijupp?'" [code]="methodsTestCode"
                       [formControlNameBase]="'methodsTest'"
@@ -342,7 +354,7 @@
     </div>
     <div class="col-lg-2 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/fruit.png" alt="fruit"
-           style="height: 8rem">
+           style="max-height: 8rem" class="img-max-width">
     </div>
   </div>
 </div>
@@ -380,7 +392,7 @@
     </div>
     <div class="col-lg-1 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/pricetag.png" alt="price"
-           style="height: 7rem">
+           style="max-height: 7rem" class="img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Alustuseks tuleks luua enne faili läbimist tühi järjend, kuhu hakkame siis järjest elemente lisama. Kui
@@ -405,7 +417,8 @@
   kasutada arvujadade genereerimiseks. Sellele funktsioonile saab anda üks kuni kolm argumenti. Kui antakse ainult üks argument, siis see tähistab lõpparvu. Funktsioon
   genereerib siis arvud alates 0-st kuni selle etteantud lõpparvuni. Lõpparv ise pole kaasaarvatud. Tagastatud väärtus on ulatus ehk <span
       class="fst-italic">range</span>-tüüpi,
-  aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusfunktsiooni <span class="fst-italic">list</span>.</span>
+  aga soovi korral saame selle teisendada järjendiks. Selleks kasutame tüübiteisendusfunktsiooni <span
+      class="fst-italic">list</span>.</span>
   </div>
   <div class="mt-2 code-block">
     <span [highlight]="rangeOneArgumentCode"></span>
@@ -440,7 +453,8 @@
   </div>
 </div>
 <div class="mt-3 box-container">
-  <div><span>Funktsiooni <span class="fst-italic">range</span> kasutatakse üsna tihti koos <span class="fst-italic">for</span>-tsükliga. Näiteks saame <span
+  <div><span>Funktsiooni <span class="fst-italic">range</span> kasutatakse üsna tihti koos <span
+    class="fst-italic">for</span>-tsükliga. Näiteks saame <span
     class="fst-italic">range</span>-funktsiooni
   abil genereerida indeksite jada ja seda kasutada järjendi läbimiseks. Saame kutsuda välja <span class="fst-italic">range</span>-funktsiooni andes argumendiks järjendi pikkuse ja
   funktsioon tagastab meile arvud alates 0-st ja lõpetades arvuga, mis on ühe võrra väiksem järjendi pikkusest.</span>
@@ -462,7 +476,7 @@
     </div>
     <div class="col-lg-1 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/calendar.png" alt="calendar"
-           style="height: 7rem">
+           style="max-height: 7rem" class="img-max-width">
     </div>
   </div>
 </div>
@@ -499,7 +513,7 @@
   <app-exercise-hints [hints]="wordChainHints"></app-exercise-hints>
   <div class="text-center my-3">
     <img src="../../../assets/images/lists/chain.png" alt="chain"
-         style="height: 7rem">
+         style="max-height: 7rem" class="img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -519,7 +533,7 @@
     </div>
     <div class="col-lg-2 mt-auto mx-3 mb-3">
       <img src="../../../assets/images/lists/class_list.png" alt="class list"
-           style="height: 10rem">
+           class="height-10rem img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Faili <span class="fst-italic">nimed.txt</span> sisu (fail on UTF-8 kodeeringus):</span></div>

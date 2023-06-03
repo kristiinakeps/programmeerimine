@@ -19,18 +19,21 @@
   Järgnevalt tutvume tüüpilise personaalarvuti tähtsamate komponentidega.</span></div>
 </div>
 <div class="mt-4 box-container">
-  <div><span><strong class="strong">Protsessor (ingl <span class="fst-italic">central processing unit</span> ehk CPU)</strong> - see on arvuti "aju", mis vastutab käskude täitmise eest ja mis kontrollib kõike arvutis toimuvat. Protsessoril
+  <div><span><strong class="strong">Protsessor (ingl <span
+    class="fst-italic">central processing unit</span> ehk CPU)</strong> - see on arvuti "aju", mis vastutab käskude täitmise eest ja mis kontrollib kõike arvutis toimuvat. Protsessoril
   on oma kindel hulk käske, millest ta aru saab ja mida ta täita suudab.</span>
   </div>
 </div>
 <div class="mt-2 box-container">
-  <div><span><strong class="strong">Muutmälu (ingl <span class="fst-italic">random-access memory</span> ehk RAM)</strong> - arvutil, nagu ka meil, on vaja teatud asju meeles hoida samal ajal kui ta tööd teeb ja selleks kasutab arvuti muutmälu
+  <div><span><strong class="strong">Muutmälu (ingl <span
+    class="fst-italic">random-access memory</span> ehk RAM)</strong> - arvutil, nagu ka meil, on vaja teatud asju meeles hoida samal ajal kui ta tööd teeb ja selleks kasutab arvuti muutmälu
     ehk RAM-i (või lihtsamalt öeldes mälu).
   Inimese mõistes oleks see nagu peastarvutamisel vahetulemuste meeles pidamine enne kui lõpliku vastuseni jõuame või raamatut lugedes sõnade meeles pidamine,
   kuni need moodustavad lause ja saame lause mõttest aru.</span>
-  <div class="mt-4">
-      <img src="../../../assets/images/introduction/calculating.png" alt="arvutamine" class="height-15rem">
-  </div>
+    <div class="mt-4">
+      <img src="../../../assets/images/introduction/calculating.png" alt="arvutamine"
+           class="height-15rem img-max-width">
+    </div>
   </div>
 </div>
 <div class="mt-2 box-container">
@@ -39,9 +42,10 @@
   siit saab andmeid vajadusel jälle mälusse lugeda. Inimestega on kohati samamoodi &ndash; meil on palju mälestusi ja kui tahame, võime mõnele konkreetsele mälestusele mõelda, aga me ei suuda
   korraga kõiki oma mälestusi meenutada.</span></div>
   <div class="mt-2"><span>Arvuti mälust ja andmekandjast võib mõelda ka kui töölauast ja raamaturiiulist. Kui teeme tööd või loeme mõnda raamatut, siis hoiame neid asju
-  laual (ehk arvuti mõttes mälus). Kõik teised raamatud ja asjad, mida me hetkel ei kasuta, on pandud ära riiulisse (ehk andmekandjale).</span></div>
+  laual (ehk arvuti mõttes mälus). Kõik teised raamatud ja asjad, mida me hetkel ei kasuta, on pandud ära riiulisse (ehk andmekandjale).</span>
+  </div>
   <div class="mt-4">
-    <img src="../../../assets/images/introduction/desk.png" alt="arvutamine" class="height-10rem">
+    <img src="../../../assets/images/introduction/desk.png" alt="arvutamine" class="height-10rem img-max-width">
   </div>
 </div>
 <div class="mt-2 box-container">
@@ -69,7 +73,8 @@
     väga keeruline kirjutada.</span>
   </div>
   <div class="mt-2"><span>Praegu pole veel välja mõeldud lihtsat viisi, kuidas muuta tavaline kõnekeelne tekst arvuti jaoks arusaadavateks käskudeks. Küll aga on loodud spetsiaalsed
-    keeled, mida kutsutakse <strong class="strong">programmeerimiskeelteks</strong>. Nendes keeltes on inimestel lihtne porgramme kirjutada ja arvuti oskab neid keeli kahendkoodiks teisendada.</span></div>
+    keeled, mida kutsutakse <strong class="strong">programmeerimiskeelteks</strong>. Nendes keeltes on inimestel lihtne porgramme kirjutada ja arvuti oskab neid keeli kahendkoodiks teisendada.</span>
+  </div>
 </div>
 <h4 class="mt-5" [attr.id]="'programmeerimiskeeled'">Milliseid programmeerimiskeeli on olemas?</h4>
 <div class="mt-4 box-container">
@@ -136,7 +141,7 @@
   lihtsam ja ekraanile "Tere!" väljastamiseks piisab vaid ühest reast. Hoolimata sellest, et JavaScripti ja Java nimed on sarnased, pole nendel keeltel tegelikult
   otsest seost.</span>
     <div class="code-block mt-4">
-     <span>{{ javaScriptText }}</span>
+      <span>{{ javaScriptText }}</span>
     </div>
   </div>
 </div>
@@ -149,18 +154,23 @@
   </div>
 </div>
 <app-single-choice-test [question]="programmingLanguagesTest"></app-single-choice-test>
-<button (click)="selectProgrammingLanguagesTest()" class="btn btn-primary mt-3"><fa-icon [icon]="'arrow-rotate-right'"></fa-icon><span class="ps-2">Tahan uut enesekontrolli küsimust</span></button>
+<button (click)="selectProgrammingLanguagesTest()" class="btn btn-primary mt-3">
+  <fa-icon [icon]="'arrow-rotate-right'"></fa-icon>
+  <span class="ps-2">Tahan uut enesekontrolli küsimust</span></button>
 <h4 class="mt-5" [attr.id]="'programmeerimisega-alustamine'">Mida on vaja, et programmeerimisega alustada?</h4>
 <div class="mt-4 box-container">
   <div><span>Programmeerimisega alustamiseks on vaja kahte komponenti. Esiteks on meil vaja tekstiredaktorit, milles koodi kirjutada (selleks sobiks ka tavaline Notepadi rakendus,
     mis paljudes Windows operatsioonisüsteemiga arvutites juba olemas on). Teiseks on meil vaja kuidagi teisendada meie kirjutatud kood masinkoodiks ning selleks on
-    vastavalt kasutatavale programmeerimiskeelele kaks varianti: <strong class="strong">kompilaator</strong> või <strong class="strong">interpretaator</strong>.
+    vastavalt kasutatavale programmeerimiskeelele kaks varianti: <strong class="strong">kompilaator</strong> või <strong
+      class="strong">interpretaator</strong>.
   </span></div>
   <div class="mt-2"><span>Kompilaator on arvutiprogramm, mis suudab tõlkida programmi ühest keelest teise. Seda kasutavad näiteks C, C++ ja Java. Kompilaator
-  võtab kirjutatud koodi ning tekitab selle põhjal faili, mida saab arvutis käivitada (nagu näiteks .exe-faililaiendiga failid).</span></div>
+  võtab kirjutatud koodi ning tekitab selle põhjal faili, mida saab arvutis käivitada (nagu näiteks .exe-faililaiendiga failid).</span>
+  </div>
   <div class="mt-2"><span>Interpretaator ei tõlgi kogu koodi masinkoodiks enne programmi käivitamist, vaid teeb seda jooksvalt programmi töö ajal. Interpretaatorit kasutab näiteks Python.
     Seega kui soovime alustada programmeerimist keeles Python, siis on meil vaja Pythoni interpretaatorit. Pythoni saame soovi korral alla laadida lehelt
-  <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></span>.</div>
+  <a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a></span>.
+  </div>
   <div class="mt-2"><span>Tüüpiliselt aga kasutatakse programmeerimiseks mõnda spetsiaalselt tarkvararakendust, täpsemalt integreeritud programmeerimiskeskkonda (IDE-t).
   Need lihtsustavad meie jaoks programmi kirjutamise ja käivitamise protsessi.</span></div>
 </div>
@@ -183,10 +193,13 @@
 <div class="mt-2 box-container">
   <div><span><strong class="strong">PyCharm</strong> - see on kindlasti natuke keerulisem keskkond kui Thonny või isegi Visual Studio Code, kuid see eest on tal palju erinevaid
   võimalusi. Kui selle tarkvara kasutamine ära õppida, siis on sellega väga mugav koodi kirjutada, sest PyCharm oskab tihti meie eest lauseid lõpetada ning mõned koodijupid ka
-  ise valmis genereerida. Sellel tarkvaral on olemas nii tasuta (<span class="fst-italic">Community</span>) kui ka tasuline (<span class="fst-italic">Professional</span>) variant ning kuigi tasulisel versioonil on funktsionaalsust rohkem, piisab
+  ise valmis genereerida. Sellel tarkvaral on olemas nii tasuta (<span class="fst-italic">Community</span>) kui ka tasuline (<span
+      class="fst-italic">Professional</span>) variant ning kuigi tasulisel versioonil on funktsionaalsust rohkem, piisab
   algajale programmeerijale ka tasuta versioonist. PyCharmi leiab lingilt
     <a href="https://www.jetbrains.com/pycharm/download/#section=windows" target="_blank">https://www.jetbrains.com/pycharm/download/#section=windows</a>.</span>
   </div>
 </div>
-<button [routerLink]="'/algoritm'" class="btn btn-primary my-5 float-end"><fa-icon [icon]="'arrow-right'"></fa-icon><span class="ps-2">Järgmine peatükk</span></button>
+<button [routerLink]="'/algoritm'" class="btn btn-primary my-5 float-end">
+  <fa-icon [icon]="'arrow-right'"></fa-icon>
+  <span class="ps-2">Järgmine peatükk</span></button>
 

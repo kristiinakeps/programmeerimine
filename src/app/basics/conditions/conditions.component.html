@@ -21,7 +21,7 @@
   </div>
   <div class="text-center my-3">
     <img src="../../../assets/images/conditions/temperature_algorithm.png" alt="temperature_algorithm"
-         style="height: 30rem">
+         style="max-height: 30rem" class="img-max-width">
   </div>
   <div class="mt-3"><span>Kuidas aga sama asja koodis kirja panna?</span></div>
   <div class="mt-3"><span>Pythonis kasutatakse tingimuslause alustamiseks võtmesõna <strong
@@ -38,13 +38,13 @@
   <div class="row mx-0">
     <div class="col-lg-8 ps-0">
       <div class="code-block mt-2">
-    <span [highlight]="temperatureAfterIfCode"></span>
+        <span [highlight]="temperatureAfterIfCode"></span>
       </div>
       <div class="mt-3"><span>Selles näites kasutasime tingimuse koostamiseks "väiksem kui" märki. Kuid mida saab veel tingimuste koostamiseks kasutada?</span>
       </div>
     </div>
     <div class="col-lg-3 m-3">
-      <img src="../../../assets/images/conditions/crow.png" alt="crow" class="height-15rem">
+      <img src="../../../assets/images/conditions/crow.png" alt="crow" class="height-15rem img-max-width">
     </div>
   </div>
 </div>
@@ -55,129 +55,132 @@
   <span class="fst-italic">False</span>. Neid kõiki saab tingimustes kasutada.</span>
   </div>
   <div class="mt-3">
-    <table class="table table-bordered table-custom" aria-describedby="tehted">
-      <thead>
-      <tr>
-        <th style="width: 25%">Avaldis</th>
-        <th>Väärtus</th>
-        <th>Selgitus</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>3 == 3.0</td>
-        <td>True</td>
-        <td rowspan="3">Kuna üks võrdusmärk tähendab Pythonis omistamist, kasutatakse kahe väärtuse võrdsuse
-          kontrollimiseks kahte võrdusmärki.
-          Nii saab kontrollida võrdsust nii arvude kui sõnede vahel.
-        </td>
-      </tr>
-      <tr>
-        <td>"Tere" == "Tere"</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>3 == 5</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>"Tere" == "tere"</td>
-        <td>False</td>
-        <td>Sõnede võrdlemisel tehakse suurtel ja väikestel tähtedel vahet.</td>
-      </tr>
-      <tr>
-        <td>"4.0" == 4.0</td>
-        <td>False</td>
-        <td>Sõne pole kunagi arvuga võrdne.</td>
-      </tr>
-      <tr>
-        <td>3 != 2</td>
-        <td>True</td>
-        <td rowspan="2">Hüüumärk ja võrdusmärk kontrollib mittevõrdumist. Seda saab samuti kasutada nii arvude kui
-          sõnedega.
-        </td>
-      </tr>
-      <tr>
-        <td>"Tere" != "tere"</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>3 > 2</td>
-        <td>True</td>
-        <td rowspan="4">Arvude puhul saame kasutada ka "suurem kui", "väiksem kui", "suurem võrdne kui" ja "väiksem
-          võrdne kui" võrdlusi.
-        </td>
-      </tr>
-      <tr>
-        <td>3 >= 2</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>3 < 2</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>3 <= 3</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>"abc" < "def"</td>
-        <td>True</td>
-        <td>Sõnede puhul saame kasutada samu võrdlusi, kuid võrdlemine käib tähestiku järgi.</td>
-      </tr>
-      <tr>
-        <td>"Tere" > "tere"</td>
-        <td>False</td>
-        <td>Kusjuures suured tähed on siin eespool väikestest tähtedest ja seega "T" saab väiksema väärtuse kui "t".
-        </td>
-      </tr>
-      <tr>
-        <td>"re" in "Tere"</td>
-        <td>True</td>
-        <td rowspan="2">Operaator <span class="fst-italic">in</span> kontrollib tähe või alamsõne leidumist sõnes.</td>
-      </tr>
-      <tr>
-        <td>"o" in "Tere"</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast!".startswith("Te")</td>
-        <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne algab etteantud sõnega.</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast!".startswith("!")</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast!".endswith("!")</td>
-        <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne lõppeb etteantud sõnega.</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast!".endswith("Te")</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>"123".isdigit()</td>
-        <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult numbreid.</td>
-      </tr>
-      <tr>
-        <td>"12a".isdigit()</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>"abc".isalpha()</td>
-        <td>True</td>
-        <td rowspan="2">Kontrollib, kas sõne sisaldab ainult tähti.</td>
-      </tr>
-      <tr>
-        <td>"12a".isalpha()</td>
-        <td>False</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-custom" aria-describedby="tehted">
+        <thead>
+        <tr>
+          <th style="width: 25%">Avaldis</th>
+          <th>Väärtus</th>
+          <th>Selgitus</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>3 == 3.0</td>
+          <td>True</td>
+          <td rowspan="3">Kuna üks võrdusmärk tähendab Pythonis omistamist, kasutatakse kahe väärtuse võrdsuse
+            kontrollimiseks kahte võrdusmärki.
+            Nii saab kontrollida võrdsust nii arvude kui sõnede vahel.
+          </td>
+        </tr>
+        <tr>
+          <td>"Tere" == "Tere"</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>3 == 5</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>"Tere" == "tere"</td>
+          <td>False</td>
+          <td>Sõnede võrdlemisel tehakse suurtel ja väikestel tähtedel vahet.</td>
+        </tr>
+        <tr>
+          <td>"4.0" == 4.0</td>
+          <td>False</td>
+          <td>Sõne pole kunagi arvuga võrdne.</td>
+        </tr>
+        <tr>
+          <td>3 != 2</td>
+          <td>True</td>
+          <td rowspan="2">Hüüumärk ja võrdusmärk kontrollib mittevõrdumist. Seda saab samuti kasutada nii arvude kui
+            sõnedega.
+          </td>
+        </tr>
+        <tr>
+          <td>"Tere" != "tere"</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>3 > 2</td>
+          <td>True</td>
+          <td rowspan="4">Arvude puhul saame kasutada ka "suurem kui", "väiksem kui", "suurem võrdne kui" ja "väiksem
+            võrdne kui" võrdlusi.
+          </td>
+        </tr>
+        <tr>
+          <td>3 >= 2</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>3 < 2</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>3 <= 3</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>"abc" < "def"</td>
+          <td>True</td>
+          <td>Sõnede puhul saame kasutada samu võrdlusi, kuid võrdlemine käib tähestiku järgi.</td>
+        </tr>
+        <tr>
+          <td>"Tere" > "tere"</td>
+          <td>False</td>
+          <td>Kusjuures suured tähed on siin eespool väikestest tähtedest ja seega "T" saab väiksema väärtuse kui "t".
+          </td>
+        </tr>
+        <tr>
+          <td>"re" in "Tere"</td>
+          <td>True</td>
+          <td rowspan="2">Operaator <span class="fst-italic">in</span> kontrollib tähe või alamsõne leidumist sõnes.
+          </td>
+        </tr>
+        <tr>
+          <td>"o" in "Tere"</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast!".startswith("Te")</td>
+          <td>True</td>
+          <td rowspan="2">Kontrollib, kas sõne algab etteantud sõnega.</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast!".startswith("!")</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast!".endswith("!")</td>
+          <td>True</td>
+          <td rowspan="2">Kontrollib, kas sõne lõppeb etteantud sõnega.</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast!".endswith("Te")</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>"123".isdigit()</td>
+          <td>True</td>
+          <td rowspan="2">Kontrollib, kas sõne sisaldab ainult numbreid.</td>
+        </tr>
+        <tr>
+          <td>"12a".isdigit()</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>"abc".isalpha()</td>
+          <td>True</td>
+          <td rowspan="2">Kontrollib, kas sõne sisaldab ainult tähti.</td>
+        </tr>
+        <tr>
+          <td>"12a".isalpha()</td>
+          <td>False</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <h4 class="mt-5" [attr.id]="'mitmeharulised'">Kuidas kirjutada rohkem kui ühe haruga tingimuslauseid?</h4>
@@ -205,10 +208,10 @@
   </div>
   <div class="row mx-0">
     <div class="code-block mt-2 col-lg-9">
-    <span [highlight]="temperatureNestedCode"></span>
+      <span [highlight]="temperatureNestedCode"></span>
     </div>
     <div class="col-lg-2 m-3">
-      <img src="../../../assets/images/conditions/crow_coat.png" alt="crow" class="height-15rem">
+      <img src="../../../assets/images/conditions/crow_coat.png" alt="crow" class="height-15rem img-max-width">
     </div>
   </div>
 </div>
@@ -219,7 +222,8 @@
   kirja panemiseks. Selleks kasutatakse seekord võtmesõna <strong class="fst-italic strong">elif</strong>. See on kokku pandud sõnadest
   <span class="fst-italic">else</span> ja <span class="fst-italic">if</span> ning sellele võtmesõnale järgneb samuti tingimus ja koolon. Selliselt
   võime <span class="fst-italic">elif</span>-tingimusi lisada nii palju kui tahame. Programm hakkab järjest neid tingimusi läbi käima kuni leiab mõne, mille
-  tingimus on tõene. Kui tõene tingimus on leitud, siis sellele järgnevaid <span class="fst-italic">elif</span>- ja <span
+  tingimus on tõene. Kui tõene tingimus on leitud, siis sellele järgnevaid <span
+      class="fst-italic">elif</span>- ja <span
       class="fst-italic">else</span>-osasid üldse ei vaadatagi. Kui aga ei <span class="fst-italic">if</span> ega ükski <span
       class="fst-italic">elif</span>-tingimustest pole tõene, siis
   täidetakse <span class="fst-italic">else</span>-haru. Muidugi vaid juhul, kui see on olemas. Kui seda ei ole, siis minnakse lihsalt programmi täitmisega edasi.</span>
@@ -296,68 +300,70 @@
   Tulemuseks annavad need samuti tõeväärtuse.</span>
   </div>
   <div class="mt-3">
-    <table class="table table-bordered table-custom" aria-describedby="tehted">
-      <thead>
-      <tr>
-        <th>Loogiline tehe</th>
-        <th>Avaldis</th>
-        <th>Väärtus</th>
-        <th>Selgitus</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td rowspan="4">and</td>
-        <td>True and True</td>
-        <td>True</td>
-        <td rowspan="4">Tulemus on tõene ainult siis, kui kõik tehte <span class="fst-italic">and</span> abil seotud
-          tõeväärtused on tõesed.
-        </td>
-      </tr>
-      <tr>
-        <td>True and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>False and True</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td>False and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td rowspan="4">or</td>
-        <td>True and True</td>
-        <td>True</td>
-        <td rowspan="4">Tulemus on tõene siis, kui vähemalt üks <span class="fst-italic">or</span> abil seotud
-          tõeväärtustest on tõene.
-        </td>
-      </tr>
-      <tr>
-        <td>True and False</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>False and True</td>
-        <td>True</td>
-      </tr>
-      <tr>
-        <td>False and False</td>
-        <td>False</td>
-      </tr>
-      <tr>
-        <td rowspan="2">not</td>
-        <td>not True</td>
-        <td>False</td>
-        <td rowspan="2">Tehe <span class="fst-italic">not</span> pöörab tõeväärtuse ümber.</td>
-      </tr>
-      <tr>
-        <td>not False</td>
-        <td>True</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-custom" aria-describedby="tehted">
+        <thead>
+        <tr>
+          <th>Loogiline tehe</th>
+          <th>Avaldis</th>
+          <th>Väärtus</th>
+          <th>Selgitus</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td rowspan="4">and</td>
+          <td>True and True</td>
+          <td>True</td>
+          <td rowspan="4">Tulemus on tõene ainult siis, kui kõik tehte <span class="fst-italic">and</span> abil seotud
+            tõeväärtused on tõesed.
+          </td>
+        </tr>
+        <tr>
+          <td>True and False</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>False and True</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td>False and False</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td rowspan="4">or</td>
+          <td>True and True</td>
+          <td>True</td>
+          <td rowspan="4">Tulemus on tõene siis, kui vähemalt üks <span class="fst-italic">or</span> abil seotud
+            tõeväärtustest on tõene.
+          </td>
+        </tr>
+        <tr>
+          <td>True and False</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>False and True</td>
+          <td>True</td>
+        </tr>
+        <tr>
+          <td>False and False</td>
+          <td>False</td>
+        </tr>
+        <tr>
+          <td rowspan="2">not</td>
+          <td>not True</td>
+          <td>False</td>
+          <td rowspan="2">Tehe <span class="fst-italic">not</span> pöörab tõeväärtuse ümber.</td>
+        </tr>
+        <tr>
+          <td>not False</td>
+          <td>True</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="mt-3"><span>Võime neid tehteid kasutades erinevaid tõeväärtustehteid omavahel kombineerida, kuid tähtis on ka
   nende tehete järjekord. Kõige tähtsam neist on <span class="fst-italic">not</span>. Seda rakendatakse kõige esimesena. Seejärel
@@ -366,8 +372,11 @@
   <div class="mt-3"><span>Võtame näiteks järgmise tõeväärtustehete kombinatsiooni ja vaatame, mis järjekorras siis tehteid tehakse.</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span class="hljs-keyword"> or not </span>
-      <span class="hljs-number">2</span> > <span class="hljs-number">4</span> <span class="hljs-keyword"> and </span> <span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span> <span
+      class="hljs-keyword"> and </span> <span class="hljs-number">3</span> > <span class="hljs-number">2</span> <span
+      class="hljs-keyword"> or not </span>
+      <span class="hljs-number">2</span> > <span class="hljs-number">4</span> <span
+        class="hljs-keyword"> and </span> <span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>
   </div>
   <div class="mt-3"><span>Esimese asjana võime kõik tõeväärtustehted asendada nende tõeväärtustega.</span></div>
   <div class="code-block mt-2">
@@ -391,8 +400,11 @@
   tehakse esimesena.</span>
   </div>
   <div class="code-block mt-2">
-    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span><span class="hljs-keyword"> and </span> (<span class="hljs-number">3</span> > <span class="hljs-number">2</span>
-      <span class="hljs-keyword"> or not </span><span class="hljs-number">2</span> > <span class="hljs-number">4</span><span class="hljs-keyword"> and </span><span class="hljs-number">5</span> > <span class="hljs-number">4</span></span>)
+    <span><span class="hljs-number">5</span> < <span class="hljs-number">4</span><span class="hljs-keyword"> and </span> (<span
+      class="hljs-number">3</span> > <span class="hljs-number">2</span>
+      <span class="hljs-keyword"> or not </span><span class="hljs-number">2</span> > <span
+        class="hljs-number">4</span><span class="hljs-keyword"> and </span><span class="hljs-number">5</span> > <span
+        class="hljs-number">4</span></span>)
   </div>
   <div class="mt-3"><span>Asendame tõeväärtustehted tõeväärtustega:</span></div>
   <div class="code-block mt-2">
@@ -422,7 +434,7 @@
       </div>
     </div>
     <div class="col-lg-2 m-3">
-      <img src="../../../assets/images/conditions/grading.png" alt="crow" class="height-10rem">
+      <img src="../../../assets/images/conditions/grading.png" alt="crow" class="height-10rem img-max-width">
     </div>
   </div>
   <div class="code-block mt-2 fst-italic">
@@ -466,7 +478,7 @@
   </div>
   <div class="mt-2"><span>Abiks võivad olla tehted // ja %. Tuleta meelde, mis need tegid.</span></div>
   <div class="mt-3">
-    <img src="../../../assets/images/conditions/bus.png" alt="crow" class="height-15rem">
+    <img src="../../../assets/images/conditions/bus.png" alt="crow" class="height-15rem img-max-width">
   </div>
   <app-exercise-hints [hints]="busExerciseHints"></app-exercise-hints>
 </div>

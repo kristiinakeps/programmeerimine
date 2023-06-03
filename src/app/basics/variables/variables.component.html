@@ -46,8 +46,8 @@
       class="fst-italic">True</span>. Väär on
     inglise keeles <span class="fst-italic">false</span> ning Pythonis <span class="fst-italic">False</span>.</span>
   </div>
-  <div class="col-md-12 col-lg-2 m-3">
-    <img src="../../../assets/images/variables/datatypes.png" alt="datatypes" class="height-5rem">
+  <div class="col-md-12 col-lg-4 m-3">
+    <img src="../../../assets/images/variables/datatypes.png" alt="datatypes" class="height-5rem img-max-width">
   </div>
 </div>
 <div class="mt-2 box-container">
@@ -112,15 +112,17 @@
       </div>
     </div>
     <div class="col-md-12 col-lg-3 my-auto">
-      <img src="../../../assets/images/variables/spices.png" alt="spices" style="height: 7rem">
+      <img src="../../../assets/images/variables/spices.png" alt="spices" style="max-height: 7rem" class="img-max-width">
     </div>
   </div>
 </div>
 <div class="mt-3 box-container">
   <div><span>Muutuja loomiseks saame programmi kirjutada muutuja nime (mille me ise valime) ja võrdusmärgiga saame sinna muutujasse panna mingi
-    väärtuse. Seda tegevust nimetatakse muutujale väärtuse <strong class="strong">omistamiseks</strong>. Järgnevas koodijupis loome kaks muutujat &ndash; <span class="fst-italic">nimi</span>
+    väärtuse. Seda tegevust nimetatakse muutujale väärtuse <strong class="strong">omistamiseks</strong>. Järgnevas koodijupis loome kaks muutujat &ndash; <span
+      class="fst-italic">nimi</span>
     ja <span class="fst-italic">vanus</span> ning
-    omistame neile vastavalt väärtusteks "Mati" ja 10. Jälgi, et "Mati" on sõne tüüpi ja 10 on täisarvu tüüpi. Saame eelnevalt õpitud käsu <span class="fst-italic">type</span> abil ka kontrollida,
+    omistame neile vastavalt väärtusteks "Mati" ja 10. Jälgi, et "Mati" on sõne tüüpi ja 10 on täisarvu tüüpi. Saame eelnevalt õpitud käsu <span
+      class="fst-italic">type</span> abil ka kontrollida,
     mis tüüpi on muutujas hoitav väärtus. Siis tuleb käsule <span class="fst-italic">type</span> anda argumendiks muutuja nimi.
   </span>
   </div>
@@ -160,7 +162,8 @@
       class="code-input">13</span><br>&lt;class 'str'&gt;<br>&lt;class 'str'&gt;</span>
   </div>
   <div class="mt-2"><span>Tegelikult saab sama asja ka natuke lühemalt kirjutada ja hoopis <span class="fst-italic">input</span>-käsule
-    sulgudesse anda sõnena need juhised, mida praegu ise <span class="fst-italic">print</span>-käsuga väljastasime.</span>
+    sulgudesse anda sõnena need juhised, mida praegu ise <span
+      class="fst-italic">print</span>-käsuga väljastasime.</span>
   </div>
   <div class="code-block mt-2">
     <span [highlight]="shortInputCode"></span>
@@ -201,52 +204,54 @@
     lisandub erinevaid tehteid, mida tundma õpime. Põhikooli lõpuks oskame juba lisaks põhitehetele ka astendada, ruutjuurt võtta ning kolmnurga siinust ja koosinust arvutada.
     Kõike seda saab teha ka programmeerides. Põhilised tehted, mida võib vaja minna:</span></div>
   <div class="mt-3">
-    <table class="table table-bordered table-custom" aria-describedby="tehted">
-      <thead>
-      <tr>
-        <th>Avaldis</th>
-        <th>Väärtus</th>
-        <th>Selgitus</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>2 + 5</td>
-        <td>7</td>
-        <td>Liitmine</td>
-      </tr>
-      <tr>
-        <td>5 - 2</td>
-        <td>3</td>
-        <td>Lahutamine</td>
-      </tr>
-      <tr>
-        <td>2 * 5</td>
-        <td>10</td>
-        <td>Korrutamine</td>
-      </tr>
-      <tr>
-        <td>5 / 2</td>
-        <td>2.5</td>
-        <td>Jagamine (tulemuseks alati ujukomaarv)</td>
-      </tr>
-      <tr>
-        <td>5 // 2</td>
-        <td>2</td>
-        <td>Täisosa leidmine (sarnane jagamisele, aga tulemuseks on alati täisav)</td>
-      </tr>
-      <tr>
-        <td>5 ** 2</td>
-        <td>25</td>
-        <td>Astendamine</td>
-      </tr>
-      <tr>
-        <td>5 % 2</td>
-        <td>1</td>
-        <td>Jäägi leidmine</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-custom" aria-describedby="tehted">
+        <thead>
+        <tr>
+          <th>Avaldis</th>
+          <th>Väärtus</th>
+          <th>Selgitus</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>2 + 5</td>
+          <td>7</td>
+          <td>Liitmine</td>
+        </tr>
+        <tr>
+          <td>5 - 2</td>
+          <td>3</td>
+          <td>Lahutamine</td>
+        </tr>
+        <tr>
+          <td>2 * 5</td>
+          <td>10</td>
+          <td>Korrutamine</td>
+        </tr>
+        <tr>
+          <td>5 / 2</td>
+          <td>2.5</td>
+          <td>Jagamine (tulemuseks alati ujukomaarv)</td>
+        </tr>
+        <tr>
+          <td>5 // 2</td>
+          <td>2</td>
+          <td>Täisosa leidmine (sarnane jagamisele, aga tulemuseks on alati täisav)</td>
+        </tr>
+        <tr>
+          <td>5 ** 2</td>
+          <td>25</td>
+          <td>Astendamine</td>
+        </tr>
+        <tr>
+          <td>5 % 2</td>
+          <td>1</td>
+          <td>Jäägi leidmine</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <div class="mt-2"><span>Neid tehteid võid ka ise Thonnys järele proovida. Ära unusta kasutada <span
     class="fst-italic">print</span>-käsku, et
@@ -266,57 +271,59 @@
   sõnes olevad tähed suurteks või hoopis muudavad iga sõna esimese tähe suureks. Meetodid lisatakse sõnede külge punktiga ja meetodi lõpus on sulud. Olenevalt
   meetodist on sulud tühjad või lisatakse sulgude vahele veel midagi.</span></div>
   <div class="mt-3">
-    <table class="table table-bordered table-custom" aria-describedby="tehted">
-      <thead>
-      <tr>
-        <th>Avaldis</th>
-        <th>Väärtus</th>
-        <th>Selgitus</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>"Tere" + " päevast!"</td>
-        <td>"Tere päevast!"</td>
-        <td>Sõnede liitmine</td>
-      </tr>
-      <tr>
-        <td>"Tere" * 3</td>
-        <td>"TereTereTere"</td>
-        <td>Korrutamine sõne ja arvu vahel</td>
-      </tr>
-      <tr>
-        <td>"Tere".upper()</td>
-        <td>"TERE"</td>
-        <td>Muudab sõnes kõik tähed suureks</td>
-      </tr>
-      <tr>
-        <td>"Tere".lower()</td>
-        <td>"tere"</td>
-        <td>Muudab sõnes kõik tähed väikseks</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast! täna on ilus ilm.".title()</td>
-        <td>"Tere Päevast! Täna On Ilus Ilm"</td>
-        <td>Muudab iga sõna algustähe suureks</td>
-      </tr>
-      <tr>
-        <td>"täna on ilus ilm.".capitalize()</td>
-        <td>"Täna on ilus ilm."</td>
-        <td>Muudab sõne algustäht suureks</td>
-      </tr>
-      <tr>
-        <td>"Tere päevast!".replace("e", "ö")</td>
-        <td>"Törö päövast!"</td>
-        <td>Asendab sõnes etteantud sõned teise etteantud sõnega</td>
-      </tr>
-      <tr>
-        <td>"Aias sadas saia".count("as")</td>
-        <td>2</td>
-        <td>Loendab etteantud sõne esinemiste arvu sõnes</td>
-      </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered table-custom" aria-describedby="tehted">
+        <thead>
+        <tr>
+          <th>Avaldis</th>
+          <th>Väärtus</th>
+          <th>Selgitus</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>"Tere" + " päevast!"</td>
+          <td>"Tere päevast!"</td>
+          <td>Sõnede liitmine</td>
+        </tr>
+        <tr>
+          <td>"Tere" * 3</td>
+          <td>"TereTereTere"</td>
+          <td>Korrutamine sõne ja arvu vahel</td>
+        </tr>
+        <tr>
+          <td>"Tere".upper()</td>
+          <td>"TERE"</td>
+          <td>Muudab sõnes kõik tähed suureks</td>
+        </tr>
+        <tr>
+          <td>"Tere".lower()</td>
+          <td>"tere"</td>
+          <td>Muudab sõnes kõik tähed väikseks</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast! täna on ilus ilm.".title()</td>
+          <td>"Tere Päevast! Täna On Ilus Ilm"</td>
+          <td>Muudab iga sõna algustähe suureks</td>
+        </tr>
+        <tr>
+          <td>"täna on ilus ilm.".capitalize()</td>
+          <td>"Täna on ilus ilm."</td>
+          <td>Muudab sõne algustäht suureks</td>
+        </tr>
+        <tr>
+          <td>"Tere päevast!".replace("e", "ö")</td>
+          <td>"Törö päövast!"</td>
+          <td>Asendab sõnes etteantud sõned teise etteantud sõnega</td>
+        </tr>
+        <tr>
+          <td>"Aias sadas saia".count("as")</td>
+          <td>2</td>
+          <td>Loendab etteantud sõne esinemiste arvu sõnes</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -346,7 +353,7 @@
     <span [highlight]="nameLowerCountCode"></span>
   </div>
   <div class="col-md-12 m-3">
-    <img src="../../../assets/images/variables/name_kpt.png" alt="name_kpt" class="height-5rem">
+    <img src="../../../assets/images/variables/name_kpt.png" alt="name_kpt" class="height-5rem img-max-width">
   </div>
 </div>
 <div class="mt-3 box-container">
@@ -404,7 +411,7 @@
       </div>
     </div>
     <div class="col-md-12 col-lg-3 m-3">
-      <img src="../../../assets/images/variables/sandwich_cake.png" alt="sandwich_cake" class="height-20rem">
+      <img src="../../../assets/images/variables/sandwich_cake.png" alt="sandwich_cake" class="height-20rem img-max-width">
     </div>
   </div>
   <div class="mt-2"><span>Mõned näited programmi tööst:</span></div>
