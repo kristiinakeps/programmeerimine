@@ -10,6 +10,7 @@
       <li class="nav-item menu-category" (click)="toggleBasics()">
         <a class="nav-link">PÕHITEADMISED</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'sissejuhatus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sissejuhatus</a>
       </li>
@@ -24,6 +25,7 @@
         <a class="nav-link" [routerLink]="'sissejuhatus'" [fragment]="'programmeerimisega-alustamine'"
            (click)="collapseNavbar()">Programmeerimisega alustamine</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'algoritm'" [routerLinkActive]="'active'"
            (click)="collapseNavbar()">Algoritm</a>
@@ -39,6 +41,7 @@
       <li class="nav-subitem" *ngIf="isAlgorithmsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'algoritm'" [fragment]="'kordused'" (click)="collapseNavbar()">Kordused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'muutujad'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Muutujad
           ja avaldised</a>
@@ -61,6 +64,7 @@
         <a class="nav-link" [routerLink]="'muutujad'" [fragment]="'harjutused'"
            (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'tingimuslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Tingimuslaused</a>
       </li>
@@ -77,6 +81,7 @@
       <li class="nav-subitem" *ngIf="isConditionsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'tingimuslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'korduslaused'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Korduslaused</a>
       </li>
@@ -91,6 +96,7 @@
       <li class="nav-subitem" *ngIf="isLoopsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'korduslaused'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'funktsioonid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Funktsioonid</a>
       </li>
@@ -103,6 +109,7 @@
       <li class="nav-subitem" *ngIf="isFunctionsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'funktsioonid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'failid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Failid</a>
       </li>
@@ -124,6 +131,7 @@
       <li class="nav-subitem" *ngIf="isFilesOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'failid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isBasicsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'veahaldus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veahaldus</a>
       </li>
@@ -143,9 +151,11 @@
         <a class="nav-link" [routerLink]="'veahaldus'" [fragment]="'harjutused'"
            (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item menu-category" (click)="toggleDataStructures()">
         <a class="nav-link">ANDMESTRUKTUURID</a>
       </li>
+
       <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'jarjendid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Järjendid</a>
       </li>
@@ -164,6 +174,7 @@
         <a class="nav-link" [routerLink]="'jarjendid'" [fragment]="'harjutused'"
            (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'sonastikud'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Sõnastikud</a>
       </li>
@@ -175,6 +186,7 @@
         <a class="nav-link" [routerLink]="'sonastikud'" [fragment]="'harjutused'"
            (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'hulgad'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Hulgad</a>
       </li>
@@ -185,6 +197,7 @@
       <li class="nav-subitem" *ngIf="isSetsOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'hulgad'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'ennikud'" [routerLinkActive]="'active'"
            (click)="collapseNavbar()">Ennikud</a>
@@ -196,6 +209,7 @@
       <li class="nav-subitem" *ngIf="isTuplesOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'ennikud'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isDataStructuresCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'mitmemootmelised'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Mitmemõõtmelised
           andmestruktuurid</a>
@@ -210,9 +224,11 @@
       <li class="nav-subitem" *ngIf="isMultidimensionalOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'mitmemootmelised'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item menu-category" (click)="toggleObjectOrientedProgramming()">
         <a class="nav-link">OBJEKTORIENTEERITUD PROGRAMMEERIMINE</a>
       </li>
+
       <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'klassid'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Klassid ja
           isendid</a>
@@ -236,6 +252,7 @@
       <li class="nav-subitem" *ngIf="isClassesOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'klassid'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item" *ngIf="!isObjectOrientedProgrammingCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'parilus'" [routerLinkActive]="'active'"
            (click)="collapseNavbar()">Pärilus</a>
@@ -250,9 +267,11 @@
       <li class="nav-subitem" *ngIf="isInheritanceOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'parilus'" [fragment]="'harjutused'" (click)="collapseNavbar()">Harjutused</a>
       </li>
+
       <li class="nav-item menu-category" (click)="toggleProjects()">
         <a class="nav-link">PROJEKTID</a>
       </li>
+
       <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'mang'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Mäng</a>
       </li>
@@ -284,6 +303,7 @@
       <li class="nav-subitem" *ngIf="isGameOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'mang'" [fragment]="'heli'" (click)="collapseNavbar()">Heli</a>
       </li>
+
       <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'veebirakendus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Veebirakendus</a>
       </li>
@@ -307,6 +327,7 @@
       <li class="nav-subitem" *ngIf="isWebOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'veebirakendus'" [fragment]="'css'" (click)="collapseNavbar()">CSS</a>
       </li>
+
       <li class="nav-item" *ngIf="!isProjectsCollapsed" @inOutAnimation>
         <a class="nav-link" [routerLink]="'rakendus'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Töölauarakendus</a>
       </li>
@@ -336,10 +357,9 @@
       <li class="nav-subitem" *ngIf="isGuiOpened()" @inOutAnimation>
         <a class="nav-link" [routerLink]="'rakendus'" [fragment]="'kujundus'" (click)="collapseNavbar()">Kujundus</a>
       </li>
-      <li class="nav-item nav-item-feedback mt-4">
-        <a class="nav-link-feedback nav-link" (click)="collapseNavbar()"
-           href="https://docs.google.com/forms/d/e/1FAIpQLScJZlY3eIGTcRTprFhq0Jc4hjjPxY1DuIKgPycqPCDRflUghw/viewform?usp=sf_link"
-           target="_blank">Tagasiside</a>
+
+      <li class="nav-item mt-4">
+        <a class="nav-link" [routerLink]="'opetajale'" [routerLinkActive]="'active'" (click)="collapseNavbar()">Õpetajale</a>
       </li>
       <li>
         <div class="d-none d-md-block mt-2">
